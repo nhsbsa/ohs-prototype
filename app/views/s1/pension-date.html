@@ -1,0 +1,45 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+<style>
+.button-secondary {
+    background-color: #dee0e2;
+    color:black;
+    box-shadow: 0 2px 0 #b5babe;
+    font-size: 1em;
+    outline-offset: -1px;
+    outline: 1px solid transparent;
+    border-radius: 0;
+  }
+</style>
+<main id="content" role="main">
+     <a href="javascript:history.go(-1)" class="link-back">Back</a>
+     <div class="grid-row">
+          <div class="column-two-thirds">
+               <header class="page-header">
+                    <h1 class="page-header--lede heading-large">What date will (or did) they start to get their UK state pension?</h1>
+               </header>
+               <form action="same-pension" method="get" class="form">
+                   <label class="form-label" for="ni-number">
+                     Starting date
+                     <span class="form-hint">
+                       4 weeks in the future hint text
+                       <br>
+                       For example, 18/09/2018
+                     </span>
+                   </label>
+                   <input class="form-control" id="ni-number" type="text">
+                   <div class="form-group">
+                        <br>
+                        <input class="button" type="submit" value="Continue">
+                   </div>
+               </form>
+          </div>
+     </div>
+</main>
+
+{% endblock %}

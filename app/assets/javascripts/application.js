@@ -17,3 +17,19 @@ $(document).ready(function () {
   var showHideContent = new GOVUK.ShowHideContent()
   showHideContent.init()
 })
+
+<!-- another-pension -->
+$("#radiobtn-country-yes").change(function() {
+	$(".pickCountry").removeClass("visually-hidden");
+});
+
+<!-- contact3rd page -->
+$("#radiobtn-email").change(function() {
+	$(".show-email").removeClass("visually-hidden");
+  $(".show-post").addClass("visually-hidden");
+});
+
+$("#radiobtn-post").change(function() {
+	$(".show-post").removeClass("visually-hidden");
+  $(".show-email").addClass("visually-hidden");
+});
