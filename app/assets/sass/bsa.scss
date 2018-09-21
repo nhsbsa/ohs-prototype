@@ -333,6 +333,9 @@ td.strong {
     border: 1px solid white;
   }
 }
+.button-secondary:hover, .button-secondary:focus {
+  background-color: #00458C;
+}
 
 .multiple-choice {
   background-color: #DEE0E2;
@@ -1128,4 +1131,32 @@ border-bottom: 1px solid #bfc1c3;
     }
   }
 
+}
+
+#global-headerinternal .header-wrapper {
+  background: transparent;
+}
+
+#global-headerinternal .header-wrapper {
+  // background-color: #0b0c0c;
+  max-width: 1200px;
+  margin: auto;
+}
+
+#global-headerinternal #bsa-logo {
+  width: 300px;
+  margin: -90px 15px 0 0;
+  max-width: 1230px;
+  float: left;
+}
+
+#global-headerinternal #service-title {
+  color: #6F777B;
+  font-size: 24px;
+  text-align: right;
+}
+
+#global-headerinternal #signout {
+  font-size: 19px;
+  text-align: right;
 }
