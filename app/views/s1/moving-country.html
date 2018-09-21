@@ -6,35 +6,295 @@ NHSBSA Prototype
 
 {% block content %}
 <style>
-.button-secondary {
-    background-color: #dee0e2;
-    color:black;
-    box-shadow: 0 2px 0 #b5babe;
-    font-size: 1em;
-    outline-offset: -1px;
-    outline: 1px solid transparent;
-    border-radius: 0;
-  }
+	.button-secondary {
+		background-color: #dee0e2;
+		color:black;
+		box-shadow: 0 2px 0 #b5babe;
+		font-size: 1em;
+		outline-offset: -1px;
+		outline: 1px solid transparent;
+		border-radius: 0;
+	}
+
+	/* modal */
+	.dialog{
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+		background-color:rgba(0,0,0,0.5);
+		height:100%;
+		padding:15px;
+		position:fixed;
+		left:0;
+		top:0;
+		right:0;
+		bottom:0;
+		text-align:center;
+		width:100%;
+		z-index:0
+	}
+	.dialog[aria-hidden="true"]{
+		opacity:0;
+		visibility:hidden
+	}
+	.dialog[aria-hidden="false"]{
+		opacity:1;
+		visibility:visible;
+		z-index:11
+	}
+	@media (min-width: 641px){
+		.dialog{
+			padding:30px
+		}
+	}
+	@media (min-width: 1020px){
+		.dialog{
+			padding:0
+		}
+	}
+	.dialog:before{
+		content:'';
+		display:inline-block;
+		height:100%;
+		margin-right:-.25em;
+		vertical-align:middle
+	}
+	.dialog-holder{
+		background-color:#fff;
+		border:10px solid #fff;
+		display:inline-block;
+		margin:auto;
+		max-width:530px;
+		position:relative;
+		vertical-align:middle
+	}
+	.dialog-heading{
+		font-family:"nta",Arial,sans-serif;
+		font-size:36px;
+		line-height:1.11111;
+		font-weight:700;
+		text-transform:none;
+		margin-top:.625em;
+		margin-bottom:.41667em
+	}
+	@media (max-width: 640px){
+		.dialog-heading{
+			font-size:24px;
+			line-height:1.04167
+		}
+	}
+	@media (min-width: 641px){
+		.dialog-heading{
+			margin-top:.41667em;
+			margin-bottom:.55556em
+		}
+	}
+	.dialog-content{
+		outline:none;
+		padding:1em;
+		text-align:left
+	}
+	.dialog .form-group{
+		float:none
+	}
+	.dialog .form-control,.dialog .form-control-textarea{
+		width:100%
+	}
+	.dialog-close{
+		text-indent:-119988px;
+		overflow:hidden;
+		text-align:left;
+		text-transform:capitalize;
+		background-color:transparent;
+		border:0 none;
+		cursor:pointer;
+		height:22px;
+		margin:auto;
+		padding:0;
+		position:absolute;
+		top:5px;
+		right:5px;
+		width:22px
+	}
+	.dialog-close span{
+		cursor:pointer
+	}
+	.dialog-cancel{
+		display:inline-block;
+		font-size:1em;
+		line-height:1.25;
+		margin-right:.78947em;
+		padding:.52632em .78947em .26316em
+	}
+	.dialog-cancel:focus,.dialog-cancel:active{
+		outline:none
+	}
+	.dialog-actions .button{
+		width:auto
+	}
+	.error{
+		margin-right:15px
+	}
+	.error .error-message{
+		color:#b10e1e;
+		font-weight:bold
+	}
+	.error .form-control,.error .form-control-textarea{
+		border:4px solid #b10e1e
+	}
+	.error .form-hint{
+		margin-bottom:0
+	}
+	.error,.error-summary{
+		border-left:4px solid #b10e1e;
+		padding-left:10px
+	}
+	@media (min-width: 641px){
+		.error,.error-summary{
+			border-left:5px solid #b10e1e;
+			padding-left:15px
+		}
+	}
+	.error-message{
+		font-family:"nta",Arial,sans-serif;
+		font-size:19px;
+		line-height:1.31579;
+		font-weight:400;
+		text-transform:none;
+		display:block;
+		clear:both;
+		margin:0;
+		padding:5px 0 7px 0
+	}
+	@media (max-width: 640px){
+		.error-message{
+			font-size:16px;
+			line-height:1.25
+		}
+	}
+	.error-summary{
+		border:4px solid #b10e1e;
+		margin-top:15px;
+		margin-bottom:15px;
+		padding:15px 10px
+	}
+	@media (min-width: 641px){
+		.error-summary{
+			border:5px solid #b10e1e;
+			margin-top:30px;
+			margin-bottom:30px;
+			padding:20px 15px 15px 15px
+		}
+	}
+	.error-summary:focus{
+		outline:3px solid #ffbf47
+	}
+	.error-summary .error-summary-heading{
+		margin-top:0
+	}
+	.error-summary p{
+		margin-bottom:10px
+	}
+	.error-summary .error-summary-list{
+		padding-left:0
+	}
+	@media (min-width: 641px){
+		.error-summary .error-summary-list li{
+			margin-bottom:5px
+		}
+	}
+	.error-summary .error-summary-list a{
+		color:#b10e1e;
+		font-weight:bold;
+		text-decoration:underline
+	}
+	.icon{
+		background-size:100%;
+		background-repeat:no-repeat;
+		cursor:default;
+		display:block;
+		height:22px;
+		text-align:center;
+		width:22px
+		}
+		.icon-close{
+		background-image:url("/public/images/bsa/icon-close.png");
+		display:block
+	}
+	@media (min-width: 641px) {
+		.form-group {
+			margin-bottom: 30px;
+		}
+	}
+	@media (min-width: 641px) {
+		p {
+			margin-top: .26316em;
+			margin-bottom: 1.05263em;
+		}
+	}
+	.modals {
+		margin-top: 1em;
+		margin-left: 1em;
+	}
 </style>
 <main id="content" role="main">
-     <a href="javascript:history.go(-1)" class="link-back">Back</a>
-     <div class="grid-row">
-          <div class="column-two-thirds">
-               <header class="page-header">
-                    <h1 class="page-header--lede heading-large">What country are you moving to?</h1>
-               </header>
-               <form action="moving-date" method="get" class="form">
-                      <div class="form-group">
-                           <label class="form-label" for="lineone">Country</label>
-                           <input class="form-control" id="registration-number" name="address-lineone" type="text">
-                      </div>
-                     <div class="form-group">
-                          <input class="button" type="submit" value="Continue">
-                     </div>
-                     <p class="navigation"><a class="cancel" href="start">Cancel</a></p>
-               </form>
-          </div>
-     </div>
-</main>
+	<a href="javascript:history.go(-1)" class="link-back">Back</a>
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<header class="page-header">
+				<h1 class="page-header--lede heading-large">What country are you moving to?</h1>
+			</header>
+			<form action="moving-date" method="get" class="form">
+				<div class="form-group">
+					<label class="form-label" for="lineone">Country</label>
+					<input class="form-control" id="registration-number" name="address-lineone" type="text">
+				</div>
+				<div class="form-group">
+					<input class="button" type="submit" value="Continue">
+				</div>
+				<p class="navigation">
+					<a class="cancel" href="#" data-toggle="dialog" data-target="dialog-4">Cancel</a>
+					<!-- start was the href -->
+				</p>
+				<div class="dialog" id="dialog-4" aria-hidden="true">
+					<div class="dialog-holder" aria-labelledby="dialog-title-4" aria-describedby="dialog-content-4" role="alertdialog">
+						<div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
+							<h1 class="dialog-heading" id="dialog-title-4">Review result</h1>
+							<!-- <form action="123" id="123" class="form"> -->
+								<div class="form-group">
+									<fieldset>
+										<legend>
+											<h1 class="heading-small">What is your decision?</h1>
+										</legend>
+										<div class="multiple-choice">
+											<input id="radio-2" type="radio" name="radio-group-modal" value="reason1">
+											<label for="radio-2">Approved with evidence</label>
+										</div>
+										<div class="multiple-choice">
+											<input id="radio-3" type="radio" name="radio-group-modal" value="reason2">
+											<label for="radio-3">Approved but no evidence provided</label>
+										</div>
+										<div class="multiple-choice">
+											<input id="radio-4" type="radio" name="radio-group-modal" value="reason3">
+											<label for="radio-4">Not approved</label>
+										</div>
+									</fieldset>
+								</div>
+								<div class="dialog-actions">
+									<input id="submit-btn" class="button buttonSubmit" type="submit" value="Submit" style="font-size: 16px;" />
+									<br><br>
+									<a class="dialog-cancel" href="#" style="margin-left: -10px; font-size:16px;">Cancel</a>
+								</div>
+								<button class="dialog-close" aria-label="close" type="button">
+									<span class="icon icon-close">x</span>
+								</button>
+								<!-- </form> -->
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</main>
 
-{% endblock %}
+	{% endblock %}
