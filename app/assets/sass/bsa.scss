@@ -333,9 +333,6 @@ td.strong {
     border: 1px solid white;
   }
 }
-.button-secondary:hover, .button-secondary:focus {
-  background-color: #00458C;
-}
 
 .multiple-choice {
   background-color: #DEE0E2;
@@ -416,6 +413,19 @@ td.strong {
 
 .button {
   padding-bottom: 10px;
+}
+
+.button.button-secondary:hover, .button.button-secondary:focus {
+  background-color: #00458C;
+}
+
+.button.button-secondary {
+    background-color: #005EA5;
+    color: white;
+    box-shadow: 0 2px 0 #00458C;
+    outline-offset: -1px;
+    outline: 1px solid transparent;
+    border-radius: 0;
 }
 
 .form-date .form-group-year {

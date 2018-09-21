@@ -18,12 +18,12 @@ $(document).ready(function () {
   showHideContent.init()
 })
 
-<!-- another-pension -->
+// another-pension
 $("#radiobtn-country-yes").change(function() {
 	$(".pickCountry").removeClass("visually-hidden");
 });
 
-<!-- contact3rd page -->
+// contact3rd page
 $("#radiobtn-email").change(function() {
 	$(".show-email").removeClass("visually-hidden");
   $(".show-post").addClass("visually-hidden");
