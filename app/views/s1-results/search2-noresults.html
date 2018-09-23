@@ -14,6 +14,164 @@ NHSBSA Prototype
     outline-offset: -1px;
     outline: 1px solid transparent;
     border-radius: 0;
+
+.internal-table-results td:nth-child(1) {
+	width: 15%;
+}
+.internal-table-results td:nth-child(2) {
+	width: 15%;
+}
+.internal-table-results td:nth-child(3) {
+	width: 15%;
+}
+.internal-table-results td:nth-child(4) {
+	width: 15%;
+}
+.internal-table-results td:nth-child(5) {
+	width: 15%;
+}
+.internal-table-results td:nth-child(6) {
+	width: 5%;
+}
+
+/* search results */
+#example caption {
+	background:#F8F8F8;
+	padding:5px;
+	text-align:center;
+}
+#example th {
+	background: #bbb;
+	font-weight:bold;
+}
+#example th,
+#example td {
+	border: 1px solid #fff;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+#example tbody th{
+	background:transparent;
+}
+#example table#simpleTable thead th {
+	background: #DEE0E2 url(/public/images/bg.gif) no-repeat center right;
+}
+#example table#simpleTable thead th a {
+	background:transparent;
+	display:block;
+}
+#example table#simpleTable th.headerSortUp {
+	background-image: url(/public/images/asc.gif);
+}
+#example table#simpleTable th.headerSortDown {
+	background-image: url(/public/images/desc.gif);
+}
+#example .hide {
+	display:none;
+}
+
+.internal-table-results tbody tr:hover {
+	background-color: #F8F8F8;
+}
+#button-next {
+	background-color: #005EB8;
+}
+#button-next:hover {
+	background-color: #4276B8;
+}
+
+/* pagination */
+.pagination-container {
+	margin-bottom: 30px;
+}
+.page-numbers-container {
+	margin-top: 0px;
+	padding-top: 30px;
+	overflow: hidden;
+}
+.page-numbers-container .previous {
+	float: left;
+	text-align: left;
+}
+.page-numbers-container .next {
+	float: right;
+	text-align: right;
+}
+.page-numbers-container .next, .page-numbers-container .previous {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.page-numbers-container .previous a {
+	padding-left: 30px;
+	background-image: url(/public/images/bsa/arrow-pagination-left.svg);
+	background-position: 0 4px;
+}
+.page-numbers-container .next a {
+	padding-right: 30px;
+	background-image: url(/public/images/bsa/arrow-pagination-right.svg);
+	background-position: 100% 4px;
+}
+.page-numbers-container .next a, .page-numbers-container .previous a {
+	display: block;
+	background-repeat: no-repeat;
+	background-size: 17px 14px;
+}
+.pagination {
+	margin: 0 auto;
+	text-align: center;
+}
+.pagination ul {
+	display: inline-block;
+	margin: 0 10px;
+}
+ul.list-inline {
+	list-style: none;
+	padding-left: 0;
+}
+ol, ul, nav ol, nav ul {
+	list-style: inherit;
+}
+.pagination ul>li {
+	padding-left: 0;
+}
+ul.list-inline li {
+	display: inline-block;
+}
+.pagination ul>li:first-child>a {
+	border-left-width: 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.pagination ul>.active span, .pagination ul>.active a {
+	color: #999;
+	cursor: default;
+	background: transparent;
+}
+.pagination ul>li>a {
+	padding: 4px 12px;
+	line-height: 20px;
+	text-decoration: none;
+}
+.visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+.pagination ul>li {
+	padding-left: 0;
+}
+
+/* custom pagination */
+#next,
+#previous {
+	margin-left: 30%;
+	margin-right: 30%;
 }
 </style>
 <main id="content" role="main">
@@ -49,23 +207,95 @@ NHSBSA Prototype
                       <input class="button" type="submit" value="Search">
                  </div>
 
-
-               <div class="column-full" style="background-color:#FFFFFF">
-                              <div class="form-group form-group-error">
-                                   <h2 class="heading-medium" >No results found</h2>
-                                   <span class="heading-small">Did you check your spelling?</span>
-                                   <p>Complete all the fields: date of birth, first name and last name. </p>
-                              </div>
-                         <br>
-                         <div class="form-group">
-                              <form action="moving-country">
-                                   <input class="button button-secondary" type="submit" id="button2" value="Create an S1 entitlement">
-                             </form>
-                         </div>
-               </div>
             </form>
-          </div>
 
+          </div>
+          <div id="example" class="column-full" style="padding-left:20px; padding-top:20px;">
+		<!-- <div class="column-full" style="padding-left:20px; padding-top:20px;"> -->
+    			<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Search results</h1>
+    			<table id="simpleTable" class="internal-table-results">
+    				<!-- <table class="internal-table-results"> -->
+    					<caption id="caption" role="alert" aria-live="polite" style="display: none;">Search results not sorted</caption>
+    					<thead>
+    						<tr>
+    							<th role="columnheader" aria-sort="none" scope="col" class="header">
+    								<a href="#1" id="OHS number|asc" title="Sort 1 ascending">OHS number</a>
+    							</th>
+    							<th role="columnheader" aria-sort="none" scope="col" class="header">
+    								<a href="#2" id="Full name|asc" title="Sort 2 ascending">Full name</a>
+    							</th>
+    							<th role="columnheader" aria-sort="none" scope="col" class="header">
+    								<a href="#3" id="Date of birth|asc" title="Sort 3 ascending">Date of birth</a>
+    							</th>
+    							<th role="columnheader" aria-sort="none" scope="col" class="header">
+    								<a href="#4" id="Postcode|asc" title="Sort 4 ascending">Postcode</a>
+    							</th>
+    							<th role="columnheader" aria-sort="none" scope="col" class="header">
+    								<a href="#5" id="Start date|asc" title="Sort 5 ascending">Start date</a>
+    							</th>
+    							<th role="columnheader" aria-sort="none" scope="col" class="header">
+    								<a href="#6" id="End date|asc" title="Sort 6 ascending">End date</a>
+    							</th>
+    							<!-- <th role="columnheader" aria-sort="none" scope="col">
+    								<a href="#7" id="Residency status|asc" title="Sort 7 ascending">Residency status</a>
+    							</th> -->
+    						</tr>
+    					</thead>
+    					<tbody>
+    						<tr>
+    							<td><a href="residencystatus-fail">62345678</a></td>
+    							<td>Gordon Robinson</td>
+    							<td>02/03/1975</td>
+    							<td>NE123A</td>
+    							<td>-</td>
+    							<td>-</td>
+    							<!-- <td>
+    								<a id="button-next" class="button" href="#" role="button" style="font-size: 16px; margin: -5px 0 10px 0;" data-toggle="dialog" data-target="dialog-4">Review result</a>
+    							</td> -->
+    						</tr>
+    						<tr>
+    							<td>12345678</td>
+    							<td>Gordon Robinson</td>
+    							<td>02/03/1975</td>
+    							<td>SR346A</td>
+    							<td>14/06/2016</td>
+    							<td>16/06/2016</td>
+    							<!-- <td>Passed</td> -->
+    						</tr>
+    					</tbody>
+    				</table>
+
+    				<nav id="next" class="page-numbers-container pagination-container" aria-label="Pagination" style="margin-left: 35%; margin-right: 35%;">
+    					<div class="next">
+    						<a href="#next" rel="next">
+    							Next <span class="hidden-mobile">page</span>
+    						</a>
+    					</div><div class="pagination"><ul class="list-inline">
+    						<li class="active"><a href="#next"><span class="visuallyhidden">Page </span>1</a></li>
+    						<li><a id="two" href="#next"><span class="visuallyhidden">Page </span>2</a></li>
+    						<li>…</li>
+    						<li><a href="#next"><span class="visuallyhidden">Page </span>92</a></li>
+    					</ul></div>
+    				</nav>
+
+    				<nav id="previous" class="page-numbers-container pagination-container visually-hidden" aria-label="Pagination">
+    					<div class="previous">
+    						<a href="#previous" rel="previous">
+    							Previous <span class="hidden-mobile">page</span>
+    						</a>
+    					</div><div class="next">
+    						<a href="#previous" rel="next">
+    							Next <span class="hidden-mobile">page</span>
+    						</a>
+    					</div><div class="pagination"><ul class="list-inline">
+    						<li><a id="one" href="#previous"><span class="visuallyhidden">Page </span>1</a></li>
+    						<li class="active"><a href="#previous"><span class="visuallyhidden">Page </span>2</a></li>
+    						<li><a href="#previous"><span class="visuallyhidden">Page </span>3</a></li>
+    						<li>…</li>
+    						<li><a href="#previous"><span class="visuallyhidden">Page </span>92</a></li>
+    					</ul></div>
+    				</nav>
+			</div>
      </div>
 
 </main>
