@@ -1,0 +1,47 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+     <a href="javascript:history.go(-1)" class="link-back">Back</a>
+     <div class="grid-row">
+          <div class="column-two-thirds">
+               <header class="page-header">
+                    <h1 class="page-header--lede heading-large">Search for dependant</h1>
+               </header>
+               <form action="search1-noresults" method="get" class="form">
+
+                           <div class="form-group">
+                                <label class="form-label" for="ni-number">
+                                 Unique identifier
+                                 <span class="form-hint">
+                                   Can be one of these types:
+                                   <br>
+                                   - National insurance number e.g. QQ123456A
+                                   <br>
+                                   - Medbens reference number e.g. 1234567 (max 7 digits)
+                                   <br>
+                                   - OHS reference number e.g. 2000001
+                                 </span>
+                              </label>
+                                <input class="form-control form-control-3-4" id="id" type="text" name="id" max="20">
+                           </div>
+                 <div class="form-group">
+                      <input class="button" type="submit" value="Search">
+                 </div>
+               </form>
+          </div>
+
+
+
+
+
+
+     </div>
+</main>
+
+{% endblock %}

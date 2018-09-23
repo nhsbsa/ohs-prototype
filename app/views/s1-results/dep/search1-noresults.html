@@ -1,0 +1,72 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+<style>
+.button-secondary {
+    background-color: #dee0e2;
+    color:black;
+    box-shadow: 0 2px 0 #b5babe;
+    font-size: 1em;
+    outline-offset: -1px;
+    outline: 1px solid transparent;
+    border-radius: 0;
+  }
+</style>
+<main id="content" role="main">
+
+     <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+     <div class="grid-row">
+          <div class="column-two-thirds">
+
+               <header class="page-header">
+
+                    <h1 class="page-header--lede heading-large">Search for dependant</h1>
+               </header>
+
+               <form action="search1-noresults" method="get" class="form">
+
+                 <div class="form-group">
+                      <label class="form-label" for="ni-number">
+                       Unique identifier
+                       <span class="form-hint">
+                         Can be one of these types:
+                         <br>
+                         - National insurance number e.g. QQ123456A
+                         <br>
+                         - Medbens reference number e.g. 1234567 (max 7 digits)
+                         <br>
+                         - OHS reference number e.g. 2000001
+                       </span>
+                    </label>
+                      <input class="form-control form-control-3-4" id="id" type="text" name="id" max="20">
+                 </div>
+
+                 <div class="form-group">
+                      <input class="button" type="submit" value="Search">
+                 </div>
+
+               </form>
+               <div class="column-full" style="background-color:#FFFFFF">
+                              <div class="form-group form-group-error">
+                                   <h2 class="heading-medium" >No results found</h2>
+                              </div>
+                         <br>
+                         <div class="form-group">
+                              <form action="search2">
+                                   <input class="button button-secondary" type="submit" id="button2" value="Advanced search">
+                             </form>
+                         </div>
+               </div>
+
+          </div>
+
+     </div>
+
+</main>
+
+{% endblock %}

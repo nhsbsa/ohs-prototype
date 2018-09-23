@@ -22,7 +22,7 @@ router.get(/another-pension-form/, function (req,res){
     res.redirect('contact3rd');
   }
   else {
-    res.redirect('another-pension');
+    res.redirect('contact-address');
   }
 });
 

@@ -20,28 +20,20 @@
   <div class="grid-row">
       <div class="column-two-thirds">
               <header class="page-header">
-                  <h1 class="page-header--lede heading-large">Are you in payment of a pension from any other EEA or Switzerland country?</h1>
+                  <h1 class="page-header--lede heading-large">Add contact details</h1>
               </header>
 
-              <form action="another-pension-form" method="get" class="form">
-                        <div class="form-group">
-                            <fieldset class="inline">
-                                <legend class="visually-hidden">
-                                </legend>
-                                <div class="multiple-choice">
-                                    <input id="radiobtn-country-yes" type="radio" name="anotherCountry" value="yes"/>
-                                    <label for="yes">Yes</label>
-                                </div>
-                                <div class="multiple-choice">
-                                    <input id="radiobtn-country-no" type="radio" name="anotherCountry" value="no"/>
-                                    <label for="no">No</label>
-                                </div>
-                            </fieldset>
+              <form action="check-your-answers" method="get" class="form">
+
+                          <div class="form-group">
+                             <label class="form-label" for="first-name-2">Telephone number (optional)</label>
+                             <span class="form-hint">For international numbers include the country code</span>
+                             <input class="form-control" id="first-name-2" name="landline" type="text">
                         </div>
-                        <div class="form-group pickCountry visually-hidden">
-                          <label class="form-label" for="full-name-f1">Country</label>
-                          <input class="form-control" id="full-name-f1" type="text">
-                          <a href="another-pension2">add another country</a>
+                        <div class="form-group">
+                              <label class="form-label" for="last-name-2">Email address (optional)</label>
+                              <span class="form-hint">We’ll only use this to send you entitlement updates</span>
+                              <input class="form-control" id="last-name-2" name="email" type="text">
                         </div>
                         <div class="form-group">
                             <input class="button" type="submit" value="Continue">
@@ -85,7 +77,7 @@
                                 <!-- </form> -->
                               </div>
                             </div>
-                          </div>      
+                          </div>
               </form>
       </div>
   </div>
