@@ -19,7 +19,7 @@
 
 
         <!-- only add a heading for a list if there is more than one list -->
-        <form action="moving-country" method="get" class="form">
+        <form action="moving-country" id="check-person-details-form" method="get" class="form">
             <h2 class="heading-medium">
               Personal details
             </h2>
@@ -80,7 +80,7 @@
                              </fieldset>
                          </div>
                        <div class="dialog-actions">
-                         <a class="button buttonSubmit" href="search1" style="font-size: 1em;">Submit</a>
+                         <input id="submit-btn" class="button buttonSubmit" type="submit" value="Submit" style="font-size: 16px;" />
 
                          <br><br>
                          <a class="dialog-cancel" href="#" style="margin-left: -10px; font-size: 1em;">Cancel</a>
@@ -96,5 +96,18 @@
       </div>
     </div>
 </main>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script>
+  $("#submit-btn").on("click", function() {
+    var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
+
+    if (modalAnswer != false && modalAnswer == 'yes') {
+      $("#check-person-details-form").attr("action", "/s1/search1");
+    } else {
+      $("#check-person-details-form").attr("action", "/s1/check-person-details");
+    }
+  });
+</script>
 
 {% endblock %}
