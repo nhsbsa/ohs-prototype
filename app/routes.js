@@ -35,4 +35,14 @@ router.get(/dependant-age-form/, function (req,res){
   }
 });
 
+router.get(/update-entitlement-form/, function (req,res){
+  if(req.query.updateEntitlement === "yes"){
+    res.redirect('check-person-details');
+  }
+  else {
+    res.redirect('search2-results');
+  }
+});
+
+
 module.exports = router

@@ -226,19 +226,19 @@ span.status-tag-low {
 
                <form action="check-person-details" method="get" class="form">
 
-                    <div class="form-group">
+                   <div class="form-group">
                          <label class="form-label" for="lineone">Date of birth</label>
-                         <input class="form-control" id="registration-number" name="address-lineone" type="text">
+                         <input class="form-control" id="registration-number" name="address-lineone" type="text" value="15/01/1978">
                    </div>
 
-                         <div class="form-group">
+                  <div class="form-group">
                               <label class="form-label" for="lineone">First name</label>
-                              <input class="form-control"  id="registration-number" name="address-linetwo" type="text">
+                              <input class="form-control"  id="registration-number" name="address-linetwo" type="text" value="Sarah">
                   </div>
 
-                              <div class="form-group">
+                  <div class="form-group">
                                    <label class="form-label" for="lineone">Last name</label>
-                                   <input class="form-control"  id="registration-number" name="address-linetwo" type="text">
+                                   <input class="form-control"  id="registration-number" name="address-linetwo" type="text" value="Philip">
                   </div>
 
                  <div class="form-group">
@@ -285,8 +285,8 @@ span.status-tag-low {
     					<tbody>
     						<tr>
     						<!--	<td><a href="#">62345678</a></td> -->
-    							<td>Gordon Robinson</td>
-    							<td>02 January 1975</td>
+    							<td>Sarah Philip</td>
+    							<td>05 January 1978</td>
     							<td>Calle Aduana 90<br>
                   Labastida, Álava<br>
                   01330, <br>
@@ -294,34 +294,46 @@ span.status-tag-low {
     							<td><a href="/public/images/S1-EN.pdf" target="_blank">S1 healthcare certificate</a><br>(opens in a new tab)</td>
     							<td>18 September 2018</td>
                   <td><span class="status-tag-medium font-xsmall" style="margin-left:-5px">Pending</span></td>
-                  <td><a href="dep/dependant-age">Add dependant</a></td>
+                  <td>
+                      <p class="navigation">
+                        <a class="cancel" href="#" data-toggle="dialog" data-target="dialog-4">Cancel and create new entitlement</a>
+                      </p>
+                  </td>
     							<!-- <td>
     								<a id="button-next" class="button" href="#" role="button" style="font-size: 16px; margin: -5px 0 10px 0;" data-toggle="dialog" data-target="dialog-4">Review result</a>
     							</td> -->
     						</tr>
     						<tr>
     						<!--	<td>12345678</td> -->
-    							<td>Gordon Robinson</td>
-    							<td>02 January 1975</td>
+    							<td>Sarah Philip</td>
+    							<td>05 January 1978</td>
     							<td>Pappelallee 96,<br>
                     Frankenberg, Freistaat Sachsen<br>
                     09665, Germany</td>
     							<td><a href="/public/images/S1-EN.pdf" target="_blank">S1 healthcare certificate</a><br>(opens in a new tab)</td>
     							<td>16 July 2016</td>
                   <td><span class="status-tag-high font-xsmall" style="margin-left:-5px">Closed</span></td>
-                  <td>-</td>
+                  <td>
+                      <p class="navigation">
+                        <a class="cancel" href="#" data-toggle="dialog" data-target="dialog-4">Cancel and create new entitlement</a>
+                      </p>
+                  </td>
     						</tr>
                 <tr>
                   <!-- <td>12345678</td> -->
-                  <td>Gordon Robinson</td>
-                  <td>02 January 1975</td>
+                  <td>Sarah Philip</td>
+                  <td>05 January 1978</td>
                   <td>Strada Constructorilor nr 13<br>
                     bloc E3, Scara 5, ap. 73<br>
                     700850, Galati, Romania</td>
                   <td><a href="/public/images/S1-EN.pdf" target="_blank">S1 healthcare certificate</a><br>(opens in a new tab)</td>
                   <td>16 July 2016</td>
                   <td><span class="status-tag-low font-xsmall" style="margin-left:-5px">Registered</span></td>
-                  <td><a href="dep/dependant-age">Add dependant</a></td>
+                  <td>
+                    <p class="navigation">
+                      <a class="cancel" href="#" data-toggle="dialog" data-target="dialog-4">Cancel and create new entitlement</a>
+                    </p>
+                  </td>
                 </tr>
     					</tbody>
     				</table>
@@ -378,9 +390,44 @@ span.status-tag-low {
                         </form>
                     </div>
             </div>
-
-
-
+            <form action="update-entitlement-form" method="get" class="form">
+                <!-- modal starts here  -->
+                <div class="dialog" id="dialog-4" aria-hidden="true">
+                  <div class="dialog-holder" aria-labelledby="dialog-title-4" aria-describedby="dialog-content-4" role="alertdialog">
+                    <div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
+                      <!-- <form action="123" id="123" class="form"> -->
+                          <header class="page-header">
+                              <h1 class="page-header--lede heading-medium" style="margin-top: -1em;">You are about to cancel current entitlement and create a new S1 entitlement</h1>
+                          </header>
+                          <label class="form-label" for="lineone">Are you sure you want to update the entitled?</label>
+                          <div class="form-group">
+                              <fieldset class="inline">
+                                  <legend class="visually-hidden">
+                                  </legend>
+                                  <div class="multiple-choice">
+                                    <input id="yes" type="radio" name="updateEntitlement" value="yes">
+                                    <label for="yes">Yes</label>
+                                  </div>
+                                  <div class="multiple-choice">
+                                    <input id="no" type="radio" name="updateEntitlement" value="no">
+                                    <label for="no">No</label>
+                                  </div>
+                              </fieldset>
+                          </div>
+                        <div class="dialog-actions">
+                            <div class="form-group">
+                                 <input class="button" type="submit" value="Submit">
+                            </div>
+                            <a class="dialog-cancel" href="#" style="margin-left: -10px; font-size: 1em;">Cancel</a>
+                        </div>
+                        <button class="dialog-close" aria-label="close" type="button">
+                          <span class="icon icon-close">x</span>
+                        </button>
+                        <!-- </form> -->
+                      </div>
+                    </div>
+                  </div>
+            </form>
 			</div>
      </div>
 
