@@ -14,7 +14,7 @@ NHSBSA Prototype
     outline-offset: -1px;
     outline: 1px solid transparent;
     border-radius: 0;
-
+}
 .internal-table-results td:nth-child(1) {
 	width: 15%;
 }
@@ -69,7 +69,6 @@ NHSBSA Prototype
 #example .hide {
 	display:none;
 }
-
 .internal-table-results tbody tr:hover {
 	background-color: #F8F8F8;
 }
@@ -79,7 +78,6 @@ NHSBSA Prototype
 #button-next:hover {
 	background-color: #4276B8;
 }
-
 /* pagination */
 .pagination-container {
 	margin-bottom: 30px;
@@ -170,8 +168,48 @@ ul.list-inline li {
 /* custom pagination */
 #next,
 #previous {
-	margin-left: 30%;
-	margin-right: 30%;
+  margin-right: 20%;
+  padding-top: 35px;
+  padding-left: 60px;
+}
+span.status-tag-medium {
+    background-color: #F47738;
+    color: #fff;
+    margin-left: 0.75em;
+    vertical-align: baseline;
+    padding: 2px 9px 1px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    top: -0.05em;
+}
+span.status-tag-high {
+    background-color: #B10E1E;
+    color: #fff;
+    margin-left: 0.75em;
+    vertical-align: baseline;
+    padding: 2px 16px 1px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    top: -0.05em;
+}
+span.status-tag-low {
+    background-color: #85994b;
+    color: #fff;
+    margin-left: 0.75em;
+    vertical-align: baseline;
+    padding: 2px 18px 1px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    top: -0.05em;
 }
 </style>
 <main id="content" role="main">
@@ -219,23 +257,26 @@ ul.list-inline li {
     					<thead>
     						<tr>
     							<th role="columnheader" aria-sort="none" scope="col" class="header">
-    								<a href="#1" id="OHS number|asc" title="Sort 1 ascending">OHS number</a>
-    							</th>
-    							<th role="columnheader" aria-sort="none" scope="col" class="header">
     								<a href="#2" id="Full name|asc" title="Sort 2 ascending">Full name</a>
     							</th>
     							<th role="columnheader" aria-sort="none" scope="col" class="header">
     								<a href="#3" id="Date of birth|asc" title="Sort 3 ascending">Date of birth</a>
     							</th>
     							<th role="columnheader" aria-sort="none" scope="col" class="header">
-    								<a href="#4" id="Postcode|asc" title="Sort 4 ascending">Postcode</a>
+    								<a href="#4" id="Address|asc" title="Sort 4 ascending">Address</a>
     							</th>
     							<th role="columnheader" aria-sort="none" scope="col" class="header">
-    								<a href="#5" id="Start date|asc" title="Sort 5 ascending">Start date</a>
+    								<a href="#5" id="Entitlement type|asc" title="Sort 5 ascending">Entitlement type</a>
     							</th>
     							<th role="columnheader" aria-sort="none" scope="col" class="header">
-    								<a href="#6" id="End date|asc" title="Sort 6 ascending">End date</a>
+    								<a href="#6" id="Date issued|asc" title="Sort 6 ascending">Date issued</a>
     							</th>
+                  <th role="columnheader" aria-sort="none" scope="col" class="header">
+    								<a href="#7" id="Status|asc" title="Sort 7 ascending">Status</a>
+    							</th>
+                  <th role="columnheader" aria-sort="none" scope="col" class="header">
+                    <a href="#1" id="More|asc" title="Sort 1 ascending">More</a>
+                  </th>
     							<!-- <th role="columnheader" aria-sort="none" scope="col">
     								<a href="#7" id="Residency status|asc" title="Sort 7 ascending">Residency status</a>
     							</th> -->
@@ -243,58 +284,103 @@ ul.list-inline li {
     					</thead>
     					<tbody>
     						<tr>
-    							<td><a href="residencystatus-fail">62345678</a></td>
+    						<!--	<td><a href="#">62345678</a></td> -->
     							<td>Gordon Robinson</td>
-    							<td>02/03/1975</td>
-    							<td>NE123A</td>
-    							<td>-</td>
-    							<td>-</td>
+    							<td>02 January 1975</td>
+    							<td>Calle Aduana 90<br>
+                  Labastida, Álava<br>
+                  01330, <br>
+                  Spain</td>
+    							<td><a href="/public/images/S1-EN.pdf" target="_blank">S1 healthcare certificate</a><br>(opens in a new tab)</td>
+    							<td>18 September 2018</td>
+                  <td><span class="status-tag-medium font-xsmall" style="margin-left:-5px">Pending</span></td>
+                  <td><a href="dep/dependant-age">Add dependant</a></td>
     							<!-- <td>
     								<a id="button-next" class="button" href="#" role="button" style="font-size: 16px; margin: -5px 0 10px 0;" data-toggle="dialog" data-target="dialog-4">Review result</a>
     							</td> -->
     						</tr>
     						<tr>
-    							<td>12345678</td>
+    						<!--	<td>12345678</td> -->
     							<td>Gordon Robinson</td>
-    							<td>02/03/1975</td>
-    							<td>SR346A</td>
-    							<td>14/06/2016</td>
-    							<td>16/06/2016</td>
-    							<!-- <td>Passed</td> -->
+    							<td>02 January 1975</td>
+    							<td>Pappelallee 96,<br>
+                    Frankenberg, Freistaat Sachsen<br>
+                    09665, Germany</td>
+    							<td><a href="/public/images/S1-EN.pdf" target="_blank">S1 healthcare certificate</a><br>(opens in a new tab)</td>
+    							<td>16 July 2016</td>
+                  <td><span class="status-tag-high font-xsmall" style="margin-left:-5px">Closed</span></td>
+                  <td>-</td>
     						</tr>
+                <tr>
+                  <!-- <td>12345678</td> -->
+                  <td>Gordon Robinson</td>
+                  <td>02 January 1975</td>
+                  <td>Strada Constructorilor nr 13<br>
+                    bloc E3, Scara 5, ap. 73<br>
+                    700850, Galati, Romania</td>
+                  <td><a href="/public/images/S1-EN.pdf" target="_blank">S1 healthcare certificate</a><br>(opens in a new tab)</td>
+                  <td>16 July 2016</td>
+                  <td><span class="status-tag-low font-xsmall" style="margin-left:-5px">Registered</span></td>
+                  <td><a href="dep/dependant-age">Add dependant</a></td>
+                </tr>
     					</tbody>
     				</table>
 
-    				<nav id="next" class="page-numbers-container pagination-container" aria-label="Pagination" style="margin-left: 35%; margin-right: 35%;">
-    					<div class="next">
-    						<a href="#next" rel="next">
-    							Next <span class="hidden-mobile">page</span>
-    						</a>
-    					</div><div class="pagination"><ul class="list-inline">
-    						<li class="active"><a href="#next"><span class="visuallyhidden">Page </span>1</a></li>
-    						<li><a id="two" href="#next"><span class="visuallyhidden">Page </span>2</a></li>
-    						<li>…</li>
-    						<li><a href="#next"><span class="visuallyhidden">Page </span>92</a></li>
-    					</ul></div>
-    				</nav>
+            <div class="column-half" style="float:right;">
+        				<nav id="next" class="page-numbers-container pagination-container" aria-label="Pagination">
+            					<div class="next">
+            						<a href="#next" rel="next">
+            							Next <span class="hidden-mobile">page</span>
+            						</a>
+            					</div><div class="pagination"><ul class="list-inline">
+            						<li class="active"><a href="#next"><span class="visuallyhidden">Page </span>1</a></li>
+            						<li><a id="two" href="#next"><span class="visuallyhidden">Page </span>2</a></li>
+            						<li>…</li>
+            						<li><a href="#next"><span class="visuallyhidden">Page </span>92</a></li>
+            					</ul></div>
+        				</nav>
+                <nav id="previous" class="page-numbers-container pagination-container visually-hidden" aria-label="Pagination">
+                      <div class="previous">
+                        <a href="#previous" rel="previous">
+                          Previous <span class="hidden-mobile">page</span>
+                        </a>
+                      </div>
+                      <div class="next">
+                        <a href="#previous" rel="next">Next<span class="hidden-mobile">page</span>
+                        </a>
+                      </div>
+                      <div class="pagination">
+                          <ul class="list-inline">
+                            <li>
+                              <a id="one" href="#previous"><span class="visuallyhidden">Page </span>1</a>
+                            </li>
+                            <li class="active">
+                              <a href="#previous"><span class="visuallyhidden">Page </span>2</a>
+                            </li>
+                            <li>
+                              <a href="#previous"><span class="visuallyhidden">Page </span>3</a>
+                            </li>
+                            <li>
+                              …
+                            </li>
+                            <li>
+                              <a href="#previous"><span class="visuallyhidden">Page </span>92</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="column-half" style="background-color:#FFFFFF; float: left;">
+                    <br>
+                    <div class="form-group">
+                         <form action="check-person-details">
+                              <input class="button button-secondary" type="submit" id="button2" value="Create an S1 entitlement">
+                        </form>
+                    </div>
+            </div>
 
-    				<nav id="previous" class="page-numbers-container pagination-container visually-hidden" aria-label="Pagination">
-    					<div class="previous">
-    						<a href="#previous" rel="previous">
-    							Previous <span class="hidden-mobile">page</span>
-    						</a>
-    					</div><div class="next">
-    						<a href="#previous" rel="next">
-    							Next <span class="hidden-mobile">page</span>
-    						</a>
-    					</div><div class="pagination"><ul class="list-inline">
-    						<li><a id="one" href="#previous"><span class="visuallyhidden">Page </span>1</a></li>
-    						<li class="active"><a href="#previous"><span class="visuallyhidden">Page </span>2</a></li>
-    						<li><a href="#previous"><span class="visuallyhidden">Page </span>3</a></li>
-    						<li>…</li>
-    						<li><a href="#previous"><span class="visuallyhidden">Page </span>92</a></li>
-    					</ul></div>
-    				</nav>
+
+
 			</div>
      </div>
 

@@ -1,0 +1,75 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  <a class="link-back" href='#'onclick="goBack()">Back</a>
+
+<!--<div class="breadcrumbs">
+  <ol>
+    <li><a href="/home/home_unbranded.html">Home</a></li>
+    <li><a href="reg-home">Registrations</a></li>
+    <li>S1: HDJ2123F</li>
+  </ol>
+</div>  -->
+
+  <div class="grid-row">
+      <div class="column-full">
+          <h1 class="heading-large">
+            Record for John Richards
+          </h1>
+          <p>Record ID: <span style="font-weight: 700">MB123XYZ</span></p>
+
+          <div class="tabs">
+              <div class="tabs-nav">
+                  <ul class="tabs-list">
+                    <li><a href="#tab-1" aria-selected="true">Tab 1</a></li>
+                    <li><a href="#tab-2">Tab 2</a></li>
+                    <li><a href="#tab-3">Tab 3</a></li>
+                  </ul>
+              </div>
+
+              <div class="tabs-content">
+
+                  <div class="tabs-panel" id="tab-1" role="tabpanel">
+                      <div class="tabs-panel-inner text">
+                          <h3>Tab 1</h3>
+                          <p>Some content would go here for tab 1.</p>
+                      </div>
+                  </div>
+
+                  <div class="tabs-panel" id="tab-2" aria-hidden="true">
+                      <div class="tabs-panel-inner text">
+                          <h3>Tab 2</h3>
+                          <p>Some content would go here for tab 2.</p>
+                      </div>
+                  </div>
+
+                  <div class="tabs-panel" id="tab-3" aria-hidden="true">
+                      <div class="tabs-panel-inner text">
+                          <h3>Tab 3</h3>
+                          <p>Some content would go here for tab 3.</p>
+                      </div>
+                  </div>
+
+              </div>
+
+          </div>
+
+
+      </div>
+  </div>
+</main>
+
+{% endblock %}

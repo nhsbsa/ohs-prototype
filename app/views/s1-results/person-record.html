@@ -1,0 +1,550 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  <a class="link-back" href='#'onclick="goBack()">Back</a>
+
+<!--<div class="breadcrumbs">
+  <ol>
+    <li><a href="/home/home_unbranded.html">Home</a></li>
+    <li><a href="reg-home">Registrations</a></li>
+    <li>S1: HDJ2123F</li>
+  </ol>
+</div>  -->
+
+  <div class="grid-row">
+    <div class="column-full">
+      <h1 class="heading-large">
+        Record for John Richards
+      </h1>
+      <p>Record ID: <span style="font-weight: 700">MB123XYZ</span></p>
+      <div class="tab-container">
+            <a class="tablinks active" onclick="openTab(event, 'personal')" href="#">
+                <div>
+                    <p class="heading-small">Personal details</p>
+                </div>
+            </a>
+            <a class="tablinks" onclick="openTab(event, 'health')" href="#">
+                <div>
+                  <p class="heading-small">Entitlements</p>
+                </div>
+            </a>
+            <a class="tablinks" onclick="openTab(event, 'dependants')" href="#">
+                <div>
+                  <p class="heading-small">Dependants (3)</p>
+                </div>
+            </a>
+            <a class="tablinks" onclick="openTab(event, 'invoices')" href="#">
+                <div>
+                  <p class="heading-small">Invoices</p>
+                </div>
+            </a>
+             <a class="tablinks" onclick="openTab(event, 'casehist')" href="#">
+                  <div>
+                    <p class="heading-small">Case notes</p>
+                  </div>
+            </a>
+<div class="tab-box">
+     <div id="personal" class="tabcontentActive">
+            <div class="grid-row">
+                   <div class="column-two-thirds">
+                        <table style="width:90%">
+                            <tbody>
+                                <tr>
+                                  <td>Date of birth</td>
+                                  <td>15 March 1944</td>
+                                </tr>
+                                  <tr>
+                                  <td>National Insurance number</td>
+                                  <td>AB 11 22 33 C</td>
+                                </tr>
+                                  <tr>
+                                  <td>Gender</td>
+                                  <td>Male</td>
+                                </tr>
+                                <tr>
+                                  <td>Home address</td>
+                                  <td>Calle Aduana 90
+                                    <br>Labastida
+                                    <br>Álava
+                                    <br>01330
+                                    <br>Spain</td>
+                                </tr>
+                                <tr>
+                                  <td>Telephone number</td>
+                                  <td>00 34 602 805 108</td>
+                                </tr>
+
+                                  <tr>
+                                  <td>Email address</td>
+                                  <td></td>
+                                  </tr>
+                            </tbody>
+                        </table>
+                        <p style="margin-top:30px"><a class="button" href="">Change details</a></p>
+                    </div>
+             </div>
+    </div>
+    <div id="health" class="tabcontent">
+        <table id="mainTable" >
+            <thead>
+                <tr>
+                    <th style="width:10%">Entitlement ID</th>
+                    <th style="width:13%">Form type</th>
+                    <th style="width:10%">Member state</th>
+                    <th style="width:10%">Date issued</th>
+                    <th style="width:10%">Start date</th>
+                    <th style="width:10%">End date</th>
+                    <th style="width:10%">Status</th>
+                    <th style="width:7%"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr >
+                    <td style="width:10%">MB95355</td>
+                    <td style="width:13%">Pensioner (S1)</td>
+                    <td style="width:10%">Spain</td>
+                    <td style="width:10%">3 Mar 2018</td>
+                    <td style="width:10%">3 Mar 2018</td>
+                    <td style="width:10%"></td>
+                    <td style="width:10%"><span style="padding-left: 25px; padding-right: 25px" class="status-tag-medium font-xsmall">Pending</span></td>
+                    <td nowrap style="width:7%"><details onclick="myFunction()"><summary><span class="summary">More info</span></summary></details></td>
+                </tr>
+            </tbody>
+          </table>
+          <div id="myDIV" style="display: none;">
+              <table>
+                    <tr>
+                        <td colspan="8">
+                          <div class="panel panel-border-wide s1infoExpanded">
+                            <table class="table-font-xsmall">
+                              <tbody>
+                                  <tr class="tRow">
+                                        <td class="width20p bottomCell">
+                                            <div class="dataHeader">Customer type</div>
+                                            <p>Main</p>
+                                            <div class="dataHeader">Home address</div>
+                                            <p>Calle Aduana 90<br>Labastida<br>Álava<br>01330<br>Spain</p>
+                                        </td>
+                                        <td class="width20p bottomCell"><div class="dataHeader ">Documents</div><p><i class="fas fa-file-pdf" aria-hidden="true"></i> <a href="#">S1 healthcare certificate</a><br>(opens in a new tab)<br>
+                                         <!--   <p>Issued 3 March 2018</p> -->  <p><i class="fas fa-file-pdf" aria-hidden="true"></i> <a href="#">S1 cover letter</a><br>(opens in a new tab)<br>
+                                          <!--  <p>Issued 3 March 2018</p>  --> </td>
+
+                                        <td class="width20p bottomCell"><div class="dataHeader">Institution name</div>
+                                            <p>Not specified</p>
+                                            <div class="dataHeader">Institution address</div>
+                                            <p>Not specified</p>
+                                            <div class="dataHeader">Institution ID number</div>
+                                            <p>Not specified</p>
+                                        </td>
+
+                                        <td class="width20p bottomCell"><div class="dataHeader">Dependants</div>
+                                            <ol class="list list-number">
+                                              <li>Mary Richards</li>
+                                              <li>Rosie Richards</li>
+                                            </ol>
+                                        </td>
+
+                                        <td class="width20p bottomCell"><div class="dataHeader ">Actions</div>
+                                              <p><a href="#" style="font-weight: 700;">Change status</a></p>
+                                              <p> <a href="#" style="font-weight: 700;">Cancel entitlement</a>
+                                        </td>
+                                  </tr>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                  </tbody>
+            </table>
+          </div>
+          <table id="mainTable" >
+              <tbody>
+                <tr>
+                    <td style="width:10%">MB12345</td>
+                    <td style="width:13%">Posted worker (S1)</td>
+                    <td style="width:10%">France</td>
+                    <td style="width:10%">20 Dec 2014</td>
+                    <td style="width:10%">20 Dec 2014</td>
+                    <td style="width:10%">29 Dec 2014</td>
+                    <td style="width:10%"><span style="padding-left: 28px; padding-right: 28px" class="status-tag-high font-xsmall">Closed</span></td>
+                    <td nowrap style="width:7%"><details onclick="myFunction2()"><summary><span class="summary">More info</span></summary></details></td>
+                </tr>
+              </tbody>
+          </table>
+          <div id="myDIV2" style="display: none;">
+              <table>
+                  <tr>
+                      <td colspan="8">
+                          <div class="panel panel-border-wide s1infoExpanded">
+                              <table class="table-font-xsmall">
+                                  <tbody>
+                                      <tr class="tRow">
+                                            <td class="width20p bottomCell">
+                                                  <div class="dataHeader">Customer type</div>
+                                                  <p>Main</p>
+                                                  <div class="dataHeader">Home address</div>
+                                                  <p>123 Rue de Plaza<br>12345<br>Paris<br>France</p>
+                                            </td>
+                                            <td class="width20p bottomCell">
+                                                  <div class="dataHeader ">Documents</div><p><i class="fas fa-file-pdf" aria-hidden="true"></i> <a href="#">S1 healthcare certificate</a><br>(opens in a new tab)<br>
+                                                   <!--   <p>Issued 20 Dec 2014</p>  -->  <p><i class="fas fa-file-pdf" aria-hidden="true"></i> <a href="#">S1 cover letter</a><br>(opens in a new tab)<br>
+                                                   <!--   <p>Issued 20 Dec 2014</p>  -->
+                                            </td>
+                                            <td class="width20p bottomCell"><div class="dataHeader">Institution name</div>
+                                                  <p>Caisse D'Allocations Familiales De Vienne</p>
+                                                  <div class="dataHeader">Institution address</div>
+                                                  <p>1, Montee Saint-Marcel BP 108<br>Vienne<br>Cedex<br>38209<br>France</p>
+                                                  <div class="dataHeader">Institution ID number</div>
+                                                  <p>01382PF000</p>
+                                            </td>
+                                            <td class="width20p bottomCell"><div class="dataHeader">Dependants</div>
+                                                  <ol class="list list-number">
+                                                      <li>Mary Richards</li>
+                                                      <li>Rosie Richards</li>
+                                                      <li>Arnold Richards</li>
+                                                  </ol>
+                                            </td>
+                                            <td class="width20p bottomCell">
+                                            </td>
+                                      </tr>
+                                  </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+      </div>
+      <br>
+      <div class="form-group">
+           <a class="button" href="type-eligibility">Create a new entitlement</a></div>
+</div>
+                 </div>
+
+ <div id="dependants" class="tabcontent">
+
+                                  <table id="mainTable" >
+            <thead>
+            <tr>
+                <th width="15%">Record ID</th>
+                <th width="15%">First name</th>
+                <th width="15%">Last name</th>
+                <th width="15%">Date of birth</th>
+                <th width="15%">Personal identifier</th>
+                <th width="15%"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr >
+                <td><a href="">MB95355</a></td>
+                <td>Mary</td>
+                <td>Richards</td>
+                <td>3 Mar 1955</td>
+                <td>NS 12 34 56 D</td>
+                <td><details onclick="myFunction3()"><summary><span class="summary">More info</span></summary></details></td>
+            </tr>
+            </tbody>
+          </table>
+
+            <div id="myDIV3" style="display: none;">
+            <table>
+
+            <tr>
+                <td colspan="8">
+                    <div class="panel panel-border-wide s1infoExpanded"><table>
+
+                    <thead>
+                      <tr>
+                        <th scope="col" nowrap>Entitlement ID</th>
+                        <th scope="col" nowrap>Form type</th>
+                        <th scope="col" nowrap>Date issued</th>
+                        <th scope="col" nowrap>Start date</th>
+                        <th scope="col" nowrap>End date</th>
+                        <th scope="col" nowrap>Status</th>
+                         <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                      <tr>
+                        <td>123862</td>
+                        <td nowrap>Pensioner (S1)</td>
+                        <td>3 Mar 2018</td>
+                        <td>3 Mar 2018</td>
+                          <td></td>
+                        <td><span style="padding-left: 25px; padding-right: 25px" class="status-tag-medium font-xsmall">Pending</span></td>
+                         <td><a href="#">Remove dependancy</a></td>
+                      </tr>
+
+                        <tr>
+                        <td>115809</td>
+                        <td nowrap>Posted worker (S1)</td>
+                            <td>3 Mar 2014</td>
+                        <td>3 Mar 2014</td>
+                          <td>20 May 2017</td>
+                        <td><span style="padding-left: 25px; padding-right: 25px" class="status-tag-high font-xsmall">Closed</span></td>
+                         <td><a href="#">Remove dependancy</a></td>
+                      </tr>
+
+                  </table>
+              </div></td></tr>
+
+
+                 </tbody>
+        </table>
+         </div>
+            <table id="mainTable" >
+            <!--<thead>
+            <tr>
+                <th width="15%">Entitlement ID</th>
+                <th width="15%">First name</th>
+                <th width="15%">Last name</th>
+                <th width="15%">Date of birth</th>
+                <th width="15%">Personal identifier</th>
+                <th width="15%"></th>
+            </tr>
+            </thead>-->
+            <tbody>
+            <tr >
+                <td width="15%"><a href="">MB82336</a></td>
+                <td width="15%">Rosie</td>
+                <td width="15%">Richards</td>
+                <td width="15%">3 Dec 2012</td>
+                <td width="15%">CR 88 29 17 E</td>
+                <td width="15%"><details onclick="myFunction4()"><summary><span class="summary">More info</span></summary></details></td>
+            </tr>
+            </tbody>
+          </table>
+
+            <div id="myDIV4" style="display: none;">
+            <table>
+
+            <tr>
+                <td colspan="8">
+                    <div class="panel panel-border-wide s1infoExpanded"><table>
+
+                    <thead>
+                      <tr>
+                        <th scope="col" nowrap>Record ID</th>
+                        <th scope="col" nowrap>Form type</th>
+                        <th scope="col" nowrap>Date issued</th>
+                        <th scope="col" nowrap>Start date</th>
+                        <th scope="col" nowrap>End date</th>
+                          <th scope="col" nowrap>Status</th>
+                         <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                      <tr>
+                        <td><a href="#">123862</a></td>
+                        <td nowrap>Pensioner (S1)</td>
+                        <td>3 Mar 2018</td>
+                        <td>3 Mar 2018</td>
+                          <td></td>
+                          <td><span style="padding-left: 25px; padding-right: 25px" class="status-tag-medium font-xsmall">Pending</span></td>
+                         <td><a href="#">Remove dependancy</a></td>
+                      </tr>
+
+                        <tr>
+                        <td><a href="#">114779</a></td>
+                        <td nowrap>Posted worker (S1)</td>
+                        <td>3 Mar 2014</td>
+                        <td>3 Mar 2014</td>
+                          <td>20 May 2017</td>
+                            <td><span style="padding-left: 25px; padding-right: 25px" class="status-tag-high font-xsmall">Closed</span></td>
+                         <td><a href="#">Remove dependancy</a></td>
+                      </tr>
+
+                  </table>
+              </div></td></tr>
+
+
+                 </tbody>
+        </table>
+         </div>
+
+<table id="mainTable" >
+            <!--<thead>
+            <tr>
+                <th width="15%">Entitlement ID</th>
+                <th width="15%">First name</th>
+                <th width="15%">Last name</th>
+                <th width="15%">Date of birth</th>
+                <th width="15%">Personal identifier</th>
+                <th width="15%"></th>
+            </tr>
+            </thead>-->
+            <tbody>
+            <tr >
+                <td width="15%"><a href="">MB82001</a></td>
+                <td width="15%">Arnold</td>
+                <td width="15%">Richards</td>
+                <td width="15%">3 Dec 1982</td>
+                <td width="15%">GT 12 56 70 X</td>
+                <td width="15%"><details onclick="myFunction5()"><summary><span class="summary">More info</span></summary></details></td>
+            </tr>
+            </tbody>
+          </table>
+
+            <div id="myDIV5" style="display: none;">
+            <table>
+
+            <tr>
+                <td colspan="8">
+                    <div class="panel panel-border-wide s1infoExpanded"><table>
+
+                    <thead>
+                      <tr>
+                        <th scope="col" nowrap>Record ID</th>
+                        <th scope="col" nowrap>Form type</th>
+                        <th scope="col" nowrap>Date issued</th>
+                        <th scope="col" nowrap>Start date</th>
+                        <th scope="col" nowrap>End date</th>
+                          <th scope="col" nowrap>Status</th>
+                         <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                        <td><a href="#">106983</a></td>
+                        <td nowrap>Posted worker (S1)</td>
+                        <td>3 Mar 2014</td>
+                        <td>3 Mar 2014</td>
+                          <td>20 May 2017</td>
+                            <td><span style="padding-left: 25px; padding-right: 25px" class="status-tag-high font-xsmall">Closed</span></td>
+                         <td><a href="#">Remove dependancy</a></td>
+                      </tr>
+
+                  </table>
+              </div></td></tr>
+
+
+                 </tbody>
+        </table>
+         </div>
+         <br>
+
+            <div class="form-group">
+                 <a class="button" href="dep/reg-trace-primary">Create a new dependant</a></div>
+
+
+
+                 </div>
+                 </div>
+
+
+
+        <div id="invoices" class="tabcontent">
+
+      <table>
+
+                    <thead>
+                      <tr>
+                        <th scope="col">Invoice ID</th>
+                        <th scope="col">Claim ID</th>
+                        <th scope="col">Member state</th>
+
+                        <th scope="col">Amount</th>
+                        <th scope="col">Treatment date</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Reason</th>
+
+
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                      <tr>
+
+                        <td><a href="citizen-invoice">32456</a></td>
+                        <td>154555</td>
+                        <td>France</td>
+
+                        <td>€120</td>
+                        <td>1 Jan 2017</td>
+                        <td><span class="status-tag-low font-xsmall">Accepted</span></td>
+                        <td></td>
+
+                      </tr>
+                      <tr>
+
+                        <td><a href="ann">12343</a></td>
+                        <td>123862</td>
+                        <td>France</td>
+
+                        <td>€120</td>
+                        <td>1 Jan 2017</td>
+                        <td><span class="status-tag-high font-xsmall">Contested</span></td>
+                        <td>Duplicate</td>
+
+                      </tr>
+
+                    </tbody>
+            </table>
+            <br>
+          </div>
+
+           <div id="casehist" class="tabcontent">
+          <div class="grid-row">
+               <div class="column-two-thirds">
+                   <table>
+
+                  <thead>
+                    <tr>
+                      <th scope="col" style="width:15%">Date</th>
+                      <th scope="col" style="width:60%">Note</th>
+                      <th scope="col" style="width:15%">Type</th>
+                    <th scope="col" style="width:25%">Name</th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td nowrap>19 Jan 2018</td>
+
+                      <td>Created a new registration for S1, documents printed for John Richards</td>
+                       <td nowrap><span class="status-tag-disabled font-xsmall" style="margin-left:2px">System</span></td>
+                        <td nowrap>Charlie Brown</td>
+                    </tr>
+                   <tr>
+                      <td nowrap>1 Jan 2018</td>
+
+                      <td>
+                      Telephony enquiry for S1 certificate for residence in Spain</td>
+                      <td nowrap><span class="status-tag-disabled font-xsmall" style="margin-left:2px">System</span></td>
+                       <td nowrap>Jane Smith</td>
+                    </tr>
+                      <tr>
+                      <td nowrap>6 Jul 2013</td>
+
+                      <td>
+                     Suspicious behaviour and nuisance phone calls from a relative claiming to be the main.</td>
+                      <td nowrap><span class="status-tag-medium font-xsmall" style="margin-left:2px; padding-left: 23px; padding-right: 23px">User</span></td>
+                          <td nowrap>Roger Black</td>
+                    </tr>
+                  </tbody>
+               </table>
+               <br>
+                <div class="form-group">
+                <a class="button-secondary" href="">Add a case note</a></div>
+                  <br>
+
+                </div>
+              </div>
+            </div>
+</main>
+
+{% endblock %}
