@@ -23,7 +23,7 @@
                   <h1 class="page-header--lede heading-large">Are you in payment of a state pension from any other EEA or Switzerland country?</h1>
               </header>
 
-              <form action="contact3rd" method="get" class="form">
+              <form action="contact3rd" id="another-pension2-form" method="get" class="form">
                         <div class="form-group">
                             <fieldset class="inline">
                                 <legend class="visually-hidden">
@@ -98,4 +98,17 @@
       </div>
   </div>
 </main>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script>
+  $("#submit-btn").on("click", function() {
+    var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
+
+    if (modalAnswer != false && modalAnswer == 'yes') {
+      $("#another-pension2-form").attr("action", "/s1-results/dep/search1");
+    } else {
+      $("#another-pension2-form").attr("action", "/s1-results/dep/another-pension2");
+    }
+  });
+</script>
 {% endblock %}

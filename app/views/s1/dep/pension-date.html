@@ -70,5 +70,16 @@ NHSBSA Prototype
           </div>
      </div>
 </main>
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script>
+  $("#submit-btn").on("click", function() {
+    var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
+    if (modalAnswer != false && modalAnswer == 'yes') {
+      $("#dependant-relationship-form").attr("action", "/s1/dep/search1");
+    } else {
+      $("#dependant-relationship-form").attr("action", "/s1/dep/dependant-relationship");
+    }
+  });
+</script>
 {% endblock %}

@@ -19,34 +19,46 @@
 
 
         <!-- only add a heading for a list if there is more than one list -->
-        <form action="moving-country" method="get" class="form">
+        <form action="moving-country" id="dep-check-person-details-form" method="get" class="form">
+            <h2 class="heading-medium" style="margin-top:50px">Main (insured person): Sarah Philip</h2>
+
             <h2 class="heading-medium">
               Personal details
             </h2>
+
              <dl class="govuk-check-your-answers cya-questions-short">
                     <div>
-                         <dt class="cya-question">Unique identifier</dt>
+                         <dt class="cya-question">National Insurance number</dt>
                          <dd class="cya-answer">SR123456A</dd>
-                         <dd class="cya-change">
+                         <!-- <dd class="cya-change">
                               <a href="search1">Change<span class="visually-hidden"> name</span></a>
+                         </dd> -->
+                         <dd class="cya-change">
+                             <p class="navigation">
+                               <a class="cancel" href="#" data-toggle="dialog" data-target="dialog-4">Change<span class="visually-hidden"> name</span></a>
+                             </p>
                          </dd>
                     </div>
 
                     <div>
                          <dt class="cya-question">Name</dt>
-                         <dd class="cya-answer">Sarah Philip</dd>
+                         <dd class="cya-answer">Michael Philip</dd>
                          <dd class="cya-change">
-                              <a href="search2">Change<span class="visually-hidden"> name</span></a>
+                             <p class="navigation">
+                               <a class="cancel" href="#" data-toggle="dialog" data-target="dialog-4">Change<span class="visually-hidden"> name</span></a>
+                             </p>
                          </dd>
                     </div>
 
                     <div>
                          <dt class="cya-question">Date of birth</dt>
                          <dd class="cya-answer">
-                              5 January 1978
+                              16 March 2017
                          </dd>
                          <dd class="cya-change">
-                              <a href="search2">Change<span class="visually-hidden"> name</span></a>
+                             <p class="navigation">
+                               <a class="cancel" href="#" data-toggle="dialog" data-target="dialog-4">Change<span class="visually-hidden"> name</span></a>
+                             </p>
                          </dd>
                     </div>
                </dl>
@@ -55,9 +67,7 @@
                    <input class="button" type="submit" value="Accept and create person">
                </div>
 
-               <p class="navigation">
-                 <a class="cancel" href="#" data-toggle="dialog" data-target="dialog-4">Cancel</a>
-               </p>
+
 
                <!-- modal starts here  -->
                <div class="dialog" id="dialog-4" aria-hidden="true">
@@ -65,9 +75,9 @@
                    <div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
                      <!-- <form action="123" id="123" class="form"> -->
                          <header class="page-header">
-                             <h1 class="page-header--lede heading-medium" style="margin-top: -1em;">You are about to cancel this request to create an S1 entitlement</h1>
+                             <h1 class="page-header--lede heading-medium" style="margin-top: -1em;">You are about to change person details and you'll need to return to the search page</h1>
                          </header>
-                         <label class="form-label" for="lineone">Are you sure you want to cancel?</label>
+                         <label class="form-label" for="lineone">Are you sure you want to return to search?</label>
                          <div class="form-group">
                              <fieldset class="inline">
                                  <legend class="visually-hidden">
@@ -100,4 +110,16 @@
     </div>
 </main>
 
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script>
+  $("#submit-btn").on("click", function() {
+    var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
+
+    if (modalAnswer != false && modalAnswer == 'yes') {
+      $("#dep-check-person-details-form").attr("action", "/s1-results/search1");
+    } else {
+      $("#dep-check-person-details-form").attr("action", "/s1-results/check-person-details");
+    }
+  });
+</script>
 {% endblock %}

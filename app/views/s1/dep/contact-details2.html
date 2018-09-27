@@ -4,37 +4,38 @@
 NHSBSA Prototype
 {% endblock %}
 
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
 {% block content %}
-<style>
-  .button-secondary {
-    background-color: #dee0e2;
-    color:black;
-    box-shadow: 0 2px 0 #b5babe;
-    font-size: 1em;
-    outline-offset: -1px;
-    outline: 1px solid transparent;
-    border-radius: 0;
-  }
-</style>
+
 <main id="content" role="main">
   <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
   <div class="grid-row">
     <div class="column-two-thirds">
       <header class="page-header">
-        <h1 class="page-header--lede heading-large">What date will (or did) the dependant starts to live in France?</h1>
+        <h1 class="page-header--lede heading-large">Add contact details</h1>
       </header>
-      <form action="contact-address" id="dep-moving-date-form" method="get" class="form">
-        <label class="form-label" for="ni-number">
-          Moving date
-          <span class="form-hint">
-            4 weeks in the future hint text
-            <br>
-            For example, 18/09/2018
-          </span>
-        </label>
-        <input class="form-control" id="ni-number" type="text">
+
+      <form action="done-3pension" id="dep-contact-details-form" method="get" class="form">
+
         <div class="form-group">
-          <br>
+          <label class="form-label" for="first-name-2">Telephone number (optional)</label>
+          <span class="form-hint">For international numbers include the country code</span>
+          <input class="form-control" id="first-name-2" name="landline" type="text">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="last-name-2">Email address (optional)</label>
+          <span class="form-hint">We’ll only use this to send you entitlement updates</span>
+          <input class="form-control" id="last-name-2" name="email" type="text">
+        </div>
+        <div class="form-group">
           <input class="button" type="submit" value="Continue">
         </div>
         <p class="navigation">
@@ -88,9 +89,9 @@ NHSBSA Prototype
       var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
       if (modalAnswer != false && modalAnswer == 'yes') {
-        $("#dep-moving-date-form").attr("action", "/s1-results/dep/search1");
+        $("#dep-contact-details-form").attr("action", "/s1/dep/search1");
       } else {
-        $("#dep-moving-date-form").attr("action", "/s1-results/dep/moving-date");
+        $("#dep-contact-details-form").attr("action", "/s1/dep/contact-details");
       }
     });
   </script>

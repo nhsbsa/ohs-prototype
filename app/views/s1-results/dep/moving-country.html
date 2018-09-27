@@ -23,7 +23,7 @@ NHSBSA Prototype
 			<header class="page-header">
 				<h1 class="page-header--lede heading-large">What country is the dependant moving to?</h1>
 			</header>
-			<form action="moving-date" method="get" class="form">
+			<form action="moving-date" id="dep-moving-country-form" method="get" class="form">
 				<div class="form-group">
 					<label class="form-label" for="lineone">Country</label>
 					<input class="form-control" id="registration-number" name="address-lineone" type="text">
@@ -36,31 +36,31 @@ NHSBSA Prototype
 				</p>
 
 
-        <!-- modal starts here  -->
+				<!-- modal starts here  -->
 				<div class="dialog" id="dialog-4" aria-hidden="true">
 					<div class="dialog-holder" aria-labelledby="dialog-title-4" aria-describedby="dialog-content-4" role="alertdialog">
 						<div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
 							<!-- <form action="123" id="123" class="form"> -->
-                  <header class="page-header">
-                      <h1 class="page-header--lede heading-medium" style="margin-top: -1em;">You are about to cancel this request to create an S1 entitlement</h1>
-                  </header>
-                  <label class="form-label" for="lineone">Are you sure you want to cancel?</label>
-                  <div class="form-group">
-                      <fieldset class="inline">
-                          <legend class="visually-hidden">
-                          </legend>
-                          <div class="multiple-choice">
-                            <input id="yes" type="radio" name="exemption" value="yes">
-                            <label for="yes">Yes</label>
-                          </div>
-                          <div class="multiple-choice">
-                            <input id="no" type="radio" name="exemption" value="no">
-                            <label for="no">No</label>
-                          </div>
-                      </fieldset>
-                  </div>
+								<header class="page-header">
+									<h1 class="page-header--lede heading-medium" style="margin-top: -1em;">You are about to cancel this request to create an S1 entitlement</h1>
+								</header>
+								<label class="form-label" for="lineone">Are you sure you want to cancel?</label>
+								<div class="form-group">
+									<fieldset class="inline">
+										<legend class="visually-hidden">
+										</legend>
+										<div class="multiple-choice">
+											<input id="yes" type="radio" name="exemption" value="yes">
+											<label for="yes">Yes</label>
+										</div>
+										<div class="multiple-choice">
+											<input id="no" type="radio" name="exemption" value="no">
+											<label for="no">No</label>
+										</div>
+									</fieldset>
+								</div>
 								<div class="dialog-actions">
-									<a class="button buttonSubmit" href="search1" style="font-size: 1em;">Submit</a>
+									<input id="submit-btn" class="button buttonSubmit" type="submit" value="Submit" style="font-size: 16px;" />
 
 									<br><br>
 									<a class="dialog-cancel" href="#" style="margin-left: -10px; font-size: 1em;">Cancel</a>
@@ -76,5 +76,18 @@ NHSBSA Prototype
 			</div>
 		</div>
 	</main>
+
+	<script src="/public/javascripts/jquery-1.11.3.js"></script>
+	<script>
+		$("#submit-btn").on("click", function() {
+			var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
+
+			if (modalAnswer != false && modalAnswer == 'yes') {
+				$("#dep-moving-country-form").attr("action", "/s1-results/dep/search1");
+			} else {
+				$("#dep-moving-country-form").attr("action", "/s1-results/dep/moving-country");
+			}
+		});
+	</script>
 
 	{% endblock %}

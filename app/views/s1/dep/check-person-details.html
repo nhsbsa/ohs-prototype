@@ -19,7 +19,7 @@
 
 
         <!-- only add a heading for a list if there is more than one list -->
-        <form action="dependant-relationship" id="check-person-details-form" method="get" class="form">
+        <form action="dependant-relationship" id="dep-check-person-details-form" method="get" class="form">
             <h2 class="heading-medium" style="margin-top:50px">Main (insured person): Sarah Philip</h2>
 
             <h2 class="heading-medium">
@@ -28,8 +28,8 @@
 
              <dl class="govuk-check-your-answers cya-questions-short">
                     <div>
-                         <dt class="cya-question">Unique identifier</dt>
-                         <dd class="cya-answer">12345678</dd>
+                         <dt class="cya-question">National Insurance number</dt>
+                         <dd class="cya-answer">-</dd>
                          <!-- <dd class="cya-change">
                               <a href="search1">Change<span class="visually-hidden"> name</span></a>
                          </dd> -->
@@ -116,9 +116,9 @@
     var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
     if (modalAnswer != false && modalAnswer == 'yes') {
-      $("#check-person-details-form").attr("action", "/s1/dep/search1");
+      $("#dep-check-person-details-form").attr("action", "/s1/dep/search1");
     } else {
-      $("#check-person-details-form").attr("action", "/s1/dep/check-person-details");
+      $("#dep-check-person-details-form").attr("action", "/s1/dep/check-person-details");
     }
   });
 </script>

@@ -98,4 +98,17 @@
       </div>
   </div>
 </main>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script>
+  $("#submit-btn").on("click", function() {
+    var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
+
+    if (modalAnswer != false && modalAnswer == 'yes') {
+      $("#another-pension2-form").attr("action", "/s1-results/search1");
+    } else {
+      $("#another-pension2-form").attr("action", "/s1-results/another-pension2");
+    }
+  });
+</script>
 {% endblock %}
