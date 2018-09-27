@@ -20,7 +20,7 @@
   <div class="grid-row">
       <div class="column-two-thirds">
               <header class="page-header">
-                  <h1 class="page-header--lede heading-large">Are you in payment of a pension from any other EEA or Switzerland country?</h1>
+                  <h1 class="page-header--lede heading-large">Are you in payment of a state pension from any other EEA or Switzerland country?</h1>
               </header>
 
               <form action="contact3rd" method="get" class="form">
@@ -98,4 +98,17 @@
       </div>
   </div>
 </main>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script>
+  $("#submit-btn").on("click", function() {
+    var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
+
+    if (modalAnswer != false && modalAnswer == 'yes') {
+      $("#another-pension2-form").attr("action", "/s1/search1");
+    } else {
+      $("#another-pension2-form").attr("action", "/s1/another-pension2");
+    }
+  });
+</script>
 {% endblock %}

@@ -23,7 +23,7 @@ NHSBSA Prototype
                 <h1 class="page-header--lede heading-large">Add residency address details</h1>
             </header>
 
-            <form action="contact-details" id="dep-contact-address-form" method="get" class="form">
+            <form action="contact-details" id="contact-address-form" method="get" class="form">
 
                 <!-- display/hide correspontace address field -->
                 <div class="form-group">
@@ -140,9 +140,9 @@ NHSBSA Prototype
             var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
             if (modalAnswer != false && modalAnswer == 'yes') {
-                $("#dep-contact-address-form").attr("action", "/s1/dep/search1");
+                $("#contact-address-form").attr("action", "/s1/dep/search1");
             } else {
-                $("#dep-contact-address-form").attr("action", "/s1/dep/contact-address");
+                $("#contact-address-form").attr("action", "/s1/dep/contact-address");
             }
         });
     </script>

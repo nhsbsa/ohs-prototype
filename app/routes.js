@@ -28,10 +28,10 @@ router.get(/another-pension-form/, function (req,res){
 
 router.get(/dependant-age-form/, function (req,res){
   if(req.query.dependantAge === "yes"){
-    res.redirect('search2');
+    res.redirect('search1');
   }
   else {
-    res.redirect('search1');
+    res.redirect('search2');
   }
 });
 

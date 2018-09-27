@@ -20,10 +20,10 @@
   <div class="grid-row">
       <div class="column-two-thirds">
               <header class="page-header">
-                  <h1 class="page-header--lede heading-large">Is the dependant 16 or under?</h1>
+                  <h1 class="page-header--lede heading-large">Does the dependant have an UK National Insurance numbers?</h1>
               </header>
 
-              <form action="dependant-age-form" method="get" class="form">
+              <form action="dependant-age-form" id="dependant-nino-form" method="get" class="form">
                         <div class="form-group">
                           <fieldset class="inline">
                               <legend class="visually-hidden">
@@ -87,4 +87,17 @@
       </div>
   </div>
 </main>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script>
+  $("#submit-btn").on("click", function() {
+    var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
+
+    if (modalAnswer != false && modalAnswer == 'yes') {
+      $("#dependant-nino-form").attr("action", "/s1/dep/search1");
+    } else {
+      $("#dependant-nino-form").attr("action", "/s1/dep/dependant-nino");
+    }
+  });
+</script>
 {% endblock %}
