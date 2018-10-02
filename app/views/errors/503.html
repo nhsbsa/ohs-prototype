@@ -1,0 +1,44 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+        <form action="check-your-answers" id="contact-details-form" method="get" class="form">
+            <h1 class="heading-xlarge">Something’s gone wrong</h1>
+            <p class="text">You can’t use this service just now. The problem will be fixed as soon as possible.
+            </p>Go to the <a href="start">start page</a> to try again.<p></p>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="/public/javascripts/jquery-1.11.3.js"></script>
+  <script>
+    $("#submit-btn").on("click", function() {
+      var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
+
+      if (modalAnswer != false && modalAnswer == 'yes') {
+        $("#contact-details-form").attr("action", "/s1-results/search1");
+      } else {
+        $("#contact-details-form").attr("action", "/s1-results/contact-details");
+      }
+    });
+  </script>
+
+  {% endblock %}
