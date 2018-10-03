@@ -20,7 +20,7 @@
   <div class="grid-row">
       <div class="column-two-thirds">
               <header class="page-header">
-                  <h1 class="page-header--lede heading-large">Does the dependant have an UK National Insurance numbers?</h1>
+                  <h1 class="page-header--lede heading-large">Does the dependant have a UK National Insurance number?</h1>
               </header>
 
               <form action="dependant-age-form" id="dependant-nino-form" method="get" class="form">
@@ -55,7 +55,7 @@
                                 <header class="page-header">
                                   <h1 class="page-header--lede heading-medium" style="margin-top: -1em;">Are you sure you want to cancel this request to create an entitlement?</h1>
                                 </header>
-                              <!--  <label class="form-label" for="lineone">Are you sure you want to cancel?</label> -->
+                                <!--  <label class="form-label" for="lineone">Are you sure you want to cancel this request to create an entitlement?</label> -->
                                 <div class="form-group">
                                   <fieldset class="inline">
                                     <legend class="visually-hidden">
@@ -68,11 +68,10 @@
                                       <input id="no" type="radio" name="exemption" value="no">
                                       <label for="no">No</label>
                                     </div>
-                                  </fieldset>Are you sure you want to cancel this request to create an entitlement?
+                                  </fieldset>
                                 </div>
                                 <div class="dialog-actions">
                                   <input id="submit-btn" class="button buttonSubmit" type="submit" value="Submit" style="font-size: 19px;" />
-
                                   <br><br>
                                   <!-- <a class="dialog-cancel" href="#" style="margin-left: -10px; font-size: 1em;">Cancel</a> -->
                                 </div>
@@ -94,9 +93,9 @@
     var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
     if (modalAnswer != false && modalAnswer == 'yes') {
-      $("#dependant-nino-form").attr("action", "/s1/dep/search1");
+      $("#dependant-nino-form").attr("action", "/s1-results/dep/search1");
     } else {
-      $("#dependant-nino-form").attr("action", "/s1/dep/dependant-nino");
+      $("#dependant-nino-form").attr("action", "/s1-results/dep/dependant-nino");
     }
   });
 </script>

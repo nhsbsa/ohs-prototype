@@ -20,7 +20,7 @@
   <div class="grid-row">
       <div class="column-two-thirds">
               <header class="page-header">
-                  <h1 class="page-header--lede heading-large">What is the relationship with dependant?</h1>
+                  <h1 class="page-header--lede heading-large">What relationship is the dependant to the main applicant?</h1>
               </header>
 
               <form action="moving-country" id="dependant-relationship-form" method="get" class="form">
@@ -29,17 +29,17 @@
                             <legend class="visually-hidden">How do you want to be contacted?</legend>
                             <div class="multiple-choice" data-target="contact-by-email">
                                 <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
-                                <label for="example-contact-by-email">Children (e.g. son, granddaughter)</label>
+                                <label for="example-contact-by-email">Child</label>
                             </div>
 
                             <div class="multiple-choice" data-target="contact-by-phone">
                                 <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="No">
-                                <label for="example-contact-by-phone">Grandchildren (e.g. grandson, granddaughter)</label>
+                                <label for="example-contact-by-phone">Grandchild</label>
                             </div>
 
                             <div class="multiple-choice" data-target="contact-by-phone">
                                 <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="No">
-                                <label for="example-contact-by-phone">Legal partner (e.g. husband, wife, spouse)</label>
+                                <label for="example-contact-by-phone">Legal partner</label>
                             </div>
 
                             <div class="multiple-choice" data-target="contact-by-text">
@@ -47,7 +47,7 @@
                                 <label for="example-contact-by-text">Other</label>
                             </div>
                             <div class="panel panel-border-narrow js-hidden" id="contact-by-text">
-                                <label class="form-label" for="contact-text-message">Other</label>
+                                <label class="form-label" for="contact-text-message">Enter relationship</label>
                                 <input class="form-control" name="contact-text-message" type="text" id="contact-text-message">
                             </div>
                         </fieldset>
@@ -65,26 +65,26 @@
                       <div class="dialog-holder" aria-labelledby="dialog-title-4" aria-describedby="dialog-content-4" role="alertdialog">
                         <div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
                           <!-- <form action="123" id="123" class="form"> -->
-                            <header class="page-header">
-                              <h1 class="page-header--lede heading-medium" style="margin-top: -1em;">Are you sure you want to cancel this request to create an entitlement?</h1>
-                            </header>
-                          <!--  <label class="form-label" for="lineone">Are you sure you want to cancel?</label> -->
-                            <div class="form-group">
-                              <fieldset class="inline">
-                                <legend class="visually-hidden">
-                                </legend>
-                                <div class="multiple-choice">
-                                  <input id="yes" type="radio" name="exemption" value="yes">
-                                  <label for="yes">Yes</label>
-                                </div>
-                                <div class="multiple-choice">
-                                  <input id="no" type="radio" name="exemption" value="no">
-                                  <label for="no">No</label>
-                                </div>
-                              </fieldset>
-                            </div>
+                              <header class="page-header">
+                                  <h1 class="page-header--lede heading-medium" style="margin-top: -1em;">You are about to cancel this request to create an S1 entitlement</h1>
+                              </header>
+                              <label class="form-label" for="lineone">Are you sure you want to cancel this request to create an entitlement?</label>
+                              <div class="form-group">
+                                  <fieldset class="inline">
+                                      <legend class="visually-hidden">
+                                      </legend>
+                                      <div class="multiple-choice">
+                                        <input id="yes" type="radio" name="exemption" value="yes">
+                                        <label for="yes">Yes</label>
+                                      </div>
+                                      <div class="multiple-choice">
+                                        <input id="no" type="radio" name="exemption" value="no">
+                                        <label for="no">No</label>
+                                      </div>
+                                  </fieldset>
+                              </div>
                             <div class="dialog-actions">
-                              <input id="submit-btn" class="button buttonSubmit" type="submit" value="Submit" style="font-size: 19px;" />
+                              <a class="button buttonSubmit" href="search1" style="font-size: 1em;">Submit</a>
 
                               <br><br>
                               <!-- <a class="dialog-cancel" href="#" style="margin-left: -10px; font-size: 1em;">Cancel</a> -->
@@ -107,7 +107,7 @@
     var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
     if (modalAnswer != false && modalAnswer == 'yes') {
-      $("#dependant-relationship-form").attr("action", "/s1/dep/search1");
+      $("#dependant-relationship-form").attr("action", "/s1-results/dep/search1");
     } else {
       $("#dependant-relationship-form").attr("action", "/s1/dep/dependant-relationship");
     }
