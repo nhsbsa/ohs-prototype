@@ -63,27 +63,26 @@
                           <div class="dialog-holder" aria-labelledby="dialog-title-4" aria-describedby="dialog-content-4" role="alertdialog">
                             <div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
                               <!-- <form action="123" id="123" class="form"> -->
-                                  <header class="page-header">
-                                      <h1 class="page-header--lede heading-medium" style="margin-top: -1em;">You are about to cancel this request to create an S1 entitlement</h1>
-                                  </header>
-                                  <label class="form-label" for="lineone">Are you sure you want to cancel?</label>
-                                  <div class="form-group">
-                                      <fieldset class="inline">
-                                          <legend class="visually-hidden">
-                                          </legend>
-                                          <div class="multiple-choice">
-                                            <input id="yes" type="radio" name="exemption" value="yes">
-                                            <label for="yes">Yes</label>
-                                          </div>
-                                          <div class="multiple-choice">
-                                            <input id="no" type="radio" name="exemption" value="no">
-                                            <label for="no">No</label>
-                                          </div>
-                                      </fieldset>
-                                  </div>
+                                <header class="page-header">
+                                  <h1 class="page-header--lede heading-medium" style="margin-top: -1em;">Are you sure you want to cancel?</h1>
+                                </header>
+                                <!--  <label class="form-label" for="lineone">Are you sure you want to cancel?</label> -->
+                                <div class="form-group">
+                                  <fieldset class="inline">
+                                    <legend class="visually-hidden">
+                                    </legend>
+                                    <div class="multiple-choice">
+                                      <input id="yes" type="radio" name="exemption" value="yes">
+                                      <label for="yes">Yes</label>
+                                    </div>
+                                    <div class="multiple-choice">
+                                      <input id="no" type="radio" name="exemption" value="no">
+                                      <label for="no">No</label>
+                                    </div>
+                                  </fieldset>
+                                </div>
                                 <div class="dialog-actions">
-                                  <a class="button buttonSubmit" href="search1" style="font-size: 1em;">Submit</a>
-
+                                  <input id="submit-btn" class="button buttonSubmit" type="submit" value="Submit" style="font-size: 19px;" />
                                   <br><br>
                                   <a class="dialog-cancel" href="#" style="margin-left: -10px; font-size: 1em;">Cancel</a>
                                 </div>
