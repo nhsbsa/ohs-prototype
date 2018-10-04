@@ -103,7 +103,7 @@
     var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
     if (modalAnswer != false && modalAnswer == 'yes') {
-      $("#dep-check-person-details-form").attr("action", "/s1-results/search1");
+      $("#dep-check-person-details-form").attr("action", "/s1-results/search");
     } else {
       $("#dep-check-person-details-form").attr("action", "/s1-results/check-person-details");
     }

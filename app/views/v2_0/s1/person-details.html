@@ -19,7 +19,7 @@ NHSBSA Prototype
     <div class="grid-row">
         <div class="column-two-thirds">
             <header class="page-header">
-                <h1 class="page-header--lede heading-large">What is your name?</h1>
+                <h1 class="page-header--lede heading-large">Person details</h1>
             </header>
             <form action="check-person-details" id="contact-address-form" method="get" class="form">
                 <!-- display/hide correspontace address field -->
@@ -84,7 +84,7 @@ NHSBSA Prototype
         var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
         if (modalAnswer != false && modalAnswer == 'yes') {
-            $("#contact-address-form").attr("action", "/s1/search1");
+            $("#contact-address-form").attr("action", "/s1/search");
         } else {
             $("#contact-address-form").attr("action", "/s1/contact-address");
         }
