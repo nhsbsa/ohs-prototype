@@ -1,0 +1,27 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+     <div class="grid-row">
+       <div class="column-two-thirds">
+                   <form method="get" action="search1" class="form">
+                       <h1 class="heading-large">
+                         You're not eligible to Healthcare provided by UK when moving to France
+                       </h1>
+                       <br>
+                       <p class="lede">Based on your answers, you must not be in payment of a state pension from the country where you are moving to.</p>
+                       <p class="lede">You must get in contact with the relevant authority.</p>
+                       <br>
+                       <div class="form-group">
+                         <input type="submit" class="button" value="Back to start">
+                       </div>
+                  </form>
+           </div>
+     </div>
+</main>
+
+{% endblock %}
