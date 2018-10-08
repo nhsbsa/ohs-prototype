@@ -93,9 +93,9 @@
       var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
       if (modalAnswer != false && modalAnswer == 'yes') {
-        $("#same-pension-form").attr("action", "/s1-results/search1");
+        $("#same-pension-form").attr("action", "search");
       } else {
-        $("#same-pension-form").attr("action", "/s1-results/same-pension");
+        $("#same-pension-form").attr("action", "same-pension");
       }
     });
   </script>
