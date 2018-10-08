@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-NHSBSA Prototype
+    Do you get paid a State Pension in France?
 {% endblock %}
 
 {% block proposition_header %}
@@ -93,9 +93,9 @@ NHSBSA Prototype
       var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
       if (modalAnswer != false && modalAnswer == 'yes') {
-        $("#same-pension-form").attr("action", "/s1/search1");
+        $("#same-pension-form").attr("action", "search");
       } else {
-        $("#same-pension-form").attr("action", "/s1/same-pension");
+        $("#same-pension-form").attr("action", "same-pension");
       }
     });
   </script>

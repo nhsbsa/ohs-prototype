@@ -159,9 +159,9 @@ Are you sure you want to cancel this request to create an entitlement?
     var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
     if (modalAnswer != false && modalAnswer == 'yes') {
-      $("#dep-contact3rd-form").attr("action", "/s1-results/dep/search1");
+      $("#dep-contact3rd-form").attr("action", "search");
     } else {
-      $("#dep-contact3rd-form").attr("action", "/s1-results/dep/contact3rd");
+      $("#dep-contact3rd-form").attr("action", "contact3rd");
     }
   });
 </script>

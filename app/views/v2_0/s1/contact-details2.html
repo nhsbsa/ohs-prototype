@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-NHSBSA Prototype
+    Add contact details
 {% endblock %}
 
 {% block proposition_header %}
@@ -88,9 +88,9 @@ NHSBSA Prototype
       var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
       if (modalAnswer != false && modalAnswer == 'yes') {
-        $("#contact-details-form").attr("action", "/s1-results/search1");
+        $("#contact-details-form").attr("action", "search");
       } else {
-        $("#contact-details-form").attr("action", "/s1-results/contact-details");
+        $("#contact-details-form").attr("action", "contact-details2");
       }
     });
   </script>

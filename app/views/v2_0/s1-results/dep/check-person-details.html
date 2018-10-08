@@ -49,7 +49,7 @@
                              </p>
                          </dd>
                     </div>
-                    
+
                     <div>
                          <dt class="cya-question">Date of birth</dt>
                          <dd class="cya-answer">
@@ -112,9 +112,9 @@
     var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
     if (modalAnswer != false && modalAnswer == 'yes') {
-      $("#dep-check-person-details-form").attr("action", "/s1-results/dep/search1");
+      $("#dep-check-person-details-form").attr("action", "search");
     } else {
-      $("#dep-check-person-details-form").attr("action", "/s1-results/dep/check-person-details");
+      $("#dep-check-person-details-form").attr("action", "check-person-details");
     }
   });
 </script>

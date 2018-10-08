@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-NHSBSA Prototype
+    Add residency address
 {% endblock %}
 
 {% block proposition_header %}
@@ -135,9 +135,9 @@ NHSBSA Prototype
         var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
         if (modalAnswer != false && modalAnswer == 'yes') {
-            $("#contact-address-form").attr("action", "/s1/search1");
+            $("#contact-address-form").attr("action", "search");
         } else {
-            $("#contact-address-form").attr("action", "/s1/contact-address");
+            $("#contact-address-form").attr("action", "contact-address");
         }
     });
 </script>

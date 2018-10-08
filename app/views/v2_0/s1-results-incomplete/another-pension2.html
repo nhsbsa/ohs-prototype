@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-  NHSBSA Prototype
+    Do you get paid a State Pension in another EEA country, or Switzerland?
 {% endblock %}
 
 {% block proposition_header %}
@@ -102,9 +102,9 @@
     var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
     if (modalAnswer != false && modalAnswer == 'yes') {
-      $("#another-pension2-form").attr("action", "/s1/search1");
+      $("#another-pension2-form").attr("action", "search");
     } else {
-      $("#another-pension2-form").attr("action", "/s1/another-pension2");
+      $("#another-pension2-form").attr("action", "another-pension2");
     }
   });
 </script>

@@ -83,9 +83,9 @@ NHSBSA Prototype
 			var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
 			if (modalAnswer != false && modalAnswer == 'yes') {
-				$("#dep-moving-country-form").attr("action", "/s1-results/dep/search1");
+				$("#dep-moving-country-form").attr("action", "search");
 			} else {
-				$("#dep-moving-country-form").attr("action", "/s1-results/dep/moving-country");
+				$("#dep-moving-country-form").attr("action", "moving-country");
 			}
 		});
 	</script>

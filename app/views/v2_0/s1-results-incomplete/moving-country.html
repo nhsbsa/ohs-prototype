@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-NHSBSA Prototype
+		What country are you moving to?
 {% endblock %}
 
 {% block content %}
@@ -81,9 +81,9 @@ NHSBSA Prototype
 		var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
 		if (modalAnswer != false && modalAnswer == 'yes') {
-		  $("#moving-country-form").attr("action", "/s1/search1");
+		  $("#moving-country-form").attr("action", "search");
 		} else {
-		  $("#moving-country-form").attr("action", "/s1/moving-country");
+		  $("#moving-country-form").attr("action", "moving-country");
 		}
 	  });
 	</script>

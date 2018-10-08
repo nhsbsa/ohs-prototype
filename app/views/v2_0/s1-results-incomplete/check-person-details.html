@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-  NHSBSA Prototype
+  Check these details are correct before proceeding
 {% endblock %}
 
 {% block content %}
@@ -92,9 +92,9 @@
     var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
     if (modalAnswer != false && modalAnswer == 'yes') {
-      $("#check-person-details-form").attr("action", "/s1/dep/search1");
+      $("#check-person-details-form").attr("action", "search");
     } else {
-      $("#check-person-details-form").attr("action", "/s1/dep/check-person-details");
+      $("#check-person-details-form").attr("action", "check-person-details");
     }
   });
 </script>

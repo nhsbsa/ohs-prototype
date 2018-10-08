@@ -140,9 +140,9 @@ NHSBSA Prototype
             var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
             if (modalAnswer != false && modalAnswer == 'yes') {
-                $("#contact-address-form").attr("action", "/s1-results/search1");
+                $("#contact-address-form").attr("action", "search");
             } else {
-                $("#contact-address-form").attr("action", "/s1-results/contact-address");
+                $("#contact-address-form").attr("action", "contact-address");
             }
         });
     </script>

@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-NHSBSA Prototype
+		What date will you start to live in France?
 {% endblock %}
 
 {% block content %}
@@ -27,9 +27,7 @@ NHSBSA Prototype
 				<label class="form-label" for="ni-number">
 					Moving date
 					<span class="form-hint">
-						This can be any date up to 4 weeks from today
-						<br>
-						For example, 18/09/2018
+						This can be any date up to 4 weeks from today. For example, 18/09/2018.
 					</span>
 				</label>
 				<input class="form-control" id="ni-number" type="text">
@@ -87,9 +85,9 @@ NHSBSA Prototype
 			var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
 			if (modalAnswer != false && modalAnswer == 'yes') {
-				$("#moving-date-form").attr("action", "/s1/search1");
+				$("#moving-date-form").attr("action", "search");
 			} else {
-				$("#moving-date-form").attr("action", "/s1/moving-date");
+				$("#moving-date-form").attr("action", "moving-date");
 			}
 		});
 	</script>

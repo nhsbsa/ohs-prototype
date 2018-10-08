@@ -160,9 +160,9 @@
     var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
     if (modalAnswer != false && modalAnswer == 'yes') {
-      $("#dep-contact3rd-form").attr("action", "/s1/dep/search1");
+      $("#dep-contact3rd-form").attr("action", "search");
     } else {
-      $("#dep-contact3rd-form").attr("action", "/s1/dep/contact3rd");
+      $("#dep-contact3rd-form").attr("action", "contact3rd");
     }
   });
 </script>

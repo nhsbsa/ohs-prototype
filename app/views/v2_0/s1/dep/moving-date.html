@@ -27,9 +27,7 @@ NHSBSA Prototype
         <label class="form-label" for="ni-number">
           Moving date
           <span class="form-hint">
-            This can be any date up to 4 weeks from today
-            <br>
-            For example, 18/09/2018
+            This can be any date up to 4 weeks from today. For example, 18/09/2018.
           </span>
         </label>
         <input class="form-control" id="ni-number" type="text">
@@ -88,9 +86,9 @@ NHSBSA Prototype
       var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
       if (modalAnswer != false && modalAnswer == 'yes') {
-        $("#dep-moving-date-form").attr("action", "/s1/dep/search1");
+        $("#dep-moving-date-form").attr("action", "search");
       } else {
-        $("#dep-moving-date-form").attr("action", "/s1/dep/moving-date");
+        $("#dep-moving-date-form").attr("action", "moving-date");
       }
     });
   </script>
