@@ -5,7 +5,17 @@
 {% endblock %}
 
 {% block content %}
+
 <style>
+.button-secondary {
+    background-color: #dee0e2;
+    color:black;
+    box-shadow: 0 2px 0 #b5babe;
+    font-size: 1em;
+    outline-offset: -1px;
+    outline: 1px solid transparent;
+    border-radius: 0;
+  }
 .form-control-3-4 {
     width: 32.7%;
 }
@@ -19,7 +29,7 @@
                     <h1 class="page-header--lede heading-large">Search for dependant</h1>
                </header>
           </div>
-          <form action="search-noresults" method="get" class="form">
+          <form action="person-details" method="get" class="form">
              <div class="column-full">
                  <div class="form-group">
                        <label class="form-label" for="ni-number">
@@ -42,6 +52,21 @@
                  </div>
              </div>
           </form>
+
+           <div class="column-full" style="background-color:#FFFFFF">
+                <div class="form-group form-group-error">
+                    <h2 class="heading-medium" >No results found</h2>
+                    <span class="heading-small">Check you have entered all details correctly</span>
+                    <p>Complete all fields: National Insurance number and date of birth. </p>
+                </div>
+                <br>
+                <div class="form-group">
+                    <form action="person-details">
+                         <input class="button button-secondary" type="submit" id="button2" value="Create entitlement">
+                   </form>
+                </div>
+           </div>
+        </div>
      </div>
 </main>
 

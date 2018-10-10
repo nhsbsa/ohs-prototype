@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-    What's your name?
+    What's the dependant's name?
 {% endblock %}
 
 {% block content %}
@@ -11,7 +11,7 @@
     <div class="grid-row">
         <div class="column-two-thirds">
             <header class="page-header">
-                <h1 class="page-header--lede heading-large">What's your name?</h1>
+                <h1 class="page-header--lede heading-large">What's the dependant's name?</h1>
             </header>
         </div>
         <form action="check-person-details" id="contact-address-form" method="get" class="form">
@@ -77,9 +77,9 @@
         var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
         if (modalAnswer != false && modalAnswer == 'yes') {
-            $("#contact-address-form").attr("action", "/s1/search");
+            $("#contact-address-form").attr("action", "search");
         } else {
-            $("#contact-address-form").attr("action", "/s1/contact-address");
+            $("#contact-address-form").attr("action", "person-details");
         }
     });
 </script>
