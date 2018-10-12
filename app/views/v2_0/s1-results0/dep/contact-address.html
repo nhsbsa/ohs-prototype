@@ -24,7 +24,6 @@
             <form action="contact-details" id="contact-address-form" method="get" class="form">
                 <!-- display/hide correspontace address field -->
                 <div class="form-group">
-
                     <div class="form-group">
                         <label class="form-label" for="lineone">Address line 1</label>
                         <input class="form-control" id="registration-number" name="address-lineone" type="text">
@@ -50,6 +49,7 @@
                         <input class="form-control" id="town" name="town" type="text" value="France" disabled="disabled" style="background-color: #DEE0E2">
                     </div>
                 </div>
+
                 <div class="form-group">
                     <details role="group">
                         <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Add a correspondence address (if different)</span></summary>
@@ -62,7 +62,7 @@
                                     <input class="form-control" id="building-name-1" name="building-name-1" type="text">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label" for="street-name-1">Address line 2 (optional)</label>
+                                    <label class="form-label" for="street-name-1">Address line 2</label>
                                     <input class="form-control" id="street-name-1" name="street-name-1" type="text">
                                 </div>
                                 <div class="form-group">
@@ -97,20 +97,20 @@
                                 <header class="page-header">
                                   <h1 class="page-header--lede heading-medium" style="margin-top: -1em;">Are you sure you want to cancel this request to create an entitlement?</h1>
                                 </header>
-                                <!--  <label class="form-label" for="lineone">Are you sure you want to cancel?</label> -->
+                              <!--  <label class="form-label" for="lineone">Are you sure you want to cancel this request to create an entitlement?</label> -->
                                 <div class="form-group">
-                                  <fieldset class="inline">
-                                    <legend class="visually-hidden">
-                                    </legend>
-                                    <div class="multiple-choice">
-                                        <input id="yes" type="radio" name="exemption" value="yes">
-                                        <label for="yes">Yes</label>
-                                    </div>
-                                    <div class="multiple-choice">
-                                        <input id="no" type="radio" name="exemption" value="no">
-                                        <label for="no">No</label>
-                                    </div>
-                                  </fieldset>
+                                    <fieldset class="inline">
+                                          <legend class="visually-hidden">
+                                          </legend>
+                                          <div class="multiple-choice">
+                                              <input id="yes" type="radio" name="exemption" value="yes">
+                                              <label for="yes">Yes</label>
+                                          </div>
+                                          <div class="multiple-choice">
+                                              <input id="no" type="radio" name="exemption" value="no">
+                                              <label for="no">No</label>
+                                          </div>
+                                    </fieldset>
                                 </div>
                                 <div class="dialog-actions">
                                     <input id="submit-btn" class="button buttonSubmit" type="submit" value="Submit" style="font-size: 19px;" />
@@ -135,11 +135,11 @@
         var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
         if (modalAnswer != false && modalAnswer == 'yes') {
-            $("#contact-address-form").attr("action", "../../search");
+            $("#contact-address-form").attr("action", "search");
         } else {
             $("#contact-address-form").attr("action", "contact-address");
         }
     });
 </script>
 
-    {% endblock %}
+{% endblock %}
