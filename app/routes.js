@@ -19,7 +19,7 @@ router.get(/same-pension-form/, function (req,res){
 
 router.get(/another-pension-form/, function (req,res){
   if(req.query.anotherCountry === "yes"){
-    res.redirect('contact3rd');
+    res.redirect('contact-address2');
   }
   else {
     res.redirect('contact-address');
