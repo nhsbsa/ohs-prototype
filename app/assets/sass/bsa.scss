@@ -1391,3 +1391,24 @@ border-bottom: 1px solid #bfc1c3;
   margin-top: 1em;
   margin-left: 1em;
 }
+
+#edit-icon {
+     background-color: #F47738;
+     background-image: url(/public/images/edit-512.png);
+}
+
+#delete-icon {
+     background-color: #F47738;
+     background-image: url(/public/images/delete-512.png);
+}
+
+#view-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-size: 100%;
+  background-color: $nhs-blue;
+  background-image: url('/public/images/view.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}

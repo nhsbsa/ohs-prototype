@@ -34,15 +34,117 @@ $("#radiobtn-post").change(function() {
   $(".show-email").addClass("visually-hidden");
 });
 
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function myFunction2() {
+    var x = document.getElementById("myDIV2");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+
+function myFunction3() {
+    var x = document.getElementById("myDIV3");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function myFunction4() {
+    var x = document.getElementById("myDIV4");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function myFunction5() {
+    var x = document.getElementById("myDIV5");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+
+var lastInserted = 0;
+function showS1Info(rowId, claimType, memberState, registrationDate, endDate)
+{
+    // reset all open details elements (icon for expansion) and remove 'item selected' css
+    $("details").removeAttr("open");
+    $("td").removeClass("s1ParentCell");
+
+    var tableObj = document.getElementById("mainTable");
+
+    // if the s1 panel is already showing, remove it
+    if (lastInserted!=0) tableObj.deleteRow(lastInserted);
+
+    // build the s1 panel then insert it
+    var rowContents = '<td></td><td colspan="7"><div class="panel panel-border-wide s1infoExpanded"><table class="table-font-xsmall"> <tr class="tRow"><td class="width20p bottomCell"><div class="dataHeader">Claim type</div>' + claimType + '</td> <td class="width20p bottomCell"><div class="dataHeader">Member state</div>' + memberState + '</td> <td class="width20p bottomCell"><div class="dataHeader ">Registration date</div>' + registrationDate + '</td></tr></tbody></table></div></td>'
+    tableObj.insertRow(rowId).innerHTML = rowContents;
+
+    // remove the bottom border for the cell above
+    for(var cellCount = 0;cellCount < tableObj.rows[rowId-1].cells.length;cellCount++) { if(!tableObj.rows[rowId-1].cells[cellCount].isUndefined) tableObj.rows[rowId-1].cells[cellCount].className = "s1ParentCell" }
+
+    // update the lastInserted index.
+    lastInserted = rowId;
+}
+
+var lastInsertedUserInfo = 0;
+function showExtraUserInfo(tableId, rowId, claimType, memberState, registrationDate, endDate)
+{
+    // reset all open details elements (icon for expansion) and remove 'item selected' css
+    $("details").removeAttr("open");
+    $("td").removeClass("s1ParentCell");
+
+    var tableObj2 = document.getElementById(tableId);
+
+    if (lastInsertedUserInfo!=0) tableObj2.deleteRow(lastInsertedUserInfo);     // if the s1 panel is already showing, remove it
+
+    var rowContents = '<td></td><td colspan="7"><div class="panel panel-border-wide s1infoExpanded"><table class="table-font-xsmall"> <tr class="tRow"><td class="width20p bottomCell"><div class="dataHeader">Claim type</div>' + claimType + '</td> <td class="width20p bottomCell"><div class="dataHeader">Member state</div>' + memberState + '</td> <td class="width20p bottomCell"><div class="dataHeader ">Registration date</div>' + registrationDate + '</td></tr></tbody></table></div></td>'
+    tableObj2.insertRow(rowId).innerHTML = rowContents;
+    for(var cellCount = 0;cellCount < tableObj2.rows[rowId-1].cells.length;cellCount++) { if(!tableObj2.rows[rowId-1].cells[cellCount].isUndefined) tableObj2.rows[rowId-1].cells[cellCount].className = "s1ParentCell" }
+
+    lastInsertedUserInfo = rowId;
+}
+
+var lastInsertedUserInfoPartial = 0;
+function showExtraUserInfoPartial(tableId, rowId, claimType, memberState, registrationDate, endDate)
+{
+    $("details").removeAttr("open");
+    $("td").removeClass("s1ParentCell");
+    var tableObj2 = document.getElementById(tableId);
+    if (lastInsertedUserInfoPartial!=0) tableObj2.deleteRow(lastInsertedUserInfoPartial);     // if the s1 panel is already showing, remove it
+    var rowContents = '<td></td><td colspan="7"><div class="panel panel-border-wide s1infoExpanded"><table class="table-font-xsmall"> <tr class="tRow"><td class="width20p bottomCell"><div class="dataHeader">Claim type</div>' + claimType + '</td> <td class="width20p bottomCell"><div class="dataHeader">Member state</div>' + memberState + '</td> <td class="width20p bottomCell"><div class="dataHeader ">Registration date</div>' + registrationDate + '</td></tr></tbody></table></div></td>'
+    tableObj2.insertRow(rowId).innerHTML = rowContents;
+    for(var cellCount = 0;cellCount < tableObj2.rows[rowId-1].cells.length;cellCount++) { if(!tableObj2.rows[rowId-1].cells[cellCount].isUndefined) tableObj2.rows[rowId-1].cells[cellCount].className = "s1ParentCell" }
+
+    lastInsertedUserInfoPartial = rowId;
+}
+
 // Show Dialog
 
 function showDialog() {
   if ($('.dialog').length > 0) {
-    
+
     var dialogData = {
       lastFocus: null
     };
-    
+
     $('a[data-toggle=dialog]').on('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
