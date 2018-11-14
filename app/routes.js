@@ -19,10 +19,12 @@ router.get(/same-pension-form/, function (req,res){
 
 router.get(/another-pension-form/, function (req,res){
   if(req.query.anotherCountry === "yes"){
-    res.redirect('contact-address2');
+    // res.redirect('contact-address2');
+    res.redirect('check-your-answers');
   }
   else {
-    res.redirect('contact-address');
+    //   res.redirect('contact-address');
+    res.redirect('check-your-answers');
   }
 });
 
