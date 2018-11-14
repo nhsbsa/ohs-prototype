@@ -44,5 +44,19 @@ router.get(/update-entitlement-form/, function (req,res){
   }
 });
 
+router.get(/abc-2/, function (req,res){
+  if(req.query.updateEntitlement === "Yes - continue to record"){
+    res.redirect('case-record');
+  }
+});
+
+router.get(/create-handler/, function (req,res){
+  if(req.query.radiobs === "PRC"){
+    res.redirect('https://prc-prototype.herokuapp.com');
+  }
+  if(req.query.radiobs === "Moving"){
+    res.redirect('benefit-info');
+  }
+});
 
 module.exports = router

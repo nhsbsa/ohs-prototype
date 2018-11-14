@@ -1,0 +1,70 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Create entitlement
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- <form action="windows-login" method="get" class="form form-to-validate" id="login-form" novalidate="novalidate" autocomplete="off"> -->
+	<div class="form-group">
+		<div class="grid-row">
+			<div class="column-full">
+				<div class="heading-group">
+					<!-- <p>Overseas Healthcare Services</p> -->
+					<h1 class="heading-large">Create entitlement</h1>
+				</div>
+
+				<form class="form" action="create-handler" method="get">
+					<div class="form-group">
+						<fieldset>
+							<div class="multiple-choice">
+								<input id="prc" type="radio" name="radiobs" value="PRC">
+								<label class="single-line" for="prc">PRC</label>
+							</div>
+							<div class="multiple-choice">
+								<input id="visiting" type="radio" name="radiobs" value="Visiting">
+								<label class="single-line" for="visiting">Visiting</label>
+							</div>
+							<div class="multiple-choice">
+								<input id="moving" type="radio" name="radiobs" value="Moving">
+								<label class="single-line" for="moving">Moving</label>
+							</div>
+							<div class="multiple-choice">
+								<input id="planned" type="radio" name="radiobs" value="Planned treatment">
+								<label class="single-line" for="planned">Planned treatment</label>
+							</div>
+						</fieldset>
+					</div>
+					<div class="form-group">
+						<input class="button" type="submit" value="Next">
+						<!-- <a class="button" href="search">Next</a> -->
+					</div>
+				</form>
+				<!-- <div class="text">
+					<p>Use this service to:</p>
+					<ul class="list list-bullet">
+						<li>provide entitlements for people moving to any European Economic Area (EEA) country or Switzerland </li>
+						<li>Use your NHSBSA email details to sign in. </li>
+					</ul>
+				</div> -->
+
+				<!-- <form action="rfia-details" method="get" class="form">
+					<div class="form-item-wrapper">
+						<div class="form-group">
+							<input class="button button-get-started" type="submit" value="Start">
+						</div>
+					</div>
+				</form>
+				<div>
+					<h1 class="heading-medium">Before you start</h1>
+					<p>You need to use your NHS BSA email details to sign in.</p>
+				</div> -->
+			</div>
+		</div>
+	</div>
+	<!-- </form> -->
+</main>
+
+{% endblock %}

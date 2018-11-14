@@ -1,0 +1,214 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Create entitlement
+{% endblock %}
+
+{% block content %}
+
+<style>
+.govuk-checkboxes__item {
+    font-family: "nta",Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    display: block;
+    position: relative;
+    min-height: 40px;
+    margin-bottom: 10px;
+    padding: 0 0 0 40px;
+    clear: left;
+}
+
+.govuk-checkboxes__input {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin: 0;
+    opacity: 0;
+}
+
+.govuk-label {
+    font-family: "nta",Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #0b0c0c;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.govuk-checkboxes__input+.govuk-checkboxes__label::before {
+    content: "";
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid currentColor;
+    background: transparent;
+}
+
+.govuk-checkboxes__input:checked+.govuk-checkboxes__label::after {
+    opacity: 1;
+}
+
+.govuk-checkboxes__input+.govuk-checkboxes__label::after {
+    content: "";
+    position: absolute;
+    top: 11px;
+    left: 9px;
+    width: 18px;
+    height: 7px;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    border: solid;
+    border-width: 0 0 5px 5px;
+    border-top-color: transparent;
+    opacity: 0;
+    background: transparent;
+}
+
+label.govuk-checkboxes__label.form-label {
+    padding: 6px 14px;
+}
+</style>
+
+<main id="content" role="main">
+	<!-- <form action="windows-login" method="get" class="form form-to-validate" id="login-form" novalidate="novalidate" autocomplete="off"> -->
+		<div class="form-group">
+			<div class="grid-row">
+				<div class="column-full">
+					<div class="heading-group">
+						<!-- <p>Overseas Healthcare Services</p> -->
+						<h1 class="heading-large">Benefit information</h1>
+					</div>
+
+					<form class="form" action="create-handler" method="get">
+						<div class="form-group">
+							<fieldset>
+								<!-- PIP -->
+								<div class="govuk-checkboxes__item" data-target="pip">
+									<input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional-1">
+									<label class="govuk-checkboxes__label form-label" for="citizenship-conditional-1">
+										PIP
+									</label>
+								</div>
+								<div class="panel panel-border-narrow js-hidden" id="pip">
+									<label for="nationalities-other-country">
+										<span class="form-label">Date</span>
+										<span class="form-hint">For example, 31/03/1980</span>
+									</label>
+									<input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
+								</div>
+								<!-- DLA -->
+								<div class="govuk-checkboxes__item" data-target="dla">
+									<input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional-1">
+									<label class="govuk-checkboxes__label form-label" for="citizenship-conditional-1">
+										DLA
+									</label>
+								</div>
+								<div class="panel panel-border-narrow js-hidden" id="dla">
+									<label for="nationalities-other-country">
+										<span class="form-label">Date</span>
+										<span class="form-hint">For example, 31/03/1980</span>
+									</label>
+									<input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
+								</div>
+								<!-- IDDB -->
+								<div class="govuk-checkboxes__item" data-target="iddb">
+									<input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional-1">
+									<label class="govuk-checkboxes__label form-label" for="citizenship-conditional-1">
+										IDDB
+									</label>
+								</div>
+								<div class="panel panel-border-narrow js-hidden" id="iddb">
+									<label for="nationalities-other-country">
+										<span class="form-label">Date</span>
+										<span class="form-hint">For example, 31/03/1980</span>
+									</label>
+									<input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
+								</div>
+								<!-- PENSION -->
+								<div class="govuk-checkboxes__item" data-target="pension">
+									<input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional-1">
+									<label class="govuk-checkboxes__label form-label" for="citizenship-conditional-1">
+										Pension
+									</label>
+								</div>
+								<div class="panel panel-border-narrow js-hidden" id="pension">
+									<label for="nationalities-other-country">
+										<span class="form-label">Date</span>
+										<span class="form-hint">For example, 31/03/1980</span>
+									</label>
+									<input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
+								</div>
+								<!-- ESA -->
+								<div class="govuk-checkboxes__item" data-target="esa">
+									<input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional-1">
+									<label class="govuk-checkboxes__label form-label" for="citizenship-conditional-1">
+										ESA
+									</label>
+								</div>
+								<div class="panel panel-border-narrow js-hidden" id="esa">
+									<label for="nationalities-other-country">
+										<span class="form-label">Date</span>
+										<span class="form-hint">For example, 31/03/1980</span>
+									</label>
+									<input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
+								</div>
+								<!-- Bereavement Benefit  -->
+								<div class="govuk-checkboxes__item" data-target="bereavement">
+									<input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional-1">
+									<label class="govuk-checkboxes__label form-label" for="citizenship-conditional-1">
+										Bereavement benefit
+									</label>
+								</div>
+								<div class="panel panel-border-narrow js-hidden" id="bereavement">
+									<label for="nationalities-other-country">
+										<span class="form-label">Date</span>
+										<span class="form-hint">For example, 31/03/1980</span>
+									</label>
+									<input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
+								</div>
+								<!-- IDD -->
+								<div class="govuk-checkboxes__item" data-target="idd">
+									<input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional-1">
+									<label class="govuk-checkboxes__label form-label" for="citizenship-conditional-1">
+										IDD
+									</label>
+								</div>
+								<div class="panel panel-border-narrow js-hidden" id="idd">
+									<label for="nationalities-other-country">
+										<span class="form-label">Date</span>
+										<span class="form-hint">For example, 31/03/1980</span>
+									</label>
+									<input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
+								</div>
+							</fieldset>
+						</div>
+						<div class="form-group">
+							<!-- <input class="button" type="submit" value="Next"> -->
+							<a class="button" href="/v2_1/s1-results/moving-country?">Next</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- </form> -->
+	</main>
+
+	{% endblock %}
