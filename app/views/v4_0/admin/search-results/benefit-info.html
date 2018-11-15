@@ -1,0 +1,259 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Create entitlement
+{% endblock %}
+
+{% block content %}
+
+<style>
+/* radio buttons (not-inline) */
+@media (min-width: 40.0625em) {
+	.govuk-radios__item {
+		font-size: 19px;
+		font-size: 1.1875rem;
+		line-height: 1.31579;
+	}
+}
+
+.govuk-radios__item {
+    font-family: "nta",Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 1rem;
+    font-size: 16px;
+	line-height: 1.25;
+    display: block;
+    position: relative;
+    min-height: 40px;
+    margin-bottom: 10px;
+    padding: 0 0 0 40px;
+    clear: left;
+}
+
+.govuk-radios__input {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin: 0;
+    opacity: 0;
+}
+
+.govuk-radios__label {
+    display: inline-block;
+    margin-bottom: 0;
+    padding: 8px 15px 5px;
+    cursor: pointer;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+@media (min-width: 40.0625em) {
+	.govuk-label {
+		font-size: 19px;
+		font-size: 1.1875rem;
+		line-height: 1.31579;
+	}
+}
+
+.govuk-label {
+    font-family: "nta",Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 1rem;
+    font-size: 16px;
+	line-height: 1.25;
+    color: #0b0c0c;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.govuk-radios__input+.govuk-radios__label::before {
+    content: "";
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    background: transparent;
+}
+
+.govuk-radios__input:checked+.govuk-radios__label::after {
+    opacity: 1;
+}
+
+.govuk-radios__input+.govuk-radios__label::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 0;
+    height: 0;
+    border: 10px solid currentColor;
+    border-radius: 50%;
+    opacity: 0;
+    background: currentColor;
+}
+/* end radio buttons */
+</style>
+
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-full">
+			<div id="back">
+				<a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+			</div>
+		</div>
+	</div>
+	<!-- <form action="windows-login" method="get" class="form form-to-validate" id="login-form" novalidate="novalidate" autocomplete="off"> -->
+		<div class="form-group">
+			<div class="grid-row">
+				<div class="column-full">
+					<div class="heading-group">
+						<!-- <p>Overseas Healthcare Services</p> -->
+						<h1 class="heading-large">Are you in receipt of any benefits?</h1>
+					</div>
+
+					<form class="form" action="create-handler" method="get">
+						<div class="form-group">
+							<fieldset>
+								<div class="govuk-radios">
+									<!-- PENSION -->
+									<div class="govuk-radios__item">
+										<input class="govuk-radios__input" id="where-do-you-live-1" name="where-do-you-live" type="radio" value="pension">
+										<label class="govuk-label govuk-radios__label" for="where-do-you-live-1">
+											Pension
+										</label>
+									</div>
+									<!-- PIP -->
+									<div class="govuk-radios__item" data-target="pip">
+										<input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="pip">
+										<label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+											PIP
+										</label>
+									</div>
+									<div class="panel panel-border-narrow js-hidden" id="pip">
+										<label for="nationalities-other-country">
+											<span class="form-label">Final payment date (optional)</span>
+											<span class="form-hint">For example, 31/03/1980</span>
+										</label>
+										<input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
+									</div>
+									<!-- DLA -->
+									<div class="govuk-radios__item" data-target="dla">
+										<input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="dla">
+										<label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+											DLA
+										</label>
+									</div>
+									<div class="panel panel-border-narrow js-hidden" id="dla">
+										<label for="nationalities-other-country">
+											<span class="form-label">Final payment date (optional)</span>
+											<span class="form-hint">For example, 31/03/1980</span>
+										</label>
+										<input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
+									</div>
+									<!-- IDDB -->
+									<div class="govuk-radios__item" data-target="iddb">
+										<input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live" type="radio" value="iddb">
+										<label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+											IDDB
+										</label>
+									</div>
+									<div class="panel panel-border-narrow js-hidden" id="iddb">
+										<label for="nationalities-other-country">
+											<span class="form-label">Final payment date (optional)</span>
+											<span class="form-hint">For example, 31/03/1980</span>
+										</label>
+										<input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
+									</div>
+									<!-- ESA -->
+									<div class="govuk-radios__item" data-target="esa">
+										<input class="govuk-radios__input" id="where-do-you-live-5" name="where-do-you-live" type="radio" value="esa">
+										<label class="govuk-label govuk-radios__label" for="where-do-you-live-5">
+											ESA
+										</label>
+									</div>
+									<div class="panel panel-border-narrow js-hidden" id="esa">
+										<label for="nationalities-other-country">
+											<span class="form-label">Final payment date (optional)</span>
+											<span class="form-hint">For example, 31/03/1980</span>
+										</label>
+										<input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
+									</div>
+									<!-- Bereavement Benefit  -->
+									<div class="govuk-radios__item" data-target="bereavement">
+										<input class="govuk-radios__input" id="where-do-you-live-6" name="where-do-you-live" type="radio" value="bereavement">
+										<label class="govuk-label govuk-radios__label" for="where-do-you-live-6">
+											Bereavement benefit
+										</label>
+									</div>
+									<div class="panel panel-border-narrow js-hidden" id="bereavement">
+										<label for="nationalities-other-country">
+											<span class="form-label">Final payment date (optional)</span>
+											<span class="form-hint">For example, 31/03/1980</span>
+										</label>
+										<input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
+									</div>
+									<!-- IDD -->
+									<div class="govuk-radios__item" data-target="idd">
+										<input class="govuk-radios__input" id="where-do-you-live-7" name="where-do-you-live" type="radio" value="idd">
+										<label class="govuk-label govuk-radios__label" for="where-do-you-live-7">
+											IDD
+										</label>
+									</div>
+									<div class="panel panel-border-narrow js-hidden" id="idd">
+										<label for="nationalities-other-country">
+											<span class="form-label">Final payment date (optional)</span>
+											<span class="form-hint">For example, 31/03/1980</span>
+										</label>
+										<input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
+									</div>
+								</div>
+							</fieldset>
+						</div>
+						<div class="form-group">
+							<!-- <input class="button" type="submit" value="Next"> -->
+							<a class="button" href="/v2_2/s1-results-admin/moving-country">Next</a>
+						</div>
+
+						<p class="navigation">
+							<a class="cancel" href="#" data-toggle="dialog" data-target="dialog-4">Cancel</a>
+						</p>
+	
+						<!-- modal starts here  -->
+						<div class="dialog" id="dialog-4" aria-hidden="true">
+							<div class="dialog-holder" aria-labelledby="dialog-title-4" aria-describedby="dialog-content-4" role="alertdialog">
+								<div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
+									<header class="page-header">
+										<h1 class="page-header--lede heading-medium" style="margin-top: -1em;">Are you sure you want to cancel?</h1>
+									</header>
+									<div class="dialog-actions" style="display: inline;">
+										<a class="button" href="search">Yes - back to search</a>
+										<!-- <input id="submit-btn" class="button buttonSubmit" type="submit" name="details" value="Yes - back to search" style="font-size: 19px;"/> -->
+										<a class="dialog-cancel" href="#" style="font-size: 1em;">No - continue application</a>
+									</div>
+									<button class="dialog-close" aria-label="close" type="button">
+										<span class="icon icon-close">x</span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- </form> -->
+	</main>
+
+	{% endblock %}

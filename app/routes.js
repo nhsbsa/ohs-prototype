@@ -53,10 +53,7 @@ router.get(/abc-2/, function (req,res){
 });
 
 router.get(/create-handler/, function (req,res){
-  if(req.query.radiobs === "PRC"){
-    res.redirect('https://prc-prototype.herokuapp.com');
-  }
-  if(req.query.radiobs === "Moving"){
+  if(req.query.radiobs === "moving"){
     res.redirect('benefit-info');
   }
 });
