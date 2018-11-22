@@ -1,0 +1,112 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+    Check these details are correct before proceeding
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+        <a href="#" class="link-back">Back</a>
+
+        <h1 class="heading-large">
+          Check these details are correct before proceeding
+        </h1>
+
+        <!-- only add a heading for a list if there is more than one list -->
+        <form action="moving-country" id="dep-check-person-details-form" method="get" class="form">
+            <h2 class="heading-medium" style="margin-top:50px">Main (insured person): Sarah Philip</h2>
+            <h2 class="heading-medium">Personal details</h2>
+             <dl class="govuk-check-your-answers cya-questions-short">
+                    <div>
+                         <dt class="cya-question">National Insurance number</dt>
+                         <dd class="cya-answer">-</dd>
+                         <!-- <dd class="cya-change">
+                             <p class="navigation">
+                               <a class="cancel" href="#" data-toggle="dialog" data-target="dialog-4">Change<span class="visually-hidden"> name</span></a>
+                             </p>
+                         </dd> -->
+                    </div>
+
+                    <div>
+                         <dt class="cya-question">Name</dt>
+                         <dd class="cya-answer">Michael Philip</dd>
+                         <!-- <dd class="cya-change">
+                             <p class="navigation">
+                               <a class="cancel" href="#" data-toggle="dialog" data-target="dialog-4">Change<span class="visually-hidden"> name</span></a>
+                             </p>
+                         </dd> -->
+                    </div>
+
+                    <div>
+                         <dt class="cya-question">Date of birth</dt>
+                         <dd class="cya-answer">
+                              16 March 2017
+                         </dd>
+                         <!-- <dd class="cya-change">
+                             <p class="navigation">
+                               <a class="cancel" href="#" data-toggle="dialog" data-target="dialog-4">Change<span class="visually-hidden"> name</span></a>
+                             </p>
+                         </dd> -->
+                    </div>
+               </dl>
+               <br>
+               <div class="form-group">
+                   <input class="button" type="submit" value="Continue">
+               </div>
+
+               <!-- modal starts here  -->
+               <div class="dialog" id="dialog-4" aria-hidden="true">
+                 <div class="dialog-holder" aria-labelledby="dialog-title-4" aria-describedby="dialog-content-4" role="alertdialog">
+                   <div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
+                          <!-- <form action="123" id="123" class="form"> -->
+                           <header class="page-header">
+                             <h1 class="page-header--lede heading-medium" style="margin-top: -1em;">Are you sure you want to cancel this request to create an entitlement?</h1>
+                           </header>
+                           <!--  <label class="form-label" for="lineone">Are you sure you want to cancel?</label> -->
+                           <div class="form-group">
+                               <fieldset class="inline">
+                                   <legend class="visually-hidden">
+                                   </legend>
+                                   <div class="multiple-choice">
+                                       <input id="yes" type="radio" name="exemption" value="yes">
+                                       <label for="yes">Yes</label>
+                                   </div>
+                                   <div class="multiple-choice">
+                                       <input id="no" type="radio" name="exemption" value="no">
+                                       <label for="no">No</label>
+                                   </div>
+                               </fieldset>
+                           </div>
+                           <div class="dialog-actions">
+                              <input id="submit-btn" class="button buttonSubmit" type="submit" value="Submit" style="font-size: 19px;" />
+                              <br><br>
+                              <!-- <a class="dialog-cancel" href="#" style="margin-left: -10px; font-size: 1em;">Cancel</a> -->
+                           </div>
+                           <button class="dialog-close" aria-label="close" type="button">
+                             <span class="icon icon-close">x</span>
+                           </button>
+                           <!-- </form> -->
+                     </div>
+                   </div>
+                 </div>
+        </form>
+      </div>
+    </div>
+</main>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script>
+  $("#submit-btn").on("click", function() {
+    var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
+
+    if (modalAnswer != false && modalAnswer == 'yes') {
+      $("#dep-check-person-details-form").attr("action", "search");
+    } else {
+      $("#dep-check-person-details-form").attr("action", "check-person-details2");
+    }
+  });
+</script>
+{% endblock %}
