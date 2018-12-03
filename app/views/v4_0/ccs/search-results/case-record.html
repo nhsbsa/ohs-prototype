@@ -166,15 +166,27 @@
 		font-size: 16px;
 		padding-top: 10px;
 	}
-	
+
 	.visually-hidden {
 		display:none;
 	}
 
-	.button.button-secondary {
+	.button.button-secondary.ent {
 		width:20%;
 		text-align:center;
-		margin: auto 20px;
+		margin: 0 20px;
+	}
+
+	#moreInfo {
+		margin-top: 20px;
+	}
+
+	#myDIV,
+	#myDIV2,
+	#myDIV3,
+	#myDIV4
+	 {
+		background: #F8F8F8;
 	}
 </style>
 
@@ -196,12 +208,12 @@
 				</h1>
 			</div>
 			<div class="tab-container">
-				<a class="tablinks active" onclick="openTab(event, 'personal-details')" href="#">
+				<a class="tablinks active" onclick="openTab(event, 'personal')" href="#">
 					<div>
 						<p class="heading-small">Person</p>
 					</div>
 				</a>
-				<a class="tablinks" onclick="openTab(event, 'entitlements')" href="#">
+				<a class="tablinks" onclick="openTab(event, 'health')" href="#">
 					<div>
 						<p class="heading-small">Entitlements</p>
 					</div>
@@ -209,38 +221,24 @@
 				<!-- <a class="tablinks" onclick="openTab(event, 'dependants')" href="#">
 					<div>
 						<p class="heading-small">Dependants (3)</p>
-						<p class="heading-small">Claims</p>
 					</div>
 				</a>
 				<a class="tablinks" onclick="openTab(event, 'invoices')" href="#">
 					<div>
-						<p class="heading-small">Invoices<svg class="svg-inline--fa fa-exclamation-triangle fa-w-18" style="padding-left: 10px; color: #B10E1E;" aria-hidden="true" data-prefix="fa" data-icon="exclamation-triangle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"></path></svg></p>
-						<p class="heading-small">Payments</p>
+						<p class="heading-small">Invoices</p>
 					</div>
 				</a>
-				<a class="tablinks" onclick="openTab(event, 'notes')" href="#">
+				<a class="tablinks" onclick="openTab(event, 'casehist')" href="#">
 					<div>
-						<p class="heading-small">Notes</p>
+						<p class="heading-small">Case notes</p>
 					</div>
 				</a> -->
-
 				<div class="tab-box">
-					<!-- Person details -->
-					<div id="personal-details" class="tabcontentActive">
+					<div id="personal" class="tabcontentActive">
 						<div class="grid-row">
 							<div class="column-two-thirds">
 								<br>
 								<dl class="govuk-check-your-answers cya-questions-long">
-									<div>
-										<dt class="cya-question">Full name</dt>
-										<dd class="cya-answer">
-											Michael Philip
-										</dd>
-										<!-- <dd class="cyachange">
-											<a href="#">Change<span class="visually-hidden"> full name</span></a>
-										</dd> -->
-									</div>
-									<br>
 									<div>
 										<dt class="cya-question">Date of birth</dt>
 										<dd class="cya-answer">
@@ -302,156 +300,194 @@
 									</div>
 									<br>
 								</dl>
+								<div class="form-group" style="margin-top:30px">
+									<!-- <a class="button" href="">Change details</a> -->
+									<!-- <p class="navigation" style="margin-top: 50px;"> -->
+										<a class="button button-secondary" href="search">Exit record</a>
+									<!-- </p> -->
+								</div>
 							</div>
 						</div>
-						<br>
-						<!-- <div class="form-group">
-							<a class="button" href="#">Update</a>
-						</div> -->
 					</div>
 
-					<!-- Entitlements -->
-					<div id="entitlements" class="tabcontent">
+					<div id="health" class="tabcontent">
+						<!-- moving -->
+						<h2 class="heading-small">Moving</h2>
 						<table id="mainTable">
 							<thead>
 								<tr>
-									<!-- <th scope="col">Entitlement ID</th> -->
-									<th nowrap scope="col">Form type</th>
-									<th nowrap scope="col">Requested date</th>
-									<!-- <th scope="col">Member state</th>
-									<th scope="col">Date issues</th> -->
-									<th nowrap scope="col">Start date</th>
-									<th nowrap scope="col">End date</th>
-									<th nowrap scope="col">Main/Dependant</th>
-									<th nowrap scope="col">Country</th>
-									<th nowrap scope="col">Status</th>
-									<th nowrap scope="col"></th>
+									<th style="width:10%">Issued Date</th>
+									<th style="width:10%">Start date</th>
+									<th style="width:10%">End date</th>
+									<th style="width:15%">Main/Dependant</th>
+									<th style="width:10%">Country</th>
+									<th style="width:10%">Status</th>
+									<th style="width:7%"></th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<!-- <td style="width:10%">MB95355</td> -->
-									<td nowrap style="width:10%">Pensioner (S1)</td>
-									<!-- <td style="width:10%">Spain</td> -->
-									<td nowrap style="width:10%">06 Mar 2012</td>
-									<td nowrap style="width:10%">13 Mar 2012</td>
-									<td nowrap style="width:10%">20 Dec 2012</td>
-									<!-- <td style="width:10%">-</td> -->
-									<td nowrap style="width:10%">Main</td>
-									<td nowrap style="width:10%">France</td>
-									<td nowrap style="width:10%"><span style="padding-left: 28px; padding-right: 28px" class="status-tag-high font-xsmall">Closed</span></td>
-									<td nowrap style="width:7%">
-										<details onclick="myFunction2()">
-											<summary>
-												<span class="summary">Actions</span>
-											</summary>
-										</details>
-										<!-- <div class="form-group">
-											<br>
-											<a class="link" href="#">Re-Issue</a><br><br>
-											<a class="link" href="#">Add dependant</a><br><br>
-											<a class="link" href="#">Remove dependant</a><br><br>
-											<a class="link" href="#">Cancel entitlement</a>
-										</div> -->
-									</td>
-								</tr>
-								<br>
-								<tr>
-									<!-- <td style="width:10%">MB95355</td> -->
-									<td nowrap style="width:10%">Pensioner (S1)</td>
-									<!-- <td style="width:10%">Spain</td> -->
-									<td nowrap style="width:10%">06 Mar 2016</td>
-									<td nowrap style="width:10%">13 Mar 2016</td>
-									<td nowrap style="width:10%">20 Dec 2016</td>
-									<!-- <td style="width:10%">-</td> -->
-									<td nowrap style="width:10%">Main</td>
-									<td nowrap style="width:10%">France</td>
-									<td nowrap style="width:10%"><span style="padding-left: 25px; padding-right: 25px" class="status-tag-medium font-xsmall">Pending</span></td>
-									<td nowrap style="width:7%">
-										<details onclick="myFunction2()">
-											<summary>
-												<span class="summary">Actions</span>
-											</summary>
-										</details>
-										<!-- <div class="form-group">
-											<br>
-											<a class="link" href="#">Re-Issue</a><br><br>
-											<a class="link" href="#">Add dependant</a><br><br>
-											<a class="link" href="#">Remove dependant</a><br><br>
-											<a class="link" href="#">Cancel entitlement</a>
-										</div> -->
-									</td>
-								</tr>
-								<br>
-								<tr>
-									<!-- <td style="width:10%">MB95355</td> -->
-									<td nowrap style="width:10%">Pensioner (S1)</td>
-									<!-- <td style="width:10%">Spain</td> -->
-									<td nowrap style="width:10%">06 Mar 2018</td>
-									<td nowrap style="width:10%">13 Mar 2018</td>
-									<td nowrap style="width:10%">20 Dec 2018</td>
-									<!-- <td style="width:10%">-</td> -->
-									<td nowrap style="width:10%">Main</td>
-									<td nowrap style="width:10%">France</td>
-									<td nowrap style="width:10%"><span style="padding-left: 25px; padding-right: 25px" class="status-tag-low font-xsmall">Active</span></td>
-									<td nowrap style="width:7%">
-										<details onclick="myFunction()">
-											<summary>
-												<span class="summary">Actions</span>
-											</summary>
-										</details>
-										<!-- <div class="form-group">
-											<br>
-											<a class="link" href="#">Re-Issue</a><br><br>
-											<a class="link" href="#">Add dependant</a><br><br>
-											<a class="link" href="#">Remove dependant</a><br><br>
-											<a class="link" href="#">Cancel entitlement</a>
-										</div> -->
-									</td>
+									<td style="width:10%">3 Mar 2018</td>
+									<td style="width:10%">3 Mar 2018</td>
+									<td style="width:10%">-</td>
+									<td style="width:15%">Main</td>
+									<td style="width:10%">Spain</td>
+									<td style="width:10%"><span style="padding-left: 25px; padding-right: 25px" class="status-tag-medium font-xsmall">Requested</span></td>
+									<td nowrap="" style="width:7%"><details onclick="myFunction()"><summary><span class="summary">More info</span></summary></details></td>
 								</tr>
 							</tbody>
 						</table>
+
 						<div id="myDIV" style="display: none;">
 							<table>
 								<tbody>
 									<tr>
-										<td colspan="8"><div class="panel panel-border-wide s1infoExpanded">
-											<a class="button button-secondary" href="#">Reissue entitlement</a>
-											<a class="button button-secondary" href="#">Add dependant</a>
-											<a class="button button-secondary" href="#">Remove dependant</a>
-											<a class="button button-secondary" href="#">Cancel entitlement</a>
+										<td colspan="8">
+											<div class="panel panel-border-wide s1infoExpanded">
+												<div class="form-group column-full">
+													<a class="button button-secondary ent" href="#">Reprint entitlement</a>
+													<a class="button button-secondary ent" href="#">Add dependant</a>
+													<!-- <a class="button button-secondary" href="#">Register</a>
+													<a class="button button-secondary" href="#">Amend dates</a> -->
+												</div>
+												<div id="moreInfo" class="column-full">
+													<details>
+														<summary>
+															<span class="summary">View dependants</span>
+														</summary>
+														<table>
+															<thead>
+																<tr>
+																	<th scope="col" nowrap="">Full name</th>
+																	<th scope="col" nowrap="">Issued Date</th>
+																	<th scope="col" nowrap="">Start date</th>
+																	<th scope="col" nowrap="">End date</th>
+																	<th scope="col" nowrap="">Status</th>
+																	<th scope="col"></th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>Mary Philip</td>
+																	<td>3 Mar 2018</td>
+																	<td>3 Mar 2018</td>
+																	<td></td>
+																	<td><span style="padding-left: 25px; padding-right: 25px" class="status-tag-medium font-xsmall">Requested</span></td>
+																	<td><a href="#">View record</a></td>
+																</tr>
+																<tr>
+																	<td>Rosie Philip</td>
+																	<td>3 Mar 2018</td>
+																	<td>3 Mar 2018</td>
+																	<td>20 May 2018</td>
+																	<td><span style="padding-left: 35px; padding-right: 35px" class="status-tag-high font-xsmall">Expired</span></td>															
+																	<td><a href="#">View record</a></td>
+																</tr>
+															</tbody>
+														</table>
+													</details>
+												</div>
+											</div>
 										</td>
 									</tr>
 								</tbody>
 							</table>
 						</div>
-						<br>
-						<div class="form-group">
-							<a class="button" href="create-entitlement">Create a new entitlement</a>
-						</div>
-					</div>
 
-					<!-- Dependants -->
-					<div id="dependants" class="tabcontent">
-						<!-- <table id="mainTable">
+						<table id="mainTable">
+							<tbody>
+								<tr>
+									<td style="width:10%">20 Dec 2014</td>
+									<td style="width:10%">20 Dec 2014</td>
+									<td style="width:10%">29 Dec 2014</td>
+									<td style="width:15%">Main</td>
+									<td style="width:10%">France</td>
+									<td style="width:10%"><span style="padding-left: 35px; padding-right: 35px" class="status-tag-high font-xsmall">Expired</span></td>
+									<td nowrap="" style="width:7%"><details onclick="myFunction2()"><summary><span class="summary">More info</span></summary></details></td>
+								</tr>
+							</tbody>
+						</table>
+
+						<div id="myDIV2" style="display: none;">
+							<table>
+								<tbody>
+									<tr>
+										<td colspan="8">
+											<div class="panel panel-border-wide s1infoExpanded">
+												<div class="form-group column-full">
+													<a class="button button-secondary ent" href="#">Reprint entitlement</a>
+													<a class="button button-secondary ent" href="#">Add dependant</a>
+													<!-- <a class="button button-secondary ent" href="#">Register</a>
+													<a class="button button-secondary ent" href="#">Amend dates</a> -->
+												</div>
+												<div id="moreInfo" class="column-full">
+													<details>
+														<summary>
+															<span class="summary">View dependants</span>
+														</summary>
+														<table>
+															<thead>
+																<tr>
+																	<th scope="col" nowrap="">Full name</th>
+																	<th scope="col" nowrap="">Issued Date</th>
+																	<th scope="col" nowrap="">Start date</th>
+																	<th scope="col" nowrap="">End date</th>
+																	<th scope="col" nowrap="">Status</th>
+																	<th scope="col"></th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>Mary Philip</td>
+																	<td>20 Dec 2014</td>
+																	<td>20 Dec 2014</td>
+																	<td>29 Dec 2014</td>
+																	<td><span style="padding-left: 35px; padding-right: 35px" class="status-tag-high font-xsmall">Expired</span></td>	
+																	<td><a href="#">View record</a></td>
+																</tr>
+																<tr>
+																	<td>Rosie Philip</a></td>
+																	<td>20 Dec 2014</td>
+																	<td>20 Dec 2014</td>
+																	<td>29 Dec 2014</td>
+																	<td><span style="padding-left: 35px; padding-right: 35px" class="status-tag-high font-xsmall">Expired</span></td>																
+																	<td><a href="#">View record</a></td>
+																</tr>
+															</tbody>
+														</table>
+													</details>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<!-- visiting -->
+						<br>
+						<h2 class="heading-small">Visiting</h2>
+						<table id="mainTable">
 							<thead>
 								<tr>
-									<th width="15%">Record ID</th>
-									<th width="15%">First name</th>
-									<th width="15%">Last name</th>
-									<th width="15%">Date of birth</th>
-									<th width="15%">National Insurance number</th>
-									<th width="15%"></th>
+									<th style="width:10%">Issued Date</th>
+									<th style="width:10%">Start date</th>
+									<th style="width:10%">End date</th>
+									<th style="width:11%">Main/Dependant</th>
+									<th style="width:14%">Country/Institution</th>
+									<th style="width:10%">Status</th>
+									<th style="width:7%"></th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td><a href="">MB95355</a></td>
-									<td>Mary</td>
-									<td>Richards</td>
-									<td>3 Mar 1955</td>
-									<td>NS123456D</td>
-									<td><details onclick="myFunction3()"><summary><span class="summary">More info</span></summary></details></td>
+									<td style="width:10%">1 Dec 2018</td>
+									<td style="width:10%">1 Dec 2018</td>
+									<td style="width:10%">31 Dec 2018</td>
+									<td style="width:11%">Main</td>
+									<td style="width:14%">Spain</td>
+									<td style="width:10%"><span style="padding-left: 35px; padding-right: 35px" class="status-tag-low font-xsmall">Active</span></td>
+									<td nowrap="" style="width:7%"><details onclick="myFunction3()"><summary><span class="summary">More info</span></summary></details></td>
 								</tr>
 							</tbody>
 						</table>
@@ -462,263 +498,103 @@
 									<tr>
 										<td colspan="8">
 											<div class="panel panel-border-wide s1infoExpanded">
-												<table>
-													<thead>
-														<tr>
-															<th scope="col" nowrap="">Entitlement ID</th>
-															<th scope="col" nowrap="">Form type</th>
-															<th scope="col" nowrap="">Date issued</th>
-															<th scope="col" nowrap="">Start date</th>
-															<th scope="col" nowrap="">End date</th>
-															<th scope="col" nowrap="">Status</th>
-															<th scope="col"></th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>123862</td>
-															<td nowrap="">Pensioner (S1)</td>
-															<td>3 Mar 2018</td>
-															<td>3 Mar 2018</td>
-															<td>-</td>
-															<td>
-																<span style="padding-left: 25px; padding-right: 25px" class="status-tag-medium font-xsmall">Pending</span>
-															</td>
-															<td>
-																<a href="#">Remove dependancy</a></td>
-															</tr>
-
-															<tr>
-																<td>115809</td>
-																<td nowrap="">Posted worker (S1)</td>
-																<td>3 Mar 2014</td>
-																<td>3 Mar 2014</td>
-																<td>20 May 2017</td>
-																<td>
-																	<span style="padding-left: 25px; padding-right: 25px" class="status-tag-high font-xsmall">Closed</span>
-																</td>
-																<td>
-																	<a href="#">Remove dependancy</a>
-																</td>
-															</tr>
-														</tbody>
-													</table>
+												<div class="form-group column-full">
+													<a class="button button-secondary ent" href="#">Add dependant</a>
+													<a class="button button-secondary ent" href="#">Amend dates</a>
 												</div>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<table id="mainTable">
-								<tbody>
-									<tr>
-										<td width="15%"><a href="">MB82336</a></td>
-										<td width="15%">Rosie</td>
-										<td width="15%">Richards</td>
-										<td width="15%">3 Dec 2012</td>
-										<td width="15%">CR882917E</td>
-										<td width="15%">
-											<details onclick="myFunction4()">
-												<summary>
-													<span class="summary">More info</span>
-												</summary>
-											</details>
+												<div id="moreInfo" class="column-full">
+													<details>
+														<summary>
+															<span class="summary">View dependants</span>
+														</summary>
+														<table>
+															<thead>
+																<tr>
+																	<th scope="col" nowrap="">Full name</th>
+																	<th scope="col" nowrap="">Issued Date</th>
+																	<th scope="col" nowrap="">Start date</th>
+																	<th scope="col" nowrap="">End date</th>
+																	<th scope="col" nowrap="">Status</th>
+																	<th scope="col"></th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>Mary Philip</td>
+																	<td>1 Dec 2018</td>
+																	<td>1 Dec 2018</td>
+																	<td>31 Dec 2018</td>
+																	<td><span style="padding-left: 35px; padding-right: 35px" class="status-tag-low font-xsmall">Active</span></td>
+																	<td><a href="#">View record</a></td>
+																</tr>
+															</tbody>
+														</table>
+													</details>
+												</div>
+											</div>
 										</td>
 									</tr>
 								</tbody>
 							</table>
-							<div id="myDIV4" style="display: none;">
-								<table>
-									<tbody>
-										<tr>
-											<td colspan="8">
-												<div class="panel panel-border-wide s1infoExpanded">
-													<table>
-														<thead>
-															<tr>
-																<th scope="col" nowrap="">Record ID</th>
-																<th scope="col" nowrap="">Form type</th>
-																<th scope="col" nowrap="">Date issued</th>
-																<th scope="col" nowrap="">Start date</th>
-																<th scope="col" nowrap="">End date</th>
-																<th scope="col" nowrap="">Status</th>
-																<th scope="col"></th>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<td><a href="#">123862</a></td>
-																<td nowrap="">Pensioner (S1)</td>
-																<td>3 Mar 2018</td>
-																<td>3 Mar 2018</td>
-																<td>-</td>
-																<td>
-																	<span style="padding-left: 25px; padding-right: 25px" class="status-tag-medium font-xsmall">Pending</span>
-																</td>
-																<td>
-																	<a href="#">Remove dependancy</a>
-																</td>
-															</tr>
+						</div>
 
-															<tr>
-																<td>
-																	<a href="#">114779</a>
-																</td>
-																<td nowrap="">Posted worker (S1)</td>
-																<td>3 Mar 2014</td>
-																<td>3 Mar 2014</td>
-																<td>20 May 2017</td>
-																<td>
-																	<span style="padding-left: 25px; padding-right: 25px" class="status-tag-high font-xsmall">Closed</span>
-																</td>
-																<td>
-																	<a href="#">Remove dependancy</a>
-																</td>
-															</tr>
-														</tbody>
-													</table>
-												</div>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<table id="mainTable">
-								<tbody>
-									<tr>
-										<td width="15%"><a href="">MB82001</a></td>
-										<td width="15%">Arnold</td>
-										<td width="15%">Richards</td>
-										<td width="15%">3 Dec 1982</td>
-										<td width="15%">GT125670X</td>
-										<td width="15%"><details onclick="myFunction5()"><summary><span class="summary">More info</span></summary></details></td>
-									</tr>
-								</tbody>
-							</table>
-							<div id="myDIV5" style="display: none;">
-								<table>
-									<tbody>
-										<tr>
-											<td colspan="8">
-												<div class="panel panel-border-wide s1infoExpanded">
-													<table>
-														<thead>
-															<tr>
-																<th scope="col" nowrap="">Record ID</th>
-																<th scope="col" nowrap="">Form type</th>
-																<th scope="col" nowrap="">Date issued</th>
-																<th scope="col" nowrap="">Start date</th>
-																<th scope="col" nowrap="">End date</th>
-																<th scope="col" nowrap="">Status</th>
-																<th scope="col"></th>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<td><a href="#">106983</a></td>
-																<td nowrap="">Posted worker (S1)</td>
-																<td>3 Mar 2014</td>
-																<td>3 Mar 2014</td>
-																<td>20 May 2017</td>
-																<td><span style="padding-left: 25px; padding-right: 25px" class="status-tag-high font-xsmall">Closed</span></td>
-																<td><a href="#">Remove dependancy</a></td>
-															</tr>
-														</tbody>
-													</table>
-												</div>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<br>
-							<div class="form-group">
-								<a class="button" href="dep/search">Create a new dependant</a>
-							</div>
-						</div> -->
-					</div>
-
-					<!-- Invoices -->
-					<div id="invoices" class="tabcontent">
-						<!-- <table>
+						<!-- planned -->
+						<br>
+						<h2 class="heading-small">Planned</h2>
+						<table id="mainTable">
 							<thead>
 								<tr>
-									<th scope="col">Invoice ID</th>
-									<th scope="col">Claim ID</th>
-									<th scope="col">Member state</th>
-
-									<th scope="col">Amount</th>
-									<th scope="col">Treatment date</th>
-									<th scope="col">Status</th>
-									<th scope="col">Reason</th>
+									<th style="width:10%">Issued Date</th>
+									<th style="width:10%">Start date</th>
+									<th style="width:10%">Treatment</th>
+									<th style="width:10%">Hospital</th>
+									<th style="width:15%">Country/Institution</th>
+									<th style="width:10%">Status</th>
+									<th style="width:7%"></th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td><a href="citizen-invoice">32456</a></td>
-									<td>154555</td>
-									<td>France</td>
-
-									<td>€120</td>
-									<td>1 Jan 2017</td>
-									<td><span class="status-tag-low font-xsmall">Accepted</span></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td><a href="ann">12343</a></td>
-									<td>123862</td>
-									<td>France</td>
-
-									<td>€120</td>
-									<td>1 Jan 2017</td>
-									<td><span class="status-tag-high font-xsmall">Contested</span></td>
-									<td>Duplicate</td>
+									<td style="width:10%">2 Jan 2019</td>
+									<td style="width:10%">2 Jan 2019</td>
+									<td style="width:12%">Maternity</td>
+									<td style="width:12%">N/A</td>
+									<td style="width:11%">France</td>
+									<td style="width:10%"><span style="padding-left: 25px; padding-right: 25px" class="status-tag-medium font-xsmall">Requested</span></td>
+									<td nowrap="" style="width:7%"><details onclick="myFunction4()"><summary><span class="summary">More info</span></summary></details></td>
 								</tr>
 							</tbody>
-						</table> -->
-					</div>
+						</table>
 
-					<!-- Notes-->
-					<div id="notes" class="tabcontent">
-						<!-- <div class="column-two-thirds">
+						<div id="myDIV4" style="display: none;">
 							<table>
-								<thead>
-									<tr>
-										<th scope="col" style="width:15%">Date</th>
-										<th scope="col" style="width:60%">Note</th>
-										<th scope="col" style="width:15%">Type</th>
-										<th scope="col" style="width:25%">Name</th>
-									</tr>
-								</thead>
 								<tbody>
 									<tr>
-										<td nowrap="">19 Jan 2018</td>
-										<td>Created a new registration for S1, documents printed for John Richards</td>
-										<td nowrap=""><span class="status-tag-disabled font-xsmall" style="margin-left:2px">System</span></td>
-										<td nowrap="">Charlie Brown</td>
-									</tr>
-									<tr>
-										<td nowrap="">1 Jan 2018</td>
-										<td>Telephony enquiry for S1 certificate for residence in Spain</td>
-										<td nowrap="">
-											<span class="status-tag-disabled font-xsmall" style="margin-left:2px">System</span>
+										<td colspan="8">
+											<div class="panel panel-border-wide s1infoExpanded">
+												<div class="form-group column-full">
+													<a class="button button-secondary ent" href="#">Reprint entitlement</a>
+													<a class="button button-secondary ent" href="#">Amend dates</a>
+												</div>
+											</div>
 										</td>
-										<td nowrap="">Jane Smith</td>
-									</tr>
-									<tr>
-										<td nowrap="">6 Jul 2013</td>
-										<td>Suspicious behaviour and nuisance phone calls from a relative claiming to be the main.</td>
-										<td nowrap=""><span class="status-tag-medium font-xsmall" style="margin-left:2px; padding-left: 23px; padding-right: 23px">User</span></td>
-										<td nowrap="">Roger Black</td>
 									</tr>
 								</tbody>
 							</table>
-							<br>
-							<div class="form-group">
-								<a class="button" href="#">Add a case note</a>
-							</div>
-						</div> -->
+						</div>
+						<br>
+						<div class="form-group">
+							<a class="button" href="moving-country">Create a new entitlement</a>
+							<!-- <p class="navigation" style="margin-top: 50px;"> -->
+								<a class="button button-secondary" href="search">Exit record</a>
+							<!-- </p> -->
+						</div>
 					</div>
+					<!-- <div class="form-group">
+						<p class="navigation">
+							<a class="cancel" href="#" data-toggle="dialog" data-target="dialog-4">Cancel</a>
+						</p>
+					</div> -->
 				</div>
 			</div>
 		</div>

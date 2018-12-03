@@ -18,13 +18,20 @@ router.get(/same-pension-form/, function (req,res){
 });
 
 router.get(/another-pension-form/, function (req,res){
-  if(req.query.anotherCountry === "yes"){
-    // res.redirect('contact-address2');
+  if(req.query.anotherCountry === "yes") {
     res.redirect('check-your-answers');
   }
   else {
-    //   res.redirect('contact-address');
     res.redirect('check-your-answers');
+  }
+});
+
+router.get(/address-pension-form/, function (req,res){
+  if(req.query.anotherCountry === "yes") {
+    res.redirect('new-address');
+  }
+  else {
+    res.redirect('new-address');
   }
 });
 
@@ -55,6 +62,26 @@ router.get(/abc-2/, function (req,res){
 router.get(/create-handler/, function (req,res){
   if(req.query.radiobs === "moving"){
     res.redirect('benefit-info');
+  }
+});
+
+router.get(/ccs-benefit/, function (req,res){
+  if(req.query.pension === "yes"){
+    res.redirect('pension-date');
+  } else if(req.query.pension === "no") {
+    res.redirect('not-entitled-2');
+  } else {
+    res.redirect('pension-date');
+  }
+});
+
+router.get(/ccs-admin/, function (req,res){
+  if(req.query.pension === "pension"){
+    res.redirect('pension-date');
+  } else if(req.query.pension !== "pension") {
+    res.redirect('benefit-date');
+  } else {
+    res.redirect('benefit-date');
   }
 });
 

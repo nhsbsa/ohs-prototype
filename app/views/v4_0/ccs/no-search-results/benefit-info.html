@@ -137,22 +137,22 @@ Create entitlement
 				<div class="column-full">
 					<div class="heading-group">
 						<!-- <p>Overseas Healthcare Services</p> -->
-						<h1 class="heading-large">Are you in receipt of a pension?</h1>
+						<h1 class="heading-large">Are you in receipt of a UK State Pension?</h1>
 					</div>
 
-					<form class="form" action="create-handler" method="get">
+					<form class="form" action="ccs-benefit" method="get">
 						<div class="form-group">
-							<fieldset>
+							<fieldset id="pensionUK">
 								<div class="govuk-radios govuk-radios--inline">
 									<!-- PENSION -->
 									<div class="govuk-radios__item">
-										<input class="govuk-radios__input" id="where-do-you-live-1" name="where-do-you-live" type="radio" value="yes">
+										<input class="govuk-radios__input" id="where-do-you-live-1" name="pension" type="radio" value="yes">
 										<label class="govuk-label govuk-radios__label" for="where-do-you-live-1">
 											Yes
 										</label>
 									</div>
 									<div class="govuk-radios__item">
-										<input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="no">
+										<input class="govuk-radios__input" id="where-do-you-live-2" name="pension" type="radio" value="no">
 										<label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
 											No
 										</label>
@@ -161,8 +161,8 @@ Create entitlement
 							</fieldset>
 						</div>
 						<div class="form-group">
-							<!-- <input class="button" type="submit" value="Next"> -->
-							<a class="button" href="/v4_0/s1-results/moving-country">Next</a>
+							<input class="button" type="submit" value="Next">
+							<!-- <a class="button" href="/v4_0/s1-results/moving-country">Next</a> -->
 						</div>
 
 						<p class="navigation">

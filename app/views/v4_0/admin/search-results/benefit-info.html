@@ -7,7 +7,23 @@ Create entitlement
 {% block content %}
 
 <style>
-/* radio buttons (not-inline) */
+/* radio buttons */
+@media (min-width: 40.0625em) {
+	.govuk-radios--inline:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+@media (min-width: 40.0625em) {
+	.govuk-radios--inline .govuk-radios__item {
+		margin-right: 20px;
+		float: left;
+		clear: none;
+	}
+}
+
 @media (min-width: 40.0625em) {
 	.govuk-radios__item {
 		font-size: 19px;
@@ -17,12 +33,12 @@ Create entitlement
 }
 
 .govuk-radios__item {
-    font-family: "nta",Arial,sans-serif;
+    font-family: Arial,sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 400;
     font-size: 1rem;
-    font-size: 16px;
+	font-size: 16px;
 	line-height: 1.25;
     display: block;
     position: relative;
@@ -62,7 +78,7 @@ Create entitlement
 }
 
 .govuk-label {
-    font-family: "nta",Arial,sans-serif;
+    font-family: Arial,sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 400;
@@ -124,107 +140,51 @@ Create entitlement
 						<h1 class="heading-large">Are you in receipt of any benefits?</h1>
 					</div>
 
-					<form class="form" action="create-handler" method="get">
+					<form class="form" action="ccs-admin" method="get">
 						<div class="form-group">
-							<fieldset>
+							<fieldset id="pensionUK">
 								<div class="govuk-radios">
-									<!-- PENSION -->
+									<!-- Pension -->
 									<div class="govuk-radios__item">
-										<input class="govuk-radios__input" id="where-do-you-live-1" name="where-do-you-live" type="radio" value="pension">
+										<input class="govuk-radios__input" id="where-do-you-live-1" name="pension" type="radio" value="pension">
 										<label class="govuk-label govuk-radios__label" for="where-do-you-live-1">
 											Pension
 										</label>
 									</div>
-									<!-- PIP -->
-									<div class="govuk-radios__item" data-target="pip">
-										<input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="pip">
+									<!-- Employment Support Allowance -->
+									<div class="govuk-radios__item">
+										<input class="govuk-radios__input" id="where-do-you-live-2" name="pension" type="radio" value="pip">
 										<label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-											PIP
+											Employment Support Allowance
 										</label>
 									</div>
-									<div class="panel panel-border-narrow js-hidden" id="pip">
-										<label for="nationalities-other-country">
-											<span class="form-label">Final payment date (optional)</span>
-											<span class="form-hint">For example, 31/03/1980</span>
-										</label>
-										<input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
-									</div>
-									<!-- DLA -->
-									<div class="govuk-radios__item" data-target="dla">
-										<input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="dla">
+									<!-- Disability Living Allowance -->
+									<div class="govuk-radios__item">
+										<input class="govuk-radios__input" id="where-do-you-live-3" name="pension" type="radio" value="dla">
 										<label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
-											DLA
+											Disability Living Allowance
 										</label>
 									</div>
-									<div class="panel panel-border-narrow js-hidden" id="dla">
-										<label for="nationalities-other-country">
-											<span class="form-label">Final payment date (optional)</span>
-											<span class="form-hint">For example, 31/03/1980</span>
-										</label>
-										<input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
-									</div>
-									<!-- IDDB -->
-									<div class="govuk-radios__item" data-target="iddb">
-										<input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live" type="radio" value="iddb">
+									<!-- Personal Independence Payment -->
+									<div class="govuk-radios__item">
+										<input class="govuk-radios__input" id="where-do-you-live-4" name="pension" type="radio" value="iddb">
 										<label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
-											IDDB
+											Personal Independence Payment
 										</label>
 									</div>
-									<div class="panel panel-border-narrow js-hidden" id="iddb">
-										<label for="nationalities-other-country">
-											<span class="form-label">Final payment date (optional)</span>
-											<span class="form-hint">For example, 31/03/1980</span>
-										</label>
-										<input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
-									</div>
-									<!-- ESA -->
-									<div class="govuk-radios__item" data-target="esa">
-										<input class="govuk-radios__input" id="where-do-you-live-5" name="where-do-you-live" type="radio" value="esa">
+									<!-- Carers Allowance -->
+									<div class="govuk-radios__item">
+										<input class="govuk-radios__input" id="where-do-you-live-5" name="pension" type="radio" value="esa">
 										<label class="govuk-label govuk-radios__label" for="where-do-you-live-5">
-											ESA
+											Carers Allowance
 										</label>
-									</div>
-									<div class="panel panel-border-narrow js-hidden" id="esa">
-										<label for="nationalities-other-country">
-											<span class="form-label">Final payment date (optional)</span>
-											<span class="form-hint">For example, 31/03/1980</span>
-										</label>
-										<input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
-									</div>
-									<!-- Bereavement Benefit  -->
-									<div class="govuk-radios__item" data-target="bereavement">
-										<input class="govuk-radios__input" id="where-do-you-live-6" name="where-do-you-live" type="radio" value="bereavement">
-										<label class="govuk-label govuk-radios__label" for="where-do-you-live-6">
-											Bereavement benefit
-										</label>
-									</div>
-									<div class="panel panel-border-narrow js-hidden" id="bereavement">
-										<label for="nationalities-other-country">
-											<span class="form-label">Final payment date (optional)</span>
-											<span class="form-hint">For example, 31/03/1980</span>
-										</label>
-										<input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
-									</div>
-									<!-- IDD -->
-									<div class="govuk-radios__item" data-target="idd">
-										<input class="govuk-radios__input" id="where-do-you-live-7" name="where-do-you-live" type="radio" value="idd">
-										<label class="govuk-label govuk-radios__label" for="where-do-you-live-7">
-											IDD
-										</label>
-									</div>
-									<div class="panel panel-border-narrow js-hidden" id="idd">
-										<label for="nationalities-other-country">
-											<span class="form-label">Final payment date (optional)</span>
-											<span class="form-hint">For example, 31/03/1980</span>
-										</label>
-										<input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
 									</div>
 								</div>
 							</fieldset>
 						</div>
 						<div class="form-group">
-							<!-- <input class="button" type="submit" value="Next"> -->
-							<a class="button" href="/v4_0/s1-results-admin/moving-country">Next</a>
+							<input class="button" type="submit" value="Next">
+							<!-- <a class="button" href="/v4_0/s1-results/moving-country">Next</a> -->
 						</div>
 
 						<p class="navigation">

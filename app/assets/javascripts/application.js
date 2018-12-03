@@ -22,6 +22,9 @@ $(document).ready(function () {
 $("#radiobtn-country-yes").change(function() {
 	$(".pickCountry").removeClass("visually-hidden");
 });
+$("#radiobtn-country-no").change(function() {
+	$(".pickCountry").addClass("visually-hidden");
+});
 
 // contact3rd page
 $("#radiobtn-email").change(function() {

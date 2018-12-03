@@ -12,13 +12,13 @@
     <div class="grid-row">
         <div class="column-two-thirds">
             <header class="page-header">
-                <h1 class="page-header--lede heading-large">Add residential address</h1>
+                <h1 class="page-header--lede heading-large">What will your residential address be in France?</h1>
             </header>
 
-            <form action="contact-details" id="contact-address-form" method="get" class="form">
+            <form action="check-your-answers" id="contact-address-form" method="get" class="form">
 
                 <!-- display/hide correspontace address field -->
-                <div class="form-group">
+                <div id="residentialAddress" class="form-group">
 
                     <div class="form-group">
                         <label class="form-label" for="lineone">Building and street (line 1 of 2)</label>
@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label" for="lineone">Building and street (line 2 of 2)</label>
+                        <label class="form-label" for="lineone">Building and street (line 2 of 2) (optional)</label>
                         <input class="form-control"  id="registration-number" name="address-linetwo" type="text">
                     </div>
 
@@ -46,19 +46,19 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div id="correspondenceAddress" class="form-group">
                     <details role="group">
                         <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Add a correspondence address (if different)</span></summary>
                         <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
                             <div class="form-group">
-                                <h2 class="heading-large">Add correspondence address</h2>
+                                <h2 class="heading-large">What will your correspondence address be in France?</h2>
 
                                 <div class="form-group">
                                     <label class="form-label" for="building-name-1">Building and street (line 1 of 2)</label>
                                     <input class="form-control" id="building-name-1" name="building-name-1" type="text">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label" for="street-name-1">Building and street (line 2 of 2)</label>
+                                    <label class="form-label" for="street-name-1">Building and street (line 2 of 2) (optional)</label>
                                     <input class="form-control" id="street-name-1" name="street-name-1" type="text">
                                 </div>
                                 <div class="form-group">
@@ -79,7 +79,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input class="button" type="submit" value="Continue">
+                    <input class="button" type="submit" value="Next">
                 </div>
                 <p class="navigation">
                     <a class="cancel" href="#" data-toggle="dialog" data-target="dialog-4">Cancel</a>
