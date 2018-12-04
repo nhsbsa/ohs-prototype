@@ -255,6 +255,16 @@
 									<br>
 									<div>
 										<dt class="cya-question">Residential address</dt>
+										<dd class="cya-answer">Calle Aduana 90<br>
+											Labastida<br>
+											Álava<br>
+											01330<br>
+											Spain
+										</dd>
+									</div>
+									<br>
+									<div id="previous-address" class="visually-hidden">
+										<dt class="cya-question">Previous residential address</dt>
 										<dd class="cya-answer">1 Road<br>
 											Downtown<br>
 											Lille<br>
@@ -262,24 +272,13 @@
 											France
 										</dd>
 									</div>
-									<br>
-									<div>
-										<dt class="cya-question">Correspondence address</dt>
+									<div id="previous-address-2" class="visually-hidden">
+										<dt class="cya-question">Previous correspondence address</dt>
 										<dd class="cya-answer">Rúa de Mer 64<br>
 											Paris<br>
 											Plaisance<br>
 											75014<br>
 											France
-										</dd>
-									</div>
-									<br>
-									<!-- <div id="previous-address" class="visually-hidden">
-										<dt class="cya-question">Previous address</dt>
-										<dd class="cya-answer">Calle Aduana 90<br>
-											Labastida<br>
-											Álava<br>
-											01330<br>
-											Spain
 										</dd>
 									</div>
 								</dl>
@@ -289,7 +288,7 @@
 									<a id="hpa" class="link visually-hidden" href="#">Hide previous address</a>
 								</div>
 								<dl class="govuk-check-your-answers cya-questions-long">
-									<br> -->
+									<br>
 									<div>
 										<dt class="cya-question">Email address</dt>
 										<dd class="cya-answer">-</dd>
@@ -326,10 +325,10 @@
 									<th style="width:7%"></th>
 								</tr>
 							</thead>
-							<!-- <tbody>
+							<tbody>
 								<tr>
-									<td style="width:10%">3 Mar 2018</td>
-									<td style="width:10%">3 Mar 2018</td>
+									<td style="width:10%">4 Dec 2018</td>
+									<td style="width:10%">4 Dec 2018</td>
 									<td style="width:10%">-</td>
 									<td style="width:15%">Main</td>
 									<td style="width:10%">Spain</td>
@@ -348,10 +347,10 @@
 												<div class="form-group column-full">
 													<a class="button button-secondary ent" href="#">Reprint entitlement</a>
 													<a class="button button-secondary ent" href="#">Add dependant</a>
-													<a class="button button-secondary" href="#">Register</a>
-													<a class="button button-secondary" href="#">Amend dates</a>
+													<!-- <a class="button button-secondary" href="#">Register</a>
+													<a class="button button-secondary" href="#">Amend dates</a> -->
 												</div>
-												<div id="moreInfo" class="column-full">
+												<!-- <div id="moreInfo" class="column-full">
 													<details>
 														<summary>
 															<span class="summary">View dependants</span>
@@ -388,14 +387,14 @@
 														</table>
 													</details>
 												</div>
-											</div>
+											</div> -->
 										</td>
 									</tr>
 								</tbody>
 							</table>
 						</div>
 
-						<table id="mainTable"> -->
+						<table id="mainTable">
 							<tbody>
 								<tr>
 									<td style="width:10%">20 Dec 2014</td>
@@ -622,12 +621,12 @@
 	}
 
 	$('#vpa').click(function() {
-		$('#previous-address, #hpa').removeClass('visually-hidden');
+		$('#previous-address, #previous-address-2, #hpa').removeClass('visually-hidden');
 		$('#vpa').addClass('visually-hidden');
 	});
 
 	$('#hpa').click(function() {
-		$('#previous-address, #hpa').addClass('visually-hidden');
+		$('#previous-address, #previous-address-2, #hpa').addClass('visually-hidden');
 		$('#vpa').removeClass('visually-hidden');
 	});
 </script>

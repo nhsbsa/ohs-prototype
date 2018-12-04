@@ -7,7 +7,29 @@ router.get('/', function (req, res) {
 });
 
 // add your routes here
+// pair //
+router.get(/ccs-benefit/, function (req,res){
+  if(req.query.pension === "yes"){
+    res.redirect('pension-date');
+  } else if(req.query.pension === "no") {
+    res.redirect('not-entitled-2');
+  } else {
+    res.redirect('pension-date');
+  }
+});
 
+router.get(/new-person-ccs-bens/, function (req,res){
+  if(req.query.pension === "yes"){
+    res.redirect('pension-date-2');
+  } else if(req.query.pension === "no") {
+    res.redirect('not-entitled-2');
+  } else {
+    res.redirect('pension-date-2');
+  }
+});
+// end pair //
+
+// pair //
 router.get(/same-pension-form/, function (req,res){
   if(req.query.samePensionCountry === "yes"){
     res.redirect('not-entitled');
@@ -17,6 +39,17 @@ router.get(/same-pension-form/, function (req,res){
   }
 });
 
+router.get(/new-person-member-state-pension/, function (req,res){
+  if(req.query.samePensionCountry === "yes"){
+    res.redirect('not-entitled');
+  }
+  else {
+    res.redirect('another-pension-2');
+  }
+});
+// end pair //
+
+// pair
 router.get(/another-pension-form/, function (req,res){
   if(req.query.anotherCountry === "yes") {
     res.redirect('check-your-answers');
@@ -25,6 +58,16 @@ router.get(/another-pension-form/, function (req,res){
     res.redirect('check-your-answers');
   }
 });
+
+router.get(/new-person-third-country-pension/, function (req,res){
+  if(req.query.anotherCountry === "yes") {
+    res.redirect('check-your-answers-2');
+  }
+  else {
+    res.redirect('check-your-answers-2');
+  }
+});
+// end pair
 
 router.get(/address-pension-form/, function (req,res){
   if(req.query.anotherCountry === "yes") {
@@ -65,15 +108,7 @@ router.get(/create-handler/, function (req,res){
   }
 });
 
-router.get(/ccs-benefit/, function (req,res){
-  if(req.query.pension === "yes"){
-    res.redirect('pension-date');
-  } else if(req.query.pension === "no") {
-    res.redirect('not-entitled-2');
-  } else {
-    res.redirect('pension-date');
-  }
-});
+
 
 router.get(/ccs-admin/, function (req,res){
   if(req.query.pension === "pension"){

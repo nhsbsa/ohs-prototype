@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-Do you get paid a State Pension from the country where you are moving to?
+Do you get paid a State Pension in another EEA country, or Switzerland?
 {% endblock %}
 
 {% block content %}
@@ -129,39 +129,34 @@ Do you get paid a State Pension from the country where you are moving to?
 	<div class="grid-row">
 		<div class="column-two-thirds">
 			<header class="page-header">
-				<h1 class="page-header--lede heading-large">Do you get paid a State Pension from Spain?</h1>
+				<h1 class="page-header--lede heading-large">Do you get paid a State Pension from another EEA country, or Switzerland?</h1>
 			</header>
 
-			<form action="same-pension-form" id="same-pension-form" method="get" class="form">
+			<form action="new-person-third-country-pension" id="another-pension-form" method="get" class="form">
 				<div class="form-group">
-					<fieldset id="state-pension" class="inline">
+					<fieldset id="another-pension" class="inline">
 						<legend class="visually-hidden">
 						</legend>
-
-						<!-- <div class="multiple-choice">
-							<input id="yes" type="radio" name="samePensionCountry" value="yes"/>
-							<label for="yes">Yes</label>
-						</div>
-
-						<div class="multiple-choice">
-							<input id="no" type="radio" name="samePensionCountry" value="no"/>
-							<label for="no">No</label>
-						</div> -->
 						<div class="govuk-radios govuk-radios--inline">
 							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="yes" name="samePensionCountry" type="radio" value="yes">
-								<label class="govuk-label govuk-radios__label" for="yes">
+								<input class="govuk-radios__input" id="radiobtn-country-yes" name="anotherCountry" type="radio" value="yes">
+								<label class="govuk-label govuk-radios__label" for="radiobtn-country-yes">
 									Yes
 								</label>
 							</div>
 							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="no" name="samePensionCountry" type="radio" value="no">
-								<label class="govuk-label govuk-radios__label" for="no">
+								<input class="govuk-radios__input" id="radiobtn-country-no" name="anotherCountry" type="radio" value="no">
+								<label class="govuk-label govuk-radios__label" for="radiobtn-country-no">
 									No
 								</label>
 							</div>
 						</div>
 					</fieldset>
+				</div>
+				<div class="form-group pickCountry visually-hidden">
+					<label class="form-label" for="full-name-f1">Country</label>
+					<input class="form-control" id="full-name-f1" type="text">
+					<a href="another-pension2">add country</a>
 				</div>
 				<div class="form-group">
 					<input class="button" type="submit" value="Next">
@@ -198,9 +193,9 @@ Do you get paid a State Pension from the country where you are moving to?
 		var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
 		if (modalAnswer != false && modalAnswer == 'yes') {
-			$("#same-pension-form").attr("action", "search");
+			$("#another-pension-form").attr("action", "search");
 		} else {
-			$("#same-pension-form").attr("action", "same-pension");
+			$("#another-pension-form").attr("action", "another-pension");
 		}
 	});
 </script>

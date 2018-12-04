@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-Moving date
+Moving country
 {% endblock %}
 
 {% block content %}
@@ -21,29 +21,14 @@ Moving date
 	<div class="grid-row">
 		<div class="column-two-thirds">
 			<header class="page-header">
-				<h1 class="page-header--lede heading-large">What date will you start to live in Spain?</h1>
+				<h1 class="page-header--lede heading-large">What country are you moving to?</h1>
 			</header>
-			<form action="/v4_0/ccs/search-results/benefit-info" id="moving-date-form" method="get" class="form">
+			<form action="moving-date-2" id="moving-country-form" method="get" class="form">
 				<div class="form-group">
-					<label class="form-label" for="ni-number">
-						Moving date
-						<span class="form-hint">
-							This can be any date up to 4 weeks from today. For example, 18/09/2018.
-						</span>
-					</label>
-					<input class="form-control" id="ni-number" type="text" autocomplete="off" value="04/12/2018">
+					<label class="form-label" for="lineone">Country</label>
+					<input class="form-control" id="registration-number" name="address-lineone" type="text" autocomplete="off" value="France" >
 				</div>
 				<div class="form-group">
-					<label class="form-label" for="ni-number-2">
-						Date returning to the UK (optional)
-						<span class="form-hint">
-							For example, 18/09/2018.
-						</span>
-					</label>
-					<input class="form-control" id="ni-number-2" type="text" autocomplete="off">
-				</div>
-				<div class="form-group">
-					<br>
 					<input class="button" type="submit" value="Next">
 				</div>
 				<p class="navigation">
@@ -78,9 +63,9 @@ Moving date
 		var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
 		if (modalAnswer != false && modalAnswer == 'yes') {
-			$("#moving-date-form").attr("action", "search");
+			$("#moving-country-form").attr("action", "search");
 		} else {
-			$("#moving-date-form").attr("action", "moving-date");
+			$("#moving-country-form").attr("action", "moving-country");
 		}
 	});
 </script>
