@@ -132,14 +132,14 @@ Do you get paid a State Pension in another EEA country, or Switzerland?
 				<h1 class="page-header--lede heading-large">Do you get paid a State Pension from another EEA country, or Switzerland?</h1>
 			</header>
 
-			<form action="address-pension-form" id="another-pension-form" method="get" class="form">
+			<form action="new-person-third-country-pension" id="another-pension-form" method="get" class="form">
 				<div class="form-group">
 					<fieldset id="another-pension" class="inline">
 						<legend class="visually-hidden">
 						</legend>
 						<div class="govuk-radios govuk-radios--inline">
 							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="radiobtn-country-yes" name="anotherCountry" type="radio" value="yes">
+								<input class="govuk-radios__input" id="radiobtn-country-yes" name="anotherCountry" type="radio" value="yes" checked >
 								<label class="govuk-label govuk-radios__label" for="radiobtn-country-yes">
 									Yes
 								</label>
@@ -153,11 +153,19 @@ Do you get paid a State Pension in another EEA country, or Switzerland?
 						</div>
 					</fieldset>
 				</div>
-				<div class="form-group pickCountry visually-hidden">
-					<label class="form-label" for="full-name-f1">Country</label>
-					<input class="form-control" id="full-name-f1" type="text">
-					<a href="another-pension22">add country</a>
+
+				<div class="form-group pickCountry">
+					<label class="form-label" for="full-name-f1">Country 1</label>
+					<input class="form-control" id="full-name-f1" type="text" value="Poland">
+					<a href="another-pension"> remove country</a>
 				</div>
+
+				<div class="form-group pickCountry">
+					<label class="form-label" for="full-name-f1">Country 2</label>
+					<input class="form-control" id="full-name-f1" type="text">
+					<a href="#form-optional-fields"> add country</a>
+				</div>
+
 				<div class="form-group">
 					<input class="button" type="submit" value="Next">
 				</div>
@@ -169,35 +177,52 @@ Do you get paid a State Pension in another EEA country, or Switzerland?
 				<div class="dialog" id="dialog-4" aria-hidden="true">
 					<div class="dialog-holder" aria-labelledby="dialog-title-4" aria-describedby="dialog-content-4" role="alertdialog">
 						<div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
-							<header class="page-header">
-								<h1 class="page-header--lede heading-medium" style="margin-top: -1em;">Are you sure you want to cancel?</h1>
-							</header>
-							<div class="dialog-actions" style="display: inline;">
-								<input id="submit-btn" class="button buttonSubmit" type="submit" value="Yes - go to home page" style="font-size: 19px;"/>
-								<a class="dialog-cancel" href="#" style="font-size: 1em;">No - continue application</a>
+							<!-- <form action="123" id="123" class="form"> -->
+								<header class="page-header">
+									<h1 class="page-header--lede heading-medium" style="margin-top: -1em;">Are you sure you want to cancel this request to create an entitlement?</h1>
+								</header>
+								<!--  <label class="form-label" for="lineone">Are you sure you want to cancel this request to create an entitlement?</label> -->
+								<div class="form-group">
+									<fieldset class="inline">
+										<legend class="visually-hidden">
+										</legend>
+										<div class="multiple-choice">
+											<input id="yes" type="radio" name="exemption" value="yes">
+											<label for="yes">Yes</label>
+										</div>
+										<div class="multiple-choice">
+											<input id="no" type="radio" name="exemption" value="no">
+											<label for="no">No</label>
+										</div>
+									</fieldset>
+								</div>
+								<div class="dialog-actions">
+									<input id="submit-btn" class="button buttonSubmit" type="submit" value="Submit" style="font-size: 19px;" />
+									<br><br>
+									<!-- <a class="dialog-cancel" href="#" style="margin-left: -10px; font-size: 1em;">Cancel</a> -->
+								</div>
+								<button class="dialog-close" aria-label="close" type="button">
+									<span class="icon icon-close">x</span>
+								</button>
+								<!-- </form> -->
 							</div>
-							<button class="dialog-close" aria-label="close" type="button">
-								<span class="icon icon-close">x</span>
-							</button>
 						</div>
 					</div>
-				</div>
-			</form>
+				</form>
+			</div>
 		</div>
-	</div>
-</main>
+	</main>
 
-<script src="/public/javascripts/jquery-1.11.3.js"></script>
-<script>
-	$("#submit-btn").on("click", function() {
-		var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
+	<script src="/public/javascripts/jquery-1.11.3.js"></script>
+	<script>
+		$("#submit-btn").on("click", function() {
+			var modalAnswer = $("input[name='exemption']:checked").val() || false; // false if undefined
 
-		if (modalAnswer != false && modalAnswer == 'yes') {
-			$("#another-pension-form").attr("action", "search");
-		} else {
-			$("#another-pension-form").attr("action", "another-pension");
-		}
-	});
-</script>
-
-{% endblock %}
+			if (modalAnswer != false && modalAnswer == 'yes') {
+				$("#another-pension2-form").attr("action", "search");
+			} else {
+				$("#another-pension2-form").attr("action", "another-pension2");
+			}
+		});
+	</script>
+	{% endblock %}
