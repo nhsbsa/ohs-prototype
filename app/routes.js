@@ -138,4 +138,24 @@ router.get(/create-handler/, function (req,res){
   }
 });
 
+router.get(/cancel-source/, function (req,res){
+  if(req.query.cancel === "uk"){
+    res.redirect('cancel-reason-uk');
+  } else if(req.query.cancel === "ms") {
+    res.redirect('#');
+  } else if(req.query.cancel === "cust") {
+    res.redirect('#');
+  } else if(req.query.cancel === "hmrc") {
+    res.redirect('#');
+  } else if(req.query.cancel === "dwp") {
+    res.redirect('#');
+  } else {
+    res.redirect('#');
+  }
+});
+
+router.get(/cancel-reasons/, function (req,res){
+  res.redirect('cancel-date');
+});
+
 module.exports = router
