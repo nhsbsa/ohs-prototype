@@ -22,13 +22,13 @@ Check your answers
                     <tbody>
                         <tr>
                             <td class="bold">What is the source of cancellation</td>
-                            <td>UK</td>
+                            <td>{{data.cancel}}</td>
                             <td><a href="cancel-entitlement#cancel-source">Change</a></td>
                         </tr>
                         <tr>
                             <td class="bold">What is the reason for cancellation</td>
-                            <td>Returned to UK</td>
-                            <td><a href="cancel-reason-uk#cancel-reasons">Change</a></td>
+                            <td>{{data.pension}}</td>
+                            <td><a id="change-link" href="#">Change</a></td>
                         </tr>
                         <tr>
                             <td class="bold">What is the date of cancellation</td>
@@ -40,12 +40,29 @@ Check your answers
             </div>
 
 			<div class="form-group">
-                <a href="case-record-2" class="button">Submit</a>
+                <a href="case-record-4" class="button">Submit</a>
                 <a class="button button-secondary" href="search">Exit record</a>
 			</div>
 		</div>
 	</div>
 </div>
 </main>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script>
+    $('#change-link').click(function(e) {
+        if(document.querySelectorAll('.check-table tbody tr td')[1].innerHTML === "UK") {
+            document.getElementById('change-link').href = "cancel-reason-uk##cancel-reasons";
+        } else if(document.querySelectorAll('.check-table tbody tr td')[1].innerHTML === "Member state") {
+            document.getElementById('change-link').href = "cancel-reason-ms##cancel-reasons";
+        } else if(document.querySelectorAll('.check-table tbody tr td')[1].innerHTML === "Customer") {
+            document.getElementById('change-link').href = "cancel-reason-cust##cancel-reasons";
+        } else if(document.querySelectorAll('.check-table tbody tr td')[1].innerHTML === "HMRC") {
+            document.getElementById('change-link').href = "cancel-reason-hmrc##cancel-reasons";
+        } else {
+            document.getElementById('change-link').href = "cancel-reason-dwp##cancel-reasons";
+        }
+    });
+</script>
 
 {% endblock %}
