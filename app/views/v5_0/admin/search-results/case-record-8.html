@@ -335,6 +335,11 @@ span.status-tag-disabled {
 					</div>
 
 					<div id="health" class="tabcontent">
+						<!-- reprint inset text -->
+						<div class="panel panel-border-wide">
+							<p class="bold">S1 entitlement sent for reprint</p>
+						</div>
+
 						<!-- moving -->
 						<!-- <h2 class="heading-small">Moving</h2> -->
 						<!-- <table id="mainTable">
@@ -512,9 +517,9 @@ span.status-tag-disabled {
 														<div>
 															<a class="link button button-secondary entitlements" href="#">Register entitlement</a>
 														</div>
-														<div>
+														<!-- <div>
 															<a class="link button button-secondary entitlements" href="reprint-entitlement">Reprint entitlement</a>
-														</div>
+														</div> -->
 														<div>
 															<a class="link button button-secondary entitlements" href="#">Add dependant</a>
 														</div>
@@ -621,6 +626,8 @@ span.status-tag-disabled {
 		document.getElementById(tabName).className = "tabcontentActive";
 		evt.currentTarget.className += " active";
 	}
+
+	document.querySelectorAll('.tablinks')[1].click();
 
 	$('#vpa').click(function() {
 		$('#previous-address, #hpa').removeClass('visually-hidden');
