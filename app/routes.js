@@ -154,4 +154,12 @@ router.get(/cancel-source/, function (req,res){
   }
 });
 
+router.get(/reprint-reasons/, function (req,res){
+  if(req.query.reprint === "Member state"){
+    res.redirect('reprint-ms-reason');
+  } else {
+    res.redirect('reprint-reason');
+  }
+});
+
 module.exports = router
