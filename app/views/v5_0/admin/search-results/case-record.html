@@ -13,6 +13,63 @@
 	overflow:hidden;
 	margin-top:18px;
 }
+    
+    span.status-tag-low {
+    background-color: #85994b;
+    color: #fff;
+    margin-left: 0.75em;
+    vertical-align: baseline;
+    padding: 2px 18px 1px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    top: -0.05em;
+
+}
+
+span.status-tag-medium {
+    background-color: #F47738;
+    color: #fff;
+    margin-left: 0.75em;
+    vertical-align: baseline;
+    padding: 2px 9px 1px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    top: -0.05em;
+}
+
+span.status-tag-high {
+    background-color: #B10E1E;
+    color: #fff;
+    margin-left: 0.75em;
+    vertical-align: baseline;
+    padding: 2px 16px 1px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    top: -0.05em;
+}
+
+span.status-tag-disabled {
+    background-color: #6f777b;
+    color: #fff;
+    margin-left: 0.75em;
+    vertical-align: baseline;
+    padding: 2px 12px 1px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    top: -0.05em;
+}
 
 .tablinks.active {
 	position:relative;
@@ -235,21 +292,11 @@ span.status-tag-disabled {
 						<p class="heading-small">Entitlements</p>
 					</div>
 				</a>
-				<!-- <a class="tablinks" onclick="openTab(event, 'dependants')" href="#">
-					<div>
-						<p class="heading-small">Dependants (3)</p>
-					</div>
-				</a>
-				<a class="tablinks" onclick="openTab(event, 'invoices')" href="#">
-					<div>
-						<p class="heading-small">Invoices</p>
-					</div>
-				</a>
 				<a class="tablinks" onclick="openTab(event, 'casehist')" href="#">
 					<div>
-						<p class="heading-small">Case notes</p>
+						<p class="heading-small">Case history</p>
 					</div>
-				</a> -->
+				</a>
 				<div class="tab-box">
 					<div id="personal" class="tabcontentActive">
 						<div class="grid-row">
@@ -261,6 +308,9 @@ span.status-tag-disabled {
 										<dd class="cya-answer">
 											Michael Philip
 										</dd>
+                                        <dd class="cya-answer">
+                                            <a href="">Change</a>
+                                        </dd>
 									</div>
 									<br>
 									<div>
@@ -268,6 +318,9 @@ span.status-tag-disabled {
 										<dd class="cya-answer">
 											16/03/1994
 										</dd>
+                                        <dd class="cya-answer">
+                                            <a href="">Change</a>
+                                        </dd>
 									</div>
 									<br>
 									<div>
@@ -275,6 +328,9 @@ span.status-tag-disabled {
 										<dd class="cya-answer">
 											SR123456A
 										</dd>
+                                        <dd class="cya-answer">
+                                            <a href="">Change</a>
+                                        </dd>
 									</div>
 									<br>
 									<div>
@@ -285,6 +341,9 @@ span.status-tag-disabled {
 											123456<br>
 											France
 										</dd>
+                                        <dd class="cya-answer">
+                                            <a href="">Change</a>
+                                        </dd>
 									</div>
 									<br>
 									<div>
@@ -295,6 +354,9 @@ span.status-tag-disabled {
 											75014<br>
 											France
 										</dd>
+                                        <dd class="cya-answer">
+                                            <a href="">Change</a>
+                                        </dd>
 									</div>
 									<br>
 									<!-- <div id="previous-address" class="visually-hidden">
@@ -316,11 +378,17 @@ span.status-tag-disabled {
 									<div>
 										<dt class="cya-question">Email address</dt>
 										<dd class="cya-answer">michael.philip@email.com</dd>
+                                        <dd class="cya-answer">
+                                            <a href="">Change</a>
+                                        </dd>
 									</div>
 									<br>
 									<div>
 										<dt class="cya-question">Telephone number</dt>
 										<dd class="cya-answer">-</dd>
+                                        <dd class="cya-answer">
+                                            <a href="">Change</a>
+                                        </dd>
 									</div>
 									<br>
 								</dl>
@@ -333,6 +401,63 @@ span.status-tag-disabled {
 							</div>
 						</div>
 					</div>
+                    
+                    <div id="casehist" class="tabcontent">
+                        
+						<table id="mainTable">
+							<thead>
+								<tr>
+									<th style="width:15%">Date</th>
+                                    <th style="width:10%">Time</th>
+									<th style="width:45%">Description</th>
+                                    <th style="width:15%">Type</th>
+									<th style="width:15%">Operator</th>								</tr>
+							</thead>
+							<tbody>
+                                <tr>
+									<td>10 Mar 2019</td>
+                                    <td>15:23</td>
+									<td>S1 Entitlement <span style="padding-left: 25px; padding-right: 25px" class="status-tag-high font-xsmall"> EXPIRED</span></td>
+                                    <td>SYSTEM</td>
+                                    <td>Samuel L Jackson</td>
+								</tr> 
+                                <tr>
+									<td>10 Mar 2018</td>
+                                    <td>15:23</td>
+									<td>S1 Entitlement <span style="padding-left: 25px; padding-right: 25px" class="status-tag-low font-xsmall"> REGISTERED</span></td>
+                                    <td>SYSTEM</td>
+                                    <td>Samuel L Jackson</td>
+								</tr>
+                                 <tr>
+									<td>10 Mar 2018</td>
+                                    <td>15:23</td>
+									<td>Dependant added to S1 Entitlement</td>
+                                    <td>SYSTEM</td>
+                                    <td>Samuel L Jackson</td>
+								</tr> 
+                                <tr>
+									<td>3 Mar 2018</td>
+                                    <td>14:43</td>
+									<td>S1 Entitlement<span style="padding-left: 25px; padding-right: 25px" class="status-tag-medium font-xsmall"> ISSUED</span></td>
+                                    <td>SYSTEM</td>
+                                    <td>Samuel L Jackson</td>
+								</tr> 
+								<tr>
+									<td>3 Mar 2018</td>
+                                    <td>14:20</td>
+									<td>Person record created</td>
+                                    <td>SYSTEM</td>
+                                    <td>Samuel L Jackson</td>
+								</tr> 
+							</tbody>
+						</table>
+                        <br>
+                        <!--
+                        <div class="form-group">
+							<a class="button" href="#">Add new note</a>
+							
+						</div> -->
+                    </div>
 
 					<div id="health" class="tabcontent">
 						<!-- moving -->
