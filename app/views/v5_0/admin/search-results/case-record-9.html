@@ -292,11 +292,11 @@ span.status-tag-disabled {
 						<p class="heading-small">Entitlements</p>
 					</div>
 				</a>
-				<!-- <a class="tablinks" onclick="openTab(event, 'casehist')" href="#">
+				<a class="tablinks" onclick="openTab(event, 'casehist')" href="#">
 					<div>
 						<p class="heading-small">Case history</p>
 					</div>
-				</a> -->
+				</a>
 				<div class="tab-box">
 					<div id="personal" class="tabcontentActive">
 						<div class="grid-row">
@@ -401,6 +401,63 @@ span.status-tag-disabled {
 							</div>
 						</div>
 					</div>
+                    
+                    <div id="casehist" class="tabcontent">
+                        
+						<table id="mainTable">
+							<thead>
+								<tr>
+									<th style="width:15%">Date</th>
+                                    <th style="width:10%">Time</th>
+									<th style="width:45%">Description</th>
+                                    <th style="width:15%">Type</th>
+									<th style="width:15%">Operator</th>								</tr>
+							</thead>
+							<tbody>
+                                <tr>
+									<td>10 Mar 2019</td>
+                                    <td>15:23</td>
+									<td>S1 Entitlement <span style="padding-left: 25px; padding-right: 25px" class="status-tag-high font-xsmall"> EXPIRED</span></td>
+                                    <td>SYSTEM</td>
+                                    <td>Samuel L Jackson</td>
+								</tr> 
+                                <tr>
+									<td>10 Mar 2018</td>
+                                    <td>15:23</td>
+									<td>S1 Entitlement <span style="padding-left: 25px; padding-right: 25px" class="status-tag-low font-xsmall"> REGISTERED</span></td>
+                                    <td>SYSTEM</td>
+                                    <td>Samuel L Jackson</td>
+								</tr>
+                                 <tr>
+									<td>10 Mar 2018</td>
+                                    <td>15:23</td>
+									<td>Dependant added to S1 Entitlement</td>
+                                    <td>SYSTEM</td>
+                                    <td>Samuel L Jackson</td>
+								</tr> 
+                                <tr>
+									<td>3 Mar 2018</td>
+                                    <td>14:43</td>
+									<td>S1 Entitlement<span style="padding-left: 25px; padding-right: 25px" class="status-tag-medium font-xsmall"> ISSUED</span></td>
+                                    <td>SYSTEM</td>
+                                    <td>Samuel L Jackson</td>
+								</tr> 
+								<tr>
+									<td>3 Mar 2018</td>
+                                    <td>14:20</td>
+									<td>Person record created</td>
+                                    <td>SYSTEM</td>
+                                    <td>Samuel L Jackson</td>
+								</tr> 
+							</tbody>
+						</table>
+                        <br>
+                        <!--
+                        <div class="form-group">
+							<a class="button" href="#">Add new note</a>
+							
+						</div> -->
+                    </div>
 
 					<div id="health" class="tabcontent">
 						<!-- moving -->
@@ -581,13 +638,13 @@ span.status-tag-disabled {
 															<a class="link button button-secondary entitlements" href="#">Register entitlement</a>
 														</div>
 														<div>
-															<a class="link button button-secondary entitlements" href="reprint-entitlement">Reprint entitlement</a>
+															<a class="link button button-secondary entitlements" href="#">Reprint entitlement</a>
 														</div>
 														<div>
 															<a class="link button button-secondary entitlements" href="#">Add dependant</a>
 														</div>
 														<div>
-															<a class="link button button-secondary entitlements" href="cancel-entitlement">Cancel entitlement</a>
+															<a class="link button button-secondary entitlements" href="#">Cancel entitlement</a>
 														</div>
 													</div>
 												</div>
@@ -622,7 +679,7 @@ span.status-tag-disabled {
 																				<span style="padding-left: 25px; padding-right: 25px" class="status-tag-medium font-xsmall">Issued</span>
 																			</td>
 																			<td>
-																				<a href="case-record-2">View record</a>
+																				<a href="#">View record</a>
 																			</td>
 																		</tr>
 																		<tr>
@@ -635,7 +692,7 @@ span.status-tag-disabled {
 																				<span style="padding-left: 25px; padding-right: 25px" class="status-tag-medium font-xsmall">Issued</span>
 																			</td>
 																			<td>
-																				<a href="case-record-3">View record</a>
+																				<a href="#">View record</a>
 																			</td>
 																		</tr>
 																	</tbody>
