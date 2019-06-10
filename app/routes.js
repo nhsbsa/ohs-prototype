@@ -162,4 +162,27 @@ router.get(/reprint-reasons/, function (req,res){
   }
 });
 
+// EHIC //
+
+// UK resident //
+
+router.get(/resident/, function (req,res){
+  if(req.query.resident === "yes") {
+    res.redirect('name');
+  }
+  else {
+    res.redirect('remain');
+  }
+});
+
+router.get(/resident/, function (req,res){
+  if(req.query.resident === "yes") {
+    res.redirect('prc');
+  }
+  else {
+    res.redirect('ehic');
+  }
+});
+// EHIC //
+
 module.exports = router
