@@ -184,21 +184,82 @@ router.get(/applyrenew/, function (req,res){
   }
 });
 
+
+
+router.get(/state/, function (req,res){
+  if(req.query.state === "yes") {
+    res.redirect('residency');
+  }
+  else {
+    res.redirect('kickout');
+  }
+});
+
+router.get(/exportableben/, function (req,res){
+  if(req.query.exportableben === "yes") {
+    res.redirect('benefitcapture');
+  }
+  else {
+    res.redirect('kickout');
+  }
+});
+
+router.get(/taxcon/, function (req,res){
+  if(req.query.taxcon === "yes") {
+    res.redirect('taxcapture');
+  }
+  else {
+    res.redirect('kickout');
+  }
+});
+
+router.get(/medically/, function (req,res){
+  if(req.query.medically === "yes") {
+    res.redirect('state-funded');
+  }
+  else {
+    res.redirect('kickout');
+  }
+});
+
+router.get(/selforsomeone/, function (req,res){
+  if(req.query.selforsomeone === "yes") {
+    res.redirect('customer');
+  }
+  else {
+    res.redirect('customer');
+  }
+});
+
+router.get(/bentype/, function (req,res){
+  if(req.query.bentype === "pension"){
+    res.redirect('startend');
+  } else if(req.query.bentype === "two") {
+    res.redirect('startend');
+  } else if(req.query.bentype === "three") {
+    res.redirect('startend');
+  } else {
+    res.redirect('kickout');
+  }
+});
+
 router.get(/customers/, function (req,res){
   if(req.query.customers === "travel"){
     res.redirect('ehic-eligbility');
   } else if(req.query.customers === "moving") {
-    res.redirect('moving-eligibility');
+    res.redirect('exportable');
   } else if(req.query.customers === "working") {
-    res.redirect('working-eligibility');
+    res.redirect('tax-contributions');
   } else if(req.query.customers === "planned") {
-    res.redirect('planned-eligibility');
+    res.redirect('medical');
   } else if(req.query.customers === "accident") {
-    res.redirect('ehic-eligibility');
+    res.redirect('ehic-eligbility');
   } else {
     res.redirect('customers');
   }
 });
+
+
     
 router.get(/resident/, function (req,res){
   if(req.query.resident === "yes") {
