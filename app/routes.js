@@ -168,13 +168,38 @@ router.get(/reprint-reasons/, function (req,res){
 
 router.get(/resident/, function (req,res){
   if(req.query.resident === "yes") {
-    res.redirect('name');
+    res.redirect('eligible');
   }
   else {
     res.redirect('remain');
   }
 });
 
+router.get(/applyrenew/, function (req,res){
+  if(req.query.applyrenew === "yes") {
+    res.redirect('ehic-number');
+  }
+  else {
+    res.redirect('name');
+  }
+});
+
+router.get(/customers/, function (req,res){
+  if(req.query.customers === "travel"){
+    res.redirect('ehic-eligbility');
+  } else if(req.query.customers === "moving") {
+    res.redirect('moving-eligibility');
+  } else if(req.query.customers === "working") {
+    res.redirect('working-eligibility');
+  } else if(req.query.customers === "planned") {
+    res.redirect('planned-eligibility');
+  } else if(req.query.customers === "accident") {
+    res.redirect('ehic-eligibility');
+  } else {
+    res.redirect('customers');
+  }
+});
+    
 router.get(/resident/, function (req,res){
   if(req.query.resident === "yes") {
     res.redirect('prc');

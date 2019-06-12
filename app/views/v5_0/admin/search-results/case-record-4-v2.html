@@ -13,63 +13,6 @@
 	overflow:hidden;
 	margin-top:18px;
 }
-    
-    span.status-tag-low {
-    background-color: #85994b;
-    color: #fff;
-    margin-left: 0.75em;
-    vertical-align: baseline;
-    padding: 2px 18px 1px;
-    font-weight: 700;
-    font-size: 14px;
-    text-transform: uppercase;
-    display: inline-block;
-    position: relative;
-    top: -0.05em;
-
-}
-
-span.status-tag-medium {
-    background-color: #F47738;
-    color: #fff;
-    margin-left: 0.75em;
-    vertical-align: baseline;
-    padding: 2px 9px 1px;
-    font-weight: 700;
-    font-size: 14px;
-    text-transform: uppercase;
-    display: inline-block;
-    position: relative;
-    top: -0.05em;
-}
-
-span.status-tag-high {
-    background-color: #B10E1E;
-    color: #fff;
-    margin-left: 0.75em;
-    vertical-align: baseline;
-    padding: 2px 16px 1px;
-    font-weight: 700;
-    font-size: 14px;
-    text-transform: uppercase;
-    display: inline-block;
-    position: relative;
-    top: -0.05em;
-}
-
-span.status-tag-disabled {
-    background-color: #6f777b;
-    color: #fff;
-    margin-left: 0.75em;
-    vertical-align: baseline;
-    padding: 2px 12px 1px;
-    font-weight: 700;
-    font-size: 14px;
-    text-transform: uppercase;
-    display: inline-block;
-    position: relative;
-    top: -0.05em;
-}
 
 .tablinks.active {
 	position:relative;
@@ -292,9 +235,19 @@ span.status-tag-disabled {
 						<p class="heading-small">Entitlements</p>
 					</div>
 				</a>
-				<!-- <a class="tablinks" onclick="openTab(event, 'casehist')" href="#">
+				<!-- <a class="tablinks" onclick="openTab(event, 'dependants')" href="#">
 					<div>
-						<p class="heading-small">Case history</p>
+						<p class="heading-small">Dependants (3)</p>
+					</div>
+				</a>
+				<a class="tablinks" onclick="openTab(event, 'invoices')" href="#">
+					<div>
+						<p class="heading-small">Invoices</p>
+					</div>
+				</a>
+				<a class="tablinks" onclick="openTab(event, 'casehist')" href="#">
+					<div>
+						<p class="heading-small">Case notes</p>
 					</div>
 				</a> -->
 				<div class="tab-box">
@@ -308,9 +261,6 @@ span.status-tag-disabled {
 										<dd class="cya-answer">
 											Michael Philip
 										</dd>
-                                        <!-- <dd class="cya-answer">
-                                            <a href="">Change</a>
-                                        </dd> -->
 									</div>
 									<br>
 									<div>
@@ -318,9 +268,6 @@ span.status-tag-disabled {
 										<dd class="cya-answer">
 											16/03/1994
 										</dd>
-                                        <!-- <dd class="cya-answer">
-                                            <a href="">Change</a>
-                                        </dd> -->
 									</div>
 									<br>
 									<div>
@@ -328,9 +275,6 @@ span.status-tag-disabled {
 										<dd class="cya-answer">
 											SR123456A
 										</dd>
-                                        <!-- <dd class="cya-answer">
-                                            <a href="">Change</a>
-                                        </dd> -->
 									</div>
 									<br>
 									<div>
@@ -341,9 +285,6 @@ span.status-tag-disabled {
 											123456<br>
 											France
 										</dd>
-                                        <!-- <dd class="cya-answer">
-                                            <a href="">Change</a>
-                                        </dd> -->
 									</div>
 									<br>
 									<div>
@@ -354,9 +295,6 @@ span.status-tag-disabled {
 											75014<br>
 											France
 										</dd>
-                                        <!-- <dd class="cya-answer">
-                                            <a href="">Change</a>
-                                        </dd> -->
 									</div>
 									<br>
 									<!-- <div id="previous-address" class="visually-hidden">
@@ -378,17 +316,11 @@ span.status-tag-disabled {
 									<div>
 										<dt class="cya-question">Email address</dt>
 										<dd class="cya-answer">michael.philip@email.com</dd>
-                                        <!-- <dd class="cya-answer">
-                                            <a href="">Change</a>
-                                        </dd> -->
 									</div>
 									<br>
 									<div>
 										<dt class="cya-question">Telephone number</dt>
 										<dd class="cya-answer">-</dd>
-                                        <!-- <dd class="cya-answer">
-                                            <a href="">Change</a>
-                                        </dd> -->
 									</div>
 									<br>
 								</dl>
@@ -502,10 +434,10 @@ span.status-tag-disabled {
 								<tr>
 									<td style="width:10%">S1</td>
 									<td style="width:10%">20/05/2019</td>
-									<td style="width:10%">-</td>
+									<td style="width:10%">23/05/2019</td>
 									<td style="width:15%">Main</td>
 									<td style="width:10%">France</td>
-									<td style="width:10%"><span style="padding-left: 25px; padding-right: 25px" class="status-tag-medium font-xsmall">Issued</span></td>
+									<td style="width:10%"><span style="padding-left: 35px; padding-right: 35px" class="status-tag-high font-xsmall">Cancelled</span></td>
 									<td nowrap="" style="width:7%"><details onclick="myFunction2()"><summary><span class="summary">More info</span></summary></details></td>
 								</tr>
 							</tbody>
@@ -581,18 +513,22 @@ span.status-tag-disabled {
 															<a class="link button button-secondary entitlements" href="#">Register entitlement</a>
 														</div>
 														<div>
-															<a class="link button button-secondary entitlements" href="reprint-entitlement">Reprint entitlement</a>
+															<a class="link button button-secondary entitlements" href="#">Reprint entitlement</a>
 														</div>
-														<div>
+														<!-- <div>
 															<a class="link button button-secondary entitlements" href="#">Add dependant</a>
-														</div>
-														<div>
+														</div> -->
+														<!-- <div>
 															<a class="link button button-secondary entitlements" href="cancel-entitlement">Cancel entitlement</a>
-														</div>
+														</div> -->
 													</div>
 												</div>
 												<div id="moreInfo" class="form-group column-full">
 													<div>
+														<!-- <div class="form-group">
+															<a href="c-check-your-answers-2">View Cancellation</a>
+														</div> -->
+														
 														<details id="viewDependentDtl">
 															<summary>
 																<span class="summary">View dependants</span>
@@ -616,26 +552,28 @@ span.status-tag-disabled {
 																			<td class="text-capitalize">John Philip</td>
 																			<td>22-05-2019</td>
 																			<td>20-05-2019</td>
-																			<td>-</td>
+																			<td>23/05/2019</td>
 																			<td>France</td>
 																			<td>
-																				<span style="padding-left: 25px; padding-right: 25px" class="status-tag-medium font-xsmall">Issued</span>
+																				<span style="padding-left: 35px; padding-right: 35px" class="status-tag-high font-xsmall">Cancelled</span>
 																			</td>
 																			<td>
-																				<a href="case-record-2">View record</a>
+																				<!-- <a href="case-record-5">View record</a> -->
+																				<a href="#">View record</a>
 																			</td>
 																		</tr>
 																		<tr>
 																			<td class="text-capitalize">Mary Philip</td>
 																			<td>22-05-2019</td>
 																			<td>20-05-2019</td>
-																			<td>-</td>
+																			<td>23/05/2019</td>
 																			<td>France</td>
 																			<td>
-																				<span style="padding-left: 25px; padding-right: 25px" class="status-tag-medium font-xsmall">Issued</span>
+																				<span style="padding-left: 35px; padding-right: 35px" class="status-tag-high font-xsmall">Cancelled</span>
 																			</td>
 																			<td>
-																				<a href="case-record-3">View record</a>
+																				<!-- <a href="case-record-6">View record</a> -->
+																				<a href="#">View record</a>
 																			</td>
 																		</tr>
 																	</tbody>
@@ -689,6 +627,8 @@ span.status-tag-disabled {
 		document.getElementById(tabName).className = "tabcontentActive";
 		evt.currentTarget.className += " active";
 	}
+
+	document.querySelectorAll('.tablinks')[1].click();
 
 	$('#vpa').click(function() {
 		$('#previous-address, #hpa').removeClass('visually-hidden');
