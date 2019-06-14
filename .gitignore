@@ -9,5 +9,3 @@ govuk_modules
 node_modules/*
 .tmuxp.*
 package-lock.json
-
-app/views/v6_0

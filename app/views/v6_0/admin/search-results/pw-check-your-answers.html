@@ -1,0 +1,84 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<a href="#" class="link-back">Back</a>
+
+            <div class="heading-group">
+                <h1 class="heading-large">
+                    Check your answers
+                </h1>
+            </div>
+
+            <div class="form-group">
+                <table class="check-table">
+                    <tbody>
+                        <tr>
+                            <td class="bold">Are you a posted worker</td>
+                            <td>{{data.postedworker}}</td>
+                            <td><a href="posted-worker#postedWorker">Change</a></td>
+                        </tr>
+                        <tr>
+                            <td class="bold">What is the issued date</td>
+                            <td>14/06/2019</td>
+                            <td><a href="pw-issuedate#ni-number">Change</a></td>
+                        </tr>
+                        <tr>
+                            <td class="bold">What dates will you be posted to France</td>
+                            <td>17/06/2019 - 31/12/2019</td>
+                            <td><a href="pw-startdate#ni-number">Change</a></td>
+                        </tr>
+                        <tr>
+                            <td class="bold">What is the confirmed registration date</td>
+                            <td>10/06/2019</td> <!-- unused -->
+                            <td><a href="pw-registrationdate#ni-number">Change</a></td>
+                        </tr>
+                        <tr>
+                            <td class="bold">What is the member states address</td>
+                            <td>
+                                <span class="building-and-street-1">1 Road</span><br>
+                                <span class="building-and-street-2">Downtown</span><br>
+                                <span class="town-or-city">Lille</span><br>
+                                <span class="country">France</span><br>
+                                <span class="postcode">123456</span><br>
+                            </td>
+                            <td><a href="pw-msaddress#registration-number">Change</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+			<div class="form-group">
+                <a href="case-record-10" class="button">Submit</a>
+                <a class="button button-secondary" href="case-record">Exit</a>
+			</div>
+		</div>
+	</div>
+</div>
+</main>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script>
+    $('#change-link').click(function(e) {
+        if(document.querySelectorAll('.check-table tbody tr td')[1].innerHTML === "UK") {
+            document.getElementById('change-link').href = "cancel-reason-uk##cancel-reasons";
+        } else if(document.querySelectorAll('.check-table tbody tr td')[1].innerHTML === "Member state") {
+            document.getElementById('change-link').href = "cancel-reason-ms##cancel-reasons";
+        } else if(document.querySelectorAll('.check-table tbody tr td')[1].innerHTML === "Customer") {
+            document.getElementById('change-link').href = "cancel-reason-cust##cancel-reasons";
+        } else if(document.querySelectorAll('.check-table tbody tr td')[1].innerHTML === "HMRC") {
+            document.getElementById('change-link').href = "cancel-reason-hmrc##cancel-reasons";
+        } else {
+            document.getElementById('change-link').href = "cancel-reason-dwp##cancel-reasons";
+        }
+    });
+</script>
+
+{% endblock %}
