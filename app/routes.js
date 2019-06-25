@@ -217,7 +217,7 @@ router.get(/medically/, function (req,res){
   if(req.query.medically === "yes") {
     res.redirect('state-funded');
   }
-  else {
+  if(req.query.medically === "no") {
     res.redirect('kickout');
   }
 });
