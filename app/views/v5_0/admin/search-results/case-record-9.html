@@ -262,6 +262,27 @@ span.status-tag-disabled {
 	text-align: center;
 	margin: 5px 15px 0 0;
 }
+
+.newline {
+	display: block;
+}
+
+.container {
+    width: 100%;
+    /* height: 200px; */
+    margin: auto;
+}
+.one {
+    width: 49%;
+    /* height: 200px; */
+    float: left;
+}
+.two {
+	width: 49%;
+	margin-left: 2%;
+    /* height: 200px; */
+	float: left;
+}
 </style>
 
 <main id="content" role="main">
@@ -403,52 +424,111 @@ span.status-tag-disabled {
 					</div>
                     
                     <div id="casehist" class="tabcontent">
-                        
 						<table id="mainTable">
 							<thead>
 								<tr>
-									<th style="width:15%">Date</th>
-                                    <th style="width:10%">Time</th>
+									<th style="width:20%">Date and Time</th>
+                                    <!-- <th style="width:10%">Time</th> -->
 									<th style="width:45%">Description</th>
                                     <th style="width:15%">Type</th>
-									<th style="width:15%">Operator</th>								</tr>
+									<th style="width:15%">Operator</th>
+								</tr>
 							</thead>
 							<tbody>
                                 <tr>
-									<td>10 Mar 2019</td>
-                                    <td>15:23</td>
-									<td>S1 Entitlement <span style="padding-left: 25px; padding-right: 25px" class="status-tag-high font-xsmall"> EXPIRED</span></td>
-                                    <td>SYSTEM</td>
-                                    <td>Samuel L Jackson</td>
-								</tr> 
+									<td>18/06/2019 10:21</td>
+                                    <!-- <td>10:21</td> -->
+									<!-- <td>S1 Entitlement <span style="padding-left: 25px; padding-right: 25px" class="status-tag-high font-xsmall"> EXPIRED</span></td> -->
+									<td>Type [ S1 ] Country [ France ] Status [ Issued ]</td>
+                                    <td>Entitlement Created</td>
+                                    <td>James Philip</td>
+								</tr>
                                 <tr>
-									<td>10 Mar 2018</td>
-                                    <td>15:23</td>
-									<td>S1 Entitlement <span style="padding-left: 25px; padding-right: 25px" class="status-tag-low font-xsmall"> REGISTERED</span></td>
-                                    <td>SYSTEM</td>
-                                    <td>Samuel L Jackson</td>
+									<td>15/06/2019 18:38</td>
+                                    <!-- <td>18:38</td> -->
+									<!-- <td>S1 Entitlement <span style="padding-left: 25px; padding-right: 25px" class="status-tag-low font-xsmall"> REGISTERED</span></td> -->
+									<td>Source [ Member State ] Requested Date [ 2019-06-24 ] Reason [ S1 lost ]</td>
+									<td>Entitlement Reprint Request</td>
+                                    <td>James Philip</td>
 								</tr>
                                  <tr>
-									<td>10 Mar 2018</td>
-                                    <td>15:23</td>
-									<td>Dependant added to S1 Entitlement</td>
-                                    <td>SYSTEM</td>
-                                    <td>Samuel L Jackson</td>
-								</tr> 
-                                <tr>
-									<td>3 Mar 2018</td>
-                                    <td>14:43</td>
-									<td>S1 Entitlement<span style="padding-left: 25px; padding-right: 25px" class="status-tag-medium font-xsmall"> ISSUED</span></td>
-                                    <td>SYSTEM</td>
-                                    <td>Samuel L Jackson</td>
-								</tr> 
+									<td>14/06/2019 11:13</td>
+                                    <!-- <td>11:13</td> -->
+									<!-- <td>Dependant added to S1 Entitlement</td> -->
+									<td>[ Registered to Expired ]</td>
+                                    <td>Entitlement Status Change</td>
+                                    <td>System (Batch)</td>
+								</tr>
 								<tr>
-									<td>3 Mar 2018</td>
-                                    <td>14:20</td>
-									<td>Person record created</td>
-                                    <td>SYSTEM</td>
-                                    <td>Samuel L Jackson</td>
-								</tr> 
+									<td>18/06/2019 15:15</td>
+                                    <!-- <td>15:15</td> -->
+									<!-- <td>S1 Entitlement<span style="padding-left: 25px; padding-right: 25px" class="status-tag-medium font-xsmall"> ISSUED</span></td> -->
+									<td>[ Registered to Cancelled ] [ Cancellation Date : 13/06/2019 ]</td>
+									<td>Entitlement Status Change</td>
+                                    <td>James Philip</td>
+								</tr>
+								<tr>
+									<td>18/06/2019 15:15</td>
+                                    <!-- <td>15:15</td> -->
+									<!-- <td>Person record created</td> -->
+									<td>[ Issued to Expired ]</td>
+                                    <td>Entitlement Status Change</td>
+                                    <td>James Philip</td>
+								</tr>
+								<tr>
+									<td>15/06/2019 18:18</td>
+									<!-- <td>18:18</td> -->
+									<td>From: [ Timings Tester ] To [ Timing Tester ]</td>
+									<td>Person Name Change</td>
+									<td>James Philip</td>
+								</tr>
+								<tr>
+									<td>15/06/2019 18:36</td>
+									<!-- <td>18:36</td> -->
+									<td>From:[ NC112233A ] To: [ NC112233B ]</td>
+									<td>Person Nino Change</td>
+									<td>James Philip</td>
+								</tr>
+								<tr>
+									<td>15/06/2019 14:41</td>
+									<!-- <td>14:41</td> -->
+									<td>
+										From: [ Organismo Autónomio Correos y Telégraphos
+										Area de Asuntos Internacionales
+										Calle Aduana, 29 28070 MADRID SPAIN ] To: [ Sr. D. Alvaro Blanco Ruiz
+										Luna, 10 - 3o 28300 ARANJUEZ (MADRID) SPAIN ]
+									</td>
+									<td>Person Residential Address Change</td>
+									<td>James Philip</td>
+								</tr>
+								<tr>
+									<td>15/06/2019 14:41</td>
+									<!-- <td>14:41</td> -->
+									<td>From: [ dvgavd  habjfbjabffjkh khlihlijo Q23 7VM ] To: [ sefeyhd rhdjuft gklhjljvkjhl WDT 76K ]</td>
+									<td>Person Correspondence Address Change</td>
+									<td>James Philip</td>
+								</tr>
+								<tr>
+									<td>15/06/2019 14:41</td>
+									<!-- <td>14:41</td> -->
+									<td>From: [ hello@hkd.com ] To: [ welcome@hello.com ]</td>
+									<td>Person Email Address Change</td>
+									<td>James Philip</td>
+								</tr>
+								<tr>
+									<td>15/06/2019 14:41</td>
+									<!-- <td>14:41</td> -->
+									<td>From: [ 01632 960858 ] To: [ 01632 960510 ]</td>
+									<td>Person Telephone Number Change</td>
+									<td>James Philip</td>
+								</tr>
+								<tr>
+									<td>15/06/2019 14:41</td>
+									<!-- <td>14:41</td> -->
+									<td>From: [ 17/06/1951 ] To: [ 17/06/1950 ]</td>
+									<td>Person Date of Birth Change</td>
+									<td>James Philip</td>
+								</tr>
 							</tbody>
 						</table>
                         <br>
@@ -620,11 +700,11 @@ span.status-tag-disabled {
 															<tbody>
 																<tr class="row">
 																	<td class="column">Issued date</td>
-																	<td class="column" id="issuedDate0">22-05-2019</td>
+																	<td class="column" id="issuedDate0">22/05/2019</td>
 																</tr>
 																<tr class="row">
 																	<td class="column">Moving date</td>
-																	<td id="movingDateValue" class="column">20-05-2019</td>
+																	<td id="movingDateValue" class="column">20/05/2019</td>
 																</tr>
 																<tr class="row">
 																	<td class="column">Citizen status</td>
@@ -671,8 +751,8 @@ span.status-tag-disabled {
 																	<tbody>
 																		<tr>
 																			<td class="text-capitalize">John Philip</td>
-																			<td>22-05-2019</td>
-																			<td>20-05-2019</td>
+																			<td>22/05/2019</td>
+																			<td>20/05/2019</td>
 																			<td>-</td>
 																			<td>France</td>
 																			<td>
@@ -684,8 +764,8 @@ span.status-tag-disabled {
 																		</tr>
 																		<tr>
 																			<td class="text-capitalize">Mary Philip</td>
-																			<td>22-05-2019</td>
-																			<td>20-05-2019</td>
+																			<td>22/05/2019</td>
+																			<td>20/05/2019</td>
 																			<td>-</td>
 																			<td>France</td>
 																			<td>

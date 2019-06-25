@@ -259,7 +259,15 @@ router.get(/customers/, function (req,res){
   }
 });
 
-
+router.get(/issued-date/, function (req,res){
+  if(req.query.postedworker === "Yes"){
+    res.redirect('pw-issuedate');
+  } else if(req.query.postedworker === "No") {
+    res.redirect('moving-country'); // S1 //
+  } else {
+    res.redirect('posted-worker');
+  }
+});
     
 router.get(/resident/, function (req,res){
   if(req.query.resident === "yes") {
