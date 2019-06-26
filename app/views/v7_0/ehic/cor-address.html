@@ -1,0 +1,35 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Overseas Healthcare Services
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<!-- <form action="windows-login" method="get" class="form form-to-validate" id="login-form" novalidate="novalidate" autocomplete="off"> -->
+			<div class="grid-row">
+    <div class="column-two-thirds">
+      <header class="page-header">
+					<div class="heading-group">
+						<h1 class="page-header--lede heading-large">What is your correspondence address?</h1>
+          </div>
+        </header>
+      <form action="contact-details" id="resident" method="get" class="form">
+        <div class="form-group">
+					<label class="form-label" for="ohs">Corresponence address</label>
+					<input class="form-control" id="ohs" name="ohs" type="text" autocomplete="off" />
+				</div>
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+        <p class="navigation">
+          <a class="cancel" href="#" data-toggle="dialog" data-target="dialog-4">Cancel</a>
+        </p>
+          </form>
+				</div>
+			</div>
+			<!-- </form> -->
+		</main>
+
+		{% endblock %}
