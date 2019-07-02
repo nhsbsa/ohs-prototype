@@ -277,6 +277,13 @@ router.get(/resident/, function (req,res){
     res.redirect('ehic');
   }
 });
-// EHIC //
+
+// end EHIC //
+
+router.get(/postedWorker/, function (req,res){
+  if(req.query.radiosPW === "Working"){
+    res.redirect('working-country');
+  }
+});
 
 module.exports = router
