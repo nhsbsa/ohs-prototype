@@ -212,6 +212,11 @@ span.status-tag-disabled {
 						<p class="heading-small">Entitlements</p>
 					</div>
 				</a>
+				<a class="tablinks" onclick="openTab(event, 'casehist')" href="#">
+					<div>
+						<p class="heading-small">Case history</p>
+					</div>
+				</a>
 				<div class="tab-box">
 					<div id="personal" class="tabcontent">
 						<div class="grid-row">
@@ -270,6 +275,32 @@ span.status-tag-disabled {
 							</div>
 						</div>
 					</div>
+
+					<div id="casehist" class="tabcontent">
+						<table id="mainTable">
+							<thead>
+								<tr>
+									<th style="width:20%">Date and Time</th>
+									<!-- <th style="width:10%">Time</th> -->
+									<th style="width:45%">Description</th>
+									<th style="width:15%">Type</th>
+									<th style="width:15%">Operator</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>04/12/2018 09:30</td>
+									<!-- <td>10:21</td> -->
+									<!-- <td>S1 Entitlement <span style="padding-left: 25px; padding-right: 25px" class="status-tag-high font-xsmall"> EXPIRED</span></td> -->
+									<td>Type [ S1 ] Country [ Germany ] Status [ Registered ]</td>
+									<td>Entitlement Created</td>
+									<td>James Philip</td>
+								</tr>
+							</tbody>
+						</table>
+						<br>
+					</div>
+
 					<div id="health" class="tabcontentActive">
 						<table id="mainTable">
 							<thead>
