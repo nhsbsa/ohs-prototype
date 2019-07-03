@@ -241,27 +241,21 @@ span.status-tag-disabled {
 									<br>
 									<div>
 										<dt class="cya-question">Residential address</dt>
-										<dd class="cya-answer">1 Road<br>
-											Downtown<br>
-											Lille<br>
-											123456<br>
-											France
+										<dd class="cya-answer">
+											-
 										</dd>
 									</div>
 									<br>
 									<div>
 										<dt class="cya-question">Correspondence address</dt>
-										<dd class="cya-answer">Rúa de Mer 64<br>
-											Paris<br>
-											Plaisance<br>
-											75014<br>
-											France
+										<dd class="cya-answer">
+											-
 										</dd>
 									</div>
 									<br>
 									<div>
 										<dt class="cya-question">Email address</dt>
-										<dd class="cya-answer">michael.philip@email.com</dd>
+										<dd class="cya-answer">-</dd>
 									</div>
 									<br>
 									<div>
@@ -317,10 +311,6 @@ span.status-tag-disabled {
 																	<td class="column" id="issuedDate0">04/12/2018</td>
 																</tr>
 																<tr class="row">
-																	<td class="column">Moving date</td>
-																	<td id="citizenStatus" class="column">04/12/2018</td>
-																</tr>
-																<tr class="row">
 																	<td class="column">Citizen status</td>
 																	<td id="citizenStatus" class="column">Posted Worker</td>
 																</tr>
@@ -369,8 +359,8 @@ function openTab(evt, tabName) {
 		tablinks[i].className = tablinks[i].className.replace(" active", "");
 	}
 
-	// document.getElementById(tabName).className = "tabcontentActive";
-	// evt.currentTarget.className += " active";
+	document.getElementById(tabName).className = "tabcontentActive";
+	evt.currentTarget.className += " active";
 }
 
 $('#vpa').click(function() {
