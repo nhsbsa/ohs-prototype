@@ -58,16 +58,6 @@ router.get(/admin-second-pension/, function (req,res){
   }
 });
 
-// admin no-search-results third-country-pension //
-router.get(/another-pension-form/, function (req,res){
-  if(req.query.anotherCountry === "yes") {
-    res.redirect('check-your-answers');
-  }
-  else {
-    res.redirect('check-your-answers');
-  }
-});
-
 router.get(/new-person-third-country-pension/, function (req,res){
   if(req.query.anotherCountry === "yes") {
     res.redirect('check-your-answers-2');
@@ -78,13 +68,13 @@ router.get(/new-person-third-country-pension/, function (req,res){
 });
 
 // admin no-search-results exportable-benefits //
-router.get(/ccs-admin/, function (req,res){
-  if(req.query.pension === "pension"){
+router.get(/exportable-benefits/, function (req,res){
+  if(req.query.expbenefits === "State Pension") {
     res.redirect('pension-date');
-  } else if(req.query.pension !== "pension") {
+  } else if(req.query.expbenefits === "Exportable Benefit") {
     res.redirect('benefit-date');
   } else {
-    res.redirect('benefit-date');
+    res.redirect('benefit-info');
   }
 });
 
@@ -280,9 +270,23 @@ router.get(/resident/, function (req,res){
 
 // end EHIC //
 
-router.get(/postedWorker/, function (req,res){
-  if(req.query.radiosPW === "Working"){
+router.get(/postedWorker/, function (req,res) {
+  if(req.query.radiosPW === "S1 Posted Worker") {
     res.redirect('working-country');
+  } else if (req.query.radiosPW === "S1") {
+    res.redirect('moving-country');
+  } else {
+    res.redirect('create-entitlement');
+  }
+});
+
+router.get(/same-pension-date/, function (req,res) {
+  if(req.query.samePension === "Yes") {
+    res.redirect('not-entitled');
+  } else if(req.query.samePension === "No") {
+    res.redirect('another-pension');
+  } else {
+    res.redirect('same-pension');
   }
 });
 

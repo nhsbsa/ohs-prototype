@@ -7,32 +7,85 @@
 {% block content %}
 
 <main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-xlarge">
+				<span class="heading-secondary">NHSBSA Design</span>
+				Overseas Healthcare Prototype
+			</h1>
+			<div class="form-group">
+				<details>
+					<summary>
+						<span class="summary">Version 8.0.2 - Admin (WIP)</span>
+					</summary>
+					<div class="panel panel-border-narrow">
+						<p>Includes:</p>
+						<ul class="list list-bullet">
+							<li>no search results</li>
+							<li>create person record - main</li>
+							<li>create new entitlement - pensioner or posted worker</li>
+							<li>pensioner - uk state pension or exportable benefit</li>
+							<li>pensioner - reprint</li>
+							<li>posted worker - register entitlement</li>
+							<li>pensioner and posted worker - cancel entitlement</li>
+							<li>pensioner and posted worker - add dependant (WIP)</li>
+							<li>case history</li>
+						</ul>
+						<p>Prototype Link:
+							<a href="v8_0/admin/no-search-results/windows-login">Overseas Healthcare Services</a>
+						</p>
+					</div>
+				</details>
+			</div>
 
-  <div class="grid-row">
-    <div class="column-two-thirds">
-      <h1 class="heading-xlarge">
-        <span class="heading-secondary">NHSBSA Design</span>
-          Overseas Healthcare Prototype
-      </h1>
-        <h2 class="heading-medium">Version 7.0.2 - Posted worker</h2>
+			<!-- <div class="form-group">
+				<details>
+					<summary><span class="summary">CCS</span></summary>
+					<div class="panel panel-border-narrow">
+						
+					</div>
+				</details>
+			</div> -->
       
-        <table>
-          <thead>
-            <tr>
-              <th>Link</th>
-              <th>Description</th>
-              <th>Last updated</th>
-              <!-- <th>Quick jump</th> -->
-            </tr>
-          </thead>
-          <tbody>
-              <tr>
-                <!-- <td><a href="v5_0/admin/search-results/windows-login">OHS</a></td> -->
-                <td><a href="v7_0/admin/search-results/posted-worker/search">OHS</a></td>
-                <td>Register a posted worker</td>
-                <td>25/06/2019</td>
-              </tr>
-          </tbody>
+      <!-- <h2 class="heading-medium">Version 8.0.1 - CCS (WIP)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Link</th>
+            <th>Description</th>
+            <th>Last updated</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="v8_0/ccs/no-search-results/windows-login">OHS</a></td>
+            <td>Person record (no search results)</td>
+            <td>03/07/2019</td>
+          </tr>
+          <tr>
+            <td><a href="v8_0/ccs/search-results/windows-login">OHS</a></td>
+            <td>Person record (with search results)</td>
+            <td>03/07/2019</td>
+          </tr>
+        </tbody>
+      </table> -->
+
+      <h2 class="heading-medium">Version 7.0.2 - Posted Workers</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Link</th>
+            <th>Description</th>
+            <th>Last updated</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="v7_0/admin/search-results/posted-worker/search">OHS</a></td>
+            <td>Person record (no search results)</td>
+            <td>03/07/2019</td>
+          </tr>
+        </tbody>
       </table>
       <h2 class="heading-medium">Version 7.0.1 - Customer Facing</h2>
       <table>
@@ -41,12 +94,10 @@
             <th>Link</th>
             <th>Description</th>
             <th>Last updated</th>
-            <!-- <th>Quick jump</th> -->
           </tr>
         </thead>
         <tbody>
           <tr>
-            <!-- <td><a href="v5_0/admin/search-results/windows-login">OHS</a></td> -->
             <td><a href="v7_0/ehic/index">OHS</a></td>
             <td>Apply for cover online</td>
             <td>12/06/2019</td>
@@ -61,7 +112,6 @@
             <th>Link</th>
             <th>Description</th>
             <th>Last updated</th>
-            <!-- <th>Quick jump</th> -->
           </tr>
         </thead>
         <tbody>
@@ -80,17 +130,10 @@
             <th>Link</th>
             <th>Description</th>
             <th>Last updated</th>
-            <!-- <th>Quick jump</th> -->
           </tr>
         </thead>
         <tbody>
-          <!-- <tr>
-            <td><a href="v4_0/admin/no-search-results/windows-login">OHS</a></td>
-            <td>Person record (no search results)</td>
-            <td>05/12/2018</td>
-          </tr> -->
           <tr>
-            <!-- <td><a href="v5_0/admin/search-results/windows-login">OHS</a></td> -->
             <td><a href="v5_0/admin/search-results/case-record-9">OHS</a></td>
             <td>Person record (main <s>and dependant</s>)</td>
             <td>31/05/2019</td>
@@ -105,23 +148,15 @@
             <th>Link</th>
             <th>Description</th>
             <th>Last updated</th>
-            <!-- <th>Quick jump</th> -->
           </tr>
         </thead>
         <tbody>
-          <!-- <tr>
-            <td><a href="v4_0/admin/no-search-results/windows-login">OHS</a></td>
-            <td>Person record (no search results)</td>
-            <td>05/12/2018</td>
-          </tr> -->
           <tr>
-            <!-- <td><a href="v5_0/admin/search-results/windows-login">OHS</a></td> -->
             <td><a href="v5_0/admin/search-results/case-record">OHS</a></td>
             <td>Person record (main <s>and dependant</s>) - Admin</td>
             <td>18/06/2019</td>
           </tr>
           <tr>
-            <!-- <td><a href="v5_0/admin/search-results/windows-login">OHS</a></td> -->
             <td><a href="v5_0/ccs/search-results/case-record">OHS</a></td>
             <td>Person record (main <s>and dependant</s>) - CCS</td>
             <td>18/06/2019</td>
@@ -136,17 +171,10 @@
             <th>Link</th>
             <th>Description</th>
             <th>Last updated</th>
-            <!-- <th>Quick jump</th> -->
           </tr>
         </thead>
         <tbody>
-          <!-- <tr>
-            <td><a href="v4_0/admin/no-search-results/windows-login">OHS</a></td>
-            <td>Person record (no search results)</td>
-            <td>05/12/2018</td>
-          </tr> -->
           <tr>
-            <!-- <td><a href="v5_0/admin/search-results/windows-login">OHS</a></td> -->
             <td><a href="v5_0/admin/search-results/case-record">OHS</a></td>
             <td>Person record (main and dependant)</td>
             <td>05/06/2019</td>
@@ -161,17 +189,10 @@
             <th>Link</th>
             <th>Description</th>
             <th>Last updated</th>
-            <!-- <th>Quick jump</th> -->
           </tr>
         </thead>
         <tbody>
-          <!-- <tr>
-            <td><a href="v4_0/admin/no-search-results/windows-login">OHS</a></td>
-            <td>Person record (no search results)</td>
-            <td>05/12/2018</td>
-          </tr> -->
           <tr>
-            <!-- <td><a href="v5_0/admin/search-results/windows-login">OHS</a></td> -->
             <td><a href="v5_0/admin/search-results/case-record-10">OHS</a></td>
             <td>Person record (main <s>and dependant</s>)</td>
             <td>13/06/2019</td>
@@ -186,7 +207,6 @@
             <th>Link</th>
             <th>Description</th>
             <th>Last updated</th>
-            <!-- <th>Quick jump</th> -->
           </tr>
         </thead>
         <tbody>
@@ -210,7 +230,6 @@
             <th>Link</th>
             <th>Description</th>
             <th>Last updated</th>
-            <!-- <th>Quick jump</th> -->
           </tr>
         </thead>
         <tbody>
@@ -405,5 +424,4 @@
     </div>
   </div>
 </main>
-
 {% endblock %}
