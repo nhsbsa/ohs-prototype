@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-    Who has requested the reprint?
+    What is the reason for reprint?
 {% endblock %}
 
 {% block content %}
@@ -154,41 +154,53 @@
 
 <main id="content" role="main">
     <div class="grid-row">
-		<div class="column-full">
-			<div id="back">
-				<a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
-			</div>
-		</div>
-	</div>
-	<div class="form-group">
-		<div class="grid-row">
-			<div class="column-full">
-				<div class="banner-information-without-action">
-					<p class="banner-message">
-						<span class="name text-capitalize">Michael Philip</span>
-						<span class="vertical-bar">|</span>
-						<span class="ohs-reference-number">25000002</span>
-					</p>
-				</div>
-			</div>
-			<div class="column-two-thirds">
-				<div class="heading-group">
-					<h1 class="heading-large">Who has requested the reprint?</h1>
-				</div>
-                <form class="form" action="reprint-canx-reason" method="get">
+        <div class="column-full">
+            <div id="back">
+                <a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="grid-row">
+            <div class="column-full">
+                <div class="banner-information-without-action">
+                    <p class="banner-message">
+                        <span class="name text-capitalize">Rosie Philip</span>
+                        <span class="vertical-bar">|</span>
+                        <span class="ohs-reference-number">25000005</span>
+                    </p>
+                </div>
+            </div>
+            <div class="column-two-thirds">
+                <div class="heading-group">
+                    <h1 class="heading-large">What is the reason for reprint?</h1>
+                </div>
+                <form class="form" action="reprint-dep-date" method="get">
                     <div class="form-group">
-                        <fieldset id="reprint-source">
+                        <fieldset id="reprint-reasons">
                             <div class="govuk-radios">
                                 <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="where-do-you-live-2" name="reprint" type="radio" value="Member State">
-                                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-                                        Member State
+                                    <input class="govuk-radios__input" id="where-do-you-live-1" name="reprintR" type="radio" value="S1 not received">
+                                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-1">
+                                        S1 not received
                                     </label>
                                 </div>
                                 <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="where-do-you-live-3" name="reprint" type="radio" value="Customer">
+                                    <input class="govuk-radios__input" id="where-do-you-live-2" name="reprintR" type="radio" value="S1 lost">
+                                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                                        S1 lost
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="where-do-you-live-3" name="reprintR" type="radio" value="Member State request">
                                     <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
-                                        Customer
+                                        Member State request
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="where-do-you-live-4" name="reprintR" type="radio" value="Other">
+                                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+                                        Other
                                     </label>
                                 </div>
                             </div>
@@ -196,7 +208,7 @@
                     </div>
                     <div class="form-group">
                         <input class="button" type="submit" value="Next">
-                        <a class="button button-secondary" href="case-record-4">Cancel</a>
+                        <a class="button button-secondary" href="case-record-8">Cancel</a>
                     </div>
                 </form>
             </div>

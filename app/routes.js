@@ -280,6 +280,16 @@ router.get(/postedWorker/, function (req,res) {
   }
 });
 
+router.get(/depPostedWorker/, function (req,res) {
+  if(req.query.radiosPW === "S1 Posted Worker") {
+    res.redirect('dep-working-country');
+  } else if (req.query.radiosPW === "S1") {
+    res.redirect('dep-moving-country');
+  } else {
+    res.redirect('create-dep-entitlement');
+  }
+});
+
 router.get(/same-pension-date/, function (req,res) {
   if(req.query.samePension === "Yes") {
     res.redirect('not-entitled');
