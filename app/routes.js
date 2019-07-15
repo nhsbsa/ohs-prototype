@@ -71,7 +71,20 @@ router.get(/new-person-third-country-pension/, function (req,res){
 router.get(/exportable-benefits/, function (req,res){
   if(req.query.expbenefits === "State Pension") {
     res.redirect('pension-date');
-  } else if(req.query.expbenefits === "Exportable Benefit") {
+  } else if((req.query.expbenefits === "Employment Support Allowance") ||
+            (req.query.expbenefits === "Disability Living Allowance") ||
+            (req.query.expbenefits === "Personal Independence Payment") ||
+            (req.query.expbenefits === "Carers Allowance") ||
+            (req.query.expbenefits === "Incapacity Benefit") ||
+            (req.query.expbenefits === "War Pension") ||
+            (req.query.expbenefits === "Bereavement Support Payment") ||
+            (req.query.expbenefits === "Income Support") ||
+            (req.query.expbenefits === "Job Seekers Allowance") ||
+            (req.query.expbenefits === "Attendance Allowance") ||
+            (req.query.expbenefits === "Severe Disablement Allowance") ||
+            (req.query.expbenefits === "Maternity Allowance") ||
+            (req.query.expbenefits === "Pension Credit") ||
+            (req.query.expbenefits === "Child Benefit")) {
     res.redirect('benefit-date');
   } else {
     res.redirect('benefit-info');
@@ -271,9 +284,9 @@ router.get(/resident/, function (req,res){
 // end EHIC //
 
 router.get(/postedWorker/, function (req,res) {
-  if(req.query.radiosPW === "S1 Posted Worker") {
+  if(req.query.radiosPW === "Posted worker") {
     res.redirect('working-country');
-  } else if (req.query.radiosPW === "S1") {
+  } else if (req.query.radiosPW === "Exportable benefit including State Pension") {
     res.redirect('moving-country');
   } else {
     res.redirect('create-entitlement');
@@ -297,6 +310,16 @@ router.get(/same-pension-date/, function (req,res) {
     res.redirect('another-pension');
   } else {
     res.redirect('same-pension');
+  }
+});
+
+router.get(/uk-benefit-info/, function (req,res) {
+  if(req.query.statePension === "Yes") {
+    res.redirect('benefit-info');
+  } else if(req.query.statePension === "No") {
+    res.redirect('not-entitled-2');
+  } else {
+    res.redirect('pension-info');
   }
 });
 

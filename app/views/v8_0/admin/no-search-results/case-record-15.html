@@ -151,7 +151,7 @@
 	<div class="grid-row">
 		<div class="column-full">
 			<div id="back">
-				<a class="link-back" href="search" id="back-link">Back</a>
+				<a class="link-back" href="#" id="back-link">Back</a>
 			</div>
 		</div>
 	</div>
@@ -159,8 +159,8 @@
 		<div class="column-full">
 			<div class="heading-group">
 				<h1 class="heading-large">
-					Rosie Philip
-					<span class="heading-secondary">OHS Reference Number - 25000005</span>
+					Michael Philip
+					<span class="heading-secondary">OHS Reference Number - 25000002</span>
 				</h1>
 			</div>
 			<div class="tab-container">
@@ -169,12 +169,12 @@
 						<p class="heading-small">Personal details</p>
 					</div>
 				</a>
-				<a class="tablinks active" onclick="openTab(event, 'health')" href="#">
+				<a class="tablinks" onclick="openTab(event, 'health')" href="#">
 					<div>
 						<p class="heading-small">Entitlements</p>
 					</div>
 				</a>
-				<a class="tablinks" onclick="openTab(event, 'casehist')" href="#">
+				<a class="tablinks active" onclick="openTab(event, 'casehist')" href="#">
 					<div>
 						<p class="heading-small">Case history</p>
 					</div>
@@ -188,21 +188,21 @@
 									<div>
 										<dt class="cya-question">Full name</dt>
 										<dd class="cya-answer">
-											Rosie Philip
+											Michael Philip
 										</dd>
 									</div>
 									<br>
 									<div>
 										<dt class="cya-question">Date of birth</dt>
 										<dd class="cya-answer">
-											24/05/2016
+											16/03/1994
 										</dd>
 									</div>
 									<br>
 									<div>
 										<dt class="cya-question">National Insurance number</dt>
 										<dd class="cya-answer">
-											-
+											SR123456A
 										</dd>
 									</div>
 									<br>
@@ -228,7 +228,7 @@
 									<br>
 									<div>
 										<dt class="cya-question">Email address</dt>
-										<dd class="cya-answer">-</dd>
+										<dd class="cya-answer">michael.philip@email.com</dd>
 									</div>
 									<br>
 									<div>
@@ -238,12 +238,12 @@
 								</dl>
 								<br>
 								<div class="form-group" style="margin-top:30px">
-									<a class="button button-secondary" href="search">Exit record</a>
+									<a class="button button-secondary" href="#">Exit record</a>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div id="health" class="tabcontentActive">
+					<div id="health" class="tabcontent">
 						<table id="mainTable">
 							<thead>
 								<tr>
@@ -260,10 +260,10 @@
 								<tr>
 									<td>S1</td>
 									<td>04/12/2018</td>
-									<td>26/12/2019</td>
-									<td>Dependant</td>
+									<td>-</td>
+									<td>Main</td>
 									<td>France</td>
-									<td><span class="status-tag-high font-xsmall" style="padding-left: 35px; padding-right: 35px">CANCELLED</span></td>
+									<td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px">REJECTED</span></td>
 									<td nowrap=""><details onclick="myFunction2()"><summary><span class="summary">More info</span></summary></details></td>
 								</tr>
 							</tbody>
@@ -281,16 +281,18 @@
 															<tbody>
 																<tr class="row">
 																	<td class="column">Issued date</td>
-																	<td class="column">01/12/2018</td>
+																	<td class="column">04/12/2018</td>
 																</tr>
 																<tr class="row">
 																	<td class="column">Citizen status</td>
-																	<td class="column">Family member of insured person</td>
+																	<td class="column">Pensioner</td>
 																</tr>
 															</tbody>
 														</table>
 													</div>
-													<div class="minor-container"></div>
+													<div class="minor-container">
+														<div><a class="link button button-secondary entitlements" href="#">Reprint</a></div>
+													</div>
 												</div>
 											</div>
 										</td>
@@ -300,12 +302,11 @@
 						</div>
 						<br>
 						<div class="form-group">
-							<a class="button" href="working-dep-date">Create a new entitlement</a>
-							<a class="button button-secondary" href="search">Exit record</a>
+							<a class="button" href="#">Create a new entitlement</a>
+							<a class="button button-secondary" href="#">Exit record</a>
 						</div>
 					</div>
-					</div>
-					<div id="casehist" class="tabcontent">
+					<div id="casehist" class="tabcontentActive">
 						<div class="form-group">
 							<table id="mainTable">
 								<thead>
@@ -318,15 +319,27 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>24/06/2019 11:30</td>
-										<td>[ Registered to Cancelled ]</td>
+										<td>04/12/2018 09:30</td>
+										<td>[ Requested to Rejected ] [ Reason - Another MS is competent ]</td>
 										<td>Entitlement Status Change</td>
 										<td>James Philip</td>
 									</tr>
 									<tr>
 										<td>04/12/2018 09:30</td>
-										<td>Type [ S1 posted worker ] Country [ France ] Status [ Registered ]</td>
-										<td>Entitlement Created</td>
+										<td>[ Requested to Rejected ] [ Reason - Residing in competent MS ]</td>
+										<td>Entitlement Status Change</td>
+										<td>James Philip</td>
+									</tr>
+									<tr>
+										<td>04/12/2018 09:30</td>
+										<td>[ Requested to Rejected ] [ Reason - Active S1 for the MS ]</td>
+										<td>Entitlement Status Change</td>
+										<td>James Philip</td>
+									</tr>
+									<tr>
+										<td>04/12/2018 09:30</td>
+										<td>[ Requested to Rejected ] [ Reason - UK is not competent ]</td>
+										<td>Entitlement Status Change</td>
 										<td>James Philip</td>
 									</tr>
 								</tbody>
@@ -334,7 +347,7 @@
 						</div>
 						<br>
 						<div class="form-group">
-							<a class="button button-secondary" href="search">Exit record</a>
+							<a class="button button-secondary" href="#">Exit record</a>
 						</div>
 					</div>
 				</div>
