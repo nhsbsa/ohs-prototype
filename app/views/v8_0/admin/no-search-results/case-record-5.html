@@ -339,10 +339,10 @@
 										<td>04/12/2018 09:30</td>
 
 										{% if data.expbenefits === "State Pension" %}
-										<td>Type [ S1 pension ] Country [ France ] Status [ Issued ]</td>
+										<td>Type [ S1 Pension ] Country [ France ] Status [ Issued ]</td>
 										{% endif %}
 										{% if data.expbenefits !== "State Pension" %}
-										<td>Type [ S1 exportable benefit ] Country [ France ] Status [ Issued ]</td>
+										<td>Type [ S1 {{data.expbenefits}} ] Country [ France ] Status [ Issued ]</td>
 										{% endif %}
 
 										<td>Entitlement Created</td>

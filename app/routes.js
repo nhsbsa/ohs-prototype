@@ -70,7 +70,8 @@ router.get(/new-person-third-country-pension/, function (req,res){
 // admin no-search-results exportable-benefits //
 router.get(/exportable-benefits/, function (req,res){
   if(req.query.expbenefits === "State Pension") {
-    res.redirect('pension-date');
+    // res.redirect('');
+    res.redirect('pension-info');
   } else if((req.query.expbenefits === "Employment Support Allowance") ||
             (req.query.expbenefits === "Disability Living Allowance") ||
             (req.query.expbenefits === "Personal Independence Payment") ||
@@ -315,7 +316,7 @@ router.get(/same-pension-date/, function (req,res) {
 
 router.get(/uk-benefit-info/, function (req,res) {
   if(req.query.statePension === "Yes") {
-    res.redirect('benefit-info');
+    res.redirect('pension-date');
   } else if(req.query.statePension === "No") {
     res.redirect('not-entitled-2');
   } else {
