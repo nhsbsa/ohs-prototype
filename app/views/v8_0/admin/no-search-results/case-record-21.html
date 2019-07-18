@@ -260,10 +260,10 @@
 								<tr>
 									<td>S1</td>
 									<td>04/12/2018</td>
-									<td>-</td>
+									<td>24/06/2019</td>
 									<td>Main</td>
 									<td>France</td>
-									<td><span class="status-tag-medium font-xsmall" style="padding-left:25px; padding-right:25px">ISSUED</span></td>
+									<td><span class="status-tag-high font-xsmall" style="padding-left: 35px; padding-right: 35px">CANCELLED</span></td>
 									<td nowrap=""><details onclick="myFunction2()"><summary><span class="summary">More info</span></summary></details></td>
 								</tr>
 							</tbody>
@@ -295,45 +295,9 @@
 														</table>
 													</div>
 													<div class="minor-container">
-														<div><a class="link button button-secondary entitlements" href="institution-search-1">Register entitlement</a></div>
-														<div><a class="link button button-secondary entitlements" href="reprint-entitlement">Reprint</a></div>
-														<div><a class="link button button-secondary entitlements" href="search-dependant">Add dependant</a></div>
-														<div><a class="link button button-secondary entitlements" href="cancel-date-mvp">Cancel entitlement</a></div>
+														<div><a class="link button button-secondary entitlements" href="reprint-canx-entitlement">Reprint</a></div>
 													</div>
 												</div>
-
-												<div id="moreInfo" class="column-full">
-													<details>
-														<summary>
-															<span class="summary">View dependants</span>
-														</summary>
-														<table>
-															<thead>
-																<tr>
-																	<th scope="col" nowrap="">Full name</th>
-																	<th scope="col" nowrap="">Issued Date</th>
-																	<th scope="col" nowrap="">Start date</th>
-																	<th scope="col" nowrap="">End date</th>
-																	<th scope="col" nowrap="">Country</th>
-																	<th scope="col" nowrap="">Status</th>
-																	<th scope="col"></th>
-																</tr>
-															</thead>
-															<tbody>
-																<tr>
-																	<td>Rosie Philip</td>
-																	<td>04/12/2018</td>
-																	<td>04/12/2018</td>
-																	<td>-</td>
-																	<td>France</td>
-																	<td><span class="status-tag-medium font-xsmall" style="padding-left:25px; padding-right:25px">ISSUED</span></td>
-																	<td><a href="case-record-8">View record</a></td>
-																</tr>
-															</tbody>
-														</table>
-													</details>
-												</div>
-
 											</div>
 										</td>
 									</tr>
@@ -358,6 +322,25 @@
 									</tr>
 								</thead>
 								<tbody>
+									<tr>
+										<td>24/06/2019 11:30</td>
+										<td>[ Registered to Cancelled ]</td>
+										<td>Entitlement Status Change</td>
+										<td>James Philip</td>
+									</tr>
+									<tr>
+										<td>04/12/2018 09:30</td>
+										
+										{% if data.expbenefits === "State Pension" %}
+										<td>Type [ S1 Pension ] Country [ France ] Status [ Registered ]</td>
+										{% endif %}
+										{% if data.expbenefits !== "State Pension" %}
+										<td>Type [ S1 {{data.expbenefits}} ] Country [ France ] Status [ Registered ]</td>
+										{% endif %}
+										
+										<td>Entitlement Created</td>
+										<td>James Philip</td>
+									</tr>
 									<tr>
 										<td>04/12/2018 09:30</td>
 
