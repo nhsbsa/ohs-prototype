@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-Search
+	Search
 {% endblock %}
 
 {% block content %}
@@ -19,7 +19,6 @@ Search
 			</div>
 		</div>
 	</div>
-
 	<div class="grid-row">
 		<div class="column-two-thirds">
 			<div class="heading-group">
@@ -29,7 +28,10 @@ Search
 		<form action="search-noresults" method="get" class="form">
 			<div class="column-full">
 				<div class="form-group">
-					<label class="form-label" for="ohs">OHS reference number</label>
+					<label>
+						<span class="form-label" for="ohs">OHS reference number</span>
+						<span class="form-hint">This can be either an OHS reference number or MedBen number</span>
+					</label>
 					<input class="form-control" id="ohs" name="ohs" type="text" autocomplete="off" value="25000001" />
 				</div>
 				<div class="form-group">
@@ -46,7 +48,7 @@ Search
 				<div class="form-group">
 					<label class="form-label" for="date-of-birth">Date of birth</label>
 					<span class="form-hint">
-						For example, 31/03/1980
+						For example, 15/10/1951
 					</span>
 					<input class="form-control" id="date-of-birth" name="date-of-birth" type="text" autocomplete="off" disabled />
 				</div>
@@ -58,12 +60,10 @@ Search
 					<input class="form-control" id="nino" name="nino" type="text" autocomplete="off" disabled />
 				</div>
 				<div class="form-group">
-					<!-- <input class="button" type="submit" value="Search"> -->
 					<a class="button" href="search-noresults">Search</a>
 				</div>
 			</div>
 		</form>
 	</div>
 </main>
-
 {% endblock %}

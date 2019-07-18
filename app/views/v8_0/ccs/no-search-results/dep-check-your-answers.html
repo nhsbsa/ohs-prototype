@@ -40,38 +40,39 @@
 	</div>
 	<div class="form-group">
 		<div class="grid-row">
-			<!-- <div class="column-full">
-				<div class="banner-information-without-action">
+			<div class="column-full">
+				<!-- <div class="banner-information-without-action">
 					<p class="banner-message">
-						<span class="name text-capitalize">Michael Philip</span>
+						<span class="name text-capitalize">Rosie Philip</span>
 						<span class="vertical-bar">|</span>
-						<span class="ohs-reference-number">25000002</span>
+						<span class="ohs-reference-number">25000005</span>
 					</p>
-				</div>
-			</div> -->
+				</div> -->
+			</div>
 			<div class="column-two-thirds">
 				<div class="heading-group">
 					<h1 class="heading-large">Check your answers before sending the application</h1>
 				</div>
 				<div class="form-group">
+					<p class="heading-medium">Main (insured person): Michael Philip</p>
 					<h2 class="heading-medium">Personal details</h2>
 					<dl class="govuk-check-your-answers cya-questions-short">
 						<div>
 							<dt class="cya-question">OHS reference number</dt>
-							<dd class="cya-answer">25000002</dd>
+							<dd class="cya-answer">25000005</dd>
 							<dd class="cya-change"></dd>
 						</div>
 						<div>
 							<dt class="cya-question">Full name</dt>
-							<dd class="cya-answer">Michael Philip</dd>
+							<dd class="cya-answer">Rosie Philip</dd>
 						</div>
 						<div>
 							<dt class="cya-question">Date of birth</dt>
-							<dd class="cya-answer">16/03/1994</dd>
+							<dd class="cya-answer">24/05/2016</dd>
 						</div>
 						<div>
 							<dt class="cya-question">National Insurance number</dt>
-							<dd class="cya-answer">SR123456A</dd>
+							<dd class="cya-answer">-</dd>
 						</div>
 					</dl>
 				</div>
@@ -79,49 +80,49 @@
 					<h2 class="heading-medium">Eligibility details</h2>
 					<dl class="govuk-check-your-answers cya-questions-short">
 						<div>
-							<dt class="cya-question">What country are you moving to?</dt>
+							<dt class="cya-question">What country is the dependant moving to?</dt>
 							<dd class="cya-answer">France</dd>
 							<dd class="cya-change">
-								<a href="moving-country#registration-number">Change<span class="visually-hidden"> country you are moving to</span></a>
+								<a href="dep-moving-country#registration-number">Change<span class="visually-hidden"> country you are moving to</span></a>
 							</dd>
 						</div>
 						<div>
-							<dt class="cya-question">What date will you start to live in France?</dt>
+							<dt class="cya-question">What date will the dependant start to live in France?</dt>
 							<dd class="cya-answer">04/12/2018</dd>
 							<dd class="cya-change">
-								<a href="moving-date#ni-number">Change<span class="visually-hidden"> date will you start to live in France</span></a>
+								<a href="dep-moving-date#ni-number">Change<span class="visually-hidden"> date will you start to live in France</span></a>
 							</dd>
 						</div>
 						<div>
-							<dt class="cya-question">What date will you return to the UK?</dt>
+							<dt class="cya-question">What date will the dependant return to the UK?</dt>
 							<dd class="cya-answer">-</dd>
 							<dd class="cya-change">
-								<a href="moving-date#ni-number-2">Change<span class="visually-hidden"> date you will return to the UK</span></a>
+								<a href="dep-moving-date#ni-number-2">Change<span class="visually-hidden"> date you will return to the UK</span></a>
 							</dd>
 						</div>
-						<div>
-							<dt class="cya-question">Do you get money from a UK State Pension, or will you get this within the next 28 days?</dt>
-							<dd class="cya-answer">{{data.statePension}}</dd>
+						<!-- <div>
+							<dt class="cya-question">Do you get money from any of these?</dt>
+							<dd class="cya-answer">{{data.expbenefits}}</dd>
 							<dd class="cya-change">
-								<a href="pension-info#statepension">Change<span class="visually-hidden"> state pension</span></a>
+								<a href="benefit-info#expbenefits">Change<span class="visually-hidden"> exportable benefit</span></a>
 							</dd>
 						</div>
 						<div>
-							<dt class="cya-question">What date will you start to get paid your UK State Pension?</dt>
+							<dt class="cya-question">What date will you start to get paid your UK State Pension</dt>
 							<dd class="cya-answer">04/12/2018</dd>
 							<dd class="cya-change">
 								<a href="pension-date#ni-number">Change<span class="visually-hidden"> date you will start to get paid your UK State Pension</span></a>
 							</dd>
 						</div>
 						<div>
-							<dt class="cya-question">Do you get paid a State Pension from France?</dt>
+							<dt class="cya-question">Do you get paid a State Pension from France</dt>
 							<dd class="cya-answer">No</dd>
 							<dd class="cya-change">
 								<a href="same-pension#state-pension">Change<span class="visually-hidden"> if you get paid a State Pension from France</span></a>
 							</dd>
 						</div>
 						<div>
-							<dt class="cya-question">Do you get paid a State Pension from another EEA country, or Switzerland?</dt>
+							<dt class="cya-question">Do you get paid a State Pension from another EEA country, or Switzerland</dt>
 							<dd class="cya-answer">{{data.thirdcountrypension}}
 													{% if data.thirdcountrypension === "Yes" %}
 														- {{data.thirdcountry}}
@@ -130,7 +131,7 @@
 							<dd class="cya-change">
 								<a href="another-pension#another-pension">Change<span class="visually-hidden"> if you get paid a State Pension from another EEA country, or Switzerland</span></a>
 							</dd>
-						</div>
+						</div> -->
 					</dl>
 				</div>
 				<div class="form-group">
@@ -156,7 +157,7 @@
 						</div>
 						<div>
 							<dt class="cya-question">Email address</dt>
-							<dd class="cya-answer">michael.philip@email.com</dd>
+							<dd class="cya-answer">rosie.philip@email.com</dd>
 						</div>
 						<div>
 							<dt class="cya-question">Telephone number</dt>
@@ -171,8 +172,8 @@
 					</p>
 				</div>
 				<div class="form-group">
-					<a href="done" class="button">Accept and submit</a>
-					<a class="button button-secondary" href="case-record">Cancel</a>
+					<a href="dep-done" class="button">Accept and submit</a>
+					<a class="button button-secondary" href="case-record-7">Cancel</a>
 				</div>
 			</div>
 		</div>

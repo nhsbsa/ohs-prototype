@@ -159,8 +159,8 @@
 		<div class="column-full">
 			<div class="heading-group">
 				<h1 class="heading-large">
-					Michael Philip
-					<span class="heading-secondary">OHS Reference Number - 25000002</span>
+					Rosie Philip
+					<span class="heading-secondary">OHS Reference Number - 25000005</span>
 				</h1>
 			</div>
 			<div class="tab-container">
@@ -188,21 +188,21 @@
 									<div>
 										<dt class="cya-question">Full name</dt>
 										<dd class="cya-answer">
-											Michael Philip
+											Rosie Philip
 										</dd>
 									</div>
 									<br>
 									<div>
 										<dt class="cya-question">Date of birth</dt>
 										<dd class="cya-answer">
-											16/03/1994
+											24/05/2016
 										</dd>
 									</div>
 									<br>
 									<div>
 										<dt class="cya-question">National Insurance number</dt>
 										<dd class="cya-answer">
-											SR123456A
+											-
 										</dd>
 									</div>
 									<br>
@@ -228,7 +228,7 @@
 									<br>
 									<div>
 										<dt class="cya-question">Email address</dt>
-										<dd class="cya-answer">michael.philip@email.com</dd>
+										<dd class="cya-answer">-</dd>
 									</div>
 									<br>
 									<div>
@@ -244,6 +244,11 @@
 						</div>
 					</div>
 					<div id="health" class="tabcontentActive">
+						<!-- reprint inset text -->
+						<div class="panel panel-border-wide">
+							<p class="bold">S1 entitlement sent for reprint</p>
+						</div>
+
 						<table id="mainTable">
 							<thead>
 								<tr>
@@ -261,7 +266,7 @@
 									<td>S1</td>
 									<td>04/12/2018</td>
 									<td>-</td>
-									<td>Main</td>
+									<td>Dependant</td>
 									<td>France</td>
 									<td><span class="status-tag-medium font-xsmall" style="padding-left:25px; padding-right:25px">ISSUED</span></td>
 									<td nowrap=""><details onclick="myFunction2()"><summary><span class="summary">More info</span></summary></details></td>
@@ -284,19 +289,15 @@
 																	<td class="column">04/12/2018</td>
 																</tr>
 																<tr class="row">
-																	<td class="column">Moving date</td>
-																	<td class="column">04/12/2018</td>
-																</tr>
-																<tr class="row">
 																	<td class="column">Citizen status</td>
-																	<td class="column">Pensioner</td>
+																	<td class="column">Family member of pensioner</td>
 																</tr>
 															</tbody>
 														</table>
 													</div>
 													<div class="minor-container">
-														<div><a class="link button button-secondary entitlements" href="reprint-reason">Reprint</a></div>
-														<div><a class="link button button-secondary entitlements" href="search-dependant">Add dependant</a></div>
+														<div><a class="link button button-secondary entitlements" href="reprint-dep-reason">Reprint</a></div>
+														<div><a class="link button button-secondary entitlements" href="case-record-9">View main</a></div>
 													</div>
 												</div>
 											</div>
@@ -307,9 +308,10 @@
 						</div>
 						<br>
 						<div class="form-group">
-							<a class="button" href="moving-country">Create a new entitlement</a>
+							<a class="button" href="dep-moving-country">Create a new entitlement</a>
 							<a class="button button-secondary" href="search">Exit record</a>
 						</div>
+					</div>
 					</div>
 					<div id="casehist" class="tabcontent">
 						<div class="form-group">
@@ -323,6 +325,12 @@
 									</tr>
 								</thead>
 								<tbody>
+									<tr>
+										<td>06/12/2018 11:30</td>
+										<td>Source [ Customer ] Requested Date [ 06/12/2018 ] Reason [ {{data.reprintR}} ]</td>
+										<td>Entitlement Reprint Request</td>
+										<td>James Philip</td>
+									</tr>
 									<tr>
 										<td>04/12/2018 09:30</td>
 										<td>Type [ S1 Pension ] Country [ France ] Status [ Issued ]</td>
