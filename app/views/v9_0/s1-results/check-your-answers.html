@@ -1,0 +1,172 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Check the answers before sending the application
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	
+	
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<a href="#" class="link-back">Back</a>
+			
+			<h1 class="heading-large">
+				Check the answers before sending the application
+			</h1>
+			
+			
+			<!-- only add a heading for a list if there is more than one list -->
+			<h2 class="heading-medium">
+				Personal details
+			</h2>
+			<dl class="govuk-check-your-answers cya-questions-short">
+				<div>
+					<dt class="cya-question">Full name</dt>
+					<dd class="cya-answer">Michael Philip</dd>
+					<dd class="cya-change">
+					</dd>
+				</div>
+				<div>
+					<dt class="cya-question">Date of birth</dt>
+					<dd class="cya-answer">
+						16 March 1994
+					</dd>
+					<dd class="cya-change">
+					</dd>
+				</div>
+				<div>
+					<dt class="cya-question">National Insurance number</dt>
+					<dd class="cya-answer">SR123456A</dd>
+					<dd class="cya-change">
+					</dd>
+				</div>
+			</dl>
+			
+			<h2 class="heading-medium">Eligibility details</h2>
+			
+			<dl class="govuk-check-your-answers cya-questions-short">
+				<div>
+					<dt class="cya-question">What country are you moving to</dt>
+					<dd class="cya-answer">France</dd>
+					<dd class="cya-change">
+						<a href="moving-country#registration-number">Change<span class="visually-hidden"> name</span></a>
+					</dd>
+				</div>
+				
+				<div>
+					<dt class="cya-question">What date will you start to live in France</dt>
+					<dd class="cya-answer">3 March 2018</dd>
+					<dd class="cya-change">
+						<a href="moving-date#ni-number">Change<span class="visually-hidden"> name</span></a>
+					</dd>
+				</div>
+				
+				<div>
+					<dt class="cya-question">Are you in receipt of a UK State Pension</dt>
+					<dd class="cya-answer">Yes</dd>
+					<dd class="cya-change">
+						<a href="/v4_0/ccs/no-search-results/benefit-info#pensionUK">Change<span class="visually-hidden"> name</span></a>
+					</dd>
+				</div>
+
+				<div>
+					<dt class="cya-question">What date will you start to get paid your UK State Pension</dt>
+					<dd class="cya-answer">
+						3 March 2018
+					</dd>
+					<dd class="cya-change">
+						<a href="pension-date#ni-number">Change<span class="visually-hidden"> date of birth</span></a>
+					</dd>
+				</div>
+				
+				<div>
+					<dt class="cya-question">Do you get paid a State Pension from France</dt>
+					<dd class="cya-answer">
+						No
+					</dd>
+					<dd class="cya-change">
+						<a href="same-pension#state-pension">Change<span class="visually-hidden"> date of birth</span></a>
+					</dd>
+				</div>
+				
+				<div>
+					<dt class="cya-question">Do you get paid a State Pension from another EEA country, or Switzerland</dt>
+					<dd class="cya-answer">
+						No
+					</dd>
+					<dd class="cya-change">
+						<a href="another-pension#other-pension">Change<span class="visually-hidden"> date of birth</span></a>
+					</dd>
+				</div>
+			</dl>
+			
+			<h2 class="heading-medium">Contact details</h2>
+			
+			<dl class="govuk-check-your-answers cya-questions-short">
+				
+				<div>
+					<dt class="cya-question">Residential address </dt>
+					<dd class="cya-answer">1 Road<br>
+						Downtown<br>
+						Lille<br>
+						123456<br>
+						France
+					</dd>
+					<dd class="cya-change">
+						<!-- <a href="contact-address#residentialAddress">Change<span class="visually-hidden"> home address</span></a> -->
+					</dd>
+				</div>
+				
+				<div>
+					<dt class="cya-question">Correspondence address</dt>
+					<dd class="cya-answer">Rúa de Mer 64<br>
+						Paris<br>
+						Plaisance<br>
+						75014<br>
+						France
+					</dd>
+					<dd class="cya-change">
+						<!-- <a href="contact-address#correspondenceAddress">Change<span class="visually-hidden"> home address</span></a> -->
+					</dd>
+				</div>
+				
+				<div>
+					<dt class="cya-question">Telephone number</dt>
+					<dd class="cya-answer">-</dd>
+					<dd class="cya-change">
+						<!-- <a href="#">Change<span class="visually-hidden"> previous application number</span></a> -->
+					</dd>
+				</div>
+				
+				<div>
+					<dt class="cya-question">Email address</dt>
+					<dd class="cya-answer">-</dd>
+					<dd class="cya-change">
+						<!-- <a href="#">Change<span class="visually-hidden"> licence type</span></a> -->
+					</dd>
+				</div>
+			</dl>
+			
+			<h2 class="heading-medium">Now send and create entitlement</h2>
+			
+			<p class="text">
+				By accepting these details, you are confirming they are correct to the best of your knowledge.
+			</p>
+			
+			<div class="form-group">
+				<a href="done" class="button">Accept and submit</a>
+			</div>
+			<div class="form-group">
+				<p class="navigation">
+					<a class="cancel" href="#" data-toggle="dialog" data-target="dialog-4">Cancel</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+</main>
+
+{% endblock %}
