@@ -53,34 +53,25 @@ What date will your benefit start?
             </div>
          </div>
          <div class="column-two-thirds">
-            <div class="heading-group">
-               <h1 class="heading-large">What date will you start receiving your UK State Pension?</h1>
+               <div class="heading-group">
+                  <h1 class="heading-large">What date will you start to get paid your UK State Pension?</h1>
+               </div>
+               <form action="same-pension" id="pension-date-form" method="get" class="form">
+                  <div class="form-group">
+                     <label class="form-label" for="ni-number">
+                        Starting date
+                        <span class="form-hint">
+                           This can be any date up to 4 weeks from today. For example, 18/09/2018
+                        </span>
+                     </label>
+                     <input class="form-control" id="ni-number" type="text" autocomplete="off" value="04/12/2018">
+                  </div>
+                  <div class="form-group">
+                     <a class="button" href="pension-date-banner-notice">Next</a>
+                     <a class="button button-secondary" href="case-record">Cancel</a>
+                  </div>
+               </form>
             </div>
-            <form class="form" action="benefit-date-form" method="get">
-               <div class="form-group">
-                  <label class="form-label" for="ni-number">
-                  Start date
-                  <span class="form-hint">
-                  For example, 18/09/2018.
-                  </span>
-                  </label>
-                  <input class="form-control" id="ni-number" type="text" autocomplete="off" value="04/12/2018">
-               </div>
-               <div class="form-group">
-                  <label class="form-label" for="ni-number-2">
-                  End date (optional)
-                  <span class="form-hint">
-                  For example, 18/09/2018.
-                  </span>
-                  </label>
-                  <input class="form-control" id="ni-number-2" type="text" autocomplete="off">
-               </div>
-               <div class="form-group">
-                  <a class="button" href="benefit-date-banner-notice-pension">Next</a>
-                  <a class="button button-secondary" href="case-record">Cancel</a>
-               </div>
-            </form>
-         </div>
       </div>
    </div>
 </main>
