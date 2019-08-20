@@ -288,9 +288,19 @@ router.get(/postedWorker/, function (req,res) {
   if(req.query.radiosPW === "Posted worker") {
     res.redirect('working-country');
   } else if (req.query.radiosPW === "Exportable benefit including State Pension") {
-    res.redirect('moving-country');
+    res.redirect('entitlement-type');
   } else {
     res.redirect('create-entitlement');
+  }
+});
+
+router.get(/entitlementType/, function (req,res) {
+  if(req.query.radiosPW === "Customer") {
+    res.redirect('moving-country');
+  } else if (req.query.radiosPW === "International Group") {
+    res.redirect('moving-country');
+  } else {
+    res.redirect('entitlement-type');
   }
 });
 
