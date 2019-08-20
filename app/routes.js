@@ -298,7 +298,7 @@ router.get(/entitlementType/, function (req,res) {
   if(req.query.radiosET === "Customer") {
     res.redirect('moving-country');
   } else if (req.query.radiosET === "International Group") {
-    res.redirect('moving-country');
+    res.redirect('moving-country-ig');
   } else {
     res.redirect('entitlement-type');
   }
