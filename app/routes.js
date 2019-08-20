@@ -295,9 +295,9 @@ router.get(/postedWorker/, function (req,res) {
 });
 
 router.get(/entitlementType/, function (req,res) {
-  if(req.query.radiosPW === "Customer") {
+  if(req.query.radiosET === "Customer") {
     res.redirect('moving-country');
-  } else if (req.query.radiosPW === "International Group") {
+  } else if (req.query.radiosET === "International Group") {
     res.redirect('moving-country');
   } else {
     res.redirect('entitlement-type');
