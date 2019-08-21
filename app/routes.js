@@ -314,6 +314,16 @@ router.get(/depPostedWorker/, function (req,res) {
   }
 });
 
+
+router.get(/same-pension-date-ig/, function (req,res) {
+  if(req.query.samePensionIg === "Yes") {
+    res.redirect('not-entitled');
+  } else if(req.query.samePensionIg === "No") {
+    res.redirect('contact-address-ig');
+  } else {
+    res.redirect('same-pension');
+  }
+});
 router.get(/same-pension-date/, function (req,res) {
   if(req.query.samePension === "Yes") {
     res.redirect('not-entitled');
@@ -323,6 +333,7 @@ router.get(/same-pension-date/, function (req,res) {
     res.redirect('same-pension');
   }
 });
+
 
 router.get(/uk-benefit-info/, function (req,res) {
   if(req.query.statePension === "Yes") {
