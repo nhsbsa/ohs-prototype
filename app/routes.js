@@ -294,6 +294,19 @@ router.get(/postedWorker/, function (req,res) {
   }
 });
 
+// dependant journey - register an entitlement
+router.get(/entitlementTypeDep/, function (req,res) {
+  if(req.query.radiosDEP === "Customer") {
+    res.redirect('moving-country');
+  } else if (req.query.radiosDEP === "International Group") {
+    res.redirect('register-date-ig-dep');
+  } else {
+    res.redirect('entitlement-type-dep');
+  }
+});
+
+
+// main journey - register an entitlement
 router.get(/entitlementType/, function (req,res) {
   if(req.query.radiosET === "Customer") {
     res.redirect('moving-country');
@@ -303,6 +316,7 @@ router.get(/entitlementType/, function (req,res) {
     res.redirect('entitlement-type');
   }
 });
+
 
 router.get(/depPostedWorker/, function (req,res) {
   if(req.query.radiosPW === "S1 Posted Worker") {
