@@ -289,7 +289,9 @@ router.get(/postedWorker/, function (req,res) {
     res.redirect('working-country');
   } else if (req.query.radiosPW === "Exportable benefit including State Pension") {
     res.redirect('entitlement-type');
-  } else {
+  } else if (req.query.radiosPW === "Dependant of UK worker") {
+    res.redirect('check-your-answers-e109');
+  }else {
     res.redirect('create-entitlement');
   }
 });
