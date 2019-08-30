@@ -291,7 +291,9 @@ router.get(/postedWorker/, function (req,res) {
     res.redirect('entitlement-type');
   } else if (req.query.radiosPW === "Dependant of UK worker") {
     res.redirect('contact-address-e109');
-  }else {
+  } else if (req.query.radiosPW === "EU exception") {
+    res.redirect('working-country');
+  } else {
     res.redirect('create-entitlement');
   }
 });
