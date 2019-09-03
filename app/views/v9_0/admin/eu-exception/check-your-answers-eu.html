@@ -1,0 +1,142 @@
+{% extends "layout_bsa.html" %}
+{% block page_title %}
+Check your answers before sending the application
+{% endblock %}
+{% block content %}
+<style>
+   /* banner */
+   .banner-information-without-action {
+   color: #005ea5;
+   }
+   .banner-message {
+   font-family: Arial, sans-serif;
+   font-weight: 400;
+   text-transform: none;
+   font-size: 36px;
+   line-height: 1.2;
+   padding: 20px;
+   margin-top: 15px;
+   margin-bottom: 15px;
+   border-width: 5px;
+   border-style: solid;
+   font-weight: bold;
+   text-align: center;
+   }
+   .vertical-bar {
+   margin: 0px 10px;
+   }
+   /* end banner */
+</style>
+<main id="content" role="main">
+   <div class="grid-row">
+      <div class="column-full">
+         <div id="back">
+            <a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+         </div>
+      </div>
+   </div>
+   <div class="form-group">
+      <div class="grid-row">
+         <!-- <div class="column-full">
+            <div class="banner-information-without-action">
+            	<p class="banner-message">
+            		<span class="name text-capitalize">Michael Philip</span>
+            		<span class="vertical-bar">|</span>
+            		<span class="ohs-reference-number">25000002</span>
+            	</p>
+            </div>
+            </div> -->
+         <div class="column-two-thirds">
+            <div class="heading-group">
+               <h1 class="heading-large">Check your answers before registering an entitlement</h1>
+            </div>
+            <div class="form-group">
+               <h2 class="heading-medium">Personal details</h2>
+               <dl class="govuk-check-your-answers cya-questions-short">
+                  <div>
+                     <dt class="cya-question">OHS reference number</dt>
+                     <dd class="cya-answer">25000002</dd>
+                     <dd class="cya-change"></dd>
+                  </div>
+                  <div>
+                     <dt class="cya-question">Full name</dt>
+                     <dd class="cya-answer">Michael Philip</dd>
+                  </div>
+                  <div>
+                     <dt class="cya-question">Date of birth</dt>
+                     <dd class="cya-answer">16/03/1994</dd>
+                  </div>
+                  <div>
+                     <dt class="cya-question">National Insurance number</dt>
+                     <dd class="cya-answer">SR123456A</dd>
+                  </div>
+               </dl>
+            </div>
+            <div class="form-group">
+               <h2 class="heading-medium">S1 entitlement details</h2>
+               <table class="check-table">
+                  <tbody>
+                     <tr>
+                        <td class="bold">What country are you moving to?</td>
+                        <td>France</td>
+                        <td><a href="eu-exception#registration-number">Change</a></td>
+                     </tr>
+                     <tr>
+                        <td class="bold">What is the entitlement start date?</td>
+                        <td>04/12/2018</td>
+                        <td><a href="eu-exception#ni-number">Change</a></td>
+                     </tr>
+                     <tr>
+                        <td class="bold">What is the entitlement end date?</td>
+                        <td>26/12/2018</td>
+                        <td><a href="eu-exception#ni-number-2">Change</a></td>
+                     </tr>
+                     <tr>
+                        <td class="bold">What is the issued date?</td>
+                        <td>01/12/2019</td>
+                        <td><a href="eu-exception#ni-number-3">Change</a></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div class="form-group">
+               <h2 class="heading-medium">Entitlement registration details</h2>
+               <table class="check-table">
+                  <tbody>
+                     <tr>
+                        <td class="bold">Institution name</td>
+                        <td>Federal Ministry of Labour and Social Affairs</td>
+                        <td><a href="eu-exception#i-name">Change</a></td>
+                     </tr>
+                     <tr>
+                        <td class="bold">Institution email address</td>
+                        <td>fmolasa@email.com</td>
+                        <td><a href="eu-exception#i-email">Change</a></td>
+                     </tr>
+                     <tr>
+                        <td class="bold">What is the MS acceptance date?</td>
+                        <td>04/12/2018</td>
+                        <td><a href="eu-exception#reg-date">Change</a></td>
+                     </tr>
+                     <tr>
+                        <td class="bold">What is the entitlement registration date?</td>
+                        <td>04/12/2018</td>
+                        <td><a href="eu-exception#reg-date-2">Change</a></td>
+                     </tr>
+                     <tr>
+                        <td class="bold">What is the entitlement end date?</td>
+                        <td>26/12/2019</td>
+                        <td><a href="eu-exception#reg-date-3">Change</a></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div class="form-group">
+               <a href="done-eu" class="button">Submit and register</a>
+               <a class="button button-secondary" href="case-record">Cancel</a>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+{% endblock %}

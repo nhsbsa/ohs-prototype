@@ -292,7 +292,7 @@ router.get(/postedWorker/, function (req,res) {
   } else if (req.query.radiosPW === "Dependant of UK worker") {
     res.redirect('contact-address-e109');
   } else if (req.query.radiosPW === "EU exception") {
-    res.redirect('working-country');
+    res.redirect('eu-exception');
   } else {
     res.redirect('create-entitlement');
   }
