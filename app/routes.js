@@ -284,7 +284,10 @@ router.get(/resident/, function (req,res){
 
 // end EHIC //
 
-router.get(/postedWorker/, function (req,res) {
+
+// EU exception //
+
+router.get(/euException/, function (req,res) {
   if(req.query.radiosPW === "Posted worker") {
     res.redirect('working-country');
   } else if (req.query.radiosPW === "Exportable benefit including State Pension") {
@@ -297,6 +300,21 @@ router.get(/postedWorker/, function (req,res) {
     res.redirect('create-entitlement');
   }
 });
+
+router.get(/euExceptionDep/, function (req,res) {
+  if(req.query.radiosPW === "EU exception") {
+    res.redirect('working-country');
+  } else if (req.query.radiosPW === "Exportable benefit including State Pension") {
+    res.redirect('entitlement-type');
+  } else if (req.query.radiosPW === "Dependant of UK worker") {
+    res.redirect('contact-address-e109');
+  } else if (req.query.radiosPW === "EU exception") {
+    res.redirect('eu-exception-dep');
+  } else {
+    res.redirect('create-entitlement-dep');
+  }
+});
+// end EU exception 
 
 // dependant journey - register an entitlement
 router.get(/entitlementTypeDep/, function (req,res) {
