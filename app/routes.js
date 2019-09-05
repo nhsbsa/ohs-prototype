@@ -301,14 +301,14 @@ router.get(/euException/, function (req,res) {
   }
 });
 
-router.get(/euExceptionDep/, function (req,res) {
-  if(req.query.radiosPW === "EU exception") {
+router.get(/depEuException/, function (req,res) {
+  if(req.query.radiosEU === "Posted worker") {
     res.redirect('working-country');
-  } else if (req.query.radiosPW === "Exportable benefit including State Pension") {
+  } else if (req.query.radiosEU === "Exportable benefit including State Pension") {
     res.redirect('entitlement-type');
-  } else if (req.query.radiosPW === "Dependant of UK worker") {
+  } else if (req.query.radiosEU === "Dependant of UK worker") {
     res.redirect('contact-address-e109');
-  } else if (req.query.radiosPW === "EU exception") {
+  } else if (req.query.radiosEU === "EU exception") {
     res.redirect('eu-exception-dep');
   } else {
     res.redirect('create-entitlement-dep');
