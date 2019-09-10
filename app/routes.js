@@ -285,6 +285,20 @@ router.get(/resident/, function (req,res){
 // end EHIC //
 
 
+// e109 //
+router.get(/postedWorker/, function (req,res) {
+  if(req.query.radiosPW === "Posted worker") {
+    res.redirect('working-country');
+  } else if (req.query.radiosPW === "Exportable benefit including State Pension") {
+    res.redirect('entitlement-type');
+  } else if (req.query.radiosPW === "Dependant of UK worker") {
+    res.redirect('contact-address-e109');
+  } else {
+    res.redirect('create-entitlement');
+  }
+});
+
+
 // EU exception //
 
 router.get(/euException/, function (req,res) {
@@ -314,7 +328,31 @@ router.get(/depEuException/, function (req,res) {
     res.redirect('create-entitlement-dep');
   }
 });
+
+// EU Version 2 - Bilateral Agreement
+router.get(/v2EuException/, function (req,res) {
+  if(req.query.radiosPW === "Yes") {
+    res.redirect('main-dep');
+  } else if (req.query.radiosPW === "No") {
+    res.redirect('create-entitlement');
+  } else {
+    res.redirect('eu');
+  }
+});
+
+// EU Version 2 - Bilateral Agreement - Main or Dependant?
+router.get(/mainOrDependant/, function (req,res) {
+  if(req.query.radiosPW === "Main") {
+    res.redirect('eu-exception');
+  } else if (req.query.radiosPW === "Dependant") {
+    res.redirect('eu-exception');
+  } else {
+    res.redirect('main-dep');
+  }
+});
+
 // end EU exception 
+
 
 // dependant journey - register an entitlement
 router.get(/entitlementTypeDep/, function (req,res) {
