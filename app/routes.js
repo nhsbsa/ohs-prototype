@@ -299,6 +299,7 @@ router.get(/postedWorker/, function (req,res) {
 });
 
 
+
 // EU exception //
 
 router.get(/euException/, function (req,res) {
@@ -351,7 +352,20 @@ router.get(/mainOrDependant/, function (req,res) {
   }
 });
 
+// EU Version 2 - Bilateral Agreement - Email options
+router.get(/emailOptions/, function (req,res) {
+  if(req.query.radiosPW === "Institution") {
+    res.redirect('case-record-eu-issued');
+  } else if (req.query.radiosPW === "Individual") {
+    res.redirect('case-record-eu-issued');
+  } else {
+    res.redirect('email-options');
+  }
+});
+
 // end EU exception 
+
+
 
 
 // dependant journey - register an entitlement
