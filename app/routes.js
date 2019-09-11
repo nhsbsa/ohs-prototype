@@ -333,9 +333,9 @@ router.get(/depEuException/, function (req,res) {
 // EU Version 2 - Bilateral Agreement
 router.get(/v2EuException/, function (req,res) {
   if(req.query.radiosPW === "Yes") {
-    res.redirect('main-dep');
+    res.redirect('create-entitlement'); 
   } else if (req.query.radiosPW === "No") {
-    res.redirect('create-entitlement');
+    res.redirect('main-dep');
   } else {
     res.redirect('eu');
   }
