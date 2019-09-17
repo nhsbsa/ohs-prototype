@@ -347,7 +347,7 @@ router.get(/v2EuException/, function (req,res) {
 // EU Version 2 - Bilateral Agreement - Main or Dependant?
 router.get(/mainOrDependant/, function (req,res) {
   if(req.query.radiosPW === "Main") {
-    res.redirect('uk');
+    res.redirect('eu-exception');
   } else if (req.query.radiosPW === "Dependant") {
     res.redirect('eu-exception');
   } else {
