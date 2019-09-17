@@ -333,7 +333,7 @@ router.get(/depEuException/, function (req,res) {
 // EU Version 2 - Bilateral Agreement
 router.get(/v2EuException/, function (req,res) {
   if(req.query.radiosPW === "Yes") {
-    res.redirect('main-dep'); 
+    res.redirect('uk'); 
   } else if (req.query.radiosPW === "No") {
     res.redirect('create-entitlement');
   } else {
@@ -342,9 +342,12 @@ router.get(/v2EuException/, function (req,res) {
 });
 
 // EU Version 2 - Bilateral Agreement - Main or Dependant?
+
+
+// EU Version 2 - Bilateral Agreement - Main or Dependant?
 router.get(/mainOrDependant/, function (req,res) {
   if(req.query.radiosPW === "Main") {
-    res.redirect('eu-exception');
+    res.redirect('uk');
   } else if (req.query.radiosPW === "Dependant") {
     res.redirect('eu-exception');
   } else {
