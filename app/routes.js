@@ -334,7 +334,7 @@ router.get(/depEuException/, function (req,res) {
 router.get(/v2EuException/, function (req,res) {
   if(req.query.radiosPW === "Yes") {
     res.redirect('create-entitlement'); 
-  } else if (req.query.radiosPW === "No") {
+  } else if (req.query.radiosPW === "Yes") {
     res.redirect('main-dep');
   } else {
     res.redirect('eu');
