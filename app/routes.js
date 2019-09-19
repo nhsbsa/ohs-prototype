@@ -349,7 +349,7 @@ router.get(/mainOrDependant/, function (req,res) {
   if(req.query.radiosPW === "Main") {
     res.redirect('eu-exception');
   } else if (req.query.radiosPW === "Dependant") {
-    res.redirect('eu-exception');
+    res.redirect('dependant-eu/search');
   } else {
     res.redirect('main-dep');
   }
