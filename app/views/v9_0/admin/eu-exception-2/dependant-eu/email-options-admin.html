@@ -221,7 +221,7 @@
 				<form class="form" action="done-email" method="get">
 					<div class="form-group">
 						<fieldset id="entitlement">
-                            <p class="form-hint">The certificate will be sent to admin automatically.<br><br>Select all that apply.</p>
+                            <p class="form-hint">Select all that apply.</p>
                             
                             <form>
   <div class="form-group">
@@ -244,7 +244,11 @@
         <label class="form-label" for="nationalities-other-country">Email address</label>
         <input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country" value="">
       </div>
-      
+      <p>or</p>
+        <div class="govuk-checkboxes__item" data-target="example-different-country">
+        <input class="govuk-checkboxes__input" id="nationalities-other" name="nationalities" type="checkbox" value="Citizen of a different country">
+        <label  class="govuk-label govuk-checkboxes__label" for="nationalities-other">None of the above</label>
+      </div>
                             
                             
 							<!--<div class="govuk-radios">
