@@ -1,0 +1,165 @@
+{% extends "layout_bsa.html" %}
+{% block page_title %}
+What country are you working in?
+{% endblock %}
+{% block content %}
+<style>
+   /* banner */
+   .banner-information-without-action {
+   color: #005ea5;
+   }
+   .banner-message {
+   font-family: Arial, sans-serif;
+   font-weight: 400;
+   text-transform: none;
+   font-size: 36px;
+   line-height: 1.2;
+   padding: 20px;
+   margin-top: 15px;
+   margin-bottom: 15px;
+   border-width: 5px;
+   border-style: solid;
+   font-weight: bold;
+   text-align: center;
+   }
+   .vertical-bar {
+   margin: 0px 10px;
+   }
+   /* end banner */
+</style>
+<main id="content" role="main">
+   <div class="grid-row">
+      <div class="column-full">
+         <div id="back">
+            <a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+         </div>
+      </div>
+   </div>
+   <div class="form-group">
+      <div class="grid-row">
+         <div class="column-full">
+            <div class="banner-information-without-action">
+               <p class="banner-message">
+                  <span class="name text-capitalize">Rosie Philip</span>
+                  <span class="vertical-bar">|</span>
+                  <span class="ohs-reference-number">25000005</span>
+               </p>
+            </div>
+         </div>
+         <div class="column-full">
+            <div class="heading-group">
+               <h1 class="heading-large">Transitional Replacement Certificate (TRC)</h1>
+            </div>
+
+
+            <form action="working-date" id="moving-country-form" method="get" class="form">
+               <h2 class="heading-medium">What is the country of treatment?</h2>
+               <div class="form-group">
+                  <label class="form-label" for="lineone">Country</label>
+                  <input class="form-control" id="registration-number" name="address-lineone" type="text" autocomplete="off" value="France" >
+               </div>
+
+               <h2 class="heading-medium">Treatment facility details</h2>
+               <div class="form-group">
+                  <label class="form-label" for="i-name">
+                  Treatment facility name
+                  </label>
+                  <input class="form-control" id="i-name" type="text" autocomplete="off" value="Jeanne de Flandre Hospital">
+               </div>
+                <div class="form-group">
+                  <label class="form-label" for="i-email">
+                  Treatment facility city
+                  </label>
+                  <input class="form-control" id="i-email" type="text" autocomplete="off" value="Paris">
+               </div>
+               <div class="form-group">
+                  <label class="form-label" for="i-email">
+                  Treatment facility email address
+                  </label>
+                  <input class="form-control" id="i-email" type="text" autocomplete="off" value="info@jdfhospital.com">
+               </div>
+               <div class="form-group">
+                  <label class="form-label" for="i-email">
+                  Treatment facility telephone number
+                  </label>
+                  <input class="form-control" id="i-email" type="text" autocomplete="off" value="+34 56565787">
+               </div>
+                <div class="form-group">
+                  <label class="form-label" for="i-email">
+                  Treatment facility contact name (Optional)
+                  </label>
+                  <input class="form-control" id="i-email" type="text" autocomplete="off" value="Donald Trump">
+               </div>
+
+
+               <h2 class="heading-medium">What are the treatment dates?</h2>
+               <div class="form-group">
+                  <label class="form-label" for="ni-number">
+                  Start date
+                  <span class="form-hint">
+                  This can be any date. For example, 18/09/2018
+                  </span>
+                  </label>
+                  <input class="form-control" id="ni-number" type="text" autocomplete="off" value="04/12/2018">
+               </div>
+               <div class="form-group">
+                  <label class="form-label" for="ni-number-2">
+                  End date
+                  <span class="form-hint">
+                  This can be any date. For example, 18/09/2018
+                  </span>
+                  </label>
+                  <input class="form-control" id="ni-number-2" type="text" autocomplete="off" value="26/12/2019">
+               </div>
+               <div class="form-group">
+                  <label class="form-label" for="ni-number">
+                 Process start date
+                  <span class="form-hint">
+                  This can be any date. For example, 18/09/2018
+                  </span>
+                  </label>
+                  <input class="form-control" id="ni-number-3" type="text" autocomplete="off" value="01/12/2018">
+               </div>
+
+
+               
+
+
+            <!--    <h2 class="heading-medium">Entitlement registration details</h2>
+               <div class="form-group">
+                  <label class="form-label" for="reg-date">
+                  What is the MS acceptance date?
+                  <span class="form-hint">
+                  This can be any date. For example, 18/09/2018
+                  </span>
+                  </label>
+                  <input class="form-control" id="reg-date" type="text" autocomplete="off" value="04/12/2018" >
+               </div>
+               <div class="form-group">
+                  <label class="form-label" for="reg-date-2">
+                  What is the entitlement registration date?
+                  <span class="form-hint">
+                  This can be any date. For example, 18/09/2018
+                  </span>
+                  </label>
+                  <input class="form-control" id="reg-date-2" type="text" autocomplete="off" value="04/12/2018">
+               </div>
+               <div class="form-group">
+                  <label class="form-label" for="reg-date-3">
+                  What is the entitlement end date?
+                  <span class="form-hint">
+                  This can be any date. For example, 18/09/2018
+                  </span>
+                  </label>
+                  <input class="form-control" id="reg-date-3" type="text" autocomplete="off" value="26/12/2019">
+               </div> -->
+               <div class="form-group">
+                  <a class="button" href="check-your-answers-eu">Next</a>
+                  <a class="button button-secondary" href="case-record">Cancel</a>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</main>
+{% endblock %}
