@@ -376,7 +376,7 @@ router.get(/entitlementTypeDep/, function (req,res) {
   if(req.query.radiosDEP === "Customer") {
     res.redirect('moving-country');
   } else if (req.query.radiosDEP === "International Group") {
-    res.redirect('register-date-ig-dep');
+    res.redirect('moving-country-ig-dep');
   } else {
     res.redirect('entitlement-type-dep');
   }
@@ -410,7 +410,7 @@ router.get(/same-pension-date-ig/, function (req,res) {
   if(req.query.samePensionIg === "Yes") {
     res.redirect('not-entitled');
   } else if(req.query.samePensionIg === "No") {
-    res.redirect('contact-address-ig');
+    res.redirect('s1-date');
   } else {
     res.redirect('same-pension');
   }
