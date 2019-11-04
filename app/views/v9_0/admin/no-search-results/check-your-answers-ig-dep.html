@@ -79,86 +79,129 @@
 						</div>
 					</dl>
 				</div>
+
+
+
+
+				<div class="form-group">
+										<h2 class="heading-medium">Eligibility details</h2>
+
+                    <table class="check-table">
+                        <tbody>
+                            <!-- <tr>
+                                <td class="bold">What entitlement would you like to create?</td>
+                                <td>{{data.radiosPW}}</td>
+                                <td><a href="create-entitlement#entitlement">Change</a></td>
+                            </tr> -->
+                            <tr>
+                                <td class="bold">What is the source of entitlement type?</td>
+                                <td>International Group</td>
+                                <td>
+                                	<!-- <a href="entitlement-type-dep#entitlementType">Change</a> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bold">What country are you moving to?</td>
+                                <td>France</td>
+                                <td>
+                                	<!-- <a href="moving-country-ig-dep#registration-number">Change</a> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bold">What is the entitlement start date?</td>
+                                <td>04/12/2018</td>
+                                <td>
+                                	<!-- <a href="s1-date-dep#ni-number">Change</a> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bold">What is the entitlement end date?</td>
+                                <td>26/12/2019</td>
+                                <td>
+                                	<!-- <a href="s1-date-dep#ni-number-2">Change</a> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bold">What is the issued date?</td>
+                                <td>01/12/2018</td>
+                                <td>
+                                	<!-- <a href="s1-date-dep#ni-number-3">Change</a> -->
+                                </td>
+                            </tr>
+                            <!-- <tr>
+                                <td class="bold" valign="top">Residential address</td>
+                                <td >1 Road <br>
+								Downtown <br>
+								Lille <br>
+								123456 <br>
+								France</td>
+                                <td valign="top"><a href="contact-address-ig-dep-s1">Change</a></td>
+                            </tr>
+                            <tr>
+                                <td class="bold" valign="top">Correspondence address</td>
+                                <td>Rúa de Mer 64 <br>
+								Paris <br>
+								Plaisance <br>
+								75014 <br>
+								France
+                                <td valign="top"><a href="contact-address-ig-dep-s1" >Change</a></td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+<!-- 
 				<div class="form-group">
 					<h2 class="heading-medium">Eligibility details</h2>
 					<dl class="govuk-check-your-answers cya-questions-short">
 						
-						<!-- <div>
+						<div>
 							<dt class="cya-question">What entitlement would you like to create?</dt>
 							<dd class="cya-answer">Exportable benefit including State Pension</dd>
 							<dd class="cya-change">
 								<a href="create-entitlement#entitlement">Change<span class="visually-hidden"> entitlement you would like to create</span></a>
 							</dd>
-						</div> -->
+						</div>
 						<div>
 							<dt class="cya-question">What is the source of entitlement type?</dt>
 							<dd class="cya-answer">{{data.radiosDEP}}</dd>
 							<dd class="cya-change">
-								<!-- <a href="entitlement-type-dep#entitlementType">Change<span class="visually-hidden"> entitlement you would like to create</span></a> -->
+								<a href="entitlement-type-dep#entitlementType">Change<span class="visually-hidden"> entitlement you would like to create</span></a>
 							</dd>
 						</div>
 						<div>
 							<dt class="cya-question">What country are you moving to?</dt>
 							<dd class="cya-answer">France</dd>
 							<dd class="cya-change">
-								<!-- <a href="moving-country#registration-number">Change<span class="visually-hidden"> country you are moving to</span></a> -->
+								<a href="moving-country#registration-number">Change<span class="visually-hidden"> country you are moving to</span></a>
 							</dd>
 						</div>
-						<!-- <div>
-							<dt class="cya-question">What date will you start to live in France?</dt>
+						<div>
+							<dt class="cya-question">What is the entitlement start date?</dt>
 							<dd class="cya-answer">04/12/2018</dd>
 							<dd class="cya-change">
-								<a href="moving-date#ni-number">Change<span class="visually-hidden"> date will you start to live in France</span></a>
+								<a href="moving-country#registration-number">Change<span class="visually-hidden"> country you are moving to</span></a>
 							</dd>
 						</div>
 						<div>
-							<dt class="cya-question">What date will you return to the UK?</dt>
-							<dd class="cya-answer">-</dd>
+							<dt class="cya-question">What is the entitlement end date?</dt>
+							<dd class="cya-answer">	26/12/2019</dd>
 							<dd class="cya-change">
-								<a href="moving-date#ni-number-2">Change<span class="visually-hidden"> date you will return to the UK</span></a>
+								<a href="moving-country#registration-number">Change<span class="visually-hidden"> country you are moving to</span></a>
 							</dd>
 						</div>
 						<div>
-							<dt class="cya-question">Do you get money from any of these?</dt>
-							<dd class="cya-answer">{{data.expbenefits}}</dd>
+							<dt class="cya-question">What is the entitlement issued date?</dt>
+							<dd class="cya-answer">	01/12/2018</dd>
 							<dd class="cya-change">
-								<a href="benefit-info#expbenefits">Change<span class="visually-hidden"> exportable benefit</span></a>
+								<a href="moving-country#registration-number">Change<span class="visually-hidden"> country you are moving to</span></a>
 							</dd>
 						</div>
-						<div>
-							<dt class="cya-question">Do you get money from a UK State Pension, or will you get this within the next 28 days?</dt>
-							<dd class="cya-answer">{{data.statePension}}</dd>
-							<dd class="cya-change">
-								<a href="pension-info#statepension">Change<span class="visually-hidden"> state pension</span></a>
-							</dd>
-						</div>
-						<div>
-							<dt class="cya-question">What date will you start to get paid your UK State Pension?</dt>
-							<dd class="cya-answer">04/12/2018</dd>
-							<dd class="cya-change">
-								<a href="pension-date#ni-number">Change<span class="visually-hidden"> date you will start to get paid your UK State Pension</span></a>
-							</dd>
-						</div> -->
-						<!-- <div>
-							<dt class="cya-question">Do you get paid a State Pension from France?</dt>
-							<dd class="cya-answer">No</dd>
-							<dd class="cya-change">
-								<a href="same-pension#state-pension">Change<span class="visually-hidden"> if you get paid a State Pension from France</span></a>
-							</dd>
-						</div> -->
-						<!-- <div>
-							<dt class="cya-question">Do you get paid a State Pension from another EEA country, or Switzerland?</dt>
-							<dd class="cya-answer">{{data.thirdcountrypension}}
-													{% if data.thirdcountrypension === "Yes" %}
-														- {{data.thirdcountry}}
-													{% endif %}
-							</dd>
-							<dd class="cya-change">
-								<a href="another-pension#another-pension">Change<span class="visually-hidden"> if you get paid a State Pension from another EEA country, or Switzerland</span></a>
-							</dd>
-						</div> -->
 					</dl>
-				</div>
+				</div> -->
 				
 
 
@@ -170,13 +213,15 @@
                             <tr>
                                 <td class="bold">Institution code</td>
                                 <td>10000001</td>
-                                <td></td>
-                                <!-- <td><a href="institution-search-results#ohs">Change</a></td> -->
+                                <!-- <td></td> -->
+                                <td><a href="institution-search-results-ig-dep#ohs">Change</a></td>
                             </tr>
                             <tr>
                                 <td class="bold">Institution name</td>
                                 <td>Federal Ministry of Labour and Social Affairs</td>
-                                <td><a href="institution-search-ig-dep">Change</a></td>
+                                <td>
+                                	<!-- <a href="institution-search-ig-dep">Change</a> -->
+                                </td>
                             </tr>
                             <tr>
                                 <td class="bold">Institution address</td>
