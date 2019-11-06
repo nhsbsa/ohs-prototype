@@ -285,7 +285,7 @@ router.get(/resident/, function (req,res){
 // end EHIC //
 
 
-// e109 //
+// e109 / S1 / DA1 //
 router.get(/postedWorker/, function (req,res) {
   if(req.query.radiosPW === "Posted worker") {
     res.redirect('working-country');
@@ -293,8 +293,36 @@ router.get(/postedWorker/, function (req,res) {
     res.redirect('entitlement-type');
   } else if (req.query.radiosPW === "Dependant of UK worker") {
     res.redirect('contact-address-e109');
+  } else if (req.query.radiosPW === "Occupational Disease or Injury") {
+    res.redirect('employment-status');
   } else {
     res.redirect('create-entitlement');
+  }
+});
+
+
+// DA1 employment status//
+router.get(/empStatus/, function (req,res) {
+  if(req.query.radioES === "Employed") {
+    res.redirect('da1-date');
+  } else if (req.query.radioES === "Self-employed") {
+    res.redirect('da1-date');
+  } else if (req.query.radioES === "Unemployed") {
+    res.redirect('da1-date');
+  } else {
+    res.redirect('employment-status');
+  }
+});
+
+
+// DA1 reason for entitlement //
+router.get(/entReason/, function (req,res) {
+  if(req.query.radiosR === "Occupational disease") {
+    res.redirect('consequence-od');
+  } else if (req.query.radiosR === "Accident at work") {
+    res.redirect('consequence-acc');
+  } else {
+    res.redirect('ent-reason');
   }
 });
 
