@@ -293,7 +293,7 @@ router.get(/postedWorker/, function (req,res) {
     res.redirect('entitlement-type');
   } else if (req.query.radiosPW === "Dependant of UK worker") {
     res.redirect('contact-address-e109');
-  } else if (req.query.radiosPW === "Occupational Disease or Injury") {
+  } else if (req.query.radiosPW === "Occupational disease or injury") {
     res.redirect('employment-status');
   } else {
     res.redirect('create-entitlement');
