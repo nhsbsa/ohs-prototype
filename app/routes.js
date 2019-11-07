@@ -309,7 +309,10 @@ router.get(/empStatus/, function (req,res) {
     res.redirect('da1-date');
   } else if (req.query.radioES === "Unemployed") {
     res.redirect('da1-date');
-  } else {
+  } else if (req.query.radioES === "Not specified") {
+    res.redirect('da1-date');
+  } 
+  else {
     res.redirect('employment-status');
   }
 });
