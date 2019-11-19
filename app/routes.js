@@ -441,7 +441,7 @@ router.get(/same-pension-date-ig/, function (req,res) {
   if(req.query.samePensionIg === "Yes") {
     res.redirect('not-entitled');
   } else if(req.query.samePensionIg === "No") {
-    res.redirect('s1-date');
+    res.redirect('contact-address-ig');
   } else {
     res.redirect('same-pension');
   }
