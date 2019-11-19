@@ -405,7 +405,7 @@ router.get(/emailOptions/, function (req,res) {
 // dependant journey - register an entitlement
 router.get(/entitlementTypeDep/, function (req,res) {
   if(req.query.radiosDEP === "Customer") {
-    res.redirect('moving-country');
+    res.redirect('moving-country-ig-dep2');
   } else if (req.query.radiosDEP === "International Group") {
     res.redirect('moving-country-ig-dep');
   } else {
