@@ -5,162 +5,160 @@ Overseas Healthcare Prototype
 {% block content %}
 <main id="content" role="main">
    <div class="grid-row">
-      <div class="column-two-thirds">
-         <h1 class="heading-xlarge">
-            <span class="heading-secondary">NHSBSA Design</span>
-            Overseas Healthcare Prototype
-         </h1>
+   <div class="column-two-thirds">
+      <h1 class="heading-xlarge">
+         <span class="heading-secondary">NHSBSA Design</span>
+         Overseas Healthcare Prototype
+      </h1>
+      <details open>
+         <summary>
+            <span class="summary">Advanced search</span>
+         </summary>
+         <div class="panel panel-border-narrow">
+            <p>Search using OHS ref</p>
+            <ul class="list list-bullet">
+               <li>No result on search or advanced <a href="/v9_0/admin/search-ref-noresult/search-ref">link</a></li>
+               <li>No result on search but found on advanced search <a href="/v9_0/admin/search-ref-result/search-ref">link</a></li>
+            </ul>
+            <p>Search using personal details</p>
+            <ul class="list list-bullet">
+               <li>No results on search or advanced <a href="/v9_0/admin/search-details-noresult/search-details">link</a></li>
+               <li>No results on search but found on advanced search <a href="/v9_0/admin/search-details/search-details">link</a></li>
+            </ul>
+         </div>
+      </details>
+      <details open>
+         <summary>
+            <span class="summary">Date warning banner</span>
+         </summary>
+         <div class="panel panel-border-narrow">
+            <ul class="list list-bullet">
+               <li>moving date, 2 pages <a href="/v9_0/admin/no-search-results/moving-date-benefit">link</a></li>
+               <li>benefit date, 2 pages <a href="/v9_0/admin/no-search-results/benefit-date-banner">link</a></li>
+               <li>UK State Pension, 2 pages <a href="/v9_0/admin/no-search-results/pension-date-banner">link</a></li>
+            </ul>
+         </div>
+      </details>
+      <div class="form-group">
          <details open>
             <summary>
-               <span class="summary">Advanced search</span>
+               <span class="summary">Notes</span>
             </summary>
             <div class="panel panel-border-narrow">
-               <p>Search using OHS ref</p>
                <ul class="list list-bullet">
-                  <li>No result on search or advanced <a href="/v9_0/admin/search-ref-noresult/search-ref">link</a></li>
-                  <li>No result on search but found on advanced search <a href="/v9_0/admin/search-ref-result/search-ref">link</a></li>
+               <li>
+                  case record with notes - <a href="/v9_0/admin/notes/case-record-with-notes">link</a>
+                  <!-- <p>case record with notes - <a href="/v9_0/admin/notes/case-record-with-notes">link</a></p> -->
+               <li>add note to entitlement - <a href="/v9_0/admin/notes/case-record-ent-notes">link</a></li>
+               <!-- <p>case record with notes - <a href="/v9_0/admin/notes/case-record-with-notes">link</a></p> -->
+            </div>
+         </details>
+      </div>
+      <div class="form-group">
+         <details open>
+            <summary>
+               <span class="summary">EU exception</span>
+            </summary>
+            <div class="panel panel-border-narrow">
+               <p style="font-weight:bold;">Version 5</p>
+               <ul class="list list-bullet">
+                  <li>EU exception main (person found) and dependant (person not found) with claims and evidence - <a href="v12_0/admin/eu-exception-2/windows-login">link</a>
+                  </li>
+                  <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
                </ul>
-               <p>Search using personal details</p>
+               <p style="font-weight:bold;">Version 4</p>
                <ul class="list list-bullet">
-                  <li>No results on search or advanced <a href="/v9_0/admin/search-details-noresult/search-details">link</a></li>
-                  <li>No results on search but found on advanced search <a href="/v9_0/admin/search-details/search-details">link</a></li>
+                  <li>EU exception main (person found) and dependant (person not found) with claims - <a href="v11_0/admin/eu-exception-2/windows-login">link</a>
+                  </li>
+                  <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
+               </ul>
+               <p style="font-weight:bold;">Version 3</p>
+               <ul class="list list-bullet">
+                  <li>EU exception main (person found) and dependant (person not found) - <a href="v10_0/admin/eu-exception-2/windows-login">link</a>
+                  </li>
+                  <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
+               </ul>
+               <p style="font-weight:bold;">Version 2</p>
+               <ul class="list list-bullet">
+                  <li>EU exception main (person found) and dependant (person not found) - <a href="v9_0/admin/eu-exception-2/windows-login">link</a>
+                  </li>
+                  <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
+               </ul>
+               <p style="font-weight:bold;">Version 1</p>
+               <ul class="list list-bullet">
+                  <li>EU exception - main (person record found) - <a href="v9_0/admin/eu-exception/windows-login">link</a>
+                  </li>
+                  <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
                </ul>
             </div>
          </details>
+      </div>
+      <div class="form-group">
          <details open>
             <summary>
-               <span class="summary">Date warning banner</span>
+               <span class="summary">Admin</span>
             </summary>
             <div class="panel panel-border-narrow">
+               <p>Improvements:</p>
                <ul class="list list-bullet">
-                  <li>moving date, 2 pages <a href="/v9_0/admin/no-search-results/moving-date-benefit">link</a></li>
-                  <li>benefit date, 2 pages <a href="/v9_0/admin/no-search-results/benefit-date-banner">link</a></li>
-                  <li>UK State Pension, 2 pages <a href="/v9_0/admin/no-search-results/pension-date-banner">link</a></li>
+<!--                   <li>Add residential address for new dependants <a href="v9_0/admin/no-search-results/contact-address-3">(link)</a></li>
+ -->                  <li>S1 Pensioner - display extra data items (Requested) <a href="v9_0/admin/no-search-results/case-record-22">(link)</a></li>
+                  <li>S1 Pensioner - display extra data items (Issued) <a href="v9_0/admin/no-search-results/case-record-23">(link)</a></li>
                </ul>
+               <p>Journeys:</p>
+               <ul class="list list-bullet">
+                  <li>DA1 (Occupational disease/injury) - main</li>
+                  <li>E109 (Dependant of UK worker) - main</li>
+                  <li>E109 (Dependant of UK worker) - dependant <a href="v9_0/admin/no-search-results/case-record-e109">(link)</a></li>
+                  <li>International Group issued S1 - main</li>
+                  <li>International Group issued S1 - dependant <a href="v9_0/admin/no-search-results/case-record-ig">(link)</a></li>
+                  <li>Customer issued S1 - dependant</li>
+               </ul>
+               <p>Prototype Link (v.9_0):
+                  <a href="v9_0/admin/no-search-results/case-record">Main's case record</a>
+               </p>
+               <p>Prototype Link (v.9_0):
+                  <a href="v9_0/admin/no-search-results/windows-login">Overseas Healthcare Services</a>
+               </p>
+            </div>
+            <div class="panel panel-border-narrow">
+               <p>Journeys:</p>
+               <ul class="list list-bullet">
+                  <li>no search results (with search results - <a href="v8_0/admin/no-search-results/search-results">link</a>)</li>
+                  <li>create person record - main</li>
+                  <li>create new entitlement - pensioner or posted worker</li>
+                  <li>pensioner - uk state pension or exportable benefit</li>
+                  <li>pensioner - third country pension (evidence required - <a href="v8_0/admin/no-search-results/evidence-required">link</a>)</li>
+                  <li>pensioner - reprint</li>
+                  <li>pensioner - rejected reasons <a href="v8_0/admin/no-search-results/case-record-15">(link)</a></li>
+                  <li>posted worker - register entitlement</li>
+                  <li>posted worker - rejected reasons <a href="v8_0/admin/no-search-results/case-record-16">(link)</a></li>
+                  <li>pensioner and posted worker - add dependant</li>
+                  <li>pensioner and posted worker - cancel entitlement</li>
+                  <li>pensioner and posted worker - case history</li>
+               </ul>
+               <p>Prototype Link (v8_0):
+                  <a href="v8_0/admin/no-search-results/windows-login">Overseas Healthcare Services</a>
+               </p>
             </div>
          </details>
-         <div class="form-group">
-            <details open>
-               <summary>
-                  <span class="summary">Notes</span>
-               </summary>
-               <div class="panel panel-border-narrow">
-                  <ul class="list list-bullet">
-                  <li>case record with notes - <a href="/v9_0/admin/notes/case-record-with-notes">link</a>
-                  <!-- <p>case record with notes - <a href="/v9_0/admin/notes/case-record-with-notes">link</a></p> -->
-                  <li>add note to entitlement - <a href="/v9_0/admin/notes/case-record-ent-notes">link</a></li>
-                  <!-- <p>case record with notes - <a href="/v9_0/admin/notes/case-record-with-notes">link</a></p> -->
-               </div>
-            </details>
-         </div>
-
-         <div class="form-group">
-            <details open>
-               <summary>
-                  <span class="summary">EU exception</span>
-               </summary>
-               <div class="panel panel-border-narrow">
-                   <p style="font-weight:bold;">Version 5</p>
-                  <ul class="list list-bullet">
-                     <li>EU exception main (person found) and dependant (person not found) with claims and evidence - <a href="v12_0/admin/eu-exception-2/windows-login">link</a>
-                     </li>
-                     <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
-                  </ul>
-                    <p style="font-weight:bold;">Version 4</p>
-                  <ul class="list list-bullet">
-                     <li>EU exception main (person found) and dependant (person not found) with claims - <a href="v11_0/admin/eu-exception-2/windows-login">link</a>
-                     </li>
-                     <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
-                  </ul>
-                   <p style="font-weight:bold;">Version 3</p>
-                  <ul class="list list-bullet">
-                     <li>EU exception main (person found) and dependant (person not found) - <a href="v10_0/admin/eu-exception-2/windows-login">link</a>
-                     </li>
-                     <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
-                  </ul>
-                  <p style="font-weight:bold;">Version 2</p>
-                  <ul class="list list-bullet">
-                     <li>EU exception main (person found) and dependant (person not found) - <a href="v9_0/admin/eu-exception-2/windows-login">link</a>
-                     </li>
-                     <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
-                  </ul>
-                  <p style="font-weight:bold;">Version 1</p>
-                  <ul class="list list-bullet">
-                     <li>EU exception - main (person record found) - <a href="v9_0/admin/eu-exception/windows-login">link</a>
-                     </li>
-                     <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
-                  </ul>
-               </div>
-            </details>
-         </div>
-
-
-         <div class="form-group">
-            <details open>
-               <summary>
-                  <span class="summary">Admin</span>
-               </summary>
-               <div class="panel panel-border-narrow">
-                  <p>Journeys:</p>
-                  <ul class="list list-bullet">
-                     <li>Residential address for new dependants <a href="v9_0/admin/no-search-results/contact-address-3">(link)</a></li>
-                     <li>S1 Pensioner - display extra data items (Requested) <a href="v9_0/admin/no-search-results/case-record-22">(link)</a></li>
-                     <li>S1 Pensioner - display extra data items (Issued) <a href="v9_0/admin/no-search-results/case-record-23">(link)</a></li>
-                     <li>DA1 (Occupational disease/injury) - main</li>
-                     <li>E109 (Dependant of UK worker) - main</li>
-                     <li>E109 (Dependant of UK worker) - dependant <a href="v9_0/admin/no-search-results/case-record-e109">(link)</a></li>
-                     <li>International Group issued S1 - main</li>
-                     <li>International Group issued S1 - dependant <a href="v9_0/admin/no-search-results/case-record-ig">(link)</a></li>
-                     <li>Customer issued S1 - dependant</li>
-                  </ul>
-                  
-                  <p>Prototype Link (v.9_0):
-                     <a href="v9_0/admin/no-search-results/case-record">Main's case record</a>
-                  </p>
-                  <p>Prototype Link (v.9_0):
-                     <a href="v9_0/admin/no-search-results/windows-login">Overseas Healthcare Services</a>
-                  </p>
-               </div>
-               <div class="panel panel-border-narrow">
-                  <p>Journeys:</p>
-                  <ul class="list list-bullet">
-                     <li>no search results (with search results - <a href="v8_0/admin/no-search-results/search-results">link</a>)</li>
-                     <li>create person record - main</li>
-                     <li>create new entitlement - pensioner or posted worker</li>
-                     <li>pensioner - uk state pension or exportable benefit</li>
-                     <li>pensioner - third country pension (evidence required - <a href="v8_0/admin/no-search-results/evidence-required">link</a>)</li>
-                     <li>pensioner - reprint</li>
-                     <li>pensioner - rejected reasons <a href="v8_0/admin/no-search-results/case-record-15">(link)</a></li>
-                     <li>posted worker - register entitlement</li>
-                     <li>posted worker - rejected reasons <a href="v8_0/admin/no-search-results/case-record-16">(link)</a></li>
-                     <li>pensioner and posted worker - add dependant</li>
-                     <li>pensioner and posted worker - cancel entitlement</li>
-                     <li>pensioner and posted worker - case history</li>
-                  </ul>
-                  <p>Prototype Link (v8_0):
-                     <a href="v8_0/admin/no-search-results/windows-login">Overseas Healthcare Services</a>
-                  </p>
-               </div>
-            </details>
-         </div>
-         <div class="form-group">
-            <details open>
-               <summary><span class="summary">CCS</span></summary>
-
-               <div class="panel panel-border-narrow">
-                  <!-- <p>Journeys:</p>
+      </div>
+      <div class="form-group">
+         <details open>
+            <summary><span class="summary">CCS</span></summary>
+            <div class="panel panel-border-narrow">
+               <!-- <p>Journeys:</p>
                   <ul class="list list-bullet">
                      <li>no search results (with search results - <a href="v8_0/ccs/no-search-results/search-results">link</a>)</li>
                      
                   </ul> -->
-                  <p>Main's case record:
-                     <a href="v9_0/ccs/no-search-results/case-record">Overseas Healthcare Services</a>
-                  </p>
-                  <p>Prototype Link (v.9_0):
-                     <a href="v9_0/ccs/no-search-results/windows-login">Overseas Healthcare Services</a>
-                  </p>
+               <p>Main's case record:
+                  <a href="v9_0/ccs/no-search-results/case-record">Overseas Healthcare Services</a>
+               </p>
+               <p>Prototype Link (v.9_0):
+                  <a href="v9_0/ccs/no-search-results/windows-login">Overseas Healthcare Services</a>
+               </p>
                <!-- </div> -->
-
                <details closed>
                   <summary><span class="summary">CCS (v.8_0)</span></summary>
                   <div class="panel panel-border-narrow">
@@ -181,10 +179,7 @@ Overseas Healthcare Prototype
                      </p>
                   </div>
                </details>
-
-            </details>
-
-         
+         </details>
          </div>
          <!-- <h2 class="heading-medium">Version 8.0.1 - CCS (WIP)</h2>
             <table>
