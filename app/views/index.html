@@ -10,7 +10,7 @@ Overseas Healthcare Prototype
          <span class="heading-secondary">NHSBSA Design</span>
          Overseas Healthcare Prototype
       </h1>
-      <details open>
+      <details>
          <summary>
             <span class="summary">Advanced search</span>
          </summary>
@@ -27,7 +27,7 @@ Overseas Healthcare Prototype
             </ul>
          </div>
       </details>
-      <details open>
+      <details>
          <summary>
             <span class="summary">Date warning banner</span>
          </summary>
@@ -40,7 +40,7 @@ Overseas Healthcare Prototype
          </div>
       </details>
       <div class="form-group">
-         <details open>
+         <details>
             <summary>
                <span class="summary">Notes</span>
             </summary>
@@ -55,7 +55,7 @@ Overseas Healthcare Prototype
          </details>
       </div>
       <div class="form-group">
-         <details open>
+         <details>
             <summary>
                <span class="summary">EU exception</span>
             </summary>
@@ -66,30 +66,39 @@ Overseas Healthcare Prototype
                   </li>
                   <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
                </ul>
-               <p style="font-weight:bold;">Version 4</p>
-               <ul class="list list-bullet">
-                  <li>EU exception main (person found) and dependant (person not found) with claims - <a href="v11_0/admin/eu-exception-2/windows-login">link</a>
-                  </li>
-                  <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
-               </ul>
-               <p style="font-weight:bold;">Version 3</p>
-               <ul class="list list-bullet">
-                  <li>EU exception main (person found) and dependant (person not found) - <a href="v10_0/admin/eu-exception-2/windows-login">link</a>
-                  </li>
-                  <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
-               </ul>
-               <p style="font-weight:bold;">Version 2</p>
-               <ul class="list list-bullet">
-                  <li>EU exception main (person found) and dependant (person not found) - <a href="v9_0/admin/eu-exception-2/windows-login">link</a>
-                  </li>
-                  <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
-               </ul>
-               <p style="font-weight:bold;">Version 1</p>
-               <ul class="list list-bullet">
-                  <li>EU exception - main (person record found) - <a href="v9_0/admin/eu-exception/windows-login">link</a>
-                  </li>
-                  <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
-               </ul>
+               <div class="form-group">
+                  <details>
+                     <summary>
+                        <span class="summary">Previous versions</span>
+                     </summary>
+                     <div class="panel panel-border-narrow">
+                        <p style="font-weight:bold;">Version 4</p>
+                        <ul class="list list-bullet">
+                           <li>EU exception main (person found) and dependant (person not found) with claims - <a href="v11_0/admin/eu-exception-2/windows-login">link</a>
+                           </li>
+                           <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
+                        </ul>
+                        <p style="font-weight:bold;">Version 3</p>
+                        <ul class="list list-bullet">
+                           <li>EU exception main (person found) and dependant (person not found) - <a href="v10_0/admin/eu-exception-2/windows-login">link</a>
+                           </li>
+                           <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
+                        </ul>
+                        <p style="font-weight:bold;">Version 2</p>
+                        <ul class="list list-bullet">
+                           <li>EU exception main (person found) and dependant (person not found) - <a href="v9_0/admin/eu-exception-2/windows-login">link</a>
+                           </li>
+                           <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
+                        </ul>
+                        <p style="font-weight:bold;">Version 1</p>
+                        <ul class="list list-bullet">
+                           <li>EU exception - main (person record found) - <a href="v9_0/admin/eu-exception/windows-login">link</a>
+                           </li>
+                           <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
+                        </ul>
+                     </div>
+                  </details>
+               </div>
             </div>
          </details>
       </div>
@@ -101,21 +110,22 @@ Overseas Healthcare Prototype
             <div class="panel panel-border-narrow">
                <p>Live bugs:</p>
                <ul class="list list-bullet">
-                  <li>Double-clicking Reprint sends 2 letters <a href="v9_0/admin/no-search-results/case-record-24">(link)</a></li>
+                  <li>Double-clicking Reprint sends 2 letters (WIP) <a href="v9_0/admin/no-search-results/case-record-24">(link)</a></li>
                </ul>
                <p>Address improvements:</p>
                <ul class="list list-bullet">
                   <li>Add addresses and contact details for new dependants - flow <a href="v9_0/admin/no-search-results/res-address">(link)</a></li>
                   <li>Add addresses and contact details for new dependants <a href="v9_0/admin/no-search-results/contact-address-4">(link)</a></li>
+                  <!-- <li>Add addresses and contact details for new dependants (quick) <a href="v9_0/admin/no-search-results/contact-address-3">(link)</a></li> -->
                </ul>
                <p>Other improvements:</p>
                <ul class="list list-bullet">
-<!-- <li>Add addresses and contact details for new dependants (quick) <a href="v9_0/admin/no-search-results/contact-address-3">(link)</a></li>-->
-<!-- <li>S1 Pensioner - display extra data items (Requested) <a href="v9_0/admin/no-search-results/case-record-22">(link)</a></li> -->                  
-               <li>S1 Pensioner - display extra data items (Registered) <a href="v9_0/admin/no-search-results/case-record-23">(link)</a></li>
+                  <!-- <li>S1 Pensioner - display extra data items (Requested) <a href="v9_0/admin/no-search-results/case-record-22">(link)</a></li>   -->                
+                  <li>S1 Pensioner - display extra data items (Registered) <a href="v9_0/admin/no-search-results/case-record-23">(link)</a></li>
                </ul>
                <p>Journeys:</p>
                <ul class="list list-bullet">
+                  <li>Update pension contributions <a href="v9_0/admin/no-search-results/case-record-23">(link)</a></li>
                   <li>DA1 (Occupational disease/injury) - main</li>
                   <li>E109 (Dependant of UK worker) - main</li>
                   <li>E109 (Dependant of UK worker) - dependant <a href="v9_0/admin/no-search-results/case-record-e109">(link)</a></li>
@@ -130,7 +140,6 @@ Overseas Healthcare Prototype
                   <a href="v9_0/admin/no-search-results/windows-login">Overseas Healthcare Services</a>
                </p>
             </div>
-            
             <!-- <div class="panel panel-border-narrow">
                <p>Journeys:</p>
                <ul class="list list-bullet">
@@ -150,7 +159,7 @@ Overseas Healthcare Prototype
                <p>Prototype Link (v8_0):
                   <a href="v8_0/admin/no-search-results/windows-login">Overseas Healthcare Services</a>
                </p>
-            </div> -->
+               </div> -->
          </details>
       </div>
       <div class="form-group">
