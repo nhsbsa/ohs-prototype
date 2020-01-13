@@ -467,4 +467,16 @@ router.get(/uk-benefit-info/, function (req,res) {
   }
 });
 
+
+// CORRESPONDENCE ADDRESS Y / N
+router.get(/corres-address/, function (req,res) {
+  if(req.query.corresAddress === "Yes") {
+    res.redirect('contact-details-3');
+  } else if(req.query.corresAddress === "No") {
+    res.redirect('corr-address-2');
+  } else {
+    res.redirect('use-corres');
+  }
+});
+
 module.exports = router
