@@ -3,607 +3,754 @@
 Overseas Healthcare Prototype
 {% endblock %}
 {% block content %}
+
+<style>
+.versions-prod:before {
+    content: "USABILITY TESTING";
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.2105263158em 0.7894736842em 0.2105263158em 0.7894736842em;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.25;
+    background: #2360AC;
+    color: white;
+  }
+
+  .versions-prod {
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #2360AC;
+    margin-top: 30px;
+    margin-bottom: 35px;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+  }
+
+  @media (min-width: 641px) {
+    .versions-prod {
+      padding-top: 50px;
+      padding-right: 30px;
+      padding-bottom: 20px;
+      padding-left: 30px;
+    }
+  }
+
+  .versions:before {
+    content: "RESEARCH";
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.2105263158em 0.7894736842em 0.2105263158em 0.7894736842em;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.25;
+    background: #bfc1c3;
+    color: white;
+
+  }
+
+
+  .versions-alpha {
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #D53880;
+    margin-top: 30px;
+    margin-bottom: 35px;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+  }
+
+  @media (min-width: 641px) {
+    .versions-alpha {
+      padding-top: 50px;
+      padding-right: 30px;
+      padding-bottom: 20px;
+      padding-left: 30px;
+    }
+  }
+
+  .versions-alpha:before {
+    content: "ALPHA";
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.2105263158em 0.7894736842em 0.2105263158em 0.7894736842em;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.25;
+    background: #D53880;
+    color: white;
+  }
+
+  .versions {
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #bfc1c3;
+    margin-top: 30px;
+    margin-bottom: 35px;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+  }
+
+  hr {
+    display: block;
+    background: #bfc1c3;
+    border: 0;
+    height: 1px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 0;
+  }
+</style>
+
 <main id="content" role="main">
-   <div class="grid-row">
-   <div class="column-full">
-      <h1 class="heading-xlarge">
-         <span class="heading-secondary">NHSBSA Design</span>
-         Overseas Healthcare Services<br>Prototype
-      </h1>
-   </div>
-      <div class="column-two-thirds">
-      <details>
-         <summary>
-            <span class="summary">Advanced search</span>
-         </summary>
-         <div class="panel panel-border-narrow">
-            <p>Search using OHS ref</p>
+	<div class="grid-row">
+    	<div class="column-full">
+			<h1 class="heading-xlarge">
+				<span class="heading-secondary">NHSBSA Design</span>
+				Overseas Healthcare Services Prototype
+         </h1>
+         <div class="versions-prod">
+            <h3><span class="strong">Version 1</span> (work in progress)</h3>
+            <p class="form-hint"></p>
+            <p>Changes:</p>
             <ul class="list list-bullet">
-               <li>No result on search or advanced <a href="/v9_0/admin/search-ref-noresult/search-ref">link</a></li>
-               <li>No result on search but found on advanced search <a href="/v9_0/admin/search-ref-result/search-ref">link</a></li>
+              <li>Content updated to reflect current private beta version (as of 16/01/2020)</li>
             </ul>
-            <p>Search using personal details</p>
-            <ul class="list list-bullet">
-               <li>No results on search or advanced <a href="/v9_0/admin/search-details-noresult/search-details">link</a></li>
-               <li>No results on search but found on advanced search <a href="/v9_0/admin/search-details/search-details">link</a></li>
-            </ul>
+            <a href="#"><input class="button" type="submit" value="Open"></a>
          </div>
-      </details>
-      <details>
-         <summary>
-            <span class="summary">Date warning banner</span>
-         </summary>
-         <div class="panel panel-border-narrow">
-            <ul class="list list-bullet">
-               <li>moving date, 2 pages <a href="/v9_0/admin/no-search-results/moving-date-benefit">link</a></li>
-               <li>benefit date, 2 pages <a href="/v9_0/admin/no-search-results/benefit-date-banner">link</a></li>
-               <li>UK State Pension, 2 pages <a href="/v9_0/admin/no-search-results/pension-date-banner">link</a></li>
-            </ul>
-         </div>
-      </details>
-      <div class="form-group">
-         <details>
-            <summary>
-               <span class="summary">Notes</span>
-            </summary>
-            <div class="panel panel-border-narrow">
-               <ul class="list list-bullet">
-               <li>
-                  case record with notes - <a href="/v9_0/admin/notes/case-record-with-notes">link</a>
-                  <!-- <p>case record with notes - <a href="/v9_0/admin/notes/case-record-with-notes">link</a></p> -->
-               <li>add note to entitlement - <a href="/v9_0/admin/notes/case-record-ent-notes">link</a></li>
-               <!-- <p>case record with notes - <a href="/v9_0/admin/notes/case-record-with-notes">link</a></p> -->
-            </div>
-         </details>
-      </div>
-      <div class="form-group">
-         <details>
-            <summary>
-               <span class="summary">EU exception</span>
-            </summary>
-            <div class="panel panel-border-narrow">
-               <p style="font-weight:bold;">Version 5</p>
-               <ul class="list list-bullet">
-                  <li>EU exception main (person found) and dependant (person not found) with claims and evidence - <a href="v12_0/admin/eu-exception-2/windows-login">link</a>
-                  </li>
-                  <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
-               </ul>
-               <div class="form-group">
-                  <details>
-                     <summary>
-                        <span class="summary">Previous versions</span>
-                     </summary>
-                     <div class="panel panel-border-narrow">
-                        <p style="font-weight:bold;">Version 4</p>
-                        <ul class="list list-bullet">
-                           <li>EU exception main (person found) and dependant (person not found) with claims - <a href="v11_0/admin/eu-exception-2/windows-login">link</a>
-                           </li>
-                           <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
-                        </ul>
-                        <p style="font-weight:bold;">Version 3</p>
-                        <ul class="list list-bullet">
-                           <li>EU exception main (person found) and dependant (person not found) - <a href="v10_0/admin/eu-exception-2/windows-login">link</a>
-                           </li>
-                           <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
-                        </ul>
-                        <p style="font-weight:bold;">Version 2</p>
-                        <ul class="list list-bullet">
-                           <li>EU exception main (person found) and dependant (person not found) - <a href="v9_0/admin/eu-exception-2/windows-login">link</a>
-                           </li>
-                           <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
-                        </ul>
-                        <p style="font-weight:bold;">Version 1</p>
-                        <ul class="list list-bullet">
-                           <li>EU exception - main (person record found) - <a href="v9_0/admin/eu-exception/windows-login">link</a>
-                           </li>
-                           <!-- <li>Dependant journey - <a href="v9_0/admin/eu-exception/case-record-eu">link</a></li> -->
-                        </ul>
-                     </div>
-                  </details>
-               </div>
-            </div>
-         </details>
-      </div>
-      <div class="form-group">
-         <details open>
-            <summary>
-               <span class="summary">Admin</span>
-            </summary>
-            <div class="panel panel-border-narrow">
-              
-               <p>Live bugs:</p>
-               <ul class="list list-bullet">
-                  <li>Double-clicking Reprint sends 2 letters (WIP) <a href="v9_0/admin/no-search-results/case-record-24">(link)</a></li>
-               </ul>
-               <p>Address improvements:</p>
-               <ul class="list list-bullet">
-                  <li>Add addresses to new main record (WIP) <a href="v9_0/admin/no-search-results/contact-address-5">(link)</a></li>
-                  <li>Add/copy addresses and contact details to dependant's record -<br>One question per page flow (WIP) <a href="v9_0/admin/no-search-results/res-address">(link)</a></li>
-                  <li>Add/copy addresses and contact details to dependant's record - <br>Residential and correspondence on one page (WIP) <a href="v9_0/admin/no-search-results/contact-address-4">(link)</a></li>
-                  <!-- <li>Add addresses and contact details for new dependants (quick) <a href="v9_0/admin/no-search-results/contact-address-3">(link)</a></li> -->
-               </ul>
-               <!-- <p>Other improvements:</p>
-                  <ul class="list list-bullet"> -->
-               <!-- <li>S1 Pensioner - display extra data items (Requested) <a href="v9_0/admin/no-search-results/case-record-22">(link)</a></li>   -->                
-               <!-- <li>S1 Pensioner - display extra data items (Registered) <a href="v9_0/admin/no-search-results/case-record-23">(link)</a></li>
-                  </ul> -->
-               <p>Journeys:</p>
-               <ul class="list list-bullet">
-<!--                   <li>DWP intergration (state pension check - rejected) (WIP) <a href="v9_0/admin/no-search-results/dwp/start">(link)</a></li>
- -->                  <li>S1 - Update pension contributions 
-                     <a href="v9_0/admin/no-search-results/case-record-17">(link)</a>
-                  </li>
-                  <li>DA1 (Occupational disease/injury) - main</li>
-                  <li>E109 (Dependant of UK worker) - main / dependant</li>
-                  <!-- <li>E109 (Dependant of UK worker) - dependant 
-                     <a href="v9_0/admin/no-search-results/case-record-e109">(link)</a>
-                  </li> -->
-                  <li>International Group issued S1 - main / dependant</li>
-                  <!-- <li>International Group issued S1 - dependant 
-                     <a href="v9_0/admin/no-search-results/case-record-ig">(link)</a>
-                  </li> -->
-                  <li>Customer issued S1 - main / dependant</li>
-               </ul>
-               <p>Prototype Link (v.9_0):
-                  <a href="v9_0/admin/no-search-results/case-record">Main's case record</a>
-               </p>
-               <p>Prototype Link (v.9_0):
-                  <a href="v9_0/admin/no-search-results/windows-login">Overseas Healthcare Services</a>
-               </p>
-            </div>
-            <!-- <div class="panel panel-border-narrow">
-               <p>Journeys:</p>
-               <ul class="list list-bullet">
-                  <li>no search results (with search results - <a href="v8_0/admin/no-search-results/search-results">link</a>)</li>
-                  <li>create person record - main</li>
-                  <li>create new entitlement - pensioner or posted worker</li>
-                  <li>pensioner - uk state pension or exportable benefit</li>
-                  <li>pensioner - third country pension (evidence required - <a href="v8_0/admin/no-search-results/evidence-required">link</a>)</li>
-                  <li>pensioner - reprint</li>
-                  <li>pensioner - rejected reasons <a href="v8_0/admin/no-search-results/case-record-15">(link)</a></li>
-                  <li>posted worker - register entitlement</li>
-                  <li>posted worker - rejected reasons <a href="v8_0/admin/no-search-results/case-record-16">(link)</a></li>
-                  <li>pensioner and posted worker - add dependant</li>
-                  <li>pensioner and posted worker - cancel entitlement</li>
-                  <li>pensioner and posted worker - case history</li>
-               </ul>
-               <p>Prototype Link (v8_0):
-                  <a href="v8_0/admin/no-search-results/windows-login">Overseas Healthcare Services</a>
-               </p>
-               </div> -->
-         </details>
-      </div>
-      <div class="form-group">
-         <details open>
-            <summary><span class="summary">CCS</span></summary>
-            <div class="panel panel-border-narrow">
-               <!-- <p>Journeys:</p>
-                  <ul class="list list-bullet">
-                     <li>no search results (with search results - <a href="v8_0/ccs/no-search-results/search-results">link</a>)</li>
-                     
-                  </ul> -->
-               <p>Journeys:</p>
-               <ul class="list list-bullet">
-                  <!-- <li>DWP intergration (state pension check - rejected) <a href="">(link)</a></li> -->
-                  <li>S1 - View pension contributions <a href="v9_0/ccs/no-search-results/case-record-2">(link)</a></li>
-               </ul>
-               <p>Main's case record:
-                  <a href="v9_0/ccs/no-search-results/case-record">Overseas Healthcare Services</a>
-               </p>
-               <p>Prototype Link (v.9_0):
-                  <a href="v9_0/ccs/no-search-results/windows-login">Overseas Healthcare Services</a>
-               </p>
-               <!-- </div> -->
-               <details closed>
-                  <summary><span class="summary">CCS (v.8_0)</span></summary>
-                  <div class="panel panel-border-narrow">
-                     <p>Journeys:</p>
-                     <ul class="list list-bullet">
-                        <li>no search results (with search results - <a href="v8_0/ccs/no-search-results/search-results">link</a>)</li>
-                        <li>create person record - main</li>
-                        <li>create new entitlement - pensioner</li>
-                        <li>pensioner - uk state pension</li>
-                        <li>pensioner - third country pension (evidence required - <a href="v8_0/ccs/no-search-results/evidence-required">link</a>)</li>
-                        <li>pensioner - reprint</li>
-                        <li>pensioner - rejected reasons <a href="v8_0/ccs/no-search-results/case-record-15">(link)</a></li>
-                        <li>pensioner - add dependant</li>
-                        <li>pensioner - case history</li>
-                     </ul>
-                     <p>Prototype Link:
-                        <a href="v8_0/ccs/no-search-results/windows-login">Overseas Healthcare Services</a>
-                     </p>
-                  </div>
-               </details>
-         </details>
-         </div>
-         <!-- <h2 class="heading-medium">Version 8.0.1 - CCS (WIP)</h2>
-            <table>
-              <thead>
-                <tr>
+         <!-- Admin -->
+         <h2 class="heading-medium">Admin</h2>
+         <table>
+            <thead>
+               <tr>
+                  <th>Journey</th>
                   <th>Link</th>
                   <th>Description</th>
-                  <th>Last updated</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><a href="v8_0/ccs/no-search-results/windows-login">OHS</a></td>
-                  <td>Person record (no search results)</td>
-                  <td>03/07/2019</td>
-                </tr>
-                <tr>
-                  <td><a href="v8_0/ccs/search-results/windows-login">OHS</a></td>
-                  <td>Person record (with search results)</td>
-                  <td>03/07/2019</td>
-                </tr>
-              </tbody>
-            </table> -->
-         <div class="form-group">
-            <details>
-               <summary>
-                  <span class="summary">Previous Versions</span>
-               </summary>
-               <div class="panel panel-border-narrow">
-                  <h2 class="heading-medium">Version 8.0</h2>
-                  <table>
-                     <thead>
-                        <tr>
-                           <th>Link</th>
-                           <th>Description</th>
-                           <th>Last updated</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td><a href="v8_0/admin/no-search-results/windows-login">OHS</a></td>
-                           <td>Pensioner and Posted Worker</td>
-                           <td>August 2019</td>
-                        </tr>
-                     </tbody>
-                  </table>
-                  <h2 class="heading-medium">Version 7.0.2 - Posted Workers</h2>
-                  <table>
-                     <thead>
-                        <tr>
-                           <th>Link</th>
-                           <th>Description</th>
-                           <th>Last updated</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td><a href="v7_0/admin/search-results/posted-worker/search">OHS</a></td>
-                           <td>Person record (no search results)</td>
-                           <td>03/07/2019</td>
-                        </tr>
-                     </tbody>
-                  </table>
-                  <h2 class="heading-medium">Version 7.0.1 - Customer Facing</h2>
-                  <table>
-                     <thead>
-                        <tr>
-                           <th>Link</th>
-                           <th>Description</th>
-                           <th>Last updated</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td><a href="v7_0/ehic/index">OHS</a></td>
-                           <td>Apply for cover online</td>
-                           <td>12/06/2019</td>
-                        </tr>
-                     </tbody>
-                  </table>
-                  <h2 class="heading-medium">Version 6.0.1 - Posted Workers</h2>
-                  <table>
-                     <thead>
-                        <tr>
-                           <th>Link</th>
-                           <th>Description</th>
-                           <th>Last updated</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td><a href="v6_0/admin/search-results/case-record">OHS</a></td>
-                           <td>Person record (main <s>and dependant</s>)</td>
-                           <td>14/06/2019</td>
-                        </tr>
-                     </tbody>
-                  </table>
-                  <h2 class="heading-medium">Version 5.2.0 - Case History</h2>
-                  <table>
-                     <thead>
-                        <tr>
-                           <th>Link</th>
-                           <th>Description</th>
-                           <th>Last updated</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td><a href="v5_0/admin/search-results/case-record-9">OHS</a></td>
-                           <td>Person record (main <s>and dependant</s>)</td>
-                           <td>31/05/2019</td>
-                        </tr>
-                     </tbody>
-                  </table>
-                  <h2 class="heading-medium">Version 5.1.0 - Reprint Process for Admin and CCS</h2>
-                  <table>
-                     <thead>
-                        <tr>
-                           <th>Link</th>
-                           <th>Description</th>
-                           <th>Last updated</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td><a href="v5_0/admin/search-results/case-record">OHS</a></td>
-                           <td>Person record (main <s>and dependant</s>) - Admin</td>
-                           <td>18/06/2019</td>
-                        </tr>
-                        <tr>
-                           <td><a href="v5_0/ccs/search-results/case-record">OHS</a></td>
-                           <td>Person record (main <s>and dependant</s>) - CCS</td>
-                           <td>18/06/2019</td>
-                        </tr>
-                     </tbody>
-                  </table>
-                  <h2 class="heading-medium">Version 5.0.2 - Cancellation Process for Admin</h2>
-                  <table>
-                     <thead>
-                        <tr>
-                           <th>Link</th>
-                           <th>Description</th>
-                           <th>Last updated</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td><a href="v5_0/admin/search-results/case-record">OHS</a></td>
-                           <td>Person record (main and dependant)</td>
-                           <td>05/06/2019</td>
-                        </tr>
-                     </tbody>
-                  </table>
-                  <h2 class="heading-medium">Version 5.0.1 - Cancellation Process for Admin</h2>
-                  <table>
-                     <thead>
-                        <tr>
-                           <th>Link</th>
-                           <th>Description</th>
-                           <th>Last updated</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td><a href="v5_0/admin/search-results/case-record-10">OHS</a></td>
-                           <td>Person record (main <s>and dependant</s>)</td>
-                           <td>13/06/2019</td>
-                        </tr>
-                     </tbody>
-                  </table>
-                  <h2 class="heading-medium">Version 4.0.2 - Admin</h2>
-                  <table>
-                     <thead>
-                        <tr>
-                           <th>Link</th>
-                           <th>Description</th>
-                           <th>Last updated</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td><a href="v4_0/admin/no-search-results/windows-login">OHS</a></td>
-                           <td>Person record (no search results)</td>
-                           <td>05/12/2018</td>
-                        </tr>
-                        <tr>
-                           <td><a href="v4_0/admin/search-results/windows-login">OHS</a></td>
-                           <td>Person record (with search results)</td>
-                           <td>05/12/2018</td>
-                        </tr>
-                     </tbody>
-                  </table>
-                  <h2 class="heading-medium">Version 4.0.1 - CCS</h2>
-                  <table>
-                     <thead>
-                        <tr>
-                           <th>Link</th>
-                           <th>Description</th>
-                           <th>Last updated</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td><a href="v4_0/ccs/no-search-results/windows-login">OHS</a></td>
-                           <td>Person record (no search results)</td>
-                           <td>05/12/2018</td>
-                        </tr>
-                        <tr>
-                           <td><a href="v4_0/ccs/search-results/windows-login">OHS</a></td>
-                           <td>Person record (with search results)</td>
-                           <td>05/12/2018</td>
-                        </tr>
-                     </tbody>
-                  </table>
-                  <h2 class="heading-medium">Version 2.2</h2>
-                  <table>
-                     <thead>
-                        <tr>
-                           <th>Link</th>
-                           <th>Description</th>
-                           <th>Last updated</th>
-                           <th>Quick jump</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td><a href="v2_2/s1/start">S1</a></td>
-                           <td>No search results with dependant</td>
-                           <td>26/10/2018</td>
-                           <td>
-                              <a href="v2_2/s1/dep/search">Dep <17</a>
-                              </br>
-                              <a href="v2_2/s1/dep1/search">Dep >=17</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td><a href="v2_2/s1-results/start">S1</a></td>
-                           <td>With search results</td>
-                           <td>26/10/2018</td>
-                           <td>
-                              <a href="v2_2/s1-results/dep/search">Dep <17</a>
-                              </br>
-                              <a href="v2_2/s1-results/dep1/search">Dep >=17</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td><a href="v2_2/s1-results-incomplete/start">S1</a></td>
-                           <td>With search results (incomplete record)</td>
-                           <td>26/10/2018</td>
-                           <td>
-                              <a href="v2_2/s1-results-incomplete/dep/search">Dep <17</a>
-                              </br>
-                              <a href="v2_2/s1-results-incomplete/dep1/search">Dep >=17</a>
-                           </td>
-                        </tr>
-                     </tbody>
-                  </table>
-                  <h2 class="heading-medium">Version 2.1</h2>
-                  <table>
-                     <thead>
-                        <tr>
-                           <th>Link</th>
-                           <th>Description</th>
-                           <th>Last updated</th>
-                           <th>Quick jump</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td><a href="v2_1/s1/start">S1</a></td>
-                           <td>No search results with dependant</td>
-                           <td>22/10/2018</td>
-                           <td>
-                              <a href="v2_1/s1/dep/search">Dep <16</a>
-                              </br>
-                              <a href="v2_1/s1/dep1/search">Dep >16</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td><a href="v2_1/s1-results/start">S1</a></td>
-                           <td>With search results</td>
-                           <td>22/10/2018</td>
-                           <td>
-                              <a href="v2_1/s1-results/dep/search">Dep <16</a>
-                              </br>
-                              <a href="v2_1/s1-results/dep1/search">Dep >16</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td><a href="v2_1/s1-results-incomplete/start">S1</a></td>
-                           <td>With search results (incomplete record)</td>
-                           <td>22/10/2018</td>
-                           <td>
-                              <a href="v2_1/s1-results-incomplete/dep/search">Dep <16</a>
-                              </br>
-                              <a href="v2_1/s1-results-incomplete/dep1/search">Dep >16</a>
-                           </td>
-                        </tr>
-                     </tbody>
-                  </table>
-                  <h2 class="heading-medium">Version 2.0</h2>
-                  <table>
-                     <thead>
-                        <tr>
-                           <th>Link</th>
-                           <th>Description</th>
-                           <th>Last updated</th>
-                           <th>Quick jump</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td><a href="v2_0/s1/start">S1</a></td>
-                           <td>No search results with dependant</td>
-                           <td>19/10/2018</td>
-                           <td><a href="v2_0/s1/dep/dependant-nino">Dependant</a></td>
-                        </tr>
-                        <tr>
-                           <td><a href="v2_0/s1-results/start">S1</a></td>
-                           <td>With search results</td>
-                           <td>19/10/2018</td>
-                           <td><a href="v2_0/s1-results/dep/dependant-nino">Dependant</a></td>
-                        </tr>
-                        <tr>
-                           <td><a href="v2_0/s1-results-incomplete/start">S1</a></td>
-                           <td>With search results (incomplete record)</td>
-                           <td>19/10/2018</td>
-                           <td><a href="v2_0/s1-results-incomplete/dep/dependant-nino">Dependant</a></td>
-                        </tr>
-                     </tbody>
-                  </table>
-                  <h2 class="heading-medium">Version 1.0</h2>
-                  <table>
-                     <thead>
-                        <tr>
-                           <th>Link</th>
-                           <th>Description</th>
-                           <th>Last updated</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td><a href="v1_0/s1/login">S1</a></td>
-                           <td>No search results with dependant</td>
-                           <td>03/10/2018</td>
-                        </tr>
-                        <tr>
-                           <td><a href="v1_0/s1-results/login">S1</a></td>
-                           <td>With search results (incl dependant search)</td>
-                           <td>03/10/2018</td>
-                        </tr>
-                     </tbody>
-                  </table>
-                  <h2 class="heading-medium">Errors</h2>
-                  <table>
-                     <thead>
-                        <tr>
-                           <th>Link</th>
-                           <th>Description</th>
-                           <th>Last updated</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td><a href="errors/403">403</a></td>
-                           <td>Permission to access the page</td>
-                           <td>03/10/2018</td>
-                        </tr>
-                        <tr>
-                           <td><a href="errors/404">404</a></td>
-                           <td>Something’s gone wrong</td>
-                           <td>03/10/2018</td>
-                        </tr>
-                        <tr>
-                           <td><a href="errors/500">500</a></td>
-                           <td>Something’s gone wrong</td>
-                           <td>03/10/2018</td>
-                        </tr>
-                        <tr>
-                           <td><a href="errors/503">503</a></td>
-                           <td>Service unavailable</td>
-                           <td>03/10/2018</td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </div>
-            </details>
-         </div>
-      </div>
-   </div>
-</main>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>Address improvements</td>
+                  <td><a href="https://oh-prototype.herokuapp.com/v9_0/admin/no-search-results/contact-address-5">Address</a></td>
+                  <td>Add addresses to new main record (WIP)</td>
+               </tr>
+               <tr>
+                  <td>Address improvements</td>
+                  <td><a href="https://oh-prototype.herokuapp.com/v9_0/admin/no-search-results/res-address">Address</a></td>
+                  <td>Add/copy addresses and contact details to dependant's record<br>
+                        One question per page flow (WIP)
+                  </td>
+               </tr>
+               <tr>
+                  <td>Address improvements</td>
+                  <td><a href="https://oh-prototype.herokuapp.com/v9_0/admin/no-search-results/contact-address-4">Address</a></td>
+                  <td>Add/copy addresses and contact details to dependant's record<br>
+                        Residential and correspondence on one page (WIP)
+                  </td>
+               </tr>
+               <tr>
+                  <td>Live bugs</td>
+                  <td><a href="https://oh-prototype.herokuapp.com/v9_0/admin/no-search-results/case-record-24">Case record</a></td>
+                  <td>Double-clicking Reprint sends 2 letters (WIP)</td>
+               </tr>
+               <tr>
+                  <td>S1</td>
+                  <td><a href="https://oh-prototype.herokuapp.com/v9_0/admin/no-search-results/case-record-17">Case record</a></td>
+                  <td>S1 - Update pension contributions</td>
+               </tr>
+               <tr>
+                  <td>V9_0</td>
+                  <td><a href="https://oh-prototype.herokuapp.com/v9_0/admin/no-search-results/case-record">Main's case record</a><br><br>
+                        <a href="https://oh-prototype.herokuapp.com/v9_0/admin/no-search-results/windows-login">Start</a>
+                  </td>
+                  <td>DA1 (Occupational disease/injury) - main<br>
+                        E109 (Dependant of UK worker) - main / dependant<br>
+                        International Group issued S1 - main / dependant<br>
+                        Customer issued S1 - main / dependant
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+         
+         <!-- CCS -->
+         <h2 class="heading-medium">CCS</h2>
+         <table>
+            <thead>
+               <tr>
+                  <th>Journey</th>
+                  <th>Link</th>
+                  <th>Description</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>S1</td>
+                  <td><a href="https://oh-prototype.herokuapp.com/v9_0/ccs/no-search-results/case-record-2">Case record</a></td>
+                  <td>S1 - View pension contributions</td>
+               </tr>
+               <tr>
+                  <td>V9_0</td>
+                  <td><a href="https://oh-prototype.herokuapp.com/v9_0/ccs/no-search-results/case-record">Main's case record</a><br><br>
+                        <a href="https://oh-prototype.herokuapp.com/v9_0/ccs/no-search-results/windows-login">Start</a>
+                  </td>
+                  <td>-</td>
+               </tr>
+            </tbody>
+         </table>
+         <br>
+         <details>
+            <summary>
+               <span class="summary">Previous versions</span>
+            </summary>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Journey</th>
+                     <th>Link</th>
+                     <th>Description</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>V8_0</td>
+                     <td><a href="https://oh-prototype.herokuapp.com/v8_0/ccs/no-search-results/windows-login">Start</a></td>
+                     <td>No search results (with search results - <a href="https://oh-prototype.herokuapp.com/v8_0/ccs/no-search-results/search-results">link</a>)<br>
+                           Create person record - main<br>
+                           Create new entitlement - pensioner<br>
+                           Pensioner - uk state pension<br>
+                           Pensioner - third country pension (evidence required - <a href="https://oh-prototype.herokuapp.com/v8_0/ccs/no-search-results/evidence-required">link</a>)<br>
+                           Pensioner - reprint<br>
+                           Pensioner - rejected reasons (<a href="https://oh-prototype.herokuapp.com/v8_0/ccs/no-search-results/case-record-15">link</a>)<br>
+                           Pensioner - add dependant<br>
+                           Pensioner - case history
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </details>
+
+         <!-- Advanced search -->
+         <h2 class="heading-medium">Advanced search</h2>
+         <table>
+            <thead>
+               <tr>
+                  <th>Journey</th>
+                  <th>Link</th>
+                  <th>Description</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>Using OHS ref</td>
+                  <td><a href="https://oh-prototype.herokuapp.com/v9_0/admin/search-ref-noresult/search-ref">Search</a></td>
+                  <td>No result on search or advanced</td>
+               </tr>
+               <tr>
+                  <td>Using OHS ref</td>
+                  <td><a href="https://oh-prototype.herokuapp.com/v9_0/admin/search-ref-result/search-ref">Search</a></td>
+                  <td>No result on search but found on advanced search</td>
+               </tr>
+               <tr>
+                  <td>Using personal details</td>
+                  <td><a href="https://oh-prototype.herokuapp.com/v9_0/admin/search-details-noresult/search-details">Search</a></td>
+                  <td>No results on search or advanced</td>
+               </tr>
+               <tr>
+                  <td>Using personal details</td>
+                  <td><a href="https://oh-prototype.herokuapp.com/v9_0/admin/search-details/search-details">Search</a></td>
+                  <td>No results on search but found on advanced search</td>
+               </tr>
+            </tbody>
+         </table>
+         
+         <!-- Date warning banner -->
+         <h2 class="heading-medium">Date warning banner</h2>
+         <table>
+            <thead>
+               <tr>
+                  <th>Journey</th>
+                  <th>Link</th>
+                  <th>Description</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>Benefit date</td>
+                  <td><a href="https://oh-prototype.herokuapp.com/v9_0/admin/no-search-results/benefit-date-banner">Benefit date</a></td>
+                  <td>-</td>
+               </tr>
+               <tr>
+                  <td>Moving date</td>
+                  <td><a href="https://oh-prototype.herokuapp.com/v9_0/admin/no-search-results/moving-date-benefit">Moving date</a></td>
+                  <td>-</td>
+               </tr>
+               <tr>
+                  <td>UK State Pension</td>
+                  <td><a href="https://oh-prototype.herokuapp.com/v9_0/admin/no-search-results/pension-date-banner">Pension date</a></td>
+                  <td>-</td>
+               </tr>
+            </tbody>
+         </table>
+
+         <!-- EU exception -->
+         <h2 class="heading-medium">EU exception</h2>
+         <table>
+            <thead>
+               <tr>
+                  <th>Journey</th>
+                  <th>Link</th>
+                  <th>Description</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>V5</td>
+                  <td><a href="https://oh-prototype.herokuapp.com/v12_0/admin/eu-exception-2/windows-login">Start</a></td>
+                  <td>EU exception main (person found) and dependant (person not found) with claims and evidence</td>
+               </tr>
+            </tbody>
+         </table>
+         <br>
+         <details>
+            <summary>
+               <span class="summary">Previous versions</span>
+            </summary>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Journey</th>
+                     <th>Link</th>
+                     <th>Description</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>V4</td>
+                     <td><a href="https://oh-prototype.herokuapp.com/v11_0/admin/eu-exception-2/windows-login">Start</a></td>
+                     <td>EU exception main (person found) and dependant (person not found) with claim</td>
+                  </tr>
+                  <tr>
+                     <td>V3</td>
+                     <td><a href="https://oh-prototype.herokuapp.com/v10_0/admin/eu-exception-2/windows-login">Start</a></td>
+                     <td>EU exception main (person found) and dependant (person not found)</td>
+                  </tr>
+                  <tr>
+                     <td>V2</td>
+                     <td><a href="https://oh-prototype.herokuapp.com/v9_0/admin/eu-exception-2/windows-login">Start</a></td>
+                     <td>EU exception main (person found) and dependant (person not found)</td>
+                  </tr>
+                  <tr>
+                     <td>V1</td>
+                     <td><a href="https://oh-prototype.herokuapp.com/v9_0/admin/eu-exception/windows-login">Start</a></td>
+                     <td>EU exception - main (person record found)</td>
+                  </tr>
+               </tbody>
+            </table>
+         </details>
+         
+         <!-- Notes -->
+         <h2 class="heading-medium">Notes</h2>
+         <table>
+            <thead>
+               <tr>
+                  <th>Journey</th>
+                  <th>Link</th>
+                  <th>Description</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>Add note to entitlement</td>
+                  <td><a href="https://oh-prototype.herokuapp.com/v9_0/admin/notes/case-record-ent-notes">Case record</a></td>
+                  <td>-</td>
+               </tr>
+               <tr>
+                  <td>Case record with notes</td>
+                  <td><a href="https://oh-prototype.herokuapp.com/v9_0/admin/notes/case-record-with-notes">Case record</a></td>
+                  <td>-</td>
+               </tr>
+            </tbody>
+         </table>
+
+         <!-- Previous versions -->
+         <h2 class="heading-medium">Previous versions</h2>
+         <br>
+         <details>
+            <summary>
+               <span class="summary">OHS</span>
+            </summary>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Link</th>
+                     <th>Description</th>
+                     <th>Last updated</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td><a href="v8_0/admin/no-search-results/windows-login">OHS</a></td>
+                     <td>Pensioner and Posted Worker</td>
+                     <td>August 2019</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h2 class="heading-medium">Version 7.0.2 - Posted Workers</h2>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Link</th>
+                     <th>Description</th>
+                     <th>Last updated</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td><a href="v7_0/admin/search-results/posted-worker/search">OHS</a></td>
+                     <td>Person record (no search results)</td>
+                     <td>03/07/2019</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h2 class="heading-medium">Version 7.0.1 - Customer Facing</h2>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Link</th>
+                     <th>Description</th>
+                     <th>Last updated</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td><a href="v7_0/ehic/index">OHS</a></td>
+                     <td>Apply for cover online</td>
+                     <td>12/06/2019</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h2 class="heading-medium">Version 6.0.1 - Posted Workers</h2>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Link</th>
+                     <th>Description</th>
+                     <th>Last updated</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td><a href="v6_0/admin/search-results/case-record">OHS</a></td>
+                     <td>Person record (main <s>and dependant</s>)</td>
+                     <td>14/06/2019</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h2 class="heading-medium">Version 5.2.0 - Case History</h2>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Link</th>
+                     <th>Description</th>
+                     <th>Last updated</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td><a href="v5_0/admin/search-results/case-record-9">OHS</a></td>
+                     <td>Person record (main <s>and dependant</s>)</td>
+                     <td>31/05/2019</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h2 class="heading-medium">Version 5.1.0 - Reprint Process for Admin and CCS</h2>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Link</th>
+                     <th>Description</th>
+                     <th>Last updated</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td><a href="v5_0/admin/search-results/case-record">OHS</a></td>
+                     <td>Person record (main <s>and dependant</s>) - Admin</td>
+                     <td>18/06/2019</td>
+                  </tr>
+                  <tr>
+                     <td><a href="v5_0/ccs/search-results/case-record">OHS</a></td>
+                     <td>Person record (main <s>and dependant</s>) - CCS</td>
+                     <td>18/06/2019</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h2 class="heading-medium">Version 5.0.2 - Cancellation Process for Admin</h2>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Link</th>
+                     <th>Description</th>
+                     <th>Last updated</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td><a href="v5_0/admin/search-results/case-record">OHS</a></td>
+                     <td>Person record (main and dependant)</td>
+                     <td>05/06/2019</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h2 class="heading-medium">Version 5.0.1 - Cancellation Process for Admin</h2>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Link</th>
+                     <th>Description</th>
+                     <th>Last updated</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td><a href="v5_0/admin/search-results/case-record-10">OHS</a></td>
+                     <td>Person record (main <s>and dependant</s>)</td>
+                     <td>13/06/2019</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h2 class="heading-medium">Version 4.0.2 - Admin</h2>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Link</th>
+                     <th>Description</th>
+                     <th>Last updated</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td><a href="v4_0/admin/no-search-results/windows-login">OHS</a></td>
+                     <td>Person record (no search results)</td>
+                     <td>05/12/2018</td>
+                  </tr>
+                  <tr>
+                     <td><a href="v4_0/admin/search-results/windows-login">OHS</a></td>
+                     <td>Person record (with search results)</td>
+                     <td>05/12/2018</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h2 class="heading-medium">Version 4.0.1 - CCS</h2>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Link</th>
+                     <th>Description</th>
+                     <th>Last updated</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td><a href="v4_0/ccs/no-search-results/windows-login">OHS</a></td>
+                     <td>Person record (no search results)</td>
+                     <td>05/12/2018</td>
+                  </tr>
+                  <tr>
+                     <td><a href="v4_0/ccs/search-results/windows-login">OHS</a></td>
+                     <td>Person record (with search results)</td>
+                     <td>05/12/2018</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h2 class="heading-medium">Version 2.2</h2>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Link</th>
+                     <th>Description</th>
+                     <th>Last updated</th>
+                     <th>Quick jump</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td><a href="v2_2/s1/start">S1</a></td>
+                     <td>No search results with dependant</td>
+                     <td>26/10/2018</td>
+                     <td>
+                        <a href="v2_2/s1/dep/search">Dep <17</a>
+                        </br>
+                        <a href="v2_2/s1/dep1/search">Dep >=17</a>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><a href="v2_2/s1-results/start">S1</a></td>
+                     <td>With search results</td>
+                     <td>26/10/2018</td>
+                     <td>
+                        <a href="v2_2/s1-results/dep/search">Dep <17</a>
+                        </br>
+                        <a href="v2_2/s1-results/dep1/search">Dep >=17</a>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><a href="v2_2/s1-results-incomplete/start">S1</a></td>
+                     <td>With search results (incomplete record)</td>
+                     <td>26/10/2018</td>
+                     <td>
+                        <a href="v2_2/s1-results-incomplete/dep/search">Dep <17</a>
+                        </br>
+                        <a href="v2_2/s1-results-incomplete/dep1/search">Dep >=17</a>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <h2 class="heading-medium">Version 2.1</h2>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Link</th>
+                     <th>Description</th>
+                     <th>Last updated</th>
+                     <th>Quick jump</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td><a href="v2_1/s1/start">S1</a></td>
+                     <td>No search results with dependant</td>
+                     <td>22/10/2018</td>
+                     <td>
+                        <a href="v2_1/s1/dep/search">Dep <16</a>
+                        </br>
+                        <a href="v2_1/s1/dep1/search">Dep >16</a>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><a href="v2_1/s1-results/start">S1</a></td>
+                     <td>With search results</td>
+                     <td>22/10/2018</td>
+                     <td>
+                        <a href="v2_1/s1-results/dep/search">Dep <16</a>
+                        </br>
+                        <a href="v2_1/s1-results/dep1/search">Dep >16</a>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><a href="v2_1/s1-results-incomplete/start">S1</a></td>
+                     <td>With search results (incomplete record)</td>
+                     <td>22/10/2018</td>
+                     <td>
+                        <a href="v2_1/s1-results-incomplete/dep/search">Dep <16</a>
+                        </br>
+                        <a href="v2_1/s1-results-incomplete/dep1/search">Dep >16</a>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <h2 class="heading-medium">Version 2.0</h2>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Link</th>
+                     <th>Description</th>
+                     <th>Last updated</th>
+                     <th>Quick jump</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td><a href="v2_0/s1/start">S1</a></td>
+                     <td>No search results with dependant</td>
+                     <td>19/10/2018</td>
+                     <td><a href="v2_0/s1/dep/dependant-nino">Dependant</a></td>
+                  </tr>
+                  <tr>
+                     <td><a href="v2_0/s1-results/start">S1</a></td>
+                     <td>With search results</td>
+                     <td>19/10/2018</td>
+                     <td><a href="v2_0/s1-results/dep/dependant-nino">Dependant</a></td>
+                  </tr>
+                  <tr>
+                     <td><a href="v2_0/s1-results-incomplete/start">S1</a></td>
+                     <td>With search results (incomplete record)</td>
+                     <td>19/10/2018</td>
+                     <td><a href="v2_0/s1-results-incomplete/dep/dependant-nino">Dependant</a></td>
+                  </tr>
+               </tbody>
+            </table>
+            <h2 class="heading-medium">Version 1.0</h2>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Link</th>
+                     <th>Description</th>
+                     <th>Last updated</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td><a href="v1_0/s1/login">S1</a></td>
+                     <td>No search results with dependant</td>
+                     <td>03/10/2018</td>
+                  </tr>
+                  <tr>
+                     <td><a href="v1_0/s1-results/login">S1</a></td>
+                     <td>With search results (incl dependant search)</td>
+                     <td>03/10/2018</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h2 class="heading-medium">Errors</h2>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Link</th>
+                     <th>Description</th>
+                     <th>Last updated</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td><a href="errors/403">403</a></td>
+                     <td>Permission to access the page</td>
+                     <td>03/10/2018</td>
+                  </tr>
+                  <tr>
+                     <td><a href="errors/404">404</a></td>
+                     <td>Something’s gone wrong</td>
+                     <td>03/10/2018</td>
+                  </tr>
+                  <tr>
+                     <td><a href="errors/500">500</a></td>
+                     <td>Something’s gone wrong</td>
+                     <td>03/10/2018</td>
+                  </tr>
+                  <tr>
+                     <td><a href="errors/503">503</a></td>
+                     <td>Service unavailable</td>
+                     <td>03/10/2018</td>
+                  </tr>
+               </tbody>
+            </table>
+         </details>
+		</div>
+	</div>	
+ </main>
 {% endblock %}
