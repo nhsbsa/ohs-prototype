@@ -300,6 +300,22 @@ router.get(/postedWorker/, function (req,res) {
   }
 });
 
+router.get(/newPerson/, function (req,res) {
+  if(req.query.radiosPW === "hardcoded") {
+    res.redirect('');
+  } else if (req.query.radiosPW === "Use a different residential address") {
+    res.redirect('');
+  } else if (req.query.radiosPW === "Address not provided") {
+    res.redirect('');
+  } else if (req.query.radiosPW === "Use a different address for correspondence") {
+    res.redirect('corr-address');
+  } else {
+    res.redirect('res-address');
+  }
+});
+
+
+
 
 // DA1 employment status//
 router.get(/empStatus/, function (req,res) {
@@ -468,7 +484,7 @@ router.get(/uk-benefit-info/, function (req,res) {
 });
 
 
-// CORRESPONDENCE ADDRESS Y / N
+// CORRESPONDENCE ADDRESS - Y / N
 router.get(/corres-address/, function (req,res) {
   if(req.query.corresAddress === "Yes") {
     res.redirect('contact-details-3');
@@ -476,6 +492,28 @@ router.get(/corres-address/, function (req,res) {
     res.redirect('corr-address-2');
   } else {
     res.redirect('use-corres');
+  }
+});
+
+// USE RESIDENTIAL AS CORRESPONDENCE ADDRESS - Y / N
+router.get(/use-corres-address/, function (req,res) {
+  if(req.query.resiAddress === "Yes") {
+    res.redirect('contact-details-4');
+  } else if(req.query.resiAddress === "No") {
+    res.redirect('corr-address-3');
+  } else {
+    res.redirect('use-corres-2');
+  }
+});
+
+// WHAT IS YOUR RESIDENTIAL ADDRESS?
+router.get(/use-resi-address/, function (req,res) {
+  if(req.query.radiosRA === "hardcoded" || req.query.radiosRA === "Use a different residential address") {
+    res.redirect('contact-details-4');
+  } else if(req.query.radiosRA === "Address not provided") {
+    res.redirect('corr-address-3');
+  } else {
+    res.redirect('res-address');
   }
 });
 
