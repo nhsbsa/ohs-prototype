@@ -73,17 +73,56 @@
 					<dl class="govuk-check-your-answers cya-questions-short">
 						<div>
 							<dt class="cya-question">Residential address</dt>
-							<dd class="cya-answer"></dd>
+							<dd class="cya-answer">
+							  {% if data.radiosRA === "hardcoded" %}
+								70 Rue Meurein<br>
+								59800<br>
+								Lille<br>
+								France
+							  {% elif data.radiosRA === "Use a different residential address" %}
+								70 Boulevard de Saint-Quentin<br>
+								Plein Sud<br>
+								80000<br>
+								Amiens<br>
+								France
+							  {% else %}
+								-
+							  {% endif %}
+							</dd>
 							<dd class="cya-change"><a href="res-address">Change<span class="visually-hidden"> date will you start to live in France</span></a></dd>
 						</div>
 						<div>
 							<dt class="cya-question">Correspondence address</dt>
-							<dd class="cya-answer">56 Rue Raymond Poincaré <br>
+							<dd class="cya-answer">
+							  <!-- {% if data.resiAddress === "Yes" %}
+								1 Road<br>
+								Downtown<br>
+								12356<br>
+								Lille<br>
+								France
+								CHRIS
+							  {% elif data.resiAddress === "No" %}
+								56 Rue Raymond Poincaré<br>
 								Haut-du-Lièvre<br>
-								Plaisance<br>
 								54000<br>
 								Nancy<br>
 								France
+							  {% elif data.radiosPW === "hardcoded" %}
+								1 Road<br>
+								Downtown<br>
+								12356<br>
+								Lille<br>
+								France
+							  {% elif data.radiosPW === "Use a different residential address" %}
+								70 Boulevard de Saint-Quentin<br>
+								Plein Sud<br>
+								80000<br>
+								Amiens<br>
+								France
+							  {% else %}
+								-
+							  {% endif %} -->
+							  test
 							</dd>
 							<dd class="cya-change"><a href="corr-address">Change<span class="visually-hidden"> date will you start to live in France</span></a></dd>
 						</div>
@@ -106,7 +145,7 @@
 					</p>
 				</div> -->
 				<div class="form-group">
-					<a href="#" class="button">Create person</a>
+					<a href="case-record-7" class="button">Create person</a>
 					<a class="button button-secondary" href="#">Cancel</a>
 				</div>
 			</div>
