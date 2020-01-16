@@ -484,10 +484,10 @@ router.get(/uk-benefit-info/, function (req,res) {
 });
 
 
-// CORRESPONDENCE ADDRESS - Y / N
+// CORRESPONDENCE ADDRESS - Y / N, use-corres.html, MAIN
 router.get(/corres-address/, function (req,res) {
   if(req.query.corresAddress === "Yes") {
-    res.redirect('contact-details-3');
+    res.redirect('contact-details-4');
   } else if(req.query.corresAddress === "No") {
     res.redirect('corr-address-2');
   } else {
@@ -495,10 +495,10 @@ router.get(/corres-address/, function (req,res) {
   }
 });
 
-// USE RESIDENTIAL AS CORRESPONDENCE ADDRESS - Y / N
-router.get(/use-corres-address/, function (req,res) {
+// USE RESIDENTIAL AS CORRESPONDENCE ADDRESS - Y / N, use-corres-2.html, DEPENDANT
+router.get(/giraffe/, function (req,res) {
   if(req.query.resiAddress === "Yes") {
-    res.redirect('contact-details-4');
+    res.redirect('email-address');
   } else if(req.query.resiAddress === "No") {
     res.redirect('corr-address-3');
   } else {
@@ -506,15 +506,28 @@ router.get(/use-corres-address/, function (req,res) {
   }
 });
 
-// WHAT IS YOUR RESIDENTIAL ADDRESS?
+// WHAT IS YOUR RESIDENTIAL ADDRESS?, res-address.html
 router.get(/use-resi-address/, function (req,res) {
   if(req.query.radiosRA === "hardcoded" || req.query.radiosRA === "Use a different residential address") {
-    res.redirect('contact-details-4');
+    res.redirect('use-corres-2');
   } else if(req.query.radiosRA === "Address not provided") {
-    res.redirect('corr-address-3');
+    res.redirect('email-address');
   } else {
     res.redirect('res-address');
   }
 });
+
+router.get(/thisIsNotPostedWorker/, function (req,res) {
+  if(req.query.test123 === "Posted worker") {
+    res.redirect('email-address-2');
+  } else if (req.query.test123 === "Exportable benefit including State Pension") {
+    res.redirect('email-address-2');
+  } else if (req.query.test123 === "Posted worker") {
+    res.redirect('email-address-3');
+  } else {
+    res.redirect('contact-address-4');
+  }
+}); 
+
 
 module.exports = router
