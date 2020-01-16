@@ -5,6 +5,20 @@
 {% endblock %}
 
 {% block content %}
+
+<!-- router.get(/thisIsNotPostedWorker/, function (req,res) {
+	if(req.query.test123 === "Posted worker") {
+	  res.redirect('email-address-2');
+	} else if (req.query.test123 === "Exportable benefit including State Pension") {
+	  res.redirect('email-address-2');
+	} else if (req.query.test123 === "Posted worker") {
+	  res.redirect('email-address-3');
+	} else {
+	  res.redirect('contact-address-4');
+	}
+}); -->
+
+
 <style>
     /* banner */
     .banner-information-without-action {
@@ -73,12 +87,14 @@
 					<dl class="govuk-check-your-answers cya-questions-short">
 						<div>
 							<dt class="cya-question">Residential address</dt>
-							<dd class="cya-answer">70 Boulevard de Saint-Quentin<br>
-								Plein Sud<br>
-								80000<br>
-								Amiens<br>
-								France
-							</dd>
+							<dd class="cya-answer">{{data.test123}}</dd>
+							<p>{% if data.test123 === "Exportable benefit including State Pension" %}
+								I am hungry
+							  {% elif tired %}
+								I am tired
+							  {% else %}
+								I am good!
+							  {% endif %}</p>
 							<dd class="cya-change"><a href="contact-address-4">Change<span class="visually-hidden"> date will you start to live in France</span></a></dd>
 						</div>
 						<div>
