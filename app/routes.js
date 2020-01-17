@@ -523,11 +523,22 @@ router.get(/thisIsNotPostedWorker/, function (req,res) {
   } else if (req.query.test123 === "Exportable benefit including State Pension") {
     res.redirect('email-address-2');
   } else if (req.query.test123 === "Posted worker") {
-    res.redirect('email-address-3');
+    res.redirect('email-address-2');
   } else {
     res.redirect('contact-address-4');
   }
-}); 
+});
 
+router.get(/zebra/, function (req,res) {
+  if(req.query.abc123 === "hardcoded") {
+    res.redirect('email-address');
+  } else if (req.query.abc123 === "Use a different residential address") {
+    res.redirect('email-address');
+  } else if (req.query.abc123 === "Address not provided") {
+    res.redirect('email-address');
+  } else {
+    res.redirect('contact-address-4');
+  }
+});
 
 module.exports = router
