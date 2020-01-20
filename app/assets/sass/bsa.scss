@@ -437,6 +437,15 @@ td.strong {
   background-color: #00458C;
 }
 
+.button.button-red {
+    background-color: #B10E1E;
+    color: white;
+    box-shadow: 0 2px 0 #490000;
+    outline-offset: -1px;
+    outline: 1px solid transparent;
+    border-radius: 0;
+}
+
 .button.button-secondary {
     background-color: #005EA5;
     color: white;
@@ -1167,7 +1176,7 @@ border-bottom: 1px solid #bfc1c3;
 
 #global-headerinternal .header-wrapper {
   // background-color: #0b0c0c;
-  max-width: 1200px;
+  max-width: 960px;
   margin: auto;
 }
 
