@@ -289,21 +289,135 @@
   color: #0b0c0c;
 }
     
+/* ==========================================================================
+   #SECONDARY NAV
+   ========================================================================== */
+.hmcts-sub-navigation {
+  margin-bottom: 40px;
+}
+
+.hmcts-sub-navigation__list {
+  font-size: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 40.0625em) {
+  .hmcts-sub-navigation__list {
+    box-shadow: inset 0 -1px 0 #b1b4b6;
+    width: 100%;
+  }
+}
+
+.hmcts-sub-navigation__item {
+  font-family: "GDS Transport", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  box-shadow: inset 0 -1px 0 #b1b4b6;
+  display: block;
+  margin-top: -1px;
+}
+
+@media print {
+  .hmcts-sub-navigation__item {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .hmcts-sub-navigation__item {
+    font-size: 19px;
+    line-height: 1.31579;
+  }
+}
+
+@media print {
+  .hmcts-sub-navigation__item {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+
+.hmcts-sub-navigation__item:last-child {
+  box-shadow: none;
+}
+
+@media (min-width: 40.0625em) {
+  .hmcts-sub-navigation__item {
+    box-shadow: none;
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 0;
+  }
+}
+
+.hmcts-sub-navigation__link {
+  display: block;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 15px;
+  text-decoration: underline;
+}
+
+@media (min-width: 40.0625em) {
+  .hmcts-sub-navigation__link {
+    padding-left: 0;
+  }
+}
+
+.hmcts-sub-navigation__link:focus {
+  color: #0b0c0c;
+  position: relative;
+}
+
+.hmcts-sub-navigation__link[aria-current="page"] {
+  color: #0b0c0c;
+  position: relative;
+  text-decoration: none;
+}
+
+.hmcts-sub-navigation__link[aria-current="page"]:before {
+  background-color: #1d70b8;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 5px;
+}
+
+@media (min-width: 40.0625em) {
+  .hmcts-sub-navigation__link[aria-current="page"]:before {
+    height: 5px;
+    width: 100%;
+  }
+}
+
+.hmcts-sub-navigation__link[aria-current="page"]:focus:before {
+  background-color: #0b0c0c;
+}
+
+    
 </style>
 
 <main id="content" role="main">
-	<!--<div class="grid-row">
+	<div class="grid-row">
 
 		<div class="column-full">
-			<div id="back">
+			<!--<div id="back">
 				<a class="link-back" href="search" id="back-link">Return to search</a>
-			</div>
+			</div>-->
 		</div>
-	</div>-->
+	</div>
     <br>
 	<div class="grid-row">
 		<div class="column-two-thirds" >
-			<div class="heading-group" style="margin-bottom:10px; margin-top:15px">
+			<div class="heading-group" style="margin-bottom:10px; margin-top:8px">
 				<h1 class="heading-large" >
 					Michael Philip
 				</h1>
@@ -318,25 +432,23 @@
             </p> 
         </div>
         <div class="column-third">
-            <a class="button" href="/" style="float:right; margin-top:25px;">Exit record</a>
+            <a class="button" href="/" style="float:right; margin-top:18px;">Exit record</a>
         </div>
     </div>
     <hr style="background-color:##b1b4b6; height: 1px; margin-bottom:0">
             
     <div class="grid-row" style="margin-top:0px;">
-         <div class="column-third" style="margin-top:25px; padding-right:0;">
+        <div class="column-third" style="margin-top:25px; padding-right:0;">
             <h3 class="heading-small" style="margin-top:5px; margin-bottom:15px; margin-left:15px;"> Active EU entitlements</h3>
-              <p><a href="case-record-s1-summary" style="padding-left:15px;text-decoration:none;">S1 for France</a></p>
-               <p><a href="case-record-ehic" style="padding-left:15px;text-decoration:none;">European Health Insurance Card</a></p>
+            <div style="background-color:#1d70b8; padding: 10px 0 10px 15px; margin-bottom:20px;"><a href="case-record-s1-summary" style=" color:white; text-decoration:none;">S1 for France</a></div>
+            <p><a href="case-record-ehic" style="padding-left:15px;text-decoration:none;">European Health Insurance Card</a></p>
             <hr>
-                        
-
             <h3 class="heading-small" style="margin-top:5px; margin-bottom:15px; margin-left:15px;"> Record</h3>
-               <p><a href="case-record-person" style="padding-left:15px;text-decoration:none;">Eligibility</a></p>
+            <p><a href="case-record-person" style="padding-left:15px;text-decoration:none;">Eligibility</a></p>
             <p><a href="case-record-person" style="padding-left:15px;text-decoration:none;">Person</a></p>
-             <p><a href="case-record-uk-address" style="padding-left:15px;text-decoration:none;">UK address</a></p>
-                         <div style="background-color:#1d70b8; padding: 10px 0 10px 15px; margin-bottom:20px;"><a href="case-record-email-phone" style=" color:white; text-decoration:none;">Email and phone</a></div>
-
+                        <p><a href="case-record-uk-address" style="padding-left:15px;text-decoration:none;">UK addresses</a></p>
+            <p><a href="case-record-uk-address" style="padding-left:15px;text-decoration:none;">Postal address</a></p>
+             <p><a href="case-record-email-phone" style="padding-left:15px;text-decoration:none;">Email and phone</a></p>
             <hr>
              <h3 class="heading-small" style="margin-top:5px; margin-bottom:15px; margin-left:15px;"> Archive</h3>
             <p><a href="case-record-activities" style="padding-left:15px;text-decoration:none;">Entitlements</a></p>
@@ -345,85 +457,162 @@
 
         </div>
         <div class="column-two-thirds" style="border-left: 1px solid #b1b4b6; padding-left:35px;">
-            
-            <h3 class="heading-medium" style="margin-top:30px; margin-bottom:25px;">Email and phone</h3>
-            
-            <div class="form-group">
-  <label class="form-label" for="first-name-2">Email</label>
-                 <input class="form-control" id="first-name-2" name="first-name-2" type="text" style="margin-bottom:5px;" value="michael.philip@email.com">
-                 
-</div>
-            
-            <div class="form-group">
-  <label class="form-label" for="first-name-2">Phone</label>
-                 <input class="form-control" id="first-name-2" name="first-name-2" type="text" style="margin-bottom:5px;" value="01913829222">
-                 
-</div>
-            
-             
-            
-            <a class="button" href="/">Save</a>
-            
-                <!--<table class="govuk-table">
-  <thead class="govuk-table__head">
-  </thead>
-                <tbody class="govuk-table__body">
 
-                    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header" style="width:20%; vertical-align: top;">Post</th>
-      <td class="govuk-table__cell" style="width:70%;">	Rúa de Mer 64<br> Paris<br> Plaisance<br> 75014<br> France</td>
-                                     <td class="govuk-table__cell" style="vertical-align: top;">	<a href="">Change</a></td>
-    </tr>
-    
-            </tbody>     
-            </table>
+            <h2 class="heading-medium" style="margin-top:30px;">S1 for France</h2>
             
-            <br>
-            <table class="govuk-table">
-  <thead class="govuk-table__head">
-  </thead>
-                <tbody class="govuk-table__body">
+            <nav class="hmcts-sub-navigation" aria-label="Sub navigation">
 
-       <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header" style="width:20%;">Email</th>
-      <td class="govuk-table__cell" style="width:70%;"  >		michael.philip@email.com</td>
-                        <td class="govuk-table__cell" style="width:70%;"  >	<a href="">Change</a></td>
-    </tr>
-       <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header" style="width:20%;">Phone</th>
-      <td class="govuk-table__cell" style="width:70%;"  >		07829393002</td>
-                        <td class="govuk-table__cell">	<a href="">Change</a></td>
-    </tr>
+<ul class="hmcts-sub-navigation__list">
+
+<li class="hmcts-sub-navigation__item">
+  <a class="hmcts-sub-navigation__link" href="case-record-s1-summary">
+    Summary
+  </a>
+</li>
+
+<li class="hmcts-sub-navigation__item">
+  <a class="hmcts-sub-navigation__link"href="case-record-additional-information">
+    Additional information
+  </a>
+</li>
+
+<li class="hmcts-sub-navigation__item">
+  <a class="hmcts-sub-navigation__link" aria-current="page"   href="case-record-case-history">
+    Case history
+  </a>
+</li>
+
+</ul>
+
+</nav> 
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full"></div>
+</div>
     
-            </tbody>     
-            </table>
-            <br>
-            <details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      UK postal address
-    </span>
-  </summary>
   <div class="govuk-details__text">
-    <table class="govuk-table">
-  <thead class="govuk-table__head">
-  </thead>
-                <tbody class="govuk-table__body">
-<br>
-                    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header" style="width:20%;  vertical-align: top;">Post</th>
-      <td class="govuk-table__cell" style="width:70%;"  >	14 Bridgeford Close<br> Newcastle<br> NE12 4JS</td>
-                                     <td class="govuk-table__cell" style="vertical-align: top;">	<a href="">Change</a></td>
-    </tr>
-    
-            </tbody>     
-            </table>
-  </div>
-</details>   -->     
-             
+  
+            <div class="hmcts-timeline" style="margin-top:40px;">
+                
+                <div class="hmcts-timeline__item">
+
+<div class="hmcts-timeline__header">
+  <h2 class="hmcts-timeline__title">
+    Contact address activated
+  </h2>
+
+  <p class="hmcts-timeline__by">Automatically updated</p>
+
+</div>
+
+<p class="hmcts-timeline__date"><time datetime="2017-11-20T14:27">21 March 2017</time></p>
+    <br>
+    <ul class="hmcts-timeline__documents">
         
-							</div>
+        <div class="grid-row">
+        <div class="column-third" style="background-color: #28a197; color: white;  margin-left:15px;">
+            <h3 class="heading-small">French Address</h3>
+            	<p>70 Rue Meurein<br> 59800<br> Lille<br> France
+            </p>
+        </div>
+    </div>
+
+</ul>
+
+</div>
+
+<div class="hmcts-timeline__item">
+
+<div class="hmcts-timeline__header">
+  <h2 class="hmcts-timeline__title">
+    Moved to France
+  </h2>
+
+  <p class="hmcts-timeline__by">by Sam Jones</p>
+
+</div>
+
+<p class="hmcts-timeline__date"><time datetime="2017-12-05T09:10">21 March 2017</time></p>
+
+</div>
+                
+                <div class="hmcts-timeline__item">
+
+<div class="hmcts-timeline__header">
+  <h2 class="hmcts-timeline__title">
+    Entitlement sent
+  </h2>
+
+  <p class="hmcts-timeline__by">by Post</p>
+
+</div>
+
+<p class="hmcts-timeline__date"><time datetime="2017-11-20T14:27">20 January 2017</time></p>
+    <br>
+    <ul class="hmcts-timeline__documents">
+        
+        <div class="grid-row">
+        <div class="column-third" style="background-color: #28a197; color: white; margin-left:15px;">
+            <h3 class="heading-small">UK Address</h3>
+            	<p>23 Little Place<br>
+                    Little Town<br>
+                    Little County<br>
+                    NE12 7YH<br>
+                    UK
+            </p>
+        </div>
+    </div>
+        
+        <br>
+
+  <li class="hmcts-timeline__document-item"><a class="hmcts-timeline__document-link" href="#3">View document</a></li>
+
+</ul>
+
+</div>
+
+<div class="hmcts-timeline__item">
+
+<div class="hmcts-timeline__header">
+  <h2 class="hmcts-timeline__title">
+    Entitlement issued
+  </h2>
+
+  <p class="hmcts-timeline__by">by Tim Smith</p>
+
+</div>
+
+<p class="hmcts-timeline__date"><time datetime="2017-11-20T14:27">20 January 2017</time></p>
+    <ul class="hmcts-timeline__documents">
+</ul>
+
+</div>
+                
+                <div class="hmcts-timeline__item">
+
+<div class="hmcts-timeline__header">
+  <h2 class="hmcts-timeline__title">
+    Applied for S1 as a Main for France
+  </h2>
+
+  <p class="hmcts-timeline__by">by Tim Smith</p>
+
+</div>
+
+<p class="hmcts-timeline__date"><time datetime="2017-11-20T14:27">20 Nov 2017</time></p>
+<br>
+<a href="">View application</a>
+</div>
+
+</div> 
+      
+      </div>
+            <br>
+            <br>
+            <br>
+            
 						</div>
+					</div>
 					<div id="health" class="tabcontent">
 						<div class="form-group">
 							<table id="mainTable">
