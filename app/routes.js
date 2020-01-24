@@ -285,7 +285,7 @@ router.get(/resident/, function (req,res){
 // end EHIC //
 
 
-// e109 / S1 / DA1 //
+// Posted Worker / S1 / e109 / DA1 //
 router.get(/postedWorker/, function (req,res) {
   if(req.query.radiosPW === "Posted worker") {
     res.redirect('working-country');
@@ -294,7 +294,7 @@ router.get(/postedWorker/, function (req,res) {
   } else if (req.query.radiosPW === "Dependant of UK worker") {
     res.redirect('contact-address-e109');
   } else if (req.query.radiosPW === "Occupational disease or injury") {
-    res.redirect('employment-status');
+    res.redirect('da1-country-res');
   } else {
     res.redirect('create-entitlement');
   }
@@ -345,23 +345,23 @@ router.get(/entReason/, function (req,res) {
   }
 });
 
-// DA1 reason to visit country - Disease//
+// DA1 reason to visit country - Disease //
 router.get(/diseaseCountry/, function (req,res) {
   if(req.query.diseaseCountry === "Take up residence") {
-    res.redirect('contact-address-da1-2');
+    res.redirect('check-your-answers-13');
   } else if (req.query.diseaseCountry === "Receive medical treatment") {
-    res.redirect('contact-address-da1-2');
+    res.redirect('check-your-answers-13');
   } else {
     res.redirect('da1-country-reason-2');
   }
 });
 
-// DA1 reason to visit country - Injury//
+// DA1 reason to visit country - Injury //
 router.get(/injuryCountry/, function (req,res) {
   if(req.query.injuryCountry === "Take up residence") {
-    res.redirect('contact-address-da1');
+    res.redirect('check-your-answers-12');
   } else if (req.query.injuryCountry === "Receive medical treatment") {
-    res.redirect('contact-address-da1');
+    res.redirect('check-your-answers-12');
   } else {
     res.redirect('da1-country-reason');
   }
