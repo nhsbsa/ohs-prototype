@@ -345,6 +345,28 @@ router.get(/entReason/, function (req,res) {
   }
 });
 
+// DA1 reason to visit country - Disease//
+router.get(/diseaseCountry/, function (req,res) {
+  if(req.query.diseaseCountry === "Take up residence") {
+    res.redirect('contact-address-da1-2');
+  } else if (req.query.diseaseCountry === "Receive medical treatment") {
+    res.redirect('contact-address-da1-2');
+  } else {
+    res.redirect('da1-country-reason-2');
+  }
+});
+
+// DA1 reason to visit country - Injury//
+router.get(/injuryCountry/, function (req,res) {
+  if(req.query.injuryCountry === "Take up residence") {
+    res.redirect('contact-address-da1-2');
+  } else if (req.query.injuryCountry === "Receive medical treatment") {
+    res.redirect('contact-address-da1-2');
+  } else {
+    res.redirect('da1-country-reason-2');
+  }
+});
+
 
 
 // EU exception //
