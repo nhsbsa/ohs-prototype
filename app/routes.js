@@ -522,7 +522,7 @@ router.get(/giraffe/, function (req,res) {
   if(req.query.resiAddress === "Yes") {
     res.redirect('email-address');
   } else if(req.query.resiAddress === "No") {
-    res.redirect('corr-address-3');
+    res.redirect('corr-address-4');
   } else {
     res.redirect('use-corres-2');
   }
