@@ -109,10 +109,13 @@
 	<div class="grid-row">
 		<div class="column-full">
 			<div class="heading-group">
-				<h1 class="heading-large">
-					Rosie Philip
-					<span class="heading-secondary">OHS Reference Number - 25000005</span>
+				<h1 class="heading-large" style="float: left;">
+					Robert Philip
+					<span class="heading-secondary">OHS Reference Number - 25000002</span>
 				</h1>
+				<div class="form-group" style="margin-top:30px; float: right">
+					<a class="button button-secondary" href="search">Exit record</a>
+				</div>
 			</div>
 			<div class="tab-container">
 				<a class="tablinks active" onclick="openTab(event, 'personal')" href="#">
@@ -138,36 +141,47 @@
 								<dl class="govuk-check-your-answers cya-questions-long">
 									<div>
 										<dt class="cya-question">Full name</dt>
-										<dd class="cya-answer">
-											Rosie Philip
-										</dd>
+										<dd class="cya-answer">Robert Philip</dd>
+<!-- 										<dd class="cya-answer"></dd>
+ -->										<dd class="cya-change"><a href="#">Change</a></dd>
 									</div>
 									<br>
 									<div>
 										<dt class="cya-question">Date of birth</dt>
-										<dd class="cya-answer">
-											24/05/2016
-										</dd>
+										<dd class="cya-answer">02/10/1950</dd>
+<!-- 										<dd class="cya-answer"></dd>
+ -->										<dd class="cya-change"><a href="#">Change</a></dd>
 									</div>
 									<br>
 									<div>
 										<dt class="cya-question">National Insurance number</dt>
-										<dd class="cya-answer">
-											-
-										</dd>
+										<dd class="cya-answer">SR123456A</dd>
+<!-- 										<dd class="cya-answer"></dd>
+ -->										<dd class="cya-change"><a href="#">Change</a></dd>
 									</div>
 									<br>
 									<div>
-										<dt class="cya-question">Residential address</dt>
+										<!-- <dt class="cya-question">Residential address</dt> -->
+										<dt class="cya-question">Address</dt>
 										<dd class="cya-answer">
-											70 Rue Meurein<br>
-											Lille<br>
-											59800<br>
-											France<br>
-										</dd>
+											Carrer de Montuiri, 19-15<br>
+											07560 Cala Millor<br>
+											Illes Balears<br>
+											Spain
+<!-- 											<a href="#">Add a correspondence address</a>
+ -->										</dd>
+<!-- 										<dd class="cya-answer"></dd>
+ -->									<dd class="cya-change"><a href="#">Change</a></dd>
 									</div>
 									<br>
-									<div>
+									<div >
+										<!-- <dt class="cya-question"></dt> -->
+										<dd class="cya-answer" style="border: none;"><a href="#">Add a correspondence address</a></dd>
+										<dd class="cya-answer" style="border: none;"></dd>
+										<dd class="cya-change" style="border: none;"></dd>
+									</div>
+									<br>
+									<!-- <div>
 										<dt class="cya-question">Correspondence address</dt>
 										<dd class="cya-answer">Rúa de Mer 64<br>
 											Paris<br>
@@ -176,21 +190,43 @@
 											France
 										</dd>
 									</div>
-									<br>
+									<br> -->
+									
 									<div>
 										<dt class="cya-question">Email address</dt>
-										<dd class="cya-answer">-</dd>
+										<dd class="cya-answer">bobandpat@email.com</dd>
+										<dd class="cya-change"><a href="#">Change</a></dd>
 									</div>
 									<br>
 									<div>
 										<dt class="cya-question">Telephone number</dt>
-										<dd class="cya-answer">-</dd>
+										<dd class="cya-answer">07829393002</dd>
+										<dd class="cya-change"><a href="#">Change</a></dd>
+									</div>
+									<div>
+										<dt class="cya-question">Contact preference</dt>
+										<dd class="cya-answer">
+											via <span class="bold">Post</span><br>
+											via <span class="bold">Email</span><br>
+											via <span class="bold">Phone</span><br>
+										</dd>
+										<dd class="cya-change"><a href="#">Change</a></dd>
+									</div>
+									<div>
+										<dt class="cya-question">Receive entitlement <br>certificates</dt>
+										<dd class="cya-answer">via <span class="bold">Email</span></dd>
+										<!-- <dd class="cya-answer">
+											Post <br>
+											Email <br>
+											Phone 
+										</dd> -->
+										<dd class="cya-change"><a href="#">Change</a></dd>
 									</div>
 								</dl>
-								<br>
+								<!-- <br>
 								<div class="form-group" style="margin-top:30px">
 									<a class="button button-secondary" href="search">Exit record</a>
-								</div>
+								</div> -->
 							</div>
 						</div>
 					</div>
@@ -212,9 +248,10 @@
 						</div>
 						<br>
 						<div class="form-group">
-							<a class="button" href="received-date-dep-1">Create a new entitlement</a>
-							<a class="button button-secondary" href="search">Exit record</a>
-						</div>
+							<!-- <a class="button" href="create-entitlement">Create a new entitlement</a> -->
+							<a class="button" href="received-date">Create a new entitlement</a>
+<!-- 							<a class="button button-secondary" href="search">Exit record</a>
+ -->						</div>
 					</div>
 					<div id="casehist" class="tabcontent">
 						<div class="form-group">
@@ -230,9 +267,9 @@
 							</table>
 						</div>
 						<br>
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<a class="button button-secondary" href="search">Exit record</a>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>

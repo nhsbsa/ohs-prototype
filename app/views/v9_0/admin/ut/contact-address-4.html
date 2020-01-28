@@ -203,7 +203,7 @@ What is your residential address?
    <div class="grid-row">
    <div class="column-two-thirds">
       <div class="heading-group">
-         <h1 class="heading-large">What is your residential address?</h1>
+         <h1 class="heading-large">What is Rosie's residential address?</h1>
       </div>
       <form class="form" action="postedWorker" method="get">
          <div class="form-group">
@@ -234,41 +234,42 @@ What is your residential address?
       <form action="contact-details" id="contact-address-form-2" method="get" class="form">
       <div class="form-group">
       <div class="form-group">
-      <label class="form-label" for="lineone">Address line 1</label>
-      <input class="form-control" id="lineone" name="address-lineone" type="text" autocomplete="off" value="70 Boulevard de Saint-Quentin">
+      <label class="form-label" for="lineone">Building and street (line 1 of 2)
+</label>
+      <input class="form-control" id="lineone" name="address-lineone" type="text" autocomplete="off" value="">
       </div>
       <div class="form-group">
-      <label class="form-label" for="linetwo">Address line 2 (optional)</label>
-      <input class="form-control"  id="linetwo" name="address-linetwo" type="text" autocomplete="off" value="Plein Sud">
+      <label class="form-label" for="linetwo">Building and street (line 2 of 2) (optional)</label>
+      <input class="form-control"  id="linetwo" name="address-linetwo" type="text" autocomplete="off" value="">
       </div>
       <div class="form-group">
-      <label class="form-label" for="town">Address line 3 (optional)</label>
-      <input class="form-control" id="town" name="town" type="text" autocomplete="off" value="80000">
+      <label class="form-label" for="town">Town or city</label>
+      <input class="form-control" id="town" name="town" type="text" autocomplete="off" value="">
       </div>
       <div class="form-group">
-      <label class="form-label" for="postcode">Address line 4 (optional)</label>
-      <input class="form-control" id="town" name="town" type="text" autocomplete="off" value="Amiens">
+      <label class="form-label" for="postcode">Postcode (optional)</label>
+      <input class="form-control form-control-1-4" id="town" name="town" type="text" autocomplete="off" value="">
       </div>
       <div class="form-group">
       <label class="form-label" for="country">Country</label>
-      <input class="form-control" id="country" name="country" type="text" autocomplete="off" value="France">
+      <input class="form-control" id="country" name="country" type="text" autocomplete="off" value="">
       </div>
       <div class="form-group">
       <label>
       <span class="form-label" for="date">What date did you move into this address?</span>
       <span class="form-hint">For example, 18/09/2018</span>
       </label>
-      <input class="form-control" id="date" name="date" type="text" autocomplete="off" value="04/12/2018">
+      <input class="form-control" id="date" name="date" type="text" autocomplete="off" value="">
       </div>
       </div>
       </div>
-      <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="where-do-you-live-4" name="radiosPW" type="radio" value="Posted worker">
-      <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
-      Address not provided
-      <br>
-      </label>
-      </div>
+      <!-- <div class="govuk-radios__item">
+       <input class="govuk-radios__input" id="where-do-you-live-4" name="radiosPW" type="radio" value="Posted worker">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+        Address not provided
+        <br>
+       </label>
+      </div> -->
       </div>
       </fieldset>
       </div>
@@ -294,8 +295,8 @@ What is your residential address?
       <span class="form-hint" style="padding-top: 15px;">
       Rúa de Mer 64<br>
       Paris<br>
-      75014<br>
       Plaisance<br>
+      75014<br>
       France
       </span>
       </label>
@@ -310,33 +311,33 @@ What is your residential address?
       <form action="contact-details" id="contact-address-form-2" method="get" class="form">
       <div class="form-group">
       <div class="form-group">
-      <label class="form-label" for="lineone">Address line 1
+      <label class="form-label" for="lineone">Building and street (line 1 of 2)
       </label>
-      <input class="form-control" id="lineone" name="address-lineone" type="text" autocomplete="off" value="56 Rue Raymond Poincaré">
+      <input class="form-control" id="lineone" name="address-lineone" type="text" autocomplete="off" value="">
       </div>
       <div class="form-group">
-      <label class="form-label" for="linetwo">Address line 2 (optional)
+      <label class="form-label" for="linetwo">Building and street (line 2 of 2) (optional)
       </label>
-      <input class="form-control"  id="linetwo" name="address-linetwo" type="text" autocomplete="off" value="Haut-du-Lièvre">
+      <input class="form-control"  id="linetwo" name="address-linetwo" type="text" autocomplete="off" value="">
       </div>
       <div class="form-group">
-      <label class="form-label" for="town">Address line 3 (optional)</label>
-      <input class="form-control" id="town" name="town" type="text" autocomplete="off" value="54000">
+      <label class="form-label" for="town">Town or city</label>
+      <input class="form-control" id="town" name="town" type="text" autocomplete="off" value="">
       </div>
       <div class="form-group">
-      <label class="form-label" for="postcode">Address line 4 (optional)</label>
-      <input class="form-control" id="town" name="town" type="text" autocomplete="off" value="Nancy">
+      <label class="form-label" for="postcode">Postcode (optional)</label>
+      <input class="form-control form-control-1-4" id="postcode" name="postcode" type="text" autocomplete="off" value="">
       </div>
       <div class="form-group">
       <label class="form-label" for="country">Country</label>
-      <input class="form-control" id="country" name="country" type="text" autocomplete="off" value="France">
+      <input class="form-control" id="country" name="country" type="text" autocomplete="off" value="">
       </div>
       <div class="form-group">
       <label>
       <span class="form-label" for="date">What date did you move into this address?</span>
       <span class="form-hint">For example, 18/09/2018</span>
       </label>
-      <input class="form-control" id="date" name="date" type="text" autocomplete="off" value="04/12/2018">
+      <input class="form-control" id="date" name="date" type="text" autocomplete="off" value="">
       </div>
       </div>
       </div>
@@ -351,8 +352,8 @@ What is your residential address?
       </div>
       </form>
       <div class="form-group">
-      <a class="button" href="email-address-2">Next</a>
-      <a class="button button-secondary" href="search">Cancel</a>
+      <a class="button" href="#">Next</a>
+      <a class="button button-secondary" href="#">Cancel</a>
       </div>
       </form>
       </div>
