@@ -116,54 +116,63 @@ Overseas Healthcare Prototype
          <!-- USABILITY TESTING -->
          <!-- ----------------- -->
          <div class="versions-prod">
-            <h3><span class="strong">Get your S1 by email - Version 1</span></h3>
-            <p class="form-hint"></p>
-            <p>Changes:</p>
-            <ul class="list list-bullet">
-               <li>Added new screen to capture S1 delivery preference for main and dependant</li>
-               <li>Added extra content to 'Done' page</li>
-            </ul>
-            <!-- <a href="v9_0/admin/ut/windows-login"><input class="button" type="submit" value="Open"></a> -->
-            <p>
-               <a href="v9_0/admin/email-s1/start">Create a new entitlement for main and dependant</a>
-            </p>
-            <p>
-               <a href="v9_0/admin/email-s1/receive-ent-2">'Where to send your S1' page</a>
-            </p>
-            <hr>
             <h3><span class="strong">DWP integration (agent) - Version 1</span></h3>
             <p class="form-hint"></p>
             <!-- <p>Changes:</p> -->
             <ul class="list list-bullet">
                <li>DWP confirmation that customer is in receipt of a UK State Pension and their pension start date when creating a Pensioner S1</li>
+               <li>DWP NINO matching</li>
+            <!-- <a href="v9_0/admin/ut/windows-login"><input class="button" type="submit" value="Open"></a> -->
             </ul>
-            <p>
-               <a href="v9_0/ccs/dwp/case-record">Pension details found</a>
-            </p>
-            <p>
-               <a href="v9_0/ccs/dwp-unconfirmed/case-record">Pension not confirmed</a>
-            </p>
+            <details>
+               <summary>
+                  <span class="summary">Option 1</span>
+               </summary>
+               <p><a href="v9_0/ccs/dwp/case-record">Pension details found</a></p>
+               <p><a href="v9_0/ccs/dwp-unconfirmed/case-record">Pension not confirmed</a></p>
+               <p><a href="v9_0/ccs/dwp-unconfirmed/start">NINO not matched (person creation)</a></p>
+               <p><a href="v9_0/ccs/dwp-unconfirmed/case-record-3">NINO not matched (entitlement creation)</a></p>
+            </details>
+            <!-- <details>
+               <summary>
+                  Separate DWP page
+                  <span class="summary">Option 2</span>
+               </summary>
+               <p><a href="v9_0/ccs/dwp/case-record">Pension details found</a></p>
+               <p><a href="v9_0/ccs/dwp-unconfirmed/case-record">Pension not confirmed</a></p>
+               <p><a href="v9_0/ccs/dwp-unconfirmed/start">NINO not matched (person creation)</a></p>
+               <p><a href="v9_0/ccs/dwp-unconfirmed/case-record-3">NINO not matched (entitlement creation)</a></p>
+            </details> -->
             <hr>
+            
+            <!-- PREVIOUS VERSIONS -->
+            <details>
+               <summary>
+                  <span class="summary">Get your S1 by email - Version 1</span>
+               </summary>
+               <p>Changes:</p>
+               <ul class="list list-bullet">
+                  <li>Added new screen to capture S1 delivery preference for main and dependant</li>
+                  <li>Added extra content to 'Done' page</li>
+               </ul>
+               <p><a href="v9_0/admin/email-s1/start">Create a new entitlement for main and dependant</a></p>
+               <p><a href="v9_0/admin/email-s1/receive-ent-2">'Where to send your S1' page</a></p>
+               <hr>
+            </details>
             <details>
                <summary>
                   <span class="summary">Address improvements - Version 2</span>
                </summary>
                <p>Changes:</p>
-            <ul class="list list-bullet">
-               <li>Added dependant name personalisation to headings</li>
-               <li>Added back in original address input fields</li>
-               <li>Changed dependant correspondence address screen to have input fields instead of radio options.</li>
-            </ul>
-            <p>
-               <a href="v9_0/admin/ut/windows-login">Create a new person record</a>
-            </p>
-            <p>
-               <a href="v9_0/admin/ut/case-record-2">Add a dependant to main's S1</a>
-            </p>
-            <p>
-               <a href="v9_0/admin/ut/contact-address-4">Residential and correspondence address </a>
-            </p>
-            <hr>
+               <ul class="list list-bullet">
+                  <li>Added dependant name personalisation to headings</li>
+                  <li>Added back in original address input fields</li>
+                  <li>Changed dependant correspondence address screen to have input fields instead of radio options.</li>
+               </ul>
+               <p><a href="v9_0/admin/ut/windows-login">Create a new person record</a></p>
+               <p><a href="v9_0/admin/ut/case-record-2">Add a dependant to main's S1</a></p>
+               <p><a href="v9_0/admin/ut/contact-address-4">Residential and correspondence address </a></p>
+               <hr>
             </details>
             <details>
                <summary>
@@ -175,15 +184,9 @@ Overseas Healthcare Prototype
                   <li>Made address input fields more generic so that European addresses are captured more accurately.</li>
                   <li>Put email address and telephone number capture on separate screens for dependant (testing only - out of scope for task).</li>
                </ul>
-               <p>
-                  <a href="/public/images/prototypes/addresses/v1-new-main.pdf">Create a new person record [PDF]</a>
-               </p>
-               <p>
-                  <a href="/public/images/prototypes/addresses/v1-new-dep.pdf">Add a dependant to main's S1 [PDF]</a>
-               </p>
-               <p>
-                  <a href="/public/images/prototypes/addresses/v1-all-in-one.pdf">Residential and correspondence address [PDF]</a>
-               </p>
+               <p><a href="/public/images/prototypes/addresses/v1-new-main.pdf">Create a new person record [PDF]</a></p>
+               <p><a href="/public/images/prototypes/addresses/v1-new-dep.pdf">Add a dependant to main's S1 [PDF]</a></p>
+               <p><a href="/public/images/prototypes/addresses/v1-all-in-one.pdf">Residential and correspondence address [PDF]</a></p>
             </details>
          </div>
          <!-- ----------------- -->
