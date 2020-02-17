@@ -1,0 +1,390 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+<style>
+	.button-secondary {
+		background-color: #005EA5;
+		color: white;
+		box-shadow: 0 2px 0 #2B8CC4;
+		font-size: 1em;
+		outline-offset: -1px;
+		outline: 1px solid transparent;
+		border-radius: 0;
+	}
+	.internal-table-results td:nth-child(1) {
+		width: 15%;
+	}
+	.internal-table-results td:nth-child(2) {
+		width: 15%;
+	}
+	.internal-table-results td:nth-child(3) {
+		width: 15%;
+	}
+	.internal-table-results td:nth-child(4) {
+		width: 15%;
+	}
+	.internal-table-results td:nth-child(5) {
+		width: 15%;
+	}
+	.internal-table-results td:nth-child(6) {
+		width: 5%;
+	}
+
+	/* search results */
+	#example caption {
+		background:#F8F8F8;
+		padding:5px;
+		text-align:center;
+	}
+	#example th {
+		background: #bbb;
+		font-weight:bold;
+	}
+	#example th,
+	#example td {
+		border: 1px solid #fff;
+		padding-left: 20px;
+		padding-right: 4px;
+	}
+	#example tbody th{
+		background:transparent;
+	}
+	#example table#simpleTable thead th {
+		background: #DEE0E2 url(/public/images/bg.gif) no-repeat center right;
+	}
+	#example table#simpleTable thead th a {
+		background:transparent;
+		display:block;
+	}
+	#example table#simpleTable th.headerSortUp {
+		background-image: url(/public/images/asc.gif);
+	}
+	#example table#simpleTable th.headerSortDown {
+		background-image: url(/public/images/desc.gif);
+	}
+	#example .hide {
+		display:none;
+	}
+	.internal-table-results tbody tr:hover {
+		background-color: #F8F8F8;
+	}
+	#button-next {
+		background-color: #005EB8;
+	}
+	#button-next:hover {
+		background-color: #4276B8;
+	}
+	/* pagination */
+	.pagination-container {
+		margin-bottom: 30px;
+	}
+	.page-numbers-container {
+		margin-top: 0px;
+		padding-top: 30px;
+		overflow: hidden;
+	}
+	.page-numbers-container .previous {
+		float: left;
+		text-align: left;
+	}
+	.page-numbers-container .next {
+		float: right;
+		text-align: right;
+	}
+	.page-numbers-container .next, .page-numbers-container .previous {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.page-numbers-container .previous a {
+		padding-left: 30px;
+		background-image: url(/public/images/bsa/arrow-pagination-left.svg);
+		background-position: 0 4px;
+	}
+	.page-numbers-container .next a {
+		padding-right: 30px;
+		background-image: url(/public/images/bsa/arrow-pagination-right.svg);
+		background-position: 100% 4px;
+	}
+	.page-numbers-container .next a, .page-numbers-container .previous a {
+		display: block;
+		background-repeat: no-repeat;
+		background-size: 17px 14px;
+	}
+	.pagination {
+		margin: 0 auto;
+		text-align: center;
+	}
+	.pagination ul {
+		display: inline-block;
+		margin: 0 10px;
+	}
+	ul.list-inline {
+		list-style: none;
+		padding-left: 0;
+	}
+	ol, ul, nav ol, nav ul {
+		list-style: inherit;
+	}
+	.pagination ul>li {
+		padding-left: 0;
+	}
+	ul.list-inline li {
+		display: inline-block;
+	}
+	.pagination ul>li:first-child>a {
+		border-left-width: 0;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+	.pagination ul>.active span, .pagination ul>.active a {
+		color: #999;
+		cursor: default;
+		background: transparent;
+	}
+	.pagination ul>li>a {
+		padding: 4px 12px;
+		line-height: 20px;
+		text-decoration: none;
+	}
+	.visuallyhidden {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+	.pagination ul>li {
+		padding-left: 0;
+	}
+
+	/* custom pagination */
+	#next,
+	#previous {
+		margin-right: 20%;
+		padding-top: 35px;
+		padding-left: 60px;
+	}
+	span.status-tag-medium {
+		background-color: #F47738;
+		color: #fff;
+		margin-left: 0.75em;
+		vertical-align: baseline;
+		padding: 2px 9px 1px;
+		font-weight: 700;
+		font-size: 14px;
+		text-transform: uppercase;
+		display: inline-block;
+		position: relative;
+		top: -0.05em;
+	}
+	span.status-tag-high {
+		background-color: #B10E1E;
+		color: #fff;
+		margin-left: 0.75em;
+		vertical-align: baseline;
+		padding: 2px 16px 1px;
+		font-weight: 700;
+		font-size: 14px;
+		text-transform: uppercase;
+		display: inline-block;
+		position: relative;
+		top: -0.05em;
+	}
+	span.status-tag-low {
+		background-color: #85994b;
+		color: #fff;
+		margin-left: 0.75em;
+		vertical-align: baseline;
+		padding: 2px 18px 1px;
+		font-weight: 700;
+		font-size: 14px;
+		text-transform: uppercase;
+		display: inline-block;
+		position: relative;
+		top: -0.05em;
+	}
+</style>
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-full">
+			<div id="back">
+				<a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<div class="heading-group">
+				<h1 class="heading-large">Search</h1>
+			</div>
+		</div>
+		<form action="search-results" method="get" class="form">
+			<div class="column-full">
+				<div class="form-group">
+					<label class="form-label" for="ohs">OHS reference number</label>
+					<span class="form-hint">This can be either an OHS reference number or MedBen number</span>
+					<input class="form-control" id="ohs" name="ohs" type="text" autocomplete="off" disabled />
+				</div>
+				<div class="form-group">
+					<p class="form-block">or</p>
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="first-name">First name</label>
+					<input class="form-control" id="first-name" name="first-name" type="text" autocomplete="off" value="Michael" />
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="last-name">Last name</label>
+					<input class="form-control" id="last-name" name="last-name" type="text" autocomplete="off" value="Philip" />
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="date-of-birth">Date of birth</label>
+					<span class="form-hint">
+						For example, 31/03/1980
+					</span>
+					<input class="form-control" id="date-of-birth" name="date-of-birth" type="text" autocomplete="off" value="16/03/1960" />
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="nino">National Insurance number (optional)</label>
+					<span class="form-hint">
+						For example, 'QQ123456C'
+					</span>
+					<input class="form-control" id="nino" name="nino" type="text" autocomplete="off" value="SR123456A" />
+				</div>
+				<div class="form-group">
+					<!-- <input class="button" type="submit" value="Search"> -->
+					<a class="button" href="search-results">Search</a>
+				</div>
+			</div>
+		</form>
+
+		<div id="example" class="column-full" style="padding-left:20px; padding-top:20px;">
+			<!-- <div class="column-full" style="padding-left:20px; padding-top:20px;"> -->
+			<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">1 result found</h1>
+			<table id="simpleTable" class="internal-table-results">
+				<!-- <table class="internal-table-results"> -->
+				<caption id="caption" role="alert" aria-live="polite" style="display: none;">Search results not sorted</caption>
+				<thead>
+					<tr>
+						<th role="columnheader" aria-sort="none" scope="col" class="header">
+							<a href="#2" id="Full name|asc" title="Sort 2 ascending">Full name</a>
+						</th>
+						<th role="columnheader" aria-sort="none" scope="col" class="header">
+							<a href="#3" id="Date of birth|asc" title="Sort 3 ascending">Date of birth</a>
+						</th>
+						<th role="columnheader" aria-sort="none" scope="col" class="header">
+							<a href="#4" id="Address|asc" title="Sort 4 ascending">Address</a>
+						</th>
+						<th role="columnheader" aria-sort="none" scope="col" class="header">
+							<a href="#5" id="Action|asc" title="Sort 5 ascending">Action</a>
+						</th>
+						<!-- <th role="columnheader" aria-sort="none" scope="col">
+							<a href="#7" id="Residency status|asc" title="Sort 7 ascending">Residency status</a>
+						</th> -->
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Michael Philip</td>
+						<td>16/03/1960</td>
+						<td>Rúa de Mer 64<br>
+							Paris<br>
+							75014<br>
+							France<br></td>
+						<td>
+							<a class="button button-secondary" href="#" role="button" data-toggle="dialog" data-target="dialog-4">
+								<span>Select record</span>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- <div class="column-half" style="float:right; margin-right: 0; padding-right: 0;">
+				<nav id="next" class="page-numbers-container pagination-container" aria-label="Pagination" style="margin-right: 0;">
+					<div class="next">
+						<a href="#next" rel="next" style="padding-right:0.5em;">Next <span class="hidden-mobile">page</span></a>
+					</div>
+					<div class="pagination">
+						<ul class="list-inline">
+							<li class="active">
+								<a href="#next"><span class="visuallyhidden">Page </span>1</a>
+							</li>
+							<li>
+								<a id="two" href="#next"><span class="visuallyhidden">Page </span>2</a>
+							</li>
+							<li>…</li>
+							<li>
+								<a href="#next"><span class="visuallyhidden">Page </span>92</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<nav id="previous" class="page-numbers-container pagination-container visually-hidden" aria-label="Pagination">
+					<div class="previous">
+						<a href="#previous" rel="previous">Previous <span class="hidden-mobile">page</span></a>
+					</div>
+					<div class="next">
+						<a href="#previous" rel="next">Next<span class="hidden-mobile">page</span></a>
+					</div>
+					<div class="pagination">
+						<ul class="list-inline">
+							<li>
+								<a id="one" href="#previous"><span class="visuallyhidden">Page </span>1</a>
+							</li>
+							<li class="active">
+								<a href="#previous"><span class="visuallyhidden">Page </span>2</a>
+							</li>
+							<li>
+								<a href="#previous"><span class="visuallyhidden">Page </span>3</a>
+							</li>
+							<li>
+								…
+							</li>
+							<li>
+								<a href="#previous"><span class="visuallyhidden">Page </span>92</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div> -->
+			<div class="column-half" style="background-color:#FFFFFF; float: left;">
+				<br>
+				<div class="form-group">
+					<form action="dependant-nino">
+						<!-- <input class="button" type="submit" id="button2" value="Create a new record"> -->
+						<a class="button" href="check-person-details">Create new person</a>
+					</form>
+				</div>
+			</div>
+			<form action="abc-2" method="get" class="form">
+				<!-- modal starts here  -->
+				<div class="dialog" id="dialog-4" aria-hidden="true">
+					<div class="dialog-holder" aria-labelledby="dialog-title-4" aria-describedby="dialog-content-4" role="alertdialog">
+						<div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">											
+							<header class="page-header">
+								<h2 class="page-header--lede heading-medium" style="margin-top: -1em;">Are you sure you want to select this record?</h2>
+							</header>
+							<div class="dialog-actions" style="display: inline;">
+								<input id="submit-btn" class="button buttonSubmit" type="submit" name="updateEntitlement" value="Yes - continue to record" style="font-size: 19px;"/>
+								<a class="dialog-cancel" href="#" style="font-size: 1em;">No - back to search</a>
+							</div>
+							<button class="dialog-close" aria-label="close" type="button">
+								<span class="icon icon-close">x</span>
+							</button>												
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</main>
+{% endblock %}
