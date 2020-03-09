@@ -539,6 +539,17 @@ router.get(/use-resi-address/, function (req,res) {
   }
 });
 
+// CREATE PERSON FROM SEEARCH RESULTS, create-pension.html
+router.get(/gorilla/, function (req,res) {
+  if(req.query.createPerson === "Yes") {
+    res.redirect('contact-address');
+  } else if(req.query.createPerson === "No") {
+    res.redirect('search'); 
+  } else {
+    res.redirect('create-person');
+  }
+});
+
 router.get(/thisIsNotPostedWorker/, function (req,res) {
   if(req.query.test123 === "Posted worker") {
     res.redirect('email-address-2');

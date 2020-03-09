@@ -116,15 +116,17 @@ Overseas Healthcare Prototype
          <!-- USABILITY TESTING -->
          <!-- ----------------- -->
          <div class="versions-prod">
-            <h3><span class="strong">DWP integration (agent) - Version 1</span></h3>
+            <h3><span class="strong">DWP integration (agent) - Version 2</span></h3>
             <p class="form-hint"></p>
             <!-- <p>Changes:</p> -->
             <ul class="list list-bullet">
-               <li>DWP confirmation that customer is in receipt of a UK State Pension and their pension start date when creating a Pensioner S1</li>
-               <li>DWP NINO matching</li>
+               <li>Improve search and person creation</li>
+               <li>Added 'relevant authority' contact details to kickout pages (actual content TBD)</li>
+               <li>Deceased scenario</li>
             <!-- <a href="v9_0/admin/ut/windows-login"><input class="button" type="submit" value="Open"></a> -->
             </ul>
-            <details>
+            
+            <!-- <details>
                <summary>
                   <span class="summary">Option 1</span>
                </summary>
@@ -134,30 +136,54 @@ Overseas Healthcare Prototype
                   <li>Scenario 3 - NINO doesn't match when creating a person record <a href="v9_0/ccs/dwp-unconfirmed/start">(link)</a></li>
                   <li>Scenario 4 - NINO doesn't match when creating an entitlement <a href="v9_0/ccs/dwp-unconfirmed/start2"> (link)</a></li>
                </ul>
-               <!-- <p><a href="v9_0/ccs/dwp/start">Pension details found</a></p>
-               <p><a href="v9_0/ccs/dwp-unconfirmed/case-record">Pension not confirmed</a></p>
-               <p><a href="v9_0/ccs/dwp-unconfirmed/start">NINO not matched (person creation)</a></p>
-               <p><a href="v9_0/ccs/dwp-unconfirmed/start2">NINO not matched (entitlement creation)</a></p> -->
-            </details>
-            <details>
+            </details> -->
+            <details open>
                <summary>
-                  <!-- Separate DWP page -->
-                  <span class="summary">Option 2</span>
+                  <span class="summary">Version 2</span>
                </summary>
                <ul class="list list-bullet">
-                  <li>Scenario 5 - Search for person record and issue S1 to pensioner <a href="v9_0/ccs/dwp2/start">(link)</a></li>
-                  <li>Scenario 6 - From person record,  issue an S1 to someone without a confirmed State Pension <a href="v9_0/ccs/dwp-unconfirmed2/case-record">(link)</a></li>
-                  <li>Scenario 7 - NINO doesn't match when creating a person record <a href="v9_0/ccs/dwp-unconfirmed2/start">(link)</a></li>
-                  <li>Scenario 8 - NINO doesn't match when creating an entitlement <a href="v9_0/ccs/dwp-unconfirmed2/start2"> (link)</a></li>
+                  <li>Scenario 1 - DWP match, no OHS record, has a UK State Pension <a href="v9_0/ccs/dwp2/start">(link)</a></li>
+                  <li>Scenario 2 - OHS record created, UK State Pension unconfirmed <a href="v9_0/ccs/dwp-unconfirmed2/case-record">(link)</a></li>
+                  <li>Scenario 3 - OHS record created, UK State Pension start date not within 28 days <a href="v9_0/ccs/dwp-unconfirmed2/case-record-4">(link)</a></li>
+                  <li>Scenario 4 - DWP no match, no OHS record <a href="v9_0/ccs/dwp-unconfirmed2/start">(link)</a></li>
+                  <li>Scenario 5 - DWP match - deceased <a href="v9_0/ccs/dwp-dod/start">(link)</a></li>
+                  <li>Scenario 6 - DWP match - deceased, OHS record <span class="bold">TO DO </span><a href="">(link)</a></li>
+                  <!-- <li>Scenario 5 - NINO doesn't match when creating an entitlement <a href="v9_0/ccs/dwp-unconfirmed2/start2"> (link)</a></li> -->
+                  <!-- NINO not mandatory for person creation, esp. dependants  -->
                </ul>
-              <!--  <p><a href="v9_0/ccs/dwp2/start">Pension details found</a></p>
-               <p><a href="v9_0/ccs/dwp-unconfirmed2/case-record">Pension not confirmed</a></p>
-               <p><a href="v9_0/ccs/dwp-unconfirmed2/start">NINO not matched (person creation)</a></p>
-               <p><a href="v9_0/ccs/dwp-unconfirmed2/start2">NINO not matched (entitlement creation)</a></p> -->
             </details>
             <hr>
             
             <!-- PREVIOUS VERSIONS -->
+            <details>
+               <summary>
+                  <span class="summary">DWP integration (agent) - Version 1</span>
+               </summary>
+               <!-- <p>Changes:</p> -->
+               <ul class="list list-bullet">
+                  <li>Added new screens to show customer's name, DOB and NINO verification and UK State Pension start date</li>
+                  <li>DWP confirmation that customer is in receipt of a UK State Pension and their pension start date when creating a Pensioner S1</li>
+               <li>DWP NINO matching</li>
+               </ul>
+               <ul class="list list-bullet">
+                  <li class="bold">Option 1</li>
+                  <ul class="list list-bullet">
+                     <li>Scenario 1 - Search for person record and issue S1 to pensioner <a href="/public/images/prototypes/dwp-integration/Opt_1_Scen_1.pdf">[PDF]</a></li>
+                     <li>Scenario 2 - From person record,  issue an S1 to someone without a confirmed State Pension <a href="/public/images/prototypes/dwp-integration/Opt_1_Scen_2.pdf">[PDF]</a></li>
+                     <li>Scenario 3 - NINO doesn't match when creating a person record <a href="/public/images/prototypes/dwp-integration/Opt_1_Scen_3.pdf">[PDF]</a></li>
+                     <li>Scenario 4 - NINO doesn't match when creating an entitlement <a href="/public/images/prototypes/dwp-integration/Opt_1_Scen_4.pdf">[PDF]</a></li>
+                  </ul>
+                  <!-- Separate DWP page -->
+                  <li class="bold">Option 2</li>
+                  <ul class="list list-bullet">
+                     <li>Scenario 5 - Search for person record and issue S1 to pensioner <a href="/public/images/prototypes/dwp-integration/Opt_2_Scen_5.pdf">[PDF]</a></li>
+                     <li>Scenario 6 - From person record,  issue an S1 to someone without a confirmed State Pension <a href="/public/images/prototypes/dwp-integration/Opt_2_Scen_6.pdf">[PDF]</a></li>
+                     <li>Scenario 7 - NINO doesn't match when creating a person record <a href="/public/images/prototypes/dwp-integration/Opt_2_Scen_7.pdf">[PDF]</a></li>
+                     <li>Scenario 8 - NINO doesn't match when creating an entitlement <a href="/public/images/prototypes/dwp-integration/Opt_2_Scen_8.pdf">[PDF]</a></li>
+                  </ul>
+               </ul>
+               <hr>
+            </details>
             <details>
                <summary>
                   <span class="summary">Get your S1 by email - Version 1</span>
