@@ -539,10 +539,10 @@ router.get(/use-resi-address/, function (req,res) {
   }
 });
 
-// CREATE PERSON FROM SEEARCH RESULTS, create-pension.html
+// CREATE PERSON FROM SEARCH RESULTS, create-person.html
 router.get(/gorilla/, function (req,res) {
   if(req.query.createPerson === "Yes") {
-    res.redirect('contact-address');
+    res.redirect('latency');
   } else if(req.query.createPerson === "No") {
     res.redirect('search'); 
   } else {
