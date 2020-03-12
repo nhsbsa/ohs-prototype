@@ -34,9 +34,28 @@ You are not entitled to healthcare paid for by the UK
    margin-left: auto;
    margin-right: auto;
    }
+
+   .tick {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   }
+
+   .verify-tick {
+    vertical-align: middle;
+    margin-right: .26316em;
+    padding: 0 0 3px 5px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /*background-image: url(../images/bullet-icon.svg);*/
+}
+
 </style>
 <head>
-	<meta http-equiv="refresh" content="3; latency-verified">
+	<meta http-equiv="refresh" content="2; contact-address">
 </head>
 <main id="content" role="main">
    <div class="grid-row">
@@ -53,8 +72,9 @@ You are not entitled to healthcare paid for by the UK
                <div class="heading-group">
                   <h1 class="heading-xlarge latency">Verifying customer details with DWP</h1>
                </div>
-               <p class="latency">This may take a moment...</p>
+               <p class="latency">Customer details verified <img class="verify-tick" src="/public/images/bsa/tick-green.svg"></p>
                <br>
+               <!-- <span class="form-hint-list-item__indicator"></span> -->
                <br>
                <img class="latencyImg" src="/public/images/spinner.gif">
             </div>
