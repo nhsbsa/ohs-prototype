@@ -285,7 +285,7 @@ router.get(/resident/, function (req,res){
 // end EHIC //
 
 
-// Posted Worker / S1 / e109 / DA1 //
+// Posted Worker / Exp Ben and SP S1 / e109 / DA1 / PRC //
 router.get(/postedWorker/, function (req,res) {
   if(req.query.radiosPW === "Posted worker") {
     res.redirect('working-country');
@@ -294,6 +294,8 @@ router.get(/postedWorker/, function (req,res) {
   } else if (req.query.radiosPW === "Dependant of UK worker") {
     res.redirect('contact-address-e109');
   } else if (req.query.radiosPW === "Occupational disease or injury") {
+    res.redirect('da1-country-res');
+  } else if (req.query.radiosPW === "Provisional Replacement Certificate (PRC)") {
     res.redirect('da1-country-res');
   } else {
     res.redirect('create-entitlement');
