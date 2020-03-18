@@ -296,7 +296,7 @@ router.get(/postedWorker/, function (req,res) {
   } else if (req.query.radiosPW === "Occupational disease or injury") {
     res.redirect('da1-country-res');
   } else if (req.query.radiosPW === "Provisional Replacement Certificate (PRC)") {
-    res.redirect('da1-country-res');
+    res.redirect('ehic-details');
   } else {
     res.redirect('create-entitlement');
   }

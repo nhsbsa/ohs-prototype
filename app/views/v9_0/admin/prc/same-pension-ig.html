@@ -1,13 +1,26 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What entitlement would you like to create?
+	Do you get paid a State Pension from France?
 {% endblock %}
 
 {% block content %}
-
 <style>
-	/* radio buttons (not-inline) */
+	/* radio buttons */
+	@media (min-width: 40.0625em) {
+		.govuk-radios--inline:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+	}
+	@media (min-width: 40.0625em) {
+		.govuk-radios--inline .govuk-radios__item {
+			margin-right: 20px;
+			float: left;
+			clear: none;
+		}
+	}
 	@media (min-width: 40.0625em) {
 		.govuk-radios__item {
 			font-size: 19px;
@@ -96,6 +109,23 @@
 		opacity: 0;
 		background: currentColor;
 	}
+	.govuk-radios__divider {
+		font-size: 19px;
+		font-size: 1.1875rem;
+		line-height: 1.31579;
+	}
+	.govuk-radios__divider {
+		font-family: Arial,sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 1.25;
+		color: #0b0c0c;
+		width: 40px;
+		margin-bottom: 10px;
+		text-align: center;
+	}
 	/* end radio buttons */
 
 	/* banner */
@@ -143,42 +173,24 @@
 			</div>
 			<div class="column-two-thirds">
 				<div class="heading-group">
-					<h1 class="heading-large">What entitlement would you like to create?</h1>
+					<h1 class="heading-large">Do you get paid a State Pension from France?</h1>
 				</div>
-				<form class="form" action="postedWorker" method="get">
+				<form action="same-pension-date-ig" id="same-pension-ig-form" method="get" class="form">
 					<div class="form-group">
-						<fieldset id="entitlement">
-							<div class="govuk-radios">
+						<fieldset id="state-pension" class="inline">
+							<div class="govuk-radios govuk-radios--inline">
 								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="where-do-you-live-2" name="radiosPW" type="radio" value="Posted worker">
-									<label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-										Posted worker
+									<input class="govuk-radios__input" id="yes" name="samePensionIg" type="radio" value="Yes">
+									<label class="govuk-label govuk-radios__label" for="yes">
+										Yes
 									</label>
 								</div>
 								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="where-do-you-live-3" name="radiosPW" type="radio" value="Exportable benefit including State Pension">
-									<label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
-										Exportable benefit including State Pension
+									<input class="govuk-radios__input" id="no" name="samePensionIg" type="radio" value="No">
+									<label class="govuk-label govuk-radios__label" for="no">
+										No
 									</label>
 								</div>
-								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="where-do-you-live-4" name="radiosPW" type="radio" value="Dependant of UK worker">
-									<label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
-										Dependant of UK worker
-									</label>
-								</div>
-								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="where-do-you-live-5" name="radiosPW" type="radio" value="Occupational disease or injury">
-									<label class="govuk-label govuk-radios__label" for="where-do-you-live-5">
-										Occupational disease or injury
-									</label>
-								</div>
-								<!-- <div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="where-do-you-live-6" name="radiosPW" type="radio" value="Provisional Replacement Certificate (PRC)">
-									<label class="govuk-label govuk-radios__label" for="where-do-you-live-6">
-										Provisional Replacement Certificate (PRC)
-									</label>
-								</div> -->
 							</div>
 						</fieldset>
 					</div>
