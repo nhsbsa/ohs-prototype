@@ -353,6 +353,8 @@ router.get(/diseaseCountry/, function (req,res) {
     res.redirect('check-your-answers-13');
   } else if (req.query.diseaseCountry === "Receive medical treatment") {
     res.redirect('check-your-answers-13');
+  } else if (req.query.diseaseCountry === "None of the above") {
+    res.redirect('check-your-answers-13');
   } else {
     res.redirect('da1-country-reason-2');
   }

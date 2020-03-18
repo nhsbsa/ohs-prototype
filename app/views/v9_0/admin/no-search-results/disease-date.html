@@ -54,12 +54,20 @@
 					<h1 class="heading-large">What was the date the occupational disease was diagnosed?</h1>
 				</div>
 
+				<p>This date must be:</p>
+				<ul class="list list-bullet">
+					<li>today's date or a date in the past</li>
+					<li>after the <span class="bold">issue</span> start date</li>
+				</ul>
+				<!-- <br> -->
+
 				<form action="check-your-answers-1" id="moving-date-form" method="get" class="form">
 					<div class="form-group">
 						<label class="form-label" for="ni-number">
 							<!-- Start date -->
 							<span class="form-hint">
-								This can be any date. For example, 18/09/2018
+								<!-- This can be any date.  -->
+								For example, 18/09/2018
 							</span>
 						</label>
 						<input class="form-control" id="ni-number" type="text" autocomplete="off" value="04/12/2018">
