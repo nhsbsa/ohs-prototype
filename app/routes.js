@@ -296,9 +296,20 @@ router.get(/postedWorker/, function (req,res) {
   } else if (req.query.radiosPW === "Occupational disease or injury") {
     res.redirect('da1-country-res');
   } else if (req.query.radiosPW === "Provisional Replacement Certificate (PRC)") {
-    res.redirect('ehic-details');
+    res.redirect('prc-type');
   } else {
     res.redirect('create-entitlement');
+  }
+});
+
+// PRC type, prc-type.html
+router.get(/prcType/, function (req,res) {
+  if(req.query.radiosET === "For me") {
+    res.redirect('ehic-details');
+  } else if (req.query.radiosET === "For a dependant") {
+    res.redirect('prc-type');
+  } else {
+    res.redirect('prc-type');
   }
 });
 
@@ -315,8 +326,6 @@ router.get(/newPerson/, function (req,res) {
     res.redirect('res-address');
   }
 });
-
-
 
 
 // DA1 employment status//
@@ -374,7 +383,6 @@ router.get(/injuryCountry/, function (req,res) {
 
 
 // EU exception //
-
 router.get(/euException/, function (req,res) {
   if(req.query.radiosPW === "Posted worker") {
     res.redirect('working-country');
@@ -414,8 +422,6 @@ router.get(/v2EuException/, function (req,res) {
   }
 });
 
-// EU Version 2 - Bilateral Agreement - Main or Dependant?
-
 
 // EU Version 2 - Bilateral Agreement - Main or Dependant?
 router.get(/mainOrDependant/, function (req,res) {
@@ -440,8 +446,6 @@ router.get(/emailOptions/, function (req,res) {
 });
 
 // end EU exception 
-
-
 
 
 // dependant journey - register an entitlement
