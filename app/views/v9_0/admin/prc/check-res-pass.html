@@ -49,9 +49,12 @@ Check these details are correct before proceeding
          </h1>
          <form action="contact-address" id="check-person-details-form" method="get" class="form">
             <!-- <div>PASS</div> -->
-            <div class="panel panel-border-wide" style="color: #00823b;">
-                     <p class="bold">PASS</p>
-                  </div>
+            <div class="panel panel-border-wide" style="color: #00823b; border-color: #00823b">
+               <p class="bold">PASS</p>
+            </div>
+            <!-- <div class="panel panel-border-wide" style="color: #D4351F; border-color: #D4351F">
+               <p class="bold">FAIL</p>
+            </div> -->
             <h2 class="heading-medium">Personal details</h2>
             <dl class="govuk-check-your-answers cya-questions-short">
                <div>
@@ -108,7 +111,8 @@ Check these details are correct before proceeding
                   <div>
                      <dt class="cya-question" style="width: auto">Evidence that applicant lives in the UK</dt>
 
-                     <dd><span class="status-tag-low font-xsmall" style="padding-left:25px; padding-right:25px;">STRONG</span></dd>
+                     <!-- <dd><span class="status-tag-low font-xsmall" style="padding-left:25px; padding-right:25px;">STRONG</span></dd> -->
+                     <dd class="cya-answer"> Strong</dd>
 
 
                      <!-- <dd class="cya-answer">Strong</dd> -->
@@ -122,8 +126,8 @@ Check these details are correct before proceeding
                      <dt class="cya-question" style="width: auto">	
                         Evidence that applicant lives outside the UK	
                      </dt>
-                     <dd><span class="status-tag-medium font-xsmall" style="padding-left:25px; padding-right:25px;">SOME</span></dd>
-                     <!-- <dd class="cya-answer">	Some</dd> -->
+                     <!-- <dd><span class="status-tag-medium font-xsmall" style="padding-left:25px; padding-right:25px;">SOME</span></dd> -->
+                     <dd class="cya-answer">	Some</dd>
                      <!-- <dd class="cya-change"> -->
                      <!-- <p class="navigation">
                         <a class="cancel" href="search-dependant#first-name" data-toggle="dialog" data-target="dialog-4">Change<span class="visually-hidden"> full name</span></a>
