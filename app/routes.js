@@ -307,7 +307,7 @@ router.get(/prcType/, function (req,res) {
   if(req.query.radiosET === "For me") {
     res.redirect('ehic-details');
   } else if (req.query.radiosET === "For a dependant") {
-    res.redirect('prc-type');
+    res.redirect('check-your-answers-prc2');
   } else {
     res.redirect('prc-type');
   }
