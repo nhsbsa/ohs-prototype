@@ -313,6 +313,19 @@ router.get(/prcType/, function (req,res) {
   }
 });
 
+// PRC review result, review-result-prc.html
+router.get(/reviewResult/, function (req,res) {
+  if(req.query.radiosResult === "Approved with evidence") {
+    res.redirect('case-record-30');
+  } else if (req.query.radiosResult === "Approved but no evidence provided") {
+    res.redirect('case-record-30');
+  } else if (req.query.radiosResult === "Not approved") {
+    res.redirect('case-record-26');
+  } else {
+    res.redirect('review-result-prc');
+  }
+});
+
 router.get(/newPerson/, function (req,res) {
   if(req.query.radiosPW === "hardcoded") {
     res.redirect('');

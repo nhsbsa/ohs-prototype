@@ -105,12 +105,10 @@ Overseas Healthcare Prototype
    padding: 0;
    }
 </style>
-
 <!--
    Button
    <a href="v9_0/admin/ut/windows-login"><input class="button" type="submit" value="Open"></a> 
--->
-
+   -->
 <main id="content" role="main">
    <div class="grid-row">
       <div class="column-full">
@@ -134,6 +132,7 @@ Overseas Healthcare Prototype
                </summary>
                <ul class="list list-bullet">
                   <li>1. Main requests PRC and fails residency check <a href="v9_0/ccs/prc-fail/windows-login">(link)</a></li>
+                  <li>2. Main requests PRC for a dependant under 17 <a href="v9_0/ccs/prc-fail/windows-login">(link)</a></li>
                </ul>
             </details>
             <hr>
@@ -143,9 +142,6 @@ Overseas Healthcare Prototype
             <ul class="list list-bullet">
                <!-- <li></li> -->
             </ul>
-
-           <!--  <a href="v9_0/admin/prc/windows-login"><input class="button" style="margin-bottom: 30px;" type="submit" value="Version 1"></a>  -->
-
             <details open>
                <summary>
                   <span class="summary">Version 1</span>
@@ -154,60 +150,51 @@ Overseas Healthcare Prototype
                   <li>1. Main requests PRC <a href="v9_0/admin/prc-pass/windows-login">(link)</a></li>
                   <li>2. Main requests PRC for dependant under 17 <a href="v9_0/admin/prc-pass/windows-login">(link)</a></li>
                   <li>3. Main requests PRC for main and dependant under 17 <a href="v9_0/admin/prc-pass/windows-login">(link)</a></li>
-                  <li>4. Main requests PRC and fails residency check 
-                     <!-- <a href="v9_0/ccs/prc-fail/windows-login">(link)</a> -->
-                     <span class="strong">(TO DO)</span>
-                  </li>
+                  <li>4. Main requests PRC and fails residency check <a href="v9_0/admin/prc-fail/windows-login">(link)</a></li>
+                  <li>5. Admin approves failed residency check PRC <a href="v9_0/admin/prc-fail2/windows-login">(link)</a></li>
                </ul>
             </details>
-
-            <!-- <h3><span class="strong">Scenarios</span></h3>
-            <ul class="list list-bullet">
-                  <li>Main requests PRC</li>
-               </ul> -->
             <hr>
-
-<details>
+            <details>
                <summary>
                   <span class="summary">DWP integration (agent) - Version 2</span>
                </summary>
-            <h3><span class="strong">DWP integration (agent) - Version 2</span></h3>
-            <!-- <p>Changes:</p> -->
-            <ul class="list list-bullet">
-               <li>Improve search and person creation</li>
-               <li>Added loading (latency) page to demonstrate DWP API call</li>
-               <li>Added content to kickout pages (cases to be referred to Reg)</li>
-               <!-- <li>Added 'relevant authority' contact details to kickout pages (actual content TBD)</li> -->
-               <li>Deceased scenario</li>
-            </ul>
-             <!-- <details>
-               <summary>
-                  <span class="summary">Option 1</span>
-               </summary>
+               <h3><span class="strong">DWP integration (agent) - Version 2</span></h3>
+               <!-- <p>Changes:</p> -->
                <ul class="list list-bullet">
-                  <li>Scenario 1 - Search for person record and issue S1 to pensioner <a href="v9_0/ccs/dwp/start">(link)</a></li>
-                  <li>Scenario 2 - From person record,  issue an S1 to someone without a confirmed State Pension <a href="v9_0/ccs/dwp-unconfirmed/case-record">(link)</a></li>
-                  <li>Scenario 3 - NINO doesn't match when creating a person record <a href="v9_0/ccs/dwp-unconfirmed/start">(link)</a></li>
-                  <li>Scenario 4 - NINO doesn't match when creating an entitlement <a href="v9_0/ccs/dwp-unconfirmed/start2"> (link)</a></li>
+                  <li>Improve search and person creation</li>
+                  <li>Added loading (latency) page to demonstrate DWP API call</li>
+                  <li>Added content to kickout pages (cases to be referred to Reg)</li>
+                  <!-- <li>Added 'relevant authority' contact details to kickout pages (actual content TBD)</li> -->
+                  <li>Deceased scenario</li>
                </ul>
-            </details> -->
-            <details>
-               <summary>
-                  <span class="summary">Version 2</span>
-               </summary>
-               <ul class="list list-bullet">
-                  <li>1. No OHS record, DWP match, has a UK State Pension <a href="v9_0/ccs/dwp2/start">(link)</a></li>
-                  <li>2. OHS record created, UK State Pension unconfirmed <a href="v9_0/ccs/dwp-unconfirmed2/case-record">(link)</a></li>
-                  <li>3. OHS record created, UK State Pension start date not within 28 days <a href="v9_0/ccs/dwp-unconfirmed2/case-record-4">(link)</a></li>
-                  <li>4. DWP no match, no OHS record <a href="v9_0/ccs/dwp-unconfirmed2/start">(link)</a></li>
-                  <li>5. DWP match - deceased <a href="v9_0/ccs/dwp-dod/start">(link)</a></li>
-                  <!-- <li>6. DWP match - deceased, OHS record <span class="bold">TO DO </span><a href="">(link)</a></li> -->
-                  <!-- <li>Scenario 5 - NINO doesn't match when creating an entitlement <a href="v9_0/ccs/dwp-unconfirmed2/start2"> (link)</a></li> -->
-                  <!-- NINO not mandatory for person creation, esp. dependants  -->
-               </ul>
-            </details>
-
-            <hr>
+               <!-- <details>
+                  <summary>
+                     <span class="summary">Option 1</span>
+                  </summary>
+                  <ul class="list list-bullet">
+                     <li>Scenario 1 - Search for person record and issue S1 to pensioner <a href="v9_0/ccs/dwp/start">(link)</a></li>
+                     <li>Scenario 2 - From person record,  issue an S1 to someone without a confirmed State Pension <a href="v9_0/ccs/dwp-unconfirmed/case-record">(link)</a></li>
+                     <li>Scenario 3 - NINO doesn't match when creating a person record <a href="v9_0/ccs/dwp-unconfirmed/start">(link)</a></li>
+                     <li>Scenario 4 - NINO doesn't match when creating an entitlement <a href="v9_0/ccs/dwp-unconfirmed/start2"> (link)</a></li>
+                  </ul>
+                  </details> -->
+               <details>
+                  <summary>
+                     <span class="summary">Version 2</span>
+                  </summary>
+                  <ul class="list list-bullet">
+                     <li>1. No OHS record, DWP match, has a UK State Pension <a href="v9_0/ccs/dwp2/start">(link)</a></li>
+                     <li>2. OHS record created, UK State Pension unconfirmed <a href="v9_0/ccs/dwp-unconfirmed2/case-record">(link)</a></li>
+                     <li>3. OHS record created, UK State Pension start date not within 28 days <a href="v9_0/ccs/dwp-unconfirmed2/case-record-4">(link)</a></li>
+                     <li>4. DWP no match, no OHS record <a href="v9_0/ccs/dwp-unconfirmed2/start">(link)</a></li>
+                     <li>5. DWP match - deceased <a href="v9_0/ccs/dwp-dod/start">(link)</a></li>
+                     <!-- <li>6. DWP match - deceased, OHS record <span class="bold">TO DO </span><a href="">(link)</a></li> -->
+                     <!-- <li>Scenario 5 - NINO doesn't match when creating an entitlement <a href="v9_0/ccs/dwp-unconfirmed2/start2"> (link)</a></li> -->
+                     <!-- NINO not mandatory for person creation, esp. dependants  -->
+                  </ul>
+               </details>
+               <hr>
             </details>
             <!-- ----------------- -->
             <!-- PREVIOUS VERSIONS -->
@@ -220,7 +207,7 @@ Overseas Healthcare Prototype
                <ul class="list list-bullet">
                   <li>Added new screens to show customer's name, DOB and NINO verification and UK State Pension start date</li>
                   <li>DWP confirmation that customer is in receipt of a UK State Pension and their pension start date when creating a Pensioner S1</li>
-               <li>DWP NINO matching</li>
+                  <li>DWP NINO matching</li>
                </ul>
                <ul class="list list-bullet">
                   <li class="bold">Option 1</li>

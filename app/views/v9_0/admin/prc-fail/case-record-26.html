@@ -140,6 +140,18 @@
 		position: relative;
 		top: -0.05em;
 	}
+
+	span.status-tag-requested {
+		background-color: #70777b;
+		color: #ffffff;
+		vertical-align: baseline;
+		padding: 2px 9px 1px;
+		font-weight: 700;
+		font-size: 14px;
+		display: inline-block;
+		position: relative;
+		top: -0.05em;
+	}
 	#myDIV, #myDIV2, #myDIV3, #myDIV4 {
 		background: #F8F8F8;
 	}
@@ -260,7 +272,7 @@
 									<td>19/03/2020</td>
 									<td>Main</td>
 									<td>France</td> 
-									<td><span class="status-tag-medium font-xsmall" style="padding-left:25px; padding-right:25px;">ISSUED</span></td>
+									<td><span class="status-tag-requested font-xsmall" style="padding-left:25px; padding-right:25px;">REQUESTED</span></td>
 									<td nowrap=""><details onclick="myFunction2()"><summary><span class="summary">More info</span></summary></details></td>
 								</tr>
 							</tbody>
@@ -373,7 +385,7 @@
 										<td>Type [ S1 Pension ] Country [ France ] Status [ Issued ]</td>
 										{% endif %}
 										{% if data.expbenefits !== "State Pension" %}
-										<td>Type [ PRC {{data.expbenefits}} ] Country [ France ] Status [ Issued ]</td>
+										<td>Type [ PRC {{data.expbenefits}} ] Country [ France ] Status [ Requested ]</td>
 										{% endif %}
 
 										<td>Entitlement Created</td>
