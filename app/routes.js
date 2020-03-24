@@ -316,11 +316,11 @@ router.get(/prcType/, function (req,res) {
 // PRC review result, review-result-prc.html
 router.get(/reviewResult/, function (req,res) {
   if(req.query.radiosResult === "Approved with evidence") {
-    res.redirect('case-record-30');
+    res.redirect('done-prc-approved');
   } else if (req.query.radiosResult === "Approved but no evidence provided") {
-    res.redirect('case-record-30');
+    res.redirect('done-prc-approved');
   } else if (req.query.radiosResult === "Not approved") {
-    res.redirect('case-record-26');
+    res.redirect('case-record-31');
   } else {
     res.redirect('review-result-prc');
   }
