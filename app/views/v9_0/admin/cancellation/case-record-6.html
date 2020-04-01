@@ -176,6 +176,11 @@ Person record
                <p class="heading-small">Case history</p>
             </div>
          </a>
+         <a class="tablinks" onclick="openTab(event, 'casenotes')" href="#">
+            <div>
+               <p class="heading-small">Case notes</p>
+            </div>
+         </a>
          <div class="tab-box">
             <div id="personal" class="tabcontent">
                <div class="grid-row">
@@ -271,33 +276,33 @@ Person record
                </table>
                <!-- <div id="myDIV2" style="display:none;">
                   <table>
-                  	<tbody>
-                  		<tr>
-                  			<td colspan="8">
-                  				<div class="panel panel-border-wide s1infoExpanded">
-                  					<div class="main-container form-group">
-                  						<div class="major-container">
-                  							<table id="entitlementDetails" class="check-table">
-                  								<h1 class="heading-medium">Additional entitlement details</h1>
-                  								<caption class="visually-hidden">A table displaying the entitlement details</caption>
-                  								<tbody>
-                  									<tr class="row">
-                  										<td class="column">Issued date</td>
-                  										<td class="column">04/12/2018</td>
-                  									</tr>
-                  									<tr class="row">
-                  										<td class="column">Citizen status</td>
-                  										<td class="column">Insured person</td>
-                  									</tr>
-                  								</tbody>
-                  							</table>
-                  						</div>
-                  						<div class="minor-container"></div>
-                  					</div>
-                  				</div>
-                  			</td>
-                  		</tr>
-                  	</tbody>
+                     <tbody>
+                        <tr>
+                           <td colspan="8">
+                              <div class="panel panel-border-wide s1infoExpanded">
+                                 <div class="main-container form-group">
+                                    <div class="major-container">
+                                       <table id="entitlementDetails" class="check-table">
+                                          <h1 class="heading-medium">Additional entitlement details</h1>
+                                          <caption class="visually-hidden">A table displaying the entitlement details</caption>
+                                          <tbody>
+                                             <tr class="row">
+                                                <td class="column">Issued date</td>
+                                                <td class="column">04/12/2018</td>
+                                             </tr>
+                                             <tr class="row">
+                                                <td class="column">Citizen status</td>
+                                                <td class="column">Insured person</td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </div>
+                                    <div class="minor-container"></div>
+                                 </div>
+                              </div>
+                           </td>
+                        </tr>
+                     </tbody>
                   </table>
                   </div> -->
                <div id="myDIV2" style="display:none;">
@@ -445,6 +450,109 @@ Person record
                      <a class="button button-secondary" href="search">Exit record</a>
                   </div>
                </div>
+               <div id="casenotes" class="tabcontent">
+                  <table id="mainTable">
+                     <thead>
+                        <tr>
+                           <th style="width:15%">Date and Time</th>
+                           <th style="width:10%">Source</th>
+                           <th style="width:10%">Channel</th>
+                           <th style="width:10%">Reason</th>
+                           <th style="width:45%">Description</th>
+                           <th style="width:20%">Added by</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>18/06/2019 10:21</td>
+                           <td>Customer</td>
+                           <td>Phone</td>
+                           <td>Other</td>
+                           <td>This customer was very abusive.</td>
+                           <td>James Philip</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <br>
+                  <div class="form-group" style="margin-top:30px">
+                     <a class="button" href="#" data-toggle="dialog" data-target="dialog-4">Add note</a>
+                     <a class="button button-secondary" href="search">Exit record</a>
+                  </div>
+                  <form action="abc-2" method="get" class="form">
+                     <!-- modal starts here  -->
+                     <div class="dialog" id="dialog-4" aria-hidden="true">
+                        <div class="dialog-holder" aria-labelledby="dialog-title-4" aria-describedby="dialog-content-4" role="alertdialog">
+                           <div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
+                              <header class="page-header">
+                                 <h2 class="page-header--lede heading-medium" style="margin-top: -1em;">Add note</h2>
+                              </header>
+                              <div class="grid-row">
+                                 <div class="column-third">
+                                    <div class="form-group" style="margin-bottom:10px;">
+                                       <label class="form-label" for="select-box">Source</label>
+                                       <select class="form-control" id="select-box">
+                                          <option>Customer</option>
+                                          <option>BSA</option>
+                                          <option>Complaints team</option>
+                                          <option>Dependant</option>
+                                          <option>Third party</option>
+                                          <option>Other country</option>
+                                          <option>Government org</option>
+                                          <option>Other</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="column-third">
+                                    <div class="form-group" style="margin-bottom:10px;">
+                                       <label class="form-label" for="select-box">Channel</label>
+                                       <select class="form-control" id="select-box">
+                                          <option>Phone</option>
+                                          <option>BSA</option>
+                                          <option>Email</option>
+                                          <option>Letter</option>
+                                          <option>In person</option>
+                                          <option>Other</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="column-third">
+                                    <div class="form-group">
+                                       <label class="form-label" for="select-box">Reason</label>
+                                       <select class="form-control" id="select-box">
+                                          <option>Correction</option>
+                                          <option>More information</option>
+                                          <option>Checking status</option>
+                                          <option>Customer given answers</option>
+                                          <option>Letter generated</option>
+                                          <option>Email sent</option>
+                                          <option>Other</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="grid-row">
+                                    <div class="column-full" style="margin:0 15px 0 15px;">
+                                       <div class="form-group">
+                                          <label class="form-label" for="textarea-a">
+                                          Note
+                                          </label>
+                                          <textarea class="form-control" id="textarea-a" cols="30" rows="10" style="width:94%"></textarea>
+                                       </div>
+                                       <div class="dialog-actions" style="display: inline;">
+                                          <input id="submit-btn" class="button buttonSubmit" type="submit" name="updateEntitlement" value="Submit" style="font-size: 19px;" />
+                                          <a class="dialog-cancel" href="#" style="font-size: 1em;">Cancel</a>
+                                       </div>
+                                       <button class="dialog-close" aria-label="close" type="button">
+                                       <span class="icon icon-close">x</span>
+                                       </button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- modal ends here  -->
+                  </form>
+               </div>
             </div>
          </div>
       </div>
@@ -453,20 +561,20 @@ Person record
 <script src="/public/javascripts/jquery-1.11.3.js"></script>
 <script>
    function openTab(evt, tabName) {
-   	var i, tabcontent, tablinks;
+      var i, tabcontent, tablinks;
    
-   	tabcontent = document.getElementsByClassName("tabcontentActive");
-   	for (i = 0; i < tabcontent.length; i++) {
-   		tabcontent[i].className = "tabcontent";
-   	}
+      tabcontent = document.getElementsByClassName("tabcontentActive");
+      for (i = 0; i < tabcontent.length; i++) {
+         tabcontent[i].className = "tabcontent";
+      }
    
-   	tablinks = document.getElementsByClassName("tablinks");
-   	for (i = 0; i < tablinks.length; i++) {
-   		tablinks[i].className = tablinks[i].className.replace(" active", "");
-   	}
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+         tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
    
-   	document.getElementById(tabName).className = "tabcontentActive";
-   	evt.currentTarget.className += " active";
+      document.getElementById(tabName).className = "tabcontentActive";
+      evt.currentTarget.className += " active";
    }
 </script>
 {% endblock %}
