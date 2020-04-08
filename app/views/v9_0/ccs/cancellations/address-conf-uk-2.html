@@ -1,0 +1,73 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+	Confirmation of return to UK
+{% endblock %}
+
+{% block content %}
+<style>
+	/* banner */
+	.banner-information-without-action {
+		color: #005ea5;
+	}
+	.banner-message {
+		font-family: Arial, sans-serif;
+		font-weight: 400;
+		text-transform: none;
+		font-size: 36px;
+		line-height: 1.2;
+		padding: 20px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		border-width: 5px;
+		border-style: solid;
+		font-weight: bold;
+		text-align: center;
+	}
+	.vertical-bar {
+		margin: 0px 10px;
+	}
+	/* end banner */
+</style>
+
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-full">
+			<div id="back">
+				<a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="grid-row">
+			<div class="column-full">
+				<div class="banner-information-without-action">
+					<p class="banner-message">
+						<span class="name text-capitalize">Michael Philip</span>
+						<span class="vertical-bar">|</span>
+						<span class="ohs-reference-number">25000002</span>
+					</p>
+				</div>
+			</div>
+			<div class="column-two-thirds">
+				<form method="get" action="search" class="form">
+					<div class="form-group">
+						<h1 class="heading-large">
+							Confirmation of return to UK
+						</h1>
+					</div>
+					<div class="form-group">
+						<p>Your active S1 entitlement for France will be cancelled and you will no longer be entitled to free healthcare treatment in France. </p>
+                        <p>You will have to apply for a new S1 if you travel back to France or any other EU/EEA country.</p>
+                        <p>Email sent to the registrations team at <a href="#">nhsbsaregistrations@nhsbsacancellation.com</a></p>
+					</div>
+					<div class="form-group">
+						<a class="button" href="case-record-19">Submit</a>
+						<a class="button button-secondary" href="case-record-16">Cancel</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock %}
