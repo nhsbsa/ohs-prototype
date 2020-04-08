@@ -225,7 +225,7 @@
 										</dd>
 										<dd class="cya-change">
 											<p class="navigation">
-												<a class="cancel" href="change-address-1" data-toggle="dialog" data-target="dialog-4">Change<span class="visually-hidden"> full name</span></a>
+												<a class="cancel" href="change-address-1">Change</a>
 											</p>
 										</dd>
 									</div>
@@ -240,7 +240,7 @@
 										</dd>
 										<dd class="cya-change">
 											<p class="navigation">
-												<a class="cancel" href="change-address-1" data-toggle="dialog" data-target="dialog-4">Change<span class="visually-hidden"> full name</span></a>
+												<a class="cancel" href="change-address-1">Change</a>
 											</p>
 										</dd>
 									</div>
@@ -260,9 +260,9 @@
 									</div>
 								</dl>
 								<br>
-								<div class="form-group" style="margin-top:30px">
+								<!-- <div class="form-group" style="margin-top:30px">
 		                           <a class="button button-secondary" href="view-contributions">View pension contribution</a>
-		                        </div>
+		                        </div> -->
 								<div class="form-group" style="margin-top:30px">
 									<a class="button button-secondary" href="search">Exit record</a>
 								</div>
@@ -333,7 +333,7 @@
 															</tbody>
 														</table>
 
-														<table id="entitlementDetails" class="check-table">
+														<!-- <table id="entitlementDetails" class="check-table">
 															<h1 class="heading-medium">Benefit information</h1>
 															<caption class="visually-hidden">A table displaying the entitlement details</caption>
 															<tbody>
@@ -345,13 +345,10 @@
 				                                                   <td class="column">Benefit start date</td>
 				                                                   <td class="column">11/11/2018</td>
 				                                                </tr>
-				                                                <!-- <tr class="row">
-				                                                   <td class="column">Benefit end date</td>
-				                                                   <td class="column"></td>
-				                                                </tr> -->
-														</tbody>
+				                                                
+														</tbody> -->
 														<table id="entitlementDetails" class="check-table">
-															<h1 class="heading-medium">Benefit information</h1>
+															<h1 class="heading-medium">Registration details</h1>
 															<caption class="visually-hidden">A table displaying the entitlement details</caption>
 															<tbody>
 																<tr class="row">
@@ -471,6 +468,109 @@
 							<a class="button button-secondary" href="search">Exit record</a>
 						</div>
 					</div>
+					<div id="casenotes" class="tabcontent">
+                  <table id="mainTable">
+                     <thead>
+                        <tr>
+                           <th style="width:15%">Date and Time</th>
+                           <th style="width:10%">Source</th>
+                           <th style="width:10%">Channel</th>
+                           <th style="width:10%">Reason</th>
+                           <th style="width:45%">Description</th>
+                           <th style="width:20%">Added by</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <!-- <tr>
+                           <td>06:04/2020 08:30</td>
+                           <td>Customer</td>
+                           <td>Phone</td>
+                           <td>Returned to UK</td>
+                           <td>S1 to be cancelled. Email sent to registrations@nhsbsacancellation.com with details to take action</td>
+                           <td>James Philip</td>
+                        </tr> -->
+                     </tbody>
+                  </table>
+                  <br>
+                  <div class="form-group" style="margin-top:30px">
+                     <a class="button" href="#" data-toggle="dialog" data-target="dialog-4">Add note</a>
+                     <a class="button button-secondary" href="search">Exit record</a>
+                  </div>
+                  <form action="abc-2" method="get" class="form">
+                     <!-- modal starts here  -->
+                     <div class="dialog" id="dialog-4" aria-hidden="true">
+                        <div class="dialog-holder" aria-labelledby="dialog-title-4" aria-describedby="dialog-content-4" role="alertdialog">
+                           <div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
+                              <header class="page-header">
+                                 <h2 class="page-header--lede heading-medium" style="margin-top: -1em;">Add note</h2>
+                              </header>
+                              <div class="grid-row">
+                                 <div class="column-third">
+                                    <div class="form-group" style="margin-bottom:10px;">
+                                       <label class="form-label" for="select-box">Source</label>
+                                       <select class="form-control" id="select-box">
+                                          <option>Customer</option>
+                                          <option>BSA</option>
+                                          <option>Complaints team</option>
+                                          <option>Dependant</option>
+                                          <option>Third party</option>
+                                          <option>Other country</option>
+                                          <option>Government org</option>
+                                          <option>Other</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="column-third">
+                                    <div class="form-group" style="margin-bottom:10px;">
+                                       <label class="form-label" for="select-box">Channel</label>
+                                       <select class="form-control" id="select-box">
+                                          <option>Phone</option>
+                                          <option>BSA</option>
+                                          <option>Email</option>
+                                          <option>Letter</option>
+                                          <option>In person</option>
+                                          <option>Other</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="column-third">
+                                    <div class="form-group">
+                                       <label class="form-label" for="select-box">Reason</label>
+                                       <select class="form-control" id="select-box">
+                                          <option>Correction</option>
+                                          <option>More information</option>
+                                          <option>Checking status</option>
+                                          <option>Customer given answers</option>
+                                          <option>Letter generated</option>
+                                          <option>Email sent</option>
+                                          <option>Other</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="grid-row">
+                                    <div class="column-full" style="margin:0 15px 0 15px;">
+                                       <div class="form-group">
+                                          <label class="form-label" for="textarea-a">
+                                          Note
+                                          </label>
+                                          <textarea class="form-control" id="textarea-a" cols="30" rows="10" style="width:94%"></textarea>
+                                       </div>
+                                       <div class="dialog-actions" style="display: inline;">
+                                          <input id="submit-btn" class="button buttonSubmit" type="submit" name="updateEntitlement" value="Submit" style="font-size: 19px;" />
+                                          <a class="dialog-cancel" href="#" style="font-size: 1em;">Cancel</a>
+                                       </div>
+                                       <button class="dialog-close" aria-label="close" type="button">
+                                       <span class="icon icon-close">x</span>
+                                       </button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- modal ends here  -->
+                  </form>
+               </div>
 				</div>
 			</div>
 		</div>

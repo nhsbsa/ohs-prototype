@@ -175,7 +175,7 @@
                 <div class="heading-group">
                     <h1 class="heading-large">What is the reason for cancellation?</h1>
                 </div>
-                <form class="form" action="cancel-date2" method="get">
+                <form class="form" action="cancel-reasons" method="get">
                     <div class="form-group">
                         <fieldset id="cancel-reasons">
                             <div class="govuk-radios">
@@ -251,10 +251,17 @@
                                 </div>
                                 {% endif %} -->
                                 
+                                <!-- Issued in error -->
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="where-do-you-live-6" name="cancelR" type="radio" value="Created in error">
+                                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-6">
+                                        Created in error
+                                    </label>
+                                </div>
                                 <!-- Other -->
                                 <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="where-do-you-live-6" name="cancelR" type="radio" value="Other">
-                                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-6">
+                                    <input class="govuk-radios__input" id="where-do-you-live-7" name="cancelR" type="radio" value="Other">
+                                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-7">
                                         Other
                                     </label>
                                 </div>
