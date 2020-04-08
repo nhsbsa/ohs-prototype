@@ -162,23 +162,23 @@ router.get(/cancel-source/, function (req,res){
 // S1 Cancellations - April 2020 //
 router.get(/cancel-reasons/, function (req,res){
   if(req.query.cancelR === "Returned to UK"){
-    res.redirect('cancel-date');
+    res.redirect('cancel-date2');
   } else if(req.query.cancelR === "Dependant entitled to S1 in own right") {
-    res.redirect('cancel-date');
+    res.redirect('cancel-date2');
   } else if(req.query.cancelR === "Moved to another EU/EEA country") {
-    res.redirect('cancel-date');
+    res.redirect('cancel-date2');
   } else if(req.query.cancelR === "Moved to different country") {
-    res.redirect('cancel-date');
+    res.redirect('cancel-date2');
   } else if(req.query.cancelR === "Died") {
-    res.redirect('cancel-date');
+    res.redirect('cancel-date2');
   } else if(req.query.cancelR === "Old forms cancelled to issue new S1") {
-    res.redirect('cancel-date');
+    res.redirect('cancel-date2');
   } else if(req.query.cancelR === "Created in error") {
     res.redirect('case-record-27');
   } else if(req.query.cancelR === "Other") {
-    res.redirect('cancel-date');
+    res.redirect('cancel-date2');
   } else {
-    res.redirect('cancel-reason-new');
+    res.redirect('cancel-reason-new2');
   }
 });
 
