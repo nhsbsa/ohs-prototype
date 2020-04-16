@@ -174,7 +174,7 @@ router.get(/cancel-reasons/, function (req,res){
   } else if(req.query.cancelR === "Old forms cancelled to issue new S1") {
     res.redirect('cancel-date2');
   } else if(req.query.cancelR === "Created in error") {
-    res.redirect('case-record-27');
+    res.redirect('cancel-date2');
   } else if(req.query.cancelR === "Other") {
     res.redirect('cancel-date2');
   } else {
