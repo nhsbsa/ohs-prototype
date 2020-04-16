@@ -352,17 +352,29 @@ Person record
                                           <caption class="visually-hidden">A table displaying the entitlement details</caption>
                                           <tbody>
                                              <tr class="row">
-                                                <td class="column">Reference number</td>
-                                                <td class="column">213321</td>
-                                             </tr>
-                                             <tr class="row">
-                                                <td class="column">Citizen status</td>
-                                                <td class="column">Insured person</td>
-                                             </tr>
-                                             <tr class="row">
-                                                <td class="column">Issued date</td>
-                                                <td class="column">01/12/2018</td>
-                                             </tr>
+                                                   <td class="column">Reference number</td>
+                                                   <td class="column">213321</td>
+                                                </tr>
+                                                <tr class="row">
+                                                   <td class="column">Source</td>
+                                                   <td class="column">Customer</td>
+                                                </tr>
+                                                <tr class="row">
+                                                   <td class="column">Moving date</td>
+                                                   <td class="column">04/12/2018</td>
+                                                </tr>
+                                                <tr class="row">
+                                                   <td class="column">UK State Pension start date</td>
+                                                   <td class="column">04/12/2018</td>
+                                                </tr>
+                                                <tr class="row">
+                                                   <td class="column">Issued date</td>
+                                                   <td class="column">04/12/2018</td>
+                                                </tr>
+                                                <tr class="row">
+                                                   <td class="column">Citizen status</td>
+                                                   <td class="column">Pensioner</td>
+                                                </tr>
                                           </tbody>
                                        </table>
                                     </div>
@@ -371,6 +383,49 @@ Person record
                                          <div><a class="link button button-secondary entitlements" href="cancel-date-mvp-1">Cancel entitlement</a></div>
                                        </div> -->
                                  </div>
+
+                                 <div id="moreInfo" class="column-full">
+                                       <details>
+                                          <summary>
+                                             <span class="summary">View dependants</span>
+                                          </summary>
+                                          <table>
+                                             <thead>
+                                                <tr>
+                                                   <th scope="col" nowrap="">Full name</th>
+                                                   <th scope="col" nowrap="">Issued Date</th>
+                                                   <th scope="col" nowrap="">Start date</th>
+                                                   <th scope="col" nowrap="">End date</th>
+                                                   <th scope="col" nowrap="">Country</th>
+                                                   <th scope="col" nowrap="">Status</th>
+                                                   <th scope="col"></th>
+                                                </tr>
+                                             </thead>
+                                             <tbody>
+                                                <tr>
+                                                   <td>Rosie Philip</td>
+                                                   <td>04/12/2018</td>
+                                                   <td>04/12/2018</td>
+                                                   <td>-</td>
+                                                   <td>France</td>
+                                                   <td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px">CANCELLED</span></td>
+                                                   <td><a href="#">View record</a></td>
+                                                </tr>
+                                                <tr>
+                                                   <td>Sarah Philip</td>
+                                                   <td>04/12/2018</td>
+                                                   <td>04/12/2018</td>
+                                                   <td>-</td>
+                                                   <td>France</td>
+                                                   <td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px">CANCELLED</span></td>
+                                                   <td><a href="#">View record</a></td>
+                                                </tr>
+                                             </tbody>
+                                          </table>
+                                       </details>
+                                    </div>
+                                 </div>
+                                 
                                  <!-- <div class="main-container form-group">
                                     <div class="major-container">
                                        <table id="entitlementDetails" class="check-table">
