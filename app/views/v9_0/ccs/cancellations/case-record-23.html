@@ -235,13 +235,13 @@ Person record
                               </dd>
                               <dd class="cya-change">
                                  <p class="navigation">
-                                    <!-- <a class="cancel" href="change-address-1">Change</a> -->
+                                    <!-- <a class="cancel" href="change-address-4">Change</a> -->
                                  </p>
                               </dd>
                            </div>
                         </dl>
                         <p class="navigation">
-                           <a class="cancel" href="change-address-1">Change</a>
+                           <a class="cancel" href="change-address-4">Change</a>
                         </p>
                         <dl class="govuk-check-your-answers cya-questions-long">
                            <br>
@@ -292,7 +292,7 @@ Person record
                            <td>-</td>
                            <td>Main</td>
                            <td>France</td>
-                           <td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px; text-align: center; width: 110px;">PENDING CANCELLATION</span></td>
+                           <td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px;">CANCELLED</span></td>
                            <td nowrap="">
                               <details onclick="myFunction2()">
                                  <summary><span class="summary">More info</span></summary>
@@ -307,6 +307,40 @@ Person record
                            <tr>
                               <td colspan="8">
                                  <div class="panel panel-border-wide s1infoExpanded">
+
+                                    <div class="main-container form-group">
+                                    <div class="major-container">
+                                       <table id="entitlementDetails" class="check-table">
+                                          <h1 class="heading-medium">Cancellation details</h1>
+                                          <caption class="visually-hidden">A table displaying the entitlement details</caption>
+                                          <tbody>
+                                             <tr class="row">
+                                                <td class="column">Cancellation issued on</td>
+                                                <td class="column">08/04/2020</td>
+                                             </tr>
+                                             <tr class="row">
+                                                <td class="column">Cancellation reason</td>
+                                                <td class="column">Moved to another EU/EEA country</td>
+                                             </tr>
+                                             <tr class="row">
+                                                <td class="column">Cancellation date</td>
+                                                <td class="column">08/04/2020</td>
+                                             </tr>
+
+                                             <!-- <tr class="row">
+                                                <td class="column">Cancellation issued by</td>
+                                                <td class="column">{{data.cancelI}}</td>
+                                             </tr>
+                                             <tr class="row">
+                                                <td class="column">Cancellation sent by</td>
+                                                <td class="column">{{data.cancelM}}</td>
+                                             </tr> -->
+                                             
+                                          </tbody>
+                                       </table>
+                                    </div>
+                                 </div>
+
                                     <div class="main-container form-group">
                                        <div class="major-container">
                                           <table id="entitlementDetails" class="check-table">
@@ -354,7 +388,7 @@ Person record
                                                 
                                              </tbody>
                                           </table> -->
-                                          <table id="entitlementDetails" class="check-table">
+                                          <!-- <table id="entitlementDetails" class="check-table">
                                              <h1 class="heading-medium">Registration details</h1>
                                              <caption class="visually-hidden">A table displaying the Registration details</caption>
                                              <tbody>
@@ -389,7 +423,7 @@ Person record
                                                    </td>
                                                 </tr>
                                              </tbody>
-                                          </table>
+                                          </table> -->
                                        </div>
                                        <div class="minor-container">
                                           <!-- <div><a class="link button button-secondary entitlements" href="reprint-reason">Reprint</a></div>
@@ -429,7 +463,7 @@ Person record
 																	<td>04/12/2018</td>
 																	<td>-</td>
 																	<td>France</td>
-																	<td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px; text-align: center; width: 110px;">PENDING CANCELLATION</span></td>
+																	<td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px">CANCELLED</span></td>
 																	<td><a href="#">View record</a></td>
 																</tr>
 															</tbody>
@@ -463,7 +497,7 @@ Person record
                         <tbody>
                            <tr>
                               <td>06/04/2020 08:30</td>
-                              <td>From [ Registered ] to [ Pending cancellation ]</td>
+                              <td>From [ Registered ] to [ Cancelled ]</td>
                               <td>Entitlement cancelled</td>
                               <td>James Philip</td>
                            </tr>
@@ -550,6 +584,7 @@ Person record
                                           <option>Third-party</option>
                                           <option>Other country</option>
                                           <option>Government organisation</option>
+                                          <option>Power of attorney</option>
                                           <option>Other</option>
                                        </select>
                                     </div>
@@ -584,6 +619,9 @@ Person record
                                           <option>Customer needs to complete an action</option>
                                           <option>Letter generated</option>
                                           <option>Email sent</option>
+                                          <option>Entitlement created in error</option>
+                                          <option>Need evidence of death</option>
+                                          <option>Entitled to S1 in own right</option>
                                           <option>Other</option>
                                           <option>Referred to Case Man</option>
                                        </select>
