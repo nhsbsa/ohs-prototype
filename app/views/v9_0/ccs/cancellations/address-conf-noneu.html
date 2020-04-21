@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What date did you return to the UK?
+	Confirmation of return to UK
 {% endblock %}
 
 {% block content %}
@@ -50,32 +50,20 @@
 				</div>
 			</div>
 			<div class="column-two-thirds">
-				<div class="heading-group">
-					<h1 class="heading-large">What date did you move to Sweden?</h1>
-				</div>
-				<form action="benefit-info" id="moving-date-form" method="get" class="form">
+				<form method="get" action="search" class="form">
 					<div class="form-group">
-						<label class="form-label" for="ni-number">
-							Moving date
-							<span class="form-hint">
-								This can be any date up to 4 weeks from today. For example, 18/09/2018
-							</span>
-						</label>
-						<input class="form-control" id="ni-number" type="text" autocomplete="off" value="04/12/2018">
+						<h1 class="heading-large">
+							Confirmation of move to Australia
+						</h1>
 					</div>
-					<!-- <div class="form-group">
-						<label class="form-label" for="ni-number-2">
-							Date returning to the UK (optional)
-							<span class="form-hint">
-								If you’re coming back to the UK permanently, tell us what date you’re moving back. For example, 18/09/2018
-							</span>
-						</label>
-						<input class="form-control" id="ni-number-2" type="text" autocomplete="off">
-					</div> -->
 					<div class="form-group">
-						<!-- <a class="button" href="pension-info">Next</a> -->
-						<a class="button" href="cya-address-eu-2">Next</a>
-						<a class="button button-secondary" href="case-record">Cancel</a>
+						<p>Your active S1 entitlement for France, which is registered will be cancelled and you will no longer be entitled to free healthcare treatment in France. </p>
+                        <p>You will have to apply for a new S1 if you return to live in an EU member state.</p>
+                        <p>Email sent to the registrations team at <a href="#">nhsbsaregistrations@nhsbsacancellation.com</a></p>
+					</div>
+					<div class="form-group">
+						<a class="button" href="case-record-21">Submit</a>
+						<a class="button button-secondary" href="case-record-16">Cancel</a>
 					</div>
 				</form>
 			</div>
