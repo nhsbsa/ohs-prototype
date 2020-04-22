@@ -204,6 +204,14 @@ Person record
                               <dd class="cya-change">
                               </dd>
                            </div>
+                           <div>
+                              <dt class="cya-question">Date of death</dt>
+                              <dd class="cya-answer">
+                                 18/04/2020
+                              </dd>
+                              <dd class="cya-change">
+                              </dd>
+                           </div>
                            <br>
                            <div>
                               <dt class="cya-question">National Insurance number</dt>
@@ -311,7 +319,7 @@ Person record
                            <td>-</td>
                            <td>Main</td>
                            <td>France</td>
-                           <td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px;">CANCELLED</span></td>
+                           <td><span class="status-tag-high font-xsmall" style="background-color: #70777b; padding-left:25px; padding-right:25px;">REQUESTED</span></td>
                            <td nowrap="">
                               <details onclick="myFunction2()">
                                  <summary><span class="summary">More info</span></summary>
@@ -333,6 +341,10 @@ Person record
                                              <caption class="visually-hidden">A table displaying the entitlement details</caption>
                                              <tbody>
                                                 <tr class="row">
+                                                   <td class="column">Requested reason</td>
+                                                   <td class="column">Need evidence of death</td>
+                                                </tr>
+                                                <!-- <tr class="row">
                                                    <td class="column">Cancellation issued on</td>
                                                    <td class="column">22/04/2020</td>
                                                 </tr>
@@ -343,7 +355,7 @@ Person record
                                                 <tr class="row">
                                                    <td class="column">Cancellation date</td>
                                                    <td class="column">22/04/2020</td>
-                                                </tr>
+                                                </tr> -->
                                                 <!-- <tr class="row">
                                                    <td class="column">Cancellation issued by</td>
                                                    <td class="column">{{data.cancelI}}</td>
@@ -472,8 +484,8 @@ Person record
                                                    <td>04/12/2018</td>
                                                    <td>-</td>
                                                    <td>France</td>
-                                                   <td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px">CANCELLED</span></td>
-                                                   <td><a href="case-record-34">View record</a></td>
+                                                   <td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px; text-align: center; width: 110px;">PENDING CANCELLATION</span></td>
+                                                   <td><a href="">View record</a></td>
                                                 </tr>
                                                 <!-- <tr>
                                                    <td>Sarah Philip</td>
@@ -515,7 +527,7 @@ Person record
                         <tbody>
                            <tr>
                               <td>06/04/2020 08:30</td>
-                              <td>From [ Issued ] to [ Cancelled ]</td>
+                              <td>From [ Issued ] to [ Pending cancellation ]</td>
                               <td>Entitlement cancelled</td>
                               <td>James Philip</td>
                            </tr>
@@ -560,10 +572,10 @@ Person record
                      <tbody>
                         <tr>
                            <td>06/04/2020 08:30</td>
-                           <td>Main</td>
+                           <td>Power of attorney</td>
                            <td>Phone</td>
-                           <td>Entitlement created in error</td>
-                           <td>S1 for France created in error, entitlement cancelled. Email sent to reg team.</td>
+                           <td>Need evidence of death</td>
+                           <td>Customer deceased, S1 for France status changed to requested, email sent to reg team.</td>
                            <td>James Philip</td>
                         </tr>
                      </tbody>
