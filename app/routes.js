@@ -203,6 +203,17 @@ router.get(/reg-right-own/, function (req,res){
   }
 });
 
+// S1 cancellations - Issue new forms currently hold old forms - April 2020 //
+router.get(/cancel-confirm/, function (req,res){
+  if(req.query.newForms === "Created in error"){
+    res.redirect('cancel-conf');
+  } else if(req.query.newForms === "Old forms cancelled to issue new S1") {
+    res.redirect('oldforms-conf');
+  } else {
+    res.redirect('cancel-reason');
+  }
+});
+
 router.get(/reprint-reasons/, function (req,res){
   if(req.query.reprint === "Member state"){
     res.redirect('reprint-ms-reason');
