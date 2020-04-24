@@ -182,7 +182,7 @@ router.get(/cancel-reasons/, function (req,res){
   }
 });
 
-// Dependant entitlemed in own right - April 2020 //
+// Dependant entitlemed in own right ISSUED- April 2020 //
 router.get(/own-right/, function (req,res){
   if(req.query.ownRight === "UK State Pension"){
     res.redirect('sp-conf');
@@ -190,6 +190,16 @@ router.get(/own-right/, function (req,res){
     res.redirect('ben-conf');
   } else {
     res.redirect('pension-or-ben');
+  }
+});
+// Dependant entitlemed in own right REGISTERED- April 2020 //
+router.get(/reg-right-own/, function (req,res){
+  if(req.query.regOwnRight === "UK State Pension"){
+    res.redirect('sp-conf-2');
+  } else if(req.query.regOwnRight === "UK State Benefit") {
+    res.redirect('ben-conf-2');
+  } else {
+    res.redirect('pension-or-ben-2');
   }
 });
 
