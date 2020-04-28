@@ -27,46 +27,32 @@
 	.vertical-bar {
 		margin: 0px 10px;
 	}
+	.heading-large .heading-secondary {
+        color: white;
+    }
 	/* end banner */
 </style>
 
 <main id="content" role="main">
-	<div class="grid-row">
-		<div class="column-full">
-			<div id="back">
-				<a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
-			</div>
-		</div>
-	</div>
-	<div class="form-group">
-		<div class="grid-row">
-			<div class="column-full">
-				<div class="banner-information-without-action">
-					<p class="banner-message">
-						<span class="name text-capitalize">Rosie Philip</span>
-						<span class="vertical-bar">|</span>
-						<span class="ohs-reference-number">25000005</span>
-					</p>
-				</div>
-			</div>
-			<div class="column-two-thirds">
-				<form method="get" action="search" class="form">
-					<div class="form-group">
-						<h1 class="heading-large">
-							Confirmation of in receipt UK State Benefit
-						</h1>
-					</div>
-					<div class="form-group">
-						<p>Please ask your agency to contact us and send us your details at <a href="#">nhs@registrations.com</a>. We will then issue you a new certificate so you can access free healthcare treatment in the country you are planning to move to.</p>
-<!--                         <p>Email sent to the registrations team at <a href="#">nhs@registrations.com</a></p>
- -->					</div>
-					<div class="form-group">
-						<a class="button" href="case-record-54">Submit</a>
-						<a class="button button-secondary" href="case-record-16">Cancel</a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+     <div class="grid-row">
+          <div class="column-two-thirds">
+               <div class="done-panel">
+                    <h1 class="heading-xlarge"><span id="done-tick"></span>Confirmation of in receipt UK State Benefit</h1>
+                    <h2 class="heading-large"><span class="heading-secondary">Main (insured person)</span> Rosie Philip</h2>
+                    <h2 class="heading-large"><span class="heading-secondary">OHS Reference number</span> 25000005</h2>
+               </div>
+               <div class="form-group">
+                    <h2 class="heading-medium">What happens next</h2>
+                    <p>Please ask your agency to contact us and send us your details at <a href="#">nhs@registrations.com</a>. We will then issue you a new certificate so you can access free healthcare treatment in the country you are planning to move to.</p>
+                    <!-- <p>Your S1 entitlement for France will be cancelled and you will not be able to use this to access  healthcare treatment in France. If you have any dependants who have issued entitlements, their entitlements will also be cancelled.</p>
+                    <p>You will have to apply for a new S1 since you are travelling to Spain and have it registered by the relevent authority in Spain.</p> -->
+                    <a href="case-record-54" class="link">View updated details</a>
+               </div>
+               <div class="form-group">
+                    <a href="search" class="button">Do another search</a>
+               </div>
+          </div>
+     </div>
 </main>
+
 {% endblock %}
