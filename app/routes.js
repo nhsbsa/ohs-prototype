@@ -597,6 +597,17 @@ router.get(/uk-benefit-info/, function (req,res) {
   }
 });
 
+// Dependant entitled in own right - registered status
+// router.get(/dep-has-pension/, function (req,res) {
+//   if(req.query.depHasPension === "Yes") {
+//     res.redirect('pension-date-2');
+//   } else if(req.query.depHasPension === "No") {
+//     res.redirect('not-entitled-2');
+//   } else {
+//     res.redirect('pension-info-2');
+//   }
+// });
+
 
 // CORRESPONDENCE ADDRESS - Y / N, use-corres.html, MAIN
 router.get(/corres-address/, function (req,res) {

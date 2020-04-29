@@ -265,7 +265,7 @@ Person record
                         <td>24/06/2019</td>
                         <td>Dependant</td>
                         <td>France</td>
-                        <td><span class="status-tag-high font-xsmall" style="padding-left: 35px; padding-right: 35px">CANCELLED</span></td>
+                        <td><span class="status-tag-high font-xsmall" style="background-color: #70777b; padding-left:25px; padding-right:25px;">REQUESTED</span></td>
                         <td nowrap="">
                            <details onclick="myFunction2()">
                               <summary><span class="summary">More info</span></summary>
@@ -311,11 +311,9 @@ Person record
                         <tr>
                            <td colspan="8">
                               <div class="panel panel-border-wide s1infoExpanded">
-                                 <div class="main-container form-group">
+                                 <!-- <div class="main-container form-group">
                                     <div class="major-container">
                                        <table id="entitlementDetails" class="check-table">
-                                          <!-- <h1 class="heading-medium" style="color: #B10E1E">Cancellation date:  24/06/2019</h1> -->
-                                          <!-- <p style="color: #B10E1E; font-weight: bold">Cancellation date: 24/06/2019</p> -->
                                           <h1 class="heading-medium">Cancellation details</h1>
                                           <caption class="visually-hidden">A table displaying the entitlement details</caption>
                                           <tbody>
@@ -330,16 +328,7 @@ Person record
                                              <tr class="row">
                                                 <td class="column">Cancellation date</td>
                                                 <td class="column">22/04/2020</td>
-                                                <!-- <td class="column">{{data.cancelDate}}</td> -->
                                              </tr>
-                                             <!-- <tr class="row">
-                                                <td class="column">Cancellation issued by</td>
-                                                <td class="column">{{data.cancelI}}</td>
-                                                </tr>
-                                                <tr class="row">
-                                                <td class="column">Cancellation sent by</td>
-                                                <td class="column">{{data.cancelM}}</td>
-                                                </tr> -->
                                           </tbody>
                                        </table>
                                     </div>
@@ -347,7 +336,7 @@ Person record
                                        <div><a class="link button button-secondary entitlements" href="case-record-51">View main</a></div>
                                        <div><a class="link button button-secondary entitlements" href="">Reprint</a></div>
                                     </div>
-                                 </div>
+                                 </div> -->
                                  <!-- </div> -->
                                  <div class="main-container form-group">
                                     <div class="major-container">
@@ -372,6 +361,12 @@ Person record
                                           </tbody>
                                        </table>
                                     </div>
+
+                                    <div class="minor-container">
+                                       <div><a class="link button button-secondary entitlements" href="case-record-51">View main</a></div>
+                                       <div><a class="link button button-secondary entitlements" href="">Reprint</a></div>
+                                    </div>
+
                                     <!-- <div class="minor-container">
                                        <div><a class="link button button-secondary entitlements" href="search-pw-dependant">Add dependant</a></div>
                                          <div><a class="link button button-secondary entitlements" href="cancel-date-mvp-1">Cancel entitlement</a></div>
@@ -447,12 +442,12 @@ Person record
                               <td>Entitlement Status Change</td>
                               <td>James Philip</td>
                            </tr>
-                           <tr>
+                           <!-- <tr>
                               <td>24/06/2019 11:30</td>
                               <td>From [ Registered ] to [ Cancelled ]</td>
                               <td>Entitlement Status Change</td>
                               <td>James Philip</td>
-                           </tr>
+                           </tr> -->
                            <tr>
                               <td>04/12/2018 09:30</td>
                               <td>Type [ S1 Posted Worker ] Country [ France ] Status [ Registered ]</td>
