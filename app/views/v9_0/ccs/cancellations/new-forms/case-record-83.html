@@ -290,9 +290,9 @@ Person record
                   </div>
                </div>
                <div id="health" class="tabcontentActive">
-                  <div class="panel panel-border-wide">
-                    <p class="bold">Registrations team to process cancellation. Create a new entitlement for the person.</p>
-                  </div>
+                  <!-- <div class="panel panel-border-wide">
+                    <p class="bold">Registrations team to process cancellation</p>
+                  </div> -->
                   <table id="mainTable">
                      <thead>
                         <tr>
@@ -307,12 +307,25 @@ Person record
                      </thead>
                      <tbody>
                         <tr>
+                           <td>S1</td>
+                           <td>22/04/2020</td>
+                           <td>-</td>
+                           <td>Main</td>
+                           <td>France</td>
+                           <td><span class="status-tag-medium font-xsmall" style="padding-left:25px; padding-right:25px;">ISSUED</span></td>
+                           <td nowrap="">
+                              <details onclick="myFunction()">
+                                 <summary><span class="summary">More info</span></summary>
+                              </details>
+                           </td>
+                        </tr>
+                        <tr>
                            <td>E121</td>
                            <td>04/12/2018</td>
                            <td>-</td>
                            <td>Main</td>
                            <td>France</td>
-                           <td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px; text-align: center; width: 110px;">PENDING CANCELLATION</span></td>
+                           <td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px;">CANCELLED</span></td>
                            <td nowrap="">
                               <details onclick="myFunction2()">
                                  <summary><span class="summary">More info</span></summary>
@@ -327,7 +340,7 @@ Person record
                            <tr>
                               <td colspan="8">
                                  <div class="panel panel-border-wide s1infoExpanded">
-                                    <!-- <div class="main-container form-group">
+                                    <div class="main-container form-group">
                                        <div class="major-container">
                                           <table id="entitlementDetails" class="check-table">
                                              <h1 class="heading-medium">Cancellation details</h1>
@@ -344,7 +357,7 @@ Person record
                                                 <tr class="row">
                                                    <td class="column">Cancellation date</td>
                                                    <td class="column">22/04/2020</td>
-                                                </tr> -->
+                                                </tr>
                                                 <!-- <tr class="row">
                                                    <td class="column">Cancellation issued by</td>
                                                    <td class="column">{{data.cancelI}}</td>
@@ -353,13 +366,13 @@ Person record
                                                    <td class="column">Cancellation sent by</td>
                                                    <td class="column">{{data.cancelM}}</td>
                                                    </tr> -->
-                                           <!--   </tbody>
+                                             </tbody>
                                           </table>
                                        </div>
                                        <div class="minor-container">
                                           <div><a class="link button button-secondary entitlements" href="reprint-reason-3">Reprint</a></div>
                                        </div>
-                                    </div> -->
+                                    </div>
                                     <div class="main-container form-group">
                                        <div class="major-container">
                                           <table id="entitlementDetails" class="check-table">
@@ -473,7 +486,7 @@ Person record
                                                    <td>04/12/2018</td>
                                                    <td>-</td>
                                                    <td>France</td>
-                                                   <td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px; text-align: center; width: 110px;">PENDING CANCELLATION</span></td>
+                                                   <td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px">CANCELLED</span></td>
                                                    <td><a href="case-record-63">View record</a></td>
                                                 </tr>
                                                 <tr>
@@ -498,7 +511,7 @@ Person record
                   <br>
                   <div class="form-group">
                      <!-- <a class="button" href="moving-country">Create a new entitlement</a> -->
-                     <a class="button" href="case-record-83">Create a new entitlement</a>
+                     <a class="button" href="received-date">Create a new entitlement</a>
                      <a class="button button-secondary" href="search">Exit record</a>
                   </div>
                </div>
@@ -516,7 +529,7 @@ Person record
                         <tbody>
                            <tr>
                               <td>06/04/2020 08:30</td>
-                              <td>From [ Issued ] to [ Pending cancellation ]</td>
+                              <td>From [ Issued ] to [ Cancelled ]</td>
                               <td>Entitlement cancelled</td>
                               <td>James Philip</td>
                            </tr>
@@ -567,14 +580,14 @@ Person record
                            <td>S1 to be cancelled. Email sent to registrations@nhsbsacancellation.com with details to take action</td>
                            <td>James Philip</td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                            <td>06:04/2020 08:30</td>
                            <td>Main</td>
                            <td>Phone</td>
-                           <td>Has E121, issue new S1</td>
+                           <td>Returned to UK</td>
                            <td>S1 to be cancelled. Email sent to registrations@nhsbsacancellation.com with details to take action</td>
                            <td>James Philip</td>
-                           </tr>
+                           </tr> -->
                      </tbody>
                   </table>
                   <br>
