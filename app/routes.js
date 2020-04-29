@@ -352,9 +352,22 @@ router.get(/postedWorker/, function (req,res) {
   } else if (req.query.radiosPW === "Occupational disease or injury") {
     res.redirect('da1-country-res');
   } else if (req.query.radiosPW === "Provisional Replacement Certificate (PRC)") {
-    res.redirect('prc-type');
+    res.redirect('treatment-type');
   } else {
     res.redirect('create-entitlement');
+  }
+});
+
+// Treatment type, treatment-type.html
+router.get(/treatmentType/, function (req,res) {
+  if(req.query.radiosET === "Yes") {
+    res.redirect('prc-type');
+  } else if (req.query.radiosET === "No") {
+    res.redirect('exit-prc-rejected');
+  } else if (req.query.radiosET === "Don't know") {
+    res.redirect('prc-type');
+  } else {
+    res.redirect('treatment-type');
   }
 });
 
@@ -375,8 +388,10 @@ router.get(/reviewResult/, function (req,res) {
     res.redirect('done-prc-approved');
   } else if (req.query.radiosResult === "Approved but no evidence provided") {
     res.redirect('done-prc-approved');
+  } else if (req.query.radiosResult === "Evidence requested") {
+    res.redirect('done-prc-review');
   } else if (req.query.radiosResult === "Not approved") {
-    res.redirect('case-record-31');
+    res.redirect('exit-prc-rejected2');
   } else {
     res.redirect('review-result-prc');
   }
