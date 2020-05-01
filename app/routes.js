@@ -214,6 +214,17 @@ router.get(/cancel-confirm/, function (req,res){
   }
 });
 
+// Require a new S1 if moving within same country //
+router.get(/s1Required/, function (req,res){
+  if(req.query.s1Required === "Yes"){
+    res.redirect('new-address-date-same');
+  } else if(req.query.s1Required === "No") {
+    res.redirect('contact-address-same-country');
+  } else {
+    res.redirect('new-s1-req');
+  }
+});
+
 router.get(/reprint-reasons/, function (req,res){
   if(req.query.reprint === "Member state"){
     res.redirect('reprint-ms-reason');
