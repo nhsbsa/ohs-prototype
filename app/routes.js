@@ -229,6 +229,7 @@ router.get(/reprint-reasons/, function (req,res){
 router.get(/resident/, function (req,res){
   if(req.query.resident === "yes") {
     res.redirect('eligible');
+
   }
   else {
     res.redirect('remain');
@@ -352,29 +353,42 @@ router.get(/postedWorker/, function (req,res) {
   } else if (req.query.radiosPW === "Occupational disease or injury") {
     res.redirect('da1-country-res');
   } else if (req.query.radiosPW === "Provisional Replacement Certificate (PRC)") {
-    res.redirect('treatment-type');
+    res.redirect('prc-type');
   } else {
     res.redirect('create-entitlement');
   }
 });
 
-// Treatment type, treatment-type.html
+// PRC treatment type, treatment-type.html
 router.get(/treatmentType/, function (req,res) {
   if(req.query.radiosET === "Yes") {
-    res.redirect('prc-type');
+    res.redirect('ehic-details');
   } else if (req.query.radiosET === "No") {
-    res.redirect('exit-prc-rejected');
+    res.redirect('exit-prc-rejected-1');
   } else if (req.query.radiosET === "Don't know") {
-    res.redirect('prc-type');
+    res.redirect('ehic-details');
   } else {
     res.redirect('treatment-type');
+  }
+});
+
+// PRC treatment type for dependant, treatment-type-dep.html
+router.get(/treatmenttypeDep/, function (req,res) {
+  if(req.query.radiosET === "Yes") {
+    res.redirect('ehic-details-dep');
+  } else if (req.query.radiosET === "No") {
+    res.redirect('exit-prc-rejected-dep');
+  } else if (req.query.radiosET === "Don't know") {
+    res.redirect('ehic-details-dep');
+  } else {
+    res.redirect('treatment-type-dep');
   }
 });
 
 // PRC type, prc-type.html
 router.get(/prcType/, function (req,res) {
   if(req.query.radiosET === "For me") {
-    res.redirect('ehic-details');
+    res.redirect('treatment-type');
   } else if (req.query.radiosET === "For a dependant") {
     res.redirect('check-your-answers-prc2');
   } else {
@@ -391,7 +405,7 @@ router.get(/reviewResult/, function (req,res) {
   } else if (req.query.radiosResult === "Evidence requested") {
     res.redirect('done-prc-review');
   } else if (req.query.radiosResult === "Not approved") {
-    res.redirect('exit-prc-rejected2');
+    res.redirect('exit-prc-rejected-2');
   } else {
     res.redirect('review-result-prc');
   }
