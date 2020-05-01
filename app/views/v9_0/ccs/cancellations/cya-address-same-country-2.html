@@ -1,0 +1,77 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+    Check your answers
+{% endblock %}
+
+{% block content %}
+<style>
+    /* banner */
+    .banner-information-without-action {
+        color: #005ea5;
+    }
+    .banner-message {
+        font-family: Arial, sans-serif;
+        font-weight: 400;
+        text-transform: none;
+        font-size: 36px;
+        line-height: 1.2;
+        padding: 20px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border-width: 5px;
+        border-style: solid;
+        font-weight: bold;
+        text-align: center;
+    }
+    .vertical-bar {
+        margin: 0px 10px;
+    }
+    /* end banner */
+</style>
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-full">
+            <div id="back">
+                <a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <div class="heading-group">
+                    <h1 class="heading-large">Check your answers</h1>
+                </div>
+                <div class="form-group">
+                    <table class="check-table">
+                        <tbody>
+                            <tr>
+                                <td class="bold">Country of residence</td>
+                                <td>France</td>
+                                <td><a href="new-address-same">Change</a></td>
+                            </tr>
+                            <tr>
+                                <td class="bold">Do you require a new S1?</td>
+                                <td>Yes</td>
+                                <td><a href="new-s1-req">Change</a></td>
+                            </tr>
+                            <tr>
+                                <td class="bold">Moving date</td>
+                                <td>20/03/2020</td>
+                                <td><a href="new-address-date-same">Change</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="form-group"> 
+                    <!-- <a href="case-record-84" class="button">Submit</a> -->
+                    <a href="address-conf-same" class="button">Submit</a>
+                    <a class="button button-secondary" href="case-record-16">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
