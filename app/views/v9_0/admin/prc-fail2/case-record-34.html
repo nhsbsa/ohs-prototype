@@ -1,7 +1,9 @@
 {% extends "layout_bsa.html" %}
+
 {% block page_title %}
 	Person record
 {% endblock %}
+
 {% block content %}
 <style>
 	.tab-box {
@@ -140,18 +142,6 @@
 		position: relative;
 		top: -0.05em;
 	}
-
-	span.status-tag-requested {
-		background-color: #70777b;
-		color: #ffffff;
-		vertical-align: baseline;
-		padding: 2px 9px 1px;
-		font-weight: 700;
-		font-size: 14px;
-		display: inline-block;
-		position: relative;
-		top: -0.05em;
-	}
 	#myDIV, #myDIV2, #myDIV3, #myDIV4 {
 		background: #F8F8F8;
 	}
@@ -169,8 +159,8 @@
 		<div class="column-full">
 			<div class="heading-group">
 				<h1 class="heading-large">
-					Michael Philip
-					<span class="heading-secondary">OHS Reference Number - 25000002</span>
+					Rosie Philip
+					<span class="heading-secondary">OHS Reference Number - 25000005</span>
 				</h1>
 			</div>
 			<div class="tab-container">
@@ -198,21 +188,21 @@
 									<div>
 										<dt class="cya-question">Full name</dt>
 										<dd class="cya-answer">
-											Michael Philip
+											Rosie Philip
 										</dd>
 									</div>
 									<br>
 									<div>
 										<dt class="cya-question">Date of birth</dt>
 										<dd class="cya-answer">
-											16/03/1974
+											25/11/2006
 										</dd>
 									</div>
 									<br>
 									<div>
 										<dt class="cya-question">National Insurance number</dt>
 										<dd class="cya-answer">
-											SR123456A
+											-
 										</dd>
 									</div>
 									<br>
@@ -228,24 +218,25 @@
 									<!-- <br>
 									<div>
 										<dt class="cya-question">Correspondence address</dt>
-										<dd class="cya-answer">
+										<dd class="cya-answer">Rúa de Mer 64<br>
+											Paris<br>
+											Plaisance<br>
+											75014<br>
+											France
 										</dd>
 									</div> -->
 									<br>
 									<div>
 										<dt class="cya-question">Email address</dt>
-										<dd class="cya-answer">michael.philip@email.com</dd>
+										<dd class="cya-answer">rosie.philip@gmail.com</dd>
 									</div>
 									<br>
 									<div>
 										<dt class="cya-question">Telephone number</dt>
-										<dd class="cya-answer">07829393002</dd>
+										<dd class="cya-answer">07510123456</dd>
 									</div>
 								</dl>
-								<!-- <br>
-								<div class="form-group" style="margin-top:30px">
-		                           <a class="button button-secondary" href="contributions-1">Update pension contribution</a>
-		                        </div> -->
+								<br>
 								<div class="form-group" style="margin-top:30px">
 									<a class="button button-secondary" href="search">Exit record</a>
 								</div>
@@ -270,8 +261,8 @@
 									<td>PRC</td>
 									<td>12/03/2020</td>
 									<td>19/03/2020</td>
-									<td>Main</td>
-									<td>France</td> 
+									<td>Dependant</td>
+									<td>France</td>
 									<td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px;">REJECTED</span></td>
 									<td nowrap=""><details onclick="myFunction2()"><summary><span class="summary">More info</span></summary></details></td>
 								</tr>
@@ -291,7 +282,7 @@
 															<tbody>
 																<tr class="row">
 				                                                   <td class="column">Reference number</td>
-				                                                   <td class="column">213321</td>
+				                                                   <td class="column">213322</td>
 				                                                </tr>
 				                                                <tr class="row">
 				                                                   <td class="column">Request received date</td>
@@ -299,7 +290,7 @@
 				                                                </tr>
 				                                                <!-- <tr class="row">
 				                                                   <td class="column">EHIC issue number</td>
-				                                                   <td class="column">12345678901</td>
+				                                                   <td class="column">2345678901</td>
 				                                                </tr>
 				                                                <tr class="row">
 																	<td class="column">EHIC expiry date</td>
@@ -319,39 +310,21 @@
 																</tr>
 
 																<tr class="row">
-																	<td class="column">Treatment facility name</td>
+																	<td class="column">Treatment facilty name</td>
 																	<td class="column">Hospital Arnaud-De-Villeneuve</td>
 																</tr>
 																<tr class="row">
-																	<td class="column">Treatment facility email address</td>
+																	<td class="column">Treatment facilty email address</td>
 																	<td class="column">info@chu-montpellier.com</td>
 																</tr> -->
 															</tbody>
 														</table>
-														<!-- <table id="entitlementDetails" class="check-table">
-															<h1 class="heading-medium">Benefit information</h1>
-															<caption class="visually-hidden">A table displaying the entitlement details</caption>
-															<tbody>
-																<tr class="row">
-				                                                   <td class="column">Benefit name</td>
-				                                                   <td class="column">State pension</td>
-				                                                </tr>
-				                                                <tr class="row">
-				                                                   <td class="column">Benefit start date</td>
-				                                                   <td class="column">11/11/2018</td>
-				                                                </tr>
-															</tbody>
-														</table> -->
 													</div>
 													<div class="minor-container">
-														<!-- <div><a class="link button button-secondary entitlements" href="institution-search-1">Register entitlement</a></div>
-														<div><a class="link button button-secondary entitlements" href="reprint-entitlement">Reprint</a></div>
-														<div><a class="link button button-secondary entitlements" href="search-dependant">Add dependant</a></div>
-														<div><a class="link button button-secondary entitlements" href="cancel-date-mvp">Cancel entitlement</a></div> -->
-														<!-- <div><a class="link button button-secondary entitlements" href="">Register entitlement</a></div> -->
-														<!-- <div><a class="link button button-secondary entitlements" href="review-result-prc">Approve</a></div> -->
-														<!-- <div><a class="link button button-secondary entitlements" href="search-dep-prc">Add dependant</a></div>
-														<div><a class="link button button-secondary entitlements" href="">Cancel entitlement</a></div> -->
+														<!-- <div><a class="link button button-secondary entitlements" href="institution-search-2">Register entitlement</a></div> -->
+														<!-- <div><a class="link button button-secondary entitlements" href="reprint-dep-entitlement">Reprint</a></div> -->
+														<div><a class="link button button-secondary entitlements" href="case-record-26">View main</a></div>
+														<div><a class="link button button-secondary entitlements" href="cancel-date-mvp-3">Cancel entitlement</a></div>
 													</div>
 												</div>
 											</div>
@@ -362,9 +335,10 @@
 						</div>
 						<br>
 						<div class="form-group">
-							<a class="button" href="received-date">Create a new entitlement</a>
+							<a class="button" href="received-date-dep-1">Create a new entitlement</a>
 							<a class="button button-secondary" href="search">Exit record</a>
 						</div>
+					</div>
 					</div>
 					<div id="casehist" class="tabcontent">
 						<div class="form-group">
@@ -379,26 +353,13 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>12/03/2020 10:30</td>
-
-										{% if data.expbenefits === "State Pension" %}
-										<td>Type [ S1 Pension ] Country [ France ] Status [ Issued ]</td>
-										{% endif %}
-										{% if data.expbenefits !== "State Pension" %}
-										<td>Type [ PRC {{data.expbenefits}} ] Country [ France ] Status [ Rejected ]</td>
-										{% endif %}
-
-										<td>Entitlement Created</td>
-										<td>David Philip</td>
-									</tr>
-									<tr>
 										<td>12/03/2020 09:30</td>
 
 										{% if data.expbenefits === "State Pension" %}
 										<td>Type [ S1 Pension ] Country [ France ] Status [ Issued ]</td>
 										{% endif %}
 										{% if data.expbenefits !== "State Pension" %}
-										<td>Type [ PRC {{data.expbenefits}} ] Country [ France ] Status [ Requested ]</td>
+										<td>Type [ PRC {{data.expbenefits}} ] Country [ France ] Status [ Issued ]</td>
 										{% endif %}
 
 										<td>Entitlement Created</td>
