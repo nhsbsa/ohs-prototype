@@ -214,7 +214,7 @@ router.get(/cancel-confirm/, function (req,res){
   }
 });
 
-// Require a new S1 if moving within same country //
+// Require a new S1 if moving within same country - registered //
 router.get(/s1Required/, function (req,res){
   if(req.query.s1Required === "Yes"){
     res.redirect('new-address-date-same');
@@ -222,6 +222,17 @@ router.get(/s1Required/, function (req,res){
     res.redirect('contact-address-same-country');
   } else {
     res.redirect('new-s1-req');
+  }
+});
+
+// Require a new S1 if moving within same country -issued//
+router.get(/test/, function (req,res){
+  if(req.query.s1Required === "Yes"){
+    res.redirect('new-address-date-same-2');
+  } else if(req.query.s1Required === "No") {
+    res.redirect('contact-address-same-country-2');
+  } else {
+    res.redirect('new-s1-req-2');
   }
 });
 
