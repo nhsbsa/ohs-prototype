@@ -217,7 +217,7 @@ router.get(/cancel-confirm/, function (req,res){
 // Require a new S1 if moving within same country - registered //
 router.get(/s1Required/, function (req,res){
   if(req.query.s1Required === "Yes"){
-    res.redirect('new-address-date-same');
+    res.redirect('new-address-date-same-country');
   } else if(req.query.s1Required === "No") {
     res.redirect('contact-address-same-country');
   } else {
@@ -228,11 +228,22 @@ router.get(/s1Required/, function (req,res){
 // Require a new S1 if moving within same country -issued//
 router.get(/test/, function (req,res){
   if(req.query.s1Required === "Yes"){
-    res.redirect('new-address-date-same-2');
+    res.redirect('new-address-date-same-country-2');
   } else if(req.query.s1Required === "No") {
     res.redirect('contact-address-same-country-2');
   } else {
     res.redirect('new-s1-req-2');
+  }
+});
+
+// Use residential address in the reprint journey, reprint-res-address.html
+router.get(/dog/, function (req,res) {
+  if(req.query.radiosRA === "Use residential address") {
+    res.redirect('reprint-res-for-corr-address');
+  } else if(req.query.radiosRA === "Enter correspondence address") {
+    res.redirect('cya-reprint-4');
+  } else {
+    res.redirect('reprint-res-address');
   }
 });
 
