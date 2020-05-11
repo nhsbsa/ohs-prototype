@@ -247,6 +247,17 @@ router.get(/dog/, function (req,res) {
   }
 });
 
+// Aware when they will get paid their state pension, same-pension-same-country.html
+router.get(/deer/, function (req,res) {
+  if(req.query.samePension === "Yes") {
+    res.redirect('pension-date-same-country');
+  } else if(req.query.samePension === "No") {
+    res.redirect('info-requested-same-country');
+  } else {
+    res.redirect('same-pension-same-country');
+  }
+});
+
 router.get(/reprint-reasons/, function (req,res){
   if(req.query.reprint === "Member state"){
     res.redirect('reprint-ms-reason');

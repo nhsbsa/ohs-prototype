@@ -1,0 +1,59 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+	Confirmation of return to UK
+{% endblock %}
+
+{% block content %}
+<style>
+	/* banner */
+	.banner-information-without-action {
+		color: #005ea5;
+	}
+	.banner-message {
+		font-family: Arial, sans-serif;
+		font-weight: 400;
+		text-transform: none;
+		font-size: 36px;
+		line-height: 1.2;
+		padding: 20px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		border-width: 5px;
+		border-style: solid;
+		font-weight: bold;
+		text-align: center;
+	}
+	.vertical-bar {
+		margin: 0px 10px;
+	}
+	.heading-large .heading-secondary {
+          color: white;
+     }
+	/* end banner */
+</style>
+
+<main id="content" role="main">
+     <div class="grid-row">
+          <div class="column-two-thirds">
+               <div class="done-panel" style="background-color: #70777b;">
+                    <h1 class="heading-xlarge">Information requested</h1>
+                    <h2 class="heading-large"><span class="heading-secondary">Main (insured person)</span> Michael Philip</h2>
+                    <h2 class="heading-large"><span class="heading-secondary">OHS Reference number</span> 25000002</h2>
+               </div>
+               <div class="form-group">
+                    <!--<h2 class="heading-medium">What happens next</h2> -->
+					<p> Please email your France State Pension start date to <a href="#">nhs@registrations.com</a>.</p>
+					<p>You must not be in payment of a State Pension from the country where you are moving to. You must get in contact with the relevant authority.</p>
+					<p>No letter has been sent out to get information.</p>
+					<p>We would cancel your current entitlement on our system, since your in receipt of France State Pension.</p>
+                    <a href="case-record-94" class="link">View updated details</a>
+               </div>
+               <div class="form-group">
+                    <a href="search" class="button">Do another search</a>
+               </div>
+          </div>
+     </div>
+</main>
+
+{% endblock %}
