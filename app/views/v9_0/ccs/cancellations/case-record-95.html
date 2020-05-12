@@ -140,17 +140,6 @@ Person record
    position: relative;
    top: -0.05em;
    }
-   span.status-tag-requested {
-		background-color: #70777b;
-		color: #ffffff;
-		vertical-align: baseline;
-		padding: 2px 9px 1px;
-		font-weight: 700;
-		font-size: 14px;
-		display: inline-block;
-		position: relative;
-		top: -0.05em;
-	}
    #myDIV, #myDIV2, #myDIV3, #myDIV4 {
    background: #F8F8F8;
    }
@@ -210,7 +199,7 @@ Person record
                            <div>
                               <dt class="cya-question">Date of birth</dt>
                               <dd class="cya-answer">
-                                 24/05/1950
+                                 16/03/1994
                               </dd>
                               <dd class="cya-change">
                               </dd>
@@ -219,59 +208,49 @@ Person record
                            <div>
                               <dt class="cya-question">National Insurance number</dt>
                               <dd class="cya-answer">
-                                 SR909101B
+                                 SR123456A
                               </dd>
                               <dd class="cya-change">
                               </dd>
                            </div>
                            <br>
-                           <div>
-                              <dt class="cya-question">In receipt of state pension/state benefit</dt>
-                              <dd class="cya-answer">
-                                 Yes - State Pension
-                              </dd>
-                              <dd class="cya-change">
-                              </dd>
-                           </div>
-                        </dl>
-                        <!-- <p class="navigation">
-                           <a class="cancel" href="pension-or-ben">Change</a>
-                           </p> -->
-                        <dl class="govuk-check-your-answers cya-questions-long">
-                           <br>
-                           <div>
+                           <!-- <div>
                               <dt class="cya-question">Residential address</dt>
                               <dd class="cya-answer">1 Road<br>
                                  Downtown<br>
-                                 Lille<br>
-                                 123456<br>
-                                 France
+                                 Bristol<br>
+                                 BR1 5TL<br>
+                                 UK
                               </dd>
                               <dd class="cya-change">
+                                 <p class="navigation"> -->
+                                    <!-- <a class="cancel" href="change-address-1">Change</a> -->
+                                 <!-- </p>
+                              </dd>
+                           </div>
+                           <br> -->
+                           <div>
+                              <dt class="cya-question">Residential address</dt>
+                              <dd class="cya-answer">United Kingdom</dd>
+                              <dd class="cya-change">
                                  <p class="navigation">
-                                    <!-- <a class="cancel" href="change-address-2">Change</a> -->
+                                    <!-- <a class="cancel" href="change-address-1">Change</a> -->
                                  </p>
                               </dd>
                            </div>
-                           <br>
                            <div>
                               <dt class="cya-question">Correspondence address</dt>
-                              <dd class="cya-answer">Rúa de Mer 64<br>
-                                 Paris<br>
-                                 Plaisance<br>
-                                 75014<br>
-                                 France
-                              </dd>
+                              <dd class="cya-answer">United Kingdom</dd>
                               <dd class="cya-change">
                                  <p class="navigation">
-                                    <!-- <a class="cancel" href="change-address-2">Change</a> -->
+                                    <!-- <a class="cancel" href="change-address-1">Change</a> -->
                                  </p>
                               </dd>
                            </div>
                         </dl>
                         <p class="navigation">
-                           <!-- <a class="cancel" href="change-address-2">Change</a> -->
-                           <a class="cancel" href="">Change</a>
+                           <!-- <a class="cancel" href="change-address-1">Change</a> -->
+                           <a class="cancel" href="new-address-uk">Change</a>
                         </p>
                         <dl class="govuk-check-your-answers cya-questions-long">
                            <br>
@@ -293,6 +272,9 @@ Person record
                            <a class="cancel" href="#">Change</a>
                         </p>
                         <br>
+                        <!-- <div class="form-group" style="margin-top:30px">
+                           <a class="button button-secondary" href="view-contributions">View pension contribution</a>
+                        </div> -->
                         <div class="form-group" style="margin-top:30px">
                            <a class="button button-secondary" href="search">Exit record</a>
                         </div>
@@ -301,7 +283,7 @@ Person record
                </div>
                <div id="health" class="tabcontentActive">
                   <div class="panel panel-border-wide">
-                    <p class="bold">Registrations team to process cancellation.</p>
+                     <p class="bold">Registration team to process the cancellation. Create a new entitlement for main</p>
                   </div>
                   <table id="mainTable">
                      <thead>
@@ -318,24 +300,11 @@ Person record
                      <tbody>
                         <tr>
                            <td>S1</td>
-                           <td>10/10/2016</td>
-                           <td>-</td>
-                           <td>Main</td>
-                           <td>Cyprus</td>
-                           <td><span class="status-tag-requested font-xsmall" style="padding-left:25px; padding-right:25px;">REQUESTED</span></td>
-                           <td nowrap="">
-                              <details onclick="myFunction()">
-                                 <summary><span class="summary">More info</span></summary>
-                              </details>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>S1</td>
                            <td>04/12/2018</td>
                            <td>-</td>
                            <td>Main</td>
                            <td>France</td>
-                           <td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px; text-align: center; width: 100px;">PENDING CANCELLATION</span></td>
+                           <td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px; text-align: center; width: 110px;">PENDING CANCELLATION</span></td>
                            <td nowrap="">
                               <details onclick="myFunction2()">
                                  <summary><span class="summary">More info</span></summary>
@@ -344,75 +313,6 @@ Person record
                         </tr>
                      </tbody>
                   </table>
-                  <div id="myDIV" style="display:none;">
-                     <table>
-                        <tbody>
-                           <tr>
-                              <td colspan="8">
-                                 <div class="panel panel-border-wide s1infoExpanded">
-                                    <div class="main-container form-group">
-                                       <div class="major-container">
-                                          <h1 class="heading-medium">Additional entitlement details</h1>
-                                          <table id="entitlementDetails" class="check-table">
-                                             <caption class="visually-hidden">A table displaying the entitlement details</caption>
-                                             <tbody>
-                                                <tr class="row">
-                                                   <td class="column">Reference number</td>
-                                                   <td class="column">213321</td>
-                                                </tr>
-                                                <tr class="row">
-                                                   <td class="column">Source</td>
-                                                   <td class="column">Customer</td>
-                                                </tr>
-                                                <tr class="row">
-                                                   <td class="column">Citizen status</td>
-                                                   <td class="column">Pensioner</td>
-                                                </tr>
-                                                <tr class="row">
-                                                   <td class="column">Moving date</td>
-                                                   <td class="column">20/03/2020</td>
-                                                </tr>
-                                                <tr class="row">
-                                                   <td class="column">UK State Pension start date</td>
-                                                   <td class="column">01/01/2020</td>
-                                                </tr>
-                                                <tr class="row">
-                                                   <td class="column">Reason for requested entitlement</td>
-                                                   <td class="column">France State Pension start date</td>
-                                                </tr>
-                                             </tbody>
-                                          </table>
-                                       </div>
-                                       <div class="minor-container">
-                                          <div><a class="link button button-secondary entitlements" href="">Reprint</a>
-                                          </div>
-                                          <!-- 	<div><a class="link button button-secondary entitlements" href="">View main</a></div> -->
-                                       </div>
-                                    </div>
-                                    <div class="main-container form-group">
-                                       <div class="major-container">
-                                          <table id="entitlementDetails" class="check-table">
-                                             <h1 class="heading-medium">Benefit information</h1>
-                                             <caption class="visually-hidden">A table displaying the entitlement details</caption>
-                                             <tbody>
-                                                <tr class="row">
-                                                   <td class="column">Benefit name</td>
-                                                   <td class="column">State pension</td>
-                                                </tr>
-                                                <tr class="row">
-                                                   <td class="column">Benefit start date</td>
-                                                   <td class="column">11/11/2018</td>
-                                                </tr>
-                                             </tbody>
-                                          </table>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </td>
-                           </tr>
-                        </tbody>
-                     </table>
-                  </div>
                   <div id="myDIV2" style="display:none;">
                      <table>
                         <tbody>
@@ -455,7 +355,7 @@ Person record
                                                 </tr>
                                                 <tr class="row">
                                                    <td class="column">Pending cancellation reason</td>
-                                                   <td class="column">In receipt of France State Pension</td>
+                                                   <td class="column">Moved within same country(New S1 required)</td>
                                                 </tr>
                                              </tbody>
                                           </table>
@@ -564,174 +464,178 @@ Person record
                   </div>
                   <br>
                   <div class="form-group">
-                     <a class="button" href="dep-moving-country">Create a new entitlement</a>
+                     <!-- <a class="button" href="moving-country">Create a new entitlement</a> -->
+                     <a class="button" href="received-date-3">Create a new entitlement</a>
                      <a class="button button-secondary" href="search">Exit record</a>
                   </div>
                </div>
-            </div>
-            <div id="casehist" class="tabcontent">
-               <div class="form-group">
+               <div id="casehist" class="tabcontent">
+                  <div class="form-group">
+                     <table id="mainTable">
+                        <thead>
+                           <tr>
+                              <th style="width:20%">Date and Time</th>
+                              <th style="width:45%">Description</th>
+                              <th style="width:15%">Type</th>
+                              <th style="width:15%">Operator</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td>06/04/2020 08:30</td>
+                              <td>From [ Registered ] to [ Pending cancellation ]</td>
+                              <td>Entitlement cancelled</td>
+                              <td>James Philip</td>
+                           </tr>
+                           <tr>
+                              <td>06/04/2020 08:30</td>
+                              <td>From [ Rúa de Mer 64 Paris Plaisance 75014 France ] To [ United Kingdom ]</td>
+                              <td>Person Correspondence Address Change</td>
+                              <td>James Philip</td>
+                           </tr>
+                           <tr>
+                              <td>06/04/2020 08:30</td>
+                              <td>From [ 1 Road Downtown Lille 123456 France ] To [ United Kingdom ]</td>
+                              <td>Person Residential Address Change</td>
+                              <td>James Philip</td>
+                           </tr>
+                           <tr>
+                              <td>04/12/2018 09:30</td>
+                              <td>Type [ S1 Pension ] Country [ France ] Status [ Registered ]</td>
+                              <td>Entitlement Created</td>
+                              <td>James Philip</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                     <a class="button button-secondary" href="search">Exit record</a>
+                  </div>
+               </div>
+               <div id="casenotes" class="tabcontent">
                   <table id="mainTable">
                      <thead>
                         <tr>
-                           <th style="width:20%">Date and Time</th>
+                           <th style="width:15%">Date and Time</th>
+                           <th style="width:10%">Source</th>
+                           <th style="width:10%">Channel</th>
+                           <th style="width:10%">Reason</th>
                            <th style="width:45%">Description</th>
-                           <th style="width:15%">Type</th>
-                           <th style="width:15%">Operator</th>
+                           <th style="width:20%">Added by</th>
                         </tr>
                      </thead>
                      <tbody>
-                        <tr>
-                           <td>04/12/2018 09:30</td>
-                           <td>Type [ S1 Pension ] Country [ France ] Status [ Pending issuance ]</td>
-                           <td>Entitlement Created</td>
-                           <td>James Philip</td>
-                        </tr>
                         <!-- <tr>
-                           <td>04/12/2018 09:30</td>
-                           <td>From [ Pending cancellation ] to [ Cancelled ]</td>
-                           <td>Status Change Request</td>
+                           <td>06:04/2020 08:30</td>
+                           <td>Dependant</td>
+                           <td>Phone</td>
+                           <td>Returned to UK</td>
+                           <td>S1 to be cancelled. Email sent to registrations@nhsbsacancellation.com with details to take action</td>
                            <td>James Philip</td>
                         </tr> -->
                         <tr>
-                           <td>04/12/2018 09:30</td>
-                           <td>From [ Registered ] to [ Pending cancellation ]</td>
-                           <td>Status Change Request</td>
-                           <td>James Philip</td>
-                        </tr>
-                        <tr>
-                           <td>04/12/2018 09:30</td>
-                           <td>Type [ S1 Pension ] Country [ France ] Status [ Issued ]</td>
-                           <td>Entitlement Created</td>
+                           <td>06:04/2020 08:30</td>
+                           <td>Main</td>
+                           <td>Phone</td>
+                           <td>Returned to UK</td>
+                           <td>S1 to be cancelled. Email sent to registrations@nhsbsacancellation.com with details to take action</td>
                            <td>James Philip</td>
                         </tr>
                      </tbody>
                   </table>
-               </div>
-               <br>
-               <div class="form-group">
-                  <a class="button button-secondary" href="search">Exit record</a>
-               </div>
-            </div>
-            <div id="casenotes" class="tabcontent">
-               <table id="mainTable">
-                  <thead>
-                     <tr>
-                        <th style="width:15%">Date and Time</th>
-                        <th style="width:10%">Source</th>
-                        <th style="width:10%">Channel</th>
-                        <th style="width:10%">Reason</th>
-                        <th style="width:45%">Description</th>
-                        <th style="width:20%">Added by</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <tr>
-                        <td>06:04/2020 08:30</td>
-                        <td>Customer</td>
-                        <td>Phone</td>
-                        <td>Entitled to S1 in own right</td>
-                        <td>S1 to be cancelled, new S1 to be issued as dependant now entitled in own right. Email sent to registrations@nhsbsacancellation.com with details to take action</td>
-                        <td>James Philip</td>
-                     </tr>
-                  </tbody>
-               </table>
-               <br>
-               <div class="form-group" style="margin-top:30px">
-                  <a class="button" href="#" data-toggle="dialog" data-target="dialog-4">Add note</a>
-                  <a class="button button-secondary" href="search">Exit record</a>
-               </div>
-               <form action="abc-2" method="get" class="form">
-                  <!-- modal starts here  -->
-                  <div class="dialog" id="dialog-4" aria-hidden="true">
-                     <div class="dialog-holder" aria-labelledby="dialog-title-4" aria-describedby="dialog-content-4" role="alertdialog">
-                        <div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
-                           <header class="page-header">
-                              <h2 class="page-header--lede heading-medium" style="margin-top: -1em;">Add note</h2>
-                           </header>
-                           <div class="grid-row">
-                              <div class="column-third">
-                                 <div class="form-group" style="margin-bottom:10px;">
-                                    <label class="form-label" for="select-box">Source</label>
-                                    <select class="form-control" id="select-box">
-                                       <option>Existing customer on PRC/EHIC/Medben</option>
-                                       <!-- <option>BSA</option>
+                  <br>
+                  <div class="form-group" style="margin-top:30px">
+                     <a class="button" href="#" data-toggle="dialog" data-target="dialog-4">Add note</a>
+                     <a class="button button-secondary" href="search">Exit record</a>
+                  </div>
+                  <form action="abc-2" method="get" class="form">
+                     <!-- modal starts here  -->
+                     <div class="dialog" id="dialog-4" aria-hidden="true">
+                        <div class="dialog-holder" aria-labelledby="dialog-title-4" aria-describedby="dialog-content-4" role="alertdialog">
+                           <div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
+                              <header class="page-header">
+                                 <h2 class="page-header--lede heading-medium" style="margin-top: -1em;">Add note</h2>
+                              </header>
+                              <div class="grid-row">
+                                 <div class="column-third">
+                                    <div class="form-group" style="margin-bottom:10px;">
+                                       <label class="form-label" for="select-box">Source</label>
+                                       <select class="form-control" id="select-box">
+                                          <option>Existing customer on PRC/EHIC/Medben</option>
+                                          <!-- <option>BSA</option>
                                           <option>Complaints team</option> -->
-                                       <option>Main</option>
-                                       <option>Dependant</option>
-                                       <option>Third-party</option>
-                                       <option>Other country</option>
-                                       <option>Government organisation</option>
-                                       <option>Power of attorney</option>
-                                       <option>Other</option>
-                                    </select>
+                                          <option>Main</option>
+                                          <option>Dependant</option>
+                                          <option>Third-party</option>
+                                          <option>Other country</option>
+                                          <option>Government organisation</option>
+                                          <option>Other</option>
+                                       </select>
+                                    </div>
                                  </div>
-                              </div>
-                              <div class="column-third">
-                                 <div class="form-group" style="margin-bottom:10px;">
-                                    <label class="form-label" for="select-box">Channel</label>
-                                    <select class="form-control" id="select-box">
-                                       <option>Phone</option>
-                                       <!-- <option>BSA</option> -->
-                                       <option>Staff initiated</option>
-                                       <option>Email</option>
-                                       <option>Letter</option>
-                                       <!-- <option>In person</option> -->
-                                       <option>Other</option>
-                                       <option>Complaints team</option>
-                                    </select>
+                                 <div class="column-third">
+                                    <div class="form-group" style="margin-bottom:10px;">
+                                       <label class="form-label" for="select-box">Channel</label>
+                                       <select class="form-control" id="select-box">
+                                          <option>Phone</option>
+                                          <!-- <option>BSA</option> -->
+                                          <option>Staff initiated</option>
+                                          <option>Email</option>
+                                          <option>Letter</option>
+                                          <!-- <option>In person</option> -->
+                                          <option>Other</option>
+                                          <option>Complaints team</option>
+                                       </select>
+                                    </div>
                                  </div>
-                              </div>
-                              <div class="column-third">
-                                 <div class="form-group">
-                                    <label class="form-label" for="select-box">Reason</label>
-                                    <select class="form-control" id="select-box">
-                                       <!-- <option>Correction</option>
+                                 <div class="column-third">
+                                    <div class="form-group">
+                                       <label class="form-label" for="select-box">Reason</label>
+                                       <select class="form-control" id="select-box">
+                                          <!-- <option>Correction</option>
                                           <option>More information</option>
                                           <option>Checking status</option>
                                           <option>Customer given answers</option> -->
-                                       <option>Unable to complete a customer request</option>
-                                       <option>Amend incorrect information</option>
-                                       <option>Add new information to the customer record</option>
-                                       <option>Customer has requested information</option>
-                                       <option>Customer needs to complete an action</option>
-                                       <option>Letter generated</option>
-                                       <option>Email sent</option>
-                                       <option>Entitlement created in error</option>
-                                       <option>Need evidence for death</option>
-                                       <option>Entitled to S1 in own right</option>
-                                       <option>Other</option>
-                                       <option>Referred to Case Man</option>
-                                    </select>
+                                          <option>Unable to complete a customer request</option>
+                                          <option>Amend incorrect information</option>
+                                          <option>Add new information to the customer record</option>
+                                          <option>Customer has requested information</option>
+                                          <option>Customer needs to complete an action</option>
+                                          <option>Letter generated</option>
+                                          <option>Email sent</option>
+                                          <option>Other</option>
+                                          <option>Referred to Case Man</option>
+                                       </select>
+                                    </div>
                                  </div>
-                              </div>
-                              <div class="grid-row">
-                                 <div class="column-full" style="margin:0 15px 0 15px;">
-                                    <div class="form-group">
-                                       <label class="form-label" for="textarea-a">
-                                       Note
-                                       </label>
-                                       <textarea class="form-control" id="textarea-a" cols="30" rows="10" style="width:94%"></textarea>
+                                 <div class="grid-row">
+                                    <div class="column-full" style="margin:0 15px 0 15px;">
+                                       <div class="form-group">
+                                          <label class="form-label" for="textarea-a">
+                                          Note
+                                          </label>
+                                          <textarea class="form-control" id="textarea-a" cols="30" rows="10" style="width:94%"></textarea>
+                                       </div>
+                                       <div class="dialog-actions" style="display: inline;">
+                                          <input id="submit-btn" class="button buttonSubmit" type="submit" name="updateEntitlement" value="Submit" style="font-size: 19px;" />
+                                          <a class="dialog-cancel" href="#" style="font-size: 1em;">Cancel</a>
+                                       </div>
+                                       <button class="dialog-close" aria-label="close" type="button">
+                                       <span class="icon icon-close">x</span>
+                                       </button>
                                     </div>
-                                    <div class="dialog-actions" style="display: inline;">
-                                       <input id="submit-btn" class="button buttonSubmit" type="submit" name="updateEntitlement" value="Submit" style="font-size: 19px;" />
-                                       <a class="dialog-cancel" href="#" style="font-size: 1em;">Cancel</a>
-                                    </div>
-                                    <button class="dialog-close" aria-label="close" type="button">
-                                    <span class="icon icon-close">x</span>
-                                    </button>
                                  </div>
                               </div>
                            </div>
                         </div>
                      </div>
-                  </div>
-                  <!-- modal ends here  -->
-               </form>
+                     <!-- modal ends here  -->
+                  </form>
+               </div>
             </div>
          </div>
       </div>
-   </div>
    </div>
 </main>
 <script src="/public/javascripts/jquery-1.11.3.js"></script>

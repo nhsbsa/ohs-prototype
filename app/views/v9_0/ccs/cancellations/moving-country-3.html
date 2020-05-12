@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What date did you/will you move to this address?
+	What country are you moving to?
 {% endblock %}
 
 {% block content %}
@@ -51,30 +51,15 @@
 			</div>
 			<div class="column-two-thirds">
 				<div class="heading-group">
-					<h1 class="heading-large">What date did you/will you move to your new address?</h1>
+					<h1 class="heading-large">What country are you moving to?</h1>
 				</div>
-				<form action="benefit-info" id="moving-date-form" method="get" class="form">
+				<form action="moving-date" id="moving-country-form" method="get" class="form">
 					<div class="form-group">
-						<label class="form-label" for="ni-number">
-							Date moved to this address
-							<span class="form-hint">
-								Ensure this date is accurate as it will be used to determine when your health care cover ends. This can be any date. For example, 18/09/2018.
-							</span>
-						</label>
-						<input class="form-control" id="ni-number" type="text" autocomplete="off" value="20/03/2020">
+						<label class="form-label" for="lineone">Country</label>
+						<input class="form-control" id="registration-number" name="address-lineone" type="text" autocomplete="off" value="France" disabled>
 					</div>
-					<!-- <div class="form-group">
-						<label class="form-label" for="ni-number-2">
-							Date returning to the UK (optional)
-							<span class="form-hint">
-								If you’re coming back to the UK permanently, tell us what date you’re moving back. For example, 18/09/2018
-							</span>
-						</label>
-						<input class="form-control" id="ni-number-2" type="text" autocomplete="off">
-					</div> -->
 					<div class="form-group">
-						<!-- <a class="button" href="pension-info">Next</a> -->
-						<a class="button" href="contact-address-same-country-new-s1">Next</a>
+						<a class="button" href="moving-date-3">Next</a>
 						<a class="button button-secondary" href="case-record">Cancel</a>
 					</div>
 				</form>

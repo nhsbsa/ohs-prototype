@@ -219,7 +219,7 @@ router.get(/s1Required/, function (req,res){
   if(req.query.s1Required === "Yes"){
     res.redirect('new-address-date-same-country');
   } else if(req.query.s1Required === "No") {
-    res.redirect('contact-address-same-country');
+    res.redirect('contact-address-same-country-no-new-s1');
   } else {
     res.redirect('new-s1-req');
   }
@@ -230,7 +230,7 @@ router.get(/test/, function (req,res){
   if(req.query.s1Required === "Yes"){
     res.redirect('new-address-date-same-country-2');
   } else if(req.query.s1Required === "No") {
-    res.redirect('contact-address-same-country-2');
+    res.redirect('contact-address-same-country-no-new-s1-2');
   } else {
     res.redirect('new-s1-req-2');
   }
@@ -247,14 +247,25 @@ router.get(/dog/, function (req,res) {
   }
 });
 
-// Aware when they will get paid their state pension, same-pension-same-country.html
+// Aware when they will get paid their state pension, same-pension-info.html
 router.get(/deer/, function (req,res) {
   if(req.query.samePension === "Yes") {
-    res.redirect('pension-date-same-country');
+    res.redirect('same-country-pension-date');
   } else if(req.query.samePension === "No") {
-    res.redirect('info-requested-same-country');
+    res.redirect('info-requested');
   } else {
-    res.redirect('same-pension-same-country');
+    res.redirect('same-pension-info');
+  }
+});
+
+// Aware when they will get paid their state pension, same-pension-info-2.html
+router.get(/owl/, function (req,res) {
+  if(req.query.samePension === "Yes") {
+    res.redirect('same-country-pension-date-2');
+  } else if(req.query.samePension === "No") {
+    res.redirect('info-requested');
+  } else {
+    res.redirect('same-pension-info-2');
   }
 });
 
@@ -641,6 +652,26 @@ router.get(/same-pension-date/, function (req,res) {
     res.redirect('another-pension');
   } else {
     res.redirect('same-pension');
+  }
+});
+
+router.get(/rabbit/, function (req,res) {
+  if(req.query.samePension === "Yes") {
+    res.redirect('same-pension-info');
+  } else if(req.query.samePension === "No") {
+    res.redirect('another-pension');
+  } else {
+    res.redirect('same-pension-3');
+  }
+});
+
+router.get(/eagle/, function (req,res) {
+  if(req.query.samePension === "Yes") {
+    res.redirect('same-pension-info-2');
+  } else if(req.query.samePension === "No") {
+    res.redirect('another-pension');
+  } else {
+    res.redirect('same-pension-4');
   }
 });
 
