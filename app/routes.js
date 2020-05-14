@@ -659,7 +659,7 @@ router.get(/rabbit/, function (req,res) {
   if(req.query.samePension === "Yes") {
     res.redirect('same-pension-info');
   } else if(req.query.samePension === "No") {
-    res.redirect('another-pension');
+    res.redirect('another-pension-3');
   } else {
     res.redirect('same-pension-3');
   }
@@ -669,7 +669,7 @@ router.get(/eagle/, function (req,res) {
   if(req.query.samePension === "Yes") {
     res.redirect('same-pension-info-2');
   } else if(req.query.samePension === "No") {
-    res.redirect('another-pension');
+    res.redirect('another-pension-3');
   } else {
     res.redirect('same-pension-4');
   }

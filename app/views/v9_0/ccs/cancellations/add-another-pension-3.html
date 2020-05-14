@@ -129,23 +129,30 @@ Do you get paid a State Pension in another EEA country, or Switzerland?
 	<div class="grid-row">
 		<div class="column-two-thirds">
 			<header class="page-header">
-				<h1 class="page-header--lede heading-large">Do you get paid a State Pension from another EEA country, or Switzerland?</h1>
+				<h1 class="page-header--lede heading-large">Do you get paid a State Pension from another EEA country, or Switzerland other than the following mentioned below?</h1>
 			</header>
+			<div class="panel panel-border-wide">
+				<p class="bold">In receipt of pension from these countries</p>
+				<p>Sweden<br>
+				   Poland<br>
+				</p>
+			 </div>
+			 <br>
 
-			<form action="new-person-third-country-pension" id="another-pension-form" method="get" class="form">
+			<form action="check-your-answers-4" id="another-pension-form" method="get" class="form">
 				<div class="form-group">
 					<fieldset id="another-pension" class="inline">
 						<legend class="visually-hidden">
 						</legend>
 						<div class="govuk-radios govuk-radios--inline">
 							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="radiobtn-country-yes" name="anotherCountry" type="radio" value="yes" checked >
+								<input class="govuk-radios__input" id="radiobtn-country-yes" name="thirdcountrypension" type="radio" value="yes" checked >
 								<label class="govuk-label govuk-radios__label" for="radiobtn-country-yes">
 									Yes
 								</label>
 							</div>
 							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="radiobtn-country-no" name="anotherCountry" type="radio" value="no">
+								<input class="govuk-radios__input" id="radiobtn-country-no" name="thirdcountrypension" type="radio" value="no">
 								<label class="govuk-label govuk-radios__label" for="radiobtn-country-no">
 									No
 								</label>
@@ -156,14 +163,14 @@ Do you get paid a State Pension in another EEA country, or Switzerland?
 
 				<div class="form-group pickCountry">
 					<label class="form-label" for="full-name-f1">Country 1</label>
-					<input class="form-control" id="full-name-f1" type="text" value="Poland">
-					<a href="another-pension"> remove country</a>
+					<input class="form-control" id="full-name-f1" name="pension" type="text" value="Poland">
+					<a href="another-pension-3"> remove country</a>
 				</div>
 
 				<div class="form-group pickCountry">
 					<label class="form-label" for="full-name-f1">Country 2</label>
 					<input class="form-control" id="full-name-f1" type="text">
-					<a href="#form-optional-fields"> add country</a>
+					<a href="#"> add country</a>
 				</div>
 
 				<div class="form-group">
@@ -186,5 +193,5 @@ Do you get paid a State Pension in another EEA country, or Switzerland?
 				$("#another-pension2-form").attr("action", "another-pension2");
 			}
 		});
-	</script>
+	</script> 
 	{% endblock %}
