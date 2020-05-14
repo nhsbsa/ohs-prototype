@@ -311,7 +311,7 @@ Person record
                            <td>-</td>
                            <td>Main</td>
                            <td>France</td>
-                           <td><span class="status-tag-medium font-xsmall">PENDING ISSUANCE</span></td>
+                           <td><span class="status-tag-medium font-xsmall" style="padding-left:25px; padding-right:25px">PENDING ISSUE</span></td>
                            <td nowrap="">
                               <details onclick="myFunction()">
                                  <summary><span class="summary">More info</span></summary>
@@ -340,7 +340,12 @@ Person record
                               <td colspan="8">
                                  <div class="panel panel-border-wide s1infoExpanded">
                                     <div class="main-container form-group">
-                                       <div class="major-container" style="min-height: 50px;">
+                                       <div class="minor-container">
+                                          <div><a class="link button button-secondary entitlements" style="float:right;" href="">Reprint</a>
+                                          </div>
+                                          <!-- <div><a class="link button button-secondary entitlements" href="">Add dependant</a></div> -->
+                                       </div> 
+                                       <div class="major-container"> <!--style="min-height: 50px;"-->
                                           <details>
                                              <summary>
                                                 <span class="summary">Additional entitlement details</span>
@@ -375,12 +380,6 @@ Person record
                                                 </tbody>
                                              </table>
                                           </details>   
-                                       </div>
-                                       <div class="minor-container">
-                                          <div><a class="link button button-secondary entitlements" href="">Reprint</a>
-                                          </div>
-                                          <div><a class="link button button-secondary entitlements" href="">Add dependant</a></div>
-                                       </div>
                                     </div>
                                     <!-- <div class="main-container form-group">
                                        <div class="major-container">
@@ -399,6 +398,45 @@ Person record
                                              </tbody>
                                           </table>
                                        </div> -->
+                                       <details>
+                                          <summary>
+                                             <span class="summary">View dependants</span>
+                                          </summary>
+                                          <table>
+                                             <thead>
+                                                <tr>
+                                                   <th scope="col" nowrap="">Full name</th>
+                                                   <th scope="col" nowrap="">Issued Date</th>
+                                                   <th scope="col" nowrap="">Start date</th>
+                                                   <th scope="col" nowrap="">End date</th>
+                                                   <th scope="col" nowrap="">Country</th>
+                                                   <th scope="col" nowrap="">Status</th>
+                                                   <th scope="col"></th>
+                                                </tr>
+                                             </thead>
+                                             <tbody>
+                                                <tr>
+                                                   <td>Rosie Philip</td>
+                                                   <td>04/12/2018</td>
+                                                   <td>04/12/2018</td>
+                                                   <td>-</td>
+                                                   <td>France</td>
+                                                   <td><span class="status-tag-medium font-xsmall" style="padding-left:25px; padding-right:25px">PENDING ISSUE</span></td>
+                                                   <td><a href="#">View record</a></td>
+                                                </tr>
+                                                <tr>
+                                                   <td>Sarah Philip</td>
+                                                   <td>04/12/2018</td>
+                                                   <td>04/12/2018</td>
+                                                   <td>-</td>
+                                                   <td>France</td>
+                                                   <td><span class="status-tag-medium font-xsmall" style="padding-left:25px; padding-right:25px">PENDING ISSUE</span></td>
+                                                   <td><a href="#">View record</a></td>
+                                                </tr>
+                                             </tbody>
+                                          </table>
+                                       </details>  
+                                    </div>   
                                     </div>
                                  </div>
                               </td>
