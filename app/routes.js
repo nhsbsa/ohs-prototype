@@ -277,6 +277,18 @@ router.get(/reprint-reasons/, function (req,res){
   }
 });
 
+//Information to be sent by an email for nino change evidence, nino-info-email.html
+router.get(/nino-email/, function (req,res) {
+  if(req.query.ninoEmail === "Yes") {
+    res.redirect('nino-enter-email');
+  } else if(req.query.ninoEmail === "No") {
+    res.redirect('cya-nino-change-2');
+  } else {
+    res.redirect('nino-info-email');
+  }
+});
+
+
 // EHIC //
 
 // UK resident //
