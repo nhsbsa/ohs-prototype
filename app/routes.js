@@ -217,9 +217,9 @@ router.get(/cancel-confirm/, function (req,res){
 // Require a new S1 if moving within same country - registered //
 router.get(/s1Required/, function (req,res){
   if(req.query.s1Required === "Yes"){
-    res.redirect('new-address-date-same-country');
+    res.redirect('new-address-date-same-country-new-s1');
   } else if(req.query.s1Required === "No") {
-    res.redirect('contact-address-same-country-no-new-s1');
+    res.redirect('new-address-date-same-country-no-new-s1');
   } else {
     res.redirect('new-s1-req');
   }
@@ -228,7 +228,7 @@ router.get(/s1Required/, function (req,res){
 // Require a new S1 if moving within same country -issued//
 router.get(/test/, function (req,res){
   if(req.query.s1Required === "Yes"){
-    res.redirect('new-address-date-same-country-2');
+    res.redirect('new-address-date-same-country-new-s1-2');
   } else if(req.query.s1Required === "No") {
     res.redirect('contact-address-same-country-no-new-s1-2');
   } else {
@@ -266,6 +266,73 @@ router.get(/owl/, function (req,res) {
     res.redirect('info-requested');
   } else {
     res.redirect('same-pension-info-2');
+  }
+});
+
+// Aware when they will get paid their state pension, same-pension-info-3.html
+router.get(/horse/, function (req,res) {
+  if(req.query.samePension === "Yes") {
+    res.redirect('same-country-pension-date-3');
+  } else if(req.query.samePension === "No") {
+    res.redirect('info-requested');
+  } else {
+    res.redirect('same-pension-info-3');
+  }
+});
+
+// State pension from France, same-pension-3.html
+router.get(/rabbit/, function (req,res) {
+  if(req.query.samePension === "Yes") {
+    res.redirect('same-pension-info');
+  } else if(req.query.samePension === "No") {
+    res.redirect('another-pension-3');
+  } else {
+    res.redirect('same-pension-3');
+  }
+});
+
+
+// State pension from France, same-pension-4.html
+router.get(/eagle/, function (req,res) {
+  if(req.query.samePension === "Yes") {
+    res.redirect('same-pension-info-2');
+  } else if(req.query.samePension === "No") {
+    res.redirect('another-pension-3');
+  } else {
+    res.redirect('same-pension-4');
+  }
+});
+
+// State pension from France, same-pension-5.html
+router.get(/lion/, function (req,res) {
+  if(req.query.samePension === "Yes") {
+    res.redirect('same-pension-info-3');
+  } else if(req.query.samePension === "No") {
+    res.redirect('another-pension-3');
+  } else {
+    res.redirect('same-pension-5');
+  }
+});
+
+// Third country pension, another-pension-3.html
+router.get(/another-pension/, function (req,res) {
+  if(req.query.thirdcountrypension === "Yes") {
+    res.redirect('check-your-answers-5');
+  } else if(req.query.thirdcountrypension === "No") {
+    res.redirect('check-your-answers-4');
+  } else {
+    res.redirect('another-pension-3');
+  }
+});
+
+// Third country pension, add-another-pension-3.html
+router.get(/add-third-country/, function (req,res) {
+  if(req.query.thirdcountrypension === "Yes") {
+    res.redirect('check-your-answers-5');
+  } else if(req.query.thirdcountrypension === "No") {
+    res.redirect('check-your-answers-4');
+  } else {
+    res.redirect('another-pension-3');
   }
 });
 
@@ -666,27 +733,6 @@ router.get(/same-pension-date/, function (req,res) {
     res.redirect('same-pension');
   }
 });
-
-router.get(/rabbit/, function (req,res) {
-  if(req.query.samePension === "Yes") {
-    res.redirect('same-pension-info');
-  } else if(req.query.samePension === "No") {
-    res.redirect('another-pension-3');
-  } else {
-    res.redirect('same-pension-3');
-  }
-});
-
-router.get(/eagle/, function (req,res) {
-  if(req.query.samePension === "Yes") {
-    res.redirect('same-pension-info-2');
-  } else if(req.query.samePension === "No") {
-    res.redirect('another-pension-3');
-  } else {
-    res.redirect('same-pension-4');
-  }
-});
-
 
 router.get(/uk-benefit-info/, function (req,res) {
   if(req.query.statePension === "Yes") {
