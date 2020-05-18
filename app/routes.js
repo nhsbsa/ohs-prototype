@@ -315,7 +315,7 @@ router.get(/lion/, function (req,res) {
 });
 
 // Third country pension, another-pension-3.html
-router.get(/another-pension/, function (req,res) {
+router.get(/sky/, function (req,res) {
   if(req.query.thirdcountrypension === "Yes") {
     res.redirect('check-your-answers-5');
   } else if(req.query.thirdcountrypension === "No") {
@@ -326,13 +326,13 @@ router.get(/another-pension/, function (req,res) {
 });
 
 // Third country pension, add-another-pension-3.html
-router.get(/add-third-country/, function (req,res) {
+router.get(/moon/, function (req,res) {
   if(req.query.thirdcountrypension === "Yes") {
     res.redirect('check-your-answers-5');
   } else if(req.query.thirdcountrypension === "No") {
     res.redirect('check-your-answers-4');
   } else {
-    res.redirect('another-pension-3');
+    res.redirect('add-another-pension-3');
   }
 });
 
