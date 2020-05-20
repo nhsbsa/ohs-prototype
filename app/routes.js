@@ -344,14 +344,38 @@ router.get(/reprint-reasons/, function (req,res){
   }
 });
 
-//Information to be sent by an email for nino change evidence, nino-info-email.html
+//Information to be sent by an email for nino change evidence, nino-change-info-email.html
 router.get(/nino-email/, function (req,res) {
   if(req.query.ninoEmail === "Yes") {
-    res.redirect('nino-enter-email');
+    res.redirect('nino-change-enter-email');
   } else if(req.query.ninoEmail === "No") {
     res.redirect('cya-nino-change-2');
   } else {
-    res.redirect('nino-info-email');
+    res.redirect('nino-change-info-email');
+  }
+});
+
+//Name change reason, name-change-reason.html
+router.get(/star/, function (req,res) {
+  if(req.query.nameChange === "Incorrect name printed on S1") {
+    res.redirect('new-name-1');
+  } else if(req.query.nameChange === "Married/Divorced") {
+    res.redirect('new-name-2');
+  } else if(req.query.nameChange === "Change of name(legally)") {
+      res.redirect('new-name-2');
+  } else {
+    res.redirect('name-change-reason');
+  }
+});
+
+//Information to be sent by an email for nino change evidence, name-change-info-email.html
+router.get(/name-email/, function (req,res) {
+  if(req.query.nameEmail === "Yes") {
+    res.redirect('name-change-enter-email');
+  } else if(req.query.nameEmail === "No") {
+    res.redirect('cya-name-change-3');
+  } else {
+    res.redirect('name-change-info-email');
   }
 });
 

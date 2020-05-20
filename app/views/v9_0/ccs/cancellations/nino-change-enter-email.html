@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What is your new name?
+	What is your National Insurance number?
 {% endblock %}
 
 {% block content %}
@@ -51,27 +51,32 @@
 			</div>
 			<div class="column-two-thirds">
 				<div class="heading-group">
-					<h1 class="heading-large">What is your name?</h1>
+					<h1 class="heading-large">What is your email address to which you want the information to be sent to?</h1>
 				</div>
-				<form action="benefit-info" id="moving-date-form" method="get" class="form">
+				<form action="nino-update-email" id="moving-date-form" method="get" class="form">
 					<div class="form-group">
 						<label class="form-label" for="ni-number">
-							First name
+							Email Address
+							<!-- <span class="form-hint">
+								This can be any date up to 4 weeks from today. For example, 18/09/2018
+							</span> -->
 						</label>
-						<input class="form-control" id="ni-number" type="text" autocomplete="off" value="Michael">
+						<input class="form-control" id="ni-number" type="text" autocomplete="off" value="michael.philip@email.com">
 					</div>
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<label class="form-label" for="ni-number-2">
-							Last name
-							
+							Date returning to the UK (optional)
+							<span class="form-hint">
+								If you’re coming back to the UK permanently, tell us what date you’re moving back. For example, 18/09/2018
+							</span>
 						</label>
-						<input class="form-control" id="ni-number-2" type="text" autocomplete="off" value="Phillips">
-					</div>
+						<input class="form-control" id="ni-number-2" type="text" autocomplete="off">
+					</div> -->
 					<div class="form-group">
 						<!-- <a class="button" href="pension-info">Next</a> -->
-						<!-- <a class="button" href="new-name-conf-1">Next</a> -->
-						<a class="button" href="cya-name-change">Next</a>
-						<a class="button button-secondary" href="case-record">Cancel</a>
+						<!-- <a class="button" href="new-ni-conf-1">Next</a> -->
+						<a class="button" href="nino-change-update-email">Next</a>
+						<a class="button button-secondary" href="case-record-65">Cancel</a>
 					</div>
 				</form>
 			</div>
