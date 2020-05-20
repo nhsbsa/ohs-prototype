@@ -356,7 +356,7 @@ router.get(/nino-email/, function (req,res) {
 });
 
 //Name change reason, name-change-reason.html
-router.get(/star/, function (req,res) {
+router.get(/asteroid/, function (req,res) {
   if(req.query.nameChange === "Incorrect name printed on S1") {
     res.redirect('new-name-1');
   } else if(req.query.nameChange === "Married/Divorced") {
