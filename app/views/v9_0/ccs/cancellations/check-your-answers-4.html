@@ -129,25 +129,28 @@
 						</div>
 						<div>
 							<dt class="cya-question">Do you get paid a State Pension from another EEA country, or Switzerland other than the following mentioned below? </dt>
-							<dd class="cya-answer">No<!-- {{data.thirdcountrypension}}
+							<dd class="cya-answer">{{data.thirdcountrypension}}
 								                   {% if data.thirdcountrypension === "Yes" %}
 									                  - {{data.thirdcountry}}
-								                   {% endif %} --> </dd>
+								                   {% endif %}</dd>
 							<dd class="cya-change">
 								<a href="another-pension-3#state-pension">Change<span class="visually-hidden"> France State Pension</span></a>
 							</dd>
 						</div>
-						<!-- <div>
-							<dt class="cya-question">Do you get paid a State Pension from another EEA country, or Switzerland?</dt>
-							<dd class="cya-answer">{{data.thirdcountrypension}}
-													{% if data.thirdcountrypension === "Yes" %}
-														- {{data.thirdcountry}}
-													{% endif %}
-							</dd>
+						<div>
+							<dt class="cya-question">Add Rosie Philip to your new application</dt>
+							<dd class="cya-answer">Yes</dd>
 							<dd class="cya-change">
-								<a href="another-pension#another-pension">Change<span class="visually-hidden"> if you get paid a State Pension from another EEA country, or Switzerland</span></a>
+								<a href="add-dep-to-app">Change<span class="visually-hidden">Add Rosie Philip to your new application </span></a>
 							</dd>
-						</div> -->
+						</div>
+						<div>
+							<dt class="cya-question">Add Sarah Philip to your new application</dt>
+							<dd class="cya-answer">Yes</dd>
+							<dd class="cya-change">
+								<a href="add-dep-to-app">Change<span class="visually-hidden">Add Rosie Philip to your new application </span></a>
+							</dd>
+						</div>
 					</dl>
 				</div>
 				<!-- <div class="form-group">

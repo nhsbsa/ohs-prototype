@@ -317,9 +317,9 @@ router.get(/lion/, function (req,res) {
 // Third country pension, another-pension-3.html
 router.get(/sky/, function (req,res) {
   if(req.query.thirdcountrypension === "Yes") {
-    res.redirect('check-your-answers-5');
+    res.redirect('add-dep-to-app-5');
   } else if(req.query.thirdcountrypension === "No") {
-    res.redirect('check-your-answers-4');
+    res.redirect('add-dep-to-app-4');
   } else {
     res.redirect('another-pension-3');
   }
