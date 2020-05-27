@@ -336,6 +336,17 @@ router.get(/galaxy/, function (req,res) {
   }
 });
 
+// Third country pension, another-pension-5.html
+router.get(/rocket/, function (req,res) {
+  if(req.query.thirdcountrypension === "Yes") {
+    res.redirect('add-dep-to-app-6');
+  } else if(req.query.thirdcountrypension === "No") {
+    res.redirect('add-dep-to-app-7');
+  } else {
+    res.redirect('another-pension-5');
+  }
+});
+
 // Third country pension, add-another-pension-3.html
 router.get(/moon/, function (req,res) {
   if(req.query.thirdcountrypension === "Yes") {

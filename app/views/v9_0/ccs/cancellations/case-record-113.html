@@ -215,9 +215,9 @@ Person record
                            </div>
                            <br>
                            <div>
-                              <dt class="cya-question">In receipt of state pension/state benefit</dt>
+                              <dt class="cya-question">In receipt of France State Pension</dt>
                               <dd class="cya-answer">
-                                 Yes - State Pension
+                                 01/01/2020
                               </dd>
                               <dd class="cya-change">
                               </dd>
@@ -288,9 +288,6 @@ Person record
                   </div>
                </div> <br>
                <div id="health" class="tabcontentActive">
-                  <div class="panel panel-border-wide">
-                    <p>Registrations team to process pending entitlements.</p>
-                  </div>
                   <table id="mainTable">
                      <thead>
                         <tr>
@@ -306,11 +303,11 @@ Person record
                      <tbody>
                         <tr>
                            <td>S1</td>
-                           <td>20/03/2020</td>
-                           <td>14/05/2020</td>
+                           <td>-</td>
+                           <td>-</td>
                            <td>Main</td>
                            <td>France</td>
-                           <td><span class="status-tag-medium font-xsmall" style="padding-left:25px; padding-right:25px">PENDING ISSUE</span></td>
+                           <td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px">REJECTED</span></td>
                            <td nowrap="">
                               <details onclick="myFunction()">
                                  <summary><span class="summary">More info</span></summary>
@@ -339,8 +336,7 @@ Person record
                               <td colspan="8">
                                  <div class="panel panel-border-wide s1infoExpanded">
                                     <div class="main-container form-group">
-                                      
-                                       <div class="major-container"> <!--style="min-height: 50px;"-->
+                                       <div class="major-container">
                                           <details>
                                              <summary>
                                                 <span class="summary">Additional entitlement details</span>
@@ -370,18 +366,22 @@ Person record
                                                    </tr>
                                                    <tr class="row">
                                                       <td class="column">France Pension start date</td>
-                                                      <td class="column">15/05/2020</td>
+                                                      <td class="column">01/01/2020</td>
+                                                   </tr>
+                                                   <tr class="row">
+                                                      <td class="column">Rejected reason</td>
+                                                      <td class="column">UK is not competent</td>
                                                    </tr>
                                                 </tbody>
                                              </table>
                                           </details>  
-                                          <br> 
-                                    </div>
-                                    <div class="minor-container">
-                                       <div><a class="link button button-secondary entitlements" href="">Reprint</a>
                                        </div>
-                                       <div><a class="link button button-secondary entitlements" href="">Add dependant</a></div>
-                                    </div> 
+                                       <div class="minor-container">
+                                          <div><a class="link button button-secondary entitlements" href="">Reprint</a>
+                                          </div>
+                                          <!-- 	<div><a class="link button button-secondary entitlements" href="">View main</a></div> -->
+                                       </div>
+                                    </div>
                                     <!-- <div class="main-container form-group">
                                        <div class="major-container">
                                           <table id="entitlementDetails" class="check-table">
@@ -399,45 +399,6 @@ Person record
                                              </tbody>
                                           </table>
                                        </div> -->
-                                       <div id="moreInfo" class="column-full"></div>
-                                       <details>
-                                          <summary>
-                                             <span class="summary">View dependants</span>
-                                          </summary>
-                                          <table>
-                                             <thead>
-                                                <tr>
-                                                   <th scope="col" nowrap="">Full name</th>
-                                                   <th scope="col" nowrap="">Issued Date</th>
-                                                   <th scope="col" nowrap="">Start date</th>
-                                                   <th scope="col" nowrap="">End date</th>
-                                                   <th scope="col" nowrap="">Country</th>
-                                                   <th scope="col" nowrap="">Status</th>
-                                                   <th scope="col"></th>
-                                                </tr>
-                                             </thead>
-                                             <tbody>
-                                                <!--<tr>
-                                                   <td>Rosie Philip</td>
-                                                   <td>04/12/2018</td>
-                                                   <td>04/12/2018</td>
-                                                   <td>-</td>
-                                                   <td>France</td>
-                                                   <td><span class="status-tag-medium font-xsmall" style="padding-left:25px; padding-right:25px">PENDING ISSUE</span></td>
-                                                   <td><a href="#">View record</a></td>
-                                                </tr> -->
-                                                <tr>
-                                                   <td>Sarah Philip</td>
-                                                   <td>04/12/2018</td>
-                                                   <td>04/12/2018</td>
-                                                   <td>-</td>
-                                                   <td>France</td>
-                                                   <td><span class="status-tag-medium font-xsmall" style="padding-left:25px; padding-right:25px">PENDING ISSUE</span></td>
-                                                   <td><a href="#">View record</a></td>
-                                                </tr>
-                                             </tbody>
-                                          </table>
-                                       </details>  
                                     </div>
                                  </div>
                               </td>
@@ -445,7 +406,6 @@ Person record
                         </tbody>
                      </table>
                   </div>
-                  <br>
                   <div id="myDIV2" style="display:none;">
                      <table>
                         <tbody>
@@ -457,7 +417,7 @@ Person record
                                           <details>
                                              <summary>
                                                 <span class="summary">Additional entitlement details</span>
-                                             </summary> 
+                                             </summary>   
                                              <table id="entitlementDetails" class="check-table">
                                                 <caption class="visually-hidden">A table displaying the entitlement details</caption>
                                                 <tbody>
@@ -489,13 +449,13 @@ Person record
                                                       <td class="column">Date moved to new address</td>
                                                       <td class="column">20/03/2020</td>
                                                    </tr>
-                                                   <tr class="row">
+                                                   <!--<tr class="row">
                                                       <td class="column">Pending cancellation reason</td>
                                                       <td class="column">In receipt of France State Pension</td>
-                                                   </tr>
+                                                   </tr> -->
                                                 </tbody>
                                              </table>
-                                          </details>   
+                                          </details>
                                           <br>
                                           <!-- <table id="entitlementDetails" class="check-table">
                                              <h1 class="heading-medium">Benefit information</h1>
@@ -514,8 +474,8 @@ Person record
                                           </table> -->
                                           <details>
                                              <summary>
-                                                <span class="summary">Registration details</span>
-                                             </summary> 
+                                                <span class="summary">Registration Details</span>
+                                             </summary>
                                              <table id="entitlementDetails" class="check-table">
                                                 <caption class="visually-hidden">A table displaying the Registration details</caption>
                                                 <tbody>
@@ -551,13 +511,13 @@ Person record
                                                    </tr>
                                                 </tbody>
                                              </table>
-                                          </details>  
-                                          <br> 
+                                          </details>
                                        </div>
                                        <div class="minor-container">
                                           <!-- <div><a class="link button button-secondary entitlements" href="reprint-reason">Reprint</a></div>
                                              <div><a class="link button button-secondary entitlements" href="search-dependant">Add dependant</a></div> -->
                                        </div>
+                                    </div>
                                     <!-- <div id="moreInfo" class="column-full"> -->
 													<details>
 														<summary>
@@ -625,8 +585,8 @@ Person record
                      <tbody>
                         <tr>
                            <td>04/12/2018 09:30</td>
-                           <td>Type [ S1 Pension ] Country [ France ] Status [ Pending issue ]</td>
-                           <td>Entitlement Created</td>
+                           <td>Type [ S1 Pension ] Country [ France ] Status [ Rejected ]</td>
+                           <td>Entitlement Rejected</td>
                            <td>James Philip</td>
                         </tr>
                         <!-- <tr>
@@ -635,6 +595,18 @@ Person record
                            <td>Status Change Request</td>
                            <td>James Philip</td>
                         </tr> -->
+                        <tr>
+                           <td>06/04/2020 08:30</td>
+                           <td>From [Moved within same country [New S1 required] ] to [In receipt of France State Pension]</td>
+                           <td>Pending Cancellation Reason Change</td>
+                           <td>James Philip</td>
+                        </tr>
+                        <tr>
+                           <td>06/04/2020 08:30</td>
+                           <td>Moved within same country [ New S1 required ]</td>
+                           <td>Pending Cancellation Reason</td>
+                           <td>James Philip</td>
+                        </tr>
                         <tr>
                            <td>04/12/2018 09:30</td>
                            <td>From [ Registered ] to [ Pending cancellation ]</td>
@@ -684,7 +656,7 @@ Person record
                         <td>06:04/2020 08:30</td>
                         <td>Customer</td>
                         <td>Phone</td>
-                        <td>Address change within country	</td>
+                        <td>Address change within country</td>
                         <td>Main moved within same country but requires new S1 for the new address change.S1 to be cancelled.Automated email sent to Registrations Team to be processed.</td>
                         <td>James Philip</td>
                      </tr>
