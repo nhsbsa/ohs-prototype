@@ -214,7 +214,7 @@ router.get(/cancel-confirm/, function (req,res){
   }
 });
 
-// Require a new S1 if moving within same country - registered //
+// Require a new S1 if moving within same country - Pensioner registered //
 router.get(/s1Required/, function (req,res){
   if(req.query.s1Required === "Yes"){
     res.redirect('new-address-date-same-country-new-s1');
@@ -225,12 +225,12 @@ router.get(/s1Required/, function (req,res){
   }
 });
 
-// Require a new S1 if moving within same country -issued//
+// Require a new S1 if moving within same country - Exportable Benefits registered//
 router.get(/test/, function (req,res){
   if(req.query.s1Required === "Yes"){
     res.redirect('new-address-date-same-country-new-s1-2');
   } else if(req.query.s1Required === "No") {
-    res.redirect('contact-address-same-country-no-new-s1-2');
+    res.redirect('new-s1-req-2');
   } else {
     res.redirect('new-s1-req-2');
   }
