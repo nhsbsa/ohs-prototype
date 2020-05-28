@@ -252,7 +252,7 @@ router.get(/deer/, function (req,res) {
   if(req.query.samePension === "Yes") {
     res.redirect('same-country-pension-date');
   } else if(req.query.samePension === "No") {
-    res.redirect('info-requested');
+    res.redirect('check-your-answers-11');
   } else {
     res.redirect('same-pension-info');
   }
@@ -263,7 +263,7 @@ router.get(/owl/, function (req,res) {
   if(req.query.samePension === "Yes") {
     res.redirect('same-country-pension-date-2');
   } else if(req.query.samePension === "No") {
-    res.redirect('info-requested');
+    res.redirect('check-your-answers-11');
   } else {
     res.redirect('same-pension-info-2');
   }
