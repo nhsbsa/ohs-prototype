@@ -790,6 +790,52 @@ router.get(/uk-benefit-info/, function (req,res) {
   }
 });
 
+// Standard pensioner s1
+// State pension from France, same-pension.html
+router.get(/panda/, function (req,res) {
+  if(req.query.samePension === "Yes") {
+    res.redirect('same-pension-info');
+  } else if(req.query.samePension === "No") {
+    res.redirect('another-pension');
+  } else {
+    res.redirect('same-pension');
+  }
+});
+
+// Aware when they will get paid their state pension, same-pension-info.html
+router.get(/camel/, function (req,res) {
+  if(req.query.samePension === "Yes") {
+    res.redirect('same-country-pension-date');
+  } else if(req.query.samePension === "No") {
+    res.redirect('check-your-answers-4');
+  } else {
+    res.redirect('same-pension-info');
+  }
+});
+
+// Third country pension, another-pension.html
+router.get(/ox/, function (req,res) {
+  if(req.query.thirdcountrypension === "Yes") {
+    res.redirect('check-your-answers-2');
+  } else if(req.query.thirdcountrypension === "No") {
+    res.redirect('check-your-answers-3');
+  } else {
+    res.redirect('another-pension');
+  }
+});
+
+// Third country pension, another-pension.html
+router.get(/crow/, function (req,res) {
+  if(req.query.thirdcountrypension === "Yes") {
+    res.redirect('check-your-answers-5');
+  } else if(req.query.thirdcountrypension === "No") {
+    res.redirect('check-your-answers-6');
+  } else {
+    res.redirect('another-pension');
+  }
+});
+
+
 // Dependant entitled in own right - registered status
 // router.get(/dep-has-pension/, function (req,res) {
 //   if(req.query.depHasPension === "Yes") {
