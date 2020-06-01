@@ -162,12 +162,12 @@
 				</h1>
 			</div>
 			<div class="tab-container">
-				<a class="tablinks" onclick="openTab(event, 'personal')" href="#">
+				<a class="tablinks active" onclick="openTab(event, 'personal')" href="#">
 					<div>
 						<p class="heading-small">Personal details</p>
 					</div>
 				</a>
-				<a class="tablinks active" onclick="openTab(event, 'health')" href="#">
+				<a class="tablinks" onclick="openTab(event, 'health')" href="#">
 					<div>
 						<p class="heading-small">Entitlements</p>
 					</div>
@@ -183,7 +183,7 @@
 	               </div>
 	            </a>
 				<div class="tab-box">
-					<div id="personal" class="tabcontent">
+					<div id="personal" class="tabcontentActive">
 						<div class="grid-row">
 							<div class="column-two-thirds">
 								<br>
@@ -196,21 +196,21 @@
 										<dd class="cya-change">
 										</dd>
 									</div>
-									
+									</dl>
+								    <br>
+									<dl class="govuk-check-your-answers cya-questions-long">
 									<div>
 										<dt class="cya-question">Date of birth</dt>
 										<dd class="cya-answer">
-											16/03/1953
+											16/03/1994
 										</dd>
 										<dd class="cya-change">
 										</dd>
 									</div>
-								</dl>
-								<p class="navigation">
-									<a class="cancel" href="new-dob-1">Change</a>
-								</p>
-								<br>
-								<dl class="govuk-check-your-answers cya-questions-long">
+									<p style="color: #005ea5;">
+										Pending change
+									 </p>
+									<br>
 									<div>
 										<dt class="cya-question">National Insurance number</dt>
 										<dd class="cya-answer">
@@ -251,8 +251,8 @@
 									</div>
 								</dl>
 								<!--<p class="navigation">
-									<a class="cancel" href="new-address-uk-2">Change</a>
-								</p>-->
+									<a class="cancel" href="#">Change</a>
+								</p> -->
 								<dl class="govuk-check-your-answers cya-questions-long">
 									<br>
 									<div>
@@ -269,7 +269,7 @@
 										</dd>
 									</div>
 								</dl>
-								<!--<p class="navigation">
+								<!-- <p class="navigation">
 									<a class="cancel" href="#">Change</a>
 								</p> -->
 								<br>
@@ -282,7 +282,7 @@
 							</div>
 						</div>
 					</div>
-					<div id="health" class="tabcontentActive">
+					<div id="health" class="tabcontent">
 						<table id="mainTable">
 							<thead>
 								<tr>
@@ -418,6 +418,12 @@
 								<tbody>
 									<tr>
 										<td>04/12/2018 09:30</td>
+										<td>From [ 16/03/1953 ] to [ 26/03/1953 ]</td>
+										<td>Pending Date of Birth Update</td>
+										<td>James Philip</td>
+									</tr>
+									<tr>
+										<td>04/12/2018 09:30</td>
 										<td>Type [ S1 Pension ] Country [ France ] Status [ Issued ]</td>
 										<td>Entitlement Created</td>
 										<td>James Philip</td>
@@ -443,14 +449,14 @@
                         </tr>
                      </thead>
                      <tbody>
-                        <!-- <tr>
+                        <tr>
                            <td>06:04/2020 08:30</td>
                            <td>Customer</td>
                            <td>Phone</td>
-                           <td>Returned to UK</td>
-                           <td>S1 to be cancelled. Email sent to registrations@nhsbsacancellation.com with details to take action</td>
+                           <td>Date of birth change</td>
+                           <td>Change/correction of date of birth. Automated email sent to Registrations Team to process. </td>
                            <td>James Philip</td>
-                        </tr> -->
+                        </tr> 
                      </tbody>
                   </table>
                   <br>
