@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What country are you moving to?
+	Check your answers before sending the application
 {% endblock %}
 
 {% block content %}
@@ -38,9 +38,10 @@
 			</div>
 		</div>
 	</div>
+	<br>
 	<div class="form-group">
 		<div class="grid-row">
-			<div class="column-full">
+			<!-- <div class="column-full">
 				<div class="banner-information-without-action">
 					<p class="banner-message">
 						<span class="name text-capitalize">Michael Philip</span>
@@ -48,21 +49,30 @@
 						<span class="ohs-reference-number">25000002</span>
 					</p>
 				</div>
-			</div>
+			</div> -->
 			<div class="column-two-thirds">
-				<div class="heading-group">
-					<h1 class="heading-large">What country are you moving to?</h1>
+				<div class="form-group">
+					<dl class="govuk-check-your-answers cya-questions-short">
+						<div>
+							<dt class="cya-question">What date did you/will you start to get paid your France State Pension? </dt>
+							<dd class="cya-answer">01/05/2020</dd>
+							<dd class="cya-change">
+								<a href="same-country-pension-date#ni-number">Change<span class="visually-hidden"> date you will start to get paid your France State Pension</span></a>
+							</dd>
+						</div>
+						<div>
+							<dt class="cya-question">Do you get paid a State Pension from another EEA country, or Switzerland? </dt>
+							<dd class="cya-answer">No</dd>
+							<dd class="cya-change">
+								<a href="another-pension-2">Change<span class="visually-hidden"> France State Pension</span></a>
+							</dd>
+						</div>
+					</dl>
 				</div>
-				<form action="moving-date" id="moving-country-form" method="get" class="form">
-					<div class="form-group">
-						<label class="form-label" for="lineone">Country</label>
-						<input class="form-control" id="registration-number" name="address-lineone" type="text" autocomplete="off" value="France">
-					</div>
-					<div class="form-group">
-						<a class="button" href="moving-date">Next</a>
-						<a class="button button-secondary" href="case-record">Cancel</a>
-					</div>
-				</form>
+				<div class="form-group">
+					<a href="done-2" class="button">Accept and submit</a>
+					<a class="button button-secondary" href="case-record">Cancel</a>
+				</div>
 			</div>
 		</div>
 	</div>

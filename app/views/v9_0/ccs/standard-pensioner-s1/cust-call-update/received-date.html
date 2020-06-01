@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What country are you moving to?
+	What country is the dependant living in?
 {% endblock %}
 
 {% block content %}
@@ -51,18 +51,22 @@
 			</div>
 			<div class="column-two-thirds">
 				<div class="heading-group">
-					<h1 class="heading-large">What country are you moving to?</h1>
+					<h1 class="heading-large">What date was the request received by the business?</h1>
 				</div>
-				<form action="moving-date" id="moving-country-form" method="get" class="form">
+				<form action="moving-country-3" id="moving-country-form" method="get" class="form">
 					<div class="form-group">
-						<label class="form-label" for="lineone">Country</label>
-						<input class="form-control" id="registration-number" name="address-lineone" type="text" autocomplete="off" value="France">
+						<span class="form-hint">
+
+							This date must be today's date or a date in the past. For example, 18/09/2018
+							</span>
+						<label class="form-label" for="lineone"></label>
+						<input class="form-control" id="registration-number" name="address-lineone" type="text" autocomplete="off" value="11/05/2020" >
 					</div>
 					<div class="form-group">
-						<a class="button" href="moving-date">Next</a>
+						<a class="button" href="moving-country">Next</a>
 						<a class="button button-secondary" href="case-record">Cancel</a>
 					</div>
-				</form>
+				</form>	
 			</div>
 		</div>
 	</div>

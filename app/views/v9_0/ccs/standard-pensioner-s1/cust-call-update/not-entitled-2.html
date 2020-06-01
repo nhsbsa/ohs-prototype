@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What country are you moving to?
+	You are not entitled to healthcare paid for by the UK
 {% endblock %}
 
 {% block content %}
@@ -50,17 +50,18 @@
 				</div>
 			</div>
 			<div class="column-two-thirds">
-				<div class="heading-group">
-					<h1 class="heading-large">What country are you moving to?</h1>
-				</div>
-				<form action="moving-date" id="moving-country-form" method="get" class="form">
+				<form method="get" action="search" class="form">
 					<div class="form-group">
-						<label class="form-label" for="lineone">Country</label>
-						<input class="form-control" id="registration-number" name="address-lineone" type="text" autocomplete="off" value="France">
+						<h1 class="heading-large">
+							You are not entitled to healthcare paid for by the UK
+						</h1>
 					</div>
 					<div class="form-group">
-						<a class="button" href="moving-date">Next</a>
-						<a class="button button-secondary" href="case-record">Cancel</a>
+						<p>You must be in payment of a UK pension.</p>
+						<p>You must get in contact with the relevant authority.</p>
+					</div>
+					<div class="form-group">
+						<a class="button" href="#">Back to search</a>
 					</div>
 				</form>
 			</div>
