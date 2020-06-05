@@ -214,6 +214,18 @@ router.get(/cancel-confirm/, function (req,res){
   }
 });
 
+// Create a new S1 if moving to aother EU member state - new-s1-eu-2.html //
+router.get(/snake/, function (req,res){
+  if(req.query.s1Required === "Yes"){
+    res.redirect('contact-address-eu-2');
+  } else if(req.query.s1Required === "No") {
+    res.redirect('cya-address-eu-no-new-s1-2');
+  } else {
+    res.redirect('new-s1-eu-2');
+  }
+});
+
+
 // Require a new S1 if moving within same country - Pensioner registered //
 router.get(/s1Required/, function (req,res){
   if(req.query.s1Required === "Yes"){
