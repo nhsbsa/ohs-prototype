@@ -317,7 +317,7 @@ router.get(/lion/, function (req,res) {
 // Third country pension, another-pension-3.html
 router.get(/sky/, function (req,res) {
   if(req.query.thirdcountrypension === "Yes") {
-    res.redirect('add-dep-to-app-5');
+    res.redirect('tcp-info-email');
   } else if(req.query.thirdcountrypension === "No") {
     res.redirect('add-dep-to-app-4');
   } else {
@@ -328,7 +328,7 @@ router.get(/sky/, function (req,res) {
 // Third country pension, another-pension-4.html
 router.get(/galaxy/, function (req,res) {
   if(req.query.thirdcountrypension === "Yes") {
-    res.redirect('add-dep-to-app');
+    res.redirect('tcp-info-email-2');
   } else if(req.query.thirdcountrypension === "No") {
     res.redirect('add-dep-to-app-3');
   } else {
@@ -339,7 +339,7 @@ router.get(/galaxy/, function (req,res) {
 // Third country pension, another-pension-5.html
 router.get(/rocket/, function (req,res) {
   if(req.query.thirdcountrypension === "Yes") {
-    res.redirect('add-dep-to-app-6');
+    res.redirect('tcp-info-email-3');
   } else if(req.query.thirdcountrypension === "No") {
     res.redirect('add-dep-to-app-7');
   } else {
@@ -355,6 +355,39 @@ router.get(/moon/, function (req,res) {
     res.redirect('check-your-answers-4');
   } else {
     res.redirect('add-another-pension-3');
+  }
+});
+
+//Information to be sent by an email for tcp evidence, tcp-info-email.html
+router.get(/jupiter/, function (req,res) {
+  if(req.query.nameEmail === "Yes") {
+    res.redirect('tcp-enter-email');
+  } else if(req.query.nameEmail === "No") {
+    res.redirect('add-dep-to-app-8');
+  } else {
+    res.redirect('tcp-info-email');
+  }
+});  
+
+  //Information to be sent by an email for tcp evidence, tcp-info-email-2.html
+router.get(/venus/, function (req,res) {
+  if(req.query.nameEmail === "Yes") {
+    res.redirect('tcp-enter-email-2');
+  } else if(req.query.nameEmail === "No") {
+    res.redirect('add-dep-to-app-9');
+  } else {
+    res.redirect('tcp-info-email-2');
+  }
+});
+
+  //Information to be sent by an email for tcp evidence, tcp-info-email-3.html
+router.get(/mars/, function (req,res) {
+  if(req.query.nameEmail === "Yes") {
+    res.redirect('tcp-enter-email-3');
+  } else if(req.query.nameEmail === "No") {
+    res.redirect('add-dep-to-app-10');
+  } else {
+    res.redirect('tcp-info-email-3');
   }
 });
 
@@ -816,7 +849,7 @@ router.get(/camel/, function (req,res) {
 // Third country pension, another-pension.html
 router.get(/ox/, function (req,res) {
   if(req.query.thirdcountrypension === "Yes") {
-    res.redirect('check-your-answers-2');
+    res.redirect('tcp-info-email');
   } else if(req.query.thirdcountrypension === "No") {
     res.redirect('check-your-answers-3');
   } else {
@@ -827,11 +860,33 @@ router.get(/ox/, function (req,res) {
 // Third country pension, another-pension.html
 router.get(/crow/, function (req,res) {
   if(req.query.thirdcountrypension === "Yes") {
-    res.redirect('check-your-answers-5');
+    res.redirect('tcp-info-email-2');
   } else if(req.query.thirdcountrypension === "No") {
     res.redirect('check-your-answers-6');
   } else {
     res.redirect('another-pension');
+  }
+});
+
+//Information to be sent by an email for tcp evidence, tcp-info-email.html
+router.get(/tcp-email/, function (req,res) {
+  if(req.query.nameEmail === "Yes") {
+    res.redirect('tcp-enter-email');
+  } else if(req.query.nameEmail === "No") {
+    res.redirect('check-your-answers-7');
+  } else {
+    res.redirect('tcp-info-email');
+  }
+});
+
+//Information to be sent by an email for tcp evidence, tcp-info-email-2.html
+router.get(/mercury/, function (req,res) {
+  if(req.query.nameEmail === "Yes") {
+    res.redirect('tcp-enter-email-2');
+  } else if(req.query.nameEmail === "No") {
+    res.redirect('check-your-answers-8');
+  } else {
+    res.redirect('tcp-info-email-2');
   }
 });
 
