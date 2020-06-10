@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What country are you moving to?
+	What is your National Insurance number?
 {% endblock %}
 
 {% block content %}
@@ -51,16 +51,32 @@
 			</div>
 			<div class="column-two-thirds">
 				<div class="heading-group">
-					<h1 class="heading-large">What country are you moving to?</h1>
+					<h1 class="heading-large">What is your surname at birth?</h1>
 				</div>
-				<form action="moving-date-5" id="moving-country-form" method="get" class="form">
+				<form action="nino-info-email" id="moving-date-form" method="get" class="form">
 					<div class="form-group">
-						<label class="form-label" for="lineone">Country</label>
-						<input class="form-control" id="registration-number" name="address-lineone" type="text" autocomplete="off" value="Spain" disabled>
+						<label class="form-label" for="ni-number">
+							Enter your surname at birth
+							<!-- <span class="form-hint">
+								This can be any date up to 4 weeks from today. For example, 18/09/2018
+							</span> -->
+						</label>
+						<input class="form-control" id="ni-number" type="text" autocomplete="off" value="Thompson">
 					</div>
+					<!-- <div class="form-group">
+						<label class="form-label" for="ni-number-2">
+							Date returning to the UK (optional)
+							<span class="form-hint">
+								If you’re coming back to the UK permanently, tell us what date you’re moving back. For example, 18/09/2018
+							</span>
+						</label>
+						<input class="form-control" id="ni-number-2" type="text" autocomplete="off">
+					</div> -->
 					<div class="form-group">
-						<a class="button" href="moving-date-6">Next</a>
-						<a class="button button-secondary" href="case-record">Cancel</a>
+						<!-- <a class="button" href="pension-info">Next</a> -->
+						<!-- <a class="button" href="new-ni-conf-1">Next</a> -->
+						<a class="button" href="sab-change-conf">Next</a>
+						<a class="button button-secondary" href="case-record-65">Cancel</a>
 					</div>
 				</form>
 			</div>

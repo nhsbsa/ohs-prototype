@@ -214,6 +214,17 @@ router.get(/cancel-confirm/, function (req,res){
   }
 });
 
+// Create a new S1 if moving to aother EU member state - new-s1-eu.html //
+router.get(/rhino/, function (req,res){
+  if(req.query.s1Required === "Yes"){
+    res.redirect('contact-address-eu');
+  } else if(req.query.s1Required === "No") {
+    res.redirect('cya-address-eu-no-new-s1');
+  } else {
+    res.redirect('new-s1-eu');
+  }
+});
+
 // Create a new S1 if moving to aother EU member state - new-s1-eu-2.html //
 router.get(/snake/, function (req,res){
   if(req.query.s1Required === "Yes"){
@@ -222,6 +233,28 @@ router.get(/snake/, function (req,res){
     res.redirect('cya-address-eu-no-new-s1-2');
   } else {
     res.redirect('new-s1-eu-2');
+  }
+});
+
+// Create a new S1 if moving to aother EU member state - new-s1-eu-3.html //
+router.get(/frog/, function (req,res){
+  if(req.query.s1Required === "Yes"){
+    res.redirect('contact-address-eu-3');
+  } else if(req.query.s1Required === "No") {
+    res.redirect('cya-address-eu-no-new-s1-3');
+  } else {
+    res.redirect('new-s1-eu-3');
+  }
+});
+
+// Create a new S1 if moving to aother EU member state - new-s1-eu-4.html //
+router.get(/wolf/, function (req,res){
+  if(req.query.s1Required === "Yes"){
+    res.redirect('contact-address-eu-4');
+  } else if(req.query.s1Required === "No") {
+    res.redirect('cya-address-eu-no-new-s1-4');
+  } else {
+    res.redirect('new-s1-eu-4');
   }
 });
 
