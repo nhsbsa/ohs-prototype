@@ -210,14 +210,14 @@
 										<dt class="cya-question">Date of death</dt>
 										<dd class="cya-answer">
 											-
-										</dd>
+										</dd>  
 										<dd class="cya-change">
 										</dd>
 									</div>
 								</dl>
-								<p class="navigation">
-									<a class="cancel" href="death-date-1">Change</a>
-								</p>
+								<p style="color: #005ea5;">
+									Pending change
+								 </p>
 								<dl class="govuk-check-your-answers cya-questions-long">
 									<br>
 									<div>
@@ -259,10 +259,9 @@
 										</dd>
 									</div>
 								</dl>
-								<p class="navigation">
-									<!-- <a class="cancel" href="change-address-2">Change</a> -->
+								<!--<p class="navigation">
 									<a class="cancel" href="new-address-uk-2">Change</a>
-								</p>
+								</p> -->
 								<dl class="govuk-check-your-answers cya-questions-long">
 									<br>
 									<div>
@@ -279,9 +278,9 @@
 										</dd>
 									</div>
 								</dl>
-								<p class="navigation">
+								<!--<p class="navigation">
 									<a class="cancel" href="#">Change</a>
-								</p>
+								</p> -->
 								<br>
 								<!-- <div class="form-group" style="margin-top:30px">
 		                           <a class="button button-secondary" href="view-contributions">View pension contribution</a>
@@ -293,6 +292,9 @@
 						</div>
 					</div>
 					<div id="health" class="tabcontentActive">
+						<div class="panel panel-border-wide">
+							<p class="bold">Registrations team to process pending cancellation.</p>
+						 </div>
 						<table id="mainTable">
 							<thead>
 								<tr>
@@ -312,7 +314,7 @@
 									<td>-</td>
 									<td>Main</td>
 									<td>France</td>
-									<td><span class="status-tag-medium font-xsmall" style="padding-left:25px; padding-right:25px">ISSUED</span></td>
+									<td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px; text-align: center; width: 110px;">PENDING CANCELLATION</span></td>
 									<td nowrap=""><details onclick="myFunction2()"><summary><span class="summary">More info</span></summary></details></td>
 								</tr>
 							</tbody>
@@ -356,10 +358,10 @@
 															</tbody>
 														</table>
 													</div>
-													<div class="minor-container">
+													<!--<div class="minor-container">
 														<div><a class="link button button-secondary entitlements" href="reprint-reason">Reprint</a></div>
 														<div><a class="link button button-secondary entitlements" href="search-dependant">Add dependant</a></div>
-													</div>
+													</div> -->
 												</div>
 												<div id="moreInfo" class="column-full">
 													<details>
@@ -385,7 +387,7 @@
 																	<td>04/12/2018</td>
 																	<td>-</td>
 																	<td>France</td>
-																	<td><span class="status-tag-medium font-xsmall" style="padding-left:25px; padding-right:25px">ISSUED</span></td>
+																	<td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px; text-align: center; width: 110px;">PENDING CANCELLATION</span></td>
 																	<td><a href="#">View record</a></td>
 																</tr>
 																<!-- <tr>
@@ -425,7 +427,25 @@
 										<th style="width:15%">Operator</th>
 									</tr>
 								</thead>
-								<tbody>
+								<tbody> 
+									<tr>
+										<td>06/04/2020 08:30</td>
+										<td>Information sent to <br>[ rosie.philip@email.com ]</td>
+										<td>Death Evidence Requested</td>
+										<td>James Philip</td>
+									 </tr>
+									<tr>
+										<td>04/12/2018 09:30</td>
+										<td>Died [ 08/06/2020 ]</td>
+										<td>Pending Death Update</td>
+										<td>James Philip</td>
+									</tr> 
+									<tr>
+										<td>06/04/2020 08:30</td>
+										<td>From [ Issued ] to [ Pending cancellation ]</td>
+										<td>Entitlement cancelled</td>
+										<td>James Philip</td>
+									 </tr>
 									<tr>
 										<td>04/12/2018 09:30</td>
 										<td>Type [ S1 Pension ] Country [ France ] Status [ Issued ]</td>
@@ -453,16 +473,16 @@
                         </tr>
                      </thead>
                      <tbody>
-                        <!-- <tr>
-                           <td>06:04/2020 08:30</td>
-                           <td>Customer</td>
-                           <td>Phone</td>
-                           <td>Returned to UK</td>
-                           <td>S1 to be cancelled. Email sent to registrations@nhsbsacancellation.com with details to take action</td>
-                           <td>James Philip</td>
-                        </tr> -->
+                        <tr>
+							<td>06:04/2020 08:30</td>
+							<td>Dependant</td>
+							<td>Phone</td>  
+							<td>Death</td>
+							<td>Dependant called to let us know that customer deceased. Email sent to Registrations team. Evidence of death required. Email sent to customer detailing action to take.</td>
+							<td>James Philip</td>
+						 </tr> 
                      </tbody>
-                  </table>
+                  </table>  
                   <br>
                   <div class="form-group" style="margin-top:30px">
                      <a class="button" href="#" data-toggle="dialog" data-target="dialog-4">Add note</a>

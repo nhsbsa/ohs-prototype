@@ -545,6 +545,50 @@ router.get(/name-email/, function (req,res) {
   }
 });
 
+//Type of informant in the death journey - informant.html //
+router.get(/informantType/, function (req,res){
+  if(req.query.radiosET === "Dependant"){
+    res.redirect('informant-details');
+  } else if(req.query.radiosET === "Third party") {
+    res.redirect('informant-details-2');
+  } else {
+    res.redirect('informant');
+  }
+});
+
+//Type of informant in the death journey - informant-2.html //
+router.get(/mangoose/, function (req,res){
+  if(req.query.radiosET === "Dependant"){
+    res.redirect('informant-details-3');
+  } else if(req.query.radiosET === "Third party") {
+    res.redirect('informant-details-4');
+  } else {
+    res.redirect('informant');
+  }
+});
+
+//Information to be sent by an email for death evidence, death-info-email.html
+router.get(/deathEmail/, function (req,res) {
+  if(req.query.deathEmail === "Yes") {
+    res.redirect('cya-death-3');  
+  } else if(req.query.deathEmail === "No") {
+    res.redirect('cya-death-4');
+  } else {
+    res.redirect('death-info-email');
+  }
+});
+
+//Information to be sent by an email for death evidence, death-info-email-2.html
+router.get(/thirdpartyEmail/, function (req,res) {
+  if(req.query.deathEmail === "Yes") {
+    res.redirect('cya-death-5');
+  } else if(req.query.deathEmail === "No") {
+    res.redirect('cya-death-6');
+  } else {
+    res.redirect('death-info-email');
+  }
+});
+
 
 // EHIC //
 

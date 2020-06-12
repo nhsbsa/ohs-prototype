@@ -162,12 +162,12 @@
 				</h1>
 			</div>
 			<div class="tab-container">
-				<a class="tablinks active" onclick="openTab(event, 'personal')" href="#">
+				<a class="tablinks" onclick="openTab(event, 'personal')" href="#">
 					<div>
 						<p class="heading-small">Personal details</p>
 					</div>
 				</a>
-				<a class="tablinks" onclick="openTab(event, 'health')" href="#">
+				<a class="tablinks active" onclick="openTab(event, 'health')" href="#">
 					<div>
 						<p class="heading-small">Entitlements</p>
 					</div>
@@ -183,7 +183,7 @@
 	               </div>
 	            </a>
 				<div class="tab-box">
-					<div id="personal" class="tabcontentActive">
+					<div id="personal" class="tabcontent">
 						<div class="grid-row">
 							<div class="column-two-thirds">
 								<br>
@@ -196,12 +196,7 @@
 										<dd class="cya-change">
 										</dd>
 									</div>
-									</dl>
-									<p style="color: #005ea5;">
-										Pending change
-									 </p>
 									<br>
-									<dl class="govuk-check-your-answers cya-questions-long">
 									<div>
 										<dt class="cya-question">Date of birth</dt>
 										<dd class="cya-answer">
@@ -210,6 +205,20 @@
 										<dd class="cya-change">
 										</dd>
 									</div>
+									<br>
+									<div>
+										<dt class="cya-question">Date of death</dt>
+										<dd class="cya-answer">
+											-
+										</dd>  
+										<dd class="cya-change">
+										</dd>
+									</div>
+								</dl>
+								<p style="color: #005ea5;">
+									Pending change
+								 </p>
+								<dl class="govuk-check-your-answers cya-questions-long">
 									<br>
 									<div>
 										<dt class="cya-question">National Insurance number</dt>
@@ -250,8 +259,8 @@
 										</dd>
 									</div>
 								</dl>
-								<!-- <p class="navigation">
-									<a class="cancel" href="#">Change</a>
+								<!--<p class="navigation">
+									<a class="cancel" href="new-address-uk-2">Change</a>
 								</p> -->
 								<dl class="govuk-check-your-answers cya-questions-long">
 									<br>
@@ -282,7 +291,10 @@
 							</div>
 						</div>
 					</div>
-					<div id="health" class="tabcontent">
+					<div id="health" class="tabcontentActive">
+						<div class="panel panel-border-wide">
+							<p class="bold">Registrations team to process pending cancellation.</p>
+						 </div>
 						<table id="mainTable">
 							<thead>
 								<tr>
@@ -302,7 +314,7 @@
 									<td>-</td>
 									<td>Main</td>
 									<td>France</td>
-									<td><span class="status-tag-medium font-xsmall" style="padding-left:25px; padding-right:25px">ISSUED</span></td>
+									<td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px; text-align: center; width: 110px;">PENDING CANCELLATION</span></td>
 									<td nowrap=""><details onclick="myFunction2()"><summary><span class="summary">More info</span></summary></details></td>
 								</tr>
 							</tbody>
@@ -346,10 +358,10 @@
 															</tbody>
 														</table>
 													</div>
-													<div class="minor-container">
+													<!--<div class="minor-container">
 														<div><a class="link button button-secondary entitlements" href="reprint-reason">Reprint</a></div>
 														<div><a class="link button button-secondary entitlements" href="search-dependant">Add dependant</a></div>
-													</div>
+													</div> -->
 												</div>
 												<div id="moreInfo" class="column-full">
 													<details>
@@ -375,10 +387,10 @@
 																	<td>04/12/2018</td>
 																	<td>-</td>
 																	<td>France</td>
-																	<td><span class="status-tag-medium font-xsmall" style="padding-left:25px; padding-right:25px">ISSUED</span></td>
+																	<td><span class="status-tag-high font-xsmall" style="padding-left:25px; padding-right:25px; text-align: center; width: 110px;">PENDING CANCELLATION</span></td>
 																	<td><a href="#">View record</a></td>
 																</tr>
-																<tr>
+																<!-- <tr>
 																	<td>Sarah Philip</td>
 																	<td>04/12/2018</td>
 																	<td>04/12/2018</td>
@@ -386,7 +398,7 @@
 																	<td>France</td>
 																	<td><span class="status-tag-low font-xsmall" style="padding-left:25px; padding-right:25px">REGISTERED</span></td>
 																	<td><a href="#">View record</a></td>
-																</tr>
+																</tr> -->
 															</tbody>
 														</table>
 													</details>
@@ -415,19 +427,25 @@
 										<th style="width:15%">Operator</th>
 									</tr>
 								</thead>
-								<tbody>
+								<tbody> 
 									<tr>
 										<td>06/04/2020 08:30</td>
-										<td>Information sent to <br>[ michael.philip@email.com ]</td>
-										<td>Name Evidence Requested</td>
+										<td>Information sent to <br>[ john.smith@email.com ]</td>
+										<td>Death Evidence Requested</td>
 										<td>James Philip</td>
 									 </tr>
 									<tr>
 										<td>04/12/2018 09:30</td>
-										<td>From [ Michael Philip ] to [ Michael Johnson ]</td>
-										<td>Pending Name Update</td>
+										<td>Died [ 08/06/2020 ]</td>
+										<td>Pending Death Update</td>
 										<td>James Philip</td>
-									</tr>
+									</tr> 
+									<tr>
+										<td>06/04/2020 08:30</td>
+										<td>From [ Issued ] to [ Pending cancellation ]</td>
+										<td>Entitlement cancelled</td>
+										<td>James Philip</td>
+									 </tr>
 									<tr>
 										<td>04/12/2018 09:30</td>
 										<td>Type [ S1 Pension ] Country [ France ] Status [ Issued ]</td>
@@ -436,7 +454,7 @@
 									</tr>
 								</tbody>
 							</table>
-						</div>  
+						</div>
 						<br>
 						<div class="form-group">
 							<a class="button button-secondary" href="search">Exit record</a>
@@ -456,15 +474,15 @@
                      </thead>
                      <tbody>
                         <tr>
-                           <td>06:04/2020 08:30</td>  
-                           <td>Customer</td>
-                           <td>Phone</td>
-                           <td>Name change</td>
-                           <td>Evidence of name change required. Email sent to customer detailing action to take.</td>
-                           <td>James Philip</td>
-                        </tr> 
+							<td>06:04/2020 08:30</td>
+							<td>Third party</td>
+							<td>Phone</td>  
+							<td>Death</td>
+							<td>Third party called to let us know that customer deceased. Email sent to Registrations team. Evidence of death required. Email sent to customer detailing action to take.</td>
+							<td>James Philip</td>
+						 </tr> 
                      </tbody>
-                  </table>
+                  </table>  
                   <br>
                   <div class="form-group" style="margin-top:30px">
                      <a class="button" href="#" data-toggle="dialog" data-target="dialog-4">Add note</a>
@@ -533,6 +551,7 @@
                                           <option>Referred to Case Man</option>
                                        </select>
                                     </div>
+                                    
                                  </div>
                                  <div class="grid-row">
                                     <div class="column-full" style="margin:0 15px 0 15px;">
@@ -543,6 +562,7 @@
                                           <textarea class="form-control" id="textarea-a" cols="30" rows="10" style="width:94%"></textarea>
                                        </div>
                                        <div class="dialog-actions" style="display: inline;">
+                                       	<!-- <a class="button buttonSubmit" href="death-date-1" style="font-size: 1em;">Submit</a> -->
                                           <input id="submit-btn" class="button buttonSubmit" type="submit" name="updateEntitlement" value="Submit" style="font-size: 19px;" />
                                           <a class="dialog-cancel" href="#" style="font-size: 1em;">Cancel</a>
                                        </div>

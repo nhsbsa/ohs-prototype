@@ -1,10 +1,11 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What is the date of death?
+	What are your contact details?
 {% endblock %}
 
 {% block content %}
+
 <style>
 	/* banner */
 	.banner-information-without-action {
@@ -50,27 +51,30 @@
 				</div>
 			</div>
 			<div class="column-two-thirds">
-				<form method="get" action="search" class="form">
+				<div class="heading-group">
+					<h1 class="heading-large">What are your contact details?</h1>
+				</div>
+				<form action="case-record" id="contact-details-form" method="get" class="form">
+					<p>We ask for this so we can respond to any questions.</p>
 					<div class="form-group">
-						<h1 class="heading-large">
-							What is the date of death?
-						</h1>
+						<label class="form-label" for="last-name">Full name</label>
+						<input class="form-control" id="last-name" name="email" type="text" autocomplete="off" value="Rosie Philip">
 					</div>
 					<div class="form-group">
-						<label class="form-label" for="lineone">Date of death
-							<span class="form-hint">
-								This has to be a date after customer's date of birth and cannot be a date in the future.
-							</span>
-						</label>
-						<input class="form-control" id="registration-number" name="address-lineone" type="text" autocomplete="off" value="08/06/2020" >
+						<label class="form-label" for="last-name-2">Email address</label>
+						<input class="form-control" id="last-name-2" name="email" type="text" autocomplete="off" value="rosie.philip@email.com">
 					</div>
 					<div class="form-group">
-						<a class="button" href="informant">Next</a>
+						<label class="form-label" for="first-name-2">Telephone number</label>
+						<input class="form-control" id="first-name-2" name="landline" type="text" autocomplete="off">
+					</div>
+					<div class="form-group">
+						<a class="button" href="death-info-email">Next</a>
 						<a class="button button-secondary" href="case-record">Cancel</a>
 					</div>
 				</form>
 			</div>
 		</div>
-	</div>
+	</div>		
 </main>
 {% endblock %}
