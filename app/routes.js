@@ -175,6 +175,8 @@ router.get(/cancel-reasons/, function (req,res){
     res.redirect('cancel-date2');
   } else if(req.query.cancelR === "Created in error") {
     res.redirect('cancel-date2');
+  } else if(req.query.cancelR === "Different S1 start date required") {
+    res.redirect('cancel-date-3');
   } else if(req.query.cancelR === "Other") {
     res.redirect('cancel-date2');
   } else {
