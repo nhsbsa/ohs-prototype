@@ -184,6 +184,17 @@ router.get(/cancel-reasons/, function (req,res){
   }
 });
 
+// Reason for reissuing s1 - reissue-reason.html //
+router.get(/cheetah/, function (req,res){
+  if(req.query.reissueReason === "Yes"){
+    res.redirect('start-date-s1');
+  } else if(req.query.reissueReason === "No") {
+    res.redirect('case-record-32');
+  } else {
+    res.redirect('reissue-reason');
+  }
+});
+
 // Dependant entitlemed in own right ISSUED- April 2020 //
 router.get(/own-right/, function (req,res){
   if(req.query.ownRight === "UK State Pension"){
