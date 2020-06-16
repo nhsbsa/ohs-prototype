@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-What is your S1 end date?
+What is your S1 start date? 
 {% endblock %}
 
 {% block content %}
@@ -51,17 +51,26 @@ What is your S1 end date?
             </div>
             <div class="column-two-thirds">
                 <div class="heading-group">
-                    <h1 class="heading-large">What is your S1 end date?</h1>
+                    <h1 class="heading-large">What are the entitlements dates provided by member state?</h1>
                 </div>
                 <form class="form" action="check-your-answers-18" method="get">
                     <div class="form-group">
                         <label class="form-label" for="ni-number">
-                            End date
+                            Entitlement start date
+                            <span class="form-hint">
+                                This date must be today's date or a date in the past. For example, 18/09/2018.
+                            </span>
+                        </label>
+                        <input class="form-control" id="ni-number" type="text" autocomplete="off" name="cancelstartDate" value="10/03/2020" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="ni-number">
+                            Entitlement end date
                             <span class="form-hint">
                                 This date must be a date in the future. For example, 18/09/2018.
                             </span>
                         </label>
-                        <input class="form-control" id="ni-number" type="text" autocomplete="off" name="cancelstartDate" value="24/09/2020">
+                        <input class="form-control" id="ni-number" type="text" autocomplete="off" name="cancelstartDate" value="24/09/2020" disabled>
                     </div>
                     <div class="form-group">
                         <input class="button" type="submit" value="Next">

@@ -176,7 +176,7 @@ router.get(/cancel-reasons/, function (req,res){
   } else if(req.query.cancelR === "Created in error") {
     res.redirect('cancel-date2');
   } else if(req.query.cancelR === "Different S1 start date required") {
-    res.redirect('cancel-date-3');
+    res.redirect('start-date-ms');
   } else if(req.query.cancelR === "Other") {
     res.redirect('cancel-date2');
   } else {
@@ -187,7 +187,7 @@ router.get(/cancel-reasons/, function (req,res){
 // Reason for reissuing s1 - reissue-reason.html //
 router.get(/cheetah/, function (req,res){
   if(req.query.reissueReason === "Yes"){
-    res.redirect('start-date-s1');
+    res.redirect('ent-date-s1');
   } else if(req.query.reissueReason === "No") {
     res.redirect('case-record-32');
   } else {
@@ -297,7 +297,7 @@ router.get(/s1Required/, function (req,res){
 // Require a new S1 if moving within same country - Exportable Benefits registered//
 router.get(/test/, function (req,res){
   if(req.query.s1Required === "Yes"){
-    res.redirect('new-address-date-same-country-new-s1-2');
+    res.redirect('new-address-date-same-country-new-s1');
   } else if(req.query.s1Required === "No") {
     res.redirect('new-s1-req-2');
   } else {
