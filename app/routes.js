@@ -297,7 +297,7 @@ router.get(/s1Required/, function (req,res){
 // Require a new S1 if moving within same country - Exportable Benefits registered//
 router.get(/test/, function (req,res){
   if(req.query.s1Required === "Yes"){
-    res.redirect('new-address-date-same-country-new-s1');
+    res.redirect('new-address-date-same-country-new-s1-2');
   } else if(req.query.s1Required === "No") {
     res.redirect('new-s1-req-2');
   } else {
