@@ -99,22 +99,23 @@
           </div>
           <div class="form-group">
              <label class="form-label">Postcode</label>
-             <input class="form-control form-control-1-4"  id="postcode" name="address-postcode" type="text" autocomplete="off" value="B11JX">
+             <p><span class="bold">B11JX </span>&nbsp<a href="enter-postcode">Change</a></p>
           </div>
+          <div class="form-group" style="margin-bottom:10px;">
+             <label class="form-label" for="select-box">Select an address</label>
+             <select class="form-control" id="select-box"  style="height:40px";>
+                <option value="Wellington street,Birmingham B1 1JX ">Wellington street,Birmingham B1 1JX</option>
+                <option value="One address found" selected>One address found</option>
+             </select>
+          </div>
+          <br>  
+          <a href="contact-address">I can't find my address in the list</a>
           <div class="form-group">
-             <a class="button" href="address-finder">Find address</a>
+             <br>
+             <a class="button" href="conf-contact-address">Next</a>
              <a class="button button-secondary" href="search">Cancel</a>
           </div>
-          <details>
-            <summary>
-              <span class="summary">
-                I live outside the UK
-              </span>
-            </summary>
-            <div class="panel panel-border-narrow">
-              If you live outside the UK you are not eligible for PRC.
-            </div>
-          </details>
+          </form>
        </div>
     </div>
  </main>
