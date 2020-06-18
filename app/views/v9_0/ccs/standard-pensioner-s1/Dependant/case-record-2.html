@@ -1,7 +1,9 @@
 {% extends "layout_bsa.html" %}
+
 {% block page_title %}
 	Person record
 {% endblock %}
+
 {% block content %}
 <style>
 	.tab-box {
@@ -149,7 +151,7 @@
 	<div class="grid-row">
 		<div class="column-full">
 			<div id="back">
-				<a class="link-back" href="#" id="back-link">Back</a>
+				<a class="link-back" href="search" id="back-link">Back</a>
 			</div>
 		</div>
 	</div>
@@ -157,8 +159,8 @@
 		<div class="column-full">
 			<div class="heading-group">
 				<h1 class="heading-large">
-					Michael Philip
-					<span class="heading-secondary">OHS Reference Number - 25000002</span>
+					Rosie Philip
+					<span class="heading-secondary">OHS Reference Number - 25000005</span>
 				</h1>
 			</div>
 			<div class="tab-container">
@@ -177,11 +179,6 @@
 						<p class="heading-small">Case history</p>
 					</div>
 				</a>
-				<a class="tablinks" onclick="openTab(event, 'casenotes')" href="#">
-					<div>
-					   <p class="heading-small">Case notes</p>
-					</div>
-				 </a>
 				<div class="tab-box">
 					<div id="personal" class="tabcontent">
 						<div class="grid-row">
@@ -191,21 +188,21 @@
 									<div>
 										<dt class="cya-question">Full name</dt>
 										<dd class="cya-answer">
-											Michael Philip
+											Rosie Philip
 										</dd>
 									</div>
 									<br>
 									<div>
 										<dt class="cya-question">Date of birth</dt>
 										<dd class="cya-answer">
-											16/03/1994
+											24/05/2016
 										</dd>
 									</div>
 									<br>
 									<div>
 										<dt class="cya-question">National Insurance number</dt>
 										<dd class="cya-answer">
-											SR123456A
+											-
 										</dd>
 									</div>
 									<br>
@@ -231,7 +228,7 @@
 									<br>
 									<div>
 										<dt class="cya-question">Email address</dt>
-										<dd class="cya-answer">michael.philip@email.com</dd>
+										<dd class="cya-answer">rosie.philip@email.com</dd>
 									</div>
 									<br>
 									<div>
@@ -240,9 +237,6 @@
 									</div>
 								</dl>
 								<br>
-								<div class="form-group" style="margin-top:30px">
-		                           <a class="button button-secondary" href="#">View pension contribution</a>
-		                        </div>
 								<div class="form-group" style="margin-top:30px">
 									<a class="button button-secondary" href="#">Exit record</a>
 								</div>
@@ -265,9 +259,9 @@
 							<tbody>
 								<tr>
 									<td>S1</td>
-									<td>04/12/2018</td>
+									<td>20/03/2020</td>
 									<td>-</td>
-									<td>Main</td>
+									<td>Dependant</td>
 									<td>France</td>
 									<td><span class="status-tag-medium font-xsmall" style="padding-left:25px; padding-right:25px">ISSUED</span></td>
 									<td nowrap=""><details onclick="myFunction2()"><summary><span class="summary">More info</span></summary></details></td>
@@ -283,39 +277,27 @@
 												<div class="main-container form-group">
 													<div class="major-container">
 														<table id="entitlementDetails" class="check-table">
-															<h1 class="heading-medium">Additional entitlement details</h1>
+														    <h1 class="heading-medium">Additional entitlement details</h1>
 															<caption class="visually-hidden">A table displaying the entitlement details</caption>
 															<tbody>
 																<tr class="row">
-				                                                   <td class="column">Reference number</td>
-				                                                   <td class="column">213321</td>
-				                                                </tr>
-				                                                <tr class="row">
-				                                                   <td class="column">Source</td>
-				                                                   <td class="column">Customer</td>
-				                                                </tr>
-				                                                <tr class="row">
-																	<td class="column">Moving date</td>
-																	<td class="column">04/12/2018</td>
-																</tr>
-																<tr class="row">
-																	<td class="column">UK State Pension start date</td>
-																	<td class="column">04/12/2018</td>
-																</tr>
-																<tr class="row">
 																	<td class="column">Issued date</td>
-																	<td class="column">04/12/2018</td>
+																	<td class="column">20/03/2020</td>
+																</tr>
+																<tr class="row">
+																	<td class="column">Moving date</td>
+																	<td class="column">20/03/2020</td>
 																</tr>
 																<tr class="row">
 																	<td class="column">Citizen status</td>
-																	<td class="column">Pensioner</td>
+																	<td class="column">Family member of pensioner</td>
 																</tr>
 															</tbody>
 														</table>
 													</div>
 													<div class="minor-container">
-														<!--<div><a class="link button button-secondary entitlements" href="reprint-reason">Reprint</a></div>-->
-														<div><a class="link button button-secondary entitlements" href="#">Add dependant</a></div>
+														<div><a class="link button button-secondary entitlements" href="#">Reprint</a></div>
+														<div><a class="link button button-secondary entitlements" href="#">View main</a></div>
 													</div>
 												</div>
 											</div>
@@ -326,10 +308,10 @@
 						</div>
 						<br>
 						<div class="form-group">
-							<!-- <a class="button" href="moving-country">Create a new entitlement</a> -->
 							<a class="button" href="#">Create a new entitlement</a>
 							<a class="button button-secondary" href="#">Exit record</a>
 						</div>
+					</div>
 					</div>
 					<div id="casehist" class="tabcontent">
 						<div class="form-group">
@@ -358,26 +340,6 @@
 						</div>
 					</div>
 				</div>
-				<div id="casenotes" class="tabcontent">
-					<table id="mainTable">
-					   <thead>
-						  <tr>
-							 <th style="width:15%">Date and Time</th>
-							 <th style="width:10%">Source</th>
-							 <th style="width:10%">Channel</th>
-							 <th style="width:10%">Reason</th>
-							 <th style="width:45%">Description</th>
-							 <th style="width:20%">Added by</th>
-						  </tr>
-					   </thead>
-					</table>
-					<br>
-					<div class="form-group" style="margin-top:30px">
-					   <a class="button" href="#" data-toggle="dialog" data-target="dialog-4">Add note</a>
-					   <a class="button button-secondary" href="#">Exit record</a>
-					</div>
-				</div>	
-			  </div> 	
 			</div>
 		</div>
 	</div>
