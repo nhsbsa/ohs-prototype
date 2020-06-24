@@ -1,0 +1,57 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+	Check these details are correct before proceeding
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<a href="#" class="link-back">Back</a>
+			<h1 class="heading-large">
+				Check these details are correct before proceeding
+			</h1>
+			<form action="contact-address" id="check-person-details-form" method="get" class="form">
+				<h2 class="heading-medium">Personal details</h2>
+				<dl class="govuk-check-your-answers cya-questions-short">
+					<div>
+						<dt class="cya-question">Full name</dt>
+						<dd class="cya-answer">Michael Philip</dd>
+						<dd class="cya-change">
+							<p class="navigation">
+								<a class="cancel" href="search-noresults2#first-name" data-toggle="dialog" data-target="dialog-4">Change<span class="visually-hidden"> full name</span></a>
+							</p>
+						</dd>
+					</div>
+					<div>
+						<dt class="cya-question">Date of birth</dt>
+						<dd class="cya-answer">
+							16/03/1960
+						</dd>
+						<dd class="cya-change">
+							<p class="navigation">
+								<a class="cancel" href="search-noresults2#date-of-birth" data-toggle="dialog" data-target="dialog-4">Change<span class="visually-hidden"> date of birth</span></a>
+							</p>
+						</dd>
+					</div>
+					<div>
+						<dt class="cya-question">National Insurance number</dt>
+						<dd class="cya-answer">SR123456A</dd>
+						<dd class="cya-change">
+							<p class="navigation">
+								<a class="cancel" href="search-noresults2#nino" data-toggle="dialog" data-target="dialog-4">Change<span class="visually-hidden"> National Insurance number</span></a>
+							</p>
+						</dd>
+					</div>
+				</dl>
+				<br>
+				<div class="form-group">
+					<a class="button" href="contact-address">Next</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</main>
+{% endblock %}

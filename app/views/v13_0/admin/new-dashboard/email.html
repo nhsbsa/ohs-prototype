@@ -1,0 +1,485 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+	Person record
+{% endblock %}
+
+{% block content %}
+<style>
+	.tab-box {
+		position: relative;
+		background-color: white;
+		width: 100%;
+		margin-top: 64px;
+		border-top: 1px solid #6F777B;
+		z-index: 1;
+		padding-top: 20px;
+	}
+	.tab-container {
+		position: relative;
+		float: left;
+		min-width: 100%;
+		overflow: hidden;
+		margin-top: 18px;
+	}
+	.tablinks.active {
+		position: relative;
+		float: left;
+		line-height: 34px;
+		top: 0px;
+		left: 0px;
+		margin-left: 5px;
+		height: 64px;
+		background-color: white;
+		padding-left: 15px;
+		padding-right: 15px;
+		text-align: center;
+		border-top: 1px solid #6F777B;
+		border-left: 1px solid #6F777B;
+		border-right: 1px solid #6F777B;
+		z-index: 4;
+		color: black;
+		text-decoration: none;
+		font-size: 19px;
+		line-height: 1.31579;
+		font-weight: 700;
+	}
+	.tablinks {
+		position: relative;
+		float: left;
+		line-height: 34px;
+		top: 0px;
+		left: 2px;
+		margin-left: 5px;
+		height: 58px;
+		background-color: white;
+		padding-left: 15px;
+		padding-right: 15px;
+		text-align: center;
+		z-index: 1;
+		background-color: #DEE0E2;
+		font-size: 19px;
+		line-height: 1.31579;
+		font-weight: 700;
+	}
+	.tabcontentActive {
+		display: block;
+	}
+	.tabcontent {
+		display: none;
+		padding-top: 20px;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+		width: 100%;
+	}
+	table th, table td {
+		font-family: Arial, sans-serif;
+		font-weight: 400;
+		text-transform: none;
+		font-size: 19px;
+		line-height: 1.25;
+		padding: 0.63158em 1.05263em 0.47368em 0;
+		text-align: left;
+		color: #0b0c0c;
+		border-bottom: 1px solid #bfc1c3;
+	}
+	table th {
+		font-weight: 700;
+	}
+	tr {
+		height: 60px;
+	}
+	.heading-small{
+		font-size: 19px;
+		line-height: 1.31579;
+		font-weight: 700;
+	}
+    
+     /* ==========================================================================
+   #TIMELINE
+   ========================================================================== */
+.hmcts-timeline {
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hmcts-timeline:before {
+  background-color: #1d70b8;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 10px;
+  width: 5px;
+}
+
+.hmcts-timeline--full {
+  margin-bottom: 0;
+}
+
+.hmcts-timeline--full:before {
+  height: calc(100% - 75px);
+}
+
+.hmcts-timeline__item {
+  padding-bottom: 30px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.hmcts-timeline__item:before {
+  background-color: #1d70b8;
+  content: "";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 10px;
+  width: 15px;
+}
+
+.hmcts-timeline__title {
+  font-family: "GDS Transport", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  display: inline;
+}
+
+@media print {
+  .hmcts-timeline__title {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .hmcts-timeline__title {
+    font-size: 19px;
+    line-height: 1.31579;
+  }
+}
+
+@media print {
+  .hmcts-timeline__title {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+
+.hmcts-timeline__by {
+  font-family: "GDS Transport", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #6f777b;
+  display: inline;
+  margin: 0;
+}
+
+@media print {
+  .hmcts-timeline__by {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .hmcts-timeline__by {
+    font-size: 19px;
+    line-height: 1.31579;
+  }
+}
+
+@media print {
+  .hmcts-timeline__by {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+
+.hmcts-timeline__date {
+  font-family: "GDS Transport", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14286;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+@media print {
+  .hmcts-timeline__date {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .hmcts-timeline__date {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media print {
+  .hmcts-timeline__date {
+    font-size: 14pt;
+    line-height: 1.2;
+  }
+}
+
+.hmcts-timeline__description {
+  font-family: "GDS Transport", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14286;
+  margin-top: 20px;
+}
+
+@media print {
+  .hmcts-timeline__description {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .hmcts-timeline__description {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media print {
+  .hmcts-timeline__description {
+    font-size: 14pt;
+    line-height: 1.2;
+  }
+}
+
+.hmcts-timeline__documents {
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.hmcts-timeline__document-item {
+  margin-bottom: 5px;
+}
+
+.hmcts-timeline__document-item:last-child {
+  margin-bottom: 0;
+}
+
+.hmcts-timeline__document-link {
+  background-image: url(/public/images/icon-document.svg);
+  background-repeat: no-repeat;
+  background-size: 20px 16px;
+  background-position: 0 50%;
+  padding-left: 25px;
+}
+
+.hmcts-timeline__document-link:focus {
+  color: #0b0c0c;
+}
+    
+/* ==========================================================================
+   #SECONDARY NAV
+   ========================================================================== */
+.hmcts-sub-navigation {
+  margin-bottom: 40px;
+}
+
+.hmcts-sub-navigation__list {
+  font-size: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 40.0625em) {
+  .hmcts-sub-navigation__list {
+    box-shadow: inset 0 -1px 0 #b1b4b6;
+    width: 100%;
+  }
+}
+
+.hmcts-sub-navigation__item {
+  font-family: "GDS Transport", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  box-shadow: inset 0 -1px 0 #b1b4b6;
+  display: block;
+  margin-top: -1px;
+}
+
+@media print {
+  .hmcts-sub-navigation__item {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .hmcts-sub-navigation__item {
+    font-size: 19px;
+    line-height: 1.31579;
+  }
+}
+
+@media print {
+  .hmcts-sub-navigation__item {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+
+.hmcts-sub-navigation__item:last-child {
+  box-shadow: none;
+}
+
+@media (min-width: 40.0625em) {
+  .hmcts-sub-navigation__item {
+    box-shadow: none;
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 0;
+  }
+}
+
+.hmcts-sub-navigation__link {
+  display: block;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 15px;
+  text-decoration: underline;
+}
+
+@media (min-width: 40.0625em) {
+  .hmcts-sub-navigation__link {
+    padding-left: 0;
+  }
+}
+
+.hmcts-sub-navigation__link:focus {
+  color: #0b0c0c;
+  position: relative;
+}
+
+.hmcts-sub-navigation__link[aria-current="page"] {
+  color: #0b0c0c;
+  position: relative;
+  text-decoration: none;
+}
+
+.hmcts-sub-navigation__link[aria-current="page"]:before {
+  background-color: #1d70b8;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 5px;
+}
+
+@media (min-width: 40.0625em) {
+  .hmcts-sub-navigation__link[aria-current="page"]:before {
+    height: 5px;
+    width: 100%;
+  }
+}
+
+.hmcts-sub-navigation__link[aria-current="page"]:focus:before {
+  background-color: #0b0c0c;
+}
+
+    
+</style>
+
+<main id="content" role="main">
+	<div class="grid-row">
+
+		<div class="column-full">
+			<!--<div id="back">
+				<a class="link-back" href="search" id="back-link">Return to search</a>
+			</div>-->
+		</div>
+	</div>
+    <br>
+	<div class="grid-row">
+		<div class="column-two-thirds" >
+			<div class="heading-group" style="margin-bottom:10px; margin-top:8px">
+				<h1 class="heading-large" >
+					Do you want to send a copy to Michael by email?
+				</h1>
+                <br>
+                <p class="form-hint">Email address: michael@email.com</p>
+                <br>
+
+<form>
+  <div class="form-group">
+    <fieldset class="inline">
+
+      <legend class="visually-hidden">Do you want to send a copy to Michael by email?</legend>
+
+      <div class="multiple-choice">
+        <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+        <label for="radio-inline-1">Yes</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+        <label for="radio-inline-2">No</label>
+      </div>
+        <div class="multiple-choice"  data-target="temporary-address2">
+        <input id="radio-inline-3" type="radio" name="radio-inline-group" value="No">
+        <label for="radio-inline-3">Temporary address</label>
+      </div>
+        
+        <div class="panel panel-border-narrow js-hidden" id="temporary-address2">
+        <label class="form-label" for="temporary-address">Email address</label>
+        <input class="form-control" name="contact-text-message" type="text" id="temporary-address">
+      </div>   
+
+    </fieldset>
+  </div>
+</form>
+                <div class="form-group">
+                <a href="sent"><input class="button" type="submit" value="Contine"></a>
+                </div>
+                
+          
+			</div>
+        </div>
+    </div>
+   
+</main>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script>
+	function openTab(evt, tabName) {
+		var i, tabcontent, tablinks;
+
+		tabcontent = document.getElementsByClassName("tabcontentActive");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].className = "tabcontent";
+		}
+
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+
+		document.getElementById(tabName).className = "tabcontentActive";
+		evt.currentTarget.className += " active";
+	}
+</script>
+{% endblock %}
