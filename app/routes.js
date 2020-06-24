@@ -1,12 +1,21 @@
 var express = require('express')
 var router = express.Router()
 
+// External dependencies
+// const express = require('express');
+// const router = express.Router();
+
 // Route index page
 router.get('/', function (req, res) {
   res.render('index')
 });
 
+
 // add your routes here
+
+// Start folder specific routes
+router.use('/v13_0', require('./views/v13_0/_routes'));
+
 // ccs no-search-results uk-pension //
 router.get(/ccs-benefit/, function (req,res){
   if(req.query.pension === "yes"){

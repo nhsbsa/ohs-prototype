@@ -1,0 +1,69 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+	Search
+{% endblock %}
+
+{% block content %}
+<style>
+	.form-control-3-4 {
+		width: 32.7%;
+	}
+</style>
+
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-full">
+			<div id="back">
+				<a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+			</div>
+		</div>
+	</div>
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<div class="heading-group">
+				<h1 class="heading-large">Search</h1>
+			</div>
+		</div>
+		<form action="search-noresults" method="get" class="form">
+			<div class="column-full">
+				<div class="form-group">
+					<label>
+						<span class="form-label" for="ohs">OHS reference number</span>
+						<span class="form-hint">This can be either an OHS reference number or MedBen number</span>
+					</label>
+					<input class="form-control" id="ohs" name="ohs" type="text" autocomplete="off" value="" />
+				</div>
+				<div class="form-group">
+					<p class="form-block">or</p>
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="first-name">First name</label>
+					<input class="form-control" id="first-name" name="first-name" type="text" autocomplete="off"  />
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="last-name">Last name</label>
+					<input class="form-control" id="last-name" name="last-name" type="text" autocomplete="off"  />
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="date-of-birth">Date of birth</label>
+					<span class="form-hint">
+						For example, 15/10/1951
+					</span>
+					<input class="form-control" id="date-of-birth" name="date-of-birth" type="text" autocomplete="off"  />
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="nino">National Insurance number (optional)</label>
+					<span class="form-hint">
+						For example, 'QQ123456C'
+					</span>
+					<input class="form-control" id="nino" name="nino" type="text" autocomplete="off"  />
+				</div>
+				<div class="form-group">
+					<a class="button" href="search-results">Search</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</main>
+{% endblock %}

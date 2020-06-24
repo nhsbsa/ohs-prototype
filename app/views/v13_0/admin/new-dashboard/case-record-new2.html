@@ -1,0 +1,574 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+	Person record
+{% endblock %}
+
+{% block content %}
+<style>
+	.tab-box {
+		position: relative;
+		background-color: white;
+		width: 100%;
+		margin-top: 64px;
+		border-top: 1px solid #6F777B;
+		z-index: 1;
+		padding-top: 20px;
+	}
+	.tab-container {
+		position: relative;
+		float: left;
+		min-width: 100%;
+		overflow: hidden;
+		margin-top: 18px;
+	}
+	.tablinks.active {
+		position: relative;
+		float: left;
+		line-height: 34px;
+		top: 0px;
+		left: 0px;
+		margin-left: 5px;
+		height: 64px;
+		background-color: white;
+		padding-left: 15px;
+		padding-right: 15px;
+		text-align: center;
+		border-top: 1px solid #6F777B;
+		border-left: 1px solid #6F777B;
+		border-right: 1px solid #6F777B;
+		z-index: 4;
+		color: black;
+		text-decoration: none;
+		font-size: 19px;
+		line-height: 1.31579;
+		font-weight: 700;
+	}
+	.tablinks {
+		position: relative;
+		float: left;
+		line-height: 34px;
+		top: 0px;
+		left: 2px;
+		margin-left: 5px;
+		height: 58px;
+		background-color: white;
+		padding-left: 15px;
+		padding-right: 15px;
+		text-align: center;
+		z-index: 1;
+		background-color: #DEE0E2;
+		font-size: 19px;
+		line-height: 1.31579;
+		font-weight: 700;
+	}
+	.tabcontentActive {
+		display: block;
+	}
+	.tabcontent {
+		display: none;
+		padding-top: 20px;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+		width: 100%;
+	}
+	table th, table td {
+		font-family: Arial, sans-serif;
+		font-weight: 400;
+		text-transform: none;
+		font-size: 19px;
+		line-height: 1.25;
+		padding: 0.63158em 1.05263em 0.47368em 0;
+		text-align: left;
+		color: #0b0c0c;
+		border-bottom: 1px solid #bfc1c3;
+	}
+	table th {
+		font-weight: 700;
+	}
+	tr {
+		height: 60px;
+	}
+	.heading-small{
+		font-size: 19px;
+		line-height: 1.31579;
+		font-weight: 700;
+	}
+    
+     /* ==========================================================================
+   #TIMELINE
+   ========================================================================== */
+.hmcts-timeline {
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hmcts-timeline:before {
+  background-color: #1d70b8;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 10px;
+  width: 5px;
+}
+
+.hmcts-timeline--full {
+  margin-bottom: 0;
+}
+
+.hmcts-timeline--full:before {
+  height: calc(100% - 75px);
+}
+
+.hmcts-timeline__item {
+  padding-bottom: 30px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.hmcts-timeline__item:before {
+  background-color: #1d70b8;
+  content: "";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 10px;
+  width: 15px;
+}
+
+.hmcts-timeline__title {
+  font-family: "GDS Transport", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  display: inline;
+}
+
+@media print {
+  .hmcts-timeline__title {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .hmcts-timeline__title {
+    font-size: 19px;
+    line-height: 1.31579;
+  }
+}
+
+@media print {
+  .hmcts-timeline__title {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+
+.hmcts-timeline__by {
+  font-family: "GDS Transport", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #6f777b;
+  display: inline;
+  margin: 0;
+}
+
+@media print {
+  .hmcts-timeline__by {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .hmcts-timeline__by {
+    font-size: 19px;
+    line-height: 1.31579;
+  }
+}
+
+@media print {
+  .hmcts-timeline__by {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+
+.hmcts-timeline__date {
+  font-family: "GDS Transport", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14286;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+@media print {
+  .hmcts-timeline__date {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .hmcts-timeline__date {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media print {
+  .hmcts-timeline__date {
+    font-size: 14pt;
+    line-height: 1.2;
+  }
+}
+
+.hmcts-timeline__description {
+  font-family: "GDS Transport", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14286;
+  margin-top: 20px;
+}
+
+@media print {
+  .hmcts-timeline__description {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .hmcts-timeline__description {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media print {
+  .hmcts-timeline__description {
+    font-size: 14pt;
+    line-height: 1.2;
+  }
+}
+
+.hmcts-timeline__documents {
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.hmcts-timeline__document-item {
+  margin-bottom: 5px;
+}
+
+.hmcts-timeline__document-item:last-child {
+  margin-bottom: 0;
+}
+
+.hmcts-timeline__document-link {
+  background-image: url(/public/images/icon-document.svg);
+  background-repeat: no-repeat;
+  background-size: 20px 16px;
+  background-position: 0 50%;
+  padding-left: 25px;
+}
+
+.hmcts-timeline__document-link:focus {
+  color: #0b0c0c;
+}
+    
+</style>
+
+<main id="content" role="main">
+	<div class="grid-row">
+
+		<div class="column-full">
+			<!--<div id="back">
+				<a class="link-back" href="search" id="back-link">Return to search</a>
+			</div>-->
+		</div>
+	</div>
+    <br>
+	<div class="grid-row">
+		<div class="column-two-thirds" >
+			<div class="heading-group" style="margin-bottom:10px; margin-top:8px">
+				<h1 class="heading-large" >
+					Michael Philip
+				</h1>
+                
+			</div>
+            <p style="font-size:18px; margin-top:0;">
+                <span>Ref </span><span style="font-weight:900; margin-right:20px;">25000015</span>
+                <!--<span>Date of birth </span><span style="font-weight:900; margin-right:20px;">11/08/1934</span>
+                <span>NI number </span><span style="font-weight:900; margin-right:20px;">SR123456A</span>
+                <span>In receipt of </span><span style="font-weight:900;">State Pension </span><span>since </span><span style="font-weight:900;">23/04/2019</span>
+-->
+            </p> 
+        </div>
+        <div class="column-third">
+            <a class="button" href="/" style="float:right; margin-top:18px;">Exit record</a>
+        </div>
+    </div>
+    <hr style="background-color:##b1b4b6; height: 1px; margin-bottom:0">
+            
+    <div class="grid-row" style="margin-top:0px;">
+        <div class="column-third" style="margin-top:25px; padding-right:0;">
+            <h3 class="heading-small" style="margin-top:5px; margin-bottom:15px; margin-left:15px;"> Active EU entitlements</h3>
+            <div style="background-color:#1d70b8; padding: 10px 0 10px 15px; margin-bottom:20px;"><a href="case-record-new2" style=" color:white; text-decoration:none;">S1 for France</a></div>
+            <p><a href="case-record-ehic" style="padding-left:15px;text-decoration:none;">European Health Insurance Card</a></p>
+            <hr>
+            <h3 class="heading-small" style="margin-top:5px; margin-bottom:15px; margin-left:15px;"> Record</h3>
+            <p><a href="case-record-person" style="padding-left:15px;text-decoration:none;">Person</a></p>
+                        <p><a href="case-record-uk-address" style="padding-left:15px;text-decoration:none;">UK address</a></p>
+            <p><a href="case-record-uk-address" style="padding-left:15px;text-decoration:none;">Postal address</a></p>
+             <p><a href="case-record-email-phone" style="padding-left:15px;text-decoration:none;">Email and phone</a></p>
+            <hr>
+             <h3 class="heading-small" style="margin-top:5px; margin-bottom:15px; margin-left:15px;"> Archive</h3>
+            <p><a href="case-record-activities" style="padding-left:15px;text-decoration:none;">Entitlements</a></p>
+            
+            <br>
+
+        </div>
+        <div class="column-two-thirds" style="border-left: 1px solid #b1b4b6; padding-left:35px;">
+
+            <h2 class="heading-medium" style="margin-top:30px;">Retired in France</h2>
+            <p class="form-hint">Since 3rd January 2018</p>
+            <table class="govuk-table">
+  <thead class="govuk-table__head">
+  </thead>
+                <tbody class="govuk-table__body">
+                   <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header" style="width:30%; vertical-align: top;">Home address</th>
+      <td class="govuk-table__cell" >	70 Rue Meurein<br> 59800<br> Lille<br> France</td>
+                        <td class="govuk-table__cell" style="vertical-align: top;"><a href="">Change</a></td>
+    </tr>
+                    
+                    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Cover</th>
+      <td class="govuk-table__cell">S1</td>
+                         <td class="govuk-table__cell"><a href="">Cancel</a></td>
+    </tr>
+                    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Status</th>
+      <td class="govuk-table__cell">Issued</td>
+                         <td class="govuk-table__cell"><a href="">Register</a></td>
+    </tr>
+                    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Documents</th>
+      <td class="govuk-table__cell"><a href="">Preview</a></td>
+                         <td class="govuk-table__cell"><a href="">Reprint</a></td>
+    </tr>
+                    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Dependants</th>
+      <td class="govuk-table__cell">	<a href="">Sam Philip</a> and <a href="">Tony Philip</a></td>
+                         <td class="govuk-table__cell"><a href="">Add</a></td>
+    </tr>    
+            </tbody>     
+            </table>
+            <br>
+             <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+     View case history
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+  
+            <div class="hmcts-timeline" style="margin-top:40px;">
+                
+                <div class="hmcts-timeline__item">
+
+<div class="hmcts-timeline__header">
+  <h2 class="hmcts-timeline__title">
+    Contact address activated
+  </h2>
+
+  <p class="hmcts-timeline__by">Automatically updated</p>
+
+</div>
+
+<p class="hmcts-timeline__date"><time datetime="2017-11-20T14:27">21 March 2017</time></p>
+    <br>
+    <ul class="hmcts-timeline__documents">
+        
+        <div class="grid-row">
+        <div class="column-third" style="background-color: #28a197; color: white;  margin-left:15px;">
+            <h3 class="heading-small">French Address</h3>
+            	<p>70 Rue Meurein<br> 59800<br> Lille<br> France
+            </p>
+        </div>
+    </div>
+
+</ul>
+
+</div>
+
+<div class="hmcts-timeline__item">
+
+<div class="hmcts-timeline__header">
+  <h2 class="hmcts-timeline__title">
+    Moved to France
+  </h2>
+
+  <p class="hmcts-timeline__by">by Sam Jones</p>
+
+</div>
+
+<p class="hmcts-timeline__date"><time datetime="2017-12-05T09:10">21 March 2017</time></p>
+
+</div>
+                
+                <div class="hmcts-timeline__item">
+
+<div class="hmcts-timeline__header">
+  <h2 class="hmcts-timeline__title">
+    Entitlement sent
+  </h2>
+
+  <p class="hmcts-timeline__by">by Post</p>
+
+</div>
+
+<p class="hmcts-timeline__date"><time datetime="2017-11-20T14:27">20 January 2017</time></p>
+    <br>
+    <ul class="hmcts-timeline__documents">
+        
+        <div class="grid-row">
+        <div class="column-third" style="background-color: #28a197; color: white; margin-left:15px;">
+            <h3 class="heading-small">UK Address</h3>
+            	<p>23 Little Place<br>
+                    Little Town<br>
+                    Little County<br>
+                    NE12 7YH<br>
+                    UK
+            </p>
+        </div>
+    </div>
+        
+        <br>
+
+  <li class="hmcts-timeline__document-item"><a class="hmcts-timeline__document-link" href="#3">View document</a></li>
+
+</ul>
+
+</div>
+
+<div class="hmcts-timeline__item">
+
+<div class="hmcts-timeline__header">
+  <h2 class="hmcts-timeline__title">
+    Entitlement issued
+  </h2>
+
+  <p class="hmcts-timeline__by">by Tim Smith</p>
+
+</div>
+
+<p class="hmcts-timeline__date"><time datetime="2017-11-20T14:27">20 January 2017</time></p>
+    <ul class="hmcts-timeline__documents">
+</ul>
+
+</div>
+                
+                <div class="hmcts-timeline__item">
+
+<div class="hmcts-timeline__header">
+  <h2 class="hmcts-timeline__title">
+    Applied for S1 as a Main for France
+  </h2>
+
+  <p class="hmcts-timeline__by">by Tim Smith</p>
+
+</div>
+
+<p class="hmcts-timeline__date"><time datetime="2017-11-20T14:27">20 Nov 2017</time></p>
+<br>
+<a href="">View application</a>
+</div>
+
+</div> 
+      
+      </div>
+</details>
+            
+						</div>
+					</div>
+					<div id="health" class="tabcontent">
+						<div class="form-group">
+							<table id="mainTable">
+								<thead>
+									<tr>
+										<th scope="col">Entitlement type</th>
+										<th scope="col">Start date</th>
+										<th scope="col">End date</th>
+										<th scope="col">Main/Dependant</th>
+										<th scope="col">Country</th>
+										<th scope="col">Status</th>
+										<td scope="col"></td>
+									</tr>
+								</thead>
+							</table>
+						</div>
+						<br>
+						<div class="form-group">
+							<!-- <a class="button" href="create-entitlement">Create a new entitlement</a> -->
+							<a class="button" href="/">Create a new entitlement</a>
+							<a class="button button-secondary" href="/">Exit record</a>
+						</div>
+					</div>
+					<div id="casehist" class="tabcontent">
+						<div class="form-group">
+							<table id="mainTable">
+								<thead>
+									<tr>
+										<th style="width:20%">Date and Time</th>
+										<th style="width:45%">Description</th>
+										<th style="width:15%">Type</th>
+										<th style="width:15%">Operator</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+						<br>
+						<div class="form-group">
+							<a class="button button-secondary" href="/">Exit record</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script>
+	function openTab(evt, tabName) {
+		var i, tabcontent, tablinks;
+
+		tabcontent = document.getElementsByClassName("tabcontentActive");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].className = "tabcontent";
+		}
+
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+
+		document.getElementById(tabName).className = "tabcontentActive";
+		evt.currentTarget.className += " active";
+	}
+</script>
+{% endblock %}

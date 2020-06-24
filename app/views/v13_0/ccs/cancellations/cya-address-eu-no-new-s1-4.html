@@ -1,0 +1,107 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+    Check your answers
+{% endblock %}
+
+{% block content %}
+<style>
+    /* banner */
+    .banner-information-without-action {
+        color: #005ea5;
+    }
+    .banner-message {
+        font-family: Arial, sans-serif;
+        font-weight: 400;
+        text-transform: none;
+        font-size: 36px;
+        line-height: 1.2;
+        padding: 20px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border-width: 5px;
+        border-style: solid;
+        font-weight: bold;
+        text-align: center;
+    }
+    .vertical-bar {
+        margin: 0px 10px;
+    }
+    /* end banner */
+</style>
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-full">
+            <div id="back">
+                <a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="grid-row">
+            <!-- <div class="column-full">
+                <div class="banner-information-without-action">
+                    <p class="banner-message">
+                        <span class="name text-capitalize">Michael Philip</span>
+                        <span class="vertical-bar">|</span>
+                        <span class="ohs-reference-number">25000002</span>
+                    </p>
+                </div>
+            </div> -->
+            <div class="column-two-thirds">
+                <div class="heading-group">
+                    <h1 class="heading-large">Check your answers</h1>
+                </div>
+                <div class="form-group">
+                    <table class="check-table">
+                        <tbody>
+                            <!-- <tr>
+                                <td valign="top" class="bold">Residential address</td>
+                                <td>
+                                    1 Road<br>
+                                    Downtown<br>
+                                    Bristol<br>
+                                    BR1 5TL<br>
+                                    UK
+                                </td>
+                                <td valign="top"><a href="change-address-1">Change</a></td>
+                            </tr> -->
+                            <tr>
+                                <td class="bold">Country of residence</td>
+                                <td>Spain</td>
+                                <td><a href="new-address-eu-4">Change</a></td>
+                            </tr>
+                            <!-- <tr>
+                                <td valign="top" class="bold">Residential address</td>
+                                <td>1 Road<br>
+                                    Downtown<br>
+                                    Madrid<br>
+                                    123456<br>
+                                    Spain
+                                </td>
+                                <td valign="top"><a href="change-address-6">Change</a></td>
+                            </tr> -->
+                            <tr>
+                                <td class="bold">Date moved to Spain</td>
+                                <td>23/07/2019</td>
+                                <td><a href="new-address-date-eu-4">Change</a></td>
+                            </tr>
+                            <tr>
+                                <td valign="top" class="bold">New S1</td>
+                                <td>No</td>
+                                <td><a href="new-s1-eu-4#reprint-reasons">Change</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>Customers residential and correspondence address will be updated to show Spain, however no further address details are required.</p>
+                <div class="form-group">
+                    <a href="address-conf-eu-no-new-s1-4" class="button">Submit</a>
+                    <a class="button button-secondary" href="case-record">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

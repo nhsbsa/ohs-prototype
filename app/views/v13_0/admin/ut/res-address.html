@@ -1,0 +1,312 @@
+{% extends "layout_bsa.html" %}
+{% block page_title %}
+  What is your residential address?
+{% endblock %}
+{% block content %}
+<style>
+   /* checkbox */
+   .govuk-checkboxes__item {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-weight: 400;
+      font-size: 19px;
+      line-height: 1.25;
+      display: block;
+      position: relative;
+      min-height: 40px;
+      margin-bottom: 10px;
+      padding-left: 40px;
+      clear: left;
+  }
+  .govuk-checkboxes__input {
+      cursor: pointer;
+      position: absolute;
+      z-index: 1;
+      top: -2px;
+      left: -2px;
+      width: 44px;
+      height: 44px;
+      margin: 0;
+      opacity: 0;
+  }
+  .govuk-checkboxes__label {
+      display: inline-block;
+      margin-bottom: 0;
+      padding: 8px 15px 5px;
+      cursor: pointer;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  }
+  .govuk-label {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-weight: 400;
+      font-size: 19px;
+      line-height: 1.25;
+      color: #0b0c0c;
+      display: block;
+      margin-bottom: 5px;
+  }
+  .govuk-checkboxes__label::before {
+      content: "";
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      border: 2px solid currentColor;
+      background: transparent;
+  }
+  .govuk-checkboxes__input:checked+.govuk-checkboxes__label::after {
+      opacity: 1;
+  }
+  .govuk-checkboxes__label::after {
+      content: "";
+      position: absolute;
+      top: 11px;
+      left: 9px;
+      width: 18px;
+      height: 7px;
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      border: solid;
+      border-width: 0 0 5px 5px;
+      border-top-color: transparent;
+      opacity: 0;
+      background: transparent;
+  }
+  /* end checkbox */
+  /* radio buttons (not-inline) */
+  @media (min-width: 40.0625em) {
+      .govuk-radios__item {
+         font-size: 19px;
+         font-size: 1.1875rem;
+         line-height: 1.31579;
+     }
+ }
+ @media (min-width: 40.0625em) {
+  .govuk-label {
+     font-size: 19px;
+     font-size: 1.1875rem;
+     line-height: 1.31579;
+ }
+}
+.govuk-radios__item {
+  font-family: Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1rem;
+  font-size: 16px;
+  line-height: 1.25;
+  display: block;
+  position: relative;
+  min-height: 40px;
+  margin-bottom: 10px;
+  padding: 0 0 0 40px;
+  clear: left;
+}
+.govuk-radios__input {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin: 0;
+  opacity: 0;
+}
+.govuk-radios__label {
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 8px 15px 5px;
+  cursor: pointer;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+.govuk-label {
+  font-family: Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1rem;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #0b0c0c;
+  display: block;
+  margin-bottom: 5px;
+}
+.govuk-radios__input+.govuk-radios__label::before {
+  content: "";
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+}
+.govuk-radios__input:checked+.govuk-radios__label::after {
+  opacity: 1;
+}
+.govuk-radios__input+.govuk-radios__label::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 0;
+  height: 0;
+  border: 10px solid currentColor;
+  border-radius: 50%;
+  opacity: 0;
+  background: currentColor;
+}
+/* end radio buttons */
+/* banner */
+.banner-information-without-action {
+  color: #005ea5;
+}
+.banner-message {
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 36px;
+  line-height: 1.2;
+  padding: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-width: 5px;
+  border-style: solid;
+  font-weight: bold;
+  text-align: center;
+}
+.vertical-bar {
+  margin: 0px 10px;
+}
+/* end banner */
+</style>
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-full">
+      <div id="back">
+        <a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+      </div>
+    </div>
+  </div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <div class="heading-group">
+        <h1 class="heading-large">What is Rosie's residential address?</h1>
+      </div>
+      <form class="form" action="use-resi-address" method="get">
+        <div class="form-group">
+          <fieldset id="residAddress">
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-do-you-live-2" name="radiosRA" type="radio" value="hardcoded">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                  Use Michael Philip's residential address
+                  <br>
+                  <span class="form-hint" style="padding-top: 15px;">
+                    70 Rue Meurein<br>
+                    Lille<br>
+                    59800<br>
+                    France
+                  </span>
+                </label>
+              </div>
+              <div class="govuk-radios__item" data-target="newaddress">
+                <input class="govuk-radios__input" id="where-do-you-live-3" name="radiosRA" type="radio" value="Use a different residential address">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                  Use a different residential address
+                </label>
+              </div>
+              <!-- NEW RESIDENTIAL ADDRESS DROP DOWN -->
+              <div class="panel panel-border-narrow js-hidden" id="newaddress">
+                <div class="form-group">
+                  <div class="form-group">
+                    <label class="form-label" for="lineone">Building and street (line 1 of 2)</label>
+                    <input class="form-control" id="lineone" name="address-lineone" type="text" autocomplete="off" >
+<!--                     value="70 Boulevard de Saint-Quentin"
+ -->                  </div>
+                  <div class="form-group">
+                     <label class="form-label" for="lineone">Building and street (line 2 of 2) (optional)</label>
+                     <input class="form-control" id="lineone" name="address-lineone" type="text" autocomplete="off" value="">
+                     <!-- value="70 Boulevard de Saint-Quentin -->
+                 </div>
+                 <div class="form-group">
+                     <label class="form-label" for="linetwo">Town or city</label>
+                     <input class="form-control"  id="linetwo" name="address-linetwo" type="text" autocomplete="off" value="">
+                     <!-- value="Plein Sud" -->
+                 </div>
+                 <div class="form-group">
+                     <label class="form-label" for="postcode">Postcode (optional)</label>
+                     <input class="form-control form-control-1-4" id="town" name="town" type="text" autocomplete="off" value="">
+                     <!-- value="Amiens" -->
+                 </div>
+                 <div class="form-group">
+                     <label class="form-label" for="country">Country</label>
+                     <input class="form-control" id="country" name="country" type="text" autocomplete="off" value="">
+                     <!-- value="France" -->
+                 </div>
+                 <div class="form-group">
+                     <label>
+                        <span class="form-label" for="date">What date did you move into this address?</span>
+                        <span class="form-hint">For example, 18/09/2018</span>
+                    </label>
+                    <input class="form-control" id="date" name="date" type="text" autocomplete="off" value="">
+                    <!-- value="04/12/2018" -->
+                </div>
+              </div>
+              </div>
+              <!-- <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-do-you-live-4" name="radiosRA" type="radio" value="Address not provided">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+                  Address not provided
+                  <br>
+                </label>
+              </div> -->
+            
+          </fieldset>
+        </div>
+        <!-- </form> -->
+        <!-- CORRESPONDENCE CHECKBOX -->
+        <!-- <form action="whatispartnersincome-handler" class="form" method="get">
+          <fieldset class="form-group">
+            <div class="multiple-choice multiple-radio" data-target="checkbox">
+              <input id="pension" class="govuk-checkboxes__input" name="incomepartner" value="pension-income" type="checkbox">
+              <label for="pension" style="margin: 5px 0px 5px 52px;">Use a different address for correspondence</label>
+            </div>      
+          </fieldset>
+        </form> -->
+        <!-- <div class="form-group">
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="ohs-1" name="radiosRA" type="checkbox" value="Use a different address for correspondence">
+              <label class="govuk-label govuk-checkboxes__label" for="ohs-1">
+                Use a different address for correspondence
+              </label>
+            </div>
+          </div>
+        </div> -->
+        <!-- <form class="form" action="postedWorker" method="get">
+          <div class="form-group">
+          </div>
+        </form> -->
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+          <!-- <a class="button" href="use-corres-2">Next</a> -->
+          <a class="button button-secondary" href="search">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}
