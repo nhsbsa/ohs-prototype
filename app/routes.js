@@ -352,7 +352,7 @@ router.get(/horse/, function (req,res) {
   if(req.query.samePension === "Yes") {
     res.redirect('same-country-pension-date-3');
   } else if(req.query.samePension === "No") {
-    res.redirect('info-requested');
+    res.redirect('check-your-answers-27');
   } else {
     res.redirect('same-pension-info-3');
   }
@@ -397,7 +397,7 @@ router.get(/lion/, function (req,res) {
   if(req.query.samePension === "Yes") {
     res.redirect('same-pension-info-3');
   } else if(req.query.samePension === "No") {
-    res.redirect('another-pension-3');
+    res.redirect('another-pension-9');
   } else {
     res.redirect('same-pension-5');
   }
@@ -469,6 +469,28 @@ router.get(/uranus/, function (req,res) {
   }
 });
 
+// Third country pension, another-pension-8.html
+router.get(/meteroid/, function (req,res) {
+  if(req.query.thirdcountrypension === "Yes") {
+    res.redirect('tcp-info-email-6');
+  } else if(req.query.thirdcountrypension === "No") {
+    res.redirect('add-dep-to-app-2');
+  } else {
+    res.redirect('another-pension-8');
+  }
+});
+
+// Third country pension, another-pension-9.html
+router.get(/hydrogen/, function (req,res) {
+  if(req.query.thirdcountrypension === "Yes") {
+    res.redirect('tcp-info-email-7');
+  } else if(req.query.thirdcountrypension === "No") {
+    res.redirect('add-dep-to-app-19');
+  } else {
+    res.redirect('another-pension-9');
+  }
+});
+
 // Third country pension, add-another-pension-3.html
 router.get(/moon/, function (req,res) {
   if(req.query.thirdcountrypension === "Yes") {
@@ -524,7 +546,7 @@ router.get(/mars/, function (req,res) {
     }
   });
 
-   //Information to be sent by an email for tcp evidence, tcp-info-email-4.html
+   //Information to be sent by an email for tcp evidence, tcp-info-email-5.html
    router.get(/saturn/, function (req,res) {
     if(req.query.nameEmail === "Yes") {
       res.redirect('tcp-enter-email-5');
@@ -532,6 +554,28 @@ router.get(/mars/, function (req,res) {
       res.redirect('add-dep-to-app-13');
     } else {
       res.redirect('tcp-info-email-5');
+    }
+  });
+
+  //Information to be sent by an email for tcp evidence, tcp-info-email-6.html
+  router.get(/atom/, function (req,res) {
+    if(req.query.nameEmail === "Yes") {
+      res.redirect('tcp-enter-email-6');
+    } else if(req.query.nameEmail === "No") {
+      res.redirect('add-dep-to-app-18');
+    } else {
+      res.redirect('tcp-info-email-6');
+    }
+  });
+
+   //Information to be sent by an email for tcp evidence, tcp-info-email-7.html
+  router.get(/helium/, function (req,res) {
+    if(req.query.nameEmail === "Yes") {
+      res.redirect('tcp-enter-email-7');
+    } else if(req.query.nameEmail === "No") {
+      res.redirect('add-dep-to-app-20');
+    } else {
+      res.redirect('tcp-info-email-7');
     }
   });
 
