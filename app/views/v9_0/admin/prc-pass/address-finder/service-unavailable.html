@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-     PRC entitlement submitted for review
+     Service unavailable
 {% endblock %}
 
 {% block content %}
@@ -13,27 +13,25 @@
 
 <main id="content" role="main">
      <div class="grid-row">
-          <div class="column-two-thirds">
-               <div class="done-panel" style="background-color: #70777b;">
-                    <h1 class="heading-xlarge"></span>Service unavailable</h1>
-                    <h2 class="heading-large"><span class="heading-secondary">OHS Reference number</span> 25000002</h2>
-               </div>
-               <div class="form-group">
-                    <p>
-                     We are unable to find your address at this time. 
-                    </p>
-                    <!-- <h2 class="heading-medium second">Next steps</h2>
-                <ul class="list list-bullet">
-                    <li>Tell the applicant to email evidence that they live in the UK (e.g. council tax or mobile phone bill) to <a href="#">nhsbsa.ohsregistrations@nhs.net</a>.</li>
-                    <li>Give the applicant their OHS number for future reference.</li>
-                    <li>Forward the call to the registration team, providing them with the applicant’s OHS number.</li>
-                </ul> -->
-                    <a href="contact-address" class="link">Enter address manually</a>
-               </div>
-               <div class="form-group">
-                    <a href="search" class="button">Do another search</a>
-               </div>
-          </div>
+        <div class="column-full">
+           <div id="back">
+              <a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+           </div>
+        </div>
      </div>
-</main>
+     <div class="grid-row">
+        <div class="column-two-thirds">
+           <div class="heading-group">
+              <h1 class="heading-large">Service is unavailable</h1>
+           </div>
+           <div class="form-group">
+           <p>We are unable to find your address at this time.</p>
+           <div class="form-group">
+              <a class="button" href="contact-address">Enter address manually</a>
+              <a class="button button-secondary" href="search">Cancel</a>
+           </div>
+           </form>
+        </div>
+     </div>
+  </main>
 {% endblock %}
