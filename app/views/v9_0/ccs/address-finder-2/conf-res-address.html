@@ -97,7 +97,7 @@
             <div class="heading-group">
                 <h1 class="heading-large">Confirm your residential address?</h1>
             </div>
-            <form action="contact-details" id="contact-address-form-2" method="get" class="form">
+            <form action="/corr-address" id="contact-address-form-2" method="post" class="form">
                 <div class="form-group">
                     <div class="form-group">
                         <label class="form-label" for="lineone">Building and street (line 1 of 2)</label>
@@ -112,7 +112,7 @@
                         <input class="form-control" id="town" name="town" type="text" autocomplete="off" value="Birmingham">
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="postcode">Postcode (optional)</label>
+                        <label class="form-label" for="postcode">Postcode</label>
                         <input class="form-control form-control-1-4"  id="postcode" name="address-postcode" type="text" autocomplete="off" value="B1 1JX">
                     </div>
                     <div class="form-group">
@@ -132,13 +132,13 @@
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="ohs-1" name="ohs" type="checkbox" value="not provided">
                             <label class="govuk-label govuk-checkboxes__label" for="ohs-1">
-                                Use this address for correspondance address
+                                Use this address for correspondence address
                             </label>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <a class="button" href="enter-postcode-corr">Next</a>
+                    <input type="submit" value="Next" class="button"></a>
                     <a class="button button-secondary" href="search">Cancel</a>
                 </div>
             </form>
