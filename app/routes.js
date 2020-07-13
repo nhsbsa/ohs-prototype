@@ -1203,4 +1203,11 @@ router.get(/zebra/, function (req,res) {
   }
 });
 
+//Address finder - check box for same correspondence address
+router.post('/corr-address', (req, res) => {
+  const checked = req.session.data['ohs']
+  checked ? res.redirect('/v9_0/ccs/address-finder-2/contact-details') : res.redirect('/v9_0/ccs/address-finder-2/enter-postcode-corr')
+});
+
+
 module.exports = router
