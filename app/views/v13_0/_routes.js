@@ -19,6 +19,7 @@ const router = express.Router();
 // -------------------- //
 
 // Posted Worker / Exp Ben and SP S1 / e109 / DA1 / EHIC / PRC //
+// If living in the UK //
 router.get(/postedWorker/, function (req,res) {
   if(req.query.radiosPW === "Posted worker") {
     res.redirect('working-country');
@@ -32,6 +33,26 @@ router.get(/postedWorker/, function (req,res) {
     res.redirect('prc-type');
   } else if (req.query.radiosPW === "EHIC") {
     res.redirect('uk-national');
+  } else {
+    res.redirect('create-entitlement');
+  }
+});
+
+// Posted Worker / Exp Ben and SP S1 / e109 / DA1 / EHIC / PRC //
+// If living in the EU (Retired S1) //
+router.get(/livingInEu/, function (req,res) {
+  if(req.query.radiosPW === "Posted worker") {
+    res.redirect('working-country');
+  } else if (req.query.radiosPW === "Exportable benefit including State Pension") {
+    res.redirect('entitlement-type');
+  } else if (req.query.radiosPW === "Dependant of UK worker") {
+    res.redirect('contact-address-e109');
+  } else if (req.query.radiosPW === "Occupational disease or injury") {
+    res.redirect('da1-country-res');
+  } else if (req.query.radiosPW === "EHIC") {
+    res.redirect('eu-retired');
+  } else if (req.query.radiosPW === "Provisional Replacement Certificate (PRC)") {
+    res.redirect('prc-type');
   } else {
     res.redirect('create-entitlement');
   }
@@ -77,7 +98,7 @@ router.get(/euStudent/, function (req,res) {
   if(req.query.radiosPW === "Yes") {
     res.redirect('course-country-eu');
   } else if (req.query.radiosPW === "No") {
-    res.redirect('');
+    res.redirect('nhs-number');
   } else {
     res.redirect('eu-student');
   }
@@ -88,7 +109,7 @@ router.get(/settledStatus/, function (req,res) {
   if(req.query.radiosPW === "Yes") {
     res.redirect('eu-student');
   } else if (req.query.radiosPW === "No") {
-    res.redirect('');
+    res.redirect('not-entitled-ehic');
   } else {
     res.redirect('settled-status');
   }

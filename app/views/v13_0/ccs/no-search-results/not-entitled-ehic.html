@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What country is the dependant living in?
+	You are not entitled to healthcare paid for by the UK
 {% endblock %}
 
 {% block content %}
@@ -43,27 +43,26 @@
 			<div class="column-full">
 				<div class="banner-information-without-action">
 					<p class="banner-message">
-						<span class="name text-capitalize">Michael Philip</span>
+						<span class="name text-capitalize">Karen Francis</span>
 						<span class="vertical-bar">|</span>
 						<span class="ohs-reference-number">25000002</span>
 					</p>
 				</div>
 			</div>
 			<div class="column-two-thirds">
-				<div class="heading-group">
-					<h1 class="heading-large">What date was the request received by the business?</h1>
-				</div>
-				<form action="moving-date" id="moving-country-form" method="get" class="form">
+				<form method="get" action="search" class="form">
 					<div class="form-group">
-						<span class="form-hint">
-							This date must be today's date or a date in the past. For example, 18/09/2018
-							</span>
-						<label class="form-label" for="lineone"></label>
-						<input class="form-control" id="registration-number" name="address-lineone" type="text" autocomplete="off" value="01/01/2021" >
+						<h1 class="heading-large">
+							You aren't eligible for an EHIC
+						</h1>
 					</div>
 					<div class="form-group">
-						<a class="button" href="create-entitlement">Next</a>
-						<a class="button button-secondary" href="case-record">Cancel</a>
+						<p>You need to be a UK citizen or an EU, EEA or Swiss citizen with UK settled or pre-settled status to get an EHIC.</p>
+						<h2 class="heading-medium">Check if you're eligible for settled status</h2>
+						<p>If you’re an EU, EEA or Swiss citizen, you and your family can apply to the EU Settlement Scheme to continue living in the UK after 30 June 2021. If your application is successful, you’ll get either settled or pre-settled status.</p>
+					</div>
+					<div class="form-group">
+						<a class="button" href="search">Back to search</a>
 					</div>
 				</form>
 			</div>
