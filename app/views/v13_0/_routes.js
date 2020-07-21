@@ -82,6 +82,28 @@ router.get(/ukNational/, function (req,res) {
   }
 });
 
+// Are you a UK national? - S1 holders //
+router.get(/s1HolderUkNational/, function (req,res) {
+  if(req.query.radiosPW === "Yes") {
+    res.redirect('cya-s1-uk');
+  } else if (req.query.radiosPW === "No") {
+    res.redirect('settled-status');
+  } else {
+    res.redirect('uk-national');
+  }
+});
+
+// Are you a UK national? - students already in EU //
+// router.get(/studentUkNational/, function (req,res) {
+//   if(req.query.radiosPW === "Yes") {
+//     res.redirect('');
+//   } else if (req.query.radiosPW === "No") {
+//     res.redirect('settled-status-student');
+//   } else {
+//     res.redirect('uk-national');
+//   }
+// });
+
 // Do you intend to study in the EU, EEA or Switzerland? UK NATIONAL//
 router.get(/ukStudent/, function (req,res) {
   if(req.query.radiosPW === "Yes") {
@@ -104,21 +126,44 @@ router.get(/euStudent/, function (req,res) {
   }
 });
 
+// Do you intend to study in the EU, EEA or Switzerland? ALREADY LIVING IN EU //
+router.get(/s1Student/, function (req,res) {
+  if(req.query.radiosPW === "Yes") {
+    res.redirect('uk-national-student');
+  } else if (req.query.radiosPW === "No") {
+    res.redirect('not-entitled-ehic');
+  } else {
+    res.redirect('student');
+  }
+});
+
+
 // Are you RETIRED? //
-// router.get(/euRetired/, function (req,res) {
-//   if(req.query.radiosPW === "Yes") {
-//     res.redirect('uk-student');
-//   } else if (req.query.radiosPW === "No") {
-//     res.redirect('settled-status');
-//   } else {
-//     res.redirect('uk-national');
-//   }
-// });
+router.get(/euRetired/, function (req,res) {
+  if(req.query.radiosPW === "Yes") {
+    res.redirect('uk-national');
+  } else if (req.query.radiosPW === "No") {
+    res.redirect('student');
+  } else {
+    res.redirect('uk-national');
+  }
+});
 
 // Do you have UK settled or pre-settled status? //
 router.get(/settledStatus/, function (req,res) {
   if(req.query.radiosPW === "Yes") {
     res.redirect('eu-student');
+  } else if (req.query.radiosPW === "No") {
+    res.redirect('not-entitled-ehic');
+  } else {
+    res.redirect('settled-status');
+  }
+});
+
+// Do you have UK settled or pre-settled status? - S1 holders //
+router.get(/RetiredSettledStatus/, function (req,res) {
+  if(req.query.radiosPW === "Yes") {
+    res.redirect('nhs-number');
   } else if (req.query.radiosPW === "No") {
     res.redirect('not-entitled-ehic');
   } else {
