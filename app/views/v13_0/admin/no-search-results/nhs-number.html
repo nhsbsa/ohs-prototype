@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What country is the dependant living in?
+	What is your NHS number?
 {% endblock %}
 
 {% block content %}
@@ -51,19 +51,17 @@
 			</div>
 			<div class="column-two-thirds">
 				<div class="heading-group">
-					<h1 class="heading-large">What date was the request received by the business?</h1>
+					<h1 class="heading-large">What is your NHS number?</h1>
 				</div>
 				<form action="moving-date" id="moving-country-form" method="get" class="form">
 					<div class="form-group">
-						<span class="form-hint">
-							This date must be today's date or a date in the past. For example, 18/09/2018
-							</span>
-						<label class="form-label" for="lineone"></label>
-						<input class="form-control" id="registration-number" name="address-lineone" type="text" autocomplete="off" value="01/01/2021" >
+						<label class="form-label" for="lineone">NHS number (optional)</label>
+						<input class="form-control" id="registration-number" name="address-lineone" type="text" autocomplete="off" value="" >
 					</div>
 					<div class="form-group">
-						<a class="button" href="create-entitlement">Next</a>
-						<a class="button button-secondary" href="case-record">Cancel</a>
+						<!-- <a class="button" href="cya-ehic">Next</a> -->
+						<a class="button" href="gender">Next</a>
+						<a class="button button-secondary" href="case-record-7">Cancel</a>
 					</div>
 				</form>
 			</div>

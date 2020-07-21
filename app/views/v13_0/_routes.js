@@ -59,17 +59,17 @@ router.get(/livingInEu/, function (req,res) {
 });
 
 // Where do you live? //
-router.get(/whereDoYouLive/, function (req,res) {
-  if(req.query.radiosPW === "UK") {
-    res.redirect('working-country');
-  } else if (req.query.radiosPW === "EU/EEA or Switzerland") {
-    res.redirect('entitlement-type');
-  } else if (req.query.radiosPW === "Other") {
-    res.redirect('case-record');
-  } else {
-    res.redirect('where-do-you-live');
-  }
-});
+// router.get(/whereDoYouLive/, function (req,res) {
+//   if(req.query.radiosPW === "UK") {
+//     res.redirect('working-country');
+//   } else if (req.query.radiosPW === "EU, EEA or Switzerland") {
+//     res.redirect('entitlement-type');
+//   } else if (req.query.radiosPW === "Other") {
+//     res.redirect('case-record');
+//   } else {
+//     res.redirect('where-do-you-live');
+//   }
+// });
 
 // Are you a UK national? //
 router.get(/ukNational/, function (req,res) {
@@ -103,6 +103,17 @@ router.get(/euStudent/, function (req,res) {
     res.redirect('eu-student');
   }
 });
+
+// Are you RETIRED? //
+// router.get(/euRetired/, function (req,res) {
+//   if(req.query.radiosPW === "Yes") {
+//     res.redirect('uk-student');
+//   } else if (req.query.radiosPW === "No") {
+//     res.redirect('settled-status');
+//   } else {
+//     res.redirect('uk-national');
+//   }
+// });
 
 // Do you have UK settled or pre-settled status? //
 router.get(/settledStatus/, function (req,res) {
