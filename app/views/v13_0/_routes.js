@@ -94,15 +94,15 @@ router.get(/s1HolderUkNational/, function (req,res) {
 });
 
 // Are you a UK national? - students already in EU //
-// router.get(/studentUkNational/, function (req,res) {
-//   if(req.query.radiosPW === "Yes") {
-//     res.redirect('');
-//   } else if (req.query.radiosPW === "No") {
-//     res.redirect('settled-status-student');
-//   } else {
-//     res.redirect('uk-national');
-//   }
-// });
+router.get(/studentUkNational/, function (req,res) {
+  if(req.query.radiosPW === "Yes") {
+    res.redirect('course-country');
+  } else if (req.query.radiosPW === "No") {
+    res.redirect('settled-status-student');
+  } else {
+    res.redirect('uk-national');
+  }
+});
 
 // Do you intend to study in the EU, EEA or Switzerland? UK NATIONAL//
 router.get(/ukStudent/, function (req,res) {
@@ -164,6 +164,17 @@ router.get(/settledStatus/, function (req,res) {
 router.get(/RetiredSettledStatus/, function (req,res) {
   if(req.query.radiosPW === "Yes") {
     res.redirect('nhs-number');
+  } else if (req.query.radiosPW === "No") {
+    res.redirect('not-entitled-ehic');
+  } else {
+    res.redirect('settled-status');
+  }
+});
+
+// Do you have UK settled or pre-settled status? - students already in EU //
+router.get(/studentSettledStatus/, function (req,res) {
+  if(req.query.radiosPW === "Yes") {
+    res.redirect('course-country-eu');
   } else if (req.query.radiosPW === "No") {
     res.redirect('not-entitled-ehic');
   } else {
