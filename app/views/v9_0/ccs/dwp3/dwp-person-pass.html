@@ -148,6 +148,32 @@
 		margin: 0px 10px;
 	}
 	/* end banner */
+	.latency {
+   text-align: center;
+   }
+   .latencyImg {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   }
+
+   .tick {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   }
+
+   .verify-tick {
+    vertical-align: middle;
+    margin-right: .26316em;
+    padding: 0 0 3px 5px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /*background-image: url(../images/bullet-icon.svg);*/
+}
 </style>
 
 <main id="content" role="main">
@@ -164,56 +190,31 @@
 			</div>
 			<div class="column-two-thirds">
 				<div class="heading-group">
-					<h1 class="heading-large">No OHS record found</h1>
+					<h1 class="heading-large">Customer details verified with DWP</h1>
 				</div>
-				<p>No results were found with these details</p>
 				<table class="govuk-table">
-				  <!-- <caption class="govuk-table__caption">Dates and amounts</caption>
-				  <thead class="govuk-table__head">
-				    <tr class="govuk-table__row">
-				      <th scope="col" class="govuk-table__header">Date</th>
-				      <th scope="col" class="govuk-table__header">Amount</th>
-				    </tr>
-				  </thead> -->
 				  <tbody class="govuk-table__body">
 				    <tr class="govuk-table__row">
 				      <th scope="row" class="govuk-table__header"style="font-weight: bold">Full name</th>
-				      <td class="govuk-table__cell">Michael Philip</td>
+					  <td class="govuk-table__cell">Michael Philip</td>
+					  <td class="govuk-table__cell"><img class="verify-tick" src="/public/images/bsa/tick-green.svg"></td>
 				    </tr>
 				    <tr class="govuk-table__row">
 				      <th scope="row" class="govuk-table__header"style="font-weight: bold">Date of birth</th>
-				      <td class="govuk-table__cell">16/03/1960</td>
+					  <td class="govuk-table__cell">16/03/1960</td>
+					  <td class="govuk-table__cell"><img class="verify-tick" src="/public/images/bsa/tick-green.svg"></td>
 				    </tr>
 				    <tr class="govuk-table__row">
 				      <th scope="row" class="govuk-table__header"style="font-weight: bold">National Insurance number</th>
-				      <td class="govuk-table__cell">SR123456A</td>
+					  <td class="govuk-table__cell">SR123456A</td>
+					  <td class="govuk-table__cell"><img class="verify-tick" src="/public/images/bsa/tick-green.svg"></td>
 				    </tr>
 				  </tbody>
 				</table>
 				<br>
-				<h3 class="heading-medium">Create person?</h3>
-				<form action="gorilla" id="same-pension-form" method="get" class="form">
 					<div class="form-group">
-						<fieldset id="state-pension" class="inline">
-							<div class="govuk-radios govuk-radios--inline">
-								<p>We'll verify these details with DWP</p>
-								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="yes" name="createPerson" type="radio" value="Yes">
-									<label class="govuk-label govuk-radios__label" for="yes">
-										Yes
-									</label>
-								</div>
-								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="no" name="createPerson" type="radio" value="No">
-									<label class="govuk-label govuk-radios__label" for="no">
-										No
-									</label>
-								</div>
-							</div>
-						</fieldset>
-					</div>
-					<div class="form-group">
-						<input class="button" type="submit" value="Next">
+						<a class="button" href="enter-postcode-res">Next</a>
+						<a class="button button-secondary" href="search">Cancel</a>
 					</div>
 			</div>
 		</div>

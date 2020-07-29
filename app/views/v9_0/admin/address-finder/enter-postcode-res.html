@@ -97,17 +97,29 @@
           <div class="heading-group">
              <h1 class="heading-large">What is your residential address?</h1>
           </div>
+          <form action="/res-address" id="contact-address-form-2" method="post" class="form">
           <div class="form-group">
              <label class="form-label">Postcode</label>
-             <input class="form-control form-control-1-4"  id="postcode" name="address-postcode" type="text" autocomplete="off" value="B11JX">
+             <input class="form-control form-control-1-4"  id="postcode" name="address-postcode" type="text" autocomplete="off" value="">
           </div>
           <div class="form-group">
-             <a class="button" href="res-address-ser-unavailable">Find address</a>
+            <div class="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="ohs-1" name="ohs" type="checkbox" value="not provided">
+                    <label class="govuk-label govuk-checkboxes__label" for="ohs-1">
+                        Address not provided
+                    </label>
+                </div>
+            </div>
+        </div>
+          <div class="form-group">
+            <input type="submit" value="Next" class="button"></a>
              <a class="button button-secondary" href="search">Cancel</a>
           </div>
             <div class="panel panel-border-wide">
                 If you live outside the UK or can’t find your UK address using your postcode <a href="res-address">enter your address manually</a>
             </div>
+          </form>
        </div>
     </div>
  </main>

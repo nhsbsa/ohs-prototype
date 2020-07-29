@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-    What is your residential address?
+    What is your correspondence address?
 {% endblock %}
 
 {% block content %}
@@ -95,19 +95,27 @@
     <div class="grid-row">
        <div class="column-two-thirds">
           <div class="heading-group">
-             <h1 class="heading-large">What is your residential address?</h1>
+             <h1 class="heading-large">What is your correspondence address?</h1>
           </div>
           <div class="form-group">
              <label class="form-label">Postcode</label>
-             <input class="form-control form-control-1-4"  id="postcode" name="address-postcode" type="text" autocomplete="off" value="B11JX">
+             <p><span class="bold">B1 3JS </span>&nbsp<a href="enter-postcode-corr">Change</a></p>
           </div>
+          <div class="form-group" style="margin-bottom:10px;">
+             <label class="form-label" for="select-box">Select an address</label>
+             <select class="form-control" id="select-box"  style="height:40px";>
+                <option value="Wellington street,Birmingham B1 1JX ">Albert street,Birmingham B1 3JS</option>
+                <option value="One address found" selected>One address found</option>
+             </select>
+          </div>
+          <br>  
+          <a href="corr-address">I can't find my address in the list</a>
           <div class="form-group">
-             <a class="button" href="res-address-ser-unavailable">Find address</a>
+             <br>
+             <a class="button" href="conf-corr-address">Next</a>
              <a class="button button-secondary" href="search">Cancel</a>
           </div>
-            <div class="panel panel-border-wide">
-                If you live outside the UK or can’t find your UK address using your postcode <a href="res-address">enter your address manually</a>
-            </div>
+          </form>
        </div>
     </div>
  </main>
