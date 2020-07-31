@@ -1209,10 +1209,16 @@ router.post('/corr-address', (req, res) => {
   checked ? res.redirect('/v9_0/ccs/address-finder-2/contact-details') : res.redirect('/v9_0/ccs/address-finder-2/enter-postcode-corr')
 });
 
+//Address finder(admin)- check box for same correspondence address
+router.post('/adm-corr-address', (req, res) => {
+  const checked = req.session.data['ohs']
+  checked ? res.redirect('/v9_0/admin/address-finder/contact-details') : res.redirect('/v9_0/admin/address-finder/enter-postcode-corr')
+});
+
 //Address finder(admin)- check box for address not provided
 router.post('/res-address', (req, res) => {
   const checked = req.session.data['ohs']
-  checked ? res.redirect('/v9_0/admin/address-finder/contact-details') : res.redirect('/v9_0/admin/address-finder/address-finder-res')
+  checked ? res.redirect('/v9_0/admin/address-finder/contact-details-2') : res.redirect('/v9_0/admin/address-finder/address-finder-res')
 });
 
 //DWP Address finder(css) - check box for same correspondence address
