@@ -50,7 +50,7 @@ router.get(/livingInEu/, function (req,res) {
   } else if (req.query.radiosPW === "Occupational disease or injury") {
     res.redirect('da1-country-res');
   } else if (req.query.radiosPW === "EHIC") {
-    res.redirect('eu-retired');
+    res.redirect('cya-s1-uk');
   } else if (req.query.radiosPW === "Provisional Replacement Certificate (PRC)") {
     res.redirect('prc-type');
   } else {
@@ -179,6 +179,22 @@ router.get(/studentSettledStatus/, function (req,res) {
     res.redirect('not-entitled-ehic');
   } else {
     res.redirect('settled-status');
+  }
+});
+
+
+// EHIC review result, review-result-student.html
+router.get(/ehicApproval/, function (req,res) {
+  if(req.query.radiosResult === "Approved with evidence") {
+    res.redirect('done-ehic-approved');
+  } else if (req.query.radiosResult === "Approved but no evidence provided") {
+    res.redirect('done-ehic-approved');
+  } else if (req.query.radiosResult === "Evidence requested") {
+    res.redirect('done-ehic-review');
+  } else if (req.query.radiosResult === "Not approved") {
+    res.redirect('exit-ehic-rejected-2');
+  } else {
+    res.redirect('review-result-student');
   }
 });
 
