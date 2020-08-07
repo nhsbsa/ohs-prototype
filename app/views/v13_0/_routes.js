@@ -152,7 +152,7 @@ router.get(/euRetired/, function (req,res) {
 // Do you have UK settled or pre-settled status? //
 router.get(/settledStatus/, function (req,res) {
   if(req.query.radiosPW === "Yes") {
-    res.redirect('eu-student');
+    res.redirect('nhs-number');
   } else if (req.query.radiosPW === "No") {
     res.redirect('not-entitled-ehic');
   } else {
