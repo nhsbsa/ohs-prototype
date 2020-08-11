@@ -740,4 +740,50 @@
 		evt.currentTarget.className += " active";
 	}
 </script>
+
+<script>
+  $('.buttonSubmit').on('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      closeDialog();
+    });
+</script>
+<script>
+	$(document).bind({
+      keyup: function(e) {
+        if (e.keyCode == 27) {
+          closeDialog();
+        }
+      }
+    });
+</script>
+<script>
+	function dialogDropDown(){
+  $('#category-select-box').on('change', function(){
+    $('#evidence-select-box').html('');
+    if($('#category-select-box').val() == "uk residency"){
+        $('#evidence-select-box').append('<option value="utility">Utility bill</option>');
+        $('#evidence-select-box').append('<option value="rent/mortgage">Rent/Mortgage</option>');
+        $('#evidence-select-box').append('<option value="benefit">Benefit</option>');
+        $('#evidence-select-box').append('<option value="hmrc">HMRC</option>');
+        $('#evidence-select-box').append('<option value="bank">Bank</option>');
+        $('#evidence-select-box').append('<option value="student loan">Student loan</option>');
+        $('#evidence-select-box').append('<option value="hospital/visa">Hospital/GP</option>');
+        $('#evidence-select-box').append('<option value="other">Other</option>');
+    }else if ($('#category-select-box').val() == "immigration health surcharge"){
+        $('#evidence-select-box').append('<option value="visa">Visa</option>');
+        $('#evidence-select-box').append('<option value="other">Other</option>');
+    } else {
+        return;
+    }
+  });
+}
+</script>
+<script>
+(function() {
+	dialogDropDown();
+  })();
+</script>
+
 {% endblock %}
+
