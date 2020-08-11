@@ -742,6 +742,8 @@
 </script>
 
 <script>
+function showDialog() {
+  if ($('.dialog').length > 0) {
   $('.dialog-holder-documents').on('click', function(e) {
       e.stopPropagation();
 	});
@@ -750,16 +752,17 @@
       e.preventDefault();
       e.stopPropagation();
       closeDialog();
-    });
-</script>
-<script>
+	});
+
 	$(document).bind({
       keyup: function(e) {
         if (e.keyCode == 27) {
           closeDialog();
         }
       }
-    });
+	});
+  }
+}
 </script>
 <script>
 	function dialogDropDown(){
@@ -785,9 +788,9 @@
 </script>
 <script>
 (function() {
+	showDialog();
 	dialogDropDown();
   })();
 </script>
 
 {% endblock %}
-
