@@ -144,7 +144,7 @@
         border: 10px solid #fff;
         display: inline-block;
         margin: auto;
-        max-width: 800px;
+        max-width: 720px;
         position: relative;
         vertical-align: middle;
 	}
@@ -663,31 +663,30 @@
 								  </div>
 							   </div>
 							   <div class="column-quarter">
-								  <div class="form-group">
-									 <label class="form-label" for="select-box">Category</label>
-									 <select class="form-control" id="source" name="source">
-										<option>UK residency</option>
-										<option>Immigration health surcharge</option>
-									 </select>
-								  </div>
-							   </div>
-							   <div class="column-quarter">
-								  <div class="form-group">
-									 <label class="form-label" for="select-box">Evidence type</label>
-									 <select class="form-control" id="status" name="status">
-										<option>Utility bill</option>
-										<option>Council Tax</option>
-										<option>Rent/Mortgage</option>
-										<option>Benefit</option>
-										<option>HMRC</option>
-										<option>Bank</option>
-										<option>Student loan</option>
-										<option>Hospital/GP</option>
-										<option>Visa</option>
-										<option>Other</option>
-									 </select>
-								  </div>
+								<div class="form-group">
+								   <label class="form-label" for="select-box">Category</label>
+								   <select class="form-control" id="category-select-box">
+									  <option value="uk residency">UK residency</option>
+									  <option value="immigration health surcharge">Immigration health surcharge</option>
+								   </select>
 								</div>
+							 </div>
+							 <div class="column-quarter">
+								<div class="form-group">
+								   <label class="form-label" for="select-box">Evidence type</label>
+								   <select class="form-control" id="evidence-select-box">
+									  <option>Utility bill</option>
+									  <option>Council Tax</option>
+									  <option>Rent/Mortgage</option>
+									  <option>Benefit</option>
+									  <option>HMRC</option>
+									  <option>Bank</option>
+									  <option>Student loan</option>
+									  <option>Hospital/GP</option>
+									  <option>Other</option>
+								   </select>
+								</div>
+							  </div>
 							</div>
 							
 							   <div class="grid-row">
@@ -741,25 +740,4 @@
 		evt.currentTarget.className += " active";
 	}
 </script>
-
-<!--<script>
-	$(document).ready(function () {
-	var option = document.getElementById("status").options;
-	if (document.getElementById('source').value == "UK residency") {
-		$("#status").append('<option>Utility bill</option>');
-		$("#status").append('<option>Council Tax</option>');
-		$("#status").append('<option>Rent/Mortgage</option>');
-		$("#status").append('<option>Benefit</option>');
-		$("#status").append('<option>HMRC</option>');
-		$("#status").append('<option>Bank</option>');
-		$("#status").append('<option>Student loan</option>');
-		$("#status").append('<option>Hospital/GP</option>');
-		$("#status").append('<option>Other</option>');
-		}
-	if (document.getElementById('source').value == "Immigration health surcharge") {
-		$("#status").append('<option>Visa</option>');
-		$("#status").append('<option>Other</option>');
-		}
-	});
-	</script> -->
 {% endblock %}
