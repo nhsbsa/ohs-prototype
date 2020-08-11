@@ -742,6 +742,10 @@
 </script>
 
 <script>
+  $('.dialog-holder-documents').on('click', function(e) {
+      e.stopPropagation();
+	});
+	
   $('.buttonSubmit').on('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
