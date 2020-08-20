@@ -73,10 +73,12 @@ router.get(/livingInEu/, function (req,res) {
 
 // Are you a UK national? //
 router.get(/ukNational/, function (req,res) {
-  if(req.query.radiosPW === "Yes") {
+  if(req.query.radiosPW === "British") {
     res.redirect('uk-student');
-  } else if (req.query.radiosPW === "No") {
+  } else if (req.query.radiosPW === "EU") {
     res.redirect('settled-status');
+  } else if (req.query.radiosPW === "Other") {
+    res.redirect('');
   } else {
     res.redirect('uk-national');
   }
@@ -109,9 +111,21 @@ router.get(/ukStudent/, function (req,res) {
   if(req.query.radiosPW === "Yes") {
     res.redirect('course-country');
   } else if (req.query.radiosPW === "No") {
-    res.redirect('cya-uk');
+    // res.redirect('cya-uk');
+    res.redirect('posted-worker');
   } else {
     res.redirect('uk-student');
+  }
+});
+
+// Are you a posted worker working in the EU, EEA or Switzerland? UK NATIONAL//
+router.get(/ukPostedWorker/, function (req,res) {
+  if(req.query.radiosPW === "Yes") {
+    res.redirect('pw-country');
+  } else if (req.query.radiosPW === "No") {
+    res.redirect('posted-worker');
+  } else {
+    res.redirect('posted-worker');
   }
 });
 
