@@ -123,7 +123,7 @@ router.get(/ukPostedWorker/, function (req,res) {
   if(req.query.radiosPW === "Yes") {
     res.redirect('pw-country');
   } else if (req.query.radiosPW === "No") {
-    res.redirect('posted-worker');
+    res.redirect('cya-uk');
   } else {
     res.redirect('posted-worker');
   }
