@@ -1,0 +1,63 @@
+{% extends "layout_bsa.html" %}
+{% block page_title %}
+   Overseas Healthcare Prototype
+{% endblock %}
+{% block content %}
+<style>
+   hr {
+   display: block;
+   background: #bfc1c3;
+   border: 0;
+   height: 1px;
+   margin-top: 30px;
+   margin-bottom: 30px;
+   padding: 0;
+   }
+</style>
+<!--
+   Button
+   <a href="v9_0/admin/ut/windows-login"><input class="button" type="submit" value="Open"></a> 
+   -->
+<main id="content" role="main">
+   <div class="grid-row">
+      <div class="column-full">
+         <h1 class="heading-xlarge">
+            <span class="heading-secondary">NHSBSA Design</span>
+            Overseas Healthcare Services Prototype
+         </h1>
+         <h2 class="heading-medium">Citizens Rights Agreement - EHIC</h2>
+         <div class="panel panel-border-wide">
+            <span class="bold">Note:</span> only EHIC journeys work in this version of the prototype.
+         </div>
+         <hr>
+         
+         <h2 class="heading-small">Admin</h2>
+         <table>
+            <thead>
+               <tr>
+                  <tr>
+                  <th>Scenario</th>
+                  <th>Link</th>
+               </tr>
+               </tr>
+            </thead>
+            <tbody>
+               
+               <tr>
+                  <td valign="top">1. Registered S1 holder (exportable benefit) applies for an EHIC</td>
+                  <td valign="top">
+                     <a href="v13_0/admin/ehic-s1/start">Start</a><br>
+                  </td>
+               </tr>
+               <tr>
+                  <td valign="top">2. British student studying in the EU, EEA or Switerzland applies for an EHIC</td>
+                  <td valign="top">
+                     <a href="v13_0/admin/no-search-results/start">Start</a><br>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</main>
+{% endblock %}
