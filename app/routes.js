@@ -1230,14 +1230,10 @@ router.post('/corr-address-dwp', (req, res) => {
 // Document upload - 2
 // Select entitlement for document upload, entitlement.html,
 router.get(/entitlement-doc/, function (req,res) {
-  if(req.query.entitlementDoc === "prc") {
+  if(req.query.entitlementDoc === "yes") {
     res.redirect('category');
-  } else if(req.query.entitlementDoc === "s1") {
-    res.redirect('entitlement');
-  } else if(req.query.entitlementDoc === "s2") {
-    res.redirect('entitlement');
-  } else if(req.query.entitlementDoc === "ehic") {
-    res.redirect('entitlement');
+  } else if(req.query.entitlementDoc === "no") {
+    res.redirect('case-record');
   } else {
     res.redirect('entitlement');
   }

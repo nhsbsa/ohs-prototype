@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	Which entitlement would you like to add a document to?
+	Add document to PRC
 {% endblock %}
 
 {% block content %}
@@ -143,7 +143,7 @@
 			</div>
 			<div class="column-two-thirds">
 				<div class="heading-group">
-					<h1 class="heading-large">Which entitlement would you like to add a document to?</h1>
+					<h1 class="heading-large">Would you like to add a document to the PRC?</h1>
 				</div>
 				<form class="form" action="entitlement-doc" method="get">
 					<div class="form-group">
@@ -151,36 +151,23 @@
 							<div class="govuk-radios">
 								
 								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="where-do-you-live-1" name="entitlementDoc" type="radio" value="prc">
+									<input class="govuk-radios__input" id="where-do-you-live-1" name="entitlementDoc" type="radio" value="yes">
 									<label class="govuk-label govuk-radios__label" for="where-do-you-live-1">
-										PRC
+										Yes
 									</label>
 								</div>
 								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="where-do-you-live-2" name="entitlementDoc" type="radio" value="s1">
+									<input class="govuk-radios__input" id="where-do-you-live-2" name="entitlementDoc" type="radio" value="no">
 									<label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-										S1
+										No
 									</label>
 								</div>
-								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="where-do-you-live-3" name="entitlementDoc" type="radio" value="s2">
-									<label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
-										S2
-									</label>
-								</div> 
-								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="where-do-you-live-4" name="entitlementDoc" type="radio" value="ehic">
-									<label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
-										EHIC
-									</label>
-								</div> 
 								
 							</div>
 						</fieldset>
 					</div>
 					<div class="form-group">
 						<input class="button" type="submit" value="Next">
-						<a class="button button-secondary" href="case-record">Cancel</a>
 					</div>
 				</form>
 			</div>
