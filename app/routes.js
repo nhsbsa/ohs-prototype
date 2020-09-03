@@ -1227,4 +1227,78 @@ router.post('/corr-address-dwp', (req, res) => {
   checked ? res.redirect('/v9_0/ccs/dwp3/contact-details') : res.redirect('/v9_0/ccs/dwp3/enter-postcode-corr')
 });
 
+// Document upload - 2
+// Select entitlement for document upload, entitlement.html,
+router.get(/entitlement-doc/, function (req,res) {
+  if(req.query.entitlementDoc === "prc") {
+    res.redirect('category');
+  } else if(req.query.entitlementDoc === "s1") {
+    res.redirect('entitlement');
+  } else if(req.query.entitlementDoc === "s2") {
+    res.redirect('entitlement');
+  } else if(req.query.entitlementDoc === "ehic") {
+    res.redirect('entitlement');
+  } else {
+    res.redirect('entitlement');
+  }
+});
+
+// Select category for document upload, category.html,
+router.get(/category-doc/, function (req,res) {
+  if(req.query.categoryDoc === "uk residency") {
+    res.redirect('uk-residency-evidence');
+  } else if(req.query.categoryDoc === "ihs") {
+    res.redirect('immigration-evidence');
+  } else {
+    res.redirect('category');
+  }
+});
+
+// Select UK residency evidence for document upload, uk-residency-evidence.html,
+router.get(/ukres-evidence/, function (req,res) {
+  if(req.query.ukresEvidence === "uk residency") {
+    res.redirect('check-your-answers');
+  } else if(req.query.ukresEvidence === "council tax") {
+    res.redirect('check-your-answers');
+  } else if(req.query.ukresEvidence === "rent/mortgage") {
+    res.redirect('check-your-answers');
+  } else if(req.query.ukresEvidence === "benefit") {
+    res.redirect('check-your-answers');
+  } else if(req.query.ukresEvidence === "hmrc") {
+    res.redirect('check-your-answers');
+  } else if(req.query.ukresEvidence === "bank") {
+    res.redirect('check-your-answers');
+  } else if(req.query.ukresEvidence === "student loan") {
+    res.redirect('check-your-answers');
+  } else if(req.query.ukresEvidence === "hospital/gp") {
+    res.redirect('check-your-answers');
+  } else if(req.query.ukresEvidence === "other") {
+    res.redirect('check-your-answers');
+  } else {
+    res.redirect('uk-residency-evidence');
+  }
+});
+
+// Select UK residency evidence for document upload, ihs-evidence.html,
+router.get(/ihs-evidence/, function (req,res) {
+  if(req.query.ihsEvidence === "visa") {
+    res.redirect('check-your-answers');
+  } else if(req.query.ukresEvidence === "other") {
+    res.redirect('check-your-answers');
+  } else {
+    res.redirect('ihs-evidence');
+  }
+});
+
+// Check Evidence, check-evidence.html,
+router.get(/check-file/, function (req,res) {
+  if(req.query.checkFile === "yes") {
+    res.redirect('conf-upload');
+  } else if(req.query.checkFile === "no") {
+    res.redirect('upload-evidence');
+  } else {
+    res.redirect('check-evidence');
+  }
+});
+
 module.exports = router

@@ -162,7 +162,23 @@
 			</div>
 		</div>
 	</div>
-	<div class="grid-row">
+	
+	<!--<div class="grid-row">
+		<div class="column-two-thirds">
+			<div class="error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+				<h2 class="error-summary-heading heading-medium" id="error-summary-title">
+				  Sorry, there is a technical problem
+				</h2>
+				<div class="error-summary-p">
+				  <ul class="list error-summary-list a">
+					<li>
+						<a href="#view">Try again.</a><span style="color:#b10e1e; font-weight:bold";> If you are unable to view, please contact the digital team for support. </span>
+					</li>
+				  </ul>
+				</div>
+			</div>
+		</div> -->
+
 		<div class="column-full">
 			<div class="heading-group">
 				<h1 class="heading-large">
@@ -176,7 +192,7 @@
 						<p class="heading-small">Personal details</p>
 					</div>
 				</a>
-				<a class="tablinks active" onclick="openTab(event, 'health')" href="#">
+				<a class="tablinks" onclick="openTab(event, 'health')" href="#">
 					<div>
 						<p class="heading-small">Entitlements</p>
 					</div>
@@ -191,7 +207,7 @@
 	                  <p class="heading-small">Case notes</p>
 	               </div>
 				</a>
-				<a class="tablinks" onclick="openTab(event, 'documents')" href="#">
+				<a class="tablinks  active" onclick="openTab(event, 'documents')" href="#">
 					<div>
 					   <p class="heading-small">Documents</p>
 					</div>
@@ -292,7 +308,7 @@
 							</div>
 						</div>
 					</div>
-					<div id="health" class="tabcontentActive">
+					<div id="health" class="tabcontent">
 						<table id="mainTable">
 							<thead>
 								<tr>
@@ -605,7 +621,7 @@
                   </form>
 			   </div>
 			   
-			<div id="documents" class="tabcontent">
+			<div id="documents" class="tabcontentActive">
 				<table id="mainTable">
 				   <thead>
 					  <tr>
@@ -624,7 +640,7 @@
 						 <td>UK residency</td>
 						 <td>Utility bill</td>
 						 <td>Philip Martin</td>
-						 <td><a href="#">View</a></td>
+						 <td><a id="view" href="#">View</a></td>
 					  </tr>
 				   </tbody>
 				</table>
