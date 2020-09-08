@@ -69,10 +69,10 @@ router.get(/admin-second-pension/, function (req,res){
 
 router.get(/new-person-third-country-pension/, function (req,res){
   if(req.query.anotherCountry === "yes") {
-    res.redirect('check-your-answers-2');
+    res.redirect('upload-evidence-2');
   }
   else {
-    res.redirect('check-your-answers-2');
+    res.redirect('upload-evidence-2');
   }
 });
 
@@ -330,7 +330,7 @@ router.get(/deer/, function (req,res) {
   if(req.query.samePension === "Yes") {
     res.redirect('same-country-pension-date');
   } else if(req.query.samePension === "No") {
-    res.redirect('check-your-answers-11');
+    res.redirect('upload-evidence-11');
   } else {
     res.redirect('same-pension-info');
   }
@@ -341,7 +341,7 @@ router.get(/owl/, function (req,res) {
   if(req.query.samePension === "Yes") {
     res.redirect('same-country-pension-date-2');
   } else if(req.query.samePension === "No") {
-    res.redirect('check-your-answers-11');
+    res.redirect('upload-evidence-11');
   } else {
     res.redirect('same-pension-info-2');
   }
@@ -352,7 +352,7 @@ router.get(/horse/, function (req,res) {
   if(req.query.samePension === "Yes") {
     res.redirect('same-country-pension-date-3');
   } else if(req.query.samePension === "No") {
-    res.redirect('check-your-answers-27');
+    res.redirect('upload-evidence-27');
   } else {
     res.redirect('same-pension-info-3');
   }
@@ -363,7 +363,7 @@ router.get(/peacock/, function (req,res) {
   if(req.query.samePension === "Yes") {
     res.redirect('same-country-pension-date-6');
   } else if(req.query.samePension === "No") {
-    res.redirect('check-your-answers-18');
+    res.redirect('upload-evidence-18');
   } else {
     res.redirect('same-pension-info-4');
   }
@@ -494,9 +494,9 @@ router.get(/hydrogen/, function (req,res) {
 // Third country pension, add-another-pension-3.html
 router.get(/moon/, function (req,res) {
   if(req.query.thirdcountrypension === "Yes") {
-    res.redirect('check-your-answers-5');
+    res.redirect('upload-evidence-5');
   } else if(req.query.thirdcountrypension === "No") {
-    res.redirect('check-your-answers-4');
+    res.redirect('upload-evidence-4');
   } else {
     res.redirect('add-another-pension-3');
   }
@@ -835,7 +835,7 @@ router.get(/prcType/, function (req,res) {
   if(req.query.radiosET === "For me") {
     res.redirect('treatment-type');
   } else if (req.query.radiosET === "For a dependant") {
-    res.redirect('check-your-answers-prc2');
+    res.redirect('upload-evidence-prc2');
   } else {
     res.redirect('prc-type');
   }
@@ -902,11 +902,11 @@ router.get(/entReason/, function (req,res) {
 // DA1 reason to visit country - Disease //
 router.get(/diseaseCountry/, function (req,res) {
   if(req.query.diseaseCountry === "Take up residence") {
-    res.redirect('check-your-answers-13');
+    res.redirect('upload-evidence-13');
   } else if (req.query.diseaseCountry === "Receive medical treatment") {
-    res.redirect('check-your-answers-13');
+    res.redirect('upload-evidence-13');
   } else if (req.query.diseaseCountry === "None of the above") {
-    res.redirect('check-your-answers-13');
+    res.redirect('upload-evidence-13');
   } else {
     res.redirect('da1-country-reason-2');
   }
@@ -915,9 +915,9 @@ router.get(/diseaseCountry/, function (req,res) {
 // DA1 reason to visit country - Injury //
 router.get(/injuryCountry/, function (req,res) {
   if(req.query.injuryCountry === "Take up residence") {
-    res.redirect('check-your-answers-12');
+    res.redirect('upload-evidence-12');
   } else if (req.query.injuryCountry === "Receive medical treatment") {
-    res.redirect('check-your-answers-12');
+    res.redirect('upload-evidence-12');
   } else {
     res.redirect('da1-country-reason');
   }
@@ -1072,7 +1072,7 @@ router.get(/camel/, function (req,res) {
   if(req.query.samePension === "Yes") {
     res.redirect('same-country-pension-date');
   } else if(req.query.samePension === "No") {
-    res.redirect('check-your-answers-4');
+    res.redirect('upload-evidence-4');
   } else {
     res.redirect('same-pension-info');
   }
@@ -1083,7 +1083,7 @@ router.get(/ox/, function (req,res) {
   if(req.query.thirdcountrypension === "Yes") {
     res.redirect('tcp-info-email');
   } else if(req.query.thirdcountrypension === "No") {
-    res.redirect('check-your-answers-3');
+    res.redirect('upload-evidence-3');
   } else {
     res.redirect('another-pension');
   }
@@ -1094,7 +1094,7 @@ router.get(/crow/, function (req,res) {
   if(req.query.thirdcountrypension === "Yes") {
     res.redirect('tcp-info-email-2');
   } else if(req.query.thirdcountrypension === "No") {
-    res.redirect('check-your-answers-6');
+    res.redirect('upload-evidence-6');
   } else {
     res.redirect('another-pension');
   }
@@ -1105,7 +1105,7 @@ router.get(/tcp-email/, function (req,res) {
   if(req.query.nameEmail === "Yes") {
     res.redirect('tcp-enter-email');
   } else if(req.query.nameEmail === "No") {
-    res.redirect('check-your-answers-7');
+    res.redirect('upload-evidence-7');
   } else {
     res.redirect('tcp-info-email');
   }
@@ -1116,7 +1116,7 @@ router.get(/mercury/, function (req,res) {
   if(req.query.nameEmail === "Yes") {
     res.redirect('tcp-enter-email-2');
   } else if(req.query.nameEmail === "No") {
-    res.redirect('check-your-answers-8');
+    res.redirect('upload-evidence-8');
   } else {
     res.redirect('tcp-info-email-2');
   }
@@ -1294,6 +1294,42 @@ router.get(/check-file/, function (req,res) {
     res.redirect('upload-evidence');
   } else {
     res.redirect('check-evidence');
+  }
+});
+
+// Select UK residency evidence for document upload, uk-residency-evidence.html,
+router.get(/ukres-evd/, function (req,res) {
+  if(req.query.ukresEvidence === "uk residency") {
+    res.redirect('upload-evidence');
+  } else if(req.query.ukresEvidence === "council tax") {
+    res.redirect('upload-evidence');
+  } else if(req.query.ukresEvidence === "rent/mortgage") {
+    res.redirect('upload-evidence');
+  } else if(req.query.ukresEvidence === "benefit") {
+    res.redirect('upload-evidence');
+  } else if(req.query.ukresEvidence === "hmrc") {
+    res.redirect('upload-evidence');
+  } else if(req.query.ukresEvidence === "bank") {
+    res.redirect('upload-evidence');
+  } else if(req.query.ukresEvidence === "student loan") {
+    res.redirect('upload-evidence');
+  } else if(req.query.ukresEvidence === "hospital/gp") {
+    res.redirect('upload-evidence');
+  } else if(req.query.ukresEvidence === "other") {
+    res.redirect('upload-evidence');
+  } else {
+    res.redirect('uk-residency-evidence');
+  }
+});
+
+// Select UK residency evidence for document upload, ihs-evidence.html,
+router.get(/ihs-evd/, function (req,res) {
+  if(req.query.ihsEvidence === "visa") {
+    res.redirect('upload-evidence');
+  } else if(req.query.ukresEvidence === "other") {
+    res.redirect('upload-evidence');
+  } else {
+    res.redirect('ihs-evidence');
   }
 });
 
