@@ -76,7 +76,7 @@ router.get(/ukNational/, function (req,res) {
   if(req.query.radiosPW === "British") {
     res.redirect('uk-student');
   } else if (req.query.radiosPW === "EU") {
-    res.redirect('settled-status');
+    res.redirect('nhs-number');
   } else if (req.query.radiosPW === "Other") {
     res.redirect('');
   } else {
