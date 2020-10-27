@@ -29,10 +29,10 @@ router.get(/postedWorker/, function (req,res) {
     res.redirect('contact-address-e109');
   } else if (req.query.radiosPW === "Occupational disease or injury") {
     res.redirect('da1-country-res');
+  } else if (req.query.radiosPW === "EHIC") {
+    res.redirect('res-uk');
   } else if (req.query.radiosPW === "Provisional Replacement Certificate (PRC)") {
     res.redirect('prc-type');
-  } else if (req.query.radiosPW === "EHIC") {
-    res.redirect('uk-national');
   } else {
     res.redirect('create-entitlement');
   }
@@ -71,16 +71,68 @@ router.get(/livingInEu/, function (req,res) {
 //   }
 // });
 
+
+// Were you resident in the UK before 1 January 2021? - EUSS //
+router.get(/resUK/, function (req,res) {
+  if(req.query.UKresidency === "Yes") {
+    res.redirect('uk-national');
+  } else if (req.query.UKresidency === "No") {
+    // res.redirect('settled-status');
+    res.redirect('');
+  } else {
+    res.redirect('res-uk');
+  }
+});
+
+
 // Are you a UK national? //
 router.get(/ukNational/, function (req,res) {
   if(req.query.radiosPW === "British") {
     res.redirect('uk-student');
   } else if (req.query.radiosPW === "EU") {
-    res.redirect('nhs-number');
+    // res.redirect('nhs-number');
+    res.redirect('ever-held-uk-citizenship');
   } else if (req.query.radiosPW === "Other") {
     res.redirect('');
   } else {
     res.redirect('uk-national');
+  }
+});
+
+// Where were you born? - EUSS //
+router.get(/birthCountry/, function (req,res) {
+  if(req.query.birthCountry === "EWS") {
+    res.redirect('');
+  } else if (req.query.birthCountry === "NI") {
+    res.redirect('');
+  } else if (req.query.birthCountry === "Other") {
+    res.redirect('are-you-studying');
+  } else {
+    res.redirect('where-were-you-born');
+  }
+});
+
+// Are you studying...? - EUSS //
+router.get(/areYouStudying/, function (req,res) {
+  if(req.query.areYouStudying === "Yes") {
+    res.redirect('');
+  } else if (req.query.areYouStudying === "No") {
+    res.redirect('nhs-number');
+  }else {
+    res.redirect('are-you-studying');
+  }
+});
+
+// Have you ever held UK citizenship? //
+router.get(/citizenshipUK/, function (req,res) {
+  if(req.query.UKresidency === "Yes") {
+    // res.redirect('uk-student');
+    res.redirect('');
+  } else if (req.query.UKresidency === "No") {
+    // res.redirect('nhs-number');
+    res.redirect('where-were-you-born');
+  } else {
+    res.redirect('ever-held-uk-citizenship');
   }
 });
 
