@@ -1,6 +1,6 @@
 {% extends "layout_bsa.html" %}
 {% block page_title %}
-   Overseas Healthcare Prototype
+Overseas Healthcare Prototype
 {% endblock %}
 {% block content %}
 <style>
@@ -12,6 +12,14 @@
    margin-top: 30px;
    margin-bottom: 30px;
    padding: 0;
+   }
+   .pass {
+   font-weight: 700;
+   color: #00823b; 
+   }
+   .fail {
+   font-weight: 700;
+   color: #D4351F; 
    }
 </style>
 <!--
@@ -27,10 +35,10 @@
          </h1>
          <h2 class="heading-medium">Citizens Rights Agreement - EHIC</h2>
          <div class="panel panel-border-wide">
-            <span class="bold">Note:</span> only EHIC journeys work in this version of the prototype.
+            <span class="bold">Note:</span> only <span class="bold">EHIC</span> journeys work in this version of the prototype.
          </div>
          <hr>
-         <h2 class="heading-small">CCS</h2>
+         <h2 class="heading-medium">CCS</h2>
          <table>
             <thead>
                <tr>
@@ -48,24 +56,24 @@
                   <td valign="top">
                      EU nationals with UK Settled Status<br>
                      <!-- Dependants of EU nationals<br> -->
-                     UK nationals<br>
                      Students<br>
-                     Posted workers (no S1 record in OHS)<br>
+                     <strike>UK nationals<br></strike>
+                     <strike>Posted workers (no S1 record in OHS)<br></strike>
                   </td>
                </tr>
                <tr>
                   <td valign="top">Applicant lives in EU<br>(Existing OHS record)</td>
                   <td valign="top">
                      <a href="v13_0/ccs/ehic-s1/start">Start</a><br>
-                     <a href="v13_0/ccs/ehic-pw/start">Start</a><br>
+                     <strike><a href="v13_0/ccs/ehic-pw/start">Start</a></strike><br>
                   </td>
                   <td valign="top">
                      S1 exportable benefits<br>
-                     Posted workers<br>
+                     <strike>Posted workers<br></strike>
                   </td>
                </tr>
                <tr>
-                  <td valign="top">Failed residency</td>
+                  <td valign="top">Failed residency<br>check screen</td>
                   <td valign="top">
                      <a href="v13_0/ccs/failed-checks/start">Start</a><br>
                      <!-- <a href="v13_0/ccs/failed-checks/case-record">In progress</a><br> -->
@@ -80,11 +88,11 @@
             </tbody>
          </table>
          <br>
-         <h2 class="heading-small">Admin</h2>
+         <h2 class="heading-medium">Admin</h2>
          <table>
             <thead>
                <tr>
-                  <tr>
+               <tr>
                   <th>Scenario</th>
                   <th>Link</th>
                   <th>Journeys</th>
@@ -95,18 +103,22 @@
                <tr>
                   <td valign="top">Applicant lives in UK<br>(New OHS record)</td>
                   <td valign="top">
-                     <a href="v13_0/admin/no-search-results/start">Start</a><br>
+                     <a href="v13_0/admin/no-search-results/start">Start</a>
+                     <br><br><br><br><br><br>
+                     <a href="v13_0/admin/no-search-results/case-record-6">Case record</a>
                   </td>
                   <td valign="top">
                      EU nationals with UK Settled Status<br>
                      <!-- Dependants of EU nationals<br> -->
+                     UK national students<br>
+                     EU national students<br>
                      <strike>UK nationals<br></strike>
-                     Students<br>
-                     Posted workers (no S1 record in OHS)<br>
+                     <strike>Posted workers (no S1 record in OHS)</strike>
+                        <br><br>
+                     EHIC approval (Students example)
                   </td>
                </tr>
-               
-               <tr>
+               <!-- <tr>
                   <td valign="top">Applicant lives in UK</td>
                   <td valign="top">
                      <a href="v13_0/admin/no-search-results/case-record-6">Case record</a>
@@ -114,57 +126,109 @@
                   <td valign="top">
                      EHIC approval (Students example)
                   </td>
-               </tr>
+                  </tr> -->
                <tr>
                   <td valign="top">Applicant lives in EU<br>(Existing OHS record)</td>
                   <td valign="top">
                      <a href="v13_0/admin/ehic-s1/start">Start</a><br>
-                     <a href="v13_0/admin/ehic-pw/start">Start</a><br>
+                     <strike><a href="v13_0/admin/ehic-pw/start">Start</a></strike><br>
                   </td>
                   <td valign="top">
                      S1 exportable benefits<br>
-                     Posted workers<br>
+                     <strike>Posted workers<br></strike>
                   </td>
                </tr>
-               <tr>
-                  <td valign="top">Failed residency</td>
-                  <td valign="top">
-                     <a href="v13_0/admin/failed-checks/start">Start</a><br>
-                     <!-- <a href="v13_0/admin/failed-checks/case-record">Start</a><br> -->
-                  </td>
-                  <td valign="top">
-                     EU nationals with UK Settled Status<br>
-                     <!-- Dependants of EU nationals<br> -->
-                     UK nationals<br>
-                     <!-- Students<br> -->
-                  </td>
-               </tr>
-               <tr>
-                  <td valign="top">Failed HO</td>
-                  <td valign="top">
-                     <a href="v13_0/admin/failed-ho/case-record-8">Case record</a><br>
-                     <!-- <a href="v13_0/admin/failed-checks/case-record">Start</a><br> -->
-                  </td>
-                  <td valign="top">
-                     EU nationals with UK Settled Status<br>
-                     <!-- Dependants of EU nationals<br> -->
-                     <!-- UK nationals<br> -->
-                     <!-- Students<br> -->
-                  </td>
-               </tr>
-               <tr>
-                  <td valign="top">Review checks screen</td>
-                  <td valign="top">
-                     <a href="v13_0/admin/no-search-results/review-checks">Review checks</a><br>
-                     <!-- <a href="v13_0/admin/failed-checks/case-record">Start</a><br> -->
-                  </td>
-                  <td valign="top">
-                     Review checks screen<br>
-                  </td>
-               </tr>
-               
             </tbody>
          </table>
+         <br>
+         <h2 class="heading-medium">NHS-D integration (Admin only)</h2>
+         <table>
+            <thead>
+               <tr>
+                  <th>Scenario</th>
+                  <th>Link</th>
+                  <th>Journeys</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td valign="top">Case records</td>
+                  <td valign="top">
+                     <a href="v13_0/admin/no-search-results/case-record-8">Case record</a><br>
+                     Case record<br>
+                  </td>
+                  <td valign="top">
+                     Checks results returned<br>
+                     Checks not yet performed
+                  </td>
+               </tr>
+               <tr>
+                  <td valign="top">Review checks screens <br>(Residency and NHS)</td>
+                  <td valign="top">
+                     <a href="v13_0/admin/no-search-results/review-checks">Review checks</a><br>
+                     <a href="v13_0/admin/no-search-results/review-checks-2">Review checks</a><br>
+                     <!-- <a href="v13_0/admin/failed-checks/case-record">Start</a><br> -->
+                  </td>
+                  <td valign="top">
+                     Residency: <span class="pass">PASS</span>, NHS record: <span class="fail">FAIL</span>
+                     <br>
+                     <!-- Residency: <span class="fail">FAIL</span>, NHS record: <span class="pass">PASS</span>
+                        <br> -->
+                     Residency: <span class="fail">FAIL</span>, NHS record: <span class="fail">FAIL</span><br>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+         <br>
+
+
+
+         <!-- OLDER WORK -->
+         <h2 class="heading-medium">Older work</h2>
+         <details>
+            <summary>
+               <span class="summary">UK Residency and Home Office checks</span>
+            </summary>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Scenario</th>
+                     <th>Link</th>
+                     <th>Journeys</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td valign="top">Failed UK residency</td>
+                     <td valign="top">
+                        <a href="v13_0/admin/failed-checks/start">Start</a><br>
+                        <a href="v13_0/admin/failed-checks/check-res-fail-eu">Check result</a><br>
+                     </td>
+                     <td valign="top">
+                        EU nationals with UK Settled Status<br>
+                        <!-- Dependants of EU nationals<br> -->
+                        <!-- <strike>UK nationals<br></strike> -->
+                        <!-- Students<br> -->
+                     </td>
+                  </tr>
+                  <tr>
+                     <td valign="top">Failed NHS-D <br>(NHS number trace)</td>
+                     <td valign="top">
+                        <a href="v13_0/admin/failed-ho/case-record-8">Case record</a><br>
+                        <a href="v13_0/admin/failed-ho/check-ho-fail">Check result</a><br>
+                        <!-- <a href="v13_0/admin/failed-checks/case-record">Start</a><br> -->
+                     </td>
+                     <td valign="top">
+                        EU nationals with UK Settled Status<br>
+                        <!-- Dependants of EU nationals<br> -->
+                        <!-- UK nationals<br> -->
+                        <!-- Students<br> -->
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <br>
+         </details>
       </div>
    </div>
 </main>
