@@ -266,6 +266,22 @@ router.get(/ehicApproval/, function (req,res) {
 });
 
 
+// EHIC review NHSD checks results, review-checks-evidence-1t.html
+router.get(/checksEvidence/, function (req,res) {
+  if(req.query.radiosResult === "Approved with evidence") {
+    res.redirect('done-ehic-approved-checks');
+  } else if (req.query.radiosResult === "Approved but no evidence provided") {
+    res.redirect('done-ehic-approved');
+  } else if (req.query.radiosResult === "Evidence requested") {
+    res.redirect('done-ehic-review');
+  } else if (req.query.radiosResult === "Not approved") {
+    res.redirect('exit-ehic-rejected-2');
+  } else {
+    res.redirect('review-result-student');
+  }
+});
+
+
 
 
 
