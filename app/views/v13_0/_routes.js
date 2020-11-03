@@ -271,13 +271,13 @@ router.get(/checksEvidence/, function (req,res) {
   if(req.query.radiosResult === "Approved with evidence") {
     res.redirect('done-ehic-approved-checks');
   } else if (req.query.radiosResult === "Approved but no evidence provided") {
-    res.redirect('done-ehic-approved');
+    res.redirect('done-ehic-approved-checks');
   } else if (req.query.radiosResult === "Evidence requested") {
-    res.redirect('done-ehic-review');
+    res.redirect('done-ehic-review-checks');
   } else if (req.query.radiosResult === "Not approved") {
-    res.redirect('exit-ehic-rejected-2');
+    res.redirect('exit-ehic-rejected-2-checks');
   } else {
-    res.redirect('review-result-student');
+    res.redirect('review-checks-evidence-1');
   }
 });
 
