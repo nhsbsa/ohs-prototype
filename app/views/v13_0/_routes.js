@@ -30,8 +30,8 @@ router.get(/postedWorker/, function (req,res) {
   } else if (req.query.radiosPW === "Occupational disease or injury") {
     res.redirect('da1-country-res');
   } else if (req.query.radiosPW === "EHIC") {
-    // res.redirect('res-uk');
-    res.redirect('uk-national');
+    res.redirect('res-uk');
+    // res.redirect('uk-national');
   } else if (req.query.radiosPW === "Provisional Replacement Certificate (PRC)") {
     res.redirect('prc-type');
   } else {
@@ -91,8 +91,8 @@ router.get(/ukNational/, function (req,res) {
   if(req.query.radiosPW === "British") {
     res.redirect('uk-student');
   } else if (req.query.radiosPW === "EU") {
-    res.redirect('are-you-studying');
-    // res.redirect('ever-held-uk-citizenship');
+    // res.redirect('are-you-studying');
+    res.redirect('ever-held-uk-citizenship');
   } else if (req.query.radiosPW === "Other") {
     res.redirect('');
   } else {
