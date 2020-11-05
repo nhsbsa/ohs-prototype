@@ -79,7 +79,7 @@ router.get(/resUK/, function (req,res) {
     res.redirect('uk-national');
   } else if (req.query.UKresidency === "No") {
     // res.redirect('settled-status');
-    res.redirect('');
+    res.redirect('not-entitled-ehic');
   } else {
     res.redirect('res-uk');
   }
@@ -103,9 +103,9 @@ router.get(/ukNational/, function (req,res) {
 // Where were you born? - EUSS //
 router.get(/birthCountry/, function (req,res) {
   if(req.query.birthCountry === "EWS") {
-    res.redirect('');
+    res.redirect('not-entitled-ehic');
   } else if (req.query.birthCountry === "NI") {
-    res.redirect('');
+    res.redirect('renounced');
   } else if (req.query.birthCountry === "Other") {
     res.redirect('are-you-studying');
   } else {
@@ -128,12 +128,37 @@ router.get(/areYouStudying/, function (req,res) {
 router.get(/citizenshipUK/, function (req,res) {
   if(req.query.UKresidency === "Yes") {
     // res.redirect('uk-student');
-    res.redirect('');
+    res.redirect('national-other-eu');
   } else if (req.query.UKresidency === "No") {
     // res.redirect('nhs-number');
     res.redirect('where-were-you-born');
   } else {
     res.redirect('ever-held-uk-citizenship');
+  }
+});
+
+// Have you renounced you UK citizenship? //
+router.get(/renouncedUK/, function (req,res) {
+  if(req.query.UKresidency === "Yes") {
+    // res.redirect('uk-student');
+    res.redirect('are-you-studying');
+  } else if (req.query.UKresidency === "No") {
+    // res.redirect('nhs-number');
+    res.redirect('not-entitled-ehic');
+  } else {
+    res.redirect('renounced');
+  }
+});
+
+// Are you a national of another EU country? //
+router.get(/nationalOtherEu/, function (req,res) {
+  if(req.query.UKresidency === "Yes") {
+    res.redirect('where-were-you-born');
+  } else if (req.query.UKresidency === "No") {
+    // res.redirect('nhs-number');
+    res.redirect('not-entitled-ehic');
+  } else {
+    res.redirect('national-other-eu');
   }
 });
 
@@ -165,7 +190,8 @@ router.get(/ukStudent/, function (req,res) {
     res.redirect('course-country');
   } else if (req.query.radiosPW === "No") {
     // res.redirect('cya-uk');
-    res.redirect('posted-worker');
+    // res.redirect('posted-worker');
+    res.redirect('not-entitled-ehic');
   } else {
     res.redirect('uk-student');
   }
