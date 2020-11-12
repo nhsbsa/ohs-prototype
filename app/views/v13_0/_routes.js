@@ -30,13 +30,25 @@ router.get(/postedWorker/, function (req,res) {
   } else if (req.query.radiosPW === "Occupational disease or injury") {
     res.redirect('da1-country-res');
   } else if (req.query.radiosPW === "EHIC") {
-    res.redirect('res-uk');
+    res.redirect('applicant-type');
+    // res.redirect('res-uk');
     // res.redirect('uk-national');
   } else if (req.query.radiosPW === "Provisional Replacement Certificate (PRC)") {
     res.redirect('prc-type');
   } else {
     res.redirect('create-entitlement');
   }
+});
+
+// Are you the main applicant or a relative of an EU national? - EHIC
+router.get(/appType/, function (req,res) {
+  if(req.query.radiosPW === "Main") {
+    res.redirect('res-uk');
+  } else if (req.query.radiosPW === "Dependant") {
+    res.redirect('app-type-dependant-nationality');
+  } else {
+    res.redirect('applicant-type');
+  } 
 });
 
 // Posted Worker / Exp Ben and SP S1 / e109 / DA1 / EHIC / PRC //
@@ -90,11 +102,13 @@ router.get(/resUK/, function (req,res) {
 router.get(/ukNational/, function (req,res) {
   if(req.query.radiosPW === "British") {
     res.redirect('uk-student');
+  } else if (req.query.radiosPW === "dual") {
+    res.redirect('where-were-you-born');
   } else if (req.query.radiosPW === "EU") {
     // res.redirect('are-you-studying');
     res.redirect('ever-held-uk-citizenship');
   } else if (req.query.radiosPW === "Other") {
-    res.redirect('');
+    res.redirect('ever-held-uk-citizenship');
   } else {
     res.redirect('uk-national');
   }
@@ -141,7 +155,8 @@ router.get(/citizenshipUK/, function (req,res) {
 router.get(/renouncedUK/, function (req,res) {
   if(req.query.UKresidency === "Yes") {
     // res.redirect('uk-student');
-    res.redirect('are-you-studying');
+    // res.redirect('are-you-studying');
+    res.redirect('nhs-number-dual');
   } else if (req.query.UKresidency === "No") {
     // res.redirect('nhs-number');
     res.redirect('not-entitled-ehic');
