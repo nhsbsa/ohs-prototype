@@ -41,13 +41,38 @@ router.get(/postedWorker/, function (req,res) {
 });
 
 // Are you the main applicant or a relative of an EU national? - EHIC
+// router.get(/appType/, function (req,res) {
+//   if(req.query.radiosPW === "Main") {
+//     res.redirect('res-uk');
+//   } else if (req.query.radiosPW === "Dependant") {
+//     res.redirect('app-type-dependant-nationality');
+//   } else {
+//     res.redirect('applicant-type');
+//   } 
+// });
+
+// Do you have derived rights from a family member or 
+// another person living in the UK? - EHIC
 router.get(/appType/, function (req,res) {
-  if(req.query.radiosPW === "Main") {
-    res.redirect('res-uk');
-  } else if (req.query.radiosPW === "Dependant") {
+  if (req.query.radiosPW === "Yes") {
     res.redirect('app-type-dependant-nationality');
+  } else if (req.query.radiosPW === "No") {
+    // res.redirect('res-uk');
+    res.redirect('posted-worker-a1');
   } else {
     res.redirect('applicant-type');
+  } 
+});
+
+// Are you a PW with A1 form?
+router.get(/a1Posted/, function (req,res) {
+  if (req.query.radiosPW === "Yes") {
+    res.redirect('working-country-a1');
+  } else if (req.query.radiosPW === "No") {
+    res.redirect('res-uk');
+    // res.redirect('posted-worker-a1');
+  } else {
+    res.redirect('posted-worker-a1');
   } 
 });
 
@@ -303,6 +328,21 @@ router.get(/ehicApproval/, function (req,res) {
     res.redirect('exit-ehic-rejected-2');
   } else {
     res.redirect('review-result-student');
+  }
+});
+
+// EHIC review result, review-result-student.html
+router.get(/ehicEuRelative/, function (req,res) {
+  if(req.query.radiosResult === "Approved with evidence") {
+    res.redirect('done-ehic-approved-eu-relative');
+  } else if (req.query.radiosResult === "Approved but no evidence provided") {
+    res.redirect('done-ehic-approved-eu-relative');
+  } else if (req.query.radiosResult === "Evidence requested") {
+    res.redirect('done-ehic-review-eu-relative');
+  } else if (req.query.radiosResult === "Not approved") {
+    res.redirect('exit-ehic-rejected-3');
+  } else {
+    res.redirect('review-evidence-euss-relative');
   }
 });
 
