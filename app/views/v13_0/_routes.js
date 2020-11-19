@@ -40,6 +40,31 @@ router.get(/postedWorker/, function (req,res) {
   }
 });
 
+
+//  Exp Ben and SP S1 / e109 / DA1 / EHIC / PRC //
+// If living in the UK //
+router.get(/entType/, function (req,res) {
+  if(req.query.radiosPW === "Posted worker") {
+    res.redirect('working-country');
+  } else if (req.query.radiosPW === "Exportable benefit including State Pension") {
+    res.redirect('entitlement-type');
+  // } else if (req.query.radiosPW === "Dependant of UK worker") {
+  //   res.redirect('contact-address-e109');
+  // } else if (req.query.radiosPW === "Occupational disease or injury") {
+  //   res.redirect('da1-country-res');
+  } else if (req.query.radiosPW === "EHIC") {
+    res.redirect('res-uk');
+    // res.redirect('res-uk');
+    // res.redirect('uk-national');
+  } else if (req.query.radiosPW === "Provisional Replacement Certificate (PRC)") {
+    res.redirect('prc-type');
+  } else {
+    res.redirect('create-entitlement');
+  }
+});
+
+
+
 // Are you the main applicant or a relative of an EU national? - EHIC
 // router.get(/appType/, function (req,res) {
 //   if(req.query.radiosPW === "Main") {

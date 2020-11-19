@@ -93,6 +93,8 @@ Overseas Healthcare Prototype
             </table>
          </details>
 
+         <hr>
+
          <h2 class="heading-medium">Admin</h2>
          <table>
             <thead>
@@ -109,42 +111,45 @@ Overseas Healthcare Prototype
                   <td valign="top">Applicant lives in UK<br>(New OHS record)</td>
                   <td valign="top">
                      <a href="v13_0/admin/no-search-results/start">Start</a>
-                     <br><br><br><br><br><br><br><br>
-                     <a href="v13_0/admin/no-search-results/case-record-6">Case record</a>
                   </td>
                   <td valign="top">
-                     EU nationals with EU Settled Status<br>
-                     EU national dependant applying as a main<br>
-                     Dual nationals<br>
-                     <!-- Dependants of EU nationals<br> -->
-                     UK students<br>
-                     EU students<br>
-                     <strike>UK nationals<br></strike>
-                     <strike>Posted workers (no S1 record in OHS)</strike>
-                        <br><br>
-                     EHIC approval (Students example)
+                     <ul class="list list-bullet">
+                        <li>EU nationals</li>
+                        <li>Dual nationals</li>
+                        <li>UK students</li>
+                        <li>EU students</li>
+                     </ul>
+
+                     <!-- <br> -->
+                     Override functionality:<br>
+                     <ul class="list list-bullet">
+                        <li>Dependant applying as a main</li>
+                        <li>EU national dependants</li>
+                        <li>A1 posted workers</li>
+                        <li>Zambrano / Chen / Ibrahim / Teixeira carers</li>
+                     </ul>
+                     <!-- <strike>UK nationals<br></strike> -->
+                     <!-- <strike>Posted workers (no S1 record in OHS)</strike> -->
                   </td>
                </tr>
+               
                <tr>
+                  <td valign="top">Applicant lives in UK<br>(New OHS record)</td>
+                  <td valign="top">
+                     <a href="v13_0/admin/no-search-results/case-record-6">Case record</a>
+                  </td>
+                  <td valign="top">EHIC approval (Students example)</td>
+               </tr>
+               <!-- <tr>
                   <td valign="top">Applicant lives in UK<br>(Existing OHS record)</td>
                   <td valign="top">
-                     <!-- <a href="v13_0/admin/no-search-results/start">Start</a>
-                     <br><br><br><br><br><br><br><br> -->
                      <a href="v13_0/admin/no-search-results/case-record-8">Case record</a>
                   </td>
                   <td valign="top">
                      EU national wants to add dependant <br>(parent, grandparent or grandchild)
-                     <!-- EU national dependant applying as a main<br>
-                     Dual nationals<br> -->
-                     <!-- Dependants of EU nationals<br> -->
-                     <!-- UK students<br>
-                     EU students<br>
-                     <strike>UK nationals<br></strike>
-                     <strike>Posted workers (no S1 record in OHS)</strike>
-                        <br><br>
-                     EHIC approval (Students example) -->
                   </td>
-               </tr>
+               </tr> -->
+
                <!-- <tr>
                   <td valign="top">Applicant lives in UK</td>
                   <td valign="top">
@@ -197,49 +202,62 @@ Overseas Healthcare Prototype
                <tr>
                   <td valign="top">Review checks screens <br>(UK residency, NHS record <br>and EU settlement status)</td>
                   <td valign="top">
+                     <ul class="list list">
+                        <li>
                      <!-- <a href="v13_0/admin/no-search-results/review-checks-0">Review checks</a><br> -->
-                     <a href="v13_0/admin/no-search-results/review-checks-2">Pass all</a><br>
-                     <a href="v13_0/admin/no-search-results/review-checks-3">Fail EUSS</a><br>
-                     <a href="v13_0/admin/no-search-results/review-checks-4">NHS not found</a><br>
-                     <a href="v13_0/admin/no-search-results/review-checks-5">Fail res.</a><br>
-                     <a href="v13_0/admin/no-search-results/review-checks-6">Fail all</a><br>
-                     <a href="v13_0/admin/no-search-results/review-checks-7">NHS not found</a><br>
+                        <a href="v13_0/admin/no-search-results/review-checks-2">Pass all</a>
+                     </li>
+                     <li>
+                        <a href="v13_0/admin/no-search-results/review-checks-3">Fail EUSS</a>
+                     </li>
+                     <li>
+                        <a href="v13_0/admin/no-search-results/review-checks-4">NHS not found</a>
+                     </li>
+                     <li>
+                        <a href="v13_0/admin/no-search-results/review-checks-5">Fail res.</a>
+                     </li>
+                     <li>
+                        <a href="v13_0/admin/no-search-results/review-checks-6">Fail all</a>
+                     </li>
+                     <li>
+                        <a href="v13_0/admin/no-search-results/review-checks-7">NHS not found</a>
+                     </li>
                      <!-- <a href="v13_0/admin/no-search-results/review-checks-2">Review checks</a><br> -->
                      <!-- <a href="v13_0/admin/failed-checks/case-record">Start</a><br> -->
+                  </ul>
                   </td>
                   <td valign="top">
-                     <!-- Checks not yet performed
-                     <br> -->
-                     1)
-                     Res: <span class="pass">PASS</span>, 
-                     NHS: <span class="bold">Found</span>,
-                     EUSS: <span class="pass">PASS</span>
-                     <br>
-                     2)
-                     Res: <span class="pass">PASS</span>, 
-                     NHS: <span class="bold">Found</span>,
-                     EUSS: <span class="fail">FAIL</span>
-                     <br>
-                     3)
-                     Res: <span class="pass">PASS</span>, 
-                     NHS: <span class="bold">Not found</span>
-                     <!-- EUSS: <span class="bold">-</span> -->
-                     <br>
-                     4)
-                     Res: <span class="fail">FAIL</span>, 
-                     NHS: <span class="bold">Found</span>,
-                     EUSS: <span class="pass">PASS</span>
-                     <br>
-                     5)
-                     Res: <span class="fail">FAIL</span>, 
-                     NHS: <span class="bold">Found</span>,
-                     EUSS: <span class="fail">FAIL</span>
-                     <br>
-                     6)
-                     Res: <span class="fail">FAIL</span>, 
-                     NHS: <span class="bold">Not found</span>
-                     <!-- EUSS: <span class="bold">-</span> -->
-                     <br>
+                     <ul class="list list-bullet">
+                     <li>
+                        Res: <span class="pass">PASS</span>, 
+                        NHS: <span class="bold">Found</span>,
+                        EUSS: <span class="pass">PASS</span>
+                     </li>                  
+                     <li>
+                        Res: <span class="pass">PASS</span>, 
+                        NHS: <span class="bold">Found</span>,
+                        EUSS: <span class="fail">FAIL</span>
+                     </li>
+                     <li>
+                        Res: <span class="pass">PASS</span>, 
+                        NHS: <span class="bold">Not found</span>
+                        <!-- EUSS: <span class="bold">-</span> -->
+                     </li>
+                     <li>
+                        Res: <span class="fail">FAIL</span>, 
+                        NHS: <span class="bold">Found</span>,
+                        EUSS: <span class="pass">PASS</span>
+                     </li>
+                     <li>
+                        Res: <span class="fail">FAIL</span>, 
+                        NHS: <span class="bold">Found</span>,
+                        EUSS: <span class="fail">FAIL</span>
+                     </li>
+                     <li>
+                        Res: <span class="fail">FAIL</span>, 
+                        NHS: <span class="bold">Not found</span>
+                        <!-- EUSS: <span class="bold">-</span> -->
+                     </li>
                   </td>
                </tr>
             </tbody>
