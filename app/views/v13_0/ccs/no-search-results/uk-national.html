@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	Are you a UK national?
+	What is your nationality?
 {% endblock %}
 
 {% block content %}
@@ -152,18 +152,24 @@
 								<div class="govuk-radios__item">
 									<input class="govuk-radios__input" id="where-do-you-live-1" name="radiosPW" type="radio" value="British">
 									<label class="govuk-label govuk-radios__label" for="where-do-you-live-1">
-										British
+										UK national
 									</label>
 								</div>
 								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="where-do-you-live-2" name="radiosPW" type="radio" value="EU">
+									<input class="govuk-radios__input" id="where-do-you-live-2" name="radiosPW" type="radio" value="dual">
 									<label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-										EU, EEA or Swiss
+										Dual national
 									</label>
 								</div>
 								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="where-do-you-live-3" name="radiosPW" type="radio" value="Other">
+									<input class="govuk-radios__input" id="where-do-you-live-3" name="radiosPW" type="radio" value="EU">
 									<label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+										EU, Icelandic, Liechtensteiner, Norwegian or Swiss
+									</label>
+								</div>
+								<div class="govuk-radios__item">
+									<input class="govuk-radios__input" id="where-do-you-live-4" name="radiosPW" type="radio" value="Other">
+									<label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
 										Other
 									</label>
 								</div>
@@ -176,7 +182,12 @@
 					</div>
 				</form>
 			</div>
+			<!-- <div class="column-one-third">
+				<h2 class="heading-medium">EU countries</h2>
+				<p>Austria, Belgium, Bulgaria, Croatia, Republic of Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain and Sweden.</p>
+			</div> -->
 		</div>
+
 	</div>
 </main>
 {% endblock %}

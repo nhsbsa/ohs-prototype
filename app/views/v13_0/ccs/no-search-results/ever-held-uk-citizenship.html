@@ -1,13 +1,27 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	Do you intend to study in the EU, EEA or Switzerland before 1 January 2021?
+	Have you ever held UK citizenship?
 {% endblock %}
 
 {% block content %}
 
 <style>
-	/* radio buttons (not-inline) */
+	/* radio buttons */
+	@media (min-width: 40.0625em) {
+		.govuk-radios--inline:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+	}
+	@media (min-width: 40.0625em) {
+		.govuk-radios--inline .govuk-radios__item {
+			margin-right: 20px;
+			float: left;
+			clear: none;
+		}
+	}
 	@media (min-width: 40.0625em) {
 		.govuk-radios__item {
 			font-size: 19px;
@@ -96,6 +110,23 @@
 		opacity: 0;
 		background: currentColor;
 	}
+	.govuk-radios__divider {
+		font-size: 19px;
+		font-size: 1.1875rem;
+		line-height: 1.31579;
+	}
+	.govuk-radios__divider {
+		font-family: Arial,sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 1.25;
+		color: #0b0c0c;
+		width: 40px;
+		margin-bottom: 10px;
+		text-align: center;
+	}
 	/* end radio buttons */
 
 	/* banner */
@@ -143,27 +174,32 @@
 			</div>
 			<div class="column-two-thirds">
 				<div class="heading-group">
-					<h1 class="heading-large">Are you studying, or do you intend to study in the EU, Iceland, Liechtenstein, Norway or Switzerland before 1 January 2021?</h1>
+					<h1 class="heading-large">Have you ever held UK citizenship?</h1>
 				</div>
-				<form class="form" action="ukStudent" method="get">
+				<form class="form" action="citizenshipUK" method="get">
 					<div class="form-group">
-						<fieldset id="entitlement">
-							<div class="govuk-radios">
+						<fieldset id="date-of-residency" class="inline">
+							<div class="govuk-radios govuk-radios--inline">
 								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="where-do-you-live-1" name="radiosPW" type="radio" value="Yes">
-									<label class="govuk-label govuk-radios__label" for="where-do-you-live-1">
+									<input class="govuk-radios__input" id="radiobtn-country-yes" name="UKresidency" type="radio" value="Yes">
+									<label class="govuk-label govuk-radios__label" for="UKresidency-yes">
 										Yes
 									</label>
 								</div>
 								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="where-do-you-live-2" name="radiosPW" type="radio" value="No">
-									<label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+									<input class="govuk-radios__input" id="radiobtn-country-no" name="UKresidency" type="radio" value="No">
+									<label class="govuk-label govuk-radios__label" for="UKresidency-no">
 										No
 									</label>
 								</div>
 							</div>
 						</fieldset>
 					</div>
+					<!-- <div class="form-group pickCountry visually-hidden">
+						<label class="form-label" for="full-name-f1">Country 1</label>
+						<input class="form-control" id="full-name-f1" name="thirdcountry" type="text" value="Poland">
+						<a href="another-pension2">add country</a>
+					</div> -->
 					<div class="form-group">
 						<input class="button" type="submit" value="Next">
 						<a class="button button-secondary" href="case-record">Cancel</a>

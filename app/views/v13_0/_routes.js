@@ -372,7 +372,7 @@ router.get(/ehicEuRelative/, function (req,res) {
 });
 
 
-// EHIC review NHSD checks results, review-checks-evidence-1t.html
+// EHIC review NHSD checks results, review-checks-evidence-1.html
 router.get(/checksEvidence/, function (req,res) {
   if(req.query.radiosResult === "Approved with evidence") {
     res.redirect('done-ehic-approved-checks');

@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What is your gender?
+	How is your gender recorded on your NHS record?
 {% endblock %}
 
 {% block content %}
@@ -143,8 +143,11 @@
 			</div>
 			<div class="column-two-thirds">
 				<div class="heading-group">
-					<h1 class="heading-large">What is your gender?</h1>
+					<h1 class="heading-large">How is your gender recorded on your NHS record?</h1>
 				</div>
+				<!-- <p>We ask your gender to help us match your details to NHS records.</p> -->
+				<p>This is the gender on your NHS record. This may not be the gender you currently identify yourself as.</p>
+				
 				<form class="form" action="cya-eu" method="get">
 					<div class="form-group">
 						<fieldset id="entitlement">
@@ -170,6 +173,14 @@
 							</div>
 						</fieldset>
 					</div>
+					<details>
+			            <summary>
+			               <span class="summary">Why do we ask this question?</span>
+			            </summary>
+			            <p>We ask for this information, along with your NHS number and your date of birth, as a check to confirm your identity and eligibility for an EHIC. Giving us this information helps speed up your application. If you choose not to give this information, your application may need to go through a different verification process.</p>
+			         </details>
+						<br>
+
 					<div class="form-group">
 						<input class="button" type="submit" value="Next">
 						<a class="button button-secondary" href="case-record">Cancel</a>
