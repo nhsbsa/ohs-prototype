@@ -111,12 +111,38 @@ router.get(/durableNat/, function (req,res) {
   }
 });
 
+// What is your durable partner's nationality? - add dep to EHIC
+router.get(/childNat/, function (req,res) {
+  if(req.query.radiosPW === "British") {
+    res.redirect('not-entitled-child-over21');
+  } else if (req.query.radiosPW === "Dual") {
+    res.redirect('');
+  } else if (req.query.radiosPW === "EU") {
+    res.redirect('res-uk-child');
+  } else if (req.query.radiosPW === "Other") {
+    res.redirect('not-entitled-child-over21-tc');
+  } else {
+    res.redirect('child-nationality');
+  }
+});
+
 // Was your durable partner resident in the UK before 1 January 2021?
 router.get(/durableResUK/, function (req,res) {
   if(req.query.UKresidency === "Yes") {
     res.redirect('own-app-durable');
   } else if (req.query.UKresidency === "No") {
     res.redirect('relationship-date-durable');
+  } else {
+    res.redirect('res-uk-durable');
+  }
+});
+
+// Was yourchild resident in the UK before 1 January 2021?
+router.get(/childResUK/, function (req,res) {
+  if(req.query.UKresidency === "Yes") {
+    res.redirect('own-app-child');
+  } else if (req.query.UKresidency === "No") {
+    res.redirect('not-entitled-child-over21-eu');
   } else {
     res.redirect('res-uk-durable');
   }
