@@ -1,0 +1,189 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+	Check your answers before sending the application
+{% endblock %}
+
+{% block content %}
+<style>
+	/* banner */
+	.banner-information-without-action {
+		color: #005ea5;
+	}
+	.banner-message {
+		font-family: Arial, sans-serif;
+		font-weight: 400;
+		text-transform: none;
+		font-size: 36px;
+		line-height: 1.2;
+		padding: 20px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		border-width: 5px;
+		border-style: solid;
+		font-weight: bold;
+		text-align: center;
+	}
+	.vertical-bar {
+		margin: 0px 10px;
+	}
+	/* end banner */
+</style>
+
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-full">
+			<div id="back">
+				<a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="grid-row">
+			<div class="column-full">
+				<!-- <div class="banner-information-without-action">
+					<p class="banner-message">
+						<span class="name text-capitalize">Rosie Philip</span>
+						<span class="vertical-bar">|</span>
+						<span class="ohs-reference-number">25000005</span>
+					</p>
+				</div> -->
+			</div>
+			<div class="column-two-thirds">
+				<div class="heading-group">
+					<h1 class="heading-large">Check your answers before sending the application</h1>
+				</div>
+				<div class="form-group">
+					<p class="heading-medium">Main (insured person): Michael Philip</p>
+					<h2 class="heading-medium">Personal details</h2>
+					<dl class="govuk-check-your-answers cya-questions-short">
+						<div>
+							<dt class="cya-question">OHS reference number</dt>
+							<dd class="cya-answer">25000005</dd>
+							<dd class="cya-change"></dd>
+						</div>
+						<div>
+							<dt class="cya-question">Full name</dt>
+							<dd class="cya-answer">Rosie Philip</dd>
+						</div>
+						<div>
+							<dt class="cya-question">Date of birth</dt>
+							<dd class="cya-answer">24/05/2016</dd>
+						</div>
+						<div>
+							<dt class="cya-question">National Insurance number</dt>
+							<dd class="cya-answer">-</dd>
+						</div>
+					</dl>
+				</div>
+				<div class="form-group">
+					<h2 class="heading-medium">Eligibility details</h2>
+					<dl class="govuk-check-your-answers cya-questions-short">
+						<div>
+							<dt class="cya-question">What entitlement would you like to create?</dt>
+							<dd class="cya-answer">{{data.radiosPW}}</dd>
+							<dd class="cya-change">
+								<a href="create-dep-entitlement#entitlement">Change<span class="visually-hidden"> entitlement you would like to create</span></a>
+							</dd>
+						</div>
+						<div>
+							<dt class="cya-question">What country are you moving to</dt>
+							<dd class="cya-answer">France</dd>
+							<dd class="cya-change">
+								<a href="dep-moving-country#registration-number">Change<span class="visually-hidden"> country you are moving to</span></a>
+							</dd>
+						</div>
+						<div>
+							<dt class="cya-question">What date will you start to live in France</dt>
+							<dd class="cya-answer">04/12/2018</dd>
+							<dd class="cya-change">
+								<a href="dep-moving-date#ni-number">Change<span class="visually-hidden"> date will you start to live in France</span></a>
+							</dd>
+						</div>
+						<div>
+							<dt class="cya-question">What date will you return to the UK</dt>
+							<dd class="cya-answer">-</dd>
+							<dd class="cya-change">
+								<a href="dep-moving-date#ni-number-2">Change<span class="visually-hidden"> date you will return to the UK</span></a>
+							</dd>
+						</div>
+						<!-- <div>
+							<dt class="cya-question">Do you get money from any of these?</dt>
+							<dd class="cya-answer">{{data.expbenefits}}</dd>
+							<dd class="cya-change">
+								<a href="benefit-info#expbenefits">Change<span class="visually-hidden"> exportable benefit</span></a>
+							</dd>
+						</div>
+						<div>
+							<dt class="cya-question">What date will you start to get paid your UK State Pension</dt>
+							<dd class="cya-answer">04/12/2018</dd>
+							<dd class="cya-change">
+								<a href="pension-date#ni-number">Change<span class="visually-hidden"> date you will start to get paid your UK State Pension</span></a>
+							</dd>
+						</div>
+						<div>
+							<dt class="cya-question">Do you get paid a State Pension from France</dt>
+							<dd class="cya-answer">No</dd>
+							<dd class="cya-change">
+								<a href="same-pension#state-pension">Change<span class="visually-hidden"> if you get paid a State Pension from France</span></a>
+							</dd>
+						</div>
+						<div>
+							<dt class="cya-question">Do you get paid a State Pension from another EEA country, or Switzerland</dt>
+							<dd class="cya-answer">{{data.thirdcountrypension}}
+													{% if data.thirdcountrypension === "Yes" %}
+														- {{data.thirdcountry}}
+													{% endif %}
+							</dd>
+							<dd class="cya-change">
+								<a href="another-pension#another-pension">Change<span class="visually-hidden"> if you get paid a State Pension from another EEA country, or Switzerland</span></a>
+							</dd>
+						</div> -->
+					</dl>
+				</div>
+				<div class="form-group">
+					<h2 class="heading-medium">Contact details</h2>
+					<dl class="govuk-check-your-answers cya-questions-short">
+						<div>
+							<dt class="cya-question">Residential address</dt>
+							<dd class="cya-answer">1 Road <br>
+								Downtown <br>
+								Lille <br>
+								123456 <br>
+								France
+							</dd>
+						</div>
+						<div>
+							<dt class="cya-question">Correspondence address</dt>
+							<dd class="cya-answer">Rúa de Mer 64 <br>
+								Paris <br>
+								Plaisance <br>
+								75014 <br>
+								France
+							</dd>
+						</div>
+						<div>
+							<dt class="cya-question">Email address</dt>
+							<dd class="cya-answer">-</dd>
+						</div>
+						<div>
+							<dt class="cya-question">Telephone number</dt>
+							<dd class="cya-answer">-</dd>
+						</div>
+					</dl>
+				</div>
+				<div class="form-group">
+					<h2 class="heading-medium">Now create and send entitlement</h2>
+					<p class="text">
+						By accepting these details, you are confirming they are correct to the best of your knowledge.
+					</p>
+				</div>
+				<div class="form-group">
+					<a href="dep-done" class="button">Accept and submit</a>
+					<a class="button button-secondary" href="case-record-7">Cancel</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock %}

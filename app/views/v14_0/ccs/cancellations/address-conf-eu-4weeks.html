@@ -1,0 +1,62 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+	Confirmation of move to Spain
+{% endblock %}
+
+{% block content %}
+<style>
+	/* banner */
+	.banner-information-without-action {
+		color: #005ea5;
+	}
+	.banner-message {
+		font-family: Arial, sans-serif;
+		font-weight: 400;
+		text-transform: none;
+		font-size: 36px;
+		line-height: 1.2;
+		padding: 20px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		border-width: 5px;
+		border-style: solid;
+		font-weight: bold;
+		text-align: center;
+	}
+	.vertical-bar {
+		margin: 0px 10px;
+	}
+	.heading-large .heading-secondary {
+        color: white;
+     }
+	/* end banner */
+</style>
+
+<main id="content" role="main">
+     <div class="grid-row">
+          <div class="column-two-thirds">
+               <div class="done-panel">
+                    <h1 class="heading-xlarge"><span id="done-tick"></span>Confirmation of move to Spain</h1>
+                    <h2 class="heading-large"><span class="heading-secondary">Main (insured person)</span> Michael Philip</h2>
+                    <h2 class="heading-large"><span class="heading-secondary">OHS Reference number</span> 25000002</h2>
+               </div>
+               <div class="form-group">
+                    <h2 class="heading-medium">What happens next</h2>
+                    <!-- <p>You must return within 1 month of your date of travel.</p> -->
+				
+                    <p>As your move date is in the future, no changes have been made to your record and your S1 remains valid.</p>
+					<p>You must contact us again within four weeks of your moving date so the necessary changes can be made.</p>
+                    <!-- <p>Your S1 entitlement for France will be cancelled and you will not be able to use this to access  healthcare treatment in France. </p> -->
+                    <!-- <p>You will have to apply for a new S1 as you are travelling to Spain and get it registered by relevant authority in Spain.</p> -->
+                    <!-- <p>Email sent to the registrations team at <a href="#">nhsbsaregistrations@nhsbsacancellation.com</a></p> -->
+                    <a href="case-record-42-no-change" class="link">View updated details</a>
+               </div>
+               <div class="form-group">
+                    <a href="search" class="button">Do another search</a>
+               </div>
+          </div>
+     </div>
+</main>
+
+{% endblock %}

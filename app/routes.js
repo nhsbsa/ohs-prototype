@@ -15,6 +15,7 @@ router.get('/', function (req, res) {
 
 // Start folder specific routes
 router.use('/v13_0', require('./views/v13_0/_routes'));
+router.use('/v14_0', require('./views/v14_0/_routes'));
 
 // ccs no-search-results uk-pension //
 router.get(/ccs-benefit/, function (req,res){

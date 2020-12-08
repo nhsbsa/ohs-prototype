@@ -1,0 +1,58 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+	Confirmation of in receipt UK State Pension
+{% endblock %}
+
+{% block content %}
+<style>
+	/* banner */
+	.banner-information-without-action {
+		color: #005ea5;
+	}
+	.banner-message {
+		font-family: Arial, sans-serif;
+		font-weight: 400;
+		text-transform: none;
+		font-size: 36px;
+		line-height: 1.2;
+		padding: 20px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		border-width: 5px;
+		border-style: solid;
+		font-weight: bold;
+		text-align: center;
+	}
+	.vertical-bar {
+		margin: 0px 10px;
+	}
+	.heading-large .heading-secondary {
+          color: white;
+     }
+	/* end banner */
+</style>
+
+<main id="content" role="main">
+     <div class="grid-row">
+          <div class="column-two-thirds">
+               <div class="done-panel">
+                    <h1 class="heading-xlarge"><span id="done-tick"></span>Confirmation of in receipt UK State Pension</h1>
+                    <h2 class="heading-large"><span class="heading-secondary">Main (insured person)</span> Rosie Philip</h2>
+                    <h2 class="heading-large"><span class="heading-secondary">OHS Reference number</span> 25000005</h2>
+               </div>
+               <div class="form-group">
+                    <h2 class="heading-medium">What happens next</h2>
+                    <p>You will no longer be linked as a dependant and a new certificate will be issued to your address along with steps to register it with the Member State.</p>
+                    <!-- <p>Your S1 entitlement for France will be cancelled and you will not be able to use this to access  healthcare treatment in France. If you have any dependants who have issued entitlements, their entitlements will also be cancelled.</p>
+                    <p>You will have to apply for a new S1 since you are travelling to Spain and have it registered by the relevent authority in Spain.</p> -->
+                    <a href="case-record-53" class="link">View updated details</a>
+               </div>
+               <div class="form-group">
+                    <a href="search" class="button">Do another search</a>
+               </div>
+          </div>
+     </div>
+</main>
+
+{% endblock %}
