@@ -1,0 +1,242 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+	Check your answers before sending the application
+{% endblock %}
+
+{% block content %}
+<style>
+	/* banner */
+	.banner-information-without-action {
+		color: #005ea5;
+	}
+	.banner-message {
+		font-family: Arial, sans-serif;
+		font-weight: 400;
+		text-transform: none;
+		font-size: 36px;
+		line-height: 1.2;
+		padding: 20px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		border-width: 5px;
+		border-style: solid;
+		font-weight: bold;
+		text-align: center;
+	}
+	.vertical-bar {
+		margin: 0px 10px;
+	}
+	/* end banner */
+</style>
+
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-full">
+			<div id="back">
+				<a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="grid-row">
+			<div class="column-two-thirds">
+				<div class="heading-group">
+					<h1 class="heading-large">Check your answers before sending the application</h1>
+				</div>
+				<div class="form-group">
+					<p class="heading-medium">Main (insured person): Karen Francis</p>
+					<h2 class="heading-medium">Personal details</h2>
+					<dl class="govuk-check-your-answers cya-questions-short">
+						<div>
+							<dt class="cya-question">OHS reference number</dt>
+							<dd class="cya-answer">25000005</dd>
+							<dd class="cya-change"></dd>
+						</div>
+						<div>
+							<dt class="cya-question">Full name</dt>
+							<dd class="cya-answer">Rosie Philip</dd>
+						</div>
+						<div>
+							<dt class="cya-question">Date of birth</dt>
+							<dd class="cya-answer">24/05/2016</dd>
+						</div>
+						<div>
+							<dt class="cya-question">National Insurance number</dt>
+							<dd class="cya-answer">SR123456A</dd>
+						</div>
+					</dl>
+				</div>
+				<div class="form-group">
+					<h2 class="heading-medium">Eligibility details</h2>
+					<dl class="govuk-check-your-answers cya-questions-short">
+						<div>
+							<dt class="cya-question">What date was the request received by the business?</dt>
+							<dd class="cya-answer">04/01/2021</dd>
+							<dd class="cya-change">
+								<a href="received-date-dep-1">Change</a>
+							</dd>
+						</div>
+						<!-- <div>
+							<dt class="cya-question">What entitlement would you like to create?</dt>
+							<dd class="cya-answer">European Health Insurance Card (EHIC)</dd>
+							<dd class="cya-change">
+								<a href="create-entitlement">Change</a>
+							</dd>
+						</div> -->
+						<!-- <div>
+							<dt class="cya-question">Were you resident in the UK before 1 January 2021?</dt>
+							<dd class="cya-answer">Yes</dd>
+							<dd class="cya-change">
+								<a href="res-uk">Change</a>
+							</dd>
+						</div> -->
+						<!-- <div>
+							<dt class="cya-question">Are you the main applicant or a relative of an EU national?</dt>
+							<dd class="cya-answer">Relative</dd>
+							<dd class="cya-change">
+								<a href="applicant-type">Change</a>
+							</dd>
+						</div> -->
+						
+						<div>
+							<dt class="cya-question">What is your relationship to the dependant?</dt>
+							<dd class="cya-answer">Child</dd>
+							<dd class="cya-change">
+								<a href="dep-relationship">Change</a>
+							</dd>
+						</div>
+						<div>
+							<dt class="cya-question">What is your child's nationality?</dt>
+							<dd class="cya-answer">EU, Icelandic, Liechtensteiner, Norwegian or Swiss</dd>
+							<dd class="cya-change">
+								<a href="child-nationality">Change</a>
+							</dd>
+						</div>
+						
+						<!-- <div>
+							<dt class="cya-question">Have you ever held UK citizenship?</dt>
+							<dd class="cya-answer">No</dd>
+							<dd class="cya-change">
+								<a href="ever-held-uk-citizenship">Change</a>
+							</dd>
+						</div>
+						<div>
+							<dt class="cya-question">Where were you born?</dt>
+							<dd class="cya-answer">Other</dd>
+							<dd class="cya-change">
+								<a href="where-were-you-born">Change</a>
+							</dd>
+						</div>
+						<div>
+							<dt class="cya-question">EU student</dt>
+							<dd class="cya-answer">No</dd>
+							<dd class="cya-change">
+								<a href="are-you-studying">Change</a>
+							</dd>
+						</div> -->
+						<!-- <div>
+							<dt class="cya-question">Do you have UK settled or pre-settled status?</dt>
+							<dd class="cya-answer">Yes</dd>
+							<dd class="cya-change">
+								<a href="settled-status">Change</a>
+							</dd>
+						</div> -->
+						<!-- <div>
+							<dt class="cya-question">Do you intend to study in the EU, EEA or Switzerland?</dt>
+							<dd class="cya-answer">No</dd>
+							<dd class="cya-change">
+								<a href="eu-student">Change</a>
+							</dd>
+						</div> -->
+						<!-- <div>
+							<dt class="cya-question">What country are you studying in?</dt>
+							<dd class="cya-answer">Germany</dd>
+							<dd class="cya-change">
+								<a href="course-country-eu">Change</a>
+							</dd>
+						</div>
+						<div>
+							<dt class="cya-question">What is the start date of your course?</dt>
+							<dd class="cya-answer">21/09/2020</dd>
+							<dd class="cya-change">
+								<a href="course-start-date-eu">Change</a>
+							</dd>
+						</div>
+						<div>
+							<dt class="cya-question">What is the end date of your course?</dt>
+							<dd class="cya-answer">15/07/2021</dd>
+							<dd class="cya-change">
+								<a href="course-end-date-eu">Change</a>
+							</dd>
+						</div> -->
+						<!-- <div>
+							<dt class="cya-question">What is your NHS number?</dt>
+							<dd class="cya-answer">485 777 3456</dd>
+							<dd class="cya-change">
+								<a href="nhs-number">Change</a>
+							</dd>
+						</div>
+						<div>
+							<dt class="cya-question">What is your gender?</dt>
+							<dd class="cya-answer">Prefer not to say</dd>
+							<dd class="cya-change">
+								<a href="gender-student">Change</a>
+							</dd>
+						</div> -->
+					</dl>
+				</div>
+				<div class="form-group">
+					<h2 class="heading-medium">Contact details</h2>
+					<dl class="govuk-check-your-answers cya-questions-short">
+						<div>
+							<dt class="cya-question">Residential address</dt>
+							<dd class="cya-answer">
+								73 Roman Rd<br>
+								Leeds<br>
+								LS2 5ZN<br>
+								United Kingdom
+							</dd>
+						</div>
+						<div>
+							<dt class="cya-question">Correspondence address</dt>
+							<dd class="cya-answer">
+								-
+							</dd>
+						</div>
+						<div>
+							<dt class="cya-question">Email address</dt>
+							<dd class="cya-answer">rosie.philip@example.com</dd>
+						</div>
+						<div>
+							<dt class="cya-question">Telephone number</dt>
+							<dd class="cya-answer">	07123 456 7890</dd>
+						</div>
+					</dl>
+				</div>
+				<div class="form-group">
+					<h2 class="heading-medium">Now create and send entitlement</h2>
+					<p class="text">
+						By accepting these details, you are confirming they are correct to the best of your knowledge.
+					</p>
+				</div>
+				<div class="form-group">
+					<!-- <a href="check-res-pass-eu" class="button">Accept and submit</a> -->
+					<a href="done-dep-child-under18" class="button">Accept and submit</a>
+					<a class="button button-secondary" href="case-record">Cancel</a>
+				</div>
+				<!-- <div class="form-group">
+					<h2 class="heading-medium">Check UK residency</h2>
+					<p class="text">
+						By accepting these details, you are confirming they are correct to the best of your knowledge.
+					</p>
+				</div>
+				<div class="form-group">
+					<a href="check-res-pass-eu" class="button">Check UK residency</a>
+					<a class="button button-secondary" href="case-record">Cancel</a>
+				</div> -->
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock %}
