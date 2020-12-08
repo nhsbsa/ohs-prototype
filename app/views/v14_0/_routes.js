@@ -71,7 +71,7 @@ router.get(/cya-dep-of-eun/, function (req,res) {
   } else if (req.query.depRelationship === "Durable") {
     res.redirect('durable-nationality');
   } else if (req.query.depRelationship === "Child") {
-    res.redirect('');
+    res.redirect('child-dependancy');
   } else if (req.query.depRelationship === "Parent") {
     res.redirect('cya-dep-override');
   } else if (req.query.depRelationship === "Grandparent") {
