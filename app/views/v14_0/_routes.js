@@ -90,7 +90,7 @@ router.get(/eussDep/, function (req,res) {
   if(req.query.eussDep === "Yes") {
     res.redirect('cya-dep-durable-tc');
   } else if (req.query.eussDep === "No") {
-    res.redirect('');
+    res.redirect('relationship-date-durable');
   } else {
     res.redirect('dep-euss');
   }
