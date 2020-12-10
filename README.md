@@ -1,7 +1,11 @@
-# NHSBSA prototype template
+# Overseas Healthcare Services (OHS) Prototype - NHSBSA
 
 
-## About the prototype kit
+## About the prototype
+
+This is the latest versions of the OHS prototype. 
+
+To see the archived versions of the prototype visit [OH-Prototype](https://oh-prototype.herokuapp.com/)
 
 This prototype is an adapted version of the GOV.UK prototype kit. It provides a simple way to make interactive prototypes which can be used to show ideas to people you work with, and to do user research.
 
@@ -10,11 +14,26 @@ This prototype is an adapted version of the GOV.UK prototype kit. It provides a 
 Follow further advice from GOV.UK
 https://www.gov.uk/service-manual/design
 
-## Security
-
-If you publish your prototypes online, they **must** be protected by a [username and password](https://govuk-prototype-kit.herokuapp.com/docs/publishing-on-heroku). This is to prevent members of the public finding prototypes and thinking they are real services.
-
 ## Installation instructions
 
-- [Installation guide for new users (non technical)](https://govuk-prototype-kit.herokuapp.com/docs/install/introduction)
-- [Installation guide for developers (technical)](https://govuk-prototype-kit.herokuapp.com/docs/install/developer-install-instructions)
+To install the prototype and run locally.
+
+First clone the repo (HTTPS / SSH)
+```
+git clone https://github.com/nhsbsa/ohs-prototype.git
+git clone git@github.com:nhsbsa/ohs-prototype.git
+```
+
+Once the repo is cloned, cd to the root of the prototype in terminal and run
+```
+npm i
+```
+
+When all dependencies are installed you can start the prototype
+```
+npm start
+```
+OR
+```
+gulp
+```
