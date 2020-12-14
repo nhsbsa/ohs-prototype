@@ -17,9 +17,10 @@ router.get('/', function (req, res) {
 // Start folder specific routes
 // ---------------------------- //
 
-  // v14_0 contains all work done on old OHS prototype up until December 2020
-  router.use('/v14_0', require('./views/v14_0/_routes'));
-  router.use('/v15_0', require('./views/v15_0/_routes'));
+// v14_0 contains all work done on old OHS prototype up until mid-December 2020
+router.use('/v14_0', require('./views/v14_0/_routes'));
+router.use('/v15_0', require('./views/v15_0/_routes'));
+
 
 // ccs no-search-results uk-pension //
 router.get(/ccs-benefit/, function (req,res){
