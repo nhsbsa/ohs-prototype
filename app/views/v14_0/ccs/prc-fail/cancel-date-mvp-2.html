@@ -1,0 +1,81 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+    What is the date of cancellation?
+{% endblock %}
+
+{% block content %}
+<style>
+	/* banner */
+	.banner-information-without-action {
+		color: #005ea5;
+	}
+	.banner-message {
+		font-family: Arial, sans-serif;
+		font-weight: 400;
+		text-transform: none;
+		font-size: 36px;
+		line-height: 1.2;
+		padding: 20px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		border-width: 5px;
+		border-style: solid;
+		font-weight: bold;
+		text-align: center;
+	}
+	.vertical-bar {
+		margin: 0px 10px;
+	}
+	/* end banner */
+</style>
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-full">
+            <div id="back">
+                <a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="grid-row">
+            <div class="column-full">
+                <div class="banner-information-without-action">
+                    <p class="banner-message">
+                        <span class="name text-capitalize">Rosie Philip</span>
+                        <span class="vertical-bar">|</span>
+                        <span class="ohs-reference-number">25000005</span>
+                    </p>
+                </div>
+            </div>
+            <div class="column-two-thirds">
+                <div class="heading-group">
+                    <h1 class="heading-large">What is the date of cancellation?</h1>
+                </div>
+                <form class="form" action="case-record-13" method="get">
+                    <div class="form-group">
+                        <label class="form-label" for="ni-number">
+                            Cancellation date
+                            <span class="form-hint">
+                                For example, 18/09/2018
+                                <br/><br/>
+                                <p>This date must be:</p>
+                                <ul class="list list-bullet">
+                                    <li>today's date or a date in the past</li>
+                                    <li>after the entitlement start date</li>
+                                </ul>
+                            </span>
+                        </label>
+                        <input class="form-control" id="ni-number" type="text" autocomplete="off" value="24/06/2019" >
+                    </div>
+                    <div class="form-group">
+                        <input class="button" type="submit" value="Submit">
+                        <a class="button button-secondary" href="case-record-1">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
