@@ -120,6 +120,10 @@
 		margin: 0px 10px;
 	}
 	/* end banner */
+	strong {
+		font-weight: 600;
+	}
+
 </style>
 
 <main id="content" role="main">
@@ -152,21 +156,22 @@
 								<div class="govuk-radios__item">
 									<input class="govuk-radios__input" id="where-do-you-live-1" name="radiosPW" type="radio" value="British">
 									<label class="govuk-label govuk-radios__label" for="where-do-you-live-1">
-										UK national
-									</label>
-								</div>
-								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="where-do-you-live-2" name="radiosPW" type="radio" value="Dual">
-									<label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-										Dual national
+										UK citizen
 									</label>
 								</div>
 								<div class="govuk-radios__item">
 									<input class="govuk-radios__input" id="where-do-you-live-3" name="radiosPW" type="radio" value="EU">
 									<label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
-										EU, Icelandic, Liechtensteiner, Norwegian or Swiss
+										A national of the EU, Switzerland, Norway, Iceland, or Liechtenstein
 									</label>
 								</div>
+								<div class="govuk-radios__item">
+									<input class="govuk-radios__input" id="where-do-you-live-2" name="radiosPW" type="radio" value="Dual">
+									<label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+										A dual national, which includes nationality of a country in the EU, Switzerland, Norway, Iceland, or Liechtenstein
+									</label>
+								</div>
+								
 								<div class="govuk-radios__item">
 									<input class="govuk-radios__input" id="where-do-you-live-4" name="radiosPW" type="radio" value="Other">
 									<label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
@@ -176,6 +181,22 @@
 							</div>
 						</fieldset>
 					</div>
+					<details>
+						<summary>
+							<span class="summary">More information about dual nationality</span>
+						</summary>
+						<p>
+							You should only choose <strong>Dual national</strong> if you are registered as a national of at least two nations and at least one of them is an EU country, Switzerland, Norway, Iceland, or Liechtenstein.
+						</p>
+						<p>
+							If you have dual nationality involving nationality of the UK and another country not listed, choose <strong>UK citizen</strong>.
+						</p>
+						<p>
+							If you have dual nationality not involving the UK or any of the other countries listed, you should choose <strong>Other</strong>.
+						</p>
+					</details>
+
+					<br>
 					<div class="form-group">
 						<input class="button" type="submit" value="Next">
 						<a class="button button-secondary" href="case-record">Cancel</a>
