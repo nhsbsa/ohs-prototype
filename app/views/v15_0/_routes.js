@@ -65,6 +65,27 @@ router.get(/entType/, function (req,res) {
 
 
 // What is your relationship to the dependant? - add dep to EHIC
+router.get(/cya-dep-of-eun-under18/, function (req,res) {
+  if(req.query.depRelationship === "Spouse") {
+    res.redirect('spouse-nationality');
+  } else if (req.query.depRelationship === "Durable") {
+    res.redirect('durable-nationality');
+  } else if (req.query.depRelationship === "Child") {
+    res.redirect('child-nationality');
+  } else if (req.query.depRelationship === "Parent") {
+    res.redirect('cya-dep-override');
+  } else if (req.query.depRelationship === "Grandparent") {
+    res.redirect('cya-dep-override');
+  } else if (req.query.depRelationship === "Grandchild") {
+    res.redirect('cya-dep-override');
+  } else if (req.query.depRelationship === "Carer") {
+    res.redirect('cya-dep-override');
+  } else {
+    res.redirect('dep-relationship');
+  }
+});
+
+// What is your relationship to the dependant? - add dep to EHIC
 router.get(/cya-dep-of-eun/, function (req,res) {
   if(req.query.depRelationship === "Spouse") {
     res.redirect('spouse-nationality');
