@@ -172,7 +172,8 @@ router.get(/childResUK/, function (req,res) {
 // Did your (durable partner) relationship commence on or before 31 December 2020??
 router.get(/durableRelDate/, function (req,res) {
   if(req.query.UKresidency === "Yes") {
-    res.redirect('cya-dep-durable-rel-date');
+    // res.redirect('cya-dep-durable-rel-date');
+    res.redirect('relationship-2years');
   } else if (req.query.UKresidency === "No") {
     res.redirect('relationship-2years');
   } else {
