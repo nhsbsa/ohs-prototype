@@ -126,7 +126,7 @@ router.get(/childNat/, function (req,res) {
   }
 });
 
-// Was your durable partner resident in the UK on before 31 December 2020?
+// Was your durable partner resident in the UK on or before 31 December 2020?
 router.get(/durableResUK/, function (req,res) {
   if(req.query.UKresidency === "Yes") {
     res.redirect('own-app-durable');
@@ -137,7 +137,7 @@ router.get(/durableResUK/, function (req,res) {
   }
 });
 
-// Was yourchild resident in the UK on before 31 December 2020?
+// Was yourchild resident in the UK on or before 31 December 2020?
 router.get(/childResUK/, function (req,res) {
   if(req.query.UKresidency === "Yes") {
     res.redirect('own-app-child');
@@ -148,7 +148,7 @@ router.get(/childResUK/, function (req,res) {
   }
 });
 
-// Did your (durable partner) relationship commence on before 31 December 2020??
+// Did your (durable partner) relationship commence on or before 31 December 2020??
 router.get(/durableRelDate/, function (req,res) {
   if(req.query.UKresidency === "Yes") {
     res.redirect('cya-dep-durable-rel-date');
@@ -254,7 +254,7 @@ router.get(/livingInEu/, function (req,res) {
 // });
 
 
-// Were you resident in the UK on before 31 December 2020? - EUSS //
+// Were you ordinarily resident in the UK on or before 31 December 2020? - EUSS //
 router.get(/resUK/, function (req,res) {
   if(req.query.UKresidency === "Yes") {
     res.redirect('uk-national');
