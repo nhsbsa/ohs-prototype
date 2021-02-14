@@ -1,0 +1,73 @@
+{% extends "layout_bsa.html" %}
+{% block page_title %}
+   S1 DWP - Overseas Healthcare Prototype
+{% endblock %}
+{% block content %}
+<style>
+   hr {
+   display: block;
+   background: #bfc1c3;
+   border: 0;
+   height: 1px;
+   margin-top: 30px;
+   margin-bottom: 30px;
+   padding: 0;
+   }
+   .pass {
+   font-weight: 700;
+   color: #00823b; 
+   }
+   .fail {
+   font-weight: 700;
+   color: #D4351F; 
+   }
+</style>
+
+<main id="content" role="main">
+   <div class="grid-row">
+      <div class="column-full">
+         <h1 class="heading-xlarge">
+            <span class="heading-secondary">NHSBSA Design</span>
+            Overseas Healthcare Services Prototype
+            <span class="heading-medium" style="padding:0;">Version 2.0</span>
+         </h1>
+         <h2 class="heading-medium">S1 DWP intergration</h2>
+         <div class="panel panel-border-wide">
+            <span class="bold">Note:</span> only <span class="bold">S1 DWP intergration</span> journeys work in this version of the prototype.
+         </div>
+         <hr>
+
+         <h2 class="heading-medium">Admin</h2>
+         <table>
+            <thead>
+               <tr>
+                  <th>Scenario</th>
+                  <th>Link</th>
+                  <th>Journeys / Screens</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td valign="top">S1 for State Pensioners</td>
+                  <td valign="top">
+                     <a href="v16_0/admin/no-search-results/case-record">Case record</a><br>
+                     <!-- <a href="v16_0/admin/no-search-results/"> -->
+                     Case record
+                  <!-- </a> -->
+                  <br><br>
+                     <a href="v16_0/admin/no-search-results/">Germany</a><br>
+                  </td>
+                  <td valign="top">
+                     DWP check passes<br>
+                     DWP check fails<br><br>
+                     'Do you pay Statutory Health<br>Contributions to Germany?' (1 screen)
+                  </td>
+               </tr>
+               
+            </tbody>
+         </table>
+         
+      </div>
+   </div>
+</main>
+{% endblock %}

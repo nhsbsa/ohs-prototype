@@ -20,6 +20,7 @@ router.get('/', function (req, res) {
 // v14_0 contains all work done on old OHS prototype up until mid-December 2020
 router.use('/v14_0', require('./views/v14_0/_routes'));
 router.use('/v15_0', require('./views/v15_0/_routes'));
+router.use('/v16_0', require('./views/v16_0/_routes'));
 
 
 // ccs no-search-results uk-pension //

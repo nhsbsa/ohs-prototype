@@ -120,7 +120,8 @@ router.get(/eussDep/, function (req,res) {
 // What is your durable partner's nationality? - add dep to EHIC
 router.get(/durableNat/, function (req,res) {
   if(req.query.radiosPW === "British") {
-    res.redirect('not-entitled-durable-1');
+    // res.redirect('not-entitled-durable-1');
+    res.redirect('rejected-durable-1');
   } else if (req.query.radiosPW === "Dual") {
     res.redirect('');
   } else if (req.query.radiosPW === "EU") {
@@ -175,7 +176,8 @@ router.get(/durableRelDate/, function (req,res) {
     // res.redirect('cya-dep-durable-rel-date');
     res.redirect('relationship-2years');
   } else if (req.query.UKresidency === "No") {
-    res.redirect('relationship-2years');
+    // res.redirect('relationship-2years');
+    res.redirect('not-entitled-durable-2');
   } else {
     res.redirect('relationship-date-durable');
   }
