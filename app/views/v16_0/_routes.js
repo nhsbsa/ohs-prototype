@@ -653,12 +653,23 @@ router.get(/pensionResidence/, function (req,res) {
 
 // Do you get paid a State Pension from any other EEA country or Switzerland?
 router.get(/pensionEEA/, function (req,res) {
-  if(req.query.pensionEEA === "Yes") {
-    res.redirect('');
-  } else if (req.query.pensionEEA === "No") {
-    res.redirect('');
+  if(req.query.thirdcountrypension === "Yes") {
+    res.redirect('dwp-api-tc-pass');
+  } else if (req.query.thirdcountrypension === "No") {
+    res.redirect('dwp-api-fail');
   } else {
     res.redirect('pension-eea');
+  }
+});
+
+// DWP API fail - What would you like to do?
+router.get(/amendSkip/, function (req,res) {
+  if(req.query.amendSkip === "amend") {
+    res.redirect('amend-personal-details');
+  } else if (req.query.amendSkip === "skip") {
+    res.redirect('cya-');
+  } else {
+    res.redirect('dwp-api-fail');
   }
 });
 
