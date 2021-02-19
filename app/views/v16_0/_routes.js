@@ -684,6 +684,17 @@ router.get(/pensionGermany/, function (req,res) {
   }
 });
 
+// Do you pay Statutory Health Contributions to Germany? - WHEN UPDATING PENSION CONTS
+router.get(/contsPensionGermany/, function (req,res) {
+  if(req.query.contsPensionGermany === "Yes") {
+    res.redirect('done-s1-rej');
+  } else if (req.query.contsPensionGermany === "No") {
+    res.redirect('pension-start-date');
+  } else {
+    res.redirect('pension-germany-conts');
+  }
+});
+
 
 
 

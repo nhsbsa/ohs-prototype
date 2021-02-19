@@ -75,6 +75,18 @@ Check your answers before sending the application
                            <a class="link-button" id="removeButton1" style="padding-left: 7px" href="#">remove country</a>
                         </td>
                      </tr>
+                     <tr class="row">
+                        <td id="pensionCountry1">Germany</td>
+                        <td id="pensionDuration1">
+                           <label id="pensionDurationLbl" class="visually-hidden" for="statePensionDto_pensionDetailsDtoList[1]_pensionDuration">Period of contribution (Weeks)</label>
+                           <input id="statePensionDto_pensionDetailsDtoList[1]_pensionDuration" class="form-control pensionDuration no-spaces" type="text"
+                               value="10"/>
+                           <input class="pensionDurationHidden" type="hidden"
+                              id="pensionDurationHidden1"
+                              value="20">
+                           <a class="link-button" id="removeButton1" style="padding-left: 7px" href="#">remove country</a>
+                        </td>
+                     </tr>
                     
                      <tr>
                         <td id="pensionCountry">
@@ -95,7 +107,9 @@ Check your answers before sending the application
             	<a class="button button-secondary" href="contributions-updated">Save</a>
             	<a href="check-competency" class="button">Check competency</a>
             </div>
+            <hr>
             <div class="form-group"> 
+               <a href="pension-germany-conts" class="button">Next</a>
             	<a class="button button-secondary" href="case-record-17">Cancel</a>
             </div>
          </div>
