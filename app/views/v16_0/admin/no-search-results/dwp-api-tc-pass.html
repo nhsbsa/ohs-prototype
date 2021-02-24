@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 {% block page_title %}
 
-   DWP API screen
+   DWP check results
 
 {% endblock %}
 {% block content %}
@@ -88,25 +88,25 @@
       <div class="column-two-thirds">
          <!-- <a href="#" class="link-back">Back</a> -->
          <h1 class="heading-large">
-            UK State Pension details
+            DWP check results
          </h1>
          <form action="contact-address" id="check-person-details-form" method="get" class="form">
-            <div class="panel panel-border-wide" style="color: #00823b; border-color: #00823b">
+            <!-- <div class="panel panel-border-wide" style="color: #00823b; border-color: #00823b">
                <p class="bold">PASS</p>
-            </div>
+            </div> -->
             <!-- <div class="panel panel-border-wide" style="color: #D4351F; border-color: #D4351F">
                <p class="bold">FAIL</p>
             </div> -->
             <!-- <h2 class="heading-medium">Personal details</h2> -->
             <dl class="govuk-check-your-answers cya-questions-short">
                <div>
-                  <dt class="cya-question">Applicant verified</dt>
+                  <dt class="cya-question">Unique applicant match</dt>
                   <dd class="cya-answer">Yes</dd>
                </div>
-               <div>
+               <!-- <div>
                   <dt class="cya-question">Applicant life status</dt>
                   <dd class="cya-answer">Alive</dd>
-               </div>
+               </div> -->
 
                <!-- If applicant deceased -->
                <!-- <div>
@@ -119,11 +119,11 @@
                </div> -->
 
                <div>
-                  <dt class="cya-question">Received pension</dt>
+                  <dt class="cya-question">Receives UK State Pension</dt>
                   <dd class="cya-answer">Yes</dd>
                </div>
                <div>
-                  <dt class="cya-question">First pension paid date</dt>
+                  <dt class="cya-question">Date of first pension payment</dt>
                   <dd class="cya-answer">01/01/2019</dd>
                </div>
             </dl>

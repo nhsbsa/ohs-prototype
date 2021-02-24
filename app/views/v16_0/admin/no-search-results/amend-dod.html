@@ -2,7 +2,7 @@
 
 {% block page_title %}
 
-	Amend date of death
+	Amend date of death (S1 expiry date)
 
 {% endblock %}
 
@@ -53,16 +53,23 @@
 				</div>
 				<div class="column-two-thirds">
 					<div class="heading-group">
-						<h1 class="heading-large">Amend date of death</h1>
+						<h1 class="heading-large">S1 expiry date</h1>
 					</div>
 					<form action="same-pension" id="pension-date-form" method="get" class="form">
+
+						<p>
+							This should match the applicant's date of death unless their S1 entitlement ended before they died. For example, if the applicant had moved back to the UK.
+						</p>
+						
 						<div class="form-group">
-							<label class="form-label" for="ni-number">
-								Date of death
+							<!-- <label class="form-label" for="ni-number">
+								S1 expiry date
 								<span class="form-hint">
 								</span>
-							</label>
-							<input class="form-control" id="ni-number" type="text" autocomplete="off" value="">
+							</label> -->
+							<input class="form-control" id="ni-number" type="text" autocomplete="off" value="23/09/2020">
+
+
 						</div>
 						<div class="form-group">
 							<a class="button" href="cya-dwp-s1-iss-1">Next</a>

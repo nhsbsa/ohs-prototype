@@ -673,6 +673,17 @@ router.get(/amendSkip/, function (req,res) {
   }
 });
 
+// Amend details - Next Step
+router.get(/resubmitCheck/, function (req,res) {
+  if(req.query.resubmitCheck === "resubmit") {
+    res.redirect('dwp-api-pass');
+  } else if (req.query.resubmitCheck === "allcorrect") {
+    res.redirect('cya-dwp-s1-iss-1');
+  } else {
+    res.redirect('amend-personal-details');
+  }
+});
+
 // Do you pay Statutory Health Contributions to Germany?
 router.get(/pensionGermany/, function (req,res) {
   if(req.query.pensionGermany === "Yes") {

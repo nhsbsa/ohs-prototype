@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 {% block page_title %}
 
-   DWP API screen
+   DWP check results
 
 {% endblock %}
 {% block content %}
@@ -195,49 +195,48 @@
       <div class="column-two-thirds">
          <!-- <a href="#" class="link-back">Back</a> -->
          <h1 class="heading-large">
-            UK State Pension details
+            DWP check results
          </h1>
          <!-- <form action="contact-address" id="check-person-details-form" method="get" class="form"> -->
             <!-- <div class="panel panel-border-wide" style="color: #00823b; border-color: #00823b">
                <p class="bold">PASS</p>
             </div> -->
-            <div class="panel panel-border-wide" style="color: #D4351F; border-color: #D4351F">
+            <!-- <div class="panel panel-border-wide" style="color: #D4351F; border-color: #D4351F">
                <p class="bold">FAIL</p>
-            </div>
+            </div> -->
             <!-- <h2 class="heading-medium">Personal details</h2> -->
             <dl class="govuk-check-your-answers cya-questions-short">
                <div>
-                  <dt class="cya-question">Applicant verified</dt>
+                  <dt class="cya-question">Unique applicant match</dt>
                   <dd class="cya-answer">No</dd>
                </div>
-               <div>
+               <!-- <div>
                   <dt class="cya-question">Applicant life status</dt>
                   <dd class="cya-answer">Deceased</dd>
-               </div>
+               </div> -->
 
                <!-- If applicant deceased -->
-               <div>
-                  <dt class="cya-question">Death</dt>
-                  <dd class="cya-answer">Confirmed</dd>
+               <!-- <div>
+                  <dt class="cya-question">Applicant status</dt>
+                  <dd class="cya-answer">Evidence of death received</dd>
                </div>
                <div>
                   <dt class="cya-question">Date of death</dt>
                   <dd class="cya-answer">23/09/2020</dd>
                </div>
-
                <div>
-                  <dt class="cya-question">Received pension</dt>
+                  <dt class="cya-question">Receives UK State Pension</dt>
                   <dd class="cya-answer">Yes</dd>
                </div>
                <div>
-                  <dt class="cya-question">First pension paid date</dt>
+                  <dt class="cya-question">Date of first pension payment</dt>
                   <dd class="cya-answer">01/01/2019</dd>
-               </div>
+               </div> -->
             </dl>
 
             <br>
 
-            <h2 class="heading-medium">What would you like to do?</h2>
+            <h2 class="heading-medium">Next step</h2>
 
             <form class="form" action="amendSkip" method="get">
                <div class="form-group">
@@ -246,13 +245,13 @@
                         <div class="govuk-radios__item">
                            <input class="govuk-radios__input" id="radiobtn-country-yes" name="amendSkip" type="radio" value="amend">
                            <label class="govuk-label govuk-radios__label" for="radiobtn-country-yes">
-                              Amend personal details and resubmit check
+                              Review details and check again
                            </label>
                         </div>
                         <div class="govuk-radios__item">
                            <input class="govuk-radios__input" id="radiobtn-country-no" name="amendSkip" type="radio" value="skip">
                            <label class="govuk-label govuk-radios__label" for="radiobtn-country-no">
-                              Skip this step
+                              Applicant details are correct
                            </label>
                         </div>
                      </div>
