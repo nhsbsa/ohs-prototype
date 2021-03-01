@@ -616,8 +616,8 @@ router.get(/new-person-third-country-pension/, function (req,res){
 router.get(/exportable-benefits/, function (req,res){
   if(req.query.expbenefits === "State Pension") {
     // res.redirect('');
-    // res.redirect('pension-info');
-    res.redirect('pension-res-country');
+    res.redirect('pension-info');
+    // res.redirect('pension-res-country');
   } else if((req.query.expbenefits === "Employment Support Allowance") ||
             (req.query.expbenefits === "Disability Living Allowance") ||
             (req.query.expbenefits === "Personal Independence Payment") ||
@@ -1604,7 +1604,8 @@ router.get(/same-pension-date/, function (req,res) {
 
 router.get(/uk-benefit-info/, function (req,res) {
   if(req.query.statePension === "Yes") {
-    res.redirect('pension-date');
+    // res.redirect('pension-date');
+    res.redirect('pension-res-country');
   } else if(req.query.statePension === "No") {
     res.redirect('not-entitled-2');
   } else {
