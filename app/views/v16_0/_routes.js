@@ -18,6 +18,42 @@ const router = express.Router();
 // ----- CRA EHIC ----- //
 // -------------------- //
 
+
+// What is the reason for re-issue?
+router.get(/ehicReissueReasons/, function (req,res){
+  if(req.query.reissue === "Stolen"){
+    res.redirect('done-reissue-1');
+  } else if (req.query.reissue === "Lost") {
+    res.redirect('done-reissue-1');
+  } else if (req.query.reissue === "Damaged") {
+    res.redirect('done-reissue-1');
+  } else if (req.query.reissue === "Change of name") {
+    res.redirect('confirm-reissue-1');
+  } else if (req.query.reissue === "Incorrect name or date of birth") {
+    res.redirect('confirm-reissue-1');
+  } else {
+    res.redirect('reissue-reason-1');
+  }
+});
+
+
+// What is the reason for re-issue?
+router.get(/v2ehicReissueReasons/, function (req,res){
+  if(req.query.reissue === "Stolen"){
+    res.redirect('done-reissue-2');
+  } else if (req.query.reissue === "Lost") {
+    res.redirect('done-reissue-2');
+  } else if (req.query.reissue === "Damaged") {
+    res.redirect('done-reissue-2');
+  } else if (req.query.reissue === "Change of name") {
+    res.redirect('confirm-reissue-2');
+  } else if (req.query.reissue === "Incorrect name or date of birth") {
+    res.redirect('confirm-reissue-2');
+  } else {
+    res.redirect('reissue-reason-2');
+  }
+});
+
 // Posted Worker / Exp Ben and SP S1 / e109 / DA1 / EHIC / PRC //
 // If living in the UK //
 router.get(/postedWorker/, function (req,res) {
