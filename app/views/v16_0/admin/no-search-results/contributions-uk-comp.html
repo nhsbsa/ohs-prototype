@@ -1,6 +1,8 @@
 {% extends "layout_bsa.html" %}
 {% block page_title %}
-Check your answers before sending the application
+
+   Check your answers before sending the application
+
 {% endblock %}
 {% block content %}
 <style>
@@ -25,11 +27,10 @@ Check your answers before sending the application
    .vertical-bar {
    margin: 0px 10px;
    }
-   /* end banner */
-
    .color-green {
     color: #85994b;
-}
+   }
+   /* end banner */
 </style>
 <main id="content" role="main">
    <div class="grid-row">
@@ -45,10 +46,6 @@ Check your answers before sending the application
          <div class="heading-group">
             <h1 class="heading-large">Capture contributions</h1>
          </div>
-         <div class="form-group">
-                                
-                                <span class="heading-medium color-green">Contribution details updated successfully</span>
-                            </div>
          <div class="form-group">
             <div id="pensionContributionsContainer" class="form-group">
                <table id="contributionsTable" class="claimsTable">
@@ -111,16 +108,24 @@ Check your answers before sending the application
                   </tbody>
                </table>
             </div>
+
+            <div class="panel panel-border-wide">
+               <p>
+                  Decision: <span id="decision" class="heading-small color-green">UK competent</span>
+               </p>
+            </div>
+
+            <br>
+
             <div class="form-group">
-            	<a class="button button-secondary" href="case-record-17">Save</a>
+            	<a class="button button-secondary" href="contributions-updated">Save</a>
                <a href="contributions-uk-comp" class="button">Check competency</a>
-            	<a href="case-record-s1-req" class="button">Submit for re-assessment</a>
-               
+               <a href="case-record-s1-req" class="button">Submit for re-assessment</a>
             </div>
             <hr>
             <div class="form-group"> 
                <a href="pension-germany-conts" class="button">Next</a>
-            	<a class="button button-secondary" href="case-record-17">Cancel</a>
+            	<a class="button button-secondary" href="case-record-17">Exit</a>
             </div>
          </div>
       </div>
