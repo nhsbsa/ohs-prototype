@@ -33,6 +33,8 @@ router.get(/ehicReissueReasons/, function (req,res){
     res.redirect('confirm-reissue-1');
   } else if (req.query.reissue === "Card not received") {
     res.redirect('confirm-reissue-1');
+  } else if (req.query.reissue === "Other") {
+    res.redirect('confirm-reissue-1');
   } else {
     res.redirect('reissue-reason-1');
   }
@@ -52,6 +54,8 @@ router.get(/version2ReissueEhic/, function (req,res){
   } else if (req.query.v2reissue === "Incorrect name or date of birth") {
     res.redirect('confirm-reissue-2');
   } else if (req.query.v2reissue === "Card not received") {
+    res.redirect('confirm-reissue-2');
+  } else if (req.query.v2reissue === "Other") {
     res.redirect('confirm-reissue-2');
   } else {
     res.redirect('reissue-reason-2');
