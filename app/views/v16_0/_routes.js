@@ -22,14 +22,16 @@ const router = express.Router();
 // What is the reason for re-issue?
 router.get(/ehicReissueReasons/, function (req,res){
   if(req.query.reissue === "Stolen"){
-    res.redirect('done-reissue-1');
+    res.redirect('confirm-reissue-1');
   } else if (req.query.reissue === "Lost") {
-    res.redirect('done-reissue-1');
+    res.redirect('confirm-reissue-1');
   } else if (req.query.reissue === "Damaged") {
-    res.redirect('done-reissue-1');
+    res.redirect('confirm-reissue-1');
   } else if (req.query.reissue === "Change of name") {
     res.redirect('confirm-reissue-1');
   } else if (req.query.reissue === "Incorrect name or date of birth") {
+    res.redirect('confirm-reissue-1');
+  } else if (req.query.reissue === "Card not received") {
     res.redirect('confirm-reissue-1');
   } else {
     res.redirect('reissue-reason-1');
@@ -40,14 +42,16 @@ router.get(/ehicReissueReasons/, function (req,res){
 // What is the reason for re-issue?
 router.get(/version2ReissueEhic/, function (req,res){
   if(req.query.v2reissue === "Stolen"){
-    res.redirect('done-reissue-2');
+    res.redirect('confirm-reissue-2');
   } else if (req.query.v2reissue === "Lost") {
-    res.redirect('done-reissue-2');
+    res.redirect('confirm-reissue-2');
   } else if (req.query.v2reissue === "Damaged") {
-    res.redirect('done-reissue-2');
+    res.redirect('confirm-reissue-2');
   } else if (req.query.v2reissue === "Change of name") {
     res.redirect('confirm-reissue-2');
   } else if (req.query.v2reissue === "Incorrect name or date of birth") {
+    res.redirect('confirm-reissue-2');
+  } else if (req.query.v2reissue === "Card not received") {
     res.redirect('confirm-reissue-2');
   } else {
     res.redirect('reissue-reason-2');
