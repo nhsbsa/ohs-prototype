@@ -77,6 +77,8 @@ router.get(/postedWorker/, function (req,res) {
     res.redirect('applicant-type');
     // res.redirect('res-uk');
     // res.redirect('uk-national');
+  } else if (req.query.radiosPW === "GHIC") {
+    res.redirect('ghic/ghic-for');
   } else if (req.query.radiosPW === "Provisional Replacement Certificate (PRC)") {
     res.redirect('prc-type');
   } else {
@@ -262,6 +264,58 @@ router.get(/durableChild/, function (req,res) {
 //     res.redirect('applicant-type');
 //   } 
 // });
+
+// Who is the GHIC for?
+router.get(/ghicFor/, function (req,res) {
+  if (req.query.radiosPW === "UK-Non-EEA national student") {
+    res.redirect('uk-non-eea/nationality');
+  } else if (req.query.radiosPW === "other") {
+    res.redirect('nationality');
+  } else {
+    res.redirect('ghic-for');
+  } 
+});
+
+// Nationality - GHIC, UK/Non-EEA student
+router.get(/nonUKNationality/, function (req,res) {
+  if (req.query.radiosPW === "British") {
+    res.redirect('are-you-studying');
+  } else if (req.query.radiosPW === "EU") {
+    res.redirect('');
+  } else if (req.query.radiosPW === "Other") {
+    res.redirect('are-you-studying');
+  } else {
+    res.redirect('nationality');
+  } 
+});
+
+// Are you studying? - GHIC, UK/Non-EEA student
+router.get(/nonUkEeaAreYouStudying/, function (req,res) {
+  if (req.query.radiosPW === "Yes") {
+    res.redirect('course-country-eu');
+  } else if (req.query.radiosPW === "No") {
+    res.redirect('');
+  } else {
+    res.redirect('are-you-studying');
+  } 
+});
+
+// Select one of the following
+router.get(/selectType/, function (req,res) {
+  if (req.query.radiosPW === "A1") {
+    res.redirect('working-country');
+  } else if (req.query.radiosPW === "eu-student") {
+    res.redirect('course-country-eu');
+  } else if (req.query.radiosPW === "main") {
+    // If northern ireland
+    // res.redirect('choose-design');
+    res.redirect('cya-main');
+  } else if (req.query.radiosPW === "aupair") {
+    res.redirect('aupair-leave-date');
+  } else {
+    res.redirect('select-type');
+  } 
+});
 
 // Do you have derived rights from a family member or 
 // another person living in the UK? - EHIC
