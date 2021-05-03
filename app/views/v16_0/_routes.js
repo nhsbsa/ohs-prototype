@@ -309,11 +309,24 @@ router.get(/selectType/, function (req,res) {
   } else if (req.query.radiosPW === "main") {
     // If northern ireland
     // res.redirect('choose-design');
-    res.redirect('cya-main');
+    // res.redirect('cya-main');
+    res.redirect('emigrate');
   } else if (req.query.radiosPW === "aupair") {
     res.redirect('aupair-leave-date');
   } else {
     res.redirect('select-type');
+  } 
+});
+
+// Do you plan to emigrate in the next 5 years?
+router.get(/planEmigrate/, function (req,res) {
+  if (req.query.radiosPW === "Yes") {
+    res.redirect('emigrate-date');
+  } else if (req.query.radiosPW === "No") {
+    // res.redirect('cya-main');
+    res.redirect('card-choice-main');
+  } else {
+    res.redirect('emigrate');
   } 
 });
 

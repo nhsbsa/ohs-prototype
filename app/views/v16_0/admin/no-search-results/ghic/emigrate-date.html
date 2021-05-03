@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What are the entitlement dates on the A1?
+	What date do you plan to emigrate?
 {% endblock %}
 
 {% block content %}
@@ -51,39 +51,17 @@
 			</div>
 			<div class="column-two-thirds">
 				<div class="heading-group">
-					<h1 class="heading-large">What are the entitlement dates on the A1?</h1>
+					<h1 class="heading-large">What date do you plan to emigrate?</h1>
 				</div>
-				<form action="institution-search" id="moving-date-form" method="get" class="form">
+				<form action="moving-date" id="moving-country-form" method="get" class="form">
+					<!-- <p>You must start studying in Germany on or before 31 December 2020.</p> -->
 					<div class="form-group">
-						<label class="form-label" for="ni-number">
-							Start date
-							<span class="form-hint">
-								This can be any date. For example, 18/09/2018
-							</span>
-						</label>
-						<input class="form-control" id="ni-number" type="text" autocomplete="off" value="10/12/2018">
+						<label class="form-hint" for="lineone">For example, 18/09/2018</label>
+						<input class="form-control" id="registration-number" name="address-lineone" type="text" autocomplete="off" value="" >
 					</div>
 					<div class="form-group">
-						<label class="form-label" for="ni-number-2">
-							End date
-							<span class="form-hint">
-								This can be any date. For example, 18/09/2018
-							</span>
-						</label>
-						<input class="form-control" id="ni-number-2" type="text" autocomplete="off" value="30/12/2022">
-					</div>
-					<div class="form-group">
-						<label class="form-label" for="ni-number">
-							Issue date
-							<span class="form-hint">
-									This can be any date. For example, 18/09/2018
-							</span>
-						</label>
-						<input class="form-control" id="ni-number-3" type="text" autocomplete="off" value="06/12/2018">
-					</div>
-					<div class="form-group">
-						<!-- <a class="button" href="cya-a1">Next</a> -->
-						<a class="button" href="card-choice-a1">Next</a>
+						<!-- <a class="button" href="cya-main">Next</a> -->
+						<a class="button" href="card-choice-main">Next</a>
 						<a class="button button-secondary" href="case-record">Cancel</a>
 					</div>
 				</form>
