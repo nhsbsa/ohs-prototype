@@ -1,0 +1,72 @@
+{% extends "layout_bsa.html" %}
+{% block page_title %}
+   File upload - Overseas Healthcare Prototype
+{% endblock %}
+{% block content %}
+<style>
+   hr {
+   display: block;
+   background: #bfc1c3;
+   border: 0;
+   height: 1px;
+   margin-top: 30px;
+   margin-bottom: 30px;
+   padding: 0;
+   }
+   .pass {
+   font-weight: 700;
+   color: #00823b; 
+   }
+   .fail {
+   font-weight: 700;
+   color: #D4351F; 
+   }
+</style>
+
+<main id="content" role="main">
+   <div class="grid-row">
+      <div class="column-full">
+         <h1 class="heading-xlarge">
+            <span class="heading-secondary">NHSBSA Design</span>
+            Overseas Healthcare Services Prototype
+            <span class="heading-medium" style="padding:0;">Version 2.0</span>
+         </h1>
+         <h2 class="heading-medium">File upload (July 2021)</h2>
+         <div class="panel panel-border-wide">
+            <span class="bold">Note:</span> only <span class="bold">File upload</span> journeys work in this version of the prototype.
+         </div>
+         <hr>
+         <h2 class="heading-medium">Admin</h2>
+         <table>
+            <thead>
+               <tr>
+                  <th>Scenario</th>
+                  <th>Link</th>
+                  <th>Journeys / Screens</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td valign="top"></td>
+                  <td valign="top">
+                     <a href="v16_0/admin/document-upload-1/case-record">Case record</a><br>
+                  </td>
+                  <td valign="top">
+                     document upload v.1 - LK<br>
+                  </td>
+               </tr>
+               <tr>
+                  <td valign="top"></td>
+                  <td valign="top">
+                     <a href="v16_0/admin/document-upload-2/case-record">Case record</a><br>
+                  </td>
+                  <td valign="top">
+                     document upload v.2 - LK<br>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</main>
+{% endblock %}
