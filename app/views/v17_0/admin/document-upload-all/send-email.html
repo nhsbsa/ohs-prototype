@@ -1,0 +1,245 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+	Review evidence
+{% endblock %}
+
+{% block content %}
+
+<style>
+	/* radio buttons (not-inline) */
+	@media (min-width: 40.0625em) {
+		.govuk-radios__item {
+			font-size: 19px;
+			font-size: 1.1875rem;
+			line-height: 1.31579;
+		}
+	}
+	@media (min-width: 40.0625em) {
+		.govuk-label {
+			font-size: 19px;
+			font-size: 1.1875rem;
+			line-height: 1.31579;
+		}
+	}
+	.govuk-radios__item {
+		font-family: Arial,sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		font-weight: 400;
+		font-size: 1rem;
+		font-size: 16px;
+		line-height: 1.25;
+		display: block;
+		position: relative;
+		min-height: 40px;
+		margin-bottom: 10px;
+		padding: 0 0 0 40px;
+		clear: left;
+	}
+	.govuk-radios__input {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+		margin: 0;
+		opacity: 0;
+	}
+	.govuk-radios__label {
+		display: inline-block;
+		margin-bottom: 0;
+		padding: 8px 15px 5px;
+		cursor: pointer;
+		-ms-touch-action: manipulation;
+		touch-action: manipulation;
+	}
+	.govuk-label {
+		font-family: Arial,sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		font-weight: 400;
+		font-size: 1rem;
+		font-size: 16px;
+		line-height: 1.25;
+		color: #0b0c0c;
+		display: block;
+		margin-bottom: 5px;
+	}
+	.govuk-radios__input+.govuk-radios__label::before {
+		content: "";
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 40px;
+		height: 40px;
+		border: 2px solid currentColor;
+		border-radius: 50%;
+		background: transparent;
+	}
+	.govuk-radios__input:checked+.govuk-radios__label::after {
+		opacity: 1;
+	}
+	.govuk-radios__input+.govuk-radios__label::after {
+		content: "";
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		width: 0;
+		height: 0;
+		border: 10px solid currentColor;
+		border-radius: 50%;
+		opacity: 0;
+		background: currentColor;
+	}
+	/* end radio buttons */
+
+	/* banner */
+	.banner-information-without-action {
+		color: #005ea5;
+	}
+	.banner-message {
+		font-family: Arial, sans-serif;
+		font-weight: 400;
+		text-transform: none;
+		font-size: 36px;
+		line-height: 1.2;
+		padding: 20px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		border-width: 5px;
+		border-style: solid;
+		font-weight: bold;
+		text-align: center;
+	}
+	.vertical-bar {
+		margin: 0px 10px;
+	}
+	/* end banner */
+
+	.form-control.email {
+		width: 100%;
+		max-width:100%;
+		min-width:100%;
+	}
+</style>
+
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-full">
+			<div id="back">
+				<a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="grid-row">
+			<div class="column-two-thirds">
+				<div class="heading-group">
+					<h1 class="heading-large">Request additional evidence</h1>
+				</div>
+
+
+				<form action="contact-address" id="check-person-details-form" method="get" class="form">
+				<dl class="govuk-check-your-answers cya-questions-short">
+					<div>
+						<dt class="cya-question">From</dt>
+						<dd class="cya-answer">Get healthcare cover for travelling abroad</dd>
+						<dd class="cya-change">
+							<!-- <p class="navigation">
+								<a class="cancel" href="entitlement">Change<span class="visually-hidden">Entitlement type</span></a>
+							</p> -->
+						</dd>
+					</div>
+					<div>
+						<dt class="cya-question">To</dt>
+						<dd class="cya-answer">
+							michael.philip@email.com
+						</dd>
+						<dd class="cya-change">
+							<!-- <p class="navigation">
+								<a class="cancel" href="category">Change<span class="visually-hidden"> Category</span></a>
+							</p> -->
+						</dd>
+					</div>
+					<div>
+						<dt class="cya-question">Subject</dt>
+						<dd class="cya-answer">Further information required in support of your UK GHIC application</dd>
+						<dd class="cya-change">
+							<!-- <p class="navigation">
+								<a class="cancel" href="uk-residency-evidence">Change<span class="visually-hidden">Evidence type</span></a>
+							</p> -->
+						</dd>
+					</div>
+				</dl>
+				<br>
+<!-- <h2>Header</h2> -->
+				<div class="form-group">
+	               <label class="form-label" for="textarea-a">
+	               	<!-- Details of consequence (wording to change) -->
+	               </label>
+	               <textarea class="form-control email" id="textarea-a" cols="10" rows="10">
+Further information required in support of your UK GHIC application
+
+OHS reference number: 00123456
+
+Dear XX
+
+	               </textarea>
+	            </div>
+
+				<div class="form-group">
+					<a class="button" href="upload-evidence">Preview email</a>
+					<a class="button button-secondary" href="case-record">Cancel</a>
+				</div>
+			</form>
+
+
+
+				<!-- <form class="form" action="reviewEvidence" method="get">
+					<div class="form-group"> -->
+
+						<!-- <fieldset id="entitlement">
+							<div class="govuk-radios">
+								<div class="govuk-radios__item">
+									<input class="govuk-radios__input" id="where-do-you-live-2" name="radiosResult" type="radio" value="Approved with evidence">
+									<label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+										Approved with required evidence
+									</label>
+								</div>
+								<div class="govuk-radios__item">
+									<input class="govuk-radios__input" id="where-do-you-live-3" name="radiosResult" type="radio" value="Evidence requested">
+									<label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+										Additional evidence requested
+									</label>
+								</div>
+								<div class="govuk-radios__item">
+									<input class="govuk-radios__input" id="where-do-you-live-4" name="radiosResult" type="radio" value="Evidence requested email">
+									<label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+										Additional evidence requested (send email)
+									</label>
+								</div>
+								<div class="govuk-radios__item">
+									<input class="govuk-radios__input" id="where-do-you-live-5" name="radiosResult" type="radio" value="Not approved">
+									<label class="govuk-label govuk-radios__label" for="where-do-you-live-5">
+										Not approved
+									</label>
+								</div>
+							</div>
+						</fieldset> -->
+
+					<!-- </div>
+					<div class="form-group">
+						<input class="button" type="submit" value="Next">
+						<a class="button button-secondary" href="case-record">Cancel</a>
+					</div>
+				</form> -->
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock %}

@@ -1,0 +1,102 @@
+{% extends "layout_bsa.html" %}
+{% block page_title %}
+Confirm re-issue
+{% endblock %}
+{% block content %}
+<style>
+   /* banner */
+   .banner-information-without-action {
+   color: #005ea5;
+   }
+   .banner-message {
+   font-family: Arial, sans-serif;
+   font-weight: 400;
+   text-transform: none;
+   font-size: 36px;
+   line-height: 1.2;
+   padding: 20px;
+   margin-top: 15px;
+   margin-bottom: 15px;
+   border-width: 5px;
+   border-style: solid;
+   font-weight: bold;
+   text-align: center;
+   }
+   .vertical-bar {
+   margin: 0px 10px;
+   }
+   /* end banner */
+</style>
+<main id="content" role="main">
+   <div class="grid-row">
+      <div class="column-full">
+         <div id="back">
+            <a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+         </div>
+      </div>
+   </div>
+   <div class="form-group">
+      <div class="grid-row">
+         <div class="column-full">
+            <div class="banner-information-without-action">
+               <p class="banner-message">
+                  <span class="name text-capitalize">Karen Francis</span>
+                  <span class="vertical-bar">|</span>
+                  <span class="ohs-reference-number">25000002</span>
+               </p>
+            </div>
+         </div>
+         <div class="column-two-thirds">
+            <div class="heading-group">
+               <h1 class="heading-large">Are you sure you want to submit the EHIC reissue?</h1>
+            </div>
+            <p>Make sure the customer's details are correct before submitting.</p>
+
+            <div class="panel panel-border-wide">
+              <p>Reissue reason: <span class="bold">{{data.v2reissue}}</span></p>
+            </div>
+            <div class="form-group">
+                    <table class="check-table">
+                        <tbody>
+                            <tr>
+                                <td class="bold">Name</td>
+                                <td>Karen Francis</td>
+                                <!-- <td><a href="cancel-entitlement#cancel-source">Change</a></td> -->
+                            </tr>
+                            <tr>
+                                <td class="bold">Date of birth</td>
+                                <td>   15/03/1960</td>
+                                <!-- <td><a href="cancel-reason#cancel-reasons">Change</a></td> -->
+                            </tr>
+                            <tr>
+                                <td class="bold">Residential address</td>
+                                <td>1 Road<br>
+                                    Downtown<br>
+                                    Lille<br>
+                                    123456<br>
+                                    France</td>
+                                <!-- <td><a href="cancel-reason#cancel-reasons">Change</a></td> -->
+                            </tr>
+                            <tr>
+                                <td class="bold">Correspondence address</td>
+                                <td>Rúa de Mer 64<br>
+                                    Paris<br>
+                                    Plaisance<br>
+                                    75014<br>
+                                    France</td>
+                                <!-- <td><a href="cancel-reason#cancel-reasons">Change</a></td> -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            <form action="done-reissue-1" id="moving-date-form" method="get" class="form">
+               <div class="form-group">
+                  <a class="button" href="done-reissue-2">Submit</a>
+                  <a class="button button-secondary" href="case-record-2">Cancel</a>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</main>
+{% endblock %}

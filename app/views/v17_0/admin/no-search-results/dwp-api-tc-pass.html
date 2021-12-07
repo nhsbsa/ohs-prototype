@@ -1,0 +1,179 @@
+{% extends "layout_bsa.html" %}
+{% block page_title %}
+
+   DWP check results
+
+{% endblock %}
+{% block content %}
+
+<style>
+   span.status-tag-low {
+      background-color: #85994b;
+      color: #ffffff;
+      vertical-align: baseline;
+      padding: 2px 18px 1px;
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-block;
+      position: relative;
+      top: -0.05em;
+   }
+   span.status-tag-medium {
+      background-color: #F47738;
+      color: #ffffff;
+      vertical-align: baseline;
+      padding: 2px 9px 1px;
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-block;
+      position: relative;
+      top: -0.05em;
+   }
+   span.status-tag-high {
+      background-color: #B10E1E;
+      color: #ffffff;
+      vertical-align: baseline;
+      padding: 2px 16px 1px;
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-block;
+      position: relative;
+      top: -0.05em;
+   }
+
+   /* banner */
+   .banner-information-without-action {
+      color: #005ea5;
+   }
+   .banner-message {
+      font-family: Arial, sans-serif;
+      font-weight: 400;
+      text-transform: none;
+      font-size: 36px;
+      line-height: 1.2;
+      padding: 20px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      border-width: 5px;
+      border-style: solid;
+      font-weight: bold;
+      text-align: center;
+   }
+   .vertical-bar {
+      margin: 0px 10px;
+   }
+   /* end banner */
+
+</style>
+
+<main id="content" role="main">
+   <div class="grid-row">
+      <div class="column-full">
+         <div id="back">
+            <a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+         </div>
+      </div>
+   </div>
+   <div class="form-group">
+      <div class="grid-row">
+         <div class="column-full">
+            <div class="banner-information-without-action">
+               <p class="banner-message">
+                  <span class="name text-capitalize">Michael Philip</span>
+                  <span class="vertical-bar">|</span>
+                  <span class="ohs-reference-number">25000005</span>
+               </p>
+            </div>
+         </div>
+      <div class="column-two-thirds">
+         <!-- <a href="#" class="link-back">Back</a> -->
+         <h1 class="heading-large">
+            DWP check results
+         </h1>
+         <form action="contact-address" id="check-person-details-form" method="get" class="form">
+            <!-- <div class="panel panel-border-wide" style="color: #00823b; border-color: #00823b">
+               <p class="bold">PASS</p>
+            </div> -->
+            <!-- <div class="panel panel-border-wide" style="color: #D4351F; border-color: #D4351F">
+               <p class="bold">FAIL</p>
+            </div> -->
+            <!-- <h2 class="heading-medium">Personal details</h2> -->
+            <dl class="govuk-check-your-answers cya-questions-short">
+               <div>
+                  <dt class="cya-question">Unique applicant match</dt>
+                  <dd class="cya-answer">Yes</dd>
+               </div>
+               <!-- <div>
+                  <dt class="cya-question">Applicant life status</dt>
+                  <dd class="cya-answer">Alive</dd>
+               </div> -->
+
+               <!-- If applicant deceased -->
+               <!-- <div>
+                  <dt class="cya-question">Death</dt>
+                  <dd class="cya-answer">Confirmed</dd>
+               </div>
+               <div>
+                  <dt class="cya-question">Date of death</dt>
+                  <dd class="cya-answer">23/09/2020</dd>
+               </div> -->
+
+               <div>
+                  <dt class="cya-question">Receives UK State Pension</dt>
+                  <dd class="cya-answer">Yes</dd>
+               </div>
+               <div>
+                  <dt class="cya-question">Date of first pension payment</dt>
+                  <dd class="cya-answer">01/01/2019</dd>
+               </div>
+            </dl>
+            <br>
+            <!-- <details>
+               <summary>
+                  <span class="summary">More details</span>
+               </summary>
+               <br>
+               <dl class="govuk-check-your-answers cya-questions-short">
+                  <div>
+                     <dt class="cya-question" style="width: auto">Evidence that applicant lives in the UK</dt> -->
+
+                     <!-- <dd><span class="status-tag-low font-xsmall" style="padding-left:25px; padding-right:25px;">STRONG</span></dd> -->
+                     <!-- <dd class="cya-answer">Strong</dd> -->
+
+                     <!-- <dd class="cya-answer">None</dd> -->
+
+                     <!-- <dd class="cya-answer">Strong</dd> -->
+                     <!-- <dd class="cya-change"> -->
+                     <!-- <p class="navigation">
+                        <a class="cancel" href="search-dependant#first-name" data-toggle="dialog" data-target="dialog-4">Change<span class="visually-hidden"> full name</span></a>
+                        </p> -->
+                     <!-- </dd> -->
+                  <!-- </div>
+                  <div>
+                     <dt class="cya-question" style="width: auto">	
+                        Evidence that applicant lives outside the UK	
+                     </dt> -->
+                     <!-- <dd><span class="status-tag-medium font-xsmall" style="padding-left:25px; padding-right:25px;">SOME</span></dd> -->
+                     <!-- <dd class="cya-answer">Some</dd> -->
+
+                     <!-- <dd class="cya-answer">None</dd> -->
+
+                     <!-- <dd class="cya-change"> -->
+                     <!-- <p class="navigation">
+                        <a class="cancel" href="search-dependant#first-name" data-toggle="dialog" data-target="dialog-4">Change<span class="visually-hidden"> full name</span></a>
+                        </p> -->
+                     <!-- </dd> -->
+                  <!-- </div>
+               </dl>
+            </details> -->
+            <br>
+            
+            <div class="form-group">
+               <a class="button" href="cya-dwp-s1-req-1">Next</a>
+               <a class="button button-secondary" href="case-record">Cancel</a>
+            </div>
+         </form>
+      </div>
+   </div>
+</main>
+{% endblock %}

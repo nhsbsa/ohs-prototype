@@ -1,0 +1,101 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+	You aren't eligible for an EHIC
+{% endblock %}
+
+{% block content %}
+<style>
+	/* banner */
+	.banner-information-without-action {
+		color: #005ea5;
+	}
+	.banner-message {
+		font-family: Arial, sans-serif;
+		font-weight: 400;
+		text-transform: none;
+		font-size: 36px;
+		line-height: 1.2;
+		padding: 20px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		border-width: 5px;
+		border-style: solid;
+		font-weight: bold;
+		text-align: center;
+	}
+	.vertical-bar {
+		margin: 0px 10px;
+	}
+	/* end banner */
+</style>
+
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-full">
+			<div id="back">
+				<a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="grid-row">
+			<div class="column-full">
+				<div class="banner-information-without-action">
+					<p class="banner-message">
+						<span class="name text-capitalize">Karen Francis</span>
+						<span class="vertical-bar">|</span>
+						<span class="ohs-reference-number">25000002</span>
+					</p>
+				</div>
+			</div>
+			<div class="column-two-thirds">
+				<form method="get" action="search" class="form">
+					<div class="form-group">
+						<h1 class="heading-large">
+							Based on the information you have given us, we cannot confirm your eligibility for a UK EHIC.
+						</h1>
+					</div>
+
+					<div class="form-group">
+						<h2 class="heading-medium">To be eligible for a UK EHIC, you must meet one of the following criteria:</h2>
+						<ul class="list list-bullet">
+							<li>You are living in the EU, Switzerland, Norway, Iceland, or Liechtenstein with a UK issued registered S1, E121, E106 or E109 form.</li>
+							<li>You are living in the EU, Switzerland, Norway, Iceland, or Liechtenstein with a UK issued A1 which is valid after 1 January 2021 in the country in which you are residing.</li>
+							<li>You are a UK resident who is studying in the EU, Switzerland, Norway, Iceland, or Liechtenstein.</li>
+							<li>You are a national of EU, Switzerland, Norway, Iceland, or Liechtenstein who lawfully resides in the UK and is covered under the Citizens’ Rights Agreement.</li>
+							<li>You are a family member or dependant of an entitled individual listed above.</li>
+							<li>You are a Chen or Ibrahim/Teixeira carer.</li>
+						</ul>
+					</div>
+
+					<details>
+						<summary>
+							<span class="summary">Information about Chen or Ibrahim/Teixeira carers</span>
+						</summary>
+						<p>If you are an adult carer of a child who is from the EU, Switzerland, Norway, Iceland, or Liechtenstein, but you are not from any of these countries or from the UK or Ireland, you may be eligible to apply for an EHIC for yourself and for any other children you have who are not nationals of these countries.</p>
+						<p>You should send an email requesting a UK EHIC to <a href="nhsbsa.ehicapplicationsohs@nhs.net">nhsbsa.ehicapplicationsohs@nhs.net</a> with a copy of your leave to remain document and a copy of the child’s passport or ID card from the EU, Switzerland, Norway, Iceland, or Liechtenstein. If you have other children who are not UK or Irish nationals, you should send their leave to remain documents as well.</p>
+						<p>You cannot apply if your right to reside in the UK is derived from your caring for a British citizen (Zambrano carer).</p>
+					</details>
+
+					<br>
+
+					<p>Find out more about your healthcare entitlements on the NHS <a href="https://www.nhs.uk/using-the-nhs/healthcare-abroad/">healthcare abroad</a> and <a href="https://www.nhs.uk/nhs-services/visiting-or-moving-to-england/">visiting or moving to England</a> pages.</p>
+
+					<p>For general enquiries, you can use the <a href="https://nhsbsa-live.powerappsportals.com/knowledgebase/category/?id=CAT-01007">Ask Us</a> section of our website, visit our <a href="https://www.facebook.com/NHSBSAEuropeanHealthInsuranceCard">Facebook</a> page or follow us on <a href="https://twitter.com/officialEHIC">Twitter</a>.</p>
+
+					<p>If you believe that you are entitled to a UK EHIC, you can contact the NHSBSA Overseas Healthcare Services team on <a href="nhsbsa.ehicapplicationsohs@nhs.net">nhsbsa.ehicapplicationsohs@nhs.net</a></p>
+
+					<p>You can also find out more about your data rights and how we use your information.</p>
+
+
+					
+					<div class="form-group">
+						<a class="button" href="search">Back to search</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock %}

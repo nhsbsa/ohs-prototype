@@ -1,0 +1,234 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+   Preview email
+{% endblock %}
+
+{% block content %}
+
+<style>
+   /* radio buttons (not-inline) */
+   @media (min-width: 40.0625em) {
+      .govuk-radios__item {
+         font-size: 19px;
+         font-size: 1.1875rem;
+         line-height: 1.31579;
+      }
+   }
+   @media (min-width: 40.0625em) {
+      .govuk-label {
+         font-size: 19px;
+         font-size: 1.1875rem;
+         line-height: 1.31579;
+      }
+   }
+   .govuk-radios__item {
+      font-family: Arial,sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-weight: 400;
+      font-size: 1rem;
+      font-size: 16px;
+      line-height: 1.25;
+      display: block;
+      position: relative;
+      min-height: 40px;
+      margin-bottom: 10px;
+      padding: 0 0 0 40px;
+      clear: left;
+   }
+   .govuk-radios__input {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      margin: 0;
+      opacity: 0;
+   }
+   .govuk-radios__label {
+      display: inline-block;
+      margin-bottom: 0;
+      padding: 8px 15px 5px;
+      cursor: pointer;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+   }
+   .govuk-label {
+      font-family: Arial,sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-weight: 400;
+      font-size: 1rem;
+      font-size: 16px;
+      line-height: 1.25;
+      color: #0b0c0c;
+      display: block;
+      margin-bottom: 5px;
+   }
+   .govuk-radios__input+.govuk-radios__label::before {
+      content: "";
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      background: transparent;
+   }
+   .govuk-radios__input:checked+.govuk-radios__label::after {
+      opacity: 1;
+   }
+   .govuk-radios__input+.govuk-radios__label::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 0;
+      height: 0;
+      border: 10px solid currentColor;
+      border-radius: 50%;
+      opacity: 0;
+      background: currentColor;
+   }
+   /* end radio buttons */
+
+   /* banner */
+   .banner-information-without-action {
+      color: #005ea5;
+   }
+   .banner-message {
+      font-family: Arial, sans-serif;
+      font-weight: 400;
+      text-transform: none;
+      font-size: 36px;
+      line-height: 1.2;
+      padding: 20px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      border-width: 5px;
+      border-style: solid;
+      font-weight: bold;
+      text-align: center;
+   }
+   .vertical-bar {
+      margin: 0px 10px;
+   }
+   /* end banner */
+
+   .form-control.email {
+      width: 100%;
+      max-width:100%;
+      min-width:100%;
+   }
+
+   #email-container {
+      border: 1px solid #aeb7bd;
+      padding: 0 30px;
+      margin-bottom: 40px;
+   }
+</style>
+
+<main id="content" role="main">
+   <div class="grid-row">
+      <div class="column-full">
+         <div id="back">
+            <a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+         </div>
+      </div>
+   </div>
+   <div class="form-group">
+      <div class="grid-row">
+         <div class="column-two-thirds">
+            <div class="heading-group">
+               <h1 class="heading-large">Preview email</h1>
+            </div>
+
+            <div id="email-container">
+
+               <img src="/public/images/bsa/nhs-logo.png" style="width: 130px; margin: 20px 0 0 0;">
+
+               <!-- Email introduction material -->
+               <h2 class="heading-medium">Further information required in support of your UK EHIC application</h2>
+               <p>OHS reference number: 25000002</p>
+               <p>Dear Michael Philip,</p>
+               <p>Thank you for your application for a new UK European Health Insurance Card (EHIC).</p>
+               <p>We have been unable to confirm your entitlement to a UK EHIC and require further information to support your application.</p>
+
+               <!-- Show if 'reside' checked -->
+               <h2 class="heading-medium">Proof of right to reside in the UK</h2>
+               <p>We need evidence to confirm you have the right to reside in the UK.</p>
+               <p>If you have EU settled or pre-settled status you may be able to get your right to reside share code from the GOV.UK’s proof of immigration status page.</p>  
+               <p>If you don’t have EU settled or pre- settled status, we’ll need to see evidence of either:</p>
+               <ul class="list list-bullet">
+                  <li>a certificate of naturalisation</li>
+                  <li>a permanent residence certificate or both sides of your biometric residence permit</li>
+                  <li>an Accession State Worker Registration Scheme certificate</li>
+               </ul>
+               <p>If you are an Irish national, you are not required to have EU settled or pre-settled status to legally reside in the UK. To confirm your right to reside, you will need to send us a picture of your Irish passport.</p>
+               <p>If you’re awaiting the outcome of your EU settled or pre-settled status application, we will not be able to process your UK EHIC application until your status is confirmed. If you’re getting treatment abroad before your status is confirmed, you will be able to apply for a Provisional Replacement Certificate (PRC).</p>
+
+               <!-- Show if 'dual' checked -->
+               <h2 class="heading-medium">Dual nationality</h2>
+               <p>Dummy text</p>
+
+               <!-- Show if 'address' checked -->
+               <h2 class="heading-medium">Proof of residency in the UK</h2>
+               <p>Dummy text</p>
+
+               <!-- Show if 'student' checked -->
+               <h2 class="heading-medium">Proof of your studies abroad</h2>
+               <p>Dummy text</p>
+
+               <!-- Show if 'additional' checked -->
+               <h2 class="heading-medium">Additional information</h2>
+               <p>Dummy text</p>
+
+               <!-- Show if 'howto' checked -->
+               <h2 class="heading-medium">Providing your evidence</h2>
+               <p>You can upload a copy of your evidence using a picture, scan or saved document.</p>
+ 
+               <div class="panel panel-border-wide">
+                  <a href=".">Securely upload your evidence on the Overseas Healthcare Services website.</a>
+               </div>
+                
+               <p>When you’re on the Overseas Healthcare Services website, you’ll be asked what types of evidence you’re uploading. The types of evidence you need to upload are:</p>
+               <ul class="list list-bullet">
+                  <li>[Evidence heading 1]</li>
+                  <li>[Evidence heading 2]</li>
+               </ul>
+               <p>Until you upload the documents we’ve asked for, we won’t be able to process your application</p>
+
+
+               <!-- Email signoff material -->
+               <p>If you added any dependants to your application, you’ll receive a separate email for each dependant advising you about their UK EHIC.</p>
+                
+               <p>For general enquiries, you can use the Ask Us section of our website, visit our Facebook page or follow us on Twitter.</p>
+                
+               <p>You can also find out more about your data rights and how we use your information.</p>
+                
+               <p>Kind regards</p>
+                
+               <p>Overseas Healthcare Services</p>
+
+
+            </div>
+
+            <!-- <form action="contact-address" id="check-person-details-form" method="get" class="form"> -->
+
+            <div class="form-group">
+               <a class="button" href="done-email">Send email</a>
+               <a class="button button-secondary" href="case-record">Cancel</a>
+            </div>
+         </form>
+
+         </div>
+      </div>
+   </div>
+</main>
+{% endblock %}

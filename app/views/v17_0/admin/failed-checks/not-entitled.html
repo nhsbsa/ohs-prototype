@@ -1,0 +1,71 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+	You are not entitled to healthcare paid for by the UK
+{% endblock %}
+
+{% block content %}
+<style>
+	/* banner */
+	.banner-information-without-action {
+		color: #005ea5;
+	}
+	.banner-message {
+		font-family: Arial, sans-serif;
+		font-weight: 400;
+		text-transform: none;
+		font-size: 36px;
+		line-height: 1.2;
+		padding: 20px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		border-width: 5px;
+		border-style: solid;
+		font-weight: bold;
+		text-align: center;
+	}
+	.vertical-bar {
+		margin: 0px 10px;
+	}
+	/* end banner */
+</style>
+
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-full">
+			<div id="back">
+				<a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="grid-row">
+			<div class="column-full">
+				<div class="banner-information-without-action">
+					<p class="banner-message">
+						<span class="name text-capitalize">Michael Philip</span>
+						<span class="vertical-bar">|</span>
+						<span class="ohs-reference-number">25000002</span>
+					</p>
+				</div>
+			</div>
+			<div class="column-two-thirds">
+				<form method="get" action="search" class="form">
+					<div class="form-group">
+						<h1 class="heading-large">
+							You are not entitled to healthcare paid for by the UK
+						</h1>
+					</div>
+					<div class="form-group">
+						<p>You must not be in payment of a state pension from the country where you are moving to.</p>
+						<p>You must get in contact with the relevant authority.</p>
+					</div>
+					<!-- <div class="form-group">
+						<a class="button" href="search">Back to search</a>
+					</div> -->
+				</form>
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock %}
