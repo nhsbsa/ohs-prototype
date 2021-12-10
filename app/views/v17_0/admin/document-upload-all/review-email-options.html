@@ -120,7 +120,6 @@ Review evidence
    padding: 0 0 7px 0;
    }
 </style>
-
 <main id="content" role="main">
    <div class="grid-row">
       <div class="column-full">
@@ -145,7 +144,7 @@ Review evidence
                <h1 class="heading-large">Create email</h1>
             </div>
             <p>Select the section(s) you want to include in the email. Your email will include the customer's name and OHS number.</p>
-	            <form class="form" action="send-email-v3" method="get">
+	            <form class="form" action="send-email-v3" method="post">
 	               <div class="form-group">
 	                  <legend class="visually-hidden">
 	                     <!-- Get a copy of your prepayment details sent by text message and email -->
@@ -175,14 +174,13 @@ Review evidence
 	                     <label for="howto">Providing your evidence</label>
 	                  </div>
 	                  </fieldset>
+                     <div class="form-group">
+                        <input type="submit" value="Next" class="button">
+                        <a class="button button-secondary" href="case-record">Cancel</a>
+                     </div>
 	            </form>
             </div>
 
-
-	            <div class="form-group">
-	               <a class="button" href="send-email-v3">Next</a>
-	               <a class="button button-secondary" href="case-record">Cancel</a>
-	            </div>
             </form>
          </div>
       </div>

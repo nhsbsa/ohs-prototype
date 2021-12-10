@@ -6,6 +6,7 @@
 const express = require('express');
 const router = express.Router();
 
+
 // Route index page
 // router.get('/', function (req, res) {
 //   res.render('index')
@@ -628,6 +629,23 @@ router.get(/reviewEvidence/, function (req,res) {
     res.redirect('review-evidence-options');
   }
 })
+
+// POST handler for send-email-v3
+router.post('/admin/document-upload-all/send-email-v3/', function(req, res) {
+  res.render('v17_0/admin/document-upload-all/send-email-v3', {formData: req.body});
+});
+
+// POST handler for review-email
+router.post('/admin/document-upload-all/review-email/', function(req, res) {
+
+  for(var key in req.body) {
+    if (req.body.hasOwnProperty(key)) {
+      req.body[key] = req.body[key].replace(/\r\n/gi, "<br />");
+    }
+  }
+  res.render('v17_0/admin/document-upload-all/review-email', {formData: req.body});
+});
+
 
 // EHIC review result, review-result-student.html
 router.get(/ehicEuRelative/, function (req,res) {

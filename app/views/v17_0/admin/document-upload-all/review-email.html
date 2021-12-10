@@ -159,39 +159,53 @@
                <p>Dear Michael Philip,</p>
                <p>Thank you for your application for a new UK European Health Insurance Card (EHIC).</p>
                <p>We have been unable to confirm your entitlement to a UK EHIC and require further information to support your application.</p>
+               {% for key, value in formData %}
 
-               <!-- Show if 'reside' checked -->
-               <h2 class="heading-medium">Proof of right to reside in the UK</h2>
-               <p>We need evidence to confirm you have the right to reside in the UK.</p>
-               <p>If you have EU settled or pre-settled status you may be able to get your right to reside share code from the GOV.UK’s proof of immigration status page.</p>  
-               <p>If you don’t have EU settled or pre- settled status, we’ll need to see evidence of either:</p>
-               <ul class="list list-bullet">
-                  <li>a certificate of naturalisation</li>
-                  <li>a permanent residence certificate or both sides of your biometric residence permit</li>
-                  <li>an Accession State Worker Registration Scheme certificate</li>
-               </ul>
-               <p>If you are an Irish national, you are not required to have EU settled or pre-settled status to legally reside in the UK. To confirm your right to reside, you will need to send us a picture of your Irish passport.</p>
-               <p>If you’re awaiting the outcome of your EU settled or pre-settled status application, we will not be able to process your UK EHIC application until your status is confirmed. If you’re getting treatment abroad before your status is confirmed, you will be able to apply for a Provisional Replacement Certificate (PRC).</p>
+                  {# Only show if not empty #}
+                  {% if value|length %}
+                  
+                     {% if key == 'reside' %}
+                        <!-- Show if 'reside' checked -->
+                        <h2 class="heading-medium">Proof of right to reside in the UK</h2>
+                     {% endif %}
 
-               <!-- Show if 'dual' checked -->
-               <h2 class="heading-medium">Dual nationality</h2>
-               <p>Dummy text</p>
+                     {% if key == 'dual' %}
+                        <!-- Show if 'dual' checked -->
+                        <h2 class="heading-medium">Dual nationality</h2>
+                     {% endif %}
 
-               <!-- Show if 'address' checked   -->
-               <h2 class="heading-medium">Proof of residency in the UK</h2>
-               <p>Dummy text</p>
+                     {% if key == 'address' %}
+                        <!-- Show if 'address' checked   -->
+                        <h2 class="heading-medium">Proof of residency in the UK</h2>
+                     {% endif %}
 
-               <!-- Show if 'student' checked -->
-               <h2 class="heading-medium">Proof of your studies abroad</h2>
-               <p>Dummy text</p>
+                     {% if key == 'student' %}
+                        <!-- Show if 'student' checked -->
+                        <h2 class="heading-medium">Proof of your studies abroad</h2>
+                     {% endif %}
 
-               <!-- Show if 'additional' checked -->
-               <h2 class="heading-medium">Additional information</h2>
-               <p>Dummy text</p>
+                     {% if key == 'additional' %}
+                        <!-- Show if 'additional' checked -->
+                        <h2 class="heading-medium">Additional information</h2>
+                     {% endif %}
 
-               <!-- Show if 'howto' checked -->
-               <h2 class="heading-medium">Providing your evidence</h2>
-               <p>You can upload a copy of your evidence using a picture, scan or saved document.</p>
+                     {% if key == 'howto' %}
+                        <!-- Show if 'howto' checked -->
+                        <h2 class="heading-medium">Providing your evidence</h2>
+                     {% endif %}
+
+                     {# Display text entered in previous screen #}
+
+                        {{ value|safe }}
+                  {% endif %}
+
+               {% endfor %}
+
+               <br /><br />
+
+
+               
+               <!--<p>You can upload a copy of your evidence using a picture, scan or saved document.</p>
  
                <div class="panel panel-border-wide">
                   <a href=".">Securely upload your evidence on the Overseas Healthcare Services website.</a>
@@ -202,7 +216,7 @@
                   <li>[Evidence heading 1]</li>
                   <li>[Evidence heading 2]</li>
                </ul>
-               <p>Until you upload the documents we’ve asked for, we won’t be able to process your application</p>
+               <p>Until you upload the documents we’ve asked for, we won’t be able to process your application</p>-->
 
 
                <!-- Email signoff material -->
