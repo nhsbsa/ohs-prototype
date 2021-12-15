@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-   Preview email
+   Review evidence
 {% endblock %}
 
 {% block content %}
@@ -126,14 +126,10 @@
       max-width:100%;
       min-width:100%;
    }
-
-   #email-container {
-      border: 1px solid #aeb7bd;
-      padding: 0 30px;
-      margin-bottom: 40px;
-   }
 </style>
-
+<script>
+console.log(formData);
+</script>
 <main id="content" role="main">
    <div class="grid-row">
       <div class="column-full">
@@ -146,104 +142,93 @@
       <div class="grid-row">
          <div class="column-two-thirds">
             <div class="heading-group">
-               <h1 class="heading-large">Preview email</h1>
+               <h1 class="heading-large">Request additional evidence</h1>
             </div>
+            <form action="review-email" id="check-person-details-form" method="post" class="form">
 
-            <div id="email-container">
-
-               <img src="/public/images/bsa/nhs-logo.png" style="width: 130px; margin: 20px 0 0 0;">
-
-               <!-- Email introduction material -->
-               <h2 class="heading-medium">Further information required in support of your UK EHIC application</h2>
-               <p>OHS reference number: 25000002</p>
-               <p>Dear Michael Philip,</p>
-               <p>Thank you for your application for a new UK European Health Insurance Card (EHIC).</p>
-               <p>We have been unable to confirm your entitlement to a UK EHIC and require further information to support your application.</p>
+               {# Loop through all the checkboxes from the last page form #}
                {% for key, value in formData %}
 
-                  {# Only show if not empty #}
-                  {% if value|length %}
-                  
+                  {# If any of their values are true/ticked #}
+                  {% if value == 'true' %}
+
+                     {# If their key (ID added to input on previous page form) matches add in the relevant textarea #}
                      {% if key == 'reside' %}
-                        <!-- Show if 'reside' checked -->
                         <h2 class="heading-medium">Proof of right to reside in the UK</h2>
+                        <div class="form-group">
+                           <label class="form-label" for="reside">
+                           </label>
+
+                           {# Name & ID attribute needed to post data #}
+                           <textarea class="form-control email" id="reside" name="reside" cols="10" rows="10">We need evidence to confirm you have the right to reside in the UK.
+                              
+If you have EU settled or pre-settled status you may be able to get your right to reside share code from the GOV.UK’s proof of immigration status page.
+                              
+If you don’t have EU settled or pre- settled status, we’ll need to see evidence of either:
+                              
+• a certificate of naturalisation
+• a permanent residence certificate or both sides of your biometric residence permit
+• an Accession State Worker Registration Scheme certificate
+                              
+If you are an Irish national, you are not required to have EU settled or pre-settled status to legally reside in the UK. To confirm your right to reside, you will need to send us a picture of your Irish passport.
+                              
+If you’re awaiting the outcome of your EU settled or pre-settled status application, we will not be able to process your UK EHIC application until your status is confirmed. If you’re getting treatment abroad before your status is confirmed, you will be able to apply for a Provisional Replacement Certificate (PRC).</textarea>
+                        </div>
                      {% endif %}
 
                      {% if key == 'dual' %}
-                        <!-- Show if 'dual' checked -->
                         <h2 class="heading-medium">Dual nationality</h2>
+                        <div class="form-group">
+                           <label class="form-label" for="dual">
+                           </label>
+                           <textarea class="form-control email" id="dual" name="dual" cols="10" rows="10"></textarea>
+                        </div>
                      {% endif %}
 
                      {% if key == 'address' %}
-                        <!-- Show if 'address' checked   -->
                         <h2 class="heading-medium">Proof of residency in the UK</h2>
+                        <div class="form-group">
+                           <label class="form-label" for="address">
+                           </label>
+                           <textarea class="form-control email" id="address" name="address" cols="10" rows="10"></textarea>
+                        </div>
                      {% endif %}
 
                      {% if key == 'student' %}
-                        <!-- Show if 'student' checked -->
                         <h2 class="heading-medium">Proof of your studies abroad</h2>
+                        <div class="form-group">
+                           <label class="form-label" for="student">
+                           </label>
+                           <textarea class="form-control email" id="student" name="student" cols="10" rows="10"></textarea>
+                        </div>
                      {% endif %}
 
                      {% if key == 'additional' %}
-                        <!-- Show if 'additional' checked -->
-                        <h2 class="heading-medium">Additional information</h2>
+                        <h2 class="heading-medium">Additional information (free text)</h2>
+                        <div class="form-group">
+                           <label class="form-label" for="additional">
+                           </label>
+                           <textarea class="form-control email" id="textarea-e" name="additional" cols="10" rows="10"></textarea>
+                        </div>
                      {% endif %}
 
                      {% if key == 'howto' %}
-                        <!-- Show if 'howto' checked -->
                         <h2 class="heading-medium">Providing your evidence</h2>
+                        <div class="form-group">
+                           <label class="form-label" for="howto">
+                           </label>
+                           <textarea class="form-control email" id="howto" name="howto" cols="10" rows="10"></textarea>
+                        </div>
                      {% endif %}
 
-                     {# Display text entered in previous screen #}
-
-                        {{ value|safe }}
                   {% endif %}
-
                {% endfor %}
 
-               <br /><br />
-
-               <hr>
-
-
-               
-               <p>You can upload a copy of your evidence using a picture, scan or saved document.</p>
- 
-               <div class="panel panel-border-wide">
-                  <a href=".">Securely upload your evidence on the Overseas Healthcare Services website.</a>
+               <div class="form-group">
+                  <input type="submit" value="Preview email" class="button">
+                  <a class="button button-secondary" href="case-record">Cancel</a>
                </div>
-                
-               <!-- <p>When you’re on the Overseas Healthcare Services website, you’ll be asked what types of evidence you’re uploading. The types of evidence you need to upload are:</p>
-               <ul class="list list-bullet">
-                  <li>[Evidence heading 1]</li>
-                  <li>[Evidence heading 2]</li>
-               </ul> -->
-               <p>Until you upload the documents we’ve asked for, we won’t be able to process your application</p>
-
-
-
-               <!-- Email signoff material -->
-               <p>If you added any dependants to your application, you’ll receive a separate email for each dependant advising you about their UK EHIC.</p>
-                
-               <p>For general enquiries, you can use the Ask Us section of our website, visit our Facebook page or follow us on Twitter.</p>
-                
-               <p>You can also find out more about your data rights and how we use your information.</p>
-                
-               <p>Kind regards</p>
-                
-               <p>Overseas Healthcare Services</p>
-
-
-            </div>
-
-            <!-- <form action="contact-address" id="check-person-details-form" method="get" class="form"> -->
-
-            <div class="form-group">
-               <a class="button" href="done-email">Send email</a>
-               <a class="button button-secondary" href="case-record">Cancel</a>
-            </div>
-         </form>
-
+            </form>
          </div>
       </div>
    </div>

@@ -159,7 +159,10 @@
                <p>Dear Michael Philip,</p>
                <p>Thank you for your application for a new UK European Health Insurance Card (EHIC).</p>
                <p>We have been unable to confirm your entitlement to a UK EHIC and require further information to support your application.</p>
+
+
                {% for key, value in formData %}
+
 
                   {# Only show if not empty #}
                   {% if value|length %}
@@ -219,7 +222,6 @@
                   <li>[Evidence heading 2]</li>
                </ul> -->
                <p>Until you upload the documents we’ve asked for, we won’t be able to process your application</p>
-
 
 
                <!-- Email signoff material -->

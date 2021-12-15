@@ -630,6 +630,25 @@ router.get(/reviewEvidence/, function (req,res) {
   }
 })
 
+// EHIC/GHIC review evidence, review-evidence-options.html (Version 2)
+router.get(/v2ReviewEvidence/, function (req,res) {
+  if(req.query.radiosResult === "Approved with evidence") {
+    res.redirect('done-ehic-approved');
+  } 
+  // else if (req.query.radiosResult === "Approved but no evidence provided") {
+  //   res.redirect('done-ehic-approved');
+  // } 
+  else if (req.query.radiosResult === "Evidence requested") {
+    res.redirect('done-ehic-review');
+  } else if (req.query.radiosResult === "Evidence requested email") {
+    res.redirect('send-email');
+  } else if (req.query.radiosResult === "Not approved") {
+    res.redirect('exit-ehic-rejected-2');
+  } else {
+    res.redirect('review-evidence-options');
+  }
+})
+
 // POST handler for send-email-v3
 router.post('/admin/document-upload-all/send-email-v3/', function(req, res) {
   res.render('v17_0/admin/document-upload-all/send-email-v3', {formData: req.body});

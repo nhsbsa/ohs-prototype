@@ -1,0 +1,74 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+	Upload evidence
+{% endblock %}
+
+{% block content %}
+<style>
+/* banner */
+	.banner-information-without-action {
+		color: #005ea5;
+	}
+	.banner-message {
+		font-family: Arial, sans-serif;
+		font-weight: 400;
+		text-transform: none;
+		font-size: 36px;
+		line-height: 1.2;
+		padding: 20px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		border-width: 5px;
+		border-style: solid;
+		font-weight: bold;
+		text-align: center;
+	}
+	.vertical-bar {
+		margin: 0px 10px;
+	}
+	/* end banner */
+</style>
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-full">
+			<div id="back">
+				<a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="grid-row">
+			<div class="column-full">
+				<div class="banner-information-without-action">
+					<p class="banner-message">
+						<span class="name text-capitalize">Michael Philip</span>
+						<span class="vertical-bar">|</span>
+						<span class="ohs-reference-number">25000002</span>
+					</p>
+				</div>
+			</div>
+			<div class="column-two-thirds">
+				<div class="govuk-form-group">
+					<div class="heading-group">
+						<h1 class="heading-large">Upload evidence</h1>
+					</div>
+					<div id="more-detail-hint" class="govuk-hint">
+						The file must be PDF, JPEG, PNG or BMP and smaller than 10MB.
+					</div>
+					<br>
+					 
+                    <div class="form-group">
+					<input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
+					</div>
+					<br>
+					<div class="form-group">
+						<a class="button" href="check-evidence">Next</a>
+						<a class="button button-secondary" href="case-record">Cancel</a>
+					</div>
+			    </div>
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock %}
