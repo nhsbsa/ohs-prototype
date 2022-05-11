@@ -1,0 +1,165 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+
+   Adjust Indesser rules
+
+{% endblock %}
+
+{% block content %}
+
+<style>
+   hr {
+      display: block;
+      background: #bfc1c3;
+      border: 0;
+      height: 1px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      padding: 0;
+   }
+   span.status-tag-pass {
+      background-color: #00823b;
+      color: #ffffff;
+      vertical-align: baseline;
+      padding: 2px 18px 2px;
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-block;
+      position: relative;
+      top: -0.05em;
+   }
+
+   span.status-tag-fail {
+      background-color: #D4351F;
+      color: #ffffff;
+      vertical-align: baseline;
+      padding: 2px 21px 2px;
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-block;
+      position: relative;
+      top: -0.05em;
+   }
+</style>
+
+<main id="content" role="main">
+   <div class="grid-row">
+      <div class="column-two-thirds">
+         <h1 class="heading-large">
+            Adjust Indesser rules
+         </h1>
+         <table>
+            <thead>
+               <tr>
+                  <th>Resident</th>
+                  <th>Non-resident</th>
+                  <th>Status</th>
+                  <th></th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td valign="top">Strong</td>
+                  <td valign="top">Strong</td>
+                  <td>
+                     <span class="status-tag-pass font-xsmall">PASS</span>
+                  </td>
+                  <td valign="top">
+                     <a href="edit-rule">Edit</a>
+                  </td>
+               </tr>
+               <tr>
+                  <td valign="top">Strong</td>
+                  <td valign="top">Some</td>
+                  <td>
+                     <span class="status-tag-pass font-xsmall">PASS</span>
+                  </td>
+                  <td valign="top">
+                     <a href="#">Edit</a>
+                  </td>
+               </tr>
+               <tr>
+                  <td valign="top">Strong</td>
+                  <td valign="top">None</td>
+                  <td>
+                     <span class="status-tag-pass font-xsmall">PASS</span>
+                  </td>
+                  <td valign="top">
+                     <a href="#">Edit</a>
+                  </td>
+               </tr>
+               <tr>
+                  <td valign="top">Some</td>
+                  <td valign="top">Strong</td>
+                  <td>
+                     <span class="status-tag-pass font-xsmall">PASS</span>
+                  </td>
+                  <td valign="top">
+                     <a href="#">Edit</a>
+                  </td>
+               </tr>
+               <tr>
+                  <td valign="top">Some</td>
+                  <td valign="top">Some</td>
+                  <td>
+                     <span class="status-tag-pass font-xsmall">PASS</span>
+                  </td>
+                  <td valign="top">
+                     <a href="#">Edit</a>
+                  </td>
+               </tr>
+               <tr>
+                  <td valign="top">Strong</td>
+                  <td valign="top">Strong</td>
+                  <td>
+                     <span class="status-tag-pass font-xsmall">PASS</span>
+                  </td>
+                  <td valign="top">
+                     <a href="#">Edit</a>
+                  </td>
+               </tr>
+               <tr>
+                  <td valign="top">Some</td>
+                  <td valign="top">Strong</td>
+                  <td>
+                     <span class="status-tag-pass font-xsmall">PASS</span>
+                  </td>
+                  <td valign="top">
+                     <a href="#">Edit</a>
+                  </td>
+               </tr>
+               <tr>
+                  <td valign="top">Strong</td>
+                  <td valign="top">Strong</td>
+                  <td>
+                     <span class="status-tag-fail font-xsmall">FAIL</span>
+                  </td>
+                  <td valign="top">
+                     <a href="#">Edit</a>
+                  </td>
+               </tr>
+               <tr>
+                  <td valign="top">Strong</td>
+                  <td valign="top">Strong</td>
+                  <td>
+                     <span class="status-tag-fail font-xsmall">FAIL</span>
+                  </td>
+                  <td valign="top">
+                     <a href="#">Edit</a>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+
+         <br>
+
+         <div class="form-group">
+            <a class="button" href="start">Submit</a>
+            <a class="button button-secondary" href="start">Cancel</a>
+         </div>
+
+      </div>
+   </div>
+</main>
+{% endblock %}
