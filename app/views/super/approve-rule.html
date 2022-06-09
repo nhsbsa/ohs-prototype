@@ -131,38 +131,6 @@
       text-align: center;
    }
    /* end radio buttons */
-/*   hr {
-      display: block;
-      background: #bfc1c3;
-      border: 0;
-      height: 1px;
-      margin-top: 30px;
-      margin-bottom: 30px;
-      padding: 0;
-   }
-   span.status-tag-pass {
-      background-color: #00823b;
-      color: #ffffff;
-      vertical-align: baseline;
-      padding: 2px 18px 2px;
-      font-weight: 700;
-      font-size: 14px;
-      display: inline-block;
-      position: relative;
-      top: -0.05em;
-   }
-
-   span.status-tag-fail {
-      background-color: #D4351F;
-      color: #ffffff;
-      vertical-align: baseline;
-      padding: 2px 21px 2px;
-      font-weight: 700;
-      font-size: 14px;
-      display: inline-block;
-      position: relative;
-      top: -0.05em;
-   }*/
 </style>
 
 <main id="content" role="main">
@@ -195,18 +163,24 @@
 
          <br>
 
+         <h2 class="heading-small">
+            User SURNAME, Firstname has changed the rule to Fail
+         </h2>
+
+         <br>
+
          <form class="form" action="check-your-answers" method="get">
             <div class="form-group">
                <fieldset id="another-pension" class="">
                   <div class="govuk-radios govuk-radios">
                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="radiobtn-country-yes" name="thirdcountrypension" type="radio" value="Yes" checked>
+                        <input class="govuk-radios__input" id="radiobtn-country-yes" name="thirdcountrypension" type="radio" value="Pass" >
                         <label class="govuk-label govuk-radios__label" for="radiobtn-country-yes">
                            Pass
                         </label>
                      </div>
                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="radiobtn-country-no" name="thirdcountrypension" type="radio" value="No">
+                        <input class="govuk-radios__input" id="radiobtn-country-no" name="thirdcountrypension" type="radio" value="Fail" checked>
                         <label class="govuk-label govuk-radios__label" for="radiobtn-country-no">
                            Fail
                         </label>
@@ -219,7 +193,7 @@
          <!-- <br> -->
 
          <div class="form-group">
-            <a class="button" href="rules-pending">Submit</a>
+            <a class="button" href="rules-changed">Submit</a>
             <a class="button button-secondary" href="rules">Cancel</a>
          </div>
 
