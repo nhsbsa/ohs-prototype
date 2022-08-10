@@ -146,24 +146,22 @@
 				<p>Use the form below to create your email. Your email will include the customer's name and OHS number.</p>
 
 
-				<form action="contact-address" id="check-person-details-form" method="get" class="form">
+				<form action="review-email" id="check-person-details-form" method="post" class="form">
 
-				<div class="form-group">
-	               <label class="form-label" for="textarea-a">
-	               	<!-- Details of consequence (wording to change) -->
-	               </label>
-	               <textarea class="form-control email" id="textarea-a" cols="10" rows="10"></textarea>
-	            </div>
+					<div class="form-group">
+					<label class="form-label" for="textarea-a">
+						<!-- Details of consequence (wording to change) -->
+					</label>
+					<textarea class="form-control email" id="textarea-a" name="textarea-a" cols="10" rows="10"></textarea>
+					</div>
 
-				<div class="form-group">
-					<a class="button" href="review-email">Preview email</a>
-					<a class="button button-secondary" href="case-record">Cancel</a>
-				</div>
-			</form>
-
-
-
-				
+					<div class="form-group">
+						<input type="submit" value="Preview email" class="button">
+						<a class="button" href="review-email">Preview email</a>
+						<a class="button button-secondary" href="case-record">Cancel</a>
+					</div>
+				</form>
+	
 			</div>
 		</div>
 	</div>

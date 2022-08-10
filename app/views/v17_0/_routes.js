@@ -665,6 +665,16 @@ router.post('/admin/document-upload-all/review-email/', function(req, res) {
   res.render('v17_0/admin/document-upload-all/review-email', {formData: req.body});
 });
 
+// POST handler for review-email (Simplified)
+router.post('/admin/document-upload-all-2/review-email/', function(req, res) {
+  for(var key in req.body) {
+    if (req.body.hasOwnProperty(key)) {
+      req.body[key] = req.body[key].replace(/\r\n/gi, "<br />");
+    }
+  }
+  res.render('v17_0/admin/document-upload-all/review-email', {formData: req.body});
+});
+
 
 // EHIC review result, review-result-student.html
 router.get(/ehicEuRelative/, function (req,res) {
