@@ -13,6 +13,6 @@ var clean = require('gulp-clean')
 gulp.task('clean', function () {
   return gulp.src([config.paths.public + '/*',
     config.paths.govukModules + '/*',
-    '.port.tmp'], {read: false})
+    '.port.tmp'], {read: false, allowEmpty: true})
   .pipe(clean())
 })
