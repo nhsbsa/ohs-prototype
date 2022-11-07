@@ -1,0 +1,71 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+	What date was the request received by the business?
+{% endblock %}
+
+{% block content %}
+<style>
+	.button-secondary {
+		background-color: #dee0e2;
+		color: black;
+		box-shadow: 0 2px 0 #b5babe;
+		font-size: 1em;
+		outline-offset: -1px;
+		outline: 1px solid transparent;
+		border-radius: 0;
+	}
+	.form-control-3-4 {
+		width: 32.7%;
+	}
+</style>
+
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-full">
+			<div id="back">
+				<a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="grid-row">
+			<div class="column-full">
+				<div class="banner-information-without-action">
+					<p class="banner-message">
+						<span class="name text-capitalize">Test S2</span>
+						<span class="vertical-bar">|</span>
+						<span class="ohs-reference-number">25000002</span>
+					</p>
+				</div>
+			</div>
+			<div class="column-two-thirds">
+				<div class="heading-group">
+					<h1 class="heading-large">What is the date the request was received?</h1>
+				</div>
+
+            <form action="what-s2-entitlement" method="get" class="form">
+                <div class="column-full">
+                    <div class="form-group">
+                        <label class="form-label" for="date-of-request">Date of request</label>
+                        <span class="form-hint">
+                            For example, 24/10/2019
+                        </span>
+                        <input class="form-control" id="date-of-request" name="date-of-request" type="text" autocomplete="off" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <a href="what-s2-entitlement"><input class="button" type="submit" value="Next"></a>
+                        <a class="button button-secondary" href="case-record">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script>
+	document.getElementById('example').focus();
+</script>
+{% endblock %}

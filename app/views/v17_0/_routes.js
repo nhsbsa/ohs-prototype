@@ -16,9 +16,66 @@ const router = express.Router();
 
 
 // -------------------- //
-// ----- CRA EHIC ----- //
+// ----- S2 Test ------ //
 // -------------------- //
 
+// What is the S2 for? //
+router.get(/entitlementType/, function (req,res) {
+  if(req.query.entitlementType === "Planned treatment") {
+    res.redirect('admin/s2/treatment-country-planned');
+  } else if (req.query.entitlementType === "Maternity benefits") {
+    res.redirect('admin/s2/treatment-country-maternity');
+  } else {
+    res.redirect('admin/s2/what-s2-entitlement');
+  }
+});
+
+
+// What country are they having treatment in?
+
+router.post(['admin/s2/countryMaternity', 'admin/s2/countryPlanned'], function (req, res) {
+
+  var treatmentCountry = req.session.data['eu-location-picker-1'];
+  console.log(treatmentCountry);
+
+  if (treatmentCountry == 'Austria' || treatmentCountry == 'Belgium' || treatmentCountry == 'Bulgaria' || treatmentCountry == 'Croatia' || treatmentCountry == 'Cyprus' || treatmentCountry == 'Czech Republic' || treatmentCountry == 'Denmark' || treatmentCountry == 'Finland' || treatmentCountry == 'France' || treatmentCountry == 'Germany') {
+    res.redirect('active-s1')
+  }
+  if (treatmentCountry == 'Greece' || treatmentCountry == 'Hungary' || treatmentCountry == 'Iceland' || treatmentCountry == 'Italy' || treatmentCountry == 'Latvia' || treatmentCountry == 'Liechtenstein' || treatmentCountry == 'Lithuania' || treatmentCountry == 'Luxembourg' || treatmentCountry == 'Malta' || treatmentCountry == 'Netherlands') {
+    res.redirect('active-s1')
+  }
+  if (treatmentCountry == 'Norway' || treatmentCountry == 'Poland' || treatmentCountry == 'Portugal' || treatmentCountry == 'Republic of Ireland' || treatmentCountry == 'Romania' || treatmentCountry == 'Slovakia' || treatmentCountry == 'Slovenia' || treatmentCountry == 'Spain' || treatmentCountry == 'Sweden' || treatmentCountry == 'Switzerland') {
+    res.redirect('active-s1')
+  }
+  if (treatmentCountry == '') {
+    res.redirect('what-s2-entitlement')
+  }
+  else {
+    res.redirect('kickouts/ineligible-treatment-country')
+  }
+})
+
+// What country are they having treatment in?
+
+router.post('admin/s2/countrySOne', function (req, res) {
+
+  var countrySOne = req.session.data['location-picker-1'];
+  console.log(countrySOne);
+
+  if (countrySOne == 'Cyprus' || countrySOne == 'Finland' || countrySOne == 'Iceland' || countrySOne == 'Ireland' || countrySOne == 'Malta' || countrySOne == 'Portugal' || countrySOne == 'Spain' || countrySOne == 'Sweden' || countrySOne == 'Netherlands') {
+    res.redirect('kickouts/ineligible-s1-country')
+  }
+  if (countrySOne == '') {
+    res.redirect('country-s1')
+  }
+  else {
+    res.redirect('nationality')
+  }
+})
+
+// -------------------- //
+// ----- CRA EHIC ----- //
+// -------------------- //
 
 // What is the reason for re-issue?
 router.get(/ehicReissueReasons/, function (req,res){
@@ -40,7 +97,6 @@ router.get(/ehicReissueReasons/, function (req,res){
     res.redirect('reissue-reason-1');
   }
 });
-
 
 // What is the reason for re-issue?
 router.get(/version2ReissueEhic/, function (req,res){
