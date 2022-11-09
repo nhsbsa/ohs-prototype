@@ -145,18 +145,18 @@
 				<div class="heading-group">
 					<h1 class="heading-large">What is the S2 entitlement for?</h1>
 				</div>
-				<form class="form" action="entitlementType" method="get">
+				<form class="form" action="what-s2-entitlement" method="post">
 					<div class="form-group">
-						<fieldset id="entitlement">
+						<fieldset>
 							<div class="govuk-radios">
 								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="entitlement-type-1" name="entitlementType" type="radio" value="Planned treatment">
+									<input class="govuk-radios__input" id="entitlement-type-1" name="entitlement" type="radio" value="Planned treatment">
 									<label class="govuk-label govuk-radios__label" for="entitlement-type-1">
 										Planned treatment
 									</label>
 								</div>
 								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="entitlement-type-2" name="entitlementType" type="radio" value="Maternity benefits">
+									<input class="govuk-radios__input" id="entitlement-type-2" name="entitlement" type="radio" value="Maternity benefits">
 									<label class="govuk-label govuk-radios__label" for="entitlement-type-2">
 										Maternity benefits
 									</label>
@@ -175,4 +175,8 @@
 		</div>
 	</div>
 </main>
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script>
+	document.getElementById('example').focus();
+</script>
 {% endblock %}

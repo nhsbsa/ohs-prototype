@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What date was the request received by the business?
+	What are your contact details (optional)?
 {% endblock %}
 
 {% block content %}
@@ -52,25 +52,39 @@
 			</div>
 			<div class="column-two-thirds">
 				<div class="heading-group">
-					<h1 class="heading-large">What is the date the request was received?</h1>
+					<h1 class="heading-large">What are your contact details (optional)?</h1>
 				</div>
 
-            <form action="what-s2-entitlement" method="get" class="form">
-                
+            <form action="contactDetails" method="get" class="form">
+                <div class="column-full">
+					<p>We ask for this so we can respond to any questions.</p>
                     <div class="form-group">
-                        <label class="form-label" for="date-of-request">Date of request</label>
-                        <span class="form-hint">
-                            For example, 24/10/2019
-                        </span>
-                        <input class="form-control" id="date-of-request" name="date-of-request" type="text" autocomplete="off" />
+                        <label class="form-label" for="phone-number">Mobile number</label>
+                        <input class="form-control" id="phone-number" name="phone-number" type="text" autocomplete="off" />
                     </div>
-                    
-				<div class="form-group">
-					<a href="what-s2-entitlement"><input class="button" type="submit" value="Next"></a>
-					<a class="button button-secondary" href="case-record">Cancel</a>
-				</div>
+
+					<div class="form-group">
+                        <label class="form-label" for="email-address">Email address</label>
+                        <input class="form-control" id="email-address" name="email-address" type="text" autocomplete="off" />
+                    </div>
+
+					<div class="form-group">
+						<div class="govuk-checkboxes">
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="ohs-1" name="ohs" type="checkbox" value="not provided" checked>
+								<label class="govuk-label govuk-checkboxes__label" for="ohs-1">
+									Email address and telephone number not provided
+								</label>
+							</div>
+						</div>
+					</div>
+                
+                </div>
             </form>
-			
+			<div class="form-group">
+				<a href="#"><input class="button" type="submit" value="Next"></a>
+				<a class="button button-secondary" href="case-record">Cancel</a>
+			</div>
         </div>
     </div>
 </main>

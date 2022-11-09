@@ -1,10 +1,11 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	Search
+	Do you intend to leave the country permanently?
 {% endblock %}
 
 {% block content %}
+
 <style>
 	/* radio buttons (not-inline) */
 	@media (min-width: 40.0625em) {
@@ -129,62 +130,46 @@
 			</div>
 		</div>
 	</div>
-	<div class="grid-row">
-		<div class="column-two-thirds">
-			<div class="heading-group">
-				<h1 class="heading-large">Search</h1>
-			</div>
-		</div>
-		<form action="search-noresults2" method="get" class="form">
+	<div class="form-group">
+		<div class="grid-row">
 			<div class="column-full">
-				<div class="form-group">
-						<label>
-							<span class="form-label" for="ohs">Reference number</span>
-							<span class="form-hint">This can be either an OHS reference number or MedBen number</span>
-						</label>
-					<input class="form-control" id="ohs" name="ohs" type="text" autocomplete="off" value="25000001" />
-				</div>
-				<div class="form-group">
-					<p class="form-block">or</p>
-				</div>
-				<div class="form-group">
-					<label class="form-label" for="first-name">First name</label>
-					<input class="form-control" id="first-name" name="first-name" type="text" autocomplete="off" />
-				</div>
-				<div class="form-group">
-					<label class="form-label" for="last-name">Last name</label>
-					<input class="form-control" id="last-name" name="last-name" type="text" autocomplete="off" />
-				</div>
-				<div class="form-group">
-					<label class="form-label" for="date-of-birth">Date of birth</label>
-					<span class="form-hint">
-						For example, 15/10/1951
-					</span>
-					<input class="form-control" id="date-of-birth" name="date-of-birth" type="text" autocomplete="off" />
-				</div>
-				<div class="form-group">
-					<label class="form-label" for="nino">National Insurance number (optional)</label>
-					<span class="form-hint">
-						For example, 'QQ123456C'
-					</span>
-					<input class="form-control" id="nino" name="nino" type="text" autocomplete="off" />
-				</div>
-				<div class="form-group">
-					<a class="button" href="search-noresults2">Search</a>
+				<div class="banner-information-without-action">
+					<p class="banner-message">
+						<span class="name text-capitalize">Test S2</span>
+						<span class="vertical-bar">|</span>
+						<span class="ohs-reference-number">25000002</span>
+					</p>
 				</div>
 			</div>
-		</form>
-		<div class="column-full" style="background-color:#FFFFFF">
-			<div id="example" class="form-group form-group-error" tabindex="1">
-				<h2 class="heading-medium" >No results found</h2>
-				<span class="heading-small">Check that all details are correct or do an <a href="search-advanced">advanced search</a></span>
-				<p>Enter first name, last name and date of birth.</p>
-			</div>
-			<div class="form-group">
-				<form action="person-details">
+			<div class="column-two-thirds">
+				<div class="heading-group">
+					<h1 class="heading-large">Do you intend to leave the country permanently?</h1>
+				</div>
+				<form action="leaveCountry" method="get" class="form">
+					<div class="form-group">
+						<fieldset id="entitlement">
+							<div class="govuk-radios">
+								<div class="govuk-radios__item">
+									<input class="govuk-radios__input" id="yes-leave" name="leave" type="radio" value="Yes">
+									<label class="govuk-label govuk-radios__label" for="yes-leave">
+										Yes
+									</label>
+								</div>
+								<div class="govuk-radios__item">
+									<input class="govuk-radios__input" id="not-leave" name="leave" type="radio" value="No">
+									<label class="govuk-label govuk-radios__label" for="not-leave">
+										No
+									</label>
+								</div>	
+							</div>
+						</fieldset>
+					</div>
 					
-					<a class="button button-secondary" href="date-request">Create new person</a>
 				</form>
+                <div class="form-group">
+						<a href="#"><input class="button" type="submit" value="Next"></a>
+						<a class="button button-secondary" href="case-record">Cancel</a>
+					</div>
 			</div>
 		</div>
 	</div>

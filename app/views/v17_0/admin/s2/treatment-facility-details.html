@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What date was the request received by the business?
+	What is the name of the treatment facility?
 {% endblock %}
 
 {% block content %}
@@ -52,25 +52,26 @@
 			</div>
 			<div class="column-two-thirds">
 				<div class="heading-group">
-					<h1 class="heading-large">What is the date the request was received?</h1>
+					<h1 class="heading-large">What is the name of the treatment facility?</h1>
 				</div>
 
-            <form action="what-s2-entitlement" method="get" class="form">
+            <form action="treatmentFacilityName" method="get" class="form">
                 
                     <div class="form-group">
-                        <label class="form-label" for="date-of-request">Date of request</label>
-                        <span class="form-hint">
-                            For example, 24/10/2019
-                        </span>
-                        <input class="form-control" id="date-of-request" name="date-of-request" type="text" autocomplete="off" />
+                        <label class="form-label" for="treatment-facility-name">Treatment facility name</label>
+                        <!-- <span class="form-hint">
+                            For example, 03/12/2022
+                        </span> -->
+                        <input class="form-control" id="treatment-facility-name" name="treatment-facility-name" type="text" autocomplete="off" />
                     </div>
                     
-				<div class="form-group">
-					<a href="what-s2-entitlement"><input class="button" type="submit" value="Next"></a>
-					<a class="button button-secondary" href="case-record">Cancel</a>
-				</div>
-            </form>
-			
+                    
+                
+			<div class="form-group">
+				<a href="#"><input class="button" type="submit" value="Next"></a>
+				<a class="button button-secondary" href="case-record">Cancel</a>
+			</div>
+			</form>
         </div>
     </div>
 </main>

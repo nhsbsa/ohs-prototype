@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What date was the request received by the business?
+	When is the treatment expected to end (optional)?
 {% endblock %}
 
 {% block content %}
@@ -52,23 +52,23 @@
 			</div>
 			<div class="column-two-thirds">
 				<div class="heading-group">
-					<h1 class="heading-large">What is the date the request was received?</h1>
+					<h1 class="heading-large">When is the treatment expected to end (optional)?</h1>
 				</div>
 
-            <form action="what-s2-entitlement" method="get" class="form">
-                
+            <form action="treatmentEndDate" method="get" class="form">
+            
                     <div class="form-group">
-                        <label class="form-label" for="date-of-request">Date of request</label>
+                        <label class="form-label" for="treatment-end">Treatment end date</label>
                         <span class="form-hint">
-                            For example, 24/10/2019
+                            For example, 03/12/2022
                         </span>
-                        <input class="form-control" id="date-of-request" name="date-of-request" type="text" autocomplete="off" />
+                        <input class="form-control" id="treatment-end" name="treatment-end" type="text" autocomplete="off" />
                     </div>
-                    
-				<div class="form-group">
-					<a href="what-s2-entitlement"><input class="button" type="submit" value="Next"></a>
-					<a class="button button-secondary" href="case-record">Cancel</a>
-				</div>
+					<div class="form-group">
+						<a href="#"><input class="button" type="submit" value="Next"></a>
+						<a class="button button-secondary" href="case-record">Cancel</a>
+					</div>   
+                
             </form>
 			
         </div>
