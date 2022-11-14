@@ -36,27 +36,7 @@ router.post([/entitlement-type/, /entitlement-type-error/], function (req,res) {
 
 // What country are they having treatment in (Maternity)?
 
-router.post(/country-maternity/, function (req, res) {
-  console.log(req.body.locationPicker);
-
-  if (req.body.locationPicker === 'Austria' || req.body.locationPicker === 'Belgium' || req.body.locationPicker === 'Bulgaria' || req.body.locationPicker === 'Croatia' || req.body.locationPicker === 'Cyprus' || req.body.locationPicker === 'Czech Republic' || req.body.locationPicker === 'Denmark' || req.body.locationPicker === 'Finland' || req.body.locationPicker === 'France' || req.body.locationPicker === 'Germany') {
-    res.redirect('s1-country');
-  }
-  if (req.body.locationPicker === 'Greece' || req.body.locationPicker === 'Hungary' || req.body.locationPicker === 'Iceland' || req.body.locationPicker === 'Italy' || req.body.locationPicker === 'Latvia' || req.body.locationPicker === 'Liechtenstein' || req.body.locationPicker === 'Lithuania' || req.body.locationPicker === 'Luxembourg' || req.body.locationPicker === 'Malta' || req.body.locationPicker === 'Netherlands') {
-    res.redirect('s1-country');
-  }
-  if (req.body.locationPicker === 'Norway' || req.body.locationPicker === 'Poland' || req.body.locationPicker === 'Portugal' || req.body.locationPicker === 'Republic of Ireland' || req.body.locationPicker === 'Romania' || req.body.locationPicker === 'Slovakia' || req.body.locationPicker === 'Slovenia' || req.body.locationPicker === 'Spain' || req.body.locationPicker === 'Sweden' || req.body.locationPicker === 'Switzerland') {
-    res.redirect('s1-country');
-  }
-  if (req.body.locationPicker === '') {
-    res.redirect('treatment-country-maternity-error');
-  }
-  else {
-    res.redirect('kickouts/ineligible-treatment-country');
-  }
-})
-
-router.post(/country-maternity-error/, function (req, res) {
+router.post([/country-maternity/, /country-maternity-error/], function (req, res) {
   console.log(req.body.locationPicker);
 
   if (req.body.locationPicker === 'Austria' || req.body.locationPicker === 'Belgium' || req.body.locationPicker === 'Bulgaria' || req.body.locationPicker === 'Croatia' || req.body.locationPicker === 'Cyprus' || req.body.locationPicker === 'Czech Republic' || req.body.locationPicker === 'Denmark' || req.body.locationPicker === 'Finland' || req.body.locationPicker === 'France' || req.body.locationPicker === 'Germany') {
@@ -79,9 +59,11 @@ router.post(/country-maternity-error/, function (req, res) {
 // What country are they having treatment in (Planned treatment)?
 
 router.post([/country-planned/, /country-planned-error/], function (req, res) {
+  var locationPicker = req.session.data['locationPicker'];
   console.log(req.body.locationPicker);
+  console.log(locationPicker);
 
-  if (req.body.locationPicker === 'au' || req.body.locationPicker === 'Belgium' || req.body.locationPicker === 'Bulgaria' || req.body.locationPicker === 'Croatia' || req.body.locationPicker === 'Cyprus' || req.body.locationPicker === 'Czech Republic' || req.body.locationPicker === 'Denmark' || req.body.locationPicker === 'Finland' || req.body.locationPicker === 'France' || req.body.locationPicker === 'Germany') {
+  if (req.body.locationPicker === 'Austria' && locationPicker == 'Austria' || req.body.locationPicker === 'Belgium' || req.body.locationPicker === 'Bulgaria' || req.body.locationPicker === 'Croatia' || req.body.locationPicker === 'Cyprus' || req.body.locationPicker === 'Czech Republic' || req.body.locationPicker === 'Denmark' || req.body.locationPicker === 'Finland' || req.body.locationPicker === 'France' || req.body.locationPicker === 'Germany') {
     res.redirect('s1-country');
   }
   if (req.body.locationPicker === 'Greece' || req.body.locationPicker === 'Hungary' || req.body.locationPicker === 'Iceland' || req.body.locationPicker === 'Italy' || req.body.locationPicker === 'Latvia' || req.body.locationPicker === 'Liechtenstein' || req.body.locationPicker === 'Lithuania' || req.body.locationPicker === 'Luxembourg' || req.body.locationPicker === 'Malta' || req.body.locationPicker === 'Netherlands') {
@@ -100,7 +82,7 @@ router.post([/country-planned/, /country-planned-error/], function (req, res) {
 
 // What country do they have an S1 in?
 
-router.post([/country-s1/, /countrys1-error/], function (req, res) {
+router.post([/country-s1/, /country-s1-error/], function (req, res) {
   var entitlementType = req.session.data['entitlementType'];
   console.log(req.body.countrySOne);
 
@@ -125,7 +107,7 @@ function arraysContainSame(a, b) {
   return a.length === b.length && a.every(el => b.includes(el));
 }
 
-router.get([/nationality/,/nationality-error/, /nationality-eu-error/, /nationality-eu-other-error/, /nationality-other-error/], function (req, res) {
+router.post([/nationality/,/nationality-error/, /nationality-eu-error/, /nationality-eu-other-error/, /nationality-other-error/], function (req, res) {
   console.log(req.body.nationality);
   console.log(req.body.myInputsEURT);
   console.log(req.body.myInputsOtherRT);
