@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What country are you having treatment in?
+	What country do you have an active S1 for?
 {% endblock %}
 
 {% block content %}
@@ -118,10 +118,12 @@
 	.vertical-bar {
 		margin: 0px 10px;
 	}
+	/* end banner */
 
 	/* end banner */
 
 	/* autocomplete */
+
 
 	@media (min-width: 40.0625em) {
     .nhsuk-form-group .autocomplete__wrapper {
@@ -150,6 +152,7 @@
 	}
 
 	.autocomplete__hint, .autocomplete__input {
+		
 		border: 2px solid #0b0c0c;
 		border-radius: 0;
 		box-sizing: border-box;
@@ -218,10 +221,10 @@
 			
 			<div class="column-two-thirds">
 				<div class="heading-group">
-					<h1 class="heading-large">What country are you having treatment in?</h1>
+					<h1 class="heading-large">What country do you have an active S1 for?</h1>
 				</div>
 
-            <form action="countryMaternity" method="post" class="form">
+            <form action="country-s1" method="post" class="form">
                 
                     <div class="form-group">
 
@@ -230,7 +233,7 @@
 							<label class="govuk-label form-label" for="location-picker-1">
 							  Country name
 							</label>
-							<select id="location-picker-1" class="form-control autocomplete__input" name="location-picker-1" type="text">
+							<select id="location-picker-1" class="form-control autocomplete__input" name="countrySOne" type="text">
 							  <option value=""></option>
 							  <option value="Afghanistan">Afghanistan</option>
 							  <option value="Albania">Albania</option>

@@ -142,21 +142,35 @@
 				</div>
 			</div>
 			<div class="column-two-thirds">
+				<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+					<h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+						There is a problem
+					</h2>
+					<ul class="error-summary-list">
+						<li class="error-message">
+							<a href="#entitlement">
+								Select which treatment is the S2 entitlement for
+							</a>
+						</li>
+					</ul>
+				</div>
+
 				<div class="heading-group">
 					<h1 class="heading-large">What is the S2 entitlement for?</h1>
 				</div>
-				<form class="form" action="what-s2-entitlement" method="post">
-					<div class="form-group">
-						<fieldset>
+				<form class="form" action="entitlement-type-error" method="post">
+					<div class="form-group form-group-error">
+						<fieldset id="entitlement">
+							<span class="error-message">Select which treatment is the S2 entitlement for</span>
 							<div class="govuk-radios">
 								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="entitlement-type-1" name="entitlement" type="radio" value="Planned treatment">
+									<input class="govuk-radios__input" id="entitlement-type-1" name="entitlementType" type="radio" value="Planned treatment">
 									<label class="govuk-label govuk-radios__label" for="entitlement-type-1">
 										Planned treatment
 									</label>
 								</div>
 								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="entitlement-type-2" name="entitlement" type="radio" value="Maternity benefits">
+									<input class="govuk-radios__input" id="entitlement-type-2" name="entitlementType" type="radio" value="Maternity benefits">
 									<label class="govuk-label govuk-radios__label" for="entitlement-type-2">
 										Maternity benefits
 									</label>

@@ -220,20 +220,36 @@
 				</div>
 			
 			<div class="column-two-thirds">
+				<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+					<h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+						There is a problem
+					</h2>
+					<ul class="error-summary-list">
+						<li class="error-message">
+							<a href="#location-picker-1">
+								Select your active S1 country
+							</a>
+						</li>
+					</ul>
+				</div>
+
 				<div class="heading-group">
 					<h1 class="heading-large">What country do you have an active S1 for?</h1>
 				</div>
 
-            <form action="countrySOne" method="post" class="form">
+            <form action="country-s1-error" method="post" class="form">
                 
-                    <div class="form-group">
+                    <div class="form-group form-group-error">
 
 						<div class="autocomplete-container" id="autocomplete-container">
 
 							<label class="govuk-label form-label" for="location-picker-1">
 							  Country name
 							</label>
-							<select id="location-picker-1" class="form-control autocomplete__input" name="location-picker-1" type="text">
+							<span class="error-message">
+								Select your active S1 country
+							</span>
+							<select id="location-picker-1" class="form-control autocomplete__input error" name="countrySOne" type="text">
 							  <option value=""></option>
 							  <option value="Afghanistan">Afghanistan</option>
 							  <option value="Albania">Albania</option>

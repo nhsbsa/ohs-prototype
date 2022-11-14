@@ -118,7 +118,6 @@
 	.vertical-bar {
 		margin: 0px 10px;
 	}
-	/* end banner */
 
 	/* end banner */
 
@@ -222,7 +221,7 @@
 					<h1 class="heading-large">What country are you having treatment in?</h1>
 				</div>
 
-            <form action="countryPlanned" method="post" class="form">
+            <form action="country-maternity" method="post" class="form">
                 
                     <div class="form-group">
 
@@ -231,7 +230,7 @@
 							<label class="govuk-label form-label" for="location-picker-1">
 							  Country name
 							</label>
-							<select id="location-picker-1" class="form-control autocomplete__input" name="location-picker-1" type="text">
+							<select id="location-picker-1" class="form-control autocomplete__input" name="locationPicker" type="text">
 							  <option value=""></option>
 							  <option value="Afghanistan">Afghanistan</option>
 							  <option value="Albania">Albania</option>
@@ -480,22 +479,18 @@
 							</select>
 						</div>
                     </div>
+                    
                     <div class="form-group">
-						<a href="#"><input class="button" type="submit" value="Next"></a>
-						<a class="button button-secondary" href="case-record">Cancel</a>
-					</div>
-				</form>
-                   
+                        <a href="#"><input class="button" type="submit" value="Next"></a>
+                        <a class="button button-secondary" href="case-record">Cancel</a>
+                    </div>
                 </div>
-				
-			
+            </form>
         </div>
     </div>
 </main>
 
-<script src="/public/javascripts/jquery-1.11.3.js"></script>
 <script src="/public/javascripts/accessible-autocomplete.js"></script>
-<script src="/public/javascripts/main.js"></script>
 <script>
 	document.getElementById('example').focus();
 </script>
