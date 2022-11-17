@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What is the name of the treatment facility?
+	What is your NHS Number?
 {% endblock %}
 
 {% block content %}
@@ -52,26 +52,25 @@
 			</div>
 			<div class="column-two-thirds">
 				<div class="heading-group">
-					<h1 class="heading-large">What is the name of the treatment facility?</h1>
+					<h1 class="heading-large">What is your NHS Number?</h1>
 				</div>
 
-            <form action="treatment-facility-name" method="post" class="form">
-                
+            <form action="nhs-number" method="post" class="form">
+
                     <div class="form-group">
-                        <label class="form-label" for="treatment-facility-name">Treatment facility name</label>
-                        <!-- <span class="form-hint">
-                            For example, 03/12/2022
-                        </span> -->
-                        <input class="form-control" id="treatment-facility-name" name="treatmentFacilityName" type="text" autocomplete="off" />
+                        <label class="form-label" for="nhs-number">NHS Number</label>
+                        <span class="form-hint">
+                            For example, 'QQ123456C'
+                        </span>
+                        <input class="form-control" id="nhs-number" name="nhsNumber" type="text" autocomplete="off" />
                     </div>
-                    
-                    
-                
-			<div class="form-group">
-				<a href="#"><input class="button" type="submit" value="Next"></a>
-				<a class="button button-secondary" href="case-record">Cancel</a>
-			</div>
-			</form>
+
+				<div class="form-group">
+					<a href="#"><input class="button" type="submit" value="Next"></a>
+					<a class="button button-secondary" href="case-record">Cancel</a>
+				</div>
+            </form>
+			
         </div>
     </div>
 </main>
