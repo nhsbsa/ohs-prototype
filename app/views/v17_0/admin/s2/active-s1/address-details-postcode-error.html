@@ -51,39 +51,51 @@
 				</div>
 			</div>
 			<div class="column-two-thirds">
-				<div class="heading-group">
-					<h1 class="heading-large">What are your address details?</h1>
+				<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+					<h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+						There is a problem
+					</h2>
+					<ul class="error-summary-list">
+						<li class="error-message">
+							<a href="#postcode">Enter a postcode, like AA1 1AA</a>
+						</li>
+					</ul>
 				</div>
 
-            <form action="contact-details" method="post" class="form">
-                <div class="column-full">
+				<div class="heading-group">
+					<h1 class="heading-large">What are your address details? (optional)</h1>
+				</div>
+
+            <form action="address-details-postcode" method="post" class="form">
+                
                     <div class="form-group">
-                        <label class="form-label" for="lineone">Building and street (line 1 of 2)</label>
-                        <input class="form-control" id="lineone" name="address-lineone" type="text" autocomplete="off" value="1 Road">
+                        <label class="form-label" for="lineone">Building and street</label>
+                        <input class="form-control" id="lineone" name="address-lineone" type="text" autocomplete="off">
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="linetwo">Building and street (line 2 of 2) (optional)</label>
-                        <input class="form-control"  id="linetwo" name="address-linetwo" type="text" autocomplete="off" value="Downtown">
+                        <label class="form-label" for="linetwo">Building and street</label>
+                        <input class="form-control"  id="linetwo" name="address-linetwo" type="text" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="town">Town or city</label>
-                        <input class="form-control" id="town" name="town" type="text" autocomplete="off" value="Lille">
+                        <input class="form-control" id="town" name="town" type="text" autocomplete="off">
                     </div>
-                    <div class="form-group">
-                        <label class="form-label" for="postcode">Postcode (optional)</label>
-                        <input class="form-control form-control-1-4"  id="postcode" name="addressPostcode" type="text" autocomplete="off" value="123456">
+                    <div class="form-group-error">
+                        <label class="form-label" for="postcode">Postcode</label>
+						<span class="error-message">
+							Enter a postcode, like AA1 1AA
+						</span>
+                        <input class="form-control-error form-control-1-4"  id="postcode" name="addressPostcode" type="text" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="country">Country</label>
-                        <input class="form-control" id="country" name="country" type="text" autocomplete="off" value="France">
+                        <input class="form-control" id="country" name="country" type="text" autocomplete="off">
                     </div>
-
-				</div>
-                
+   
             </form>
 
 			<div class="form-group">
-				<a href="#"><input class="button" type="submit" value="Next"></a>
+				<input class="button" type="submit" value="Next">
 				<a class="button button-secondary" href="case-record">Cancel</a>
 			</div>
         </div>

@@ -51,27 +51,52 @@
 				</div>
 			</div>
 			<div class="column-two-thirds">
+				<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+					<h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+						There is a problem
+					</h2>
+					<ul class="error-summary-list">
+						<li class="error-message">
+							<a href="#treatment-facility-name">
+								Enter the name of the hospital, clinic, or treatment facility
+							</a>
+						</li>
+					</ul>
+				</div>
+
 				<div class="heading-group">
 					<h1 class="heading-large">What is the name of the treatment facility?</h1>
 				</div>
 
-            <form action="treatment-facility-name" method="post" class="form">
+            <form action="treatment-facility-name-error" method="post" class="form">
+
+				<div class="form-hint">
+					If you've had treatment in more than one place, you'll be able to add these later.
+				  </div>
                 
-                    <div class="form-group">
+                    <div class="form-group-error">
                         <label class="form-label" for="treatment-facility-name">Treatment facility name</label>
-                        <!-- <span class="form-hint">
-                            For example, 03/12/2022
-                        </span> -->
-                        <input class="form-control" id="treatment-facility-name" name="treatmentFacilityName" type="text" autocomplete="off" />
+                        <span class="error-message">
+							Enter the name of the hospital, clinic, or treatment facility
+						</span>
+                        <input class="form-control-error" id="treatment-facility-name" name="treatmentFacilityName" type="text" autocomplete="off" />
                     </div>
                     
                     
                 
 			<div class="form-group">
-				<a href="#"><input class="button" type="submit" value="Next"></a>
+				<input class="button" type="submit" value="Next">
 				<a class="button button-secondary" href="case-record">Cancel</a>
 			</div>
 			</form>
+
+			<details>
+				<summary><span class="summary">What medical facilities are not covered?</span></summary>
+				<div class="panel panel-border-narrow">
+					<p>An S2 does not cover treatment provided by pharmacies or private healthcare providers.</p>
+          			<p>An S2 does not cover prescription costs.</p>
+				</div>
+			</details>
         </div>
     </div>
 </main>

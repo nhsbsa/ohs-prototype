@@ -232,33 +232,49 @@ router.post([/treatment-end-date/, /treatment-end-invalid/, /treatment-end-plann
   const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
   
   var entitlementType = req.session.data['entitlementType'];
+  console.log(entitlementType);
 
   var startDate = req.session.data['treatmentStart'];
   var endDate = req.session.data['treatmentEnd'];
+  console.log(startDate);
+  console.log(endDate);
 
   var lastRunDate = new Date(startDate.split('/')[2], startDate.split('/')[1] - 1, startDate.split('/')[0]);
   console.log(lastRunDate);
 
-  const maxEndM = new Date(lastRunDate.getTime() + (105 * 86400000));
-  const maxEndP = new Date(lastRunDate.setMonth(lastRunDate.getMonth() + 12));
-
-  console.log(entitlementType);
-  console.log(startDate);
-  console.log(endDate);
+  var maxEndM = new Date(lastRunDate.getTime() + (105 * 86400000));
+  var maxEndP = new Date(lastRunDate.setMonth(lastRunDate.getMonth() + 12));
   console.log(maxEndM);
   console.log(maxEndP);
 
-  if (req.body.treatmentEnd !== '' && dateReg.test(req.body.treatmentEnd) && entitlementType === "Planned treatment" && maxEndP < req.body.treatmentEnd) {
+  function convertDate(inputFormat) {
+    function pad(s) { return (s < 10) ? '0' + s : s; }
+    var d = new Date(inputFormat);
+    return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+  }
+
+  var convertMaxEndM = convertDate(maxEndM);
+  var convertMaxEndP = convertDate(maxEndP);
+  console.log(convertMaxEndM);
+  console.log(convertMaxEndP);
+
+  if (req.body.treatmentEnd !== '' && dateReg.test(req.body.treatmentEnd) && entitlementType === "Planned treatment" && convertMaxEndP < req.body.treatmentEnd) {
     res.redirect('treatment-end-planned-error');
   }
-  else if (req.body.treatmentEnd !== '' && dateReg.test(req.body.treatmentEnd) && entitlementType === "Maternity benefits" && maxEndM < req.body.treatmentEnd) {
+  else if (req.body.treatmentEnd !== '' && dateReg.test(req.body.treatmentEnd) && entitlementType === "Maternity benefits" && convertMaxEndM < req.body.treatmentEnd) {
     res.redirect('treatment-end-maternity-error');
   }
   else if (req.body.treatmentEnd !== '' && !dateReg.test(req.body.treatmentEnd)) {
     res.redirect('treatment-end-invalid-error');
   }
+  else if (req.body.treatmentEnd !== '' && entitlementType === "Planned treatment" && convertMaxEndP === req.body.treatmentEnd) {
+    res.redirect('treatment-facility-name');
+  }
+  else if (req.body.treatmentEnd !== '' && entitlementType === "Maternity benefits" && convertMaxEndP === req.body.treatmentEnd) {
+    res.redirect('nino');
+  }
   else if (req.body.treatmentEnd === '' && entitlementType === "Planned treatment") {
-    res.redirect('treatment-facility-details');
+    res.redirect('treatment-facility-name');
   }
   else if (req.body.treatmentEnd === '' && entitlementType === "Maternity benefits") {
     res.redirect('nino');
@@ -270,7 +286,7 @@ router.post([/treatment-facility-name/, /treatment-facility-name-error/], functi
   console.log(req.body.treatmentFacilityName);
 
   if(req.body.treatmentFacilityName === '') {
-    res.redirect('treatment-facility-details-error');
+    res.redirect('treatment-facility-name-error');
   } else {
     res.redirect('nino');
   }
@@ -280,7 +296,9 @@ router.post([/treatment-facility-name/, /treatment-facility-name-error/], functi
 router.post([/national-insurance/, /national-insurance-error/], function (req,res) {
   console.log(req.body.nino);
 
-  if(req.body.nino === '') {
+  const ninoRegEx = /^\s*[a-zA-Z]{2}(?:\s*\d\s*){6}[a-zA-Z]?\s*$/;
+
+  if(req.body.nino !== '' && !ninoRegEx.test(req.body.nino)) {
     res.redirect('nino-error');
   } else {
     res.redirect('nhs-number');
@@ -291,10 +309,59 @@ router.post([/national-insurance/, /national-insurance-error/], function (req,re
 router.post([/nhs-number/, /nhs-number-error/], function (req,res) {
   console.log(req.body.nhsNumber);
 
-  if(req.body.nhsNumber === '') {
+  const nhsRegEx = /^6[0-9]{10}$/;
+  var nino = req.session.data['nino'];
+
+  if(nino === '' && req.body.nhsNumber === '') {
     res.redirect('nhs-number-error');
-  } else {
+  } else if(req.body.nhsNumber !== '' && !nhsRegEx.test(req.body.nhsNumber)) {
+    res.redirect('nhs-number-invalid');
+  }
+   else {
     res.redirect('contact-details');
+  }
+})
+
+//What are your contact details? //
+router.post([/contact-details/, /contact-details-error/, /contact-details-email-error/, /contact-details-phone-error/], function (req,res) {
+  console.log(req.body.phoneNumber);
+  console.log(req.body.emailAddress);
+  
+  const phoneRegEx = /^\+[1-9]{1}[0-9]{3,14}$/;
+  const emailRegEx = /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
+
+  if(req.body.phoneNumber === '' && req.body.emailAddress === '') {
+    res.redirect('address-details');
+  } else if(req.body.phoneNumber !== '' && phoneRegEx.test(req.body.phoneNumber) && req.body.emailAddress !== '' && emailRegEx.test(req.body.emailAddress)) {
+    res.redirect('address-details');
+  } else if(req.body.phoneNumber !== '' && !phoneRegEx.test(req.body.phoneNumber) && req.body.emailAddress !== '' && !emailRegEx.test(req.body.emailAddress)) {
+    res.redirect('contact-details-error');
+  } else if(req.body.phoneNumber !== '' && !phoneRegEx.test(req.body.phoneNumber) && req.body.emailAddress !== '' && emailRegEx.test(req.body.emailAddress)) {
+    res.redirect('contact-details-phone-error');
+  } else if(req.body.phoneNumber !== '' && phoneRegEx.test(req.body.phoneNumber) && req.body.emailAddress !== '' && !emailRegEx.test(req.body.emailAddress)) {
+    res.redirect('contact-details-email-error');
+  } else {
+    res.redirect('address-details');
+  }
+})
+
+//What are your address details? //
+router.post([/address-details/, /address-details-postcode/], function (req,res) {
+  console.log(req.body.addressPostcode);
+  
+  const postcodeRegEx = /^([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9][A-Za-z]?))))\s?[0-9][A-Za-z]{2})$/;
+  const startsWithRegEx = /^[GX][JE][GY][IM]{1,2}\d[a-z\d]?\s*\d[a-z]{2}$/;
+
+  if(req.body.addressPostcode === '') {
+    res.redirect('check-your-answers');
+  } else if(req.body.addressPostcode !== '' && !startsWithRegEx.test(req.body.addressPostcode) && postcodeRegEx.test(req.body.addressPostcode)) {
+    res.redirect('check-your-answers');
+  } else if(req.body.addressPostcode !== '' && !startsWithRegEx.test(req.body.addressPostcode) && !postcodeRegEx.test(req.body.addressPostcode)) {
+    res.redirect('address-details-postcode');
+  } else if(req.body.addressPostcode !== '' && startsWithRegEx.test(req.body.addressPostcode)) {
+    res.redirect('kickouts/ineligible-postcode');
+  } else {
+    res.redirect('address-details');
   }
 })
 

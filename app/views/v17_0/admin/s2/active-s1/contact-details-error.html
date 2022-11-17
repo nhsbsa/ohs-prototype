@@ -51,6 +51,24 @@
 				</div>
 			</div>
 			<div class="column-two-thirds">
+				<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+					<h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+						There is a problem
+					</h2>
+					<ul class="error-summary-list">
+						<li class="error-message">
+							<a href="#phone-number">
+								Enter an email address in the correct format, like name@example.com
+							</a>
+						</li>
+						<li class="error-message">
+							<a href="#email-address">
+								Enter an email address in the correct format, like name@example.com
+							</a>
+						</li>
+					</ul>
+				</div>
+
 				<div class="heading-group">
 					<h1 class="heading-large">What are your contact details (optional)?</h1>
 				</div>
@@ -58,17 +76,23 @@
             <form action="contact-details" method="post" class="form">
                 <div class="column-full">
 					<p>We ask for this so we can respond to any questions.</p>
-                    <div class="form-group">
+                    <div class="form-group-error">
                         <label class="form-label" for="phone-number">Mobile number</label>
-                        <input class="form-control" id="phone-number" name="phoneNumber" type="text" autocomplete="off" />
-                    </div>
-
-					<div class="form-group">
-                        <label class="form-label" for="email-address">Email address</label>
 						<span class="form-hint">
 							For international numbers include the country code.
 						</span>
-                        <input class="form-control" id="email-address" name="emailAddress" type="text" autocomplete="off" />
+						<span class="error-message">
+							Please enter a valid phone number.
+						</span>
+                        <input class="form-control-error" id="phone-number" name="phoneNumber" type="text" autocomplete="off" />
+                    </div>
+
+					<div class="form-group-error">
+                        <label class="form-label" for="email-address">Email address</label>
+						<span class="error-message">
+							Enter an email address in the correct format, like name@example.com
+						</span>
+                        <input class="form-control-error" id="email-address" name="emailAddress" type="text" autocomplete="off" />
                     </div>
 
 					<!-- <div class="form-group">

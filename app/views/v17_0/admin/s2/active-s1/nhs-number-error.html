@@ -51,18 +51,33 @@
 				</div>
 			</div>
 			<div class="column-two-thirds">
+				<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+					<h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+						There is a problem
+					</h2>
+					<ul class="error-summary-list">
+						<li class="error-message">
+							<a href="#nhs-number">
+								Enter your NHS Number or go back and provide us with your National Insurance Number
+							</a>
+						</li>
+					</ul>
+				</div>
 				<div class="heading-group">
 					<h1 class="heading-large">What is your NHS Number?</h1>
 				</div>
 
-            <form action="nhs-number" method="post" class="form">
+            <form action="nhs-number-error" method="post" class="form">
 
-                    <div class="form-group">
+                    <div class="form-group form-group-error">
                         <label class="form-label" for="nhs-number">NHS Number</label>
+						<span class="error-message">
+							Enter your NHS Number or go back and provide us with your National Insurance Number
+						</span>
                         <span class="form-hint">
                             For example, 'QQ123456C'
                         </span>
-                        <input class="form-control" id="nhs-number" name="nhsNumber" type="text" autocomplete="off" />
+                        <input class="form-control error" id="nhs-number" name="nhsNumber" type="text" autocomplete="off" />
                     </div>
 
 				<div class="form-group">

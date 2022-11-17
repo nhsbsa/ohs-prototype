@@ -141,13 +141,13 @@
 				</div>
 			</div>
 			<div class="column-two-thirds">
-				<form method="get" action="postcodeIneligible" class="form">
+				
 					<div class="form-group">
 						<h1 class="heading-large">
 							You are not eligible for S2
 						</h1>
 					</div>
-					<p>Entitlement is not covered for your postcode area.</p>
+					<p>Entitlement is not covered for your {{ data['addressPostcode'] }} postcode area.</p>
 					
 					<!-- <div class="form-group">
 						<h2 class="heading-medium">You cannot get a UK-issued EHIC if you:</h2>
@@ -191,18 +191,15 @@
 						<p>If you’re an EU, EEA or Swiss citizen, you and your family can apply to the EU Settlement Scheme to continue living in the UK after 30 June 2021. If your application is successful, you’ll get either settled or pre-settled status.</p> -->
 					<!-- </div> -->
 					<!-- <hr><hr><hr> -->
-					<div class="form-group">
+					
 						<!-- <p>You must have lived permanently in the UK prior to 1 January 2021 to be eligible for an EHIC.</p> -->
 						<!-- <p>You cannot apply for this service if you were born in England, Scotland or Wales and have held or currently hold any UK citizenship. </p> -->
 						<!-- <p>You cannot apply for this service if you have held UK citizenship and do not hold EU nationality.</p> -->
 						<!-- <p>If you are born in Northern Ireland and have dual nationality, you must renounce your UK citizenship to be eligible for an EHIC.</p> -->
-					</div>
 					
-					
-				</form>
 
                 <div class="form-group">
-                    <a class="button" href="s2">Back to search</a>
+                    <a class="button" href="../search-active-s1">Back to search</a>
                 </div>
 			</div>
 		</div>

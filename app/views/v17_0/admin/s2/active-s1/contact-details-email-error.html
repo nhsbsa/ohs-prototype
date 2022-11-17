@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	When is the treatment expected to end (optional)?
+	What are your contact details (optional)?
 {% endblock %}
 
 {% block content %}
@@ -57,36 +57,53 @@
 					</h2>
 					<ul class="error-summary-list">
 						<li class="error-message">
-							<a href="#treatment-end">
-								Treatment end date must be a real date
+							<a href="#email-address">
+								Enter an email address in the correct format, like name@example.com
 							</a>
 						</li>
 					</ul>
 				</div>
 
 				<div class="heading-group">
-					<h1 class="heading-large">When is the treatment expected to end (optional)?</h1>
+					<h1 class="heading-large">What are your contact details (optional)?</h1>
 				</div>
 
-            <form action="treatment-end-invalid" method="post" class="form">
-            
-                    <div class="form-group form-group-error">
-                        <label class="form-label" for="treatment-end">Treatment end date</label>
-                        <span class="error-message">
-							Treatment end date must be a real date
-						</span>
+            <form action="contact-details" method="post" class="form">
+                <div class="column-full">
+					<p>We ask for this so we can respond to any questions.</p>
+                    <div class="form-group">
+                        <label class="form-label" for="phone-number">Mobile number</label>
 						<span class="form-hint">
-                            For example, 03/12/2022
-                        </span>
-                        <input class="form-control-error" id="treatment-end" name="treatmentEndPlanned" type="text" autocomplete="off" />
+							For international numbers include the country code.
+						</span>
+                        <input class="form-control" id="phone-number" name="phoneNumber" type="text" autocomplete="off" />
                     </div>
-					<div class="form-group">
-						<input class="button" type="submit" value="Next">
-						<a class="button button-secondary" href="case-record">Cancel</a>
-					</div>   
+
+					<div class="form-group-error">
+                        <label class="form-label" for="email-address">Email address</label>
+						<span class="error-message">
+							Enter an email address in the correct format, like name@example.com
+						</span>
+                        <input class="form-control-error" id="email-address" name="emailAddress" type="text" autocomplete="off" />
+                    </div>
+
+					<!-- <div class="form-group">
+						<div class="govuk-checkboxes">
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="ohs-1" name="ohs" type="checkbox">
+								<label class="govuk-label govuk-checkboxes__label" for="ohs-1">
+									Email address and telephone number not provided
+								</label>
+							</div>
+						</div>
+					</div> -->
                 
+                </div>
             </form>
-			
+			<div class="form-group">
+				<input class="button" type="submit" value="Next">
+				<a class="button button-secondary" href="case-record">Cancel</a>
+			</div>
         </div>
     </div>
 </main>
