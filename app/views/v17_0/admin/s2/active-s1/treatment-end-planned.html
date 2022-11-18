@@ -51,37 +51,21 @@
 				</div>
 			</div>
 			<div class="column-two-thirds">
-				<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
-					<h2 class="heading-medium error-summary-heading" id="error-summary-heading">
-						There is a problem
-					</h2>
-					<ul class="error-summary-list">
-						<li class="error-message">
-							<a href="#treatment-end">
-								Treatment end date must be a real date
-							</a>
-						</li>
-					</ul>
-				</div>
-
 				<div class="heading-group">
-					<h1 class="heading-large">When is the treatment expected to end (optional)?</h1>
+					<h1 class="heading-large">When is the treatment expected to end?</h1>
 				</div>
 
-            <form action="treatment-end-invalid" method="post" class="form">
+            <form action="treatment-end-date-planned" method="post" class="form">
             
-                    <div class="form-group form-group-error">
-                        <label class="form-label" for="treatment-end">Treatment end date</label>
-                        <span class="error-message">
-							Treatment end date must be a real date
-						</span>
-						<span class="form-hint">
+                    <div class="form-group">
+                        <label class="form-label" for="treatment-end">Treatment end date (optional)</label>
+                        <span class="form-hint">
                             For example, 03/12/2022
                         </span>
-                        <input class="form-control-error" id="treatment-end" name="treatmentEndPlanned" type="text" autocomplete="off" />
+                        <input class="form-control" id="treatment-end" name="treatmentEndP" type="text" autocomplete="off" />
                     </div>
 					<div class="form-group">
-						<input class="button" type="submit" value="Next">
+						<a href="#"><input class="button" type="submit" value="Next"></a>
 						<a class="button button-secondary" href="case-record">Cancel</a>
 					</div>   
                 

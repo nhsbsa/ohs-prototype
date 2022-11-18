@@ -51,8 +51,7 @@
 				</div>
 			</div>
 			
-
-            <form action="treatment-start-date-error" method="post" class="form">
+            <form action="treatment-start-date-invalid-maternity" method="post" class="form">
 				<div class="column-two-thirds">
 					<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
 						<h2 class="heading-medium error-summary-heading" id="error-summary-heading">
@@ -60,8 +59,8 @@
 						</h2>
 						<ul class="error-summary-list">
 							<li class="error-message">
-								<a href="#treatment-start-error">
-									Please select your treatment start date
+								<a href="#treatment-start-invalid-error">
+									Treatment start date must be a real date
 								</a>
 							</li>
 						</ul>
@@ -74,12 +73,12 @@
                     <div class="form-group form-group-error">
                         <label class="form-label" for="treatment-start">Treatment start date</label>
 						<span class="error-message">
-							Please select your treatment start date
+							Treatment start date must be a real date
 						</span>
                         <span class="form-hint">
                             For example, 03/12/2022
                         </span>
-                        <input class="form-control-error" id="treatment-start-error" name="treatmentStart" type="text" autocomplete="off" />
+                        <input class="form-control-error" id="treatment-start-invalid-error" name="treatmentStartM" type="text" autocomplete="off" />
                     </div>
                     
 			<div class="form-group">
