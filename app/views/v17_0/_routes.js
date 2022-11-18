@@ -21,78 +21,35 @@ router.post([/entitlement-type/, /entitlement-type-error/], function (req,res) {
   console.log(req.body.entitlementType);
 
   if(req.body.entitlementType === "Planned treatment") {
-    res.redirect('treatment-country-planned');
+    return res.redirect('treatment-country-planned');
   } else if (req.body.entitlementType === "Maternity benefits") {
-    res.redirect('treatment-country-maternity');
+    return res.redirect('treatment-country-maternity');
   } else {
     res.redirect('what-s2-entitlement-error');
-  }
-});
-
-
-// What country are they having treatment in (Maternity)?
-
-router.post([/country-maternity/, /country-maternity-error/], function (req, res) {
-  console.log(req.body.locationPicker);
-
-  if (req.body.locationPicker === 'Austria' || req.body.locationPicker === 'Belgium' || req.body.locationPicker === 'Bulgaria' || req.body.locationPicker === 'Croatia' || req.body.locationPicker === 'Cyprus' || req.body.locationPicker === 'Czech Republic' || req.body.locationPicker === 'Denmark' || req.body.locationPicker === 'Finland' || req.body.locationPicker === 'France' || req.body.locationPicker === 'Germany') {
-    res.redirect('s1-country');
-  }
-  if (req.body.locationPicker === 'Greece' || req.body.locationPicker === 'Hungary' || req.body.locationPicker === 'Iceland' || req.body.locationPicker === 'Italy' || req.body.locationPicker === 'Latvia' || req.body.locationPicker === 'Liechtenstein' || req.body.locationPicker === 'Lithuania' || req.body.locationPicker === 'Luxembourg' || req.body.locationPicker === 'Malta' || req.body.locationPicker === 'Netherlands') {
-    res.redirect('s1-country');
-  }
-  if (req.body.locationPicker === 'Norway' || req.body.locationPicker === 'Poland' || req.body.locationPicker === 'Portugal' || req.body.locationPicker === 'Republic of Ireland' || req.body.locationPicker === 'Romania' || req.body.locationPicker === 'Slovakia' || req.body.locationPicker === 'Slovenia' || req.body.locationPicker === 'Spain' || req.body.locationPicker === 'Sweden' || req.body.locationPicker === 'Switzerland') {
-    res.redirect('s1-country');
-  }
-  if (req.body.locationPicker === '') {
-    res.redirect('treatment-country-maternity-error');
-  }
-  else {
-    res.redirect('kickouts/ineligible-treatment-country');
   }
 })
 
 // What country are they having treatment in (Planned treatment)?
 
-router.post(/country-planned/, function (req, res) {
-  
+router.post([/country-planned/, /country-planned-error/, /country-maternity/, /country-maternity-error/], function (req, res) {
+  var entitlementType = req.session.data['entitlementType'];
+  console.log(entitlementType);
   console.log(req.body.locationPicker);
  
   if (req.body.locationPicker === 'Austria' || req.body.locationPicker === 'Belgium' || req.body.locationPicker === 'Bulgaria' || req.body.locationPicker === 'Croatia' || req.body.locationPicker === 'Cyprus' || req.body.locationPicker === 'Czech Republic' || req.body.locationPicker === 'Denmark' || req.body.locationPicker === 'Finland' || req.body.locationPicker === 'France' || req.body.locationPicker === 'Germany') {
     return res.redirect('s1-country');
   }
-  if (req.body.locationPicker === 'Greece' || req.body.locationPicker === 'Hungary' || req.body.locationPicker === 'Iceland' || req.body.locationPicker === 'Italy' || req.body.locationPicker === 'Latvia' || req.body.locationPicker === 'Liechtenstein' || req.body.locationPicker === 'Lithuania' || req.body.locationPicker === 'Luxembourg' || req.body.locationPicker === 'Malta' || req.body.locationPicker === 'Netherlands') {
+  else if (req.body.locationPicker === 'Greece' || req.body.locationPicker === 'Hungary' || req.body.locationPicker === 'Iceland' || req.body.locationPicker === 'Italy' || req.body.locationPicker === 'Latvia' || req.body.locationPicker === 'Liechtenstein' || req.body.locationPicker === 'Lithuania' || req.body.locationPicker === 'Luxembourg' || req.body.locationPicker === 'Malta' || req.body.locationPicker === 'Netherlands') {
     return res.redirect('s1-country');
   }
-  if (req.body.locationPicker === 'Norway' || req.body.locationPicker === 'Poland' || req.body.locationPicker === 'Portugal' || req.body.locationPicker === 'Republic of Ireland' || req.body.locationPicker === 'Romania' || req.body.locationPicker === 'Slovakia' || req.body.locationPicker === 'Slovenia' || req.body.locationPicker === 'Spain' || req.body.locationPicker === 'Sweden' || req.body.locationPicker === 'Switzerland') {
+  else if (req.body.locationPicker === 'Norway' || req.body.locationPicker === 'Poland' || req.body.locationPicker === 'Portugal' || req.body.locationPicker === 'Republic of Ireland' || req.body.locationPicker === 'Romania' || req.body.locationPicker === 'Slovakia' || req.body.locationPicker === 'Slovenia' || req.body.locationPicker === 'Spain' || req.body.locationPicker === 'Sweden' || req.body.locationPicker === 'Switzerland') {
     return res.redirect('s1-country');
   }
-  if (req.body.locationPicker === '') {
+  else if (req.body.locationPicker === '' && entitlementType === 'Planned treatment') {
     return res.redirect('treatment-country-planned-error');
   }
-  else {
-    return res.redirect('kickouts/ineligible-treatment-country');
-  }
-})
-
-// 'country-planned-error'
-router.post('country-planned-error', function (req, res) {
-  var locationPicker = req.session.data['locationPicker'];
-  console.log(req.body.locationPicker);
-  console.log(locationPicker);
-  
-  res.redirect('kickouts/ineligible-treatment-country');
-  if (req.body.locationPicker === 'Austria' || req.body.locationPicker === 'Belgium' || req.body.locationPicker === 'Bulgaria' || req.body.locationPicker === 'Croatia' || req.body.locationPicker === 'Cyprus' || req.body.locationPicker === 'Czech Republic' || req.body.locationPicker === 'Denmark' || req.body.locationPicker === 'Finland' || req.body.locationPicker === 'France' || req.body.locationPicker === 'Germany') {
-    return res.redirect('s1-country');
-  }
-  if (req.body.locationPicker === 'Greece' || req.body.locationPicker === 'Hungary' || req.body.locationPicker === 'Iceland' || req.body.locationPicker === 'Italy' || req.body.locationPicker === 'Latvia' || req.body.locationPicker === 'Liechtenstein' || req.body.locationPicker === 'Lithuania' || req.body.locationPicker === 'Luxembourg' || req.body.locationPicker === 'Malta' || req.body.locationPicker === 'Netherlands') {
-    return res.redirect('s1-country');
-  }
-  if (req.body.locationPicker === 'Norway' || req.body.locationPicker === 'Poland' || req.body.locationPicker === 'Portugal' || req.body.locationPicker === 'Republic of Ireland' || req.body.locationPicker === 'Romania' || req.body.locationPicker === 'Slovakia' || req.body.locationPicker === 'Slovenia' || req.body.locationPicker === 'Spain' || req.body.locationPicker === 'Sweden' || req.body.locationPicker === 'Switzerland') {
-    return res.redirect('s1-country');
-  }
-  if (req.body.locationPicker === '') {
-    return res.redirect('treatment-country-planned-error');
+  else if (req.body.locationPicker === '' && entitlementType === 'Maternity benefits') {
+    return res.redirect('treatment-country-maternity-error');
   }
   else {
     return res.redirect('kickouts/ineligible-treatment-country');
@@ -102,17 +59,17 @@ router.post('country-planned-error', function (req, res) {
 // What country do they have an S1 in?
 
 router.post([/country-s1/, /country-s1-error/], function (req, res) {
-  var entitlementType = req.session.data['entitlementType'];
+  console.log(req.body.entitlementType);
   console.log(req.body.countrySOne);
 
   if (req.body.countrySOne === 'Cyprus' || req.body.countrySOne === 'Finland' || req.body.countrySOne === 'Iceland' || req.body.countrySOne === 'Ireland' || req.body.countrySOne === 'Malta' || req.body.countrySOne === 'Portugal' || req.body.countrySOne === 'Spain' || req.body.countrySOne === 'Sweden' || req.body.countrySOne === 'Netherlands') {
     return res.redirect('kickouts/ineligible-s1-country');
   }
-  if (entitlementType === "Planned treatment" && req.body.countrySOne !== 'Cyprus' || req.body.countrySOne !== 'Finland' || req.body.countrySOne !== 'Iceland' || req.body.countrySOne !== 'Ireland' || req.body.countrySOne !== 'Malta' || req.body.countrySOne !== 'Portugal' || req.body.countrySOne !== 'Spain' || req.body.countrySOne !== 'Sweden' || req.body.countrySOne !== 'Netherlands') {
-    return res.redirect('treatment-start');
-  }
-  if (entitlementType === "Maternity benefits" && req.body.countrySOne !== 'Cyprus' || req.body.countrySOne !== 'Finland' || req.body.countrySOne !== 'Iceland' || req.body.countrySOne !== 'Ireland' || req.body.countrySOne !== 'Malta' || req.body.countrySOne !== 'Portugal' || req.body.countrySOne !== 'Spain' || req.body.countrySOne !== 'Sweden' || req.body.countrySOne !== 'Netherlands') {
+  else if (req.body.entitlementType === "Maternity benefits" && req.body.countrySOne !== 'Cyprus' || req.body.countrySOne !== 'Finland' || req.body.countrySOne !== 'Iceland' || req.body.countrySOne !== 'Ireland' || req.body.countrySOne !== 'Malta' || req.body.countrySOne !== 'Portugal' || req.body.countrySOne !== 'Spain' || req.body.countrySOne !== 'Sweden' || req.body.countrySOne !== 'Netherlands') {
     return res.redirect('nationality');
+  }
+  else if (req.body.ntitlementType === "Planned treatment" && req.body.countrySOne !== 'Cyprus' || req.body.countrySOne !== 'Finland' || req.body.countrySOne !== 'Iceland' || req.body.countrySOne !== 'Ireland' || req.body.countrySOne !== 'Malta' || req.body.countrySOne !== 'Portugal' || req.body.countrySOne !== 'Spain' || req.body.countrySOne !== 'Sweden' || req.body.countrySOne !== 'Netherlands') {
+    return res.redirect('treatment-start');
   }
   else {
     return res.redirect('country-s1-error');
@@ -132,58 +89,40 @@ router.post([/nationality/, /nationality-error/, /nationality-eu-error/, /nation
   console.log(req.body.myInputsOtherRT);
 
   if (arraysContainSame(req.body.nationality, ['UK','EU, EEA', 'Other']) === true && req.body.myInputsEURT === '' && req.body.myInputsOther === '') {
-    res.redirect('nationality-eu-other-error');
+    return res.redirect('nationality-eu-other-error');
   }
   else if (arraysContainSame(req.body.nationality, ['UK','EU, EEA', 'Other']) === true && req.body.myInputsEURT !== '' && req.body.myInputsOther === '') {
-    res.redirect('nationality-eu-error');
+    return res.redirect('nationality-eu-error');
   }
   else if (arraysContainSame(req.body.nationality, ['UK','EU, EEA', 'Other']) === true && req.body.myInputsEURT === '' && req.body.myInputsOther !== '') {
-    res.redirect('nationality-other-error');
-  }
-  else if (arraysContainSame(req.body.nationality, ['UK', 'EU, EEA', 'Other']) === true) {
-    res.redirect('intention-to-leave');
+    return res.redirect('nationality-other-error');
   }
   else if (arraysContainSame(req.body.nationality, ['EU, EEA', 'Other']) === true && req.body.myInputsEURT === '' && req.body.myInputsOther === '') {
-    res.redirect('nationality-eu-other-error');
+    return res.redirect('nationality-eu-other-error');
   }
   else if (arraysContainSame(req.body.nationality, ['EU, EEA', 'Other']) === true && req.body.myInputsEURT !== '' && req.body.myInputsOther === '') {
-    res.redirect('nationality-other-error');
+    return res.redirect('nationality-other-error');
   }
   else if (arraysContainSame(req.body.nationality, ['EU, EEA', 'Other']) === true && req.body.myInputsEURT === '' && req.body.myInputsOther !== '') {
-    res.redirect('nationality-eu-error');
-  }
-  else if (arraysContainSame(req.body.nationality, ['EU, EEA', 'Other']) === true) {
-    res.redirect('intention-to-leave');
+    return res.redirect('nationality-eu-error');
   }
   else if (arraysContainSame(req.body.nationality, ['UK', 'EU, EEA']) === true && req.body.myInputsEURT === '') {
-    res.redirect('nationality-eu-error');
+    return res.redirect('nationality-eu-error');
   }
   else if (req.body.nationality === 'EU, EEA' && req.body.myInputsEURT === '') {
-    res.redirect('nationality-eu-error');
-  }
-  else if (arraysContainSame(req.body.nationality, ['UK', 'EU, EEA']) === true) {
-    res.redirect('intention-to-leave');
-  }
-  else if (req.body.nationality === 'EU, EEA') {
-    res.redirect('intention-to-leave');
+    return res.redirect('nationality-eu-error');
   }
   else if (arraysContainSame(req.body.nationality, ['UK', 'Other']) === true && req.body.myInputsOtherRT === '') {
-    res.redirect('nationality-other-error');
-  }
-  else if (arraysContainSame(req.body.nationality, ['UK', 'Other']) === true) {
-    res.redirect('intention-to-leave');
+    return res.redirect('nationality-other-error');
   }
   else if (req.body.nationality === 'Other' && req.body.myInputsOtherRT === '') {
-    res.redirect('nationality-other-error');
+    return res.redirect('nationality-other-error');
   }
-  else if (req.body.nationality === 'Other') {
-    res.redirect('intention-to-leave');
-  }
-  else if (req.body.nationality === 'UK') {
-    res.redirect('intention-to-leave');
+  else if (req.body.nationality === '') {
+    return res.redirect('nationality-error');
   }
   else {
-    res.redirect('nationality-error');
+    return res.redirect('intention-to-leave');
   }
 })
 
