@@ -340,7 +340,7 @@ router.post([/nhs-number/, /nhs-number-error/], function (req,res) {
 })
 
 //What are your contact details? //
-router.post([/contact-details/, /contact-details-error/, /contact-details-email-error/, /contact-details-phone-error/], function (req,res) {
+router.post([/contact-details/, /contact-details-error/, /contact-details-email/, /contact-details-phone/], function (req,res) {
   console.log(req.body.phoneNumber);
   console.log(req.body.emailAddress);
   
@@ -381,7 +381,6 @@ router.post([/address-details/, /address-details-postcode/], function (req,res) 
     res.redirect('address-details');
   }
 })
-
 
 // -------------------- //
 // ----- CRA EHIC ----- //

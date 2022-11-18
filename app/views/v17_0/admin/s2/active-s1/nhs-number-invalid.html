@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What are your contact details (optional)?
+	What is your NHS Number?
 {% endblock %}
 
 {% block content %}
@@ -57,51 +57,33 @@
 					</h2>
 					<ul class="error-summary-list">
 						<li class="error-message">
-							<a href="#email-address">
-								Enter an email address in the correct format, like name@example.com
+							<a href="#nhs-number">
+								Enter a valid NHS Number in the correct format
 							</a>
 						</li>
 					</ul>
 				</div>
-
 				<div class="heading-group">
-					<h1 class="heading-large">What are your contact details?</h1>
+					<h1 class="heading-large">What is your NHS Number?</h1>
 				</div>
 
-            <form action="contact-details-email" method="post" class="form">
-                
-					<p>We ask for this so we can respond to any questions.</p>
-                    <div class="form-group">
-                        <label class="form-label" for="phone-number">Mobile number (optional)</label>
-						<span class="form-hint">
-							For international numbers include the country code.
-						</span>
-                        <input class="form-control" id="phone-number" name="phoneNumber" type="text" autocomplete="off" />
-                    </div>
+            <form action="nhs-number-invalid" method="post" class="form">
 
-					<div class="form-group-error">
-                        <label class="form-label" for="email-address">Email address (optional)</label>
+                    <div class="form-group form-group-error">
+                        <label class="form-label" for="nhs-number">NHS Number</label>
 						<span class="error-message">
-							Enter an email address in the correct format, like name@example.com
+							Enter a valid NHS Number in the correct format
 						</span>
-                        <input class="form-control-error" id="email-address" name="emailAddress" type="text" autocomplete="off" />
+                        <span class="form-hint">
+                            For example, 'QQ123456C'
+                        </span>
+                        <input class="form-control error" id="nhs-number" name="nhsNumber" type="text" autocomplete="off" />
                     </div>
 
-					<!-- <div class="form-group">
-						<div class="govuk-checkboxes">
-							<div class="govuk-checkboxes__item">
-								<input class="govuk-checkboxes__input" id="ohs-1" name="ohs" type="checkbox">
-								<label class="govuk-label govuk-checkboxes__label" for="ohs-1">
-									Email address and telephone number not provided
-								</label>
-							</div>
-						</div>
-					</div> -->
-					<div class="form-group">
-						<input class="button" type="submit" value="Next">
-						<a class="button button-secondary" href="case-record">Cancel</a>
-					</div>
-               
+				<div class="form-group">
+					<input class="button" type="submit" value="Next">
+					<a class="button button-secondary" href="case-record">Cancel</a>
+				</div>
             </form>
 			
         </div>
