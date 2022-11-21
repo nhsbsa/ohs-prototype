@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What is the name of the treatment facility?
+	When is the treatment expected to start?
 {% endblock %}
 
 {% block content %}
@@ -50,40 +50,27 @@
 					</p>
 				</div>
 			</div>
-			<div class="column-two-thirds">
-				<div class="heading-group">
-					<h1 class="heading-large">What is the name of the treatment facility?</h1>
-				</div>
-
-            <form action="treatment-facility-name" method="post" class="form">
-
-				<div class="form-hint">
-					If you've had treatment in more than one place, you'll be able to add these later.
-				  </div>
-                
+			
+            <form action="treatment-start-date-planned" method="post" class="form">
+				<div class="column-two-thirds">
+					<div class="heading-group">
+						<h1 class="heading-large">When is the treatment expected to start?</h1>
+					</div>
+               
                     <div class="form-group">
-                        <label class="form-label" for="treatment-facility-name">Treatment facility name</label>
-                        <!-- <span class="form-hint">
+                        <label class="form-label" for="treatment-start">Treatment start date</label>
+                        <span class="form-hint">
                             For example, 03/12/2022
-                        </span> -->
-                        <input class="form-control" id="treatment-facility-name" name="treatmentFacilityName" type="text" autocomplete="off" />
+                        </span>
+                        <input class="form-control" id="treatment-start" name="treatmentStartP" type="text" autocomplete="off" />
                     </div>
                     
-                    
-                
 			<div class="form-group">
 				<input class="button" type="submit" value="Next">
 				<a class="button button-secondary" href="case-record">Cancel</a>
 			</div>
-			</form>
-
-			<details>
-				<summary><span class="summary">What medical facilities are not covered?</span></summary>
-				<div class="panel panel-border-narrow">
-					<p>An S2 does not cover treatment provided by pharmacies or private healthcare providers.</p>
-          			<p>An S2 does not cover prescription costs.</p>
-				</div>
-			</details>
+		
+		</form>
         </div>
     </div>
 </main>

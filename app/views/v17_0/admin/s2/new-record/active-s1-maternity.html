@@ -1,10 +1,11 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	You are not eligible for S2
+	Do you have an active S1?
 {% endblock %}
 
 {% block content %}
+
 <style>
 	/* radio buttons (not-inline) */
 	@media (min-width: 40.0625em) {
@@ -134,28 +135,50 @@
 			<div class="column-full">
 				<div class="banner-information-without-action">
 					<p class="banner-message">
-						<span class="name text-capitalize">S2 Test</span>
+						<span class="name text-capitalize">Test S2</span>
 						<span class="vertical-bar">|</span>
-						<span class="ohs-reference-number">25000005</span>
+						<span class="ohs-reference-number">25000002</span>
 					</p>
 				</div>
 			</div>
 			<div class="column-two-thirds">
-				
+				<div class="heading-group">
+					<h1 class="heading-large">Do you have an active S1?</h1>
+				</div>
+				<form action="active-s1-materniy" method="post" class="form">
 					<div class="form-group">
-						<h1 class="heading-large">
-							You are not eligible for S2
-						</h1>
+						<fieldset id="entitlement">
+							<div class="govuk-radios">
+								<div class="govuk-radios__item">
+									<input class="govuk-radios__input" id="active-s1-yes" name="activeSOne" type="radio" value="Yes">
+									<label class="govuk-label govuk-radios__label" for="active-s1-yes">
+										Yes
+									</label>
+								</div>
+								<div class="govuk-radios__item">
+									<input class="govuk-radios__input" id="active-s1-no" name="activeSOne" type="radio" value="No">
+									<label class="govuk-label govuk-radios__label" for="active-s1-no">
+										No
+									</label>
+								</div>
+								
+							</div>
+						</fieldset>
 					</div>
-                    <p>You are not eligible for S2 cover in {{ data['locationPicker'] }}.</p>
-
-					<div class="form-group">
-						<a class="button" href="../search-active-s1">Back to search</a>
+					
+				</form>
+                <div class="form-group">
+						<a href="#"><input class="button" type="submit" value="Next"></a>
+						<a class="button button-secondary" href="case-record">Cancel</a>
 					</div>
- 
 			</div>
 		</div>
 	</div>
 </main>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script>
+	document.getElementById('example').focus();
+</script>
 
 {% endblock %}

@@ -30,18 +30,17 @@ router.post([/entitlement-type/, /entitlement-type-error/], function (req,res) {
 })
 
 // What country are they having treatment in (Planned treatment)?
-
 router.post([/country-planned/, /country-planned-error/], function (req, res) {
   console.log(req.body.locationPicker);
  
   if (req.body.locationPicker === 'Austria' || req.body.locationPicker === 'Belgium' || req.body.locationPicker === 'Bulgaria' || req.body.locationPicker === 'Croatia' || req.body.locationPicker === 'Cyprus' || req.body.locationPicker === 'Czech Republic' || req.body.locationPicker === 'Denmark' || req.body.locationPicker === 'Finland' || req.body.locationPicker === 'France' || req.body.locationPicker === 'Germany') {
-    return res.redirect('s1-country-planned');
+    return res.redirect('active-s1-planned');
   }
   else if (req.body.locationPicker === 'Greece' || req.body.locationPicker === 'Hungary' || req.body.locationPicker === 'Iceland' || req.body.locationPicker === 'Italy' || req.body.locationPicker === 'Latvia' || req.body.locationPicker === 'Liechtenstein' || req.body.locationPicker === 'Lithuania' || req.body.locationPicker === 'Luxembourg' || req.body.locationPicker === 'Malta' || req.body.locationPicker === 'Netherlands') {
-    return res.redirect('s1-country-planned');
+    return res.redirect('active-s1-planned');
   }
   else if (req.body.locationPicker === 'Norway' || req.body.locationPicker === 'Poland' || req.body.locationPicker === 'Portugal' || req.body.locationPicker === 'Republic of Ireland' || req.body.locationPicker === 'Romania' || req.body.locationPicker === 'Slovakia' || req.body.locationPicker === 'Slovenia' || req.body.locationPicker === 'Spain' || req.body.locationPicker === 'Sweden' || req.body.locationPicker === 'Switzerland') {
-    return res.redirect('s1-country-planned');
+    return res.redirect('active-s1-planned');
   }
   else if (req.body.locationPicker === '') {
     return res.redirect('treatment-country-planned-error');
@@ -57,19 +56,49 @@ router.post([/country-maternity/, /country-maternity-error/], function (req, res
   console.log(req.body.locationPicker);
  
   if (req.body.locationPicker === 'Austria' || req.body.locationPicker === 'Belgium' || req.body.locationPicker === 'Bulgaria' || req.body.locationPicker === 'Croatia' || req.body.locationPicker === 'Cyprus' || req.body.locationPicker === 'Czech Republic' || req.body.locationPicker === 'Denmark' || req.body.locationPicker === 'Finland' || req.body.locationPicker === 'France' || req.body.locationPicker === 'Germany') {
-    return res.redirect('s1-country-maternity');
+    return res.redirect('active-s1-maternity');
   }
   else if (req.body.locationPicker === 'Greece' || req.body.locationPicker === 'Hungary' || req.body.locationPicker === 'Iceland' || req.body.locationPicker === 'Italy' || req.body.locationPicker === 'Latvia' || req.body.locationPicker === 'Liechtenstein' || req.body.locationPicker === 'Lithuania' || req.body.locationPicker === 'Luxembourg' || req.body.locationPicker === 'Malta' || req.body.locationPicker === 'Netherlands') {
-    return res.redirect('s1-country-maternity');
+    return res.redirect('active-s1-maternity');
   }
   else if (req.body.locationPicker === 'Norway' || req.body.locationPicker === 'Poland' || req.body.locationPicker === 'Portugal' || req.body.locationPicker === 'Republic of Ireland' || req.body.locationPicker === 'Romania' || req.body.locationPicker === 'Slovakia' || req.body.locationPicker === 'Slovenia' || req.body.locationPicker === 'Spain' || req.body.locationPicker === 'Sweden' || req.body.locationPicker === 'Switzerland') {
-    return res.redirect('s1-country-maternity');
+    return res.redirect('active-s1-maternity');
   }
   else if (req.body.locationPicker === '') {
     return res.redirect('treatment-country-maternity-error');
   }
   else {
     return res.redirect('kickouts/ineligible-treatment-country');
+  }
+})
+
+// Do you have an active S1 (Planned)?
+router.post([/active-s1-planned/, /active-s1-planned-error/], function (req, res) {
+  console.log(req.body.activeSOne);
+ 
+  if (req.body.activeSOne === 'Yes') {
+    return res.redirect('s1-country-planned');
+  }
+  else if (req.body.activeSOne === 'No') {
+    return res.redirect('treatment-start-planned');
+  }
+  else if (req.body.activeSOne === '') {
+    return res.redirect('active-s1-planned-error');
+  }
+})
+
+// Do you have an active S1 (Maternity)?
+router.post([/active-s1-maternity/, /active-s1-maternity-error/], function (req, res) {
+  console.log(req.body.activeSOne);
+ 
+  if (req.body.activeSOne === 'Yes') {
+    return res.redirect('s1-country-maternity');
+  }
+  else if (req.body.activeSOne === 'No') {
+    return res.redirect('treatment-start-maternity');
+  }
+  else if (req.body.activeSOne === '') {
+    return res.redirect('active-s1-maternity-error');
   }
 })
 
