@@ -1,27 +1,5 @@
 {% extends "layout_bsa.html" %}
 
-<script>
-	var startDateP = req.session.data['treatmentStartP'];
-	var endDateP = req.session.data['treatmentEndP'];
-	var startDateM = req.session.data['treatmentStartM'];
-	var endDateM = req.session.data['treatmentEndM'];
-
-	var lastRunDateP = new Date(startDateP.split('/')[2], startDateP.split('/')[1] - 1, startDateP.split('/')[0]);
-	var lastRunDateM = new Date(startDateM.split('/')[2], startDateM.split('/')[1] - 1, startDateM.split('/')[0]);
-	
-	var maxEndP = new Date(lastRunDateP.setMonth(lastRunDateP.getMonth() + 12));
-	var maxEndM = new Date(lastRunDateM.getTime() + (105 * 86400000));
-
-	function convertDate(inputFormat) {
-		function pad(s) { return (s < 10) ? '0' + s : s; }
-		var d = new Date(inputFormat);
-		return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
-	}
-
-	var convertMaxEndP = convertDate(maxEndP);
-	var convertMaxEndM = convertDate(maxEndM);
-</script>
-
 {% block page_title %}
 	Check your answers before sending the application
 {% endblock %}
@@ -112,11 +90,13 @@
 
 						<div>
 							<dt class="cya-question">Full name</dt>
-							{% if data['fullName'] %}
-							<dd class="cya-answer"> {{ data['fullName']}}</dd>
-							{% else %}
-								&#8212;
-							{% endif %}
+							<dd class="cya-answer">
+								{% if data['fullName'] %}
+									{{ data['fullName']}}
+								{% else %}
+									&#8212;
+								{% endif %}
+							</dd>
 							<dd class="cya-change">
 								<a href="full-name#full-name">Change<span class="visually-hidden"> your name</span></a>
 							</dd>
@@ -124,11 +104,13 @@
 
 						<div>
 							<dt class="cya-question">Date of birth</dt>
-							{% if data['dateOfBirth'] %}
-							<dd class="cya-answer">{{ data['dateOfBirth']}}</dd>
-							{% else %}
-								&#8212;
-							{% endif %}
+							<dd class="cya-answer">
+								{% if data['dateOfBirth'] %}
+									{{ data['dateOfBirth']}}
+								{% else %}
+									&#8212;
+								{% endif %}
+							</dd>
 							<dd class="cya-change">
 								<a href="dob#dob">Change<span class="visually-hidden"> your date of birth</span></a>
 							</dd>
@@ -136,11 +118,13 @@
 
 						<div>
 							<dt class="cya-question">National Insurance number</dt>
-							{% if data['nino'] %}
-							<dd class="cya-answer">{{ data['nino']}}</dd>
-							{% else %}
-								&#8212;
-							{% endif %}
+							<dd class="cya-answer">
+								{% if data['nino'] %}
+									{{ data['nino']}}
+								{% else %}
+									&#8212;
+								{% endif %}
+							</dd>
 							<dd class="cya-change">
 								<a href="nino#nino">Change<span class="visually-hidden"> your National Insurance Number</span></a>
 							</dd>
@@ -148,11 +132,13 @@
 
 						<div>
 							<dt class="cya-question">NHS number</dt>
-							{% if data['nhsNumber'] %}
-							<dd class="cya-answer">{{ data['nhsNumber']}}</dd>
-							{% else %}
-								&#8212;
-							{% endif %}
+							<dd class="cya-answer">
+								{% if data['nhsNumber'] %}
+									{{ data['nhsNumber']}}
+								{% else %}
+									&#8212;
+								{% endif %}
+							</dd>
 							<dd class="cya-change">
 								<a href="nhs-number#nhs-number">Change<span class="visually-hidden"> your NHS Number</span></a>
 							</dd>
@@ -252,26 +238,28 @@
 						<div>
 							<dt class="cya-question">Correspondence address</dt>
 							<dd class="cya-answer">
-								{% if data['address-lineone'] %}
-									{{ data['address-lineone']}}
-								{% else %}
-									&#8212;
-								{% endif %}
-								<br>
-								{% if data['town'] %}
-									{{ data['town']}}
-								{% else %}
-									&#8212;
-								{% endif %}
-								<br>
-								{% if data['addressPostcode'] %}
-									{{ data['addressPostcode']}}
-								{% else %}
-									&#8212;
-								{% endif %}
-								<br>
-								{% if data['country'] %}
-									{{ data['country']}}
+								{% if data %}
+									{% if data['address-lineone'] %}
+										{{ data['address-lineone']}}
+									{% else %}
+										&#8212;
+									{% endif %}
+									<br>
+									{% if data['town'] %}
+										{{ data['town']}}
+									{% else %}
+										&#8212;
+									{% endif %}
+									<br>
+									{% if data['addressPostcode'] %}
+										{{ data['addressPostcode']}}
+									{% else %}
+										&#8212;
+									{% endif %}
+									<br>
+									{% if data['country'] %}
+										{{ data['country']}}
+									{% endif %}
 								{% else %}
 									&#8212;
 								{% endif %}
@@ -290,6 +278,9 @@
 									&#8212;
 								{% endif %}
 							</dd>
+							<dd class="cya-change">
+								<a href="contact-details">Change<span class="visually-hidden"> your email address</span></a>
+							</dd>
 						</div>
 						<div>
 							<dt class="cya-question">Phone number</dt>
@@ -299,6 +290,9 @@
 								{% else %}
 									&#8212;
 								{% endif %}
+							</dd>
+							<dd class="cya-change">
+								<a href="contact-details">Change<span class="visually-hidden"> your phone number</span></a>
 							</dd>
 						</div>
 					</dl>
@@ -311,10 +305,39 @@
 				</div>
 				<div class="form-group">
 					<a href="done" class="button">Accept and submit</a>
-					<a class="button button-secondary" href="case-record">Cancel</a>
+					<a class="button button-secondary" href="search">Cancel</a>
 				</div>
 			</div>
 		</div>
 	</div>
 </main>
+
+<script>
+	const express = require('express');
+	const { date } = require('gulp-util');
+	const router = express.Router(); 
+
+	var startDateP = req.session.data['treatmentStartP'];
+	var endDateP = req.session.data['treatmentEndP'];
+	var startDateM = req.session.data['treatmentStartM'];
+	var endDateM = req.session.data['treatmentEndM'];
+
+	var lastRunDateP = new Date(startDateP.split('/')[2], startDateP.split('/')[1] - 1, startDateP.split('/')[0]);
+	var lastRunDateM = new Date(startDateM.split('/')[2], startDateM.split('/')[1] - 1, startDateM.split('/')[0]);
+	
+	var maxEndP = new Date(lastRunDateP.setMonth(lastRunDateP.getMonth() + 12));
+	var maxEndM = new Date(lastRunDateM.getTime() + (105 * 86400000));
+
+	function convertDate(inputFormat) {
+		function pad(s) { return (s < 10) ? '0' + s : s; }
+		var d = new Date(inputFormat);
+		return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+	}
+
+	var convertMaxEndP = convertDate(maxEndP);
+	var convertMaxEndM = convertDate(maxEndM);
+
+	module.exports = router
+</script>
+
 {% endblock %}

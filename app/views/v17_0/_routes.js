@@ -16,6 +16,21 @@ const router = express.Router();
 // ----- S2 Test ------ //
 // -------------------- //
 
+//What is the date the request was received? //
+router.post([/date-request/, /date-request-error/, /date-request-invalid/], function (req,res) {
+  console.log(req.body.dateOfRequest);
+  
+  const dorRegEx = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/;
+
+  if(req.body.dateOfRequest === '') {
+    res.redirect('date-request-error');
+  } else if(req.body.dateOfRequest !== '' && !dorRegEx.test(req.body.dateOfRequest)) {
+    res.redirect('date-request-invalid');
+  } else if(req.body.dateOfRequest !== '' && dorRegEx.test(req.body.dateOfRequest)) {
+    res.redirect('create-entitlement');
+  } 
+})
+
 // What is the S2 for? //
 router.post([/entitlement-type/, /entitlement-type-error/], function (req,res) {
   console.log(req.body.entitlementType);
@@ -97,7 +112,7 @@ router.post([/active-s1-maternity/, /active-s1-maternity-error/], function (req,
   else if (req.body.activeSOne === 'No') {
     return res.redirect('treatment-start-maternity');
   }
-  else if (req.body.activeSOne === '') {
+  else {
     return res.redirect('active-s1-maternity-error');
   }
 })

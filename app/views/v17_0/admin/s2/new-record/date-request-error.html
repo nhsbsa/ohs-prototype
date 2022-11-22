@@ -51,20 +51,37 @@
 				</div>
 			</div>
 			<div class="column-two-thirds">
+				<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+					<h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+						There is a problem
+					</h2>
+					<ul class="error-summary-list">
+						<li class="error-message">
+							<a href="#date-of-request">
+								Date of request must include a day, month and year
+							</a>
+						</li>
+					</ul>
+				</div>
+
 				<div class="heading-group">
 					<h1 class="heading-large">What is the date the request was received?</h1>
 				</div>
 
-            <form action="date-request" method="post" class="form">
+            <form action="date-request-error" method="post" class="form">
                 
-                    <div class="form-group">
+                    <div class="form-group-error">
                         <label class="form-label" for="date-of-request">Date of request</label>
+						
                         <span class="form-hint">
                             For example, 24/10/2019
                         </span>
-                        <input class="form-control" id="date-of-request" name="dateOfRequest" type="text" autocomplete="off" />
+						<span class="error-message">
+							Date of request must include a day, month and year
+						</span>
+                        <input class="form-control-error" id="date-of-request" name="dateOfRequest" type="text" autocomplete="off" />
                     </div>
-                    
+                    <br>
 				<div class="form-group">
 					<input class="button" type="submit" value="Next">
 					<a class="button button-secondary" href="search">Cancel</a>
