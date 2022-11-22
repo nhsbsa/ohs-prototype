@@ -399,9 +399,9 @@ router.post([/address-details/, /address-details-postcode/], function (req,res) 
   const startsWithRegEx = /^[GX][JE][GY][IM]{1,2}\d[a-z\d]?\s*\d[a-z]{2}$/;
 
   if(req.body.addressPostcode === '') {
-    res.redirect('check-your-answers');
+    res.redirect('full-name');
   } else if(req.body.addressPostcode !== '' && !startsWithRegEx.test(req.body.addressPostcode) && postcodeRegEx.test(req.body.addressPostcode)) {
-    res.redirect('check-your-answers');
+    res.redirect('full-name');
   } else if(req.body.addressPostcode !== '' && !startsWithRegEx.test(req.body.addressPostcode) && !postcodeRegEx.test(req.body.addressPostcode)) {
     res.redirect('address-details-postcode');
   } else if(req.body.addressPostcode !== '' && startsWithRegEx.test(req.body.addressPostcode)) {
@@ -409,6 +409,32 @@ router.post([/address-details/, /address-details-postcode/], function (req,res) 
   } else {
     res.redirect('address-details');
   }
+})
+
+//What is your name? //
+router.post([/full-name/, /full-name-error/], function (req,res) {
+  console.log(req.body.fullName);
+
+  if(req.body.fullName === '') {
+    res.redirect('full-name-error');
+  } else if(req.body.fullName !== '') {
+    res.redirect('dob');
+  } 
+})
+
+//What are your address details? //
+router.post([/date-of-birth/, /date-of-birth-error/, /date-of-birth-invalid/], function (req,res) {
+  console.log(req.body.dateOfBirth);
+  
+  const dobRegEx = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/;
+
+  if(req.body.dateOfBirth === '') {
+    res.redirect('dob-error');
+  } else if(req.body.dateOfBirth !== '' && !dobRegEx.test(req.body.dateOfBirth)) {
+    res.redirect('dob-invalid');
+  } else if(req.body.dateOfBirth !== '' && dobRegEx.test(req.body.dateOfBirth)) {
+    res.redirect('check-your-answers');
+  } 
 })
 
 // -------------------- //
