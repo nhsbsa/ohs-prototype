@@ -1,0 +1,106 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+	What is the name of the treatment facility?
+{% endblock %}
+
+{% block content %}
+<style>
+
+	/* banner */
+	.banner-information-without-action {
+		color: #005ea5;
+	}
+	.banner-message {
+		font-family: Arial, sans-serif;
+		font-weight: 400;
+		text-transform: none;
+		font-size: 36px;
+		line-height: 1.2;
+		padding: 20px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		border-width: 5px;
+		border-style: solid;
+		font-weight: bold;
+		text-align: center;
+	}
+	.vertical-bar {
+		margin: 0px 10px;
+	}
+	/* end banner */
+</style>
+
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-full">
+			<div id="back">
+				<a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="grid-row">
+			<div class="column-full">
+				<div class="banner-information-without-action">
+					<p class="banner-message">
+						<span class="name text-capitalize">Test S2</span>
+						<span class="vertical-bar">|</span>
+						<span class="ohs-reference-number">25000002</span>
+					</p>
+				</div>
+			</div>
+			<div class="column-two-thirds">
+				<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+					<h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+						There is a problem
+					</h2>
+					<ul class="error-summary-list">
+						<li class="error-message">
+							<a href="#treatment-facility-name">
+								Enter the name of the hospital, clinic, or treatment facility
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="heading-group">
+					<h1 class="heading-large">What is the name of the treatment facility?</h1>
+				</div>
+
+            <form action="treatment-facility-name-error" method="post" class="form">
+
+				<div class="form-hint">
+					If you've had treatment in more than one place, you'll be able to add these later.
+				  </div>
+                
+                    <div class="form-group-error">
+                        <label class="form-label" for="treatment-facility-name">Treatment facility name</label>
+                        <span class="error-message">
+							Enter the name of the hospital, clinic, or treatment facility
+						</span>
+                        <input class="form-control-error" id="treatment-facility-name" name="treatmentFacilityName" type="text" autocomplete="off" />
+                    </div>
+                    
+                    
+                
+			<div class="form-group">
+				<input class="button" type="submit" value="Next">
+				<a class="button button-secondary" href="search">Cancel</a>
+			</div>
+			</form>
+
+			<details>
+				<summary><span class="summary">What medical facilities are not covered?</span></summary>
+				<div class="panel panel-border-narrow">
+					<p>An S2 does not cover treatment provided by pharmacies or private healthcare providers.</p>
+          			<p>An S2 does not cover prescription costs.</p>
+				</div>
+			</details>
+        </div>
+    </div>
+</main>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+
+{% endblock %}
