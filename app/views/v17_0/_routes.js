@@ -22,13 +22,15 @@ router.post([/date-request/, /date-request-error/, /date-request-invalid/], func
   
   const dorRegEx = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/;
 
-  if(req.body.dateOfRequest === '') {
-    res.redirect('date-request-error');
+  if(req.body.dateOfRequest === '' || req.body.dateOfRequest === undefined) {
+    res.redirect('date-request');
   } else if(req.body.dateOfRequest !== '' && !dorRegEx.test(req.body.dateOfRequest)) {
     res.redirect('date-request-invalid');
   } else if(req.body.dateOfRequest !== '' && dorRegEx.test(req.body.dateOfRequest)) {
     res.redirect('create-entitlement');
-  } 
+  } else {
+    res.redirect('date-request');
+  }
 })
 
 // What is the S2 for? //
@@ -120,12 +122,17 @@ router.post([/active-s1-maternity/, /active-s1-maternity-error/], function (req,
 // What country do they have an S1 in? (Planned)
 
 router.post([/country-s1-planned/, /country-s1-planned-error/], function (req, res) {
+  var locationPicker = req.session.data['myInputsEURT'];
+  console.log(locationPicker);
   console.log(req.body.countrySOne);
 
-  if (req.body.countrySOne === 'Cyprus' || req.body.countrySOne === 'Finland' || req.body.countrySOne === 'Iceland' || req.body.countrySOne === 'Ireland' || req.body.countrySOne === 'Malta' || req.body.countrySOne === 'Portugal' || req.body.countrySOne === 'Spain' || req.body.countrySOne === 'Sweden' || req.body.countrySOne === 'Netherlands') {
+  if ((locationPicker === 'Cyprus' && req.body.countrySOne === 'Cyprus') || (locationPicker === 'Finland' && req.body.countrySOne === 'Finland') || (locationPicker === 'Iceland' && req.body.countrySOne === 'Iceland') || (locationPicker === 'Ireland' && req.body.countrySOne === 'Ireland') || (locationPicker === 'Malta' && req.body.countrySOne === 'Malta') || (locationPicker === 'Portugal' && req.body.countrySOne === 'Portugal') || (locationPicker === 'Spain' && req.body.countrySOne === 'Spain') || (locationPicker === 'Sweden' && req.body.countrySOne === 'Sweden') || (locationPicker === 'Netherlands' && req.body.countrySOne === 'Netherlands')) {
     return res.redirect('kickouts/ineligible-s1-country');
   }
-  else if (req.body.countrySOne !== 'Cyprus' || req.body.countrySOne !== 'Finland' || req.body.countrySOne !== 'Iceland' || req.body.countrySOne !== 'Ireland' || req.body.countrySOne !== 'Malta' || req.body.countrySOne !== 'Portugal' || req.body.countrySOne !== 'Spain' || req.body.countrySOne !== 'Sweden' || req.body.countrySOne !== 'Netherlands') {
+  else if ((locationPicker !== 'Cyprus' && req.body.countrySOne === 'Cyprus') || (locationPicker !== 'Finland' && req.body.countrySOne === 'Finland') || (locationPicker !== 'Iceland' && req.body.countrySOne === 'Iceland') || (locationPicker !== 'Ireland' && req.body.countrySOne === 'Ireland') || (locationPicker !== 'Malta' && req.body.countrySOne === 'Malta') || (locationPicker !== 'Portugal' && req.body.countrySOne === 'Portugal') || (locationPicker !== 'Spain' && req.body.countrySOne === 'Spain') || (locationPicker !== 'Sweden' && req.body.countrySOne === 'Sweden') || (locationPicker !== 'Netherlands' && req.body.countrySOne === 'Netherlands')) {
+    return res.redirect('treatment-start-planned');
+  }
+  else if ((locationPicker === 'Cyprus' && req.body.countrySOne !== 'Cyprus') || (locationPicker === 'Finland' && req.body.countrySOne !== 'Finland') || (locationPicker === 'Iceland' && req.body.countrySOne !== 'Iceland') || (locationPicker === 'Ireland' && req.body.countrySOne !== 'Ireland') || (locationPicker === 'Malta' && req.body.countrySOne !== 'Malta') || (locationPicker === 'Portugal' && req.body.countrySOne !== 'Portugal') || (locationPicker === 'Spain' && req.body.countrySOne !== 'Spain') || (locationPicker === 'Sweden' && req.body.countrySOne !== 'Sweden') || (locationPicker === 'Netherlands' && req.body.countrySOne !== 'Netherlands')) {
     return res.redirect('treatment-start-planned');
   }
   else {
@@ -136,13 +143,18 @@ router.post([/country-s1-planned/, /country-s1-planned-error/], function (req, r
 // What country do they have an S1 in? (Maternity)
 
 router.post([/country-s1-maternity/, /country-s1-maternity-error/], function (req, res) {
+  var locationPicker = req.session.data['myInputsEURT'];
+  console.log(locationPicker);
   console.log(req.body.countrySOne);
 
-  if (req.body.countrySOne === 'Cyprus' || req.body.countrySOne === 'Finland' || req.body.countrySOne === 'Iceland' || req.body.countrySOne === 'Ireland' || req.body.countrySOne === 'Malta' || req.body.countrySOne === 'Portugal' || req.body.countrySOne === 'Spain' || req.body.countrySOne === 'Sweden' || req.body.countrySOne === 'Netherlands') {
+  if ((locationPicker === 'Cyprus' && req.body.countrySOne === 'Cyprus') || (locationPicker === 'Finland' && req.body.countrySOne === 'Finland') || (locationPicker === 'Iceland' && req.body.countrySOne === 'Iceland') || (locationPicker === 'Ireland' && req.body.countrySOne === 'Ireland') || (locationPicker === 'Malta' && req.body.countrySOne === 'Malta') || (locationPicker === 'Portugal' && req.body.countrySOne === 'Portugal') || (locationPicker === 'Spain' && req.body.countrySOne === 'Spain') || (locationPicker === 'Sweden' && req.body.countrySOne === 'Sweden') || (locationPicker === 'Netherlands' && req.body.countrySOne === 'Netherlands')) {
     return res.redirect('kickouts/ineligible-s1-country');
   }
-  else if (req.body.countrySOne !== 'Cyprus' || req.body.countrySOne !== 'Finland' || req.body.countrySOne !== 'Iceland' || req.body.countrySOne !== 'Ireland' || req.body.countrySOne !== 'Malta' || req.body.countrySOne !== 'Portugal' || req.body.countrySOne !== 'Spain' || req.body.countrySOne !== 'Sweden' || req.body.countrySOne !== 'Netherlands') {
-    return res.redirect('nationality');
+  else if ((locationPicker !== 'Cyprus' && req.body.countrySOne === 'Cyprus') || (locationPicker !== 'Finland' && req.body.countrySOne === 'Finland') || (locationPicker !== 'Iceland' && req.body.countrySOne === 'Iceland') || (locationPicker !== 'Ireland' && req.body.countrySOne === 'Ireland') || (locationPicker !== 'Malta' && req.body.countrySOne === 'Malta') || (locationPicker !== 'Portugal' && req.body.countrySOne === 'Portugal') || (locationPicker !== 'Spain' && req.body.countrySOne === 'Spain') || (locationPicker !== 'Sweden' && req.body.countrySOne === 'Sweden') || (locationPicker !== 'Netherlands' && req.body.countrySOne === 'Netherlands')) {
+    return res.redirect('treatment-start-maternity');
+  }
+  else if ((locationPicker === 'Cyprus' && req.body.countrySOne !== 'Cyprus') || (locationPicker === 'Finland' && req.body.countrySOne !== 'Finland') || (locationPicker === 'Iceland' && req.body.countrySOne !== 'Iceland') || (locationPicker === 'Ireland' && req.body.countrySOne !== 'Ireland') || (locationPicker === 'Malta' && req.body.countrySOne !== 'Malta') || (locationPicker === 'Portugal' && req.body.countrySOne !== 'Portugal') || (locationPicker === 'Spain' && req.body.countrySOne !== 'Spain') || (locationPicker === 'Sweden' && req.body.countrySOne !== 'Sweden') || (locationPicker === 'Netherlands' && req.body.countrySOne !== 'Netherlands')) {
+    return res.redirect('treatment-start-maternity');
   }
   else {
     return res.redirect('s1-country-maternity-error');

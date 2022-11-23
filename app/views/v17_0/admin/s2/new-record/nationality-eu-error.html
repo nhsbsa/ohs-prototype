@@ -191,9 +191,21 @@
 			<div class="column-full">
 				<div class="banner-information-without-action">
 					<p class="banner-message">
-						<span class="name text-capitalize">Test S2</span>
+						<span class="name text-capitalize">
+							{% if data['firstName %}
+								{{ data['firstName']}} {{ data['lastName']}}
+							{% else %}
+								Test S2
+							{% endif %}
+						</span>
 						<span class="vertical-bar">|</span>
-						<span class="ohs-reference-number">25000002</span>
+						<span class="ohs-reference-number">
+							{% if data['ohs'] %}
+								{{ data['ohs']}}
+							{% else %}
+								25000002
+							{% endif %}
+						</span>
 					</p>
 				</div>
 			</div>
