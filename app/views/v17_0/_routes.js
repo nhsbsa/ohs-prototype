@@ -110,7 +110,7 @@ router.post([/active-s1-maternity/, /active-s1-maternity-error/], function (req,
     return res.redirect('s1-country-maternity');
   }
   else if (req.body.activeSOne === 'No') {
-    return res.redirect('treatment-start-maternity');
+    return res.redirect('nationality');
   }
   else {
     return res.redirect('active-s1-maternity-error');
@@ -442,6 +442,7 @@ router.post([/date-of-birth/, /date-of-birth-error/, /date-of-birth-invalid/], f
   console.log(req.body.dateOfBirth);
   
   const dobRegEx = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/;
+ 
 
   if(req.body.dateOfBirth === '') {
     res.redirect('dob-error');
@@ -451,6 +452,36 @@ router.post([/date-of-birth/, /date-of-birth-error/, /date-of-birth-invalid/], f
     res.redirect('check-your-answers');
   } 
 })
+
+// Check your answers //
+router.get(/check-your-answers/, function (req,res){
+  var startDateP = req.session.data['treatmentStartP'];
+  console.log(startDateP);
+  if (startDateP) {
+    var lastRunDateP = new Date(startDateP.split('/')[2], startDateP.split('/')[1] - 1, startDateP.split('/')[0]);
+    var maxEndP = new Date(lastRunDateP.setMonth(lastRunDateP.getMonth() + 12));
+
+    var convertMaxEndP = convertDate(maxEndP);
+    console.log(convertMaxEndP);
+  }
+
+  var startDateM = req.session.data['treatmentStartM'];
+
+  if (startDateM){
+    var lastRunDateM = new Date(startDateM.split('/')[2], startDateM.split('/')[1] - 1, startDateM.split('/')[0]);
+    var maxEndM = new Date(lastRunDateM.getTime() + (105 * 86400000));
+
+    var convertMaxEndM = convertDate(maxEndM);
+  }
+
+	function convertDate(inputFormat) {
+		function pad(s) { return (s < 10) ? '0' + s : s; }
+		var d = new Date(inputFormat);
+		return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+	}
+
+  res.render('v17_0/admin/s2/new-record/check-your-answers', {convertMaxEndP: convertMaxEndP, convertMaxEndM: convertMaxEndM});
+});
 
 // -------------------- //
 // ----- CRA EHIC ----- //

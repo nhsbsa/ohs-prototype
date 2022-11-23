@@ -199,7 +199,7 @@
 							{% if (data['treatmentEndP']) !== '' %}
 							<dd class="cya-answer">{{ data['treatmentEndP']}}</dd>
 							{% elseif (data['treatmentEndP']) === '' %}
-							<dd class="cya-answer">{{ data['convertMaxEndP']}}</dd>
+							<dd class="cya-answer">{{ convertMaxEndP }}</dd>
 							{% endif %}
 							<dd class="cya-change">
 								<a href="treatment-end-planned#treatment-end">Change<span class="visually-hidden"> the treatment end date</span></a>
@@ -211,7 +211,7 @@
 							{% if (data['treatmentEndM']) !== '' %}
 							<dd class="cya-answer">{{ data['treatmentEndM']}}</dd>
 							{% elseif (data['treatmentEndM']) === '' %}
-							<dd class="cya-answer">{{ data['convertMaxEndM']}}</dd>
+							<dd class="cya-answer">{{ convertMaxEndM }}</dd>
 							{% endif %}
 							<dd class="cya-change">
 								<a href="treatment-end-maternity#treatment-end">Change<span class="visually-hidden"> the treatment end date</span></a>
@@ -312,32 +312,5 @@
 	</div>
 </main>
 
-<script>
-	const express = require('express');
-	const { date } = require('gulp-util');
-	const router = express.Router(); 
-
-	var startDateP = req.session.data['treatmentStartP'];
-	var endDateP = req.session.data['treatmentEndP'];
-	var startDateM = req.session.data['treatmentStartM'];
-	var endDateM = req.session.data['treatmentEndM'];
-
-	var lastRunDateP = new Date(startDateP.split('/')[2], startDateP.split('/')[1] - 1, startDateP.split('/')[0]);
-	var lastRunDateM = new Date(startDateM.split('/')[2], startDateM.split('/')[1] - 1, startDateM.split('/')[0]);
-	
-	var maxEndP = new Date(lastRunDateP.setMonth(lastRunDateP.getMonth() + 12));
-	var maxEndM = new Date(lastRunDateM.getTime() + (105 * 86400000));
-
-	function convertDate(inputFormat) {
-		function pad(s) { return (s < 10) ? '0' + s : s; }
-		var d = new Date(inputFormat);
-		return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
-	}
-
-	var convertMaxEndP = convertDate(maxEndP);
-	var convertMaxEndM = convertDate(maxEndM);
-
-	module.exports = router
-</script>
 
 {% endblock %}
