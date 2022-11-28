@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What is your Insurance Number?
+	When is the treatment expected to end (optional)?
 {% endblock %}
 
 {% block content %}
@@ -64,30 +64,25 @@
 			</div>
 			<div class="column-two-thirds">
 				<div class="heading-group">
-					<h1 class="heading-large">What is your National Insurance Number?</h1>
+					<h1 class="heading-large">When is the treatment expected to end?</h1>
 				</div>
 
-            <form action="national-insurance" method="post" class="form">
-               
-                    <div class="form-group">
-                        <label class="form-label" for="nino">National Insurance Number (optional)</label>
-                        <span class="form-hint">
-                            It's on your National Insurance card, benefit letter, payslip or P60. For example, 'QQ 12 34 56 C'."
-                        </span>
-                        <input class="form-control" id="nino" name="nino" type="text" autocomplete="off" value="{{ data ['nino']}}" />
-                    </div>
-
-					<div class="form-group">
-						<p><a href="nhs-number">I don't have a National Insurance number</a></p>
-					</div>
-                    
-                <div class="form-group">
-                    <input class="button" type="submit" value="Next">
-                    <a class="button button-secondary" href="search">Cancel</a>
-                </div>
-            </form>
-
+            <form action="nino" method="post" class="form">
             
+                    <div class="form-group">
+                        <label class="form-label" for="treatment-end">Treatment end date (optional)</label>
+                        <span class="form-hint">
+                            For example, 03/12/2022
+                        </span>
+                        <input class="form-control" id="treatment-end" name="treatmentEndM" type="text" autocomplete="off" value="{{ convertMaxEndM }}"/>
+                    </div>
+					<div class="form-group">
+						<input class="button" type="submit" href="nino" value="Next">
+						<a class="button button-secondary" href="search">Cancel</a>
+					</div>   
+                
+            </form>
+			
         </div>
     </div>
 </main>
