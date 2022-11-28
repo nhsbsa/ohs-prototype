@@ -260,11 +260,7 @@
 						{% if (data['entitlementType']) === 'Planned treatment' %}
 							<div>
 								<dt class="cya-question">When is the treatment expected to end?</dt>
-								{% if (data['treatmentEndP']) !== '' %}
 								<dd class="cya-answer">{{ data['treatmentEndP']}}</dd>
-								{% elseif (data['treatmentEndP']) === '' %}
-								<dd class="cya-answer">{{ convertMaxEndP }}</dd>
-								{% endif %}
 								<dd class="cya-change">
 									<a href="treatment-end-planned#treatment-end">Change<span class="visually-hidden"> the treatment end date</span></a>
 								</dd>
@@ -272,11 +268,7 @@
 						{% elseif (data['entitlementType']) === 'Maternity benefits' %}
 							<div>
 								<dt class="cya-question">When is the treatment expected to end?</dt>
-								{% if (data['treatmentEndM']) !== '' %}
 								<dd class="cya-answer">{{ data['treatmentEndM']}}</dd>
-								{% elseif (data['treatmentEndM']) === '' %}
-								<dd class="cya-answer">{{ convertMaxEndM }}</dd>
-								{% endif %}
 								<dd class="cya-change">
 									<a href="treatment-end-maternity#treatment-end">Change<span class="visually-hidden"> the treatment end date</span></a>
 								</dd>
@@ -298,68 +290,123 @@
 				<div class="form-group">
 					<h2 class="heading-medium">Contact details</h2>
 					<dl class="govuk-check-your-answers cya-questions-short">
-						
 						<div>
+							<dt class="cya-question">Residential address</dt>
+							<dd class="cya-answer">
+								{% if data %}
+									{% if data['resAddressLineOne'] %}
+										{{ data['resAddressLineOne']}}
+									{% else %}
+										&#8212;
+									{% endif %}
+									<br>
+									{% if data['resAddressLineTwo'] %}
+										{{ data['resAddressLineTwo']}}
+									{% else %}
+										&#8212;
+									{% endif %}
+									<br>
+									{% if data['resTown'] %}
+										{{ data['resTown']}}
+									{% else %}
+										&#8212;
+									{% endif %}
+									<br>
+									{% if data['resAddressPostcode'] %}
+										{{ data['resAddressPostcode']}}
+									{% else %}
+										&#8212;
+									{% endif %}
+									<br>
+									{% if data['resCountry'] %}
+										{{ data['resCountry']}}
+									{% endif %}
+								{% else %}
+									&#8212;
+								{% endif %}
+							</dd>
+							<dd class="cya-change">
+								<a href="contact-address">Change<span class="visually-hidden"> your address</span></a>
+							</dd>
+						</div>
+						<div>
+							{% if data['corrAddressLineOne'] %}
 							<dt class="cya-question">Correspondence address</dt>
 							<dd class="cya-answer">
 								{% if data %}
-									{% if data['address-lineone'] %}
-										{{ data['address-lineone']}}
+									{% if data['corrAddressLineOne'] %}
+										{{ data['corrAddressLineOne']}}
 									{% else %}
 										&#8212;
 									{% endif %}
 									<br>
-									{% if data['town'] %}
-										{{ data['town']}}
+									{% if data['corrAddressLineTwo'] %}
+										{{ data['corrAddressLineTwo']}}
 									{% else %}
 										&#8212;
 									{% endif %}
 									<br>
-									{% if data['addressPostcode'] %}
-										{{ data['addressPostcode']}}
+									{% if data['corrTown'] %}
+										{{ data['corrTown']}}
 									{% else %}
 										&#8212;
 									{% endif %}
 									<br>
-									{% if data['country'] %}
-										{{ data['country']}}
+									{% if data['corrAddressPostcode'] %}
+										{{ data['corrAddressPostcode']}}
+									{% else %}
+										&#8212;
+									{% endif %}
+									<br>
+									{% if data['corrCountry'] %}
+										{{ data['corrCountry']}}
 									{% endif %}
 								{% else %}
 									&#8212;
 								{% endif %}
 							</dd>
 							<dd class="cya-change">
-								<a href="address-details">Change<span class="visually-hidden"> your address</span></a>
+								<a href="corr-contact-address">Change<span class="visually-hidden"> your address</span></a>
 							</dd>
+							
 						</div>
-						
-						<div>
-							<dt class="cya-question">Email address</dt>
-							<dd class="cya-answer">
-								{% if data['emailAddress'] %}
-									{{ data['emailAddress']}}
-								{% else %}
-									&#8212;
-								{% endif %}
-							</dd>
-							<dd class="cya-change">
-								<a href="contact-details">Change<span class="visually-hidden"> your email address</span></a>
-							</dd>
-						</div>
-						<div>
-							<dt class="cya-question">Phone number</dt>
-							<dd class="cya-answer">
-								{% if data['phoneNumber'] %}
-									{{ data['phoneNumber']}}
-								{% else %}
-									&#8212;
-								{% endif %}
-							</dd>
-							<dd class="cya-change">
-								<a href="contact-details">Change<span class="visually-hidden"> your phone number</span></a>
-							</dd>
-						</div>
+						{% endif %}
 					</dl>
+						<div class="form-group">
+							<dl class="govuk-check-your-answers cya-questions-short">
+								<div>
+									<dt class="cya-question">Email address</dt>
+									
+									<dd class="cya-answer">
+										{% if data['emailAddress'] %}
+											{{ data['emailAddress']}} 
+										{% else %}
+											&#8212; 
+										{% endif %}
+									</dd>
+									
+									<dd class="cya-change">
+										<a href="contact-details#email-address">Change<span class="visually-hidden"> your email address</span></a>
+									</dd>
+									
+								</div>
+								
+								<div>
+									<dt class="cya-question">Phone number</dt>
+									<dd class="cya-answer">
+										{% if data['phoneNumber'] %}
+											{{ data['phoneNumber']}}
+										{% else %}
+											&#8212;
+										{% endif %}
+									</dd>
+									<dd class="cya-change">
+										<a href="contact-details#phone-number">Change<span class="visually-hidden"> your phone number</span></a>
+									</dd>
+								</div>
+							</dl>
+						</div>
+
 				</div>
 				<div class="form-group">
 					<h2 class="heading-medium">Now create and send entitlement</h2>
