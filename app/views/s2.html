@@ -1,0 +1,589 @@
+{% extends "layout_bsa.html" %}
+{% block page_title %}
+   CRA S2 - Overseas Healthcare Prototype
+{% endblock %}
+{% block content %}
+<style>
+   hr {
+   display: block;
+   background: #bfc1c3;
+   border: 0;
+   height: 1px;
+   margin-top: 30px;
+   margin-bottom: 30px;
+   padding: 0;
+   }
+   .pass {
+   font-weight: 700;
+   color: #00823b; 
+   }
+   .fail {
+   font-weight: 700;
+   color: #D4351F; 
+   }
+</style>
+<!--
+   Button
+   <a href="v9_0/admin/ut/windows-login"><input class="button" type="submit" value="Open"></a> 
+   -->
+<main id="content" role="main">
+   <div class="grid-row">
+      <div class="column-full">
+         <h1 class="heading-xlarge">
+            <span class="heading-secondary">NHSBSA Design</span>
+            Overseas Healthcare Services Prototype
+            <span class="heading-medium" style="padding:0;">Version 1.0</span>
+         </h1>
+         <h2 class="heading-medium">Citizens Rights Agreement - S2</h2>
+         <div class="panel panel-border-wide">
+            <span class="bold">Note:</span> only <span class="bold">S2</span> journeys work in this version of the prototype.
+         </div>
+         <hr>
+         <!-- <p><a href="v13_0/ccs/no-search-results/case-record-8">Start</a></p> -->
+
+         <h2 class="heading-medium">Admin</h2>
+
+         <table>
+            <thead>
+               <tr>
+               <tr>
+                  <th>Scenario</th>
+                  <th>Link</th>
+                  <th>Journeys</th>
+               </tr>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td valign="top">Create new application record S2</td>
+                  <td valign="top">
+                     
+                     <a href="v17_0/admin/s2/new-record/search">Start</a><br>
+                  </td>
+                  <td valign="top">
+                     S2 Record not found<br>
+                  </td>
+               </tr>
+               <!-- <tr>
+                  <td valign="top">Applicant with existing record & active S1</td>
+                  <td valign="top">
+                     <a href="v17_0/admin/s2/found-record/case-record-found">Case record</a><br>
+                     <a href="v17_0/admin/s2/found-record/search">Start</a><br>
+                    
+                  </td>
+                  <td valign="top">
+                     S2 Existing record with S1
+                  </td>
+               </tr> -->
+
+            </tbody>
+         </table>
+
+         <br>
+
+         <!-- <details>
+            <summary>
+               <span class="summary">Admin - CRA - Version 1</span>
+            </summary>
+
+         <table>
+            <thead>
+               <tr>
+               <tr>
+                  <th>Scenario</th>
+                  <th>Link</th>
+                  <th>Journeys</th>
+               </tr>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td valign="top">Applicant lives in UK<br>(New OHS record)</td>
+                  <td valign="top">
+                     <a href="v15_0/admin/no-search-results/start">Start</a><br>
+                    
+                     <a href="v15_0/admin/no-search-results/case-record-7">Dependant record</a><br>
+                     <a href="v15_0/admin/no-search-results2/case-record-7">Child, EU over 21</a><br>
+                  </td>
+                  <td valign="top">
+                     <ul class="list list-bullet">
+                        <li>EU nationals</li>
+                        <li>Dependants of EU nationals 
+                           <ul class="list list-bullet">
+                              <li>Spouses and civil partners</li> 
+                              <li>Durable partner</li>
+                              <li>Children</li>
+                              <strike><li>Parents</li>
+                              <li>Grandparents</li>
+                              <li>Granchildren</li>
+                              <li>Carers</li></strike>
+                           </ul>
+                        </li>
+                         
+                        <li>Dual nationals</li>
+                        <li>UK students</li>
+                        <li>EU students</li>
+                     </ul>
+                
+                     <strike>Override functionality:<br>
+                     <ul class="list list-bullet">
+                        <li>Dependant applying as a main</li>
+                        <li>EU national dependants</li>
+                        <li>A1 posted workers</li>
+                        <li>Zambrano / Chen / Ibrahim / Teixeira carers</li>
+                     </ul>
+                  </strike>
+               
+                  </td>
+               </tr>
+               <tr>
+                  <td valign="top">Applicant lives in UK<br>(New OHS record)</td>
+                  <td valign="top">
+                     <a href="v15_0/admin/no-search-results/case-record-6">Case record</a>
+                  </td>
+                  <td valign="top">EHIC approval (Students example)</td>
+               </tr> -->
+               <!-- <tr>
+                  <td valign="top">Applicant lives in UK<br>(Existing OHS record)</td>
+                  <td valign="top">
+                     <a href="v13_0/admin/no-search-results/case-record-8">Case record</a>
+                  </td>
+                  <td valign="top">
+                     EU national wants to add dependant <br>(parent, grandparent or grandchild)
+                  </td>
+                  </tr> -->
+               <!-- <tr>
+                  <td valign="top">Applicant lives in UK</td>
+                  <td valign="top">
+                     <a href="v13_0/admin/no-search-results/case-record-6">Case record</a>
+                  </td>
+                  <td valign="top">
+                     EHIC approval (Students example)
+                  </td>
+                  </tr> -->
+               <!-- <tr>
+                  <td valign="top">Applicant lives in EU<br>(Existing OHS record)</td>
+                  <td valign="top">
+                     <a href="v15_0/admin/ehic-s1/start">Start</a><br>
+                    
+                  </td>
+                  <td valign="top">
+                     S1 exportable benefits<br>
+                     
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+
+         </details>
+         <br> -->
+         <!-- <details>
+            <summary>
+               <span class="summary">Admin - Version 1</span>
+            </summary>
+            <table>
+               <thead>
+                  <tr>
+                  <tr>
+                     <th>Scenario</th>
+                     <th>Link</th>
+                     <th>Journeys</th>
+                  </tr>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td valign="top">Applicant lives in UK<br>(New OHS record)</td>
+                     <td valign="top">
+                        <a href="v13_0/admin/no-search-results/start">Start</a>
+                     </td>
+                     <td valign="top">
+                        <ul class="list list-bullet">
+                           <li>EU nationals</li>
+                           <li>Dual nationals</li>
+                           <li>UK students</li>
+                           <li>EU students</li>
+                        </ul> -->
+                        <!-- <br> -->
+                        <!-- Override functionality:<br>
+                        <ul class="list list-bullet">
+                           <li>Dependant applying as a main</li>
+                           <li>EU national dependants</li>
+                           <li>A1 posted workers</li>
+                           <li>Zambrano / Chen / Ibrahim / Teixeira carers</li>
+                        </ul> -->
+                        <!-- <strike>UK nationals<br></strike> -->
+                        <!-- <strike>Posted workers (no S1 record in OHS)</strike> -->
+                     <!-- </td>
+                  </tr>
+                  <tr>
+                     <td valign="top">Applicant lives in UK<br>(New OHS record)</td>
+                     <td valign="top">
+                        <a href="v13_0/admin/no-search-results/case-record-6">Case record</a>
+                     </td>
+                     <td valign="top">EHIC approval (Students example)</td>
+                  </tr> -->
+                  <!-- <tr>
+                     <td valign="top">Applicant lives in UK<br>(Existing OHS record)</td>
+                     <td valign="top">
+                        <a href="v13_0/admin/no-search-results/case-record-8">Case record</a>
+                     </td>
+                     <td valign="top">
+                        EU national wants to add dependant <br>(parent, grandparent or grandchild)
+                     </td>
+                     </tr> -->
+                  <!-- <tr>
+                     <td valign="top">Applicant lives in UK</td>
+                     <td valign="top">
+                        <a href="v13_0/admin/no-search-results/case-record-6">Case record</a>
+                     </td>
+                     <td valign="top">
+                        EHIC approval (Students example)
+                     </td>
+                     </tr> -->
+                  <!-- <tr>
+                     <td valign="top">Applicant lives in EU<br>(Existing OHS record)</td>
+                     <td valign="top">
+                        <a href="v13_0/admin/ehic-s1/start">Start</a><br>
+                        <strike><a href="v13_0/admin/ehic-pw/start">Start</a></strike><br>
+                     </td>
+                     <td valign="top">
+                        S1 exportable benefits<br>
+                        <strike>Posted workers<br></strike>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </details> -->
+
+         <!-- <br><hr>
+
+
+
+         <h2 class="heading-medium">CCS</h2>
+
+         <details>
+            <summary>
+               <span class="summary">CCS - Version 1 (not up to date)</span>
+            </summary>
+
+            <table>
+               <thead>
+                  <tr>
+                     <th>Scenario</th>
+                     <th>Link</th>
+                     <th>Journeys</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td valign="top">Applicant lives in UK<br>(New OHS record)</td>
+                     <td valign="top">
+                        <a href="v15_0/ccs/no-search-results/start">Start</a><br>
+                       
+                        <a href="v15_0/ccs/no-search-results/case-record-7">Dependant record</a><br><br><br>
+                        <a href="v15_0/ccs/no-search-results/case-record-7">Dependant record</a><br>
+                        <a href="v15_0/ccs/no-search-results2/case-record-7">Dependant record</a><br>
+                     </td>
+                     <td valign="top">
+                        EU nationals with UK Settled Status<br>
+                        Students<br>
+                        Dependants of EU nationals (spouse/civil <br>
+                        partner, durable partner and children)<br>
+                        Dependant - child under 18<br>
+                        <strike>Dependant - EU child and over 21<br></strike>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td valign="top">Applicant lives in EU<br>(Existing OHS record)</td>
+                     <td valign="top">
+                        <a href="v15_0/ccs/ehic-s1/start">Start</a><br>
+                        
+                     </td>
+                     <td valign="top">
+                        S1 exportable benefits<br>
+                      
+                     </td>
+                  </tr>
+                
+               </tbody>
+            </table>
+
+         </details>
+      
+         <br> -->
+
+         <!-- <details>
+            <summary>
+               <span class="summary">CCS - Version 1 (not up to date)</span>
+            </summary>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Scenario</th>
+                     <th>Link</th>
+                     <th>Journeys</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td valign="top">Applicant lives in UK<br>(New OHS record)</td>
+                     <td valign="top">
+                        <a href="v13_0/ccs/no-search-results/start">Start</a><br>
+                     </td>
+                     <td valign="top">
+                        EU nationals with UK Settled Status<br> -->
+                        <!-- Dependants of EU nationals<br> -->
+                        <!-- Students<br>
+                        <strike>UK nationals<br></strike>
+                        <strike>Posted workers (no S1 record in OHS)<br></strike>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td valign="top">Applicant lives in EU<br>(Existing OHS record)</td>
+                     <td valign="top">
+                        <a href="v13_0/ccs/ehic-s1/start">Start</a><br>
+                        <strike><a href="v13_0/ccs/ehic-pw/start">Start</a></strike><br>
+                     </td>
+                     <td valign="top">
+                        S1 exportable benefits<br>
+                        <strike>Posted workers<br></strike>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td valign="top">Failed residency<br>check screen</td>
+                     <td valign="top">
+                        <a href="v13_0/ccs/failed-checks/start">Start</a><br> -->
+                        <!-- <a href="v13_0/ccs/failed-checks/case-record">In progress</a><br> -->
+                     <!-- </td>
+                     <td valign="top">
+                        EU nationals with UK Settled Status<br>
+                        UK nationals<br>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </details> -->
+         <!-- <hr> -->
+
+<!-- 
+         <hr>
+         <br>
+         <h2 class="heading-medium">NHS Digital integration (Admin only)</h2>
+         <table>
+            <thead>
+               <tr>
+                  <th>Scenario</th>
+                  <th>Link</th>
+                  <th>Journeys</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td valign="top">Checks results</td>
+                  <td valign="top">
+                     <a href="v15_0/admin/no-search-results/case-record-8-2">Case record</a><br>
+                  </td>
+                  <td valign="top">
+                     Evidence seen, EHIC processed<br>
+                  </td>
+               </tr>
+               <tr>
+                  <td valign="top">Review checks screens <br>(UK residency, NHS record <br>and EU settlement status)</td>
+                  <td valign="top">
+                     <ul class="list list">
+                        <li>
+                           <a href="v15_0/admin/no-search-results/review-checks-2">Pass all</a>
+                        </li>
+                        <li>
+                           <a href="v15_0/admin/no-search-results/review-checks-3">Fail EUSS</a>
+                        </li>
+                        <li>
+                           <a href="v15_0/admin/no-search-results/review-checks-4">NHS not found</a>
+                        </li>
+                        <li>
+                           <a href="v15_0/admin/no-search-results/review-checks-5">Fail res.</a>
+                        </li>
+                        <li>
+                           <a href="v15_0/admin/no-search-results/review-checks-6">Fail all</a>
+                        </li>
+                        <li>
+                           <a href="v15_0/admin/no-search-results/review-checks-7">NHS not found</a>
+                        </li>
+                      
+                     </ul>
+                  </td>
+                  <td valign="top">
+                     <ul class="list list-bullet">
+                     <li>
+                        Res: <span class="pass">PASS</span>, 
+                        NHS: <span class="bold">Found</span>,
+                        EUSS: <span class="pass">PASS</span>
+                     </li>
+                     <li>
+                        Res: <span class="pass">PASS</span>, 
+                        NHS: <span class="bold">Found</span>,
+                        EUSS: <span class="fail">FAIL</span>
+                     </li>
+                     <li>
+                        Res: <span class="pass">PASS</span>, 
+                        NHS: <span class="bold">Not found</span>
+                       
+                     </li>
+                     <li>
+                        Res: <span class="fail">FAIL</span>, 
+                        NHS: <span class="bold">Found</span>,
+                        EUSS: <span class="pass">PASS</span>
+                     </li>
+                     <li>
+                        Res: <span class="fail">FAIL</span>, 
+                        NHS: <span class="bold">Found</span>,
+                        EUSS: <span class="fail">FAIL</span>
+                     </li>
+                     <li>
+                        Res: <span class="fail">FAIL</span>, 
+                        NHS: <span class="bold">Not found</span>
+                      
+                     </li>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+         <br>
+         <details>
+            <summary>
+               <span class="summary">NHS Digital integration (Admin only) - Version 1</span>
+            </summary>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Scenario</th>
+                     <th>Link</th>
+                     <th>Journeys</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td valign="top">Checks results</td>
+                     <td valign="top">
+                       
+                        <a href="v13_0/admin/no-search-results/case-record-8-2">Case record</a><br>
+                        
+                     </td>
+                     <td valign="top">
+                      
+                        Evidence seen, EHIC processed<br>
+                        
+                     </td>
+                  </tr>
+                  <tr>
+                     <td valign="top">Review checks screens <br>(UK residency, NHS record <br>and EU settlement status)</td>
+                     <td valign="top">
+                        <ul class="list list">
+                           <li>
+                             
+                              <a href="v13_0/admin/no-search-results/review-checks-2">Pass all</a>
+                           </li>
+                           <li>
+                              <a href="v13_0/admin/no-search-results/review-checks-3">Fail EUSS</a>
+                           </li>
+                           <li>
+                              <a href="v13_0/admin/no-search-results/review-checks-4">NHS not found</a>
+                           </li>
+                           <li>
+                              <a href="v13_0/admin/no-search-results/review-checks-5">Fail res.</a>
+                           </li>
+                           <li>
+                              <a href="v13_0/admin/no-search-results/review-checks-6">Fail all</a>
+                           </li>
+                           <li>
+                              <a href="v13_0/admin/no-search-results/review-checks-7">NHS not found</a>
+                           </li>
+                          
+                        </ul>
+                     </td>
+                     <td valign="top">
+                        <ul class="list list-bullet">
+                        <li>
+                           Res: <span class="pass">PASS</span>, 
+                           NHS: <span class="bold">Found</span>,
+                           EUSS: <span class="pass">PASS</span>
+                        </li>
+                        <li>
+                           Res: <span class="pass">PASS</span>, 
+                           NHS: <span class="bold">Found</span>,
+                           EUSS: <span class="fail">FAIL</span>
+                        </li>
+                        <li>
+                           Res: <span class="pass">PASS</span>, 
+                           NHS: <span class="bold">Not found</span>
+                         
+                        </li>
+                        <li>
+                           Res: <span class="fail">FAIL</span>, 
+                           NHS: <span class="bold">Found</span>,
+                           EUSS: <span class="pass">PASS</span>
+                        </li>
+                        <li>
+                           Res: <span class="fail">FAIL</span>, 
+                           NHS: <span class="bold">Found</span>,
+                           EUSS: <span class="fail">FAIL</span>
+                        </li>
+                        <li>
+                           Res: <span class="fail">FAIL</span>, 
+                           NHS: <span class="bold">Not found</span>
+                          
+                        </li>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </details>
+         <br>
+         <hr>
+        
+         <h2 class="heading-medium">Older work</h2>
+         <details>
+            <summary>
+               <span class="summary">UK Residency and Home Office checks</span>
+            </summary>
+            <table>
+               <thead>
+                  <tr>
+                     <th>Scenario</th>
+                     <th>Link</th>
+                     <th>Journeys</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td valign="top">Failed UK residency</td>
+                     <td valign="top">
+                        <a href="v13_0/admin/failed-checks/start">Start</a><br>
+                        <a href="v13_0/admin/failed-checks/check-res-fail-eu">Check result</a><br>
+                     </td>
+                     <td valign="top">
+                        EU nationals with UK Settled Status<br>
+                       
+                     </td>
+                  </tr>
+                  <tr>
+                     <td valign="top">Failed NHS-D <br>(NHS number trace)</td>
+                     <td valign="top">
+                        <a href="v13_0/admin/failed-ho/case-record-8">Case record</a><br>
+                        <a href="v13_0/admin/failed-ho/check-ho-fail">Check result</a><br>
+                      
+                     </td>
+                     <td valign="top">
+                        EU nationals with UK Settled Status<br>
+                       
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <br>
+         </details> -->
+      </div>
+   </div>
+</main>
+{% endblock %}
