@@ -1,6 +1,6 @@
 {% extends "layout_bsa.html" %}
 {% block page_title %}
-	Person record
+Person record
 {% endblock %}
 {% block content %}
 <style>
@@ -13,6 +13,7 @@
 		z-index: 1;
 		padding-top: 20px;
 	}
+
 	.tab-container {
 		position: relative;
 		float: left;
@@ -20,6 +21,7 @@
 		overflow: hidden;
 		margin-top: 18px;
 	}
+
 	.tablinks.active {
 		position: relative;
 		float: left;
@@ -42,6 +44,7 @@
 		line-height: 1.31579;
 		font-weight: 700;
 	}
+
 	.tablinks {
 		position: relative;
 		float: left;
@@ -60,19 +63,24 @@
 		line-height: 1.31579;
 		font-weight: 700;
 	}
+
 	.tabcontentActive {
 		display: block;
 	}
+
 	.tabcontent {
 		display: none;
 		padding-top: 20px;
 	}
+
 	table {
 		border-collapse: collapse;
 		border-spacing: 0;
 		width: 100%;
 	}
-	table th, table td {
+
+	table th,
+	table td {
 		font-family: Arial, sans-serif;
 		font-weight: 400;
 		text-transform: none;
@@ -83,30 +91,37 @@
 		color: #0b0c0c;
 		border-bottom: 1px solid #bfc1c3;
 	}
+
 	table th {
 		font-weight: 700;
 	}
+
 	tr {
 		height: 60px;
 	}
-	.heading-small{
+
+	.heading-small {
 		font-size: 19px;
 		line-height: 1.31579;
 		font-weight: 700;
 	}
+
 	.visually-hidden {
 		display: none;
 	}
+
 	.major-container {
 		width: 70%;
 		margin: 0 5% 0 0;
 		float: left;
 	}
+
 	.button.button-secondary.entitlements {
 		width: 22.5%;
 		text-align: center;
 		margin: 5px 15px 0 0;
 	}
+
 	span.status-tag-low {
 		background-color: #85994b;
 		color: #ffffff;
@@ -118,6 +133,7 @@
 		position: relative;
 		top: -0.05em;
 	}
+
 	span.status-tag-medium {
 		background-color: #F47738;
 		color: #ffffff;
@@ -129,6 +145,7 @@
 		position: relative;
 		top: -0.05em;
 	}
+
 	span.status-tag-high {
 		background-color: #B10E1E;
 		color: #ffffff;
@@ -140,6 +157,7 @@
 		position: relative;
 		top: -0.05em;
 	}
+
 	span.status-tag-requested {
 		background-color: #70777b;
 		color: #ffffff;
@@ -151,11 +169,12 @@
 		position: relative;
 		top: -0.05em;
 	}
+
 	/* #myDIV, #myDIV2, #myDIV3, #myDIV4 {
 		background: #F8F8F8;
 	} */
 
-    details summary:before {
+	details summary:before {
 		content: none;
 	}
 </style>
@@ -173,15 +192,15 @@
 			<div class="heading-group">
 				<h1 class="heading-large">
 					{% if data['firstName'] %}
-						{{ data['firstName']}} {{ data['lastName']}}
+					{{ data['firstName']}} {{ data['lastName']}}
 					{% else %}
-						Michael Philip
+					Michael Philip
 					{% endif %}
-					<span class="heading-secondary">OHS Reference Number - 
+					<span class="heading-secondary">OHS Reference Number -
 						{% if data['firstName'] %}
-							{{ data['firstName']}} {{ data['lastName']}}
+						{{ data['firstName']}} {{ data['lastName']}}
 						{% else %}
-							25000002
+						25000002
 						{% endif %}
 					</span>
 				</h1>
@@ -203,15 +222,15 @@
 					</div>
 				</a>
 				<a class="tablinks" onclick="openTab(event, 'casenotes')" href="#">
-	               <div>
-	                  <p class="heading-small">Case notes</p>
-	               </div>
-	            </a>
-                <a class="tablinks" href="#">
-                    <div>
-                       <p class="heading-small">Documents</p>
-                    </div>
-                 </a>
+					<div>
+						<p class="heading-small">Case notes</p>
+					</div>
+				</a>
+				<a class="tablinks" href="#">
+					<div>
+						<p class="heading-small">Documents</p>
+					</div>
+				</a>
 				<div class="tab-box">
 					<form action="date-request" method="post" class="form">
 						<div id="personal" class="tabcontent">
@@ -223,11 +242,11 @@
 											<dt class="cya-question">Full name</dt>
 											<dd class="cya-answer">
 												{% if data['firstName'] %}
-													{{ data['firstName']}} {{ data['lastName']}}
+												{{ data['firstName']}} {{ data['lastName']}}
 												{% else %}
-													Michael Philip
+												Michael Philip
 												{% endif %}
-												
+
 											</dd>
 											<dd class="cya-change"><a class="cancel" href="">Change</a>
 											</dd>
@@ -237,11 +256,11 @@
 											<dt class="cya-question">Date of birth</dt>
 											<dd class="cya-answer">
 												{% if data['dateOfBirth'] %}
-													{{ data['dateOfBirth']}}
+												{{ data['dateOfBirth']}}
 												{% else %}
-													15/03/1984
+												15/03/1984
 												{% endif %}
-											
+
 											</dd>
 											<dd class="cya-change"><a class="cancel" href="">Change</a>
 											</dd>
@@ -251,11 +270,11 @@
 											<dt class="cya-question">National Insurance number</dt>
 											<dd class="cya-answer">
 												{% if data['nino'] %}
-													{{ data['nino']}}
+												{{ data['nino']}}
 												{% else %}
-													SR123456A
+												SR123456A
 												{% endif %}
-												
+
 											</dd>
 											<dd class="cya-change">
 											</dd>
@@ -265,37 +284,37 @@
 											<dt class="cya-question">Residential address</dt>
 											<dd class="cya-answer">
 												{% if data %}
-													{% if data['resAddressLineOne'] %}
-														{{ data['resAddressLineOne']}}
-													{% else %}
-														&#8212;
-													{% endif %}
-													<br>
-													{% if data['resAddressLineTwo'] %}
-														{{ data['resAddressLineTwo']}}
-													{% else %}
-														&#8212;
-													{% endif %}
-													<br>
-													{% if data['resTown'] %}
-														{{ data['resTown']}}
-													{% else %}
-														&#8212;
-													{% endif %}
-													<br>
-													{% if data['resAddressPostcode'] %}
-														{{ data['resAddressPostcode']}}
-													{% else %}
-														&#8212;
-													{% endif %}
-													<br>
-													{% if data['resCountry'] %}
-														{{ data['resCountry']}}
-													{% endif %}
+												{% if data['resAddressLineOne'] %}
+												{{ data['resAddressLineOne']}}
 												{% else %}
-													&#8212;
+												&#8212;
 												{% endif %}
-								
+												<br>
+												{% if data['resAddressLineTwo'] %}
+												{{ data['resAddressLineTwo']}}
+												{% else %}
+												&#8212;
+												{% endif %}
+												<br>
+												{% if data['resTown'] %}
+												{{ data['resTown']}}
+												{% else %}
+												&#8212;
+												{% endif %}
+												<br>
+												{% if data['resAddressPostcode'] %}
+												{{ data['resAddressPostcode']}}
+												{% else %}
+												&#8212;
+												{% endif %}
+												<br>
+												{% if data['resCountry'] %}
+												{{ data['resCountry']}}
+												{% endif %}
+												{% else %}
+												&#8212;
+												{% endif %}
+
 											</dd>
 											<dd class="cya-change">
 												<p class="navigation">
@@ -308,35 +327,35 @@
 											<dt class="cya-question">Correspondence address</dt>
 											<dd class="cya-answer">
 												{% if data %}
-													{% if data['corrAddressLineOne'] %}
-														{{ data['corrAddressLineOne']}}
-													{% else %}
-														&#8212;
-													{% endif %}
-													<br>
-													{% if data['corrAddressLineTwo'] %}
-														{{ data['corrAddressLineTwo']}}
-													{% else %}
-														&#8212;
-													{% endif %}
-													<br>
-													{% if data['corrTown'] %}
-														{{ data['corrTown']}}
-													{% else %}
-														&#8212;
-													{% endif %}
-													<br>
-													{% if data['corrAddressPostcode'] %}
-														{{ data['corrAddressPostcode']}}
-													{% else %}
-														&#8212;
-													{% endif %}
-													<br>
-													{% if data['corrCountry'] %}
-														{{ data['corrCountry']}}
-													{% endif %}
+												{% if data['corrAddressLineOne'] %}
+												{{ data['corrAddressLineOne']}}
 												{% else %}
-													&#8212;
+												&#8212;
+												{% endif %}
+												<br>
+												{% if data['corrAddressLineTwo'] %}
+												{{ data['corrAddressLineTwo']}}
+												{% else %}
+												&#8212;
+												{% endif %}
+												<br>
+												{% if data['corrTown'] %}
+												{{ data['corrTown']}}
+												{% else %}
+												&#8212;
+												{% endif %}
+												<br>
+												{% if data['corrAddressPostcode'] %}
+												{{ data['corrAddressPostcode']}}
+												{% else %}
+												&#8212;
+												{% endif %}
+												<br>
+												{% if data['corrCountry'] %}
+												{{ data['corrCountry']}}
+												{% endif %}
+												{% else %}
+												&#8212;
 												{% endif %}
 											</dd>
 											<dd class="cya-change">
@@ -345,19 +364,19 @@
 												</p>
 											</dd>
 										</div>
-									<!-- </dl>
+										<!-- </dl>
 									<p class="navigation">
 										<a class="cancel" href="new-address-uk">Change</a>
 									</p>
-									<dl class="govuk-check-your-answers cya-questions-long"> -->			
+									<dl class="govuk-check-your-answers cya-questions-long"> -->
 										<br>
 										<div>
 											<dt class="cya-question">Email address</dt>
 											<dd class="cya-answer">
 												{% if data['emailAddress'] %}
-													{{ data['emailAddress']}}
+												{{ data['emailAddress']}}
 												{% else %}
-													&#8212;
+												&#8212;
 												{% endif %}
 											</dd>
 											<dd class="cya-change"><a class="cancel" href="contact-details">Change</a>
@@ -368,9 +387,9 @@
 											<dt class="cya-question">Telephone number</dt>
 											<dd class="cya-answer">
 												{% if data['phoneNumber'] %}
-													{{ data['phoneNumber']}}
+												{{ data['phoneNumber']}}
 												{% else %}
-													&#8212;
+												&#8212;
 												{% endif %}
 											</dd>
 											<dd class="cya-change"><a class="cancel" href="contact-details">Change</a>
@@ -403,103 +422,102 @@
 										<td scope="col"></td>
 									</tr>
 								</thead>
-                                <tbody>
-                                    <tr>
-                                        <td>S2</td>
-                                        <td>01-01-2023</td>
-                                        <td>15-04-2023</td>
-                                        <td>Main</td>
-                                        <td>Austria</td>
-                                        <td><span class="status-tag-medium font-xsmall"
-                                                style="padding-left:25px; padding-right:25px">Awaiting review</span></td>
-                                        <td nowrap="">
-                                            <details onclick="myFunction2()">
-                                                <summary><span class="summary">More info</span></summary>
-                                            </details>
-                                        </td>
-                                    </tr>
-                                </tbody>
+								<tbody>
+									<tr>
+										<td>S2</td>
+										<td>01-01-2023</td>
+										<td>15-04-2023</td>
+										<td>Main</td>
+										<td>Austria</td>
+										<td><span class="status-tag-medium font-xsmall"
+												style="padding-left:25px; padding-right:25px">Awaiting review</span>
+										</td>
+										<td nowrap="">
+											<details onclick="myFunction2()">
+												<summary><span class="summary">More info</span></summary>
+											</details>
+										</td>
+									</tr>
+								</tbody>
 							</table>
-                            <div id="myDIV2" style="display:none;">
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td colspan="8">
-                                                <div class="panel panel-border-wide s1infoExpanded">
-                                                    <div class="main-container form-group">
-                                                        <div class="major-container">
-                                                            <table id="entitlementDetails" class="check-table">
-                                                                <h1 class="heading-large">Additional entitlement details
-                                                                </h1>
-                                                                <caption class="visually-hidden">A table displaying the
-                                                                    entitlement details</caption>
-                                                                <tbody>
-                                                                    <tr class="row">
-                                                                        <td class="column title">Type</td>
-                                                                        <td class="column">Maternity</td>
-                                                                    </tr>
+							<div id="myDIV2" style="display:none;">
+								<table>
+									<tbody>
+										<tr>
+											<td colspan="8">
+												<div class="panel panel-border-wide s1infoExpanded">
+													<div class="main-container form-group">
+														<div class="major-container">
+															<table id="entitlementDetails" class="check-table">
+																<h1 class="heading-large">Additional entitlement details
+																</h1>
+																<caption class="visually-hidden">A table displaying the
+																	entitlement details</caption>
+																<tbody>
+																	<tr class="row">
+																		<td class="column title">Type</td>
+																		<td class="column">Maternity</td>
+																	</tr>
 
-                                                                    <tr class="row">
-                                                                        <td class="column title">Request received</td>
-                                                                        <td class="column">-</td>
-                                                                    </tr>
-                                                                    <tr class="row">
-                                                                        <td class="column title">Birth country</td>
-                                                                        <td class="column">-</td>
-                                                                    </tr>
-                                                                    <tr class="row">
-                                                                        <td class="column title">Nationality</td>
-                                                                        <td class="column">-</td>
-                                                                    </tr>
-                                                                    <tr class="row">
-                                                                        <td class="column title">Date leaving UK</td>
-                                                                        <td class="column">-</td>
-                                                                    </tr>
-                                                                    <tr class="row">
-                                                                        <td class="column title">Expected date of delivery</td>
-                                                                        <td class="column">-</td>
-                                                                    </tr>
-                                                                    <tr class="row">
-                                                                        <td class="column title">Leave the UK permanently</td>
-                                                                        <td class="column">-</td>
-                                                                    </tr>
-                                                                    
-                                                                </tbody>
-    
-                                                            </table>
+																	<tr class="row">
+																		<td class="column title">Request received</td>
+																		<td class="column">-</td>
+																	</tr>
+																	<tr class="row">
+																		<td class="column title">Birth country</td>
+																		<td class="column">-</td>
+																	</tr>
+																	<tr class="row">
+																		<td class="column title">Nationality</td>
+																		<td class="column">-</td>
+																	</tr>
+																	<tr class="row">
+																		<td class="column title">Date leaving UK</td>
+																		<td class="column">-</td>
+																	</tr>
+																	<tr class="row">
+																		<td class="column title">Expected date of
+																			delivery</td>
+																		<td class="column">-</td>
+																	</tr>
+																	<tr class="row">
+																		<td class="column title">Leave the UK
+																			permanently</td>
+																		<td class="column">-</td>
+																	</tr>
 
-                     
-    
-    
-    
-    
-                                                        </div>
-                                                        <div class="minor-container">
-                                                            <!-- <div><a class="link button button-secondary entitlements"
+																</tbody>
+
+															</table>
+
+														</div>
+														<div class="minor-container">
+															<!-- <div><a class="link button button-secondary entitlements"
                                                                     href="">Cancel entitlement</a></div> -->
-                                                            <!-- <div><a class="link button button-secondary entitlements"
+															<!-- <div><a class="link button button-secondary entitlements"
                                                                     href="">Add dependant</a></div> -->
-                                                            <div><a class="link button button-secondary entitlements"
-                                                                    href="">Add document</a></div>
-                                                                    <div><a class="link button button-secondary entitlements"
-                                                                        href="">Review evidence</a></div>
-                                                        </div>
-                                                    </div>
-    
-    
-    
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-							<br> 
-						<div class="form-group">
-							
-							<input class="button" type="submit" href="date-request" value="Create a new entitlement"/>
-							<a class="button button-secondary" href="search">Exit record</a>
-						</div>
+															<div><a class="link button button-secondary entitlements"
+																	href="">Add document</a></div>
+															<div><a class="link button button-secondary entitlements"
+																	href="">Review evidence</a></div>
+														</div>
+													</div>
+
+
+
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<br>
+							<div class="form-group">
+
+								<input class="button" type="submit" href="date-request"
+									value="Create a new entitlement" />
+								<a class="button button-secondary" href="search">Exit record</a>
+							</div>
 							<!-- <div id="myDIV2" style="display:none;">
 								<table>
 									<tbody>
@@ -536,7 +554,7 @@
 								</table>
 						
 							</div>					<div class="main-container form-group"> -->
-														<!-- <div class="major-container">
+							<!-- <div class="major-container">
 															<table id="entitlementDetails" class="check-table">
 																<h1 class="heading-medium">Additional entitlement details</h1>
 																<caption class="visually-hidden">A table displaying the entitlement details</caption>
@@ -546,10 +564,10 @@
 																	<td class="column">80826 00001 01 2345 6789</td>
 																	</tr>
 																	<tr class="row"> -->
-								
-							
-					</div>
-				</form>
+
+
+						</div>
+					</form>
 					<!-- <div id="casehist" class="tabcontent">
 						<div class="form-group">
 							<table id="mainTable">
@@ -616,89 +634,94 @@
                      <a class="button" href="#" data-toggle="dialog" data-target="dialog-4">Add note</a>
                      <a class="button button-secondary" href="search">Exit record</a>
                   </div> -->
-                  <form action="abc-2" method="get" class="form">
-                     <!-- modal starts here  -->
-                     <div class="dialog" id="dialog-4" aria-hidden="true">
-                        <div class="dialog-holder" aria-labelledby="dialog-title-4" aria-describedby="dialog-content-4" role="alertdialog">
-                           <div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
-                              <header class="page-header">
-                                 <h2 class="page-header--lede heading-medium" style="margin-top: -1em;">Add note</h2>
-                              </header>
-                              <div class="grid-row">
-                                 <div class="column-third">
-                                    <div class="form-group" style="margin-bottom:10px;">
-                                       <label class="form-label" for="select-box">Source</label>
-                                       <select class="form-control" id="select-box">
-                                          <option>Existing customer on PRC/EHIC/Medben</option>
-                                          
-                                          <option>Main</option>
-                                          <option>Dependant</option>
-                                          <option>Third-party</option>
-                                          <option>Other country</option>
-                                          <option>Government organisation</option>
-                                          <option>Other</option>
-                                       </select>
-                                    </div>
-                                 </div>
-                                 <div class="column-third">
-                                    <div class="form-group" style="margin-bottom:10px;">
-                                       <label class="form-label" for="select-box">Channel</label>
-                                       <select class="form-control" id="select-box">
-                                          <option>Phone</option>
-                                          
-                                          <option>Staff initiated</option>
-                                          <option>Email</option>
-                                          <option>Letter</option>
-                                         
-                                          <option>Other</option>
-                                          <option>Complaints team</option>
-                                       </select>
-                                    </div>
-                                 </div>
-                                 <div class="column-third">
-                                    <div class="form-group">
-                                       <label class="form-label" for="select-box">Reason</label>
-                                       <select class="form-control" id="select-box">
-                                          
-                                          <option>Unable to complete a customer request</option>
-                                          <option>Amend incorrect information</option>
-                                          <option>Add new information to the customer record</option>
-                                          <option>Customer has requested information</option>
-                                          <option>Customer needs to complete an action</option>
-                                          <option>Letter generated</option>
-                                          <option>Email sent</option>
-                                          <option>Other</option>
-                                          <option>Referred to Case Man</option>
-                                       </select>
-                                    </div>
-                                 </div>
-                                 <div class="grid-row">
-                                    <div class="column-full" style="margin:0 15px 0 15px;">
-                                       <div class="form-group">
-                                          <label class="form-label" for="textarea-a">
-                                          Note
-                                          </label>
-                                          <textarea class="form-control" id="textarea-a" cols="30" rows="10" style="width:94%"></textarea>
-                                       </div>
-                                       <div class="dialog-actions" style="display: inline;">
-                                          <input id="submit-btn" class="button buttonSubmit" type="submit" name="updateEntitlement" value="Submit" style="font-size: 19px;" />
-                                          <a class="dialog-cancel" href="#" style="font-size: 1em;">Cancel</a>
-                                       </div>
-                                       <button class="dialog-close" aria-label="close" type="button">
-                                       <span class="icon icon-close">x</span>
-                                       </button>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <!-- modal ends here  -->
-                  </form>
-               </div>
+					<form action="abc-2" method="get" class="form">
+						<!-- modal starts here  -->
+						<div class="dialog" id="dialog-4" aria-hidden="true">
+							<div class="dialog-holder" aria-labelledby="dialog-title-4"
+								aria-describedby="dialog-content-4" role="alertdialog">
+								<div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
+									<header class="page-header">
+										<h2 class="page-header--lede heading-medium" style="margin-top: -1em;">Add note
+										</h2>
+									</header>
+									<div class="grid-row">
+										<div class="column-third">
+											<div class="form-group" style="margin-bottom:10px;">
+												<label class="form-label" for="select-box">Source</label>
+												<select class="form-control" id="select-box">
+													<option>Existing customer on PRC/EHIC/Medben</option>
+
+													<option>Main</option>
+													<option>Dependant</option>
+													<option>Third-party</option>
+													<option>Other country</option>
+													<option>Government organisation</option>
+													<option>Other</option>
+												</select>
+											</div>
+										</div>
+										<div class="column-third">
+											<div class="form-group" style="margin-bottom:10px;">
+												<label class="form-label" for="select-box">Channel</label>
+												<select class="form-control" id="select-box">
+													<option>Phone</option>
+
+													<option>Staff initiated</option>
+													<option>Email</option>
+													<option>Letter</option>
+
+													<option>Other</option>
+													<option>Complaints team</option>
+												</select>
+											</div>
+										</div>
+										<div class="column-third">
+											<div class="form-group">
+												<label class="form-label" for="select-box">Reason</label>
+												<select class="form-control" id="select-box">
+
+													<option>Unable to complete a customer request</option>
+													<option>Amend incorrect information</option>
+													<option>Add new information to the customer record</option>
+													<option>Customer has requested information</option>
+													<option>Customer needs to complete an action</option>
+													<option>Letter generated</option>
+													<option>Email sent</option>
+													<option>Other</option>
+													<option>Referred to Case Man</option>
+												</select>
+											</div>
+										</div>
+										<div class="grid-row">
+											<div class="column-full" style="margin:0 15px 0 15px;">
+												<div class="form-group">
+													<label class="form-label" for="textarea-a">
+														Note
+													</label>
+													<textarea class="form-control" id="textarea-a" cols="30" rows="10"
+														style="width:94%"></textarea>
+												</div>
+												<div class="dialog-actions" style="display: inline;">
+													<input id="submit-btn" class="button buttonSubmit" type="submit"
+														name="updateEntitlement" value="Submit"
+														style="font-size: 19px;" />
+													<a class="dialog-cancel" href="#" style="font-size: 1em;">Cancel</a>
+												</div>
+												<button class="dialog-close" aria-label="close" type="button">
+													<span class="icon icon-close">x</span>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- modal ends here  -->
+					</form>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 </main>
 
