@@ -92,6 +92,10 @@ Person record
 		border-bottom: 1px solid #bfc1c3;
 	}
 
+	table td.title {
+		font-weight: 700;
+	}
+
 	table th {
 		font-weight: 700;
 	}
@@ -194,7 +198,7 @@ Person record
 					{% if data['firstName'] %}
 					{{ data['firstName']}} {{ data['lastName']}}
 					{% else %}
-					Michael Philip
+					Michelle Philip
 					{% endif %}
 					<span class="heading-secondary">OHS Reference Number -
 						{% if data['firstName'] %}
@@ -244,7 +248,7 @@ Person record
 												{% if data['firstName'] %}
 												{{ data['firstName']}} {{ data['lastName']}}
 												{% else %}
-												Michael Philip
+												Michelle Philip
 												{% endif %}
 
 											</dd>
@@ -425,10 +429,28 @@ Person record
 								<tbody>
 									<tr>
 										<td>S2</td>
-										<td>01-01-2023</td>
-										<td>15-04-2023</td>
+										<td>
+											{% if data['treatmentStartM'] %}
+											{{ data['treatmentStartM']}}
+											{% else %}
+											01-01-2023
+											{% endif %}
+										</td>
+										<td>
+											{% if data['treatmentEndM'] %}
+											{{ data['treatmentEndM']}}
+											{% else %}
+											12-04-2023
+											{% endif %}
+										</td>
 										<td>Main</td>
-										<td>Austria</td>
+										<td>
+											{% if data['locationPicker'] %}
+											{{ data['locationPicker']}}
+											{% else %}
+											Austria
+											{% endif %}
+										</td>
 										<td><span class="status-tag-medium font-xsmall"
 												style="padding-left:25px; padding-right:25px">Awaiting review</span>
 										</td>
@@ -461,29 +483,76 @@ Person record
 
 																	<tr class="row">
 																		<td class="column title">Request received</td>
-																		<td class="column">-</td>
+																		<td class="column">
+																			{% if data['dateOfRequest'] %}
+																			{{ data['dateOfRequest']}}
+																			{% else %}
+																			09-12-2022
+																			{% endif %}
+																		</td>
 																	</tr>
 																	<tr class="row">
 																		<td class="column title">Birth country</td>
-																		<td class="column">-</td>
+																		<td class="column">
+																			{% if data['locationPicker'] %}
+																			{{ data['locationPicker']}}
+																			{% else %}
+																			Austria
+																			{% endif %}
+																		</td>
 																	</tr>
 																	<tr class="row">
 																		<td class="column title">Nationality</td>
-																		<td class="column">-</td>
+																		<td class="column">								
+																			{% if data['nationality'] %}
+					
+																			{% if 'UK' in data['nationality'] %}
+																			United Kingdom (UK) national
+																			{% endif %}
+										
+																			{% if 'EU, EEA or Swiss' in data['nationality'] %}
+																			An EU citizen, or a national of Iceland, Liechtenstein, Norway, or Switzerland
+																			{% endif %}
+										
+																			{% if 'Other' in data['nationality'] %}
+																				Other
+																			{% endif %}
+
+																			{% else %}
+																			An EU citizen, or a national of Iceland, Liechtenstein, Norway, or Switzerland
+										
+																		{% endif %}</td>
 																	</tr>
 																	<tr class="row">
 																		<td class="column title">Date leaving UK</td>
-																		<td class="column">-</td>
+																		<td class="column">
+																			{% if data[''] %}
+																			{{ data['']}}
+																			{% else %}
+																			23-12-2022
+																			{% endif %}</td>
 																	</tr>
 																	<tr class="row">
 																		<td class="column title">Expected date of
 																			delivery</td>
-																		<td class="column">-</td>
+																		<td class="column">
+																			{% if data['treatmentStartM'] %}
+																			{{ data['treatmentStartM']}}
+																			{% else %}
+																			01-01-2023
+																			{% endif %}
+																		</td>
 																	</tr>
 																	<tr class="row">
 																		<td class="column title">Leave the UK
 																			permanently</td>
-																		<td class="column">-</td>
+																		<td class="column">
+																			{% if data['leaveIntention'] %}
+																			{{ data['leaveIntention']}}
+																			{% else %}
+																			No
+																			{% endif %}
+																		</td>
 																	</tr>
 
 																</tbody>
@@ -492,19 +561,12 @@ Person record
 
 														</div>
 														<div class="minor-container">
-															<!-- <div><a class="link button button-secondary entitlements"
-                                                                    href="">Cancel entitlement</a></div> -->
-															<!-- <div><a class="link button button-secondary entitlements"
-                                                                    href="">Add dependant</a></div> -->
 															<div><a class="link button button-secondary entitlements"
 																	href="">Add document</a></div>
 															<div><a class="link button button-secondary entitlements"
-																	href="">Review evidence</a></div>
+																	href="review-evidence-maternity">Review evidence</a></div>
 														</div>
 													</div>
-
-
-
 												</div>
 											</td>
 										</tr>
@@ -588,7 +650,7 @@ Person record
 											{% if data['firstName'] %}
 												{{ data['firstName']}} {{ data['lastName']}}
 											{% else %}
-												Michael Philip
+												Michelle Philip
 											{% endif %}
 										</td>
 									</tr>
@@ -623,7 +685,7 @@ Person record
 							{% if data['firstName'] %}
 								{{ data['firstName']}} {{ data['lastName']}}
 							{% else %}
-								Michael Philip
+								Michelle Philip
 							{% endif %}
 						   </td>
                         </tr>

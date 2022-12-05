@@ -29,9 +29,11 @@
 
         <p>
         {% if (data['entitlementType']) === 'Planned treatment' %}
-        <a href="person-case-with-s2-planned">View updated details</a>
+        <a href="person-case-planned">View updated details</a>
       {% elseif (data['entitlementType']) === 'Maternity benefits' %}
-      <a href="person-case-with-s2-maternity">View updated details</a>
+      <a href="person-case-maternity-awaiting-review">View updated details</a>
+      {% else %}
+      <a href="person-case-maternity-awaiting-review">View updated details</a>
       {% endif %}
     </p>
 
