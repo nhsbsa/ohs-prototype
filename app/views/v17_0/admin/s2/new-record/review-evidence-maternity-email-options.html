@@ -118,6 +118,7 @@ Review evidence
    /* end banner */
    .multiple-choice.multiple-radio {
    padding: 0 0 7px 0;
+   background-color: white;
    }
 </style>
 <main id="content" role="main">
@@ -147,6 +148,14 @@ Review evidence
             <p>Your email will automatically include the names, OHS reference and how they should upload their evidence.</p>
 	            <form class="form" action="review-evidence-maternity-send-email" method="post">
 	               <div class="form-group">
+                     <div class="multiple-choice multiple-radio" >
+	                     <input id="duedate" name="duedate" type="checkbox" value="true">
+	                     <label for="duedate">Proof of your estimated date of delivery</label>
+	                  </div>
+                     <div class="multiple-choice multiple-radio" >
+	                     <input id="benefits" name="benefits" type="checkbox" value="true">
+	                     <label for="benefits">Proof of your maternity pay or benefits</label>
+	                  </div>
 	                  <div class="multiple-choice multiple-radio">
 	                     <input id="reside" name="reside" type="checkbox" value="true">
 	                     <label for="reside">Proof of right to reside in the UK
@@ -155,14 +164,6 @@ Review evidence
 	                  <div class="multiple-choice multiple-radio">
 	                     <input id="address" name="address" type="checkbox" value="true">
 	                     <label for="address">Proof of residency in the UK	</label>
-	                  </div>
-	                  <div class="multiple-choice multiple-radio">
-	                     <input id="benefits" name="benefits" type="checkbox" value="true">
-	                     <label for="benefits">Proof of your maternity benefits</label>
-	                  </div>
-                     <div class="multiple-choice multiple-radio">
-	                     <input id="duedate" name="duedate" type="checkbox" value="true">
-	                     <label for="duedate">Proof of due date</label>
 	                  </div>
 	                  <div class="multiple-choice multiple-radio">
 	                     <input id="additional" name="additional" type="checkbox" value="true">

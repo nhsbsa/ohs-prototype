@@ -528,9 +528,19 @@ router.get(/s2maternityReviewEvidence/, function (req,res) {
 })
 
 
-// POST handler for send-email-v3
+// POST handler for review-evidence-maternity-send-email
 router.post('/admin/s2/new-record/review-evidence-maternity-send-email/', function(req, res) {
   res.render('v17_0/admin/s2/new-record/review-evidence-maternity-send-email', {formData: req.body});
+});
+
+// POST handler for review-evidence-maternity-review-email
+router.post('/admin/s2/new-record/review-evidence-maternity-review-email/', function(req, res) {
+  for(var key in req.body) {
+    if (req.body.hasOwnProperty(key)) {
+      req.body[key] = req.body[key].replace(/\r\n/gi, "<br />");
+    }
+  }
+  res.render('v17_0/admin/s2/new-record/review-evidence-maternity-review-email', {formData: req.body});
 });
 
 // -------------------- //
