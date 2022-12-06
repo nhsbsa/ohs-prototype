@@ -545,13 +545,12 @@ router.get(/s2manualemail/, function (req,res) {
 
 // POST handler for review-evidence-maternity-send-email
 router.post('/admin/s2/new-record/review-evidence-maternity-send-email/', function(req, res) {
-  console.log(req.body);
-  if(req.body.length === 0){
-    res.redirect('review-evidence-maternity-email-options-warning');
-  }
-  else {  
-  res.render('v17_0/admin/s2/new-record/review-evidence-maternity-send-email', {formData: req.body});
-  }
+  for (field in req.body) {
+    if(req.body[field] == 'true') {
+      return res.render('v17_0/admin/s2/new-record/review-evidence-maternity-send-email', {formData: req.body});
+    }
+  };
+  return res.redirect('review-evidence-maternity-email-options-warning');
 });
 
 // POST handler for review-evidence-maternity-review-email
