@@ -514,19 +514,34 @@ router.get(/check-your-answers/, function (req,res){
 // S2 Maternity review evidence, review-evidence-maternity-options.html
 router.get(/s2maternityReviewEvidence/, function (req,res) {
   if(req.query.radiosResult === "Approved with evidence") {
-    res.redirect('person-case-maternity-approved');
+    res.redirect('done-maternity-evidence-approved');
   } 
    else if (req.query.radiosResult === "Evidence requested email") {
     res.redirect('review-evidence-maternity-email-options');
   } else if (req.query.radiosResult === "Evidence requested") {
-    res.redirect('review-evidence-maternity-manual');
+    res.redirect('review-evidence-maternity-options-warning');
   } else if (req.query.radiosResult === "Not approved") {
-    res.redirect('person-case-maternity-rejected');
+    res.redirect('done-maternity-rejected');
   } else {
     res.redirect('review-evidence-maternity-options');
   }
 })
 
+// S2 Maternity review evidence, review-evidence-maternity-options-warning.html
+router.get(/s2maternityReviewEvidenceConfirm/, function (req,res) {
+  if(req.query.radiosResult === "Approved with evidence") {
+    res.redirect('done-maternity-evidence-approved');
+  } 
+   else if (req.query.radiosResult === "Evidence requested email") {
+    res.redirect('review-evidence-maternity-email-options');
+  } else if (req.query.radiosResult === "Evidence requested") {
+    res.redirect('done-maternity-manual-email');
+  } else if (req.query.radiosResult === "Not approved") {
+    res.redirect('done-maternity-rejected');
+  } else {
+    res.redirect('review-evidence-maternity-options-warning');
+  }
+})
 
 // POST handler for review-evidence-maternity-send-email
 router.post('/admin/s2/new-record/review-evidence-maternity-send-email/', function(req, res) {
