@@ -550,7 +550,7 @@ router.post('/admin/s2/new-record/review-evidence-maternity-send-email/', functi
       return res.render('v17_0/admin/s2/new-record/review-evidence-maternity-send-email', {formData: req.body});
     }
   };
-  return res.redirect('review-evidence-maternity-email-options-warning');
+  return res.redirect('review-evidence-maternity-email-options-error');
 });
 
 // POST handler for review-evidence-maternity-review-email
