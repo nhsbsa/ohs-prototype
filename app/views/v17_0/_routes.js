@@ -523,7 +523,7 @@ router.get(/s2maternityReviewEvidence/, function (req,res) {
   } else if (req.query.radiosResult === "Not approved") {
     res.redirect('done-maternity-rejected');
   } else {
-    res.redirect('review-evidence-maternity-options');
+    res.redirect('review-evidence-maternity-options-error');
   }
 })
 
@@ -545,7 +545,13 @@ router.get(/s2manualemail/, function (req,res) {
 
 // POST handler for review-evidence-maternity-send-email
 router.post('/admin/s2/new-record/review-evidence-maternity-send-email/', function(req, res) {
+  console.log(req.body);
+  if(req.body.length === 0){
+    res.redirect('review-evidence-maternity-email-options-warning');
+  }
+  else {  
   res.render('v17_0/admin/s2/new-record/review-evidence-maternity-send-email', {formData: req.body});
+  }
 });
 
 // POST handler for review-evidence-maternity-review-email
