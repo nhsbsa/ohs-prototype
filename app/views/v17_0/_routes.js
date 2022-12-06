@@ -527,8 +527,8 @@ router.get(/s2maternityReviewEvidence/, function (req,res) {
   }
 })
 
-// S2 Maternity review evidence, review-evidence-maternity-options-warning.html
-router.get(/s2maternityReviewEvidenceConfirm/, function (req,res) {
+// S2 Maternity review evidence, review-evidence-maternity-options-warning.html 
+router.get(/s2manualemail/, function (req,res) {
   if(req.query.radiosResult === "Approved with evidence") {
     res.redirect('done-maternity-evidence-approved');
   } 
