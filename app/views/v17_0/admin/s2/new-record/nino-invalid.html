@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	When is the treatment expected to start?
+	What is your Insurance number?
 {% endblock %}
 
 {% block content %}
@@ -62,44 +62,48 @@
 					</p>
 				</div>
 			</div>
-			
+			<div class="column-two-thirds">
+				<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+					<h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+						There is a problem
+					</h2>
+					<ul class="error-summary-list">
+						<li class="error-message">
+							<a href="#national-insurance-invalid">
+								Enter a valid National Insurance number in the correct format
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="heading-group">
+					<h1 class="heading-large">What is your National Insurance number?</h1>
+				</div>
 
-            <form action="treatment-start-date-future-maternity" method="post" class="form">
-				<div class="column-two-thirds">
-					<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
-						<h2 class="heading-medium error-summary-heading" id="error-summary-heading">
-							There is a problem
-						</h2>
-						<ul class="error-summary-list">
-							<li class="error-message">
-								<a href="#treatment-start-future-error">
-									Treatment start date cannot be in the future
-								</a>
-							</li>
-						</ul>
-					</div>
-
-					<div class="heading-group">
-						<h1 class="heading-large">When is the treatment expected to start?</h1>
-					</div>
+            <form action="national-insurance-invalid" method="post" class="form">
                
-                    <div class="form-group form-group-error">
-                        <label class="form-label" for="treatment-start">Treatment start date</label>
+                    <div class="form-group">
+                        <label class="form-label" for="nino">National Insurance number (optional)</label>
 						<span class="error-message">
-							Treatment start date cannot be in the future
+							Enter a valid National Insurance number in the correct format
 						</span>
                         <span class="form-hint">
-                            For example, 03/12/2022
+                            Leave blank if a National Insurance number is not available. An NHS number can be provided instead after clicking Next.<br>
+							For example QQ 12 34 56 C 
                         </span>
-                        <input class="form-control-error" id="treatment-start-future-error" name="treatmentStartM" type="text" autocomplete="off" />
+                        <input class="form-control" id="nino" name="nino" type="text" autocomplete="off" value="{{ data ['nino']}}" />
                     </div>
+
+					<div class="form-group">
+						<p><a href="nhs-number">I don't have a National Insurance number</a></p>
+					</div>
                     
-			<div class="form-group">
-				<input class="button" type="submit" value="Next">
-				<a class="button button-secondary" href="search">Cancel</a>
-			</div>
-		
-		</form>
+                <div class="form-group">
+                    <input class="button" type="submit" value="Next">
+                    <a class="button button-secondary" href="search">Cancel</a>
+                </div>
+            </form>
+
+            
         </div>
     </div>
 </main>

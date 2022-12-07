@@ -1,12 +1,12 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	When will the treatment end?
+	When do you intend to leave the UK?
 {% endblock %}
 
 {% block content %}
-<style>
 
+<style>
 	/* banner */
 	.banner-information-without-action {
 		color: #005ea5;
@@ -62,27 +62,42 @@
 					</p>
 				</div>
 			</div>
-			<div class="column-two-thirds">
-				<div class="heading-group">
-					<h1 class="heading-large">When will the treatment end?</h1>
-				</div>
 
-            <form action="treatment-end-date-planned" method="post" class="form">
-            
-                    <div class="form-group">
-                        <label class="form-label" for="treatment-end">Treatment end date</label>
+            <form action="leave-country-date-error" method="post" class="form">
+				<div class="column-two-thirds">
+					<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+						<h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+							There is a problem
+						</h2>
+						<ul class="error-summary-list">
+							<li class="error-message">
+								<a href="#leave-date">
+									Please select the date you are leaving the UK
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="heading-group">
+						<h1 class="heading-large">When do you intend to leave the UK?</h1>
+					</div>
+               
+                    <div class="form-group-error">
+                        <label class="form-label" for="leave-date">Leave date</label>
                         <span class="form-hint">
-                            For example 01/01/2000 
+                            For example 01/01/2000
                         </span>
-                        <input class="form-control" id="treatment-end" name="treatmentEndP" type="text" autocomplete="off" />
+						<span class="error-message">
+							Please select the date you are leaving the UK
+						</span>
+                        <input class="form-control-error" id="leave-date" name="leaveDate" type="text" autocomplete="off" />
                     </div>
-					<div class="form-group">
-						<input class="button" type="submit" value="Next">
-						<a class="button button-secondary" href="search">Cancel</a>
-					</div>   
-                
-            </form>
-			
+                    
+			<div class="form-group">
+				<input class="button" type="submit" value="Next">
+				<a class="button button-secondary" href="search">Cancel</a>
+			</div>
+		
+		</form>
         </div>
     </div>
 </main>

@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What is the name of the treatment facility?
+	Who is providing the treatment?
 {% endblock %}
 
 {% block content %}
@@ -64,25 +64,22 @@
 			</div>
 			<div class="column-two-thirds">
 				<div class="heading-group">
-					<h1 class="heading-large">What is the name of the treatment facility?</h1>
+					<h1 class="heading-large">Who is providing the treatment?</h1>
 				</div>
 
             <form action="treatment-facility-name" method="post" class="form">
 
-				<div class="form-hint">
-					If you've had treatment in more than one place, you'll be able to add these later.
-				  </div>
-                
+					<p>Provide details to be displayed as the ‘Location of the treatment’ on the S2 certificate.</p>
+					<p>Do not include the country of treatment. This will be added automatically.</p>
+				  
                     <div class="form-group">
-                        <label class="form-label" for="treatment-facility-name">Treatment facility name</label>
+                        <!-- <label class="form-label" for="treatment-facility-name">Treatment facility name</label> -->
                         <!-- <span class="form-hint">
                             For example, 03/12/2022
                         </span> -->
-                        <input class="form-control" id="treatment-facility-name" name="treatmentFacilityName" type="text" autocomplete="off" />
+                        <textarea class="form-control" id="textarea-a" name="treatmentFacilityName" type="text" autocomplete="off" cols="30" rows="10" style="width:94%"></textarea>
                     </div>
-                    
-                    
-                
+
 				<div class="form-group">
 					<input class="button" type="submit" value="Next">
 					<a class="button button-secondary" href="search">Cancel</a>

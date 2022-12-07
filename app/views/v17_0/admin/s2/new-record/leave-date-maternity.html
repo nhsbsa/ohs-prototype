@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	When will the treatment end?
+	When do you intend to leave the UK?
 {% endblock %}
 
 {% block content %}
@@ -62,27 +62,27 @@
 					</p>
 				</div>
 			</div>
-			<div class="column-two-thirds">
-				<div class="heading-group">
-					<h1 class="heading-large">When will the treatment end?</h1>
-				</div>
 
-            <form action="treatment-end-date-planned" method="post" class="form">
-            
+            <form action="leave-country-date" method="post" class="form">
+				<div class="column-two-thirds">
+					<div class="heading-group">
+						<h1 class="heading-large">When do you intend to leave the UK?</h1>
+					</div>
+               
                     <div class="form-group">
-                        <label class="form-label" for="treatment-end">Treatment end date</label>
+                        <label class="form-label" for="leave-date">Leave date</label>
                         <span class="form-hint">
                             For example 01/01/2000 
                         </span>
-                        <input class="form-control" id="treatment-end" name="treatmentEndP" type="text" autocomplete="off" />
+                        <input class="form-control" id="leave-date" name="leaveDate" type="text" autocomplete="off" />
                     </div>
-					<div class="form-group">
-						<input class="button" type="submit" value="Next">
-						<a class="button button-secondary" href="search">Cancel</a>
-					</div>   
-                
-            </form>
-			
+                    
+			<div class="form-group">
+				<input class="button" type="submit" value="Next">
+				<a class="button button-secondary" href="search">Cancel</a>
+			</div>
+		
+		</form>
         </div>
     </div>
 </main>

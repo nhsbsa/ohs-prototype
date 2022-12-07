@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	When will the treatment end?
+    What treatment will you receive?
 {% endblock %}
 
 {% block content %}
@@ -62,27 +62,27 @@
 					</p>
 				</div>
 			</div>
-			<div class="column-two-thirds">
-				<div class="heading-group">
-					<h1 class="heading-large">When will the treatment end?</h1>
-				</div>
-
-            <form action="treatment-end-date-planned" method="post" class="form">
-            
-                    <div class="form-group">
-                        <label class="form-label" for="treatment-end">Treatment end date</label>
-                        <span class="form-hint">
-                            For example 01/01/2000 
-                        </span>
-                        <input class="form-control" id="treatment-end" name="treatmentEndP" type="text" autocomplete="off" />
-                    </div>
-					<div class="form-group">
-						<input class="button" type="submit" value="Next">
-						<a class="button button-secondary" href="search">Cancel</a>
-					</div>   
-                
-            </form>
 			
+            <form action="treatment-details" method="post" class="form">
+				<div class="column-two-thirds">
+					<div class="heading-group">
+						<h1 class="heading-large">What treatment will you receive?</h1>
+					</div>
+               
+                    <div class="form-group">
+                        <!-- <label class="form-label" for="treatment-start">Treatment start date</label> -->
+                        <span class="form-hint">
+                            Provide details to be displayed as the 'Treatment' on the S2 certificate
+                        </span>
+                        <textarea class="form-control" name="treatmentDetails" id="textarea-a" cols="30" rows="10" style="width:94%"></textarea>
+                    </div>
+                    
+			<div class="form-group">
+				<input class="button" type="submit" value="Next">
+				<a class="button button-secondary" href="search">Cancel</a>
+			</div>
+		
+		</form>
         </div>
     </div>
 </main>
