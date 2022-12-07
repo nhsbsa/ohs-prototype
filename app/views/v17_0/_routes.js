@@ -23,7 +23,7 @@ router.post([/date-request/, /date-request-error/, /date-request-invalid/], func
   const dorRegEx = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/;
 
   if(req.body.dateOfRequest === '' || req.body.dateOfRequest === undefined) {
-    res.redirect('date-request');
+    res.redirect('date-request-error');
   } else if(req.body.dateOfRequest !== '' && !dorRegEx.test(req.body.dateOfRequest)) {
     res.redirect('date-request-invalid');
   } else if(req.body.dateOfRequest !== '' && dorRegEx.test(req.body.dateOfRequest)) {
@@ -39,9 +39,9 @@ router.post([/entitlement-type/, /entitlement-type-error/], function (req,res) {
 
   if(req.body.entitlementType === "Planned treatment") {
     return res.redirect('treatment-country-planned');
-  } else if (req.body.entitlementType === "Maternity benefits") {
+  } else if (req.body.entitlementType === "Maternity care and delivery") {
     return res.redirect('treatment-country-maternity');
-  } else {
+  } else if (req.body.entitlementType === "") {
     res.redirect('what-s2-entitlement-error');
   }
 })
@@ -67,7 +67,7 @@ router.post([/country-planned/, /country-planned-error/], function (req, res) {
   }
 })
 
-// What country are they having treatment in (Maternity benefits)?
+// What country are they having treatment in (Maternity care and delivery)?
 
 router.post([/country-maternity/, /country-maternity-error/], function (req, res) {
   console.log(req.body.locationPicker);
@@ -86,23 +86,6 @@ router.post([/country-maternity/, /country-maternity-error/], function (req, res
   }
   else {
     return res.redirect('kickouts/ineligible-treatment-country');
-  }
-})
-
-// When do you intend to leave the UK? (Maternity benefits)
-
-router.post([/leave-country-date/, /leave-country-date-invalid/, /leave-country-date-error/], function (req, res) {
-  console.log(req.body.leaveDate);
-  const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/;
-
-  if (dateReg.test(req.body.leaveDate)) {
-    res.redirect('intention-to-leave');
-  }
-  else if (!dateReg.test(req.body.leaveDate) && req.body.leaveDate === '') {
-    res.redirect('leave-date-maternity-error');
-  }
-  else if (!dateReg.test(req.body.leaveDate)) {
-    res.redirect('leave-date-maternity-invalid');
   }
 })
 
@@ -228,18 +211,7 @@ router.post([/nationality/, /nationality-error/, /nationality-eu-error/, /nation
   }
 })
 
-// Do you intend to leave the country permanently? //
-router.post([/leave-country/, /leave-country-error/], function (req,res) {
-  console.log(req.body.leaveIntention);
 
-  if(req.body.leaveIntention === "Yes") {
-    res.redirect('leave-date-maternity');
-  } else if (req.body.leaveIntention === "No") {
-    res.redirect('treatment-start-maternity');
-  } else {
-    res.redirect('intention-to-leave-error');
-  }
-})
 
 // When is the treatment expected to start? (Planned) //
 router.post([/treatment-start-date-planned/,/treatment-start-date-error-planned/, /treatment-start-date-invalid-planned/], function (req, res) {
@@ -316,8 +288,38 @@ router.post([/treatment-details/, /treatment-details-error/, /treatment-details-
   }
 })
 
+// Do you intend to leave the country permanently? //
+router.post([/intention-to-leave/, /intention-to-leave-error/], function (req,res) {
+  console.log(req.body.leaveIntention);
+
+  if(req.body.leaveIntention === "Yes") {
+    res.redirect('leave-date-maternity');
+  } else if (req.body.leaveIntention === "No") {
+    res.redirect('treatment-start-maternity');
+  } else if (req.body.leaveIntention === "" || req.body.leaveIntention === undefined){
+    res.redirect('intention-to-leave-error');
+  }
+})
+
+// When do you intend to leave the UK? (Maternity care and delivery)
+
+router.post([/leave-date-maternity/, /leave-date-maternity-invalid/, /leave-date-maternity-error/], function (req, res) {
+  console.log(req.body.leaveDate);
+  const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/;
+
+  if (req.body.leaveDate !== '' && dateReg.test(req.body.leaveDate)) {
+    res.redirect('treatment-start-maternity');
+  }
+  else if (req.body.leaveDate === '') {
+    res.redirect('leave-date-maternity-error');
+  }
+  else if (!dateReg.test(req.body.leaveDate)) {
+    res.redirect('leave-date-maternity-invalid');
+  }
+})
+
 // When is the treatment expected to start? (Maternity) //
-router.post([/treatment-start-date-maternity/,/treatment-start-date-error-maternity/, /treatment-start-date-invalid-maternity/, /treatment-start-leave-error-maternity/], function (req, res) {
+router.post([/treatment-start-date-maternity/, /treatment-start-date-error-maternity/, /treatment-start-date-invalid-maternity/, /treatment-start-leave-error-maternity/], function (req, res) {
   const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
   var leaveDate = req.session.data['leaveDate'];
   // const today = new Date();
@@ -330,10 +332,7 @@ router.post([/treatment-start-date-maternity/,/treatment-start-date-error-matern
   console.log(req.body.treatmentStartM);
   // console.log(formattedToday);
 
-  if (req.body.leaveIntention === "Yes" && dateReg.test(req.body.treatmentStartM) && new Date(leaveDate) >= new Date(req.body.treatmentStartM)) {
-    res.redirect('treatment-end-maternity');
-  }
-  else if (req.body.leaveIntention === "No" && dateReg.test(req.body.treatmentStartM) && new Date(leaveDate) >= new Date(req.body.treatmentStartM)) {
+  if (dateReg.test(req.body.treatmentStartM) && new Date(leaveDate) >= new Date(req.body.treatmentStartM)) {
     res.redirect('nino');
   }
   else if (!dateReg.test(req.body.treatmentStartM) && req.body.treatmentStartM === '') {
@@ -435,34 +434,41 @@ router.post([/national-insurance/, /national-insurance-invalid/], function (req,
 router.post([/nhs-number/, /nhs-number-error/], function (req,res) {
   console.log(req.body.nhsNumber);
 
-  function isValidNhsNumber(txtNhsNumber) {
-    var isValid = false;
+  // function isValidNhsNumber(txtNhsNumber) {
+  //   var isValid = false;
+  //   if (txtNhsNumber.length == 10) {
+  //       var total = 0;
+  //       var i = 0;
+  //       for (i = 0; i <= 8; i++) {
+  //           var digit = txtNhsNumber.substr(i, 1);
+  //           var factor = 10 - i;
+  //           total += (digit * factor);
+  //       }
+  //       var checkDigit = (11 - (total % 11));
+  //       if (checkDigit == 11) { checkDigit = 0; }
+  //       if (checkDigit == txtNhsNumber.substr(9, 1)) { isValid = true; }
+  //   }
+  //   return isValid;
+  // }
 
-    if (txtNhsNumber.length == 10) {
-        var total = 0;
-        var i = 0;
+  //} else if(req.body.nhsNumber !== '' && isValidNhsNumber(req.body.nhsNumber) == false) {
+  //   res.redirect('nhs-number-invalid');
+  // }
 
-        for (i = 0; i <= 8; i++) {
-            var digit = txtNhsNumber.substr(i, 1);
-            var factor = 10 - i;
-            total += (digit * factor);
-        }
-
-        var checkDigit = (11 - (total % 11));
-        if (checkDigit == 11) { checkDigit = 0; }
-        if (checkDigit == txtNhsNumber.substr(9, 1)) { isValid = true; }
-    }
-    return isValid;
-  }
+  const nhsRegEx = /^[a-zA-Z0-9\s]{12}$/;
+  const nhsTwoRegEx = /^[a-zA-Z0-90-9]{10}$/;
 
   var nino = req.session.data['nino'];
 
   if(nino === '' && req.body.nhsNumber === '') {
     res.redirect('nhs-number-error');
-  } else if(req.body.nhsNumber !== '' && isValidNhsNumber(req.body.nhsNumber) == false) {
+  } else if(nino === '' && req.body.nhsNumber !== '' && !nhsRegEx.test(req.body.nhsNumber) && !nhsTwoRegEx.test(req.body.nhsNumber)) {
     res.redirect('nhs-number-invalid');
-  }
-   else {
+  } else if(nino === '' && req.body.nhsNumber !== '' && !nhsRegEx.test(req.body.nhsNumber) && nhsTwoRegEx.test(req.body.nhsNumber)) {
+    res.redirect('check-your-answers');
+  } else if(nino === '' && req.body.nhsNumber !== '' && nhsRegEx.test(req.body.nhsNumber) && !nhsTwoRegEx.test(req.body.nhsNumber)) {
+    res.redirect('check-your-answers');
+  } else if (nino !== '') {
     res.redirect('check-your-answers');
   }
 })
@@ -526,7 +532,6 @@ router.post([/date-of-birth/, /date-of-birth-error/, /date-of-birth-invalid/], f
   console.log(req.body.dateOfBirth);
   
   const dobRegEx = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/;
- 
 
   if(req.body.dateOfBirth === '') {
     res.redirect('dob-error');

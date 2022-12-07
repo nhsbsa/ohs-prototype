@@ -20,15 +20,27 @@
       <div class="column-two-thirds">
 
         <div class="done-panel">
-          <h1 class="heading-xlarge"><span id="done-tick"></span>S2 certificate application submitted for {{ data['fullName']}}</h1>
+          <h1 class="heading-xlarge"><span id="done-tick"></span>S2 certificate application submitted for <br>
+            {% if data['firstName'] %}
+              {{ data['firstName']}} {{ data['lastName']}}
+            {% else %}
+              Michelle Philip
+            {% endif %}
+          </h1>
           <h2 class="heading-large"><span class="heading-secondary" style="color:white;">OHS Reference number</span> {{ data['ohs']}}</h2>
         </div>
 
         <h2 class="heading-medium">What happens next</h2>
         <p>An email will be sent to the internal mailbox once the relevant checks have been complete. This can take up to 24 hours.</p>
+        <br>
 
-        <a href="case-record-s2-issued" class="link">View updated details</a>
+        {% if (data['entitlementType']) === 'Maternity care and delivery' %}
+          <a href="person-case-maternity-issued" class="link">View updated details</a>
+        {% elseif (data['entitlementType']) === 'Planned treatment' %}
+          <a href="person-case-planned-issued" class="link">View updated details</a>
+				{% endif %}
 
+        <br>
         <div class="form-group">
           <input class="button" href="search" type="submit" value="Do another search">
         </div>

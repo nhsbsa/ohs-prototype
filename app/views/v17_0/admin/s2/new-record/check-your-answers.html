@@ -83,10 +83,10 @@
 						<div>
 							<dt class="cya-question">Full name</dt>
 							<dd class="cya-answer">
-								{% if data['fullName'] %}
-									{{ data['fullName']}}
+								{% if data['firstName'] %}
+								{{ data['firstName']}} {{ data['lastName']}}
 								{% else %}
-									&#8212;
+									Michelle Philip
 								{% endif %}
 							</dd>
 							<dd class="cya-change">
@@ -100,7 +100,7 @@
 								{% if data['dateOfBirth'] %}
 									{{ data['dateOfBirth']}}
 								{% else %}
-									&#8212;
+									15/03/1984
 								{% endif %}
 							</dd>
 							<dd class="cya-change">
@@ -114,7 +114,7 @@
 								{% if data['nino'] %}
 									{{ data['nino']}}
 								{% else %}
-									&#8212;
+									SR123456A
 								{% endif %}
 							</dd>
 							<dd class="cya-change">
@@ -128,7 +128,7 @@
 								{% if data['nhsNumber'] %}
 									{{ data['nhsNumber']}}
 								{% else %}
-									&#8212;
+									485 777 3456
 								{% endif %}
 							</dd>
 							<dd class="cya-change">
@@ -165,9 +165,9 @@
 									<a href="treatment-country-planned">Change<span class="visually-hidden"> the treatment country</span></a>
 								</dd>
 							</div>
-							{% elseif (data['entitlementType']) === 'Maternity benefits' %}
+							{% elseif (data['entitlementType']) === 'Maternity care and delivery' %}
 								<div>
-									<dt class="cya-question">Which country do you inten to give birth?</dt>
+									<dt class="cya-question">Which country do you intend to give birth?</dt>
 									<dd class="cya-answer">{{ data['locationPicker']}}</dd>
 									<dd class="cya-change">
 										<a href="treatment-country-maternity">Change<span class="visually-hidden"> the treatment country</span></a>
@@ -175,11 +175,10 @@
 								</div>
 						{% endif %}
 
-						{% if (data['entitlementType']) === 'Maternity benefits' %}
+						{% if (data['entitlementType']) === 'Maternity care and delivery' %}
 						<div>
 							<dt class="cya-question">Nationality</dt>
 							<dd class="cya-answer">
-								{% if data['nationality'] %}
 									{% if 'UK' in data['nationality'] %}
 										UK national
 									{% endif %}
@@ -189,7 +188,6 @@
 									{% if 'Other' in data['nationality'] %}
 										{{ data['myInputsOtherRT']}}
 									{% endif %}
-								{% endif %}
 							</dd>
 							<dd class="cya-change">
 								<a href="nationality">Change<span class="visually-hidden"> your nationality</span></a>
@@ -206,7 +204,7 @@
 									<a href="active-s1-planned">Change<span class="visually-hidden"> the active S1 answer</span></a>
 								</dd>
 							</div>
-						{% elseif (data['entitlementType']) === 'Maternity benefits' %}
+						{% elseif (data['entitlementType']) === 'Maternity care and delivery' %}
 							<div>
 								<dt class="cya-question">Do you have an active S1?</dt>
 								<dd class="cya-answer">{{ data['activeSOne']}}</dd>
@@ -225,7 +223,7 @@
 									<a href="s1-country-planned">Change<span class="visually-hidden"> the active S1 country</span></a>
 								</dd>
 							</div>
-							{% elseif (data['entitlementType']) === 'Maternity benefits' %}
+							{% elseif (data['entitlementType']) === 'Maternity care and delivery' %}
 								<div>
 									<dt class="cya-question">What country do you have an active S1 for?</dt>
 									<dd class="cya-answer">{{ data['countrySOne']}}</dd>
@@ -235,16 +233,6 @@
 								</div>
 							{% endif %}
 						{% endif %} -->
-
-						{% if (data['entitlementType']) === 'Maternity benefits' %}
-						<div>
-							<dt class="cya-question">What date are you leaving the UK?</dt>
-							<dd class="cya-answer">{{ data['leaveDate']}}</dd>
-							<dd class="cya-change">
-								<a href="leave-date-maternity">Change<span class="visually-hidden"> the treatment start date</span></a>
-							</dd>
-						</div>
-						{% endif %}
 						
 						{% if (data['entitlementType']) === 'Planned treatment' %}
 							<div>
@@ -254,10 +242,16 @@
 									<a href="treatment-start-planned#treatment-start">Change<span class="visually-hidden"> the treatment start date</span></a>
 								</dd>
 							</div>
-						{% elseif (data['entitlementType']) === 'Maternity benefits' %}
+						{% elseif (data['entitlementType']) === 'Maternity care and delivery' %}
 							<div>
 								<dt class="cya-question">When is the treatment expected to start?</dt>
-								<dd class="cya-answer">{{ data['treatmentStartM']}}</dd>
+								<dd class="cya-answer">
+									{% if data['treatmentStartM'] %}
+										{{ data['treatmentStartM']}}
+									{% else %}
+										01-01-2023
+									{% endif %}
+								</dd>
 								<dd class="cya-change">
 									<a href="treatment-start-maternity#treatment-start">Change<span class="visually-hidden"> the treatment start date</span></a>
 								</dd>
@@ -272,10 +266,16 @@
 									<a href="treatment-end-planned#treatment-end">Change<span class="visually-hidden"> the treatment end date</span></a>
 								</dd>
 							</div>
-						{% elseif (data['entitlementType']) === 'Maternity benefits' %}
+						{% elseif (data['entitlementType']) === 'Maternity care and delivery' %}
 						<div>
 							<dt class="cya-question">What is your estimated due date?</dt>
-							<dd class="cya-answer">{{ convertMaxEndM }}</dd>
+							<dd class="cya-answer">
+								{% if data %}
+									{{ convertMaxEndM }}
+								{% else %}
+									12-04-2023
+								{% endif %}
+							</dd>
 							
 							<!-- <dd class="cya-change">
 								<a href="treatment-end-maternity#treatment-end">Change<span class="visually-hidden"> the treatment end date</span></a>
@@ -283,7 +283,7 @@
 						</div>
 						{% endif %}
 
-						
+						{% if (data['entitlementType']) === 'Maternity care and delivery' %}
 						<div>
 							<dt class="cya-question">Do you intend to leave the UK?</dt>
 							<dd class="cya-answer">{{ data['leaveIntention'] }}</dd>
@@ -292,7 +292,16 @@
 								<a href="intention-to-leave">Change<span class="visually-hidden"> the intention to leave</span></a>
 							</dd>
 						</div>
-						
+
+						<div>
+							<dt class="cya-question">When do you intend to leave the UK?</dt>
+							<dd class="cya-answer">{{ data['leaveDate'] }}</dd>
+							
+							<dd class="cya-change">
+								<a href="intention-to-leave">Change<span class="visually-hidden"> the date to leave the UK</span></a>
+							</dd>
+						</div>
+						{% endif %}
 
 						{% if (data['entitlementType']) === 'Planned treatment' %}
 							<div>
@@ -316,7 +325,7 @@
 									{% if data['resAddressLineOne'] %}
 										{{ data['resAddressLineOne']}}
 									{% else %}
-										&#8212;
+										Wellington street
 									{% endif %}
 									<br>
 									{% if data['resAddressLineTwo'] %}
@@ -328,20 +337,20 @@
 									{% if data['resTown'] %}
 										{{ data['resTown']}}
 									{% else %}
-										&#8212;
+										Birmingham
 									{% endif %}
 									<br>
 									{% if data['resAddressPostcode'] %}
 										{{ data['resAddressPostcode']}}
 									{% else %}
-										&#8212;
+										B1 1JX
 									{% endif %}
 									<br>
 									{% if data['resCountry'] %}
 										{{ data['resCountry']}}
+									{% else %}
+										United Kingdom
 									{% endif %}
-								{% else %}
-									&#8212;
 								{% endif %}
 							</dd>
 							<dd class="cya-change">
@@ -379,9 +388,9 @@
 									<br>
 									{% if data['corrCountry'] %}
 										{{ data['corrCountry']}}
+									{% else %}
+										&#8212;
 									{% endif %}
-								{% else %}
-									&#8212;
 								{% endif %}
 							</dd>
 							<dd class="cya-change">
@@ -400,7 +409,7 @@
 										{% if data['emailAddress'] %}
 											{{ data['emailAddress']}} 
 										{% else %}
-											&#8212; 
+											michelle.philip@email.com
 										{% endif %}
 									</dd>
 									
@@ -425,7 +434,6 @@
 								</div>
 							</dl>
 						</div>
-
 				</div>
 				<div class="form-group">
 					<h2 class="heading-medium">Now create and send entitlement</h2>
