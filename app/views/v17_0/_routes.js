@@ -211,8 +211,6 @@ router.post([/nationality/, /nationality-error/, /nationality-eu-error/, /nation
   }
 })
 
-
-
 // When is the treatment expected to start? (Planned) //
 router.post([/treatment-start-date-planned/,/treatment-start-date-error-planned/, /treatment-start-date-invalid-planned/], function (req, res) {
   const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
@@ -238,7 +236,7 @@ router.post([/treatment-start-date-planned/,/treatment-start-date-error-planned/
 })
 
 // When is the treatment expected to end? (Planned) //
-router.post([/treatment-end-date-planned/, /treatment-end-invalid-planned/, /treatment-end-planned-error/], function (req, res) {
+router.post([/treatment-end-date-planned/, /treatment-end-invalid-planned/, /treatment-end-limit-planned/, /treatment-end-planned-error/], function (req, res) {
   const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
 
   var startDate = req.session.data['treatmentStartP'];
@@ -262,7 +260,7 @@ router.post([/treatment-end-date-planned/, /treatment-end-invalid-planned/, /tre
   console.log(convertMaxEndP);
 
   if (req.body.treatmentEndP !== '' && dateReg.test(req.body.treatmentEndP) && new Date(convertMaxEndP) < new Date(req.body.treatmentEndP)) {
-    res.redirect('treatment-end-error-planned');
+    res.redirect('treatment-end-limit-planned');
   }
   else if (req.body.treatmentEndP !== '' && !dateReg.test(req.body.treatmentEndP)) {
     res.redirect('treatment-end-invalid-error-planned');
@@ -276,7 +274,7 @@ router.post([/treatment-end-date-planned/, /treatment-end-invalid-planned/, /tre
 })
 
 // What treatment will you receive? (Planned) //
-router.post([/treatment-details/, /treatment-details-error/, /treatment-details-invalid/], function (req, res) {
+router.post([/treatment-details/, /treatment-details-error/], function (req, res) {
   console.log(req.body.treatmentDetails);
   var details = req.body.treatmentDetails;
 
@@ -321,7 +319,6 @@ router.post([/leave-date-maternity/, /leave-date-maternity-invalid/, /leave-date
 // When is the treatment expected to start? (Maternity) //
 router.post([/treatment-start-date-maternity/, /treatment-start-date-error-maternity/, /treatment-start-date-invalid-maternity/, /treatment-start-leave-error-maternity/], function (req, res) {
   const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
-  var leaveDate = req.session.data['leaveDate'];
   // const today = new Date();
   // const yyyy = today.getFullYear();
   // let mm = today.getMonth() + 1; 
@@ -332,7 +329,7 @@ router.post([/treatment-start-date-maternity/, /treatment-start-date-error-mater
   console.log(req.body.treatmentStartM);
   // console.log(formattedToday);
 
-  if (dateReg.test(req.body.treatmentStartM) && new Date(leaveDate) >= new Date(req.body.treatmentStartM)) {
+  if (dateReg.test(req.body.treatmentStartM) && new Date(req.session.body.leaveDate) >= new Date(req.body.treatmentStartM)) {
     res.redirect('nino');
   }
   else if (!dateReg.test(req.body.treatmentStartM) && req.body.treatmentStartM === '') {
@@ -341,7 +338,7 @@ router.post([/treatment-start-date-maternity/, /treatment-start-date-error-mater
   else if (!dateReg.test(req.body.treatmentStartM)) {
     res.redirect('treatment-start-invalid-error-maternity');
   }
-  else if (dateReg.test(req.body.treatmentStartM) && new Date(leaveDate) < new Date(req.body.treatmentStartM)) {
+  else if (dateReg.test(req.body.treatmentStartM) && new Date(req.session.body.leaveDate) < new Date(req.body.treatmentStartM)) {
     res.redirect('treatment-start-leave-error-maternity');
   }
 })
@@ -385,7 +382,7 @@ router.post([/treatment-start-date-maternity/, /treatment-start-date-error-mater
 // })
 
 
-// When is the treatment expected to end? (Maternity Default Date)???? //
+// When is the treatment expected to end? (Maternity Default Date) //
 // router.get(/treatment-end-default-maternity/, function (req,res){
 //   var startDateM = req.session.data['treatmentStartM'];
 
