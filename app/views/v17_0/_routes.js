@@ -319,17 +319,15 @@ router.post([/leave-date-maternity/, /leave-date-maternity-invalid/, /leave-date
 // When is the treatment expected to start? (Maternity) //
 router.post([/treatment-start-date-maternity/, /treatment-start-date-error-maternity/, /treatment-start-date-invalid-maternity/, /treatment-start-leave-error-maternity/], function (req, res) {
   const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
-  // const today = new Date();
-  // const yyyy = today.getFullYear();
-  // let mm = today.getMonth() + 1; 
-  // const dd = today.getDate();
-
-  // const formattedToday = dd + '/' + mm + '/' + yyyy;
-
+  var leaveDate = req.session.data['leaveDate'];
+  var treatmentStartM = req.body.treatmentStartM;
   console.log(req.body.treatmentStartM);
-  // console.log(formattedToday);
+  console.log(leaveDate);
 
-  if (dateReg.test(req.body.treatmentStartM) && new Date(req.session.body.leaveDate) >= new Date(req.body.treatmentStartM)) {
+  console.log(new Date(leaveDate));
+  console.log(leaveDate);
+
+  if (dateReg.test(req.body.treatmentStartM) && new Date(leaveDate) >= new Date(treatmentStartM)) {
     res.redirect('nino');
   }
   else if (!dateReg.test(req.body.treatmentStartM) && req.body.treatmentStartM === '') {
@@ -338,7 +336,7 @@ router.post([/treatment-start-date-maternity/, /treatment-start-date-error-mater
   else if (!dateReg.test(req.body.treatmentStartM)) {
     res.redirect('treatment-start-invalid-error-maternity');
   }
-  else if (dateReg.test(req.body.treatmentStartM) && new Date(req.session.body.leaveDate) < new Date(req.body.treatmentStartM)) {
+  else if (dateReg.test(req.body.treatmentStartM) && new Date(leaveDate) < new Date(treatmentStartM)) {
     res.redirect('treatment-start-leave-error-maternity');
   }
 })
@@ -496,7 +494,6 @@ router.post([/contact-details/, /contact-details-error/, /contact-details-email/
 //What are your address details? //
 router.post([/address-details/, /address-details-postcode/], function (req,res) {
   console.log(req.body.addressPostcode);
-  
   const postcodeRegEx = /^([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9][A-Za-z]?))))\s?[0-9][A-Za-z]{2})$/;
   const startsWithRegEx = /^[GX][JE][GY][IM]{1,2}\d[a-z\d]?\s*\d[a-z]{2}$/;
 
