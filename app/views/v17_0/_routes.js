@@ -566,6 +566,59 @@ router.get(/check-your-answers/, function (req,res){
   res.render('v17_0/admin/s2/new-record/check-your-answers', {convertMaxEndP: convertMaxEndP, convertMaxEndM: convertMaxEndM});
 });
 
+
+// S2 Maternity review evidence, review-evidence-maternity-options.html
+router.get(/s2maternityReviewEvidence/, function (req,res) {
+  if(req.query.radiosResult === "Approved with evidence") {
+    res.redirect('done-maternity-evidence-approved');
+  } 
+   else if (req.query.radiosResult === "Evidence requested email") {
+    res.redirect('review-evidence-maternity-email-options');
+  } else if (req.query.radiosResult === "Evidence requested") {
+    res.redirect('review-evidence-maternity-options-warning');
+  } else if (req.query.radiosResult === "Not approved") {
+    res.redirect('done-maternity-rejected');
+  } else {
+    res.redirect('review-evidence-maternity-options-error');
+  }
+})
+
+// S2 Maternity review evidence, review-evidence-maternity-options-warning.html 
+router.get(/s2manualemail/, function (req,res) {
+  if(req.query.radiosResult === "Approved with evidence") {
+    res.redirect('done-maternity-evidence-approved');
+  } 
+   else if (req.query.radiosResult === "Evidence requested email") {
+    res.redirect('review-evidence-maternity-email-options');
+  } else if (req.query.radiosResult === "Evidence requested") {
+    res.redirect('done-maternity-manual-email');
+  } else if (req.query.radiosResult === "Not approved") {
+    res.redirect('done-maternity-rejected');
+  } else {
+    res.redirect('review-evidence-maternity-options-warning');
+  }
+})
+
+// POST handler for review-evidence-maternity-send-email
+router.post('/admin/s2/new-record/review-evidence-maternity-send-email/', function(req, res) {
+  for (field in req.body) {
+    if(req.body[field] == 'true') {
+      return res.render('v17_0/admin/s2/new-record/review-evidence-maternity-send-email', {formData: req.body});
+    }
+  };
+  return res.redirect('review-evidence-maternity-email-options-error');
+});
+
+// POST handler for review-evidence-maternity-review-email
+router.post('/admin/s2/new-record/review-evidence-maternity-review-email/', function(req, res) {
+  for(var key in req.body) {
+    if (req.body.hasOwnProperty(key)) {
+      req.body[key] = req.body[key].replace(/\r\n/gi, "<br />");
+    }
+  }
+  res.render('v17_0/admin/s2/new-record/review-evidence-maternity-review-email', {formData: req.body});
+});
+
 // -------------------- //
 // ----- CRA EHIC ----- //
 // -------------------- //

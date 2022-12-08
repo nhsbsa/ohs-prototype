@@ -39,6 +39,22 @@
         <h2 class="heading-medium">What happens next</h2>
         <p>An email will be sent to the internal mailbox once the relevant checks have been complete. This can take up to 24 hours.</p>
 
+
+        <p>
+        {% if (data['entitlementType']) === 'Planned treatment' %}
+        <a href="person-case-planned-issued">View updated details</a>
+      {% elseif (data['entitlementType']) === 'Maternity benefits' %}
+      <a href="person-case-maternity-awaiting-review">View updated details</a>
+      {% else %}
+      <a href="person-case-maternity-awaiting-review">View updated details</a>
+      {% endif %}
+    </p>
+
+        <p><a href="" class="button">Do another search</a></p>
+
+
+
+
         {% if (data['entitlementType']) === 'Maternity care and delivery' %}
           <a href="person-case-maternity-issued" class="link">View updated details</a>
         {% elseif (data['entitlementType']) === 'Planned treatment' %}
