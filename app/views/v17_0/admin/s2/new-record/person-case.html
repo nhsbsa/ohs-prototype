@@ -170,12 +170,12 @@
 				<h1 class="heading-large">
 					{% if data['firstName'] %}
 						{{ data['firstName']}} {{ data['lastName']}}
-					{% else %}
-						Michael Philip
+					% else %}
+						Michelle Philip
 					{% endif %}
 					<span class="heading-secondary">OHS Reference Number - 
-						{% if data['firstName'] %}
-							{{ data['firstName']}} {{ data['lastName']}}
+						{% if data['ohs'] %}
+							{{ data['ohs']}}
 						{% else %}
 							25000002
 						{% endif %}
@@ -216,7 +216,7 @@
 												{% if data['firstName'] %}
 													{{ data['firstName']}} {{ data['lastName']}}
 												{% else %}
-													Michael Philip
+													Michelle Philip
 												{% endif %}
 												
 											</dd>
@@ -409,7 +409,7 @@
 							<br> 
 						<div class="form-group">
 							
-							<input class="button" type="submit" href="date-request" value="Create a new entitlement"/>
+							<a class="button" href="date-request">Create a new entitlement</a>
 							<a class="button button-secondary" href="search">Exit record</a>
 						</div>
 							<!-- <div id="myDIV2" style="display:none;">

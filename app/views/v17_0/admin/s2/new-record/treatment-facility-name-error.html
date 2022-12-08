@@ -48,7 +48,7 @@
 							{% if data['firstName'] %}
 								{{ data['firstName']}} {{ data['lastName']}}
 							{% else %}
-								Test S2
+								Michelle Philip
 							{% endif %}
 						</span>
 						<span class="vertical-bar">|</span>
@@ -82,33 +82,26 @@
 
             <form action="treatment-facility-name-error" method="post" class="form">
 
-				<div class="form-hint">
-					If you've had treatment in more than one place, you'll be able to add these later.
-				  </div>
-                
+					<p>Provide details to be displayed as the ‘Location of the treatment’ on the S2 certificate.</p>
+					<p>Do not include the country of treatment. This will be added automatically.</p>
+				
                     <div class="form-group-error">
-                        <label class="form-label" for="treatment-facility-name">Treatment facility name</label>
+                        <!-- <label class="form-label" for="treatment-facility-name">Treatment facility name</label> -->
                         <span class="error-message">
 							Enter the name of the hospital, clinic, or treatment facility
 						</span>
-                        <input class="form-control-error" id="treatment-facility-name" name="treatmentFacilityName" type="text" autocomplete="off" />
-                    </div>
-                    
-                    
-                
+                        <textarea class="form-control" id="textarea-a" name="treatmentFacilityName" type="text" autocomplete="off" cols="30" rows="10" style="width:94%"></textarea>
+						
+					</div>
+					<br>
+
 			<div class="form-group">
 				<input class="button" type="submit" value="Next">
 				<a class="button button-secondary" href="search">Cancel</a>
 			</div>
 			</form>
 
-			<details>
-				<summary><span class="summary">What medical facilities are not covered?</span></summary>
-				<div class="panel panel-border-narrow">
-					<p>An S2 does not cover treatment provided by pharmacies or private healthcare providers.</p>
-          			<p>An S2 does not cover prescription costs.</p>
-				</div>
-			</details>
+			
         </div>
     </div>
 </main>

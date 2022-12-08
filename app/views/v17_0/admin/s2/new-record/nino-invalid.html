@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What is your full name?
+	What is your Insurance number?
 {% endblock %}
 
 {% block content %}
@@ -69,33 +69,41 @@
 					</h2>
 					<ul class="error-summary-list">
 						<li class="error-message">
-							<a href="#full-name">
-								Please enter your full name
+							<a href="#national-insurance-invalid">
+								Enter a valid National Insurance number in the correct format
 							</a>
 						</li>
 					</ul>
 				</div>
-				
 				<div class="heading-group">
-					<h1 class="heading-large">What is your full name?</h1>
+					<h1 class="heading-large">What is your National Insurance number?</h1>
 				</div>
 
-            <form action="full-name-error" method="post" class="form">
-
-                    <div class="form-group-error">
-                        <label class="form-label" for="full-name">Full name</label>
+            <form action="national-insurance-invalid" method="post" class="form">
+               
+                    <div class="form-group">
+                        <label class="form-label" for="nino">National Insurance number (optional)</label>
 						<span class="error-message">
-							Please enter your full name
+							Enter a valid National Insurance number in the correct format
 						</span>
-                        <input class="form-control-error" id="full-name" name="fullName" type="text" autocomplete="off" value="{{ data['fullName']}}"/>
+                        <span class="form-hint">
+                            Leave blank if a National Insurance number is not available. An NHS number can be provided instead after clicking Next.<br>
+							For example QQ 12 34 56 C 
+                        </span>
+                        <input class="form-control" id="nino" name="nino" type="text" autocomplete="off" value="{{ data ['nino']}}" />
                     </div>
 
-				<div class="form-group">
-					<input class="button" type="submit" value="Next">
-					<a class="button button-secondary" href="search">Cancel</a>
-				</div>
+					<div class="form-group">
+						<p><a href="nhs-number">I don't have a National Insurance number</a></p>
+					</div>
+                    
+                <div class="form-group">
+                    <input class="button" type="submit" value="Next">
+                    <a class="button button-secondary" href="search">Cancel</a>
+                </div>
             </form>
-			
+
+            
         </div>
     </div>
 </main>

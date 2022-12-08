@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What is your Insurance Number?
+	What is your Insurance number?
 {% endblock %}
 
 {% block content %}
@@ -48,7 +48,7 @@
 							{% if data['firstName'] %}
 								{{ data['firstName']}} {{ data['lastName']}}
 							{% else %}
-								Test S2
+								Michelle Philip
 							{% endif %}
 						</span>
 						<span class="vertical-bar">|</span>
@@ -64,15 +64,16 @@
 			</div>
 			<div class="column-two-thirds">
 				<div class="heading-group">
-					<h1 class="heading-large">What is your National Insurance Number?</h1>
+					<h1 class="heading-large">What is your National Insurance number?</h1>
 				</div>
 
             <form action="national-insurance" method="post" class="form">
                
                     <div class="form-group">
-                        <label class="form-label" for="nino">National Insurance Number (optional)</label>
+                        <label class="form-label" for="nino">National Insurance number (optional)</label>
                         <span class="form-hint">
-                            It's on your National Insurance card, benefit letter, payslip or P60. For example, 'QQ 12 34 56 C'."
+                            Leave blank if a National Insurance number is not available. An NHS number can be provided instead after clicking Next.<br>
+							For example QQ 12 34 56 C 
                         </span>
                         <input class="form-control" id="nino" name="nino" type="text" autocomplete="off" value="{{ data ['nino']}}" />
                     </div>

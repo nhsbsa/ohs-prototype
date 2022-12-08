@@ -48,7 +48,7 @@
 							{% if data['firstName'] %}
 								{{ data['firstName']}} {{ data['lastName']}}
 							{% else %}
-								Test S2
+								Michelle Philip
 							{% endif %}
 						</span>
 						<span class="vertical-bar">|</span>
@@ -64,7 +64,7 @@
 			</div>
 			<div class="column-two-thirds">
 				<div class="heading-group">
-					<h1 class="heading-large">What is your NHS Number?</h1>
+					<h1 class="heading-large">What is your NHS number?</h1>
 				</div>
 
             <form action="nhs-number" method="post" class="form">
@@ -72,7 +72,8 @@
                     <div class="form-group">
                         <label class="form-label" for="nhs-number">NHS Number</label>
                         <span class="form-hint">
-                            For example, 'QQ123456C'
+							Can be left blank if a National Insurance number has already been provided.<br>
+                            For example 485 777 3456
                         </span>
                         <input class="form-control" id="nhs-number" name="nhsNumber" type="text" autocomplete="off" />
                     </div>

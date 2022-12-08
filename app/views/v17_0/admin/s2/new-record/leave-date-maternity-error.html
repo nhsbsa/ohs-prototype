@@ -1,12 +1,12 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What is your full name?
+	When do you intend to leave the UK?
 {% endblock %}
 
 {% block content %}
-<style>
 
+<style>
 	/* banner */
 	.banner-information-without-action {
 		color: #005ea5;
@@ -62,40 +62,43 @@
 					</p>
 				</div>
 			</div>
-			<div class="column-two-thirds">
-				<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
-					<h2 class="heading-medium error-summary-heading" id="error-summary-heading">
-						There is a problem
-					</h2>
-					<ul class="error-summary-list">
-						<li class="error-message">
-							<a href="#full-name">
-								Please enter your full name
-							</a>
-						</li>
-					</ul>
-				</div>
-				
-				<div class="heading-group">
-					<h1 class="heading-large">What is your full name?</h1>
-				</div>
 
-            <form action="full-name-error" method="post" class="form">
-
+            <form action="leave-date-maternity-error" method="post" class="form">
+				<div class="column-two-thirds">
+					<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+						<h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+							There is a problem
+						</h2>
+						<ul class="error-summary-list">
+							<li class="error-message">
+								<a href="#leave-date">
+									Please select the date you are leaving the UK
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="heading-group">
+						<h1 class="heading-large">When do you intend to leave the UK?</h1>
+					</div>
+               
                     <div class="form-group-error">
-                        <label class="form-label" for="full-name">Full name</label>
+                        <label class="form-label" for="leave-date">Leave date</label>
+                        <span class="form-hint">
+                            For example 01/01/2000
+                        </span>
 						<span class="error-message">
-							Please enter your full name
+							Please select the date you are leaving the UK
 						</span>
-                        <input class="form-control-error" id="full-name" name="fullName" type="text" autocomplete="off" value="{{ data['fullName']}}"/>
+                        <input class="form-control-error" id="leave-date" name="leaveDate" type="text" autocomplete="off" />
                     </div>
-
-				<div class="form-group">
-					<input class="button" type="submit" value="Next">
-					<a class="button button-secondary" href="search">Cancel</a>
-				</div>
-            </form>
-			
+					<br>
+                    
+			<div class="form-group">
+				<input class="button" type="submit" value="Next">
+				<a class="button button-secondary" href="search">Cancel</a>
+			</div>
+		
+		</form>
         </div>
     </div>
 </main>
