@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	When will the treatment end??
+    What treatment will you receive?
 {% endblock %}
 
 {% block content %}
@@ -62,43 +62,43 @@
 					</p>
 				</div>
 			</div>
-			<div class="column-two-thirds">
-				<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
-					<h2 class="heading-medium error-summary-heading" id="error-summary-heading">
-						There is a problem
-					</h2>
-					<ul class="error-summary-list">
-						<li class="error-message">
-							<a href="#treatment-end">
-								Planned treatment end date cannot be past 12 months from start date
-							</a>
-						</li>
-					</ul>
-				</div>
+			
+            <form action="treatment-details-limit" method="post" class="form">
+				<div class="column-two-thirds">
+					<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+						<h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+							There is a problem
+						</h2>
+						<ul class="error-summary-list">
+							<li class="error-message">
+								<a href="#textarea-a">
+									Please describe your planned treatment in less than 300 characters
+								</a>
+							</li>
+						</ul>
+					</div>
 
-				<div class="heading-group">
-					<h1 class="heading-large">When will the treatment end?</h1>
-				</div>
-
-            <form action="treatment-end-limit-planned" method="post" class="form">
-            
-                    <div class="form-group form-group-error">
-                        <label class="form-label" for="treatment-end">Treatment end date</label>
+					<div class="heading-group">
+						<h1 class="heading-large">What treatment will you receive?</h1>
+					</div>
+               
+                    <div class="form-group">
+                        <!-- <label class="form-label" for="treatment-start">Treatment start date</label> -->
                         <span class="error-message">
-							Planned treatment end date cannot be past 12 months from start date
+							Please describe your planned treatment in less than 300 characters
 						</span>
 						<span class="form-hint">
-                            For example 01/01/2000 
+                            Provide details to be displayed as the 'Treatment' on the S2 certificate
                         </span>
-                        <input class="form-control-error" id="treatment-end" name="treatmentEndP" type="text" autocomplete="off" />
+                        <textarea class="form-control" name="treatmentDetails" id="textarea-a" cols="30" rows="10" style="width:94%"></textarea>
                     </div>
-					<div class="form-group">
-						<input class="button" type="submit" value="Next">
-						<a class="button button-secondary" href="search">Cancel</a>
-					</div>   
-                
-            </form>
-			
+                    
+			<div class="form-group">
+				<input class="button" type="submit" value="Next">
+				<a class="button button-secondary" href="search">Cancel</a>
+			</div>
+		
+		</form>
         </div>
     </div>
 </main>

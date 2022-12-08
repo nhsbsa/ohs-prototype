@@ -173,13 +173,13 @@ router.post([/nationality/, /nationality-error/, /nationality-eu-error/, /nation
   console.log(req.body.myInputsEURT);
   console.log(req.body.myInputsOtherRT);
 
-  if (arraysContainSame(req.body.nationality, ['UK','EU, EEA', 'Other']) === true && req.body.myInputsEURT === '' && req.body.myInputsOther === '') {
+  if (arraysContainSame(req.body.nationality, ['UK', 'EU, EEA', 'Other']) === true && req.body.myInputsEURT === '' && req.body.myInputsOther === '') {
     return res.redirect('nationality-eu-other-error');
   }
-  else if (arraysContainSame(req.body.nationality, ['UK','EU, EEA', 'Other']) === true && req.body.myInputsEURT !== '' && req.body.myInputsOther === '') {
+  else if (arraysContainSame(req.body.nationality, ['UK', 'EU, EEA', 'Other']) === true && req.body.myInputsEURT !== '' && req.body.myInputsOther === '') {
     return res.redirect('nationality-eu-error');
   }
-  else if (arraysContainSame(req.body.nationality, ['UK','EU, EEA', 'Other']) === true && req.body.myInputsEURT === '' && req.body.myInputsOther !== '') {
+  else if (arraysContainSame(req.body.nationality, ['UK', 'EU, EEA', 'Other']) === true && req.body.myInputsEURT === '' && req.body.myInputsOther !== '') {
     return res.redirect('nationality-other-error');
   }
   else if (arraysContainSame(req.body.nationality, ['EU, EEA', 'Other']) === true && req.body.myInputsEURT === '' && req.body.myInputsOther === '') {
@@ -207,95 +207,7 @@ router.post([/nationality/, /nationality-error/, /nationality-eu-error/, /nation
     return res.redirect('nationality-error');
   }
   else {
-    return res.redirect('intention-to-leave');
-  }
-})
-
-// When is the treatment expected to start? (Planned) //
-router.post([/treatment-start-date-planned/,/treatment-start-date-error-planned/, /treatment-start-date-invalid-planned/], function (req, res) {
-  const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
-  // const today = new Date();
-  // const yyyy = today.getFullYear();
-  // let mm = today.getMonth() + 1; 
-  // const dd = today.getDate();
-
-  // const formattedToday = dd + '/' + mm + '/' + yyyy;
-
-  console.log(req.body.treatmentStartP);
-  // console.log(formattedToday);
-
-  if (dateReg.test(req.body.treatmentStartP)) {
-    res.redirect('treatment-end-planned');
-  }
-  else if (!dateReg.test(req.body.treatmentStartP) && req.body.treatmentStartP === '') {
-    res.redirect('treatment-start-error-planned');
-  }
-  else if (!dateReg.test(req.body.treatmentStartP)) {
-    res.redirect('treatment-start-invalid-error-planned');
-  }
-})
-
-// When is the treatment expected to end? (Planned) //
-router.post([/treatment-end-date-planned/, /treatment-end-invalid-planned/, /treatment-end-limit-planned/, /treatment-end-planned-error/], function (req, res) {
-  const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
-
-  var startDate = req.session.data['treatmentStartP'];
-  var endDate = req.session.data['treatmentEndP'];
-  console.log(startDate);
-  console.log(endDate);
-
-  var lastRunDate = new Date(startDate.split('/')[2], startDate.split('/')[1] - 1, startDate.split('/')[0]);
-  console.log(lastRunDate);
-
-  var maxEndP = new Date(lastRunDate.setMonth(lastRunDate.getMonth() + 12));
-  console.log(maxEndP);
-
-  function convertDate(inputFormat) {
-    function pad(s) { return (s < 10) ? '0' + s : s; }
-    var d = new Date(inputFormat);
-    return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
-  }
-
-  var convertMaxEndP = convertDate(maxEndP);
-  console.log(convertMaxEndP);
-
-  if (req.body.treatmentEndP !== '' && dateReg.test(req.body.treatmentEndP) && new Date(convertMaxEndP) < new Date(req.body.treatmentEndP)) {
-    res.redirect('treatment-end-limit-planned');
-  }
-  else if (req.body.treatmentEndP !== '' && !dateReg.test(req.body.treatmentEndP)) {
-    res.redirect('treatment-end-invalid-error-planned');
-  }
-  else if (req.body.treatmentEndP !== '' && new Date(convertMaxEndP) >= new Date(req.body.treatmentEndP)) {
-    res.redirect('treatment-details');
-  }
-  else if (req.body.treatmentEndP === '') {
-    res.redirect('treatment-end-error-planned');
-  }
-})
-
-// What treatment will you receive? (Planned) //
-router.post([/treatment-details/, /treatment-details-error/], function (req, res) {
-  console.log(req.body.treatmentDetails);
-  var details = req.body.treatmentDetails;
-
-  if (req.body.treatmentDetails !== '' && details.length >= 1) {
-    res.redirect('treatment-facility-name');
-  }
-  else if (req.body.treatmentDetails === '') {
-    res.redirect('treatment-details-error');
-  }
-})
-
-// Do you intend to leave the country permanently? //
-router.post([/intention-to-leave/, /intention-to-leave-error/], function (req,res) {
-  console.log(req.body.leaveIntention);
-
-  if(req.body.leaveIntention === "Yes") {
-    res.redirect('leave-date-maternity');
-  } else if (req.body.leaveIntention === "No") {
-    res.redirect('treatment-start-maternity');
-  } else if (req.body.leaveIntention === "" || req.body.leaveIntention === undefined){
-    res.redirect('intention-to-leave-error');
+    return res.redirect('leave-date-maternity');
   }
 })
 
@@ -306,7 +218,7 @@ router.post([/leave-date-maternity/, /leave-date-maternity-invalid/, /leave-date
   const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/;
 
   if (req.body.leaveDate !== '' && dateReg.test(req.body.leaveDate)) {
-    res.redirect('treatment-start-maternity');
+    res.redirect('intention-to-leave');
   }
   else if (req.body.leaveDate === '') {
     res.redirect('leave-date-maternity-error');
@@ -316,18 +228,26 @@ router.post([/leave-date-maternity/, /leave-date-maternity-invalid/, /leave-date
   }
 })
 
+// Do you intend to leave the country permanently? //
+router.post([/intention-to-leave/, /intention-to-leave-error/], function (req,res) {
+  console.log(req.body.leaveIntention);
+
+  if(req.body.leaveIntention === "Yes" || req.body.leaveIntention === "No") {
+    res.redirect('treatment-start-maternity');
+  } else if (req.body.leaveIntention === "" || req.body.leaveIntention === undefined){
+    res.redirect('intention-to-leave-error');
+  }
+})
+
 // When is the treatment expected to start? (Maternity) //
 router.post([/treatment-start-date-maternity/, /treatment-start-date-error-maternity/, /treatment-start-date-invalid-maternity/, /treatment-start-leave-error-maternity/], function (req, res) {
   const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
   var leaveDate = req.session.data['leaveDate'];
-  var treatmentStartM = req.body.treatmentStartM;
-  console.log(req.body.treatmentStartM);
-  console.log(leaveDate);
-
+  var treatmentStartM = req.session.data['treatmentStartM'];
+  console.log(new Date(treatmentStartM));
   console.log(new Date(leaveDate));
-  console.log(leaveDate);
 
-  if (dateReg.test(req.body.treatmentStartM) && new Date(leaveDate) >= new Date(treatmentStartM)) {
+  if (dateReg.test(req.body.treatmentStartM) && new Date(leaveDate) < new Date(treatmentStartM)) {
     res.redirect('nino');
   }
   else if (!dateReg.test(req.body.treatmentStartM) && req.body.treatmentStartM === '') {
@@ -336,7 +256,7 @@ router.post([/treatment-start-date-maternity/, /treatment-start-date-error-mater
   else if (!dateReg.test(req.body.treatmentStartM)) {
     res.redirect('treatment-start-invalid-error-maternity');
   }
-  else if (dateReg.test(req.body.treatmentStartM) && new Date(leaveDate) < new Date(treatmentStartM)) {
+  else if (dateReg.test(req.body.treatmentStartM) && new Date(leaveDate) > new Date(treatmentStartM)) {
     res.redirect('treatment-start-leave-error-maternity');
   }
 })
@@ -400,6 +320,81 @@ router.post([/treatment-start-date-maternity/, /treatment-start-date-error-mater
 //   res.render('v17_0/admin/s2/new-record/treatment-end-default-maternity', {convertMaxEndM: convertMaxEndM});
 // });
 
+// When is the treatment expected to start? (Planned) //
+router.post([/treatment-start-date-planned/,/treatment-start-date-error-planned/, /treatment-start-date-invalid-planned/], function (req, res) {
+  const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
+  // const today = new Date();
+  // const yyyy = today.getFullYear();
+  // let mm = today.getMonth() + 1; 
+  // const dd = today.getDate();
+
+  // const formattedToday = dd + '/' + mm + '/' + yyyy;
+
+  console.log(req.body.treatmentStartP);
+  // console.log(formattedToday);
+
+  if (dateReg.test(req.body.treatmentStartP)) {
+    res.redirect('treatment-end-planned');
+  }
+  else if (!dateReg.test(req.body.treatmentStartP) && req.body.treatmentStartP === '') {
+    res.redirect('treatment-start-error-planned');
+  }
+  else if (!dateReg.test(req.body.treatmentStartP)) {
+    res.redirect('treatment-start-invalid-error-planned');
+  }
+})
+
+// When is the treatment expected to end? (Planned) //
+router.post([/treatment-end-date-planned/, /treatment-end-invalid-planned/, /treatment-end-limit-planned/, /treatment-end-planned-error/], function (req, res) {
+  const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
+
+  var startDate = req.session.data['treatmentStartP'];
+  var endDate = req.session.data['treatmentEndP'];
+  console.log(startDate);
+  console.log(endDate);
+
+  var lastRunDate = new Date(startDate.split('/')[2], startDate.split('/')[1] - 1, startDate.split('/')[0]);
+  console.log(lastRunDate);
+
+  var maxEndP = new Date(lastRunDate.setMonth(lastRunDate.getMonth() + 12));
+  console.log(maxEndP);
+
+  // function convertDate(inputFormat) {
+  //   function pad(s) { return (s < 10) ? '0' + s : s; }
+  //   var d = new Date(inputFormat);
+  //   return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+  // }
+
+  if (req.body.treatmentEndP !== '' && !dateReg.test(req.body.treatmentEndP)) {
+    return res.redirect('treatment-end-invalid-error-planned');
+  }
+  else if (req.body.treatmentEndP !== '' && dateReg.test(req.body.treatmentEndP) && maxEndP < new Date(req.body.treatmentEndP)) {
+    return res.redirect('treatment-end-limit-planned');
+  }
+  else if (req.body.treatmentEndP !== '' && maxEndP >= new Date(req.body.treatmentEndP)) {
+    
+    return res.redirect('treatment-details');
+  }
+  else if (req.body.treatmentEndP === '') {
+    return res.redirect('treatment-end-error-planned');
+  }
+})
+
+// What treatment will you receive? (Planned) //
+router.post([/treatment-details/, /treatment-details-error/, /treatment-details-limit/], function (req, res) {
+  console.log(req.body.treatmentDetails);
+  var details = req.body.treatmentDetails;
+
+  if (req.body.treatmentDetails === '') {
+    res.redirect('treatment-details-error');
+  }
+  else if (req.body.treatmentDetails !== '' && details.length > 300) {
+    res.redirect('treatment-details-limit');
+  }
+  else {
+    res.redirect('treatment-facility-name');
+  }
+})
 
 // What is the name of the treatment facility? //
 router.post([/treatment-facility-name/, /treatment-facility-name-error/], function (req,res) {
@@ -426,9 +421,8 @@ router.post([/national-insurance/, /national-insurance-invalid/], function (req,
 })
 
 //What is your NHS Number? //
-router.post([/nhs-number/, /nhs-number-error/], function (req,res) {
-  console.log(req.body.nhsNumber);
-
+router.post([/nhs-number/, /nhs-number-error/, /nhs-number-invalid/], function (req,res) {
+  
   // function isValidNhsNumber(txtNhsNumber) {
   //   var isValid = false;
   //   if (txtNhsNumber.length == 10) {
@@ -450,21 +444,24 @@ router.post([/nhs-number/, /nhs-number-error/], function (req,res) {
   //   res.redirect('nhs-number-invalid');
   // }
 
-  const nhsRegEx = /^[a-zA-Z0-9\s]{12}$/;
-  const nhsTwoRegEx = /^[a-zA-Z0-90-9]{10}$/;
+  // const nhsRegEx = /^[a-zA-Z0-9\s]{12}$/;
+  const nhsRegEx = /^[a-zA-Z0-9]*$/;
 
+  var nhsNum = req.body.nhsNumber.replace(/ /g, '');
   var nino = req.session.data['nino'];
+  console.log(nhsNum.length);
+  console.log(req.body.nhsNumber);
 
-  if(nino === '' && req.body.nhsNumber === '') {
-    res.redirect('nhs-number-error');
-  } else if(nino === '' && req.body.nhsNumber !== '' && !nhsRegEx.test(req.body.nhsNumber) && !nhsTwoRegEx.test(req.body.nhsNumber)) {
-    res.redirect('nhs-number-invalid');
-  } else if(nino === '' && req.body.nhsNumber !== '' && !nhsRegEx.test(req.body.nhsNumber) && nhsTwoRegEx.test(req.body.nhsNumber)) {
-    res.redirect('check-your-answers');
-  } else if(nino === '' && req.body.nhsNumber !== '' && nhsRegEx.test(req.body.nhsNumber) && !nhsTwoRegEx.test(req.body.nhsNumber)) {
-    res.redirect('check-your-answers');
-  } else if (nino !== '') {
-    res.redirect('check-your-answers');
+  if(!nino && req.body.nhsNumber === '') {
+    return res.redirect('nhs-number-error');
+  } else if(!nino && nhsNum.length < 10 || nhsNum.length > 10) {
+    return res.redirect('nhs-number-invalid');
+  } else if(!nino && !nhsRegEx.test(nhsNum)) {
+    return res.redirect('nhs-number-invalid');
+  } else if(!nino && nhsNum.length == 10 && nhsRegEx.test(nhsNum)) {
+    return res.redirect('check-your-answers');
+  } else if (nino) {
+    return res.redirect('check-your-answers');
   }
 })
 
