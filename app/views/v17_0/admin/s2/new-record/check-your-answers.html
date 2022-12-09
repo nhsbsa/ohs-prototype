@@ -180,14 +180,19 @@
 							<dt class="cya-question">Nationality</dt>
 							<dd class="cya-answer">
 									{% if 'UK' in data['nationality'] %}
-										UK national
+										UK national<br>
 									{% endif %}
-									{% if 'EU, EEA or Swiss' in data['nationality'] %}
-										{{ myInputsEURT }}
+									{% if 'EU, EEA' in data['nationality'] %}
+										{% for i in data['myInputsEURT'] %}
+											<span>{{i}}</span><br>
+										{% endfor %}
 									{% endif %}
 									{% if 'Other' in data['nationality'] %}
-										{{ myInputsOtherRT }}
+										{% for i in data['myInputsOtherRT'] %}
+											<span>{{i}}</span><br>
+										{% endfor %}
 									{% endif %}
+
 							</dd>
 							<dd class="cya-change">
 								<a href="nationality">Change<span class="visually-hidden"> your nationality</span></a>

@@ -247,7 +247,13 @@ router.post([/treatment-start-date-maternity/, /treatment-start-date-error-mater
   console.log(new Date(treatmentStartM));
   console.log(new Date(leaveDate));
 
-  if (dateReg.test(req.body.treatmentStartM) && new Date(leaveDate) < new Date(treatmentStartM)) {
+  var lastRunLeaveDate = new Date(leaveDate.split('/')[2], leaveDate.split('/')[1] - 1, leaveDate.split('/')[0]);
+  console.log(lastRunLeaveDate);
+
+  var lastRunStartDate = new Date(treatmentStartM.split('/')[2], treatmentStartM.split('/')[1] - 1, treatmentStartM.split('/')[0]);
+  console.log(lastRunStartDate);
+
+  if (dateReg.test(req.body.treatmentStartM) && lastRunLeaveDate < lastRunStartDate) {
     res.redirect('nino');
   }
   else if (!dateReg.test(req.body.treatmentStartM) && req.body.treatmentStartM === '') {
@@ -256,7 +262,7 @@ router.post([/treatment-start-date-maternity/, /treatment-start-date-error-mater
   else if (!dateReg.test(req.body.treatmentStartM)) {
     res.redirect('treatment-start-invalid-error-maternity');
   }
-  else if (dateReg.test(req.body.treatmentStartM) && new Date(leaveDate) > new Date(treatmentStartM)) {
+  else if (dateReg.test(req.body.treatmentStartM) && lastRunLeaveDate > lastRunStartDate) {
     res.redirect('treatment-start-leave-error-maternity');
   }
 })
@@ -356,6 +362,9 @@ router.post([/treatment-end-date-planned/, /treatment-end-invalid-planned/, /tre
   var lastRunDate = new Date(startDate.split('/')[2], startDate.split('/')[1] - 1, startDate.split('/')[0]);
   console.log(lastRunDate);
 
+  var lastRunEndDate = new Date(endDate.split('/')[2], endDate.split('/')[1] - 1, endDate.split('/')[0]);
+  console.log(lastRunEndDate);
+
   var maxEndP = new Date(lastRunDate.setMonth(lastRunDate.getMonth() + 12));
   console.log(maxEndP);
 
@@ -368,10 +377,10 @@ router.post([/treatment-end-date-planned/, /treatment-end-invalid-planned/, /tre
   if (req.body.treatmentEndP !== '' && !dateReg.test(req.body.treatmentEndP)) {
     return res.redirect('treatment-end-invalid-error-planned');
   }
-  else if (req.body.treatmentEndP !== '' && dateReg.test(req.body.treatmentEndP) && maxEndP < new Date(req.body.treatmentEndP)) {
+  else if (req.body.treatmentEndP !== '' && dateReg.test(req.body.treatmentEndP) && maxEndP < lastRunEndDate) {
     return res.redirect('treatment-end-limit-planned');
   }
-  else if (req.body.treatmentEndP !== '' && maxEndP >= new Date(req.body.treatmentEndP)) {
+  else if (req.body.treatmentEndP !== '' && maxEndP >= lastRunEndDate) {
     
     return res.redirect('treatment-details');
   }
