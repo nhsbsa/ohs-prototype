@@ -478,7 +478,7 @@ Person record
 																<tbody>
 																	<tr class="row">
 																		<td class="column title">Type</td>
-																		<td class="column">Planned</td>
+																		<td class="column">Planned treatment</td>
 																	</tr>
 
 																	<tr class="row">
@@ -492,7 +492,27 @@ Person record
 																		</td>
 																	</tr>
 																	<tr class="row">
-																		<td class="column title">Treatment facility</td>
+																		<td class="column title">Issued date</td>
+																		<td class="column">
+																			{% if data['dateOfRequest'] %}
+																			{{ data['dateOfRequest']}}
+																			{% else %}
+																			09-12-2022
+																			{% endif %}
+																		</td>
+																	</tr>
+																	<tr class="row">
+																		<td class="column title">Treatment received</td>
+																		<td class="column">
+																			{% if data['treatmentDetails'] %}
+																			{{ data['treatmentDetails']}}
+																			{% else %}
+																			Blood tests, Anaesthetist Consultation, ENT F/U Consultation and Covid test. Functional Endoscopic Sinus Surgery (FESS) and Septoturbinoplasty (3 procedures).
+																			{% endif %}
+																		</td>
+																	</tr>
+																	<tr class="row">
+																		<td class="column title">Treatment provider</td>
 																		<td class="column">
 																			{% if data['treatmentFacilityName'] %}
 																			{{ data['treatmentFacilityName']}}
