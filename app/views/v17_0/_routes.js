@@ -218,7 +218,7 @@ router.post([/leave-date-maternity/, /leave-date-maternity-invalid/, /leave-date
   const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/;
 
   if (req.body.leaveDate !== '' && dateReg.test(req.body.leaveDate)) {
-    res.redirect('treatment-start-maternity-leave');
+    res.redirect('intention-to-leave');
   }
   else if (req.body.leaveDate === '') {
     res.redirect('leave-date-maternity-error');
