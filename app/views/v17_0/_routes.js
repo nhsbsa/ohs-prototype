@@ -232,7 +232,7 @@ router.post([/leave-date-maternity/, /leave-date-maternity-invalid/, /leave-date
   const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/;
 
   if (req.body.leaveDate !== '' && dateReg.test(req.body.leaveDate)) {
-    res.redirect('treatment-start-maternity');
+    res.redirect('treatment-start-maternity-leave');
   }
   else if (req.body.leaveDate === '') {
     res.redirect('leave-date-maternity-error');
@@ -242,9 +242,23 @@ router.post([/leave-date-maternity/, /leave-date-maternity-invalid/, /leave-date
   }
 })
 
+// When is the treatment expected to start? (Maternity [NO Leave]) //
+router.post([/treatment-start-date-maternity/, /treatment-start-date-error-maternity/, /treatment-start-date-invalid-maternity/], function (req, res) {
+  const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
 
-// When is the treatment expected to start? (Maternity) //
-router.post([/treatment-start-date-maternity/, /treatment-start-date-error-maternity/, /treatment-start-date-invalid-maternity/, /treatment-start-leave-error-maternity/], function (req, res) {
+  if (dateReg.test(req.body.treatmentStartM)) {
+    return res.redirect('nino');
+  }
+  else if (!dateReg.test(req.body.treatmentStartM) && req.body.treatmentStartM === '') {
+    return res.redirect('treatment-start-error-maternity');
+  }
+  else if (!dateReg.test(req.body.treatmentStartM)) {
+    return res.redirect('treatment-start-invalid-error-maternity');
+  }
+})
+
+// When is the treatment expected to start? (Maternity + Leave) //
+router.post([/treatment-start-date-maternity-leave/, /treatment-start-date-error-maternity-leave/, /treatment-start-date-invalid-maternity-leave/, /treatment-start-leave-error-maternity/], function (req, res) {
   const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
   var leaveDate = req.session.data['leaveDate'];
   var treatmentStartM = req.session.data['treatmentStartM'];
@@ -257,20 +271,17 @@ router.post([/treatment-start-date-maternity/, /treatment-start-date-error-mater
   var lastRunStartDate = new Date(treatmentStartM.split('/')[2], treatmentStartM.split('/')[1] - 1, treatmentStartM.split('/')[0]);
   console.log(lastRunStartDate);
 
-  if (leaveDate && dateReg.test(req.body.treatmentStartM) && lastRunLeaveDate < lastRunStartDate) {
-    res.redirect('nino');
+  if (dateReg.test(req.body.treatmentStartM) && lastRunLeaveDate < lastRunStartDate) {
+    return res.redirect('nino');
   }
-  else if (leaveDate && dateReg.test(req.body.treatmentStartM) && lastRunLeaveDate > lastRunStartDate) {
-    res.redirect('treatment-start-leave-error-maternity');
-  }
-  else if (!leaveDate && dateReg.test(req.body.treatmentStartM)) {
-    res.redirect('nino');
+  else if (dateReg.test(req.body.treatmentStartM) && lastRunLeaveDate > lastRunStartDate) {
+    return res.redirect('treatment-start-leave-error-maternity');
   }
   else if (!dateReg.test(req.body.treatmentStartM) && req.body.treatmentStartM === '') {
-    res.redirect('treatment-start-error-maternity');
+    return res.redirect('treatment-start-error-maternity-leave');
   }
   else if (!dateReg.test(req.body.treatmentStartM)) {
-    res.redirect('treatment-start-invalid-error-maternity');
+    return res.redirect('treatment-start-invalid-error-maternity-leave');
   }
 })
 
