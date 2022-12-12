@@ -207,23 +207,9 @@ router.post([/nationality/, /nationality-error/, /nationality-eu-error/, /nation
     return res.redirect('nationality-error');
   }
   else {
-    return res.redirect('intention-to-leave');
+    return res.redirect('leave-date-maternity');
   }
 })
-
-// Do you intend to leave the country permanently? //
-router.post([/intention-to-leave/, /intention-to-leave-error/], function (req,res) {
-  console.log(req.body.leaveIntention);
-
-  if(req.body.leaveIntention === "Yes") {
-    res.redirect('leave-date-maternity');
-  } else if(req.body.leaveIntention === "No") {
-    res.redirect('treatment-start-maternity');
-  } else if(req.body.leaveIntention === "" || req.body.leaveIntention === undefined){
-    res.redirect('intention-to-leave-error');
-  }
-})
-
 
 // When do you intend to leave the UK? (Maternity care and delivery)
 
@@ -242,23 +228,36 @@ router.post([/leave-date-maternity/, /leave-date-maternity-invalid/, /leave-date
   }
 })
 
-// When is the treatment expected to start? (Maternity [NO Leave]) //
-router.post([/treatment-start-date-maternity/, /treatment-start-date-error-maternity/, /treatment-start-date-invalid-maternity/], function (req, res) {
-  const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
+// Do you intend to leave the country permanently? //
+router.post([/intention-to-leave/, /intention-to-leave-error/], function (req,res) {
+  console.log(req.body.leaveIntention);
 
-  if (dateReg.test(req.body.treatmentStartM)) {
-    return res.redirect('nino');
-  }
-  else if (!dateReg.test(req.body.treatmentStartM) && req.body.treatmentStartM === '') {
-    return res.redirect('treatment-start-error-maternity');
-  }
-  else if (!dateReg.test(req.body.treatmentStartM)) {
-    return res.redirect('treatment-start-invalid-error-maternity');
+  if(req.body.leaveIntention === "Yes") {
+    res.redirect('treatment-start-maternity');
+  } else if(req.body.leaveIntention === "No") {
+    res.redirect('treatment-start-maternity');
+  } else if(req.body.leaveIntention === "" || req.body.leaveIntention === undefined){
+    res.redirect('intention-to-leave-error');
   }
 })
 
+// // When is the treatment expected to start? (Maternity [NO Leave]) //
+// router.post([/treatment-start-date-maternity/, /treatment-start-date-error-maternity/, /treatment-start-date-invalid-maternity/], function (req, res) {
+//   const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
+
+//   if (dateReg.test(req.body.treatmentStartM)) {
+//     return res.redirect('nino');
+//   }
+//   else if (!dateReg.test(req.body.treatmentStartM) && req.body.treatmentStartM === '') {
+//     return res.redirect('treatment-start-error-maternity');
+//   }
+//   else if (!dateReg.test(req.body.treatmentStartM)) {
+//     return res.redirect('treatment-start-invalid-error-maternity');
+//   }
+// })
+
 // When is the treatment expected to start? (Maternity + Leave) //
-router.post([/treatment-start-date-maternity-leave/, /treatment-start-date-error-maternity-leave/, /treatment-start-date-invalid-maternity-leave/, /treatment-start-leave-error-maternity/], function (req, res) {
+router.post([/treatment-start-date-maternity/, /treatment-start-date-error-maternity/, /treatment-start-date-invalid-maternity/, /treatment-start-leave-error-maternity/], function (req, res) {
   const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
   var leaveDate = req.session.data['leaveDate'];
   var treatmentStartM = req.session.data['treatmentStartM'];
@@ -278,10 +277,10 @@ router.post([/treatment-start-date-maternity-leave/, /treatment-start-date-error
     return res.redirect('treatment-start-leave-error-maternity');
   }
   else if (!dateReg.test(req.body.treatmentStartM) && req.body.treatmentStartM === '') {
-    return res.redirect('treatment-start-error-maternity-leave');
+    return res.redirect('treatment-start-error-maternity');
   }
   else if (!dateReg.test(req.body.treatmentStartM)) {
-    return res.redirect('treatment-start-invalid-error-maternity-leave');
+    return res.redirect('treatment-start-invalid-error-maternity');
   }
 })
 
