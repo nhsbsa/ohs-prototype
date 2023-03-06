@@ -1,0 +1,92 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+	When is your expected date of delivery?
+{% endblock %}
+
+{% block content %}
+<style>
+
+	/* banner */
+	.banner-information-without-action {
+		color: #005ea5;
+	}
+	.banner-message {
+		font-family: Arial, sans-serif;
+		font-weight: 400;
+		text-transform: none;
+		font-size: 36px;
+		line-height: 1.2;
+		padding: 20px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		border-width: 5px;
+		border-style: solid;
+		font-weight: bold;
+		text-align: center;
+	}
+	.vertical-bar {
+		margin: 0px 10px;
+	}
+	/* end banner */
+</style>
+
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-full">
+			<div id="back">
+				<a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="grid-row">
+			<div class="column-full">
+				<div class="banner-information-without-action">
+					<p class="banner-message">
+						<span class="name text-capitalize">
+							{% if data['firstName'] %}
+								{{ data['firstName']}} {{ data['lastName']}}
+							{% else %}
+								Michelle Philip
+							{% endif %}
+						</span>
+						<span class="vertical-bar">|</span>
+						<span class="ohs-reference-number">
+							{% if data['ohs'] %}
+								{{ data['ohs']}}
+							{% else %}
+								25000002
+							{% endif %}
+						</span>
+					</p>
+				</div>
+			</div>
+
+            <form action="treatment-start-date-maternity-correct" method="post" class="form">
+				<div class="column-two-thirds">
+					<div class="heading-group">
+						<h1 class="heading-large">When is your expected date of delivery?</h1>
+					</div>
+               
+                    <div class="form-group">
+                        <label class="form-label" for="treatment-start">Treatment start date</label>
+                        <span class="form-hint">
+                            For example 01/01/2000
+                        </span>
+                        <input class="form-control" id="treatment-start" name="treatmentStartM" type="text" autocomplete="off" />
+                    </div>
+                    
+			<div class="form-group">
+				<input class="button" type="submit" value="Next">
+				<a class="button button-secondary" href="search">Cancel</a>
+			</div>
+		
+			</form>
+        </div>
+    </div>
+</main>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+
+{% endblock %}

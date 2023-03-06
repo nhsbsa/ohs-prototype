@@ -431,24 +431,24 @@ Person record
 										<td>S2</td>
 										<td>
 											{% if data['treatmentStartM'] %}
-											{{ data['treatmentStartM']}}
+												{{ data['treatmentStartM']}}
 											{% else %}
-											01-01-2023
+												01/01/2023
 											{% endif %}
 										</td>
 										<td>
 											{% if data['treatmentEndM'] %}
-											{{ data['treatmentEndM']}}
+												{{ data['treatmentEndM']}}
 											{% else %}
-											12-04-2023
+												12/04/2023
 											{% endif %}
 										</td>
 										<td>Main</td>
 										<td>
 											{% if data['locationPicker'] %}
-											{{ data['locationPicker']}}
+												{{ data['locationPicker']}}
 											{% else %}
-											Austria
+												Austria
 											{% endif %}
 										</td>
 										<td><span class="status-tag-medium font-xsmall"
@@ -485,9 +485,9 @@ Person record
 																		<td class="column title">Request received</td>
 																		<td class="column">
 																			{% if data['dateOfRequest'] %}
-																			{{ data['dateOfRequest']}}
+																				{{ data['dateOfRequest']}}
 																			{% else %}
-																			09-12-2022
+																				09/12/2022
 																			{% endif %}
 																		</td>
 																	</tr>
@@ -495,9 +495,9 @@ Person record
 																		<td class="column title">Birth country</td>
 																		<td class="column">
 																			{% if data['locationPicker'] %}
-																			{{ data['locationPicker']}}
+																				{{ data['locationPicker']}}
 																			{% else %}
-																			Austria
+																				Austria
 																			{% endif %}
 																		</td>
 																	</tr>
@@ -526,10 +526,10 @@ Person record
 																	<tr class="row">
 																		<td class="column title">Date leaving UK</td>
 																		<td class="column">
-																			{% if data[''] %}
-																			{{ data['']}}
+																			{% if data['leaveDate'] %}
+																				{{ data['leaveDate']}}
 																			{% else %}
-																			23-12-2022
+																				23/12/2022
 																			{% endif %}</td>
 																	</tr>
 																	<tr class="row">
@@ -537,9 +537,9 @@ Person record
 																			delivery</td>
 																		<td class="column">
 																			{% if data['treatmentStartM'] %}
-																			{{ data['treatmentStartM']}}
+																				{{ data['treatmentStartM']}}
 																			{% else %}
-																			01-01-2023
+																				01/01/2023
 																			{% endif %}
 																		</td>
 																	</tr>
@@ -548,9 +548,9 @@ Person record
 																			permanently</td>
 																		<td class="column">
 																			{% if data['leaveIntention'] %}
-																			{{ data['leaveIntention']}}
+																				{{ data['leaveIntention']}}
 																			{% else %}
-																			No
+																				No
 																			{% endif %}
 																		</td>
 																	</tr>

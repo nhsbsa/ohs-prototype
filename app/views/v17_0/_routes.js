@@ -257,6 +257,34 @@ router.post([/intention-to-leave/, /intention-to-leave-error/], function (req,re
 // })
 
 // When is the treatment expected to start? (Maternity + Leave) //
+router.post([/treatment-start-date-maternity-correct/, /treatment-start-date-error-correct-maternity/, /treatment-start-date-invalid-correct-maternity/, /treatment-start-leave-error-correct-maternity/], function (req, res) {
+  const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
+  var leaveDate = req.session.data['leaveDate'];
+  var treatmentStartM = req.session.data['treatmentStartM'];
+  console.log(new Date(treatmentStartM));
+  console.log(new Date(leaveDate));
+
+  var lastRunLeaveDate = new Date(leaveDate.split('/')[2], leaveDate.split('/')[1], leaveDate.split('/')[0]);
+  console.log(lastRunLeaveDate);
+
+  var lastRunStartDate = new Date(treatmentStartM.split('/')[2], treatmentStartM.split('/')[1], treatmentStartM.split('/')[0]);
+  console.log(lastRunStartDate);
+
+  if (dateReg.test(req.body.treatmentStartM) && lastRunLeaveDate < lastRunStartDate) {
+    return res.redirect('person-case-maternity-evidence-requested');
+  }
+  else if (dateReg.test(req.body.treatmentStartM) && lastRunLeaveDate > lastRunStartDate) {
+    return res.redirect('treatment-start-leave-error-correct-maternity');
+  }
+  else if (!dateReg.test(req.body.treatmentStartM) && req.body.treatmentStartM === '') {
+    return res.redirect('treatment-start-error-correct-maternity');
+  }
+  else if (!dateReg.test(req.body.treatmentStartM)) {
+    return res.redirect('treatment-start-invalid-error-correct-maternity');
+  }
+})
+
+// When is the treatment expected to start? (Maternity + Leave) //
 router.post([/treatment-start-date-maternity/, /treatment-start-date-error-maternity/, /treatment-start-date-invalid-maternity/, /treatment-start-leave-error-maternity/], function (req, res) {
   const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
   var leaveDate = req.session.data['leaveDate'];
@@ -264,10 +292,9 @@ router.post([/treatment-start-date-maternity/, /treatment-start-date-error-mater
   console.log(new Date(treatmentStartM));
   console.log(new Date(leaveDate));
 
-  var lastRunLeaveDate = new Date(leaveDate.split('/')[2], leaveDate.split('/')[1] - 1, leaveDate.split('/')[0]);
+  var lastRunLeaveDate = new Date(leaveDate.split('/')[2], leaveDate.split('/')[1], leaveDate.split('/')[0]);
   console.log(lastRunLeaveDate);
-
-  var lastRunStartDate = new Date(treatmentStartM.split('/')[2], treatmentStartM.split('/')[1] - 1, treatmentStartM.split('/')[0]);
+  var lastRunStartDate = new Date(treatmentStartM.split('/')[2], treatmentStartM.split('/')[1], treatmentStartM.split('/')[0]);
   console.log(lastRunStartDate);
 
   if (dateReg.test(req.body.treatmentStartM) && lastRunLeaveDate < lastRunStartDate) {
@@ -284,64 +311,77 @@ router.post([/treatment-start-date-maternity/, /treatment-start-date-error-mater
   }
 })
 
-// // When is the treatment expected to end? (Maternity) //
-// router.post([/treatment-end-date-maternity/, /treatment-end-invalid-maternity/, /treatment-end-maternity-error/], function (req, res) {
-//   const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
+// When is the treatment expected to end? (Maternity) //
+router.post([/treatment-end-date-maternity/, /treatment-end-invalid-maternity/, /treatment-end-maternity-error/], function (req, res) {
+  const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
 
-//   var startDate = req.session.data['treatmentStartM'];
-//   var endDate = req.session.data['treatmentEndM'];
-//   console.log(startDate);
-//   console.log(endDate);
-
-//   var lastRunDate = new Date(startDate.split('/')[2], startDate.split('/')[1] - 1, startDate.split('/')[0]);
-//   console.log(lastRunDate);
-
-//   var maxEndM = new Date(lastRunDate.getTime() + (105 * 86400000));
-//   console.log(maxEndM);
-
-//   function convertDate(inputFormat) {
-//     function pad(s) { return (s < 10) ? '0' + s : s; }
-//     var d = new Date(inputFormat);
-//     return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
-//   }
-
-//   var convertMaxEndM = convertDate(maxEndM);
-//   console.log(convertMaxEndM);
-  
-//   if (req.body.treatmentEndM !== '' && dateReg.test(req.body.treatmentEndM) && new Date(convertMaxEndM) < new Date(req.body.treatmentEndM)) {
-//     res.redirect('treatment-end-error-maternity');
-//   }
-//   else if (req.body.treatmentEndM !== '' && !dateReg.test(req.body.treatmentEndM)) {
-//     res.redirect('treatment-end-invalid-error-maternity');
-//   }
-//   else if (req.body.treatmentEndM !== '' && new Date(convertMaxEndM) >= new Date(req.body.treatmentEndM)) {
-//     res.redirect('nino');
-//   }
-//   else if (req.body.treatmentEndM === '') {
-//     res.redirect('treatment-end-default-maternity');
-//   }
-// })
-
+  if (req.body.treatmentEndM !== '' && !dateReg.test(req.body.treatmentEndM)) {
+    res.redirect('treatment-end-invalid-error-maternity');
+  }
+  else if (req.body.treatmentEndM !== '' && dateReg.test(req.body.treatmentEndM)) {
+    res.redirect('person-case-maternity-evidence-requested');
+  }
+  else if (req.body.treatmentEndM === '') {
+    res.redirect('treatment-end-error-maternity');
+  }
+})
 
 // When is the treatment expected to end? (Maternity Default Date) //
-// router.get(/treatment-end-default-maternity/, function (req,res){
-//   var startDateM = req.session.data['treatmentStartM'];
+router.get(/treatment-end-date-maternity/, function (req,res){
+  var startDateM = req.session.data['treatmentStartM'];
 
-//   if (startDateM){
-//     var lastRunDateM = new Date(startDateM.split('/')[2], startDateM.split('/')[1] - 1, startDateM.split('/')[0]);
-//     var maxEndM = new Date(lastRunDateM.getTime() + (105 * 86400000));
+  if (startDateM){
+    var lastRunDateM = new Date(startDateM.split('/')[2], startDateM.split('/')[1], startDateM.split('/')[0]);
+    var maxEndM = new Date(lastRunDateM.getTime() + (105 * 86400000));
 
-//     var convertMaxEndM = convertDate(maxEndM);
-//   }
+    var convertMaxEndM = convertDate(maxEndM);
+  }
 
-// 	function convertDate(inputFormat) {
-// 		function pad(s) { return (s < 10) ? '0' + s : s; }
-// 		var d = new Date(inputFormat);
-// 		return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
-// 	}
+	function convertDate(inputFormat) {
+		function pad(s) { return (s < 10) ? '0' + s : s; }
+		var d = new Date(inputFormat);
+		return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+	}
 
-//   res.render('v17_0/admin/s2/new-record/treatment-end-default-maternity', {convertMaxEndM: convertMaxEndM});
-// });
+  res.render('v17_0/admin/s2/new-record/treatment-end-default-maternity', {convertMaxEndM: convertMaxEndM});
+});
+
+// Person case Maternity - evidence requested //
+router.get(/person-case-maternity-evidence-requested/, function (req,res){
+  
+  var startDateM = req.session.data['treatmentStartM'];
+  if (startDateM){
+    var lastRunDateM = new Date(startDateM.split('/')[2], startDateM.split('/')[1], startDateM.split('/')[0]);
+    var maxEndM = new Date(lastRunDateM.getTime() + (105 * 86400000));
+    var convertMaxEndM = convertDate(maxEndM);
+  }
+
+	function convertDate(inputFormat) {
+		function pad(s) { return (s < 10) ? '0' + s : s; }
+		var d = new Date(inputFormat);
+		return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+	}
+  res.render('v17_0/admin/s2/new-record/person-case-maternity-evidence-requested', { convertMaxEndM: convertMaxEndM });
+});
+
+// Person case Maternity - awaiting evidence//
+router.get(/person-case-maternity-awaiting-review/, function (req,res){
+  
+  var startDateM = req.session.data['treatmentStartM'];
+  if (startDateM){
+    var lastRunDateM = new Date(startDateM.split('/')[2], startDateM.split('/')[1], startDateM.split('/')[0]);
+    var maxEndM = new Date(lastRunDateM.getTime() + (105 * 86400000));
+    var convertMaxEndM = convertDate(maxEndM);
+  }
+
+	function convertDate(inputFormat) {
+		function pad(s) { return (s < 10) ? '0' + s : s; }
+		var d = new Date(inputFormat);
+		return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+	}
+  res.render('v17_0/admin/s2/new-record/person-case-maternity-awaiting-review', { convertMaxEndM: convertMaxEndM });
+});
+
 
 // When is the treatment expected to start? (Planned) //
 router.post([/treatment-start-date-planned/,/treatment-start-date-error-planned/, /treatment-start-date-invalid-planned/], function (req, res) {
@@ -376,10 +416,10 @@ router.post([/treatment-end-date-planned/, /treatment-end-invalid-planned/, /tre
   console.log(startDate);
   console.log(endDate);
 
-  var lastRunDate = new Date(startDate.split('/')[2], startDate.split('/')[1] - 1, startDate.split('/')[0]);
+  var lastRunDate = new Date(startDate.split('/')[2], startDate.split('/')[1], startDate.split('/')[0]);
   console.log(lastRunDate);
 
-  var lastRunEndDate = new Date(endDate.split('/')[2], endDate.split('/')[1] - 1, endDate.split('/')[0]);
+  var lastRunEndDate = new Date(endDate.split('/')[2], endDate.split('/')[1], endDate.split('/')[0]);
   console.log(lastRunEndDate);
 
   var maxEndP = new Date(lastRunDate.setMonth(lastRunDate.getMonth() + 12));
@@ -405,6 +445,7 @@ router.post([/treatment-end-date-planned/, /treatment-end-invalid-planned/, /tre
     return res.redirect('treatment-end-error-planned');
   }
 })
+
 
 // What treatment will you receive? (Planned) //
 router.post([/treatment-details/, /treatment-details-error/, /treatment-details-limit/], function (req, res) {
@@ -564,7 +605,7 @@ router.get(/check-your-answers/, function (req,res){
   var startDateP = req.session.data['treatmentStartP'];
   console.log(startDateP);
   if (startDateP) {
-    var lastRunDateP = new Date(startDateP.split('/')[2], startDateP.split('/')[1] - 1, startDateP.split('/')[0]);
+    var lastRunDateP = new Date(startDateP.split('/')[2], startDateP.split('/')[1], startDateP.split('/')[0]);
     var maxEndP = new Date(lastRunDateP.setMonth(lastRunDateP.getMonth() + 12));
 
     var convertMaxEndP = convertDate(maxEndP);
@@ -574,7 +615,7 @@ router.get(/check-your-answers/, function (req,res){
   var startDateM = req.session.data['treatmentStartM'];
 
   if (startDateM){
-    var lastRunDateM = new Date(startDateM.split('/')[2], startDateM.split('/')[1] - 1, startDateM.split('/')[0]);
+    var lastRunDateM = new Date(startDateM.split('/')[2], startDateM.split('/')[1], startDateM.split('/')[0]);
     var maxEndM = new Date(lastRunDateM.getTime() + (105 * 86400000));
 
     var convertMaxEndM = convertDate(maxEndM);
