@@ -257,7 +257,7 @@ router.post([/intention-to-leave/, /intention-to-leave-error/], function (req,re
 // })
 
 // When is the treatment expected to start? (Maternity + Leave) //
-router.post([/treatment-start-date-maternity-correct/, /treatment-start-date-error-correct-maternity/, /treatment-start-date-invalid-correct-maternity/, /treatment-start-leave-error-correct-maternity/], function (req, res) {
+router.post([/treatment-start-date-maternity-correct/, /treatment-start-date-error-correct-maternity/, /treatment-start-date-invalid-correct-maternity/, /treatment-start-date-error-maternity-correct-leave/], function (req, res) {
   const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
   var leaveDate = req.session.data['leaveDate'];
   var treatmentStartM = req.session.data['treatmentStartM'];
@@ -274,7 +274,7 @@ router.post([/treatment-start-date-maternity-correct/, /treatment-start-date-err
     return res.redirect('person-case-maternity-evidence-requested');
   }
   else if (dateReg.test(req.body.treatmentStartM) && lastRunLeaveDate > lastRunStartDate) {
-    return res.redirect('treatment-start-leave-error-correct-maternity');
+    return res.redirect('treatment-start-error-maternity-correct-leave');
   }
   else if (!dateReg.test(req.body.treatmentStartM) && req.body.treatmentStartM === '') {
     return res.redirect('treatment-start-error-correct-maternity');
