@@ -271,7 +271,7 @@ router.post([/treatment-start-date-maternity-correct/, /treatment-start-date-err
   console.log(lastRunStartDate);
 
   if (dateReg.test(req.body.treatmentStartM) && lastRunLeaveDate < lastRunStartDate) {
-    return res.redirect('person-case-maternity-evidence-requested');
+    return res.redirect('done-record-updated');
   }
   else if (dateReg.test(req.body.treatmentStartM) && lastRunLeaveDate > lastRunStartDate) {
     return res.redirect('treatment-start-error-maternity-correct-leave');
@@ -319,7 +319,7 @@ router.post([/treatment-end-date-maternity/, /treatment-end-invalid-maternity/, 
     res.redirect('treatment-end-invalid-error-maternity');
   }
   else if (req.body.treatmentEndM !== '' && dateReg.test(req.body.treatmentEndM)) {
-    res.redirect('person-case-maternity-evidence-requested');
+    res.redirect('done-record-updated');
   }
   else if (req.body.treatmentEndM === '') {
     res.redirect('treatment-end-error-maternity');
