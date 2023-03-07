@@ -504,32 +504,28 @@ Person record
 																	<tr class="row">
 																		<td class="column title">Nationality</td>
 																		<td class="column">								
-																			{% if data['nationality'] %}
-					
 																			{% if 'UK' in data['nationality'] %}
-																			United Kingdom (UK) national
+																				UK national<br>
 																			{% endif %}
-										
-																			{% if 'EU, EEA or Swiss' in data['nationality'] %}
-																			An EU citizen, or a national of Iceland, Liechtenstein, Norway, or Switzerland
+																			{% if 'EU, EEA' in data['nationality'] %}
+																				{% for i in data['myInputsEURT'] %}
+																					<span>{{i}}</span><br>
+																				{% endfor %}
 																			{% endif %}
-										
 																			{% if 'Other' in data['nationality'] %}
-																				Other
+																				{% for i in data['myInputsOtherRT'] %}
+																					<span>{{i}}</span><br>
+																				{% endfor %}
 																			{% endif %}
-
-																			{% else %}
-																			An EU citizen, or a national of Iceland, Liechtenstein, Norway, or Switzerland
-										
-																		{% endif %}</td>
+																		</td>
 																	</tr>
 																	<tr class="row">
 																		<td class="column title">Date leaving UK</td>
 																		<td class="column">
-																			{% if data[''] %}
-																			{{ data['']}}
+																			{% if data['leaveDate'] %}
+																				{{ data['leaveDate']}}
 																			{% else %}
-																			23-12-2022
+																				23/12/2022
 																			{% endif %}</td>
 																	</tr>
 																	<tr class="row">
@@ -537,9 +533,9 @@ Person record
 																			delivery</td>
 																		<td class="column">
 																			{% if data['treatmentStartM'] %}
-																			{{ data['treatmentStartM']}}
+																				{{ data['treatmentStartM']}}
 																			{% else %}
-																			01-01-2023
+																				01/01/2023
 																			{% endif %}
 																		</td>
 																	</tr>
@@ -548,9 +544,9 @@ Person record
 																			permanently</td>
 																		<td class="column">
 																			{% if data['leaveIntention'] %}
-																			{{ data['leaveIntention']}}
+																				{{ data['leaveIntention']}}
 																			{% else %}
-																			No
+																				No
 																			{% endif %}
 																		</td>
 																	</tr>

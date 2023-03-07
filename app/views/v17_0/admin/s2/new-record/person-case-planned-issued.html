@@ -262,7 +262,7 @@ Person record
 												{% if data['dateOfBirth'] %}
 												{{ data['dateOfBirth']}}
 												{% else %}
-												15/03/1984
+													15/03/1984
 												{% endif %}
 
 											</dd>
@@ -276,7 +276,7 @@ Person record
 												{% if data['nino'] %}
 												{{ data['nino']}}
 												{% else %}
-												SR123456A
+													SR123456A
 												{% endif %}
 
 											</dd>
@@ -332,34 +332,34 @@ Person record
 											<dd class="cya-answer">
 												{% if data %}
 												{% if data['corrAddressLineOne'] %}
-												{{ data['corrAddressLineOne']}}
+													{{ data['corrAddressLineOne']}}
 												{% else %}
-												&#8212;
+													&#8212;
 												{% endif %}
 												<br>
 												{% if data['corrAddressLineTwo'] %}
-												{{ data['corrAddressLineTwo']}}
+													{{ data['corrAddressLineTwo']}}
 												{% else %}
-												&#8212;
+													&#8212;
 												{% endif %}
 												<br>
 												{% if data['corrTown'] %}
-												{{ data['corrTown']}}
+													{{ data['corrTown']}}
 												{% else %}
-												&#8212;
+													&#8212;
 												{% endif %}
 												<br>
 												{% if data['corrAddressPostcode'] %}
-												{{ data['corrAddressPostcode']}}
+													{{ data['corrAddressPostcode']}}
 												{% else %}
-												&#8212;
+													&#8212;
 												{% endif %}
 												<br>
 												{% if data['corrCountry'] %}
-												{{ data['corrCountry']}}
+													{{ data['corrCountry']}}
 												{% endif %}
 												{% else %}
-												&#8212;
+													&#8212;
 												{% endif %}
 											</dd>
 											<dd class="cya-change">
@@ -378,7 +378,7 @@ Person record
 											<dt class="cya-question">Email address</dt>
 											<dd class="cya-answer">
 												{% if data['emailAddress'] %}
-												{{ data['emailAddress']}}
+													{{ data['emailAddress']}}
 												{% else %}
 												&#8212;
 												{% endif %}
@@ -391,9 +391,9 @@ Person record
 											<dt class="cya-question">Telephone number</dt>
 											<dd class="cya-answer">
 												{% if data['phoneNumber'] %}
-												{{ data['phoneNumber']}}
+													{{ data['phoneNumber']}}
 												{% else %}
-												&#8212;
+													&#8212;
 												{% endif %}
 											</dd>
 											<dd class="cya-change"><a class="cancel" href="contact-details">Change</a>
@@ -431,24 +431,24 @@ Person record
 										<td>S2</td>
 										<td>
 											{% if data['treatmentStartP'] %}
-											{{ data['treatmentStartP']}}
+												{{ data['treatmentStartP']}}
 											{% else %}
-											01-02-2023
+												01/02/2023
 											{% endif %}
 										</td>
 										<td>
 											{% if data['treatmentEndP'] %}
-											{{ data['treatmentEndP']}}
+												{{ data['treatmentEndP']}}
 											{% else %}
-											01-04-2023
+												01/04/2023
 											{% endif %}
 										</td>
 										<td>Main</td>
 										<td>
 											{% if data['locationPicker'] %}
-											{{ data['locationPicker']}}
+												{{ data['locationPicker']}}
 											{% else %}
-											Austria
+												Austria
 											{% endif %}
 										</td>
 										<td><span class="status-tag-medium font-xsmall"
@@ -485,9 +485,9 @@ Person record
 																		<td class="column title">Request received</td>
 																		<td class="column">
 																			{% if data['dateOfRequest'] %}
-																			{{ data['dateOfRequest']}}
+																				{{ data['dateOfRequest']}}
 																			{% else %}
-																			09-12-2022
+																				09/12/2022
 																			{% endif %}
 																		</td>
 																	</tr>
@@ -495,9 +495,9 @@ Person record
 																		<td class="column title">Issued date</td>
 																		<td class="column">
 																			{% if data['dateOfRequest'] %}
-																			{{ data['dateOfRequest']}}
+																				{{ data['dateOfRequest']}}
 																			{% else %}
-																			09-12-2022
+																				09/12/2022
 																			{% endif %}
 																		</td>
 																	</tr>
@@ -505,9 +505,9 @@ Person record
 																		<td class="column title">Treatment received</td>
 																		<td class="column">
 																			{% if data['treatmentDetails'] %}
-																			{{ data['treatmentDetails']}}
+																				{{ data['treatmentDetails']}}
 																			{% else %}
-																			Blood tests, Anaesthetist Consultation, ENT F/U Consultation and Covid test. Functional Endoscopic Sinus Surgery (FESS) and Septoturbinoplasty (3 procedures).
+																				Blood tests, Anaesthetist Consultation, ENT F/U Consultation and Covid test. Functional Endoscopic Sinus Surgery (FESS) and Septoturbinoplasty (3 procedures).
 																			{% endif %}
 																		</td>
 																	</tr>
@@ -515,9 +515,9 @@ Person record
 																		<td class="column title">Treatment provider</td>
 																		<td class="column">
 																			{% if data['treatmentFacilityName'] %}
-																			{{ data['treatmentFacilityName']}}
+																				{{ data['treatmentFacilityName']}}
 																			{% else %}
-																			Wiener Privatklinik
+																				Wiener Privatklinik
 																			{% endif %}
 																		</td>
 																	</tr>
