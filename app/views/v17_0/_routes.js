@@ -327,7 +327,7 @@ router.post([/treatment-end-date-maternity/, /treatment-end-invalid-maternity/, 
 })
 
 // When is the treatment expected to end? (Maternity Default Date) //
-router.get(/treatment-end-date-maternity/, function (req,res){
+router.get(/treatment-end-maternity/, function (req,res){
   var startDateM = req.session.data['treatmentStartM'];
 
   if (startDateM){
@@ -343,7 +343,7 @@ router.get(/treatment-end-date-maternity/, function (req,res){
 		return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
 	}
 
-  res.render('v17_0/admin/s2/new-record/treatment-end-default-maternity', {convertMaxEndM: convertMaxEndM});
+  res.render('v17_0/admin/s2/new-record/treatment-end-maternity', {convertMaxEndM: convertMaxEndM});
 });
 
 // Person case Maternity - evidence requested //

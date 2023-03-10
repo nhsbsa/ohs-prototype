@@ -264,7 +264,6 @@ Person record
 												{% else %}
 												15/03/1984
 												{% endif %}
-
 											</dd>
 											<dd class="cya-change"><a class="cancel" href="">Change</a>
 											</dd>
@@ -278,7 +277,6 @@ Person record
 												{% else %}
 												SR123456A
 												{% endif %}
-
 											</dd>
 											<dd class="cya-change">
 											</dd>
@@ -318,7 +316,6 @@ Person record
 												{% else %}
 												&#8212;
 												{% endif %}
-
 											</dd>
 											<dd class="cya-change">
 												<p class="navigation">
@@ -433,14 +430,17 @@ Person record
 											{% if data['treatmentStartM'] %}
 												{{ data['treatmentStartM']}}
 											{% else %}
-												01/01/2023
+												15/05/2023
 											{% endif %}
 										</td>
 										<td>
 											{% if data['treatmentEndM'] %}
 												{{ data['treatmentEndM'] }}
-											{% else %}
+											{% endif %}
+											{% if data['treatmentStartM']  %}
 												{{ convertMaxEndM }}
+											{% else  %}
+												28/09/2023
 											{% endif %}
 										</td>
 										<td>Main</td>
@@ -487,7 +487,7 @@ Person record
 																			{% if data['dateOfRequest'] %}
 																				{{ data['dateOfRequest']}}
 																			{% else %}
-																				09-12-2022
+																				20/12/2022
 																			{% endif %}
 																		</td>
 																	</tr>
@@ -503,19 +503,25 @@ Person record
 																	</tr>
 																	<tr class="row">
 																		<td class="column title">Nationality</td>
-																		<td class="column">								
-																			{% if 'UK' in data['nationality'] %}
-																				UK national<br>
-																			{% endif %}
-																			{% if 'EU, EEA' in data['nationality'] %}
-																				{% for i in data['myInputsEURT'] %}
-																					<span>{{i}}</span><br>
-																				{% endfor %}
-																			{% endif %}
-																			{% if 'Other' in data['nationality'] %}
-																				{% for i in data['myInputsOtherRT'] %}
-																					<span>{{i}}</span><br>
-																				{% endfor %}
+																		<td class="column">	
+																			{% if data['nationality'] %}							
+																				{% if 'UK' in data['nationality'] %}
+																					UK national<br>
+																				{% endif %}
+																				{% if 'EU, EEA' in data['nationality'] %}
+																					{% for i in data['myInputsEURT'] %}
+																						<span>{{i}}</span><br>
+																					{% endfor %}
+																				{% endif %}
+																				{% if 'Other' in data['nationality'] %}
+																					{% for i in data['myInputsOtherRT'] %}
+																						<span>{{i}}</span><br>
+																					{% endfor %}
+																				{% endif %}
+																			{% else %}
+																				<span>UK national</span><br>
+																				<span>Austria</span><br>
+																				<span>Albania</span><br>
 																			{% endif %}
 																		</td>
 																	</tr>
@@ -525,7 +531,7 @@ Person record
 																			{% if data['leaveDate'] %}
 																				{{ data['leaveDate']}}
 																			{% else %}
-																				23/12/2022
+																				27/03/2023
 																			{% endif %}</td>
 																	</tr>
 																	<tr class="row">
@@ -535,7 +541,7 @@ Person record
 																			{% if data['treatmentStartM'] %}
 																				{{ data['treatmentStartM']}}
 																			{% else %}
-																				01/01/2023
+																				15/05/2023
 																			{% endif %}
 																		</td>
 																		<td class="cya-change">
@@ -548,8 +554,11 @@ Person record
 																		<td class="column">
 																			{% if data['treatmentEndM'] %}
 																				{{ data['treatmentEndM'] }}
-																			{% else %}
+																			{% endif %}
+																			{% if data['treatmentStartM']  %}
 																				{{ convertMaxEndM }}
+																			{% else  %}
+																				28/09/2023
 																			{% endif %}
 																		</td>
 																		<td class="cya-change">
@@ -564,7 +573,7 @@ Person record
 																			{% if data['leaveIntention'] %}
 																				{{ data['leaveIntention']}}
 																			{% else %}
-																				No
+																				Yes
 																			{% endif %}
 																		</td>
 																	</tr>
