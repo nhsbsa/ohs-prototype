@@ -246,9 +246,9 @@ Person record
 											<dt class="cya-question">Full name</dt>
 											<dd class="cya-answer">
 												{% if data['firstName'] %}
-												{{ data['firstName']}} {{ data['lastName']}}
+													{{ data['firstName']}} {{ data['lastName']}}
 												{% else %}
-												Michelle Philip
+													Michelle Philip
 												{% endif %}
 
 											</dd>
@@ -260,9 +260,9 @@ Person record
 											<dt class="cya-question">Date of birth</dt>
 											<dd class="cya-answer">
 												{% if data['dateOfBirth'] %}
-												{{ data['dateOfBirth']}}
+													{{ data['dateOfBirth']}}
 												{% else %}
-												15/03/1984
+													15/03/1984
 												{% endif %}
 											</dd>
 											<dd class="cya-change"><a class="cancel" href="">Change</a>
@@ -273,9 +273,9 @@ Person record
 											<dt class="cya-question">National Insurance number</dt>
 											<dd class="cya-answer">
 												{% if data['nino'] %}
-												{{ data['nino']}}
+													{{ data['nino']}}
 												{% else %}
-												SR123456A
+													SR123456A
 												{% endif %}
 											</dd>
 											<dd class="cya-change">
@@ -286,35 +286,35 @@ Person record
 											<dt class="cya-question">Residential address</dt>
 											<dd class="cya-answer">
 												{% if data %}
-												{% if data['resAddressLineOne'] %}
-												{{ data['resAddressLineOne']}}
+													{% if data['resAddressLineOne'] %}
+														{{ data['resAddressLineOne']}}
+													{% else %}
+														&#8212;
+													{% endif %}
+													<br>
+													{% if data['resAddressLineTwo'] %}
+														{{ data['resAddressLineTwo']}}
+													{% else %}
+														&#8212;
+													{% endif %}
+													<br>
+													{% if data['resTown'] %}
+														{{ data['resTown']}}
+													{% else %}
+														&#8212;
+													{% endif %}
+													<br>
+													{% if data['resAddressPostcode'] %}
+														{{ data['resAddressPostcode']}}
+													{% else %}
+														&#8212;
+													{% endif %}
+													<br>
+													{% if data['resCountry'] %}
+														{{ data['resCountry']}}
+													{% endif %}
 												{% else %}
-												&#8212;
-												{% endif %}
-												<br>
-												{% if data['resAddressLineTwo'] %}
-												{{ data['resAddressLineTwo']}}
-												{% else %}
-												&#8212;
-												{% endif %}
-												<br>
-												{% if data['resTown'] %}
-												{{ data['resTown']}}
-												{% else %}
-												&#8212;
-												{% endif %}
-												<br>
-												{% if data['resAddressPostcode'] %}
-												{{ data['resAddressPostcode']}}
-												{% else %}
-												&#8212;
-												{% endif %}
-												<br>
-												{% if data['resCountry'] %}
-												{{ data['resCountry']}}
-												{% endif %}
-												{% else %}
-												&#8212;
+													&#8212;
 												{% endif %}
 											</dd>
 											<dd class="cya-change">
@@ -328,35 +328,35 @@ Person record
 											<dt class="cya-question">Correspondence address</dt>
 											<dd class="cya-answer">
 												{% if data %}
-												{% if data['corrAddressLineOne'] %}
-												{{ data['corrAddressLineOne']}}
+													{% if data['corrAddressLineOne'] %}
+														{{ data['corrAddressLineOne']}}
+													{% else %}
+														&#8212;
+													{% endif %}
+													<br>
+													{% if data['corrAddressLineTwo'] %}
+														{{ data['corrAddressLineTwo']}}
+													{% else %}
+														&#8212;
+													{% endif %}
+													<br>
+													{% if data['corrTown'] %}
+														{{ data['corrTown']}}
+													{% else %}
+														&#8212;
+													{% endif %}
+													<br>
+													{% if data['corrAddressPostcode'] %}
+														{{ data['corrAddressPostcode']}}
+													{% else %}
+														&#8212;
+													{% endif %}
+													<br>
+													{% if data['corrCountry'] %}
+														{{ data['corrCountry']}}
+													{% endif %}
 												{% else %}
-												&#8212;
-												{% endif %}
-												<br>
-												{% if data['corrAddressLineTwo'] %}
-												{{ data['corrAddressLineTwo']}}
-												{% else %}
-												&#8212;
-												{% endif %}
-												<br>
-												{% if data['corrTown'] %}
-												{{ data['corrTown']}}
-												{% else %}
-												&#8212;
-												{% endif %}
-												<br>
-												{% if data['corrAddressPostcode'] %}
-												{{ data['corrAddressPostcode']}}
-												{% else %}
-												&#8212;
-												{% endif %}
-												<br>
-												{% if data['corrCountry'] %}
-												{{ data['corrCountry']}}
-												{% endif %}
-												{% else %}
-												&#8212;
+													&#8212;
 												{% endif %}
 											</dd>
 											<dd class="cya-change">
@@ -375,9 +375,9 @@ Person record
 											<dt class="cya-question">Email address</dt>
 											<dd class="cya-answer">
 												{% if data['emailAddress'] %}
-												{{ data['emailAddress']}}
+													{{ data['emailAddress']}}
 												{% else %}
-												&#8212;
+													&#8212;
 												{% endif %}
 											</dd>
 											<dd class="cya-change"><a class="cancel" href="contact-details">Change</a>
@@ -388,9 +388,9 @@ Person record
 											<dt class="cya-question">Telephone number</dt>
 											<dd class="cya-answer">
 												{% if data['phoneNumber'] %}
-												{{ data['phoneNumber']}}
+													{{ data['phoneNumber']}}
 												{% else %}
-												&#8212;
+													&#8212;
 												{% endif %}
 											</dd>
 											<dd class="cya-change"><a class="cancel" href="contact-details">Change</a>
