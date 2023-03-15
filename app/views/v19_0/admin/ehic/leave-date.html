@@ -48,7 +48,7 @@
 							{% if data['firstName'] %}
 								{{ data['firstName']}} {{ data['lastName']}}
 							{% else %}
-								Michelle Philip
+								Michael Philip
 							{% endif %}
 						</span>
 						<span class="vertical-bar">|</span>
@@ -63,22 +63,20 @@
 				</div>
 			</div>
 			<div class="column-two-thirds">
-				<div class="heading-group">
-					<h1 class="heading-large">What date do you plan to start living in another country?</h1>
-				</div>
 
-            <form action="" method="post" class="form">
+
+            <form action="done" method="post" class="form">
             
                     <div class="form-group">
-                        <label class="form-label" for="treatment-end">Treatment end date</label>
+                        <label class=" heading-large" for="leaveDate">What date do you plan to start living in another country?</label>
                         <span class="form-hint">
                             For example 01/01/2000 
                         </span>
-                        <input class="form-control" id="treatment-end" name="treatmentEndP" type="text" autocomplete="off" />
+                        <input class="form-control" id="leaveDate" name="leaveDate" type="text" autocomplete="off" value="{% if data['leaveDate'] %}{{ data['leaveDate']}}{% else %}01-01-2026{% endif %}" />
                     </div>
 					<div class="form-group">
-						<input class="button" type="submit" value="Next">
-						<a class="button button-secondary" href="search">Cancel</a>
+						<input class="button" type="submit" value="Submit">
+						<a class="button button-secondary" href="person-entitlements">Cancel</a>
 					</div>   
                 
             </form>

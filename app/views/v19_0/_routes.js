@@ -11,35 +11,34 @@ const router = express.Router();
 
 // add your routes here
 
+  // /v19_0/admin/ghic/plan-to-emigrate
+router.post('/ghic-emigration', function (req, res) {
 
+  const emigrationStatus = req.body.emigration;
+  const emigrationStatusNew = req.body.emigrationNew;
 
+  if (emigrationStatus === "Yes" || emigrationStatusNew === "Yes"){
+    
+    res.redirect('admin/ghic/leave-date')
+  }
+  else {
+    req.session.data.leaveDate = ""
+    res.redirect('admin/ghic/done')
+  }
+
+})
 
 //EHIC - plan-to-emigrate
 router.post('/ehic-emigration', function (req, res) {
 
-    const emigrationStatus = req.body.emigration;
-  
-    if (emigrationStatus === "Yes"){
-      res.redirect('admin/ehic/leave-date')
-    }
-    else {
-      res.redirect('admin/ghic/done')
-    }
-  })
-
-  //GHIC - plan-to-emigrate
-router.post('/ghic-emigration', function (req, res) {
-
   const emigrationStatus = req.body.emigration;
 
   if (emigrationStatus === "Yes"){
-    req.session.data = {}
-    res.redirect('admin/ghic/leave-date')
+    res.redirect('admin/ehic/leave-date')
   }
   else {
     res.redirect('admin/ghic/done')
   }
-
 })
 
 

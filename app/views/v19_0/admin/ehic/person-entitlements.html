@@ -184,7 +184,7 @@ Person record
     }
 
     .change {
-        text-align:right;
+        text-align: right;
         vertical-align: top;
     }
 </style>
@@ -259,19 +259,23 @@ Person record
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>GHIC</td>
+                                        <td>EHIC</td>
                                         <td>
                                             06-02-2023
                                         </td>
                                         <td>
+                                            {% if data['leaveDate'] %}
+                                            {{ data['leaveDate']}}
+                                            {% else %}
                                             01-01-2026
+                                            {% endif %}
                                         </td>
                                         <td>Main</td>
                                         <td>
 
                                         </td>
                                         <td><span class="status-tag-high font-xsmall"
-                                                style="padding-left:10px; padding-right:10px">Evidence Requested</span>
+                                                style="padding-left:10px; padding-right:10px">Pending Check</span>
                                         </td>
                                         <td nowrap="">
                                             <details onclick="myFunction2()">
@@ -289,7 +293,7 @@ Person record
                                                 <div class="panel panel-border-wide s1infoExpanded">
                                                     <div class="main-container form-group">
                                                         <div class="major-container">
-                                                            
+
                                                             <table id="entitlementDetails" class="check-table">
                                                                 <h1 class="heading-large">Additional entitlement details
                                                                 </h1>
@@ -297,13 +301,14 @@ Person record
                                                                     entitlement details</caption>
                                                                 <tbody>
                                                                     <tr class="row">
-                                                                        <td class="column title" style="width:45%">Reference number</td>
-                                                                        <td class="column">74859374</td>
+                                                                        <td class="column title" style="width:45%">
+                                                                            Reference number</td>
+                                                                        <td class="column">25042934</td>
                                                                         <td></td>
                                                                     </tr>
 
                                                                     <tr class="row">
-                                                                        <td class="column title">GHIC number</td>
+                                                                        <td class="column title">EHIC number</td>
                                                                         <td class="column">
                                                                             -
                                                                         </td>
@@ -312,14 +317,47 @@ Person record
                                                                     <tr class="row">
                                                                         <td class="column title">NHS number</td>
                                                                         <td class="column">
-                                                                            -
+                                                                            6784569845
                                                                         </td>
                                                                         <td></td>
                                                                     </tr>
                                                                     <tr class="row">
                                                                         <td class="column title">Nationality</td>
                                                                         <td class="column">
-                                                                            UK citizen
+                                                                            Spain
+                                                                        </td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr class="row">
+                                                                        <td class="column title">Live in the UK or EU
+                                                                        </td>
+                                                                        <td class="column">
+                                                                            UK
+                                                                        </td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr class="row">
+                                                                        <td class="column title">Where were you born
+                                                                        </td>
+                                                                        <td class="column">
+                                                                            -
+                                                                        </td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr class="row">
+                                                                        <td class="column title">Were you ordinarily
+                                                                            resident in the UK on or before 31 December
+                                                                            2020</td>
+                                                                        <td class="column">
+                                                                            Yes
+                                                                        </td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr class="row">
+                                                                        <td class="column title">Have you ever held UK
+                                                                            citizenship</td>
+                                                                        <td class="column">
+                                                                            No
                                                                         </td>
                                                                         <td></td>
                                                                     </tr>
@@ -333,31 +371,33 @@ Person record
                                                                         </td>
                                                                         <td></td>
                                                                     </tr>
+
                                                                     <tr class="row">
                                                                         <td class="column title">Do you plan to
                                                                             permanently move to another country in the
                                                                             next 5 years</td>
                                                                         <td class="column">
-                                                                            Yes
+                                                                            No
                                                                         </td>
-                                                                        <td></td>
+                                                                        <td> <a href="plan-to-emigrate">
+                                                                                Change
+                                                                            </a></td>
                                                                     </tr>
                                                                     <tr class="row">
                                                                         <td class="column title">What date do you plan
                                                                             to start living in another country</td>
                                                                         <td class="column">
-                                                                            01-01-2026
+                                                                            -
+
                                                                         </td>
                                                                         <td class="column change">
-                                                                            <a href="leave-date">
-                                                                                Change
-                                                                              </a>
+
                                                                         </td>
                                                                     </tr>
                                                                     <tr class="row">
                                                                         <td class="column title">Source</td>
                                                                         <td class="column">
-                                                                            Customer
+                                                                            Public Portal
                                                                         </td>
                                                                         <td></td>
                                                                     </tr>
@@ -370,7 +410,7 @@ Person record
                                                                         <td></td>
                                                                     </tr>
                                                                     <tr class="row">
-                                                                        <td class="column title">Card displatched</td>
+                                                                        <td class="column title">Card dispatched</td>
                                                                         <td class="column">
                                                                             -
                                                                         </td>
@@ -383,14 +423,7 @@ Person record
                                                                         </td>
                                                                         <td></td>
                                                                     </tr>
-                                                                    <tr class="row">
-                                                                        <td class="column title">Evidence submission
-                                                                            date</td>
-                                                                        <td class="column">
-                                                                            07-02-2023
-                                                                        </td>
-                                                                        <td></td>
-                                                                    </tr>
+
 
                                                                 </tbody>
 
