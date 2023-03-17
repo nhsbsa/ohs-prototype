@@ -244,8 +244,6 @@ Person record
                 <div class="tab-box">
                     <form action="date-request" method="post" class="form">
 
-                
-
                         <div id="health" class="tabcontentActive">
                             <table id="mainTable">
                                 <thead>
@@ -266,36 +264,11 @@ Person record
                                             06-02-2023
                                         </td>
                                         <td>
-                                            {% if data['emigrationNew'] %}
-                                                {% if data['emigrationNew'] === 'Yes' %}
-                                                    {% if data['leaveDate'] %}
-                                                        {{ data['leaveDate']}}
-                                                    {% else %}
-                                                        01-01-2026
-                                                    {% endif %}
-                                                {% else %}
-                                                    06-02-2028
-                                                {% endif %}
-
-
-                                            {% elif data['emigration'] %}
-                                                {% if data['emigration'] === 'Yes' %}
-                                                    {% if data['leaveDate'] %}
-                                                        {{ data['leaveDate']}}
-                                                    {% else %}
-                                                        01-01-2026
-                                                    {% endif %}
-                                                {% else %}
-                                                    06-02-2028
-                                                {% endif %}
-                                            
+                                            {% if data['leaveDate'] %}
+                                            {{ data['leaveDate']}}
                                             {% else %}
-                                                {% if data['leaveDate'] %}
-                                                    {{ data['leaveDate']}}
-                                                {% else %}
-                                                    01-01-2026
-                                                {% endif %}
-                                        {% endif %}
+                                            01-01-2026
+                                            {% endif %}
                                         </td>
                                         <td>Main</td>
                                         <td>
@@ -356,28 +329,33 @@ Person record
                                                                         <td></td>
                                                                     </tr>
                                                                     <tr class="row">
-                                                                        <td class="column title">Live in the UK or EU</td>
+                                                                        <td class="column title">Live in the UK or EU
+                                                                        </td>
                                                                         <td class="column">
                                                                             UK
                                                                         </td>
                                                                         <td></td>
                                                                     </tr>
                                                                     <tr class="row">
-                                                                        <td class="column title">Where were you born</td>
+                                                                        <td class="column title">Where were you born
+                                                                        </td>
                                                                         <td class="column">
                                                                             -
                                                                         </td>
                                                                         <td></td>
                                                                     </tr>
                                                                     <tr class="row">
-                                                                        <td class="column title">Were you ordinary resident in the UK on or before 31 December 2020</td>
+                                                                        <td class="column title">Were you ordinarily
+                                                                            resident in the UK on or before 31 December
+                                                                            2020</td>
                                                                         <td class="column">
                                                                             Yes
                                                                         </td>
                                                                         <td></td>
                                                                     </tr>
                                                                     <tr class="row">
-                                                                        <td class="column title">Have you ever held UK citizenship</td>
+                                                                        <td class="column title">Have you ever held UK
+                                                                            citizenship</td>
                                                                         <td class="column">
                                                                             No
                                                                         </td>
@@ -393,25 +371,15 @@ Person record
                                                                         </td>
                                                                         <td></td>
                                                                     </tr>
+
                                                                     <tr class="row">
                                                                         <td class="column title">Do you plan to
                                                                             permanently move to another country in the
                                                                             next 5 years</td>
                                                                         <td class="column">
-                                                                            {% if data['emigrationNew'] %}
-                                                                                {{ data['emigrationNew']}}
-                                                                             {% else %}
-                                                                                {% if data['emigration'] %}
-                                                                                    {{ data['emigration']}}
-                                                                                {% else %}
-                                                                                    Yes 
-                                                                                {% endif %}
-                                                                            {% endif %}
-                                                                            
-                                                                        
+                                                                            No
                                                                         </td>
-                                                                        <td class="column change"><a
-                                                                                href="plan-to-emigrate">
+                                                                        <td> <a href="plan-to-emigrate">
                                                                                 Change
                                                                             </a></td>
                                                                     </tr>
@@ -419,79 +387,11 @@ Person record
                                                                         <td class="column title">What date do you plan
                                                                             to start living in another country</td>
                                                                         <td class="column">
-
-                                                                            {% if data['emigrationNew'] %}
-                                                                                {% if data['emigrationNew'] === 'Yes' %}
-                                                                                    {% if data['leaveDate'] %}
-                                                                                        {{ data['leaveDate']}}
-                                                                                    {% else %}
-                                                                                        01-01-2026
-                                                                                    {% endif %}
-                                                                                {% elif data['emigrationNew'] === 'No' %}
-                                                                                    -
-                                                                                {% endif %}
-
-                                                                                {% else %}
-
-                                                                                {% if data['emigration'] %}
-
-                                                                                {% if data['emigration'] === 'Yes' %}
-                                                                                    {% if data['leaveDate'] %}
-                                                                                        {{ data['leaveDate']}}
-                                                                                    {% else %}
-                                                                                        01-01-2026
-                                                                                    {% endif %}
-                                                                                
-                                                                                {% elif data['emigration'] === 'No' %}
-                                                                                    -
-                                                                                {% endif %}
-
-                                                                            {% else %}
-                                                                            {% if data['leaveDate'] %}
-                                                                            {{ data['leaveDate']}}
-                                                                        {% else %}
-                                                                            01-01-2026
-                                                                        {% endif %}
-                                                                            {% endif %}
-
-
-
-                                                                            {% endif %}
-
+                                                                            -
 
                                                                         </td>
                                                                         <td class="column change">
 
-                                                                            {% if data['emigrationNew'] %}
-                                                                                {% if data['emigrationNew'] === 'Yes' %}
-                                                                                <a href="leave-date">
-                                                                                    Change
-                                                                                </a>
-                                                                                {% endif %}
-
-                                                                            {% elif data['emigration'] %}
-                                                                                {% if data['emigration'] === 'Yes' %}
-                                                                                    <a href="leave-date">
-                                                                                        Change
-                                                                                    </a>
-                                                                            {% endif %}
-
-                                                                            {% else %}
-
-                                                                            <a href="leave-date">
-                                                                                Change
-                                                                            </a>
-                                                                               
-                                                                               
-
-
-                                                                            {% endif %}
-
-
-
-
-
-                                                                    
                                                                         </td>
                                                                     </tr>
                                                                     <tr class="row">
@@ -523,7 +423,7 @@ Person record
                                                                         </td>
                                                                         <td></td>
                                                                     </tr>
-      
+
 
                                                                 </tbody>
 

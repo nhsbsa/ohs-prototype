@@ -72,8 +72,50 @@
                         <span class="form-hint">
                             For example 01/01/2000 
                         </span>
-                        <input class="form-control" id="leaveDate" name="leaveDate" type="text" autocomplete="off" value="{% if data['leaveDate'] %}{{ data['leaveDate']}}{% else %}01-01-2026{% endif %}" />
-                    </div>
+                        <!-- <input class="form-control" id="leaveDate" name="leaveDate" type="text" autocomplete="off" value="{% if data['emigrationNew'] %}{% if data['emigrationNew'] === 'Yes' %}{% if data['leaveDate'] %}{{ data['leaveDate']}}{% else %}01-01-2026{% endif %}{% endif %}{% else %}{% if data['leaveDate'] %}{{ data['leaveDate']}}{% else %}01-01-2026{% endif %}{% endif %}" /> -->
+                    
+
+
+						{% if data['emigrationNew'] === 'Yes' %}
+			
+			
+							{% if data['leaveDate'] %}
+							<input class="form-control" id="leaveDate" name="leaveDate" type="text" autocomplete="off" value="{{ data['leaveDate']}}" />
+							{% else %}
+							<input class="form-control" id="leaveDate" name="leaveDate" type="text" autocomplete="off" value="" />
+							{% endif %}
+
+                   
+						{% elif not data['emigration'] %}
+						
+							{% if data['leaveDate'] %}
+							<input class="form-control" id="leaveDate" name="leaveDate" type="text" autocomplete="off" value="{{ data['leaveDate']}}" />
+							{% else %}
+							<input class="form-control" id="leaveDate" name="leaveDate" type="text" autocomplete="off" value="01-01-2026" />
+							{% endif %}
+	
+						{% elif data['emigration'] === 'Yes' %}
+		
+			
+							{% if data['leaveDate'] %}
+							<input class="form-control" id="leaveDate" name="leaveDate" type="text" autocomplete="off" value="{{ data['leaveDate']}}" />
+							{% else %}
+							<input class="form-control" id="leaveDate" name="leaveDate" type="text" autocomplete="off" value="01-01-2026" />
+							{% endif %}
+
+							{% else %}
+							<p>end</p>
+
+						{% endif %}
+
+
+
+
+					</div>
+
+
+
+
 					<div class="form-group">
 						<input class="button" type="submit" value="Submit">
 						<a class="button button-secondary" href="person-entitlements">Cancel</a>
