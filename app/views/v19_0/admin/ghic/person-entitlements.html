@@ -266,25 +266,35 @@ Person record
                                             06-02-2023
                                         </td>
                                         <td>
-                                            {% if data['emigration'] %}
+                                            {% if data['emigrationNew'] %}
+                                                {% if data['emigrationNew'] === 'Yes' %}
+                                                    {% if data['leaveDate'] %}
+                                                        {{ data['leaveDate']}}
+                                                    {% else %}
+                                                        01-01-2026
+                                                    {% endif %}
+                                                {% else %}
+                                                    06-02-2028
+                                                {% endif %}
 
-                                            {% if data['emigration'] === 'Yes' %}
-                                                {% if data['leave-date'] %}
-                                                    {{ data['leave-date']}}
+
+                                            {% elif data['emigration'] %}
+                                                {% if data['emigration'] === 'Yes' %}
+                                                    {% if data['leaveDate'] %}
+                                                        {{ data['leaveDate']}}
+                                                    {% else %}
+                                                        01-01-2026
+                                                    {% endif %}
+                                                {% else %}
+                                                    06-02-2028
+                                                {% endif %}
+                                            
+                                            {% else %}
+                                                {% if data['leaveDate'] %}
+                                                    {{ data['leaveDate']}}
                                                 {% else %}
                                                     01-01-2026
                                                 {% endif %}
-                                            
-                                            {% elif data['emigration'] === 'No' %}
-                                                06-02-2028
-                                            {% endif %}
-
-                                        {% else %}
-                                        {% if data['leave-date'] %}
-                                        {{ data['leave-date']}}
-                                    {% else %}
-                                        01-01-2026
-                                    {% endif %}
                                         {% endif %}
                                         </td>
                                         <td>Main</td>
@@ -360,11 +370,17 @@ Person record
                                                                             permanently move to another country in the
                                                                             next 5 years</td>
                                                                         <td class="column">
-                                                                            {% if data['emigration'] %}
-                                                                            {{ data['emigration']}}
-                                                                            {% else %}
-                                                                            Yes
+                                                                            {% if data['emigrationNew'] %}
+                                                                                {{ data['emigrationNew']}}
+                                                                             {% else %}
+                                                                                {% if data['emigration'] %}
+                                                                                    {{ data['emigration']}}
+                                                                                {% else %}
+                                                                                    Yes 
+                                                                                {% endif %}
                                                                             {% endif %}
+                                                                            
+                                                                        
                                                                         </td>
                                                                         <td class="column change"><a
                                                                                 href="plan-to-emigrate">
@@ -376,11 +392,24 @@ Person record
                                                                             to start living in another country</td>
                                                                         <td class="column">
 
-                                                                            {% if data['emigration'] %}
+                                                                            {% if data['emigrationNew'] %}
+                                                                                {% if data['emigrationNew'] === 'Yes' %}
+                                                                                    {% if data['leaveDate'] %}
+                                                                                        {{ data['leaveDate']}}
+                                                                                    {% else %}
+                                                                                        01-01-2026
+                                                                                    {% endif %}
+                                                                                {% elif data['emigrationNew'] === 'No' %}
+                                                                                    -
+                                                                                {% endif %}
+
+                                                                                {% else %}
+
+                                                                                {% if data['emigration'] %}
 
                                                                                 {% if data['emigration'] === 'Yes' %}
-                                                                                    {% if data['leave-date'] %}
-                                                                                        {{ data['leave-date']}}
+                                                                                    {% if data['leaveDate'] %}
+                                                                                        {{ data['leaveDate']}}
                                                                                     {% else %}
                                                                                         01-01-2026
                                                                                     {% endif %}
@@ -390,29 +419,51 @@ Person record
                                                                                 {% endif %}
 
                                                                             {% else %}
-                                                                            {% if data['leave-date'] %}
-                                                                            {{ data['leave-date']}}
+                                                                            {% if data['leaveDate'] %}
+                                                                            {{ data['leaveDate']}}
                                                                         {% else %}
                                                                             01-01-2026
                                                                         {% endif %}
                                                                             {% endif %}
 
+
+
+                                                                            {% endif %}
+
+
                                                                         </td>
                                                                         <td class="column change">
-                                                                            {% if data['emigration'] %}
 
-                                                                            {% if data['emigration'] === 'Yes' %}
-                                                                            <a href="leave-date">
-                                                                                Change
-                                                                            </a>
+                                                                            {% if data['emigrationNew'] %}
+                                                                                {% if data['emigrationNew'] === 'Yes' %}
+                                                                                <a href="leave-date">
+                                                                                    Change
+                                                                                </a>
+                                                                                {% endif %}
+
+                                                                            {% elif data['emigration'] %}
+                                                                                {% if data['emigration'] === 'Yes' %}
+                                                                                    <a href="leave-date">
+                                                                                        Change
+                                                                                    </a>
                                                                             {% endif %}
 
                                                                             {% else %}
+
                                                                             <a href="leave-date">
                                                                                 Change
                                                                             </a>
+                                                                               
+                                                                               
+
 
                                                                             {% endif %}
+
+
+
+
+
+                                                                    
                                                                         </td>
                                                                     </tr>
                                                                     <tr class="row">
