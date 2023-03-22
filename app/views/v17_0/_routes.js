@@ -260,6 +260,10 @@ router.post([/intention-to-leave/, /intention-to-leave-error/], function (req,re
 router.post([/treatment-start-date-maternity-correct/, /treatment-start-date-error-correct-maternity/, /treatment-start-date-invalid-correct-maternity/, /treatment-start-date-error-maternity-correct-leave/], function (req, res) {
   const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
   var leaveDate = req.session.data['leaveDate'];
+  if (!leaveDate.length) {
+    leaveDate = '27/03/2023';
+  }
+  
   var treatmentStartM = req.session.data['treatmentStartM'];
   console.log(new Date(treatmentStartM));
   console.log(new Date(leaveDate));
@@ -281,6 +285,34 @@ router.post([/treatment-start-date-maternity-correct/, /treatment-start-date-err
   }
   else if (!dateReg.test(req.body.treatmentStartM)) {
     return res.redirect('treatment-start-invalid-error-correct-maternity');
+  }
+})
+
+// When is the treatment expected to start? (Maternity + Leave) //
+router.post([/treatment-start-date-maternity-correct-fr/, /treatment-start-date-error-correct-maternity-fr/, /treatment-start-date-invalid-correct-maternity-fr/, /treatment-start-date-error-maternity-correct-leave-fr/], function (req, res) {
+  const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
+  var leaveDate = '27/03/2023';
+  var treatmentStartM = '15/05/2023';
+  console.log(new Date(treatmentStartM));
+  console.log(new Date(leaveDate));
+
+  var lastRunLeaveDate = new Date(leaveDate.split('/')[2], leaveDate.split('/')[1], leaveDate.split('/')[0]);
+  console.log(lastRunLeaveDate);
+
+  var lastRunStartDate = new Date(treatmentStartM.split('/')[2], treatmentStartM.split('/')[1], treatmentStartM.split('/')[0]);
+  console.log(lastRunStartDate);
+
+  if (dateReg.test(req.body.treatmentStartM) && lastRunLeaveDate < lastRunStartDate) {
+    return res.redirect('../found-record/done-record-updated');
+  }
+  else if (dateReg.test(req.body.treatmentStartM) && lastRunLeaveDate > lastRunStartDate) {
+    return res.redirect('../found-record/treatment-start-error-maternity-correct-leave');
+  }
+  else if (!dateReg.test(req.body.treatmentStartM) && req.body.treatmentStartM === '') {
+    return res.redirect('../found-record/treatment-start-error-correct-maternity');
+  }
+  else if (!dateReg.test(req.body.treatmentStartM)) {
+    return res.redirect('../found-record/treatment-start-invalid-error-correct-maternity');
   }
 })
 
@@ -438,7 +470,6 @@ router.post([/treatment-end-date-planned/, /treatment-end-invalid-planned/, /tre
     return res.redirect('treatment-end-limit-planned');
   }
   else if (req.body.treatmentEndP !== '' && maxEndP >= lastRunEndDate) {
-    
     return res.redirect('treatment-details');
   }
   else if (req.body.treatmentEndP === '') {
@@ -489,29 +520,6 @@ router.post([/national-insurance/, /national-insurance-invalid/], function (req,
 
 //What is your NHS Number? //
 router.post([/nhs-number/, /nhs-number-error/, /nhs-number-invalid/], function (req,res) {
-  
-  // function isValidNhsNumber(txtNhsNumber) {
-  //   var isValid = false;
-  //   if (txtNhsNumber.length == 10) {
-  //       var total = 0;
-  //       var i = 0;
-  //       for (i = 0; i <= 8; i++) {
-  //           var digit = txtNhsNumber.substr(i, 1);
-  //           var factor = 10 - i;
-  //           total += (digit * factor);
-  //       }
-  //       var checkDigit = (11 - (total % 11));
-  //       if (checkDigit == 11) { checkDigit = 0; }
-  //       if (checkDigit == txtNhsNumber.substr(9, 1)) { isValid = true; }
-  //   }
-  //   return isValid;
-  // }
-
-  //} else if(req.body.nhsNumber !== '' && isValidNhsNumber(req.body.nhsNumber) == false) {
-  //   res.redirect('nhs-number-invalid');
-  // }
-
-  // const nhsRegEx = /^[a-zA-Z0-9\s]{12}$/;
   const nhsRegEx = /^[a-zA-Z0-9]*$/;
 
   var nhsNum = req.body.nhsNumber.replace(/ /g, '');

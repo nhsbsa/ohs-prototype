@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	When is your expected date of delivery?
+	When is the treatment expected to end (optional)?
 {% endblock %}
 
 {% block content %}
@@ -62,27 +62,43 @@
 					</p>
 				</div>
 			</div>
+			<div class="column-two-thirds">
+				<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+					<h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+						There is a problem
+					</h2>
+					<ul class="error-summary-list">
+						<li class="error-message">
+							<a href="#treatment-end">
+								Treatment end date must be a real date
+							</a>
+						</li>
+					</ul>
+				</div>
 
-            <form action="treatment-start-date-maternity-correct" method="post" class="form">
-				<div class="column-two-thirds">
-					<div class="heading-group">
-						<h1 class="heading-large">When is your expected date of delivery?</h1>
-					</div>
-               
-                    <div class="form-group">
-                        <label class="form-label" for="treatment-start">Treatment start date</label>
-                        <span class="form-hint">
-                            For example 01/01/2000
+				<div class="heading-group">
+					<h1 class="heading-large">When is the treatment expected to end?</h1>
+				</div>
+
+            <form action="treatment-end-invalid-maternity-fr" method="post" class="form">
+            
+                    <div class="form-group form-group-error">
+                        <label class="form-label" for="treatment-end">Treatment end date (optional)</label>
+                        <span class="error-message">
+							Treatment end date must be a real date
+						</span>
+						<span class="form-hint">
+                            For example, 03/12/2022
                         </span>
-                        <input class="form-control" id="treatment-start" name="treatmentStartM" type="text" value="{{ data['treatmentStartM'] }}" autocomplete="off" />
+                        <input class="form-control-error" id="treatment-end" name="treatmentEndM" type="text" value="{{ data['treatmentEndM'] }}" autocomplete="off" />
                     </div>
-                    
-			<div class="form-group">
-				<input class="button" type="submit" value="Next">
-				<a class="button button-secondary" href="search">Cancel</a>
-			</div>
-		
-			</form>
+					<div class="form-group">
+						<input class="button" type="submit" value="Next">
+						<a class="button button-secondary" href="search">Cancel</a>
+					</div>   
+                
+            </form>
+			
         </div>
     </div>
 </main>

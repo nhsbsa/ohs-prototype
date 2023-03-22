@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-	What is your Insurance number?
+	When is the treatment expected to end (optional)?
 {% endblock %}
 
 {% block content %}
@@ -63,32 +63,42 @@
 				</div>
 			</div>
 			<div class="column-two-thirds">
-				<div class="heading-group">
-					<h1 class="heading-large">What is your National Insurance number?</h1>
+				<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+					<h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+						There is a problem
+					</h2>
+					<ul class="error-summary-list">
+						<li class="error-message">
+							<a href="#treatment-end">
+								Treatment end date for maternity cannot be past 15 weeks from start date
+							</a>
+						</li>
+					</ul>
 				</div>
 
-            <form action="national-insurance" method="post" class="form">
-               
-                    <div class="form-group">
-                        <label class="form-label" for="nino">National Insurance number (optional)</label>
-                        <span class="form-hint">
-                            Leave blank if a National Insurance number is not available. An NHS number can be provided instead after clicking Next.<br>
-							For example QQ 12 34 56 C 
-                        </span>
-                        <input class="form-control" id="nino" name="nino" type="text" autocomplete="off" value="{{ data ['nino']}}" />
-                    </div>
+				<div class="heading-group">
+					<h1 class="heading-large">When is the treatment expected to end?</h1>
+				</div>
 
-					<div class="form-group">
-						<p><a href="nhs-number">I don't have a National Insurance number</a></p>
-					</div>
-                    
-                <div class="form-group">
-                    <input class="button" type="submit" value="Next">
-                    <a class="button button-secondary" href="search">Cancel</a>
-                </div>
-            </form>
-
+            <form action="treatment-end-maternity-error-fr" method="post" class="form">
             
+                    <div class="form-group form-group-error">
+                        <label class="form-label" for="treatment-end">Treatment end date (optional)</label>
+                        <span class="error-message">
+							Treatment end date for maternity cannot be past 15 weeks from start date
+						</span>
+						<span class="form-hint">
+                            For example, 03/12/2022
+                        </span>
+                        <input class="form-control-error" id="treatment-end" name="treatmentEndM" type="text" value="{{ data['treatmentEndM'] }}" autocomplete="off" />
+                    </div>
+					<div class="form-group">
+						<input class="button" type="submit" value="Next">
+						<a class="button button-secondary" href="search">Cancel</a>
+					</div>   
+                
+            </form>
+			
         </div>
     </div>
 </main>

@@ -250,7 +250,6 @@ Person record
 												{% else %}
 													Michelle Philip
 												{% endif %}
-
 											</dd>
 											<dd class="cya-change"><a class="cancel" href="">Change</a>
 											</dd>
@@ -264,7 +263,6 @@ Person record
 												{% else %}
 													15/03/1984
 												{% endif %}
-
 											</dd>
 											<dd class="cya-change"><a class="cancel" href="">Change</a>
 											</dd>
@@ -430,18 +428,10 @@ Person record
 									<tr>
 										<td>S2</td>
 										<td>
-											{% if data['treatmentStartM'] %}
 												{{ data['treatmentStartM']}}
-											{% else %}
-												01/01/2023
-											{% endif %}
 										</td>
 										<td>
-											{% if data['treatmentEndM'] %}
-												{{ data['treatmentEndM'] }}
-											{% else %}
 												{{ convertMaxEndM }}
-											{% endif %}
 										</td>
 										<td>Main</td>
 										<td>
@@ -503,7 +493,7 @@ Person record
 																	</tr>
 																	<tr class="row">
 																		<td class="column title">Nationality</td>
-																		<td class="column">								
+																		<td class="column">
 																			{% if 'UK' in data['nationality'] %}
 																				UK national<br>
 																			{% endif %}
@@ -532,11 +522,7 @@ Person record
 																		<td class="column title">Expected date of
 																			delivery</td>
 																		<td class="column">
-																			{% if data['treatmentStartM'] %}
 																				{{ data['treatmentStartM']}}
-																			{% else %}
-																				15/01/2023
-																			{% endif %}
 																		</td>
 																	</tr>
 																	<tr class="row">
