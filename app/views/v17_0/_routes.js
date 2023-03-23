@@ -260,19 +260,12 @@ router.post([/intention-to-leave/, /intention-to-leave-error/], function (req,re
 router.post([/treatment-start-date-maternity-correct/, /treatment-start-date-error-correct-maternity/, /treatment-start-date-invalid-correct-maternity/, /treatment-start-date-error-maternity-correct-leave/], function (req, res) {
   const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
   var leaveDate = req.session.data['leaveDate'];
-  if (!leaveDate.length) {
-    leaveDate = '27/03/2023';
+  if(!leaveDate) {
+    leaveDate = "27/03/2023";
   }
-  
   var treatmentStartM = req.session.data['treatmentStartM'];
-  console.log(new Date(treatmentStartM));
-  console.log(new Date(leaveDate));
-
   var lastRunLeaveDate = new Date(leaveDate.split('/')[2], leaveDate.split('/')[1], leaveDate.split('/')[0]);
-  console.log(lastRunLeaveDate);
-
   var lastRunStartDate = new Date(treatmentStartM.split('/')[2], treatmentStartM.split('/')[1], treatmentStartM.split('/')[0]);
-  console.log(lastRunStartDate);
 
   if (dateReg.test(req.body.treatmentStartM) && lastRunLeaveDate < lastRunStartDate) {
     return res.redirect('done-record-updated');
@@ -314,6 +307,24 @@ router.post([/treatment-start-date-maternity-correct-fr/, /treatment-start-date-
   else if (!dateReg.test(req.body.treatmentStartM)) {
     return res.redirect('../found-record/treatment-start-invalid-error-correct-maternity');
   }
+})
+
+
+router.get(/person-case-maternity-evidence-requested/, function (req, res) {
+  var leaveDate = req.session.data['leaveDate'];
+  var treatmentStartM = req.session.data['treatmentStartM'];
+  var treatmentEndM = req.session.data['treatmentEndM'];
+
+  if(!leaveDate) {
+    leaveDate = "27/03/2023";
+  }
+  if(!treatmentStartM) {
+    treatmentStartM = "15/05/2023";
+  }
+  if(!treatmentEndM) {
+    treatmentEndM = "28/09/2023";
+  }
+  res.render('v17_0/admin/s2/new-record/person-case-maternity-evidence-requested', {leaveDate: leaveDate,  treatmentStartM:  treatmentStartM,  treatmentEndM:  treatmentEndM});
 })
 
 // When is the treatment expected to start? (Maternity + Leave) //
@@ -376,24 +387,6 @@ router.get(/treatment-end-maternity/, function (req,res){
 	}
 
   res.render('v17_0/admin/s2/new-record/treatment-end-maternity', {convertMaxEndM: convertMaxEndM});
-});
-
-// Person case Maternity - evidence requested //
-router.get(/person-case-maternity-evidence-requested/, function (req,res){
-  
-  var startDateM = req.session.data['treatmentStartM'];
-  if (startDateM){
-    var lastRunDateM = new Date(startDateM.split('/')[2], startDateM.split('/')[1], startDateM.split('/')[0]);
-    var maxEndM = new Date(lastRunDateM.getTime() + (105 * 86400000));
-    var convertMaxEndM = convertDate(maxEndM);
-  }
-
-	function convertDate(inputFormat) {
-		function pad(s) { return (s < 10) ? '0' + s : s; }
-		var d = new Date(inputFormat);
-		return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
-	}
-  res.render('v17_0/admin/s2/new-record/person-case-maternity-evidence-requested', { convertMaxEndM: convertMaxEndM });
 });
 
 // Person case Maternity - awaiting evidence//

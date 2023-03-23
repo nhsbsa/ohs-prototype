@@ -427,10 +427,18 @@ Person record
 									<tr>
 										<td>S2</td>
 										<td>
+											{% if treatmentStartM %}
+												{{ treatmentStartM }}
+											{% else %}
 												15/05/2023
+											{% endif %}
 										</td>
 										<td>
+											{% if treatmentEndM %}
+												{{ treatmentEndM }}
+											{% else %}
 												28/09/2023
+											{% endif %}
 										</td>
 										<td>Main</td>
 										<td>
@@ -517,17 +525,22 @@ Person record
 																	<tr class="row">
 																		<td class="column title">Date leaving UK</td>
 																		<td class="column">
-																			{% if data['leaveDate'] %}
-																				{{ data['leaveDate']}}
+																			{% if leaveDate %}
+																				{{ leaveDate }}
 																			{% else %}
 																				27/03/2023
-																			{% endif %}</td>
+																			{% endif %}
+																		</td>
 																	</tr>
 																	<tr class="row">
 																		<td class="column title">Expected date of
 																			delivery</td>
 																		<td class="column">
-																			<span>15/05/2023</span>
+																			{% if treatmentStartM %}
+																				{{ treatmentStartM }}
+																			{% else %}
+																				15/05/2023
+																			{% endif %}
 																		</td>
 																		<td class="cya-change">
 																			<a href="treatment-start-maternity-correct#treatment-start">Change<span class="visually-hidden"> the treatment start date</span></a>
@@ -537,7 +550,11 @@ Person record
 																		<td class="column title">Estimated delivery
 																			end date</td>
 																		<td class="column">
-																			<span>28/09/2023</span>
+																			{% if treatmentEndM %}
+																				{{ treatmentEndM }}
+																			{% else %}
+																				28/09/2023
+																			{% endif %}
 																		</td>
 																		<td class="cya-change">
 																			<a href="treatment-end-maternity#treatment-end">Change<span class="visually-hidden"> the treatment end date</span></a>

@@ -427,13 +427,17 @@ Person record
 									<tr>
 										<td>S2</td>
 										<td>
-											{% if data['treatmentStartM'] %}
-												{{ data['treatmentStartM']}}
+											{% if treatmentStartM %}
+												{{ treatmentStartM }}
+											{% else %}
+												15/05/2023
 											{% endif %}
 										</td>
 										<td>
-											{% if data['treatmentStartM']  %}
-												{{ convertMaxEndM }}
+											{% if treatmentEndM %}
+												{{ treatmentEndM }}
+											{% else %}
+												28/09/2023
 											{% endif %}
 										</td>
 										<td>Main</td>
@@ -536,7 +540,11 @@ Person record
 																		<td class="column title">Expected date of
 																			delivery</td>
 																		<td class="column">
-																				{{ data['treatmentStartM']}}
+																			{% if treatmentStartM %}
+																				{{ treatmentStartM }}
+																			{% else %}
+																				15/05/2023
+																			{% endif %}
 																		</td>
 																		<td class="cya-change">
 																			<a href="treatment-start-maternity-correct#treatment-start">Change<span class="visually-hidden"> the treatment start date</span></a>
@@ -546,7 +554,11 @@ Person record
 																		<td class="column title">Estimated delivery
 																			end date</td>
 																		<td class="column">
-																				{{ convertMaxEndM }}
+																			{% if treatmentEndM %}
+																				{{ treatmentEndM }}
+																			{% else %}
+																				28/09/2023
+																			{% endif %}
 																		</td>
 																		<td class="cya-change">
 																			<a href="treatment-end-maternity#treatment-end">Change<span class="visually-hidden"> the treatment end date</span></a>
