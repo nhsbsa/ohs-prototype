@@ -3,7 +3,6 @@ const express = require('express');
 const { date } = require('gulp-util');
 const router = express.Router();
 
-
 // Route index page
 // router.get('/', function (req, res) {
 //   res.render('index');
@@ -11,10 +10,149 @@ const router = express.Router();
 
 // add your routes here
 
+// ----------------------- //
+// ----- S2 Test v2 ------ //
+// -------------------- //
+
+// S2 Maternity review evidence, review-evidence-maternity-options.html
+router.post([/s2maternityReviewEvidenceNew/, /s2maternityReviewEvidenceNewErr/], function (req,res) {
+  if(req.body.evidenceResult === "Approved with evidence") {
+    res.redirect('review-evidence-maternity-email-options');
+  } else if (req.body.evidenceResult === "Approved with evidence and amend dates") {
+    res.redirect('check-start-date-new');
+  } else if (req.body.evidenceResult === "Evidence requested email") {
+    res.redirect('review-evidence-maternity-email-options');
+  } else if (req.body.evidenceResult === "Evidence requested") {
+    res.redirect('review-evidence-maternity-options-warning');
+  } else if (req.body.evidenceResult === "Not approved") {
+    res.redirect('done-maternity-rejected');
+  } else {
+    res.redirect('review-evidence-maternity-options-error');
+  }
+})
+
+// S2 Maternity review evidence, review-evidence-maternity-options.html
+router.post([/check-start-date-new/, /check-start-date-error/], function (req,res) {
+  if(req.body.checkStartDate === "Yes") {
+    res.redirect('check-end-date-new');
+  } else if (req.body.checkStartDate === "No") {
+    res.redirect('treatment-start-maternity-correct-new');
+  } else {
+    res.redirect('check-start-date-error');
+  }
+})
+
+
+// S2 Maternity review evidence, review-evidence-maternity-options.html
+router.post([/check-end-date-new/, /check-end-date-error/], function (req,res) {
+  if(req.body.checkDate === "Yes") {
+    res.redirect('check-end-date-answers');
+  } else if (req.body.checkDate === "No") {
+    res.redirect('treatment-end-maternity-new');
+  } else {
+    res.redirect('check-end-date-error');
+  }
+})
+
+// S2 Maternity review evidence, review-evidence-maternity-options-warning.html 
+router.post(/s2manualemailnew/, function (req,res) {
+  if(req.body.radiosResult === "Approved with evidence") {
+    res.redirect('done-maternity-evidence-approved');
+  } else if (req.body.radiosResult === "Evidence requested email") {
+    res.redirect('review-evidence-maternity-email-options');
+  } else if (req.body.radiosResult === "Evidence requested") {
+    res.redirect('done-maternity-manual-email');
+  } else if (req.body.radiosResult === "Not approved") {
+    res.redirect('done-maternity-rejected');
+  } else {
+    res.redirect('review-evidence-maternity-options-warning');
+  }
+})
+
+// When is the treatment expected to start? (Maternity + Leave) //
+router.post([/treatment-start-date-maternity-correct-fr-new/, /treatment-start-date-error-correct-maternity-fr-new/, /treatment-start-date-invalid-correct-maternity-fr-new/, /treatment-start-date-error-maternity-correct-leave-fr-new/], function (req, res) {
+  const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
+  var leaveDate = req.session.data['leaveDate'];
+  if(!leaveDate) {
+    leaveDate = "27/03/2023";
+  }
+  var treatmentStartM = req.session.data['treatmentStartM'];
+  var lastRunLeaveDate = new Date(leaveDate.split('/')[2], leaveDate.split('/')[1], leaveDate.split('/')[0]);
+  var lastRunStartDate = new Date(treatmentStartM.split('/')[2], treatmentStartM.split('/')[1], treatmentStartM.split('/')[0]);
+
+  if (dateReg.test(req.body.treatmentStartM) && lastRunLeaveDate < lastRunStartDate) {
+    return res.redirect('check-end-date-new');
+  }
+  else if (dateReg.test(req.body.treatmentStartM) && lastRunLeaveDate > lastRunStartDate) {
+    return res.redirect('treatment-start-error-maternity-correct-leave-new');
+  }
+  else if (!dateReg.test(req.body.treatmentStartM) && req.body.treatmentStartM === '') {
+    return res.redirect('treatment-start-error-correct-maternity-new');
+  }
+  else if (!dateReg.test(req.body.treatmentStartM)) {
+    return res.redirect('treatment-start-invalid-error-correct-maternity-new');
+  }
+})
+
+
+// When is the treatment expected to end? (Maternity) //
+router.post([/treatment-end-date-maternity-new/, /treatment-end-invalid-maternity-new/, /treatment-end-maternity-error-new/], function (req, res) {
+  const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/; /// Allows a day number between 00 and 31, a month number between 00 and 12 and a year number between 2021 and 2023
+
+  if (req.body.treatmentEndM !== '' && dateReg.test(req.body.treatmentEndM)) {
+    res.redirect('check-end-date-answers');
+  }
+  else if (req.body.treatmentEndM !== '' && !dateReg.test(req.body.treatmentEndM)) {
+    res.redirect('treatment-end-invalid-error-maternity-new');
+  }
+  else if (req.body.treatmentEndM === '') {
+    res.redirect('treatment-end-error-maternity-new');
+  }
+})
+
+// When is the treatment expected to end? (Maternity Default Date) //
+router.get(/treatment-end-maternity-new/, function (req,res){
+  var startDateM = req.session.data['treatmentStartM'];
+
+  if (startDateM){
+    var lastRunDateM = new Date(startDateM.split('/')[2], startDateM.split('/')[1], startDateM.split('/')[0]);
+    var maxEndM = new Date(lastRunDateM.getTime() + (105 * 86400000));
+
+    var convertMaxEndM = convertDate(maxEndM);
+  }
+
+	function convertDate(inputFormat) {
+		function pad(s) { return (s < 10) ? '0' + s : s; }
+		var d = new Date(inputFormat);
+		return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+	}
+
+  res.render('v17_0/admin/s2/new-version/treatment-end-maternity-new', {convertMaxEndM: convertMaxEndM});
+});
+
+// Person case Maternity - awaiting evidence//
+router.get(/person-case-maternity-awaiting-review-new/, function (req,res){
+  
+  var startDateM = req.session.data['treatmentStartM'];
+  if (startDateM){
+    var lastRunDateM = new Date(startDateM.split('/')[2], startDateM.split('/')[1], startDateM.split('/')[0]);
+    var maxEndM = new Date(lastRunDateM.getTime() + (105 * 86400000));
+    var convertMaxEndM = convertDate(maxEndM);
+  }
+
+	function convertDate(inputFormat) {
+		function pad(s) { return (s < 10) ? '0' + s : s; }
+		var d = new Date(inputFormat);
+		return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+	}
+  res.render('v17_0/admin/s2/new-version/person-case-maternity-awaiting-review-new', { convertMaxEndM: convertMaxEndM });
+});
 
 // -------------------- //
 // ----- S2 Test ------ //
 // -------------------- //
+
+
 
 //What is the date the request was received? //
 router.post([/date-request/, /date-request-error/, /date-request-invalid/], function (req,res) {
@@ -68,7 +206,6 @@ router.post([/country-planned/, /country-planned-error/], function (req, res) {
 })
 
 // What country are they having treatment in (Maternity care and delivery)?
-
 router.post([/country-maternity/, /country-maternity-error/], function (req, res) {
   console.log(req.body.locationPicker);
  
@@ -212,7 +349,6 @@ router.post([/nationality/, /nationality-error/, /nationality-eu-error/, /nation
 })
 
 // When do you intend to leave the UK? (Maternity care and delivery)
-
 router.post([/leave-date-maternity/, /leave-date-maternity-invalid/, /leave-date-maternity-error/], function (req, res) {
   console.log(req.body.leaveDate);
   const dateReg = /^(0?[1-9]|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/](\d{4})$/;
@@ -635,9 +771,8 @@ router.get(/check-your-answers/, function (req,res){
 // S2 Maternity review evidence, review-evidence-maternity-options.html
 router.get(/s2maternityReviewEvidence/, function (req,res) {
   if(req.query.radiosResult === "Approved with evidence") {
-    res.redirect('done-maternity-evidence-approved');
-  } 
-   else if (req.query.radiosResult === "Evidence requested email") {
+    res.redirect('review-evidence-maternity-email-options');
+  } else if (req.query.radiosResult === "Evidence requested email") {
     res.redirect('review-evidence-maternity-email-options');
   } else if (req.query.radiosResult === "Evidence requested") {
     res.redirect('review-evidence-maternity-options-warning');
@@ -918,9 +1053,6 @@ router.get(/durableChild/, function (req,res) {
     res.redirect('relationship-child');
   }
 });
-
-
-
 
 // Are you the main applicant or a relative of an EU national? - EHIC
 // router.get(/appType/, function (req,res) {
@@ -1529,17 +1661,6 @@ router.get(/contsPensionGermany/, function (req,res) {
   }
 });
 
-
-
-
-
-
-
-
-
-
-
-
 // admin search-results exportable-benefits //
 router.get(/new-person-admin/, function (req,res){
   if(req.query.pension === "pension"){
@@ -2085,8 +2206,6 @@ router.get(/applyrenew/, function (req,res){
   }
 });
 
-
-
 router.get(/state/, function (req,res){
   if(req.query.state === "yes") {
     res.redirect('residency');
@@ -2586,8 +2705,6 @@ router.get(/zebra/, function (req,res) {
 
 // Start folder specific routes
 // router.use('/v13_0', require('./views/v13_0/_routes'));
-
-
 
 
 module.exports = router

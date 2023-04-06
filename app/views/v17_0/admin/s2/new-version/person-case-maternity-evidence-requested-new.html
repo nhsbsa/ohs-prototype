@@ -139,7 +139,7 @@ Person record
 	}
 
 	span.status-tag-medium {
-		background-color: #F47738;
+		background-color: #ad0e1e;
 		color: #ffffff;
 		vertical-align: baseline;
 		padding: 2px 9px 1px;
@@ -250,6 +250,7 @@ Person record
 												{% else %}
 													Michelle Philip
 												{% endif %}
+
 											</dd>
 											<dd class="cya-change"><a class="cancel" href="">Change</a>
 											</dd>
@@ -276,7 +277,6 @@ Person record
 												{% else %}
 													SR123456A
 												{% endif %}
-
 											</dd>
 											<dd class="cya-change">
 											</dd>
@@ -286,37 +286,36 @@ Person record
 											<dt class="cya-question">Residential address</dt>
 											<dd class="cya-answer">
 												{% if data %}
-												{% if data['resAddressLineOne'] %}
-													{{ data['resAddressLineOne']}}
+													{% if data['resAddressLineOne'] %}
+														{{ data['resAddressLineOne']}}
+													{% else %}
+														&#8212;
+													{% endif %}
+													<br>
+													{% if data['resAddressLineTwo'] %}
+														{{ data['resAddressLineTwo']}}
+													{% else %}
+														&#8212;
+													{% endif %}
+													<br>
+													{% if data['resTown'] %}
+														{{ data['resTown']}}
+													{% else %}
+														&#8212;
+													{% endif %}
+													<br>
+													{% if data['resAddressPostcode'] %}
+														{{ data['resAddressPostcode']}}
+													{% else %}
+														&#8212;
+													{% endif %}
+													<br>
+													{% if data['resCountry'] %}
+														{{ data['resCountry']}}
+													{% endif %}
 												{% else %}
 													&#8212;
 												{% endif %}
-												<br>
-												{% if data['resAddressLineTwo'] %}
-													{{ data['resAddressLineTwo']}}
-												{% else %}
-													&#8212;
-												{% endif %}
-												<br>
-												{% if data['resTown'] %}
-													{{ data['resTown']}}
-												{% else %}
-													&#8212;
-												{% endif %}
-												<br>
-												{% if data['resAddressPostcode'] %}
-													{{ data['resAddressPostcode']}}
-												{% else %}
-												&#8212;
-												{% endif %}
-												<br>
-												{% if data['resCountry'] %}
-													{{ data['resCountry']}}
-												{% endif %}
-												{% else %}
-													&#8212;
-												{% endif %}
-
 											</dd>
 											<dd class="cya-change">
 												<p class="navigation">
@@ -329,33 +328,33 @@ Person record
 											<dt class="cya-question">Correspondence address</dt>
 											<dd class="cya-answer">
 												{% if data %}
-												{% if data['corrAddressLineOne'] %}
-													{{ data['corrAddressLineOne']}}
-												{% else %}
-													&#8212;
-												{% endif %}
-												<br>
-												{% if data['corrAddressLineTwo'] %}
-													{{ data['corrAddressLineTwo']}}
-												{% else %}
-													&#8212;
-												{% endif %}
-												<br>
-												{% if data['corrTown'] %}
-													{{ data['corrTown']}}
-												{% else %}
-													&#8212;
-												{% endif %}
-												<br>
-												{% if data['corrAddressPostcode'] %}
-													{{ data['corrAddressPostcode']}}
-												{% else %}
-													&#8212;
-												{% endif %}
-												<br>
-												{% if data['corrCountry'] %}
-													{{ data['corrCountry']}}
-												{% endif %}
+													{% if data['corrAddressLineOne'] %}
+														{{ data['corrAddressLineOne']}}
+													{% else %}
+														&#8212;
+													{% endif %}
+													<br>
+													{% if data['corrAddressLineTwo'] %}
+														{{ data['corrAddressLineTwo']}}
+													{% else %}
+														&#8212;
+													{% endif %}
+													<br>
+													{% if data['corrTown'] %}
+														{{ data['corrTown']}}
+													{% else %}
+														&#8212;
+													{% endif %}
+													<br>
+													{% if data['corrAddressPostcode'] %}
+														{{ data['corrAddressPostcode']}}
+													{% else %}
+														&#8212;
+													{% endif %}
+													<br>
+													{% if data['corrCountry'] %}
+														{{ data['corrCountry']}}
+													{% endif %}
 												{% else %}
 													&#8212;
 												{% endif %}
@@ -376,9 +375,9 @@ Person record
 											<dt class="cya-question">Email address</dt>
 											<dd class="cya-answer">
 												{% if data['emailAddress'] %}
-												{{ data['emailAddress']}}
+													{{ data['emailAddress']}}
 												{% else %}
-												&#8212;
+													&#8212;
 												{% endif %}
 											</dd>
 											<dd class="cya-change"><a class="cancel" href="contact-details">Change</a>
@@ -389,9 +388,9 @@ Person record
 											<dt class="cya-question">Telephone number</dt>
 											<dd class="cya-answer">
 												{% if data['phoneNumber'] %}
-												{{ data['phoneNumber']}}
+													{{ data['phoneNumber']}}
 												{% else %}
-												&#8212;
+													&#8212;
 												{% endif %}
 											</dd>
 											<dd class="cya-change"><a class="cancel" href="contact-details">Change</a>
@@ -428,15 +427,18 @@ Person record
 									<tr>
 										<td>S2</td>
 										<td>
-											{% if data['treatmentStartM'] %}
-												{{ data['treatmentStartM']}}
+											{% if treatmentStartM %}
+												{{ treatmentStartM }}
 											{% else %}
 												15/05/2023
 											{% endif %}
 										</td>
 										<td>
-											{{ data['treatmentEndM'] }}
-								
+											{% if treatmentEndM %}
+												{{ treatmentEndM }}
+											{% else %}
+												28/09/2023
+											{% endif %}
 										</td>
 										<td>Main</td>
 										<td>
@@ -447,7 +449,7 @@ Person record
 											{% endif %}
 										</td>
 										<td><span class="status-tag-medium font-xsmall"
-												style="padding-left:25px; padding-right:25px">Awaiting review</span>
+												style="padding-left:10px; padding-right:10px">Evidence requested</span>
 										</td>
 										<td nowrap="">
 											<details onclick="myFunction2()">
@@ -482,7 +484,7 @@ Person record
 																			{% if data['dateOfRequest'] %}
 																				{{ data['dateOfRequest']}}
 																			{% else %}
-																				09/12/2022
+																				20/12/2022
 																			{% endif %}
 																		</td>
 																	</tr>
@@ -498,7 +500,7 @@ Person record
 																	</tr>
 																	<tr class="row">
 																		<td class="column title">Nationality</td>
-																		<td class="column">
+																		<td class="column">	
 																			{% if data['nationality'] %}							
 																				{% if 'UK' in data['nationality'] %}
 																					UK national<br>
@@ -518,23 +520,42 @@ Person record
 																				<span>Austria</span><br>
 																				<span>Albania</span><br>
 																			{% endif %}
-																	</td>
+																		</td>
 																	</tr>
 																	<tr class="row">
 																		<td class="column title">Date leaving UK</td>
 																		<td class="column">
-																			{% if data['leaveDate'] %}
-																				{{ data['leaveDate']}}
+																			{% if leaveDate %}
+																				{{ leaveDate }}
 																			{% else %}
-																				01/01/2023
-																			{% endif %}</td>
+																				27/03/2023
+																			{% endif %}
+																		</td>
 																	</tr>
 																	<tr class="row">
 																		<td class="column title">Expected date of
 																			delivery</td>
 																		<td class="column">
-																				{{ data['treatmentStartM']}}
+																			{% if treatmentStartM %}
+																				{{ treatmentStartM }}
+																			{% else %}
+																				15/05/2023
+																			{% endif %}
 																		</td>
+																		
+																	</tr>
+																	<tr class="row">
+																		<td class="column title">Estimated delivery
+																			end date</td>
+																		<td class="column">
+																			{% if treatmentEndM %}
+																				{{ treatmentEndM }}
+																			{% else %}
+																				28/09/2023
+																			{% endif %}
+																		</td>
+																		
+																		
 																	</tr>
 																	<tr class="row">
 																		<td class="column title">Leave the UK
@@ -543,7 +564,7 @@ Person record
 																			{% if data['leaveIntention'] %}
 																				{{ data['leaveIntention']}}
 																			{% else %}
-																				No
+																				Yes
 																			{% endif %}
 																		</td>
 																	</tr>

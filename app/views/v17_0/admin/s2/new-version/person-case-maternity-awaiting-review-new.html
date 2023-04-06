@@ -435,7 +435,11 @@ Person record
 											{% endif %}
 										</td>
 										<td>
-											{{ data['treatmentEndM'] }}
+											{% if treatmentEndM %}
+												{{ treatmentEndM }}
+											{% else %}
+												28/09/2023
+											{% endif %}
 								
 										</td>
 										<td>Main</td>
@@ -499,26 +503,12 @@ Person record
 																	<tr class="row">
 																		<td class="column title">Nationality</td>
 																		<td class="column">
-																			{% if data['nationality'] %}							
-																				{% if 'UK' in data['nationality'] %}
-																					UK national<br>
-																				{% endif %}
-																				{% if 'EU, EEA' in data['nationality'] %}
-																					{% for i in data['myInputsEURT'] %}
-																						<span>{{i}}</span><br>
-																					{% endfor %}
-																				{% endif %}
-																				{% if 'Other' in data['nationality'] %}
-																					{% for i in data['myInputsOtherRT'] %}
-																						<span>{{i}}</span><br>
-																					{% endfor %}
-																				{% endif %}
-																			{% else %}
+																			
 																				<span>UK national</span><br>
 																				<span>Austria</span><br>
 																				<span>Albania</span><br>
-																			{% endif %}
-																	</td>
+																			
+																		</td>
 																	</tr>
 																	<tr class="row">
 																		<td class="column title">Date leaving UK</td>
@@ -533,7 +523,11 @@ Person record
 																		<td class="column title">Expected date of
 																			delivery</td>
 																		<td class="column">
+																			{% if data['treatmentStartM'] %}
 																				{{ data['treatmentStartM']}}
+																			{% else %}
+																				15/05/2023
+																			{% endif %}
 																		</td>
 																	</tr>
 																	<tr class="row">
