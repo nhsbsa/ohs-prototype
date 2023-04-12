@@ -299,32 +299,33 @@ Person record
 																				01/01/2023
 																			{% endif %}</td>
 																	</tr> -->
+																	
 																	<tr class="row">
 																		<td class="column title">Expected date of
 																			delivery</td>
 																		<td class="column">
-																			{% if treatmentStartM %}
-																				{{ treatmentStartM }}
+																			{% if data['treatmentStartMNew'] %}
+																				{{ data['treatmentStartMNew'] }}
 																			{% else %}
 																				15/05/2023
 																			{% endif %}
+
 																		</td>
 																		<td class="cya-change">
-																			<a href="treatment-start-maternity-correct#treatment-start">Change<span class="visually-hidden"> the treatment start date</span></a>
+																			<a href="treatment-start-maternity-correct-new#treatmentStartMNew">Change<span class="visually-hidden"> the treatment start date</span></a>
 																		</td>
 																	</tr>
 																	<tr class="row">
 																		<td class="column title">Estimated delivery
 																			end date</td>
 																		<td class="column">
-																			{% if treatmentEndM %}
-																				{{ treatmentEndM }}
-																			{% else %}
-																				28/09/2023
-																			{% endif %}
+																											
+																				{{ data['treatmentEndM'] }}
+																			
+
 																		</td>
 																		<td class="cya-change">
-																			<a href="treatment-end-maternity#treatment-end">Change<span class="visually-hidden"> the treatment end date</span></a>
+																			<a href="treatment-end-maternity-new#treatmentEndM">Change<span class="visually-hidden"> the treatment end date</span></a>
 																		</td>
 																	</tr>
 

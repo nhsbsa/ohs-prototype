@@ -208,11 +208,9 @@
                         <strong>Expected date of delivery</strong>
                     </span>
                     <br>
-                    {% if treatmentStartM %}
-						{{ treatmentStartM }}
-					{% else %}
-						15/05/2023
-					{% endif %}
+						
+							15/05/2023
+						
                 
                 </div>
             </div>
@@ -225,7 +223,7 @@
 				<form action="check-end-date-error" method="post" class="form">
 					<div class="form-group">
 						<fieldset id="entitlement" class="form-group-error">
-							<span class="error-message">Select a 'No' if the entitlement date needs to be amended</span>
+							<span class="error-message">Select 'No' if the entitlement date needs to be amended</span>
 							<div class="govuk-radios">
 								<div class="govuk-radios__item">
 									<input class="govuk-radios__input" id="check-date-yes" name="checkStartDate" type="radio" value="Yes">

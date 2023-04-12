@@ -162,72 +162,78 @@
 			</div>
 		</div>
 	</div>
-	<div class="form-group">
-		<div class="grid-row">
-			<div class="column-full">
-				<div class="banner-information-without-action">
-					<p class="banner-message">
-						<span class="name text-capitalize">
-							{% if data['firstName'] %}
-								{{ data['firstName']}} {{ data['lastName']}}
-							{% else %}
-								Michelle Philip
-							{% endif %}
-						</span>
-						<span class="vertical-bar">|</span>
-						<span class="ohs-reference-number">
-							{% if data['ohs'] %}
-								{{ data['ohs']}}
-							{% else %}
-								25000002
-							{% endif %}
-						</span>
-					</p>
-				</div>
-
-			<div class="heading-group">
-				<h1 class="heading-large">Amend maternity treatment end date</h1>
-			</div>
-			
-            <p>You’ve told us about the treatment:</p>
-
-            <div class="nhsuk-inset-text" style="margin-top: 10px; margin-bottom: 0px;">
-                <span class="nhsuk-u-visually-hidden">Information:</span>
-                <p>
-                    <strong style="font-weight: bold">Expected date of delivery</strong>
-                    
-                    <br>
-					<span>
-						{% if treatmentStartM %}
-							{{ treatmentStartM }}
-						{% else %}
-							15/05/2023
-						{% endif %}
-					</span>
-				</p>
-                <p>
-                    <span>
-                      <strong style="font-weight: bold">Estimated delivery end date</strong>
-                    </span>
-                    <br>
-                    {% if treatmentEndM %}
-						{{ treatmentEndM }}
-					{% else %}
-						28/09/2023
-					{% endif %}
-                </p>
-                </div>
-            </div>
-
-			</div>
+	
+		
 
             <!-- INSERT HERE -->
 
 			
-				<div class="heading-group">
-					<h1 class="heading-large">Is this the correct date when the treatment is expected to end?</h1>
-				</div>
+				
 				<form action="check-end-date-new" method="post" class="form">
+
+					<div class="grid-row">
+						<div class="column-full">
+							<div class="banner-information-without-action">
+								<p class="banner-message">
+									<span class="name text-capitalize">
+										{% if data['firstName'] %}
+											{{ data['firstName']}} {{ data['lastName']}}
+										{% else %}
+											Michelle Philip
+										{% endif %}
+									</span>
+									<span class="vertical-bar">|</span>
+									<span class="ohs-reference-number">
+										{% if data['ohs'] %}
+											{{ data['ohs']}}
+										{% else %}
+											25000002
+										{% endif %}
+									</span>
+								</p>
+							</div>
+			
+						<div class="heading-group">
+							<h1 class="heading-large">Amend maternity treatment end date</h1>
+						</div>
+						
+						<p>You’ve told us about the treatment:</p>
+			
+						<div class="nhsuk-inset-text" style="margin-top: 10px; margin-bottom: 0px;">
+							<span class="nhsuk-u-visually-hidden">Information:</span>
+							<p>
+								<strong style="font-weight: bold">Expected date of delivery</strong>
+								
+								<br>
+								<span>
+									{% if data['treatmentStartMNew'] %}
+										{{ data['treatmentStartMNew'] }}
+									{% else %}
+										15/05/2023
+									{% endif %}
+									
+								</span>
+							</p>
+							<p>
+								<span>
+								  <strong style="font-weight: bold">Estimated delivery end date</strong>
+								</span>
+								<br>
+								{% if data['treatmentStartMNew'] %}
+									{{ convertMaxEndM }}
+								{% else %}
+									28/09/2023
+								{% endif %}
+							</p>
+							</div>
+						</div>
+			
+						</div>
+
+						<div class="heading-group">
+							<h1 class="heading-large">Is this the correct date when the treatment is expected to end?</h1>
+						</div>
+
 					<div class="form-group">
 						<fieldset id="entitlement">
 							<div class="govuk-radios">
@@ -253,7 +259,7 @@
 				</form>
 			
 		</div>
-	</div>
+	
 </main>
 
 <script src="/public/javascripts/jquery-1.11.3.js"></script>

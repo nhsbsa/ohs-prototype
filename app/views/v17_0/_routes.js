@@ -42,7 +42,6 @@ router.post([/check-start-date-new/, /check-start-date-error/], function (req,re
   }
 })
 
-
 // S2 Maternity review evidence, review-evidence-maternity-options.html
 router.post([/check-end-date-new/, /check-end-date-error/], function (req,res) {
   if(req.body.checkDate === "Yes") {
@@ -53,6 +52,67 @@ router.post([/check-end-date-new/, /check-end-date-error/], function (req,res) {
     res.redirect('check-end-date-error');
   }
 })
+
+
+// Is this the correct date when the treatment is expected to end? (Render new start date and calculate the new displayed end date)
+router.get(/check-end-date-answers/, function (req,res){
+  var startDateM = req.session.data['treatmentStartMNew'];
+
+  if (startDateM){
+    var lastRunDateM = new Date(startDateM.split('/')[2], startDateM.split('/')[1], startDateM.split('/')[0]);
+    var maxEndM = new Date(lastRunDateM.getTime() + (105 * 86400000));
+
+    var convertMaxEndM = convertDate(maxEndM);
+  }
+
+	function convertDate(inputFormat) {
+		function pad(s) { return (s < 10) ? '0' + s : s; }
+		var d = new Date(inputFormat);
+		return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+	}
+
+  res.render('v17_0/admin/s2/new-version/check-end-date-answers', {convertMaxEndM: convertMaxEndM});
+});
+
+// Is this the correct date when the treatment is expected to end? (Render new start date and calculate the new displayed end date)
+router.get(/check-end-date-new/, function (req,res){
+  var startDateM = req.session.data['treatmentStartMNew'];
+
+  if (startDateM){
+    var lastRunDateM = new Date(startDateM.split('/')[2], startDateM.split('/')[1], startDateM.split('/')[0]);
+    var maxEndM = new Date(lastRunDateM.getTime() + (105 * 86400000));
+
+    var convertMaxEndM = convertDate(maxEndM);
+  }
+
+	function convertDate(inputFormat) {
+		function pad(s) { return (s < 10) ? '0' + s : s; }
+		var d = new Date(inputFormat);
+		return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+	}
+
+  res.render('v17_0/admin/s2/new-version/check-end-date-new', {convertMaxEndM: convertMaxEndM});
+});
+
+// Is this the correct date when the treatment is expected to end? (Render new start date and calculate the new displayed end date)
+router.get(/check-end-date-error/, function (req,res){
+  var startDateM = req.session.data['treatmentStartMNew'];
+
+  if (startDateM){
+    var lastRunDateM = new Date(startDateM.split('/')[2], startDateM.split('/')[1], startDateM.split('/')[0]);
+    var maxEndM = new Date(lastRunDateM.getTime() + (105 * 86400000));
+
+    var convertMaxEndM = convertDate(maxEndM);
+  }
+
+	function convertDate(inputFormat) {
+		function pad(s) { return (s < 10) ? '0' + s : s; }
+		var d = new Date(inputFormat);
+		return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+	}
+
+  res.render('v17_0/admin/s2/new-version/check-end-date-error', {convertMaxEndM: convertMaxEndM});
+});
 
 // S2 Maternity review evidence, review-evidence-maternity-options-warning.html 
 router.post(/s2manualemailnew/, function (req,res) {
@@ -76,20 +136,21 @@ router.post([/treatment-start-date-maternity-correct-fr-new/, /treatment-start-d
   if(!leaveDate) {
     leaveDate = "27/03/2023";
   }
-  var treatmentStartM = req.session.data['treatmentStartM'];
+  var treatmentStartMNew = req.session.data['treatmentStartMNew'];
+  console.log(treatmentStartMNew);
   var lastRunLeaveDate = new Date(leaveDate.split('/')[2], leaveDate.split('/')[1], leaveDate.split('/')[0]);
-  var lastRunStartDate = new Date(treatmentStartM.split('/')[2], treatmentStartM.split('/')[1], treatmentStartM.split('/')[0]);
+  var lastRunStartDate = new Date(treatmentStartMNew.split('/')[2], treatmentStartMNew.split('/')[1], treatmentStartMNew.split('/')[0]);
 
-  if (dateReg.test(req.body.treatmentStartM) && lastRunLeaveDate < lastRunStartDate) {
+  if (dateReg.test(treatmentStartMNew) && lastRunLeaveDate < lastRunStartDate) {
     return res.redirect('check-end-date-new');
   }
-  else if (dateReg.test(req.body.treatmentStartM) && lastRunLeaveDate > lastRunStartDate) {
+  else if (dateReg.test(treatmentStartMNew) && lastRunLeaveDate > lastRunStartDate) {
     return res.redirect('treatment-start-error-maternity-correct-leave-new');
   }
-  else if (!dateReg.test(req.body.treatmentStartM) && req.body.treatmentStartM === '') {
+  else if (!dateReg.test(treatmentStartMNew) && treatmentStartMNew === '') {
     return res.redirect('treatment-start-error-correct-maternity-new');
   }
-  else if (!dateReg.test(req.body.treatmentStartM)) {
+  else if (!dateReg.test(treatmentStartMNew)) {
     return res.redirect('treatment-start-invalid-error-correct-maternity-new');
   }
 })
@@ -112,7 +173,7 @@ router.post([/treatment-end-date-maternity-new/, /treatment-end-invalid-maternit
 
 // When is the treatment expected to end? (Maternity Default Date) //
 router.get(/treatment-end-maternity-new/, function (req,res){
-  var startDateM = req.session.data['treatmentStartM'];
+  var startDateM = req.session.data['treatmentStartMNew'];
 
   if (startDateM){
     var lastRunDateM = new Date(startDateM.split('/')[2], startDateM.split('/')[1], startDateM.split('/')[0]);
@@ -133,7 +194,7 @@ router.get(/treatment-end-maternity-new/, function (req,res){
 // Person case Maternity - awaiting evidence//
 router.get(/person-case-maternity-awaiting-review-new/, function (req,res){
   
-  var startDateM = req.session.data['treatmentStartM'];
+  var startDateM = req.session.data['treatmentStartMNew'];
   if (startDateM){
     var lastRunDateM = new Date(startDateM.split('/')[2], startDateM.split('/')[1], startDateM.split('/')[0]);
     var maxEndM = new Date(lastRunDateM.getTime() + (105 * 86400000));
@@ -148,10 +209,27 @@ router.get(/person-case-maternity-awaiting-review-new/, function (req,res){
   res.render('v17_0/admin/s2/new-version/person-case-maternity-awaiting-review-new', { convertMaxEndM: convertMaxEndM });
 });
 
+//person-case-maternity-evidence-requested-new
+router.get(/person-case-maternity-awaiting-review-new/, function (req,res){
+  
+  var startDateM = req.session.data['treatmentStartMNew'];
+  if (startDateM){
+    var lastRunDateM = new Date(startDateM.split('/')[2], startDateM.split('/')[1], startDateM.split('/')[0]);
+    var maxEndM = new Date(lastRunDateM.getTime() + (105 * 86400000));
+    var convertMaxEndM = convertDate(maxEndM);
+  }
+
+	function convertDate(inputFormat) {
+		function pad(s) { return (s < 10) ? '0' + s : s; }
+		var d = new Date(inputFormat);
+		return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+	}
+  res.render('v17_0/admin/s2/new-version/person-case-maternity-evidence-requested-new', { convertMaxEndM: convertMaxEndM });
+});
+
 // -------------------- //
 // ----- S2 Test ------ //
 // -------------------- //
-
 
 
 //What is the date the request was received? //
@@ -767,6 +845,26 @@ router.get(/check-your-answers/, function (req,res){
   res.render('v17_0/admin/s2/new-record/check-your-answers', {convertMaxEndP: convertMaxEndP, convertMaxEndM: convertMaxEndM});
 });
 
+// Check your answers //
+router.get(/check-end-date-new/, function (req,res){
+
+  var startDateMNew = req.session.data['treatmentStartMNew'];
+
+  if (startDateMNew){
+    var lastRunDateM = new Date(startDateMNew.split('/')[2], startDateMNew.split('/')[1], startDateMNew.split('/')[0]);
+    var maxEndM = new Date(lastRunDateM.getTime() + (105 * 86400000));
+
+    var convertMaxEndMNew = convertDate(maxEndM);
+  }
+
+	function convertDate(inputFormat) {
+		function pad(s) { return (s < 10) ? '0' + s : s; }
+		var d = new Date(inputFormat);
+		return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+	}
+
+  res.render('v17_0/admin/s2/new-version/check-end-date-new', {convertMaxEndMNew: convertMaxEndMNew});
+});
 
 // S2 Maternity review evidence, review-evidence-maternity-options.html
 router.get(/s2maternityReviewEvidence/, function (req,res) {
