@@ -319,9 +319,13 @@ Person record
 																		<td class="column title">Estimated delivery
 																			end date</td>
 																		<td class="column">
-																											
+																			{% if data['treatmentEndM']  %}
 																				{{ data['treatmentEndM'] }}
-																			
+																			{% elseif data['treatmentStartMNew'] %}
+																				{{ convertMaxEndM }}
+																			{% else %}
+																				28/09/2023
+																			{% endif %}								
 
 																		</td>
 																		<td class="cya-change">

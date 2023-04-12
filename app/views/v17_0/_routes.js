@@ -191,26 +191,9 @@ router.get(/treatment-end-maternity-new/, function (req,res){
   res.render('v17_0/admin/s2/new-version/treatment-end-maternity-new', {convertMaxEndM: convertMaxEndM});
 });
 
-// Person case Maternity - awaiting evidence//
-router.get(/person-case-maternity-awaiting-review-new/, function (req,res){
-  
-  var startDateM = req.session.data['treatmentStartMNew'];
-  if (startDateM){
-    var lastRunDateM = new Date(startDateM.split('/')[2], startDateM.split('/')[1], startDateM.split('/')[0]);
-    var maxEndM = new Date(lastRunDateM.getTime() + (105 * 86400000));
-    var convertMaxEndM = convertDate(maxEndM);
-  }
-
-	function convertDate(inputFormat) {
-		function pad(s) { return (s < 10) ? '0' + s : s; }
-		var d = new Date(inputFormat);
-		return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
-	}
-  res.render('v17_0/admin/s2/new-version/person-case-maternity-awaiting-review-new', { convertMaxEndM: convertMaxEndM });
-});
 
 //person-case-maternity-evidence-requested-new
-router.get(/person-case-maternity-awaiting-review-new/, function (req,res){
+router.get(/person-case-maternity-evidence-requested-new/, function (req,res){
   
   var startDateM = req.session.data['treatmentStartMNew'];
   if (startDateM){

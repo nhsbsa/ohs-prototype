@@ -427,21 +427,8 @@ Person record
 								<tbody>
 									<tr>
 										<td>S2</td>
-										<td>
-											{% if data['treatmentStartM'] %}
-												{{ data['treatmentStartM']}}
-											{% else %}
-												15/05/2023
-											{% endif %}
-										</td>
-										<td>
-											{% if treatmentEndM %}
-												{{ treatmentEndM }}
-											{% else %}
-												28/09/2023
-											{% endif %}
-								
-										</td>
+										<td>15/05/2023</td>
+										<td>28/09/2023</td>
 										<td>Main</td>
 										<td>
 											{% if data['locationPicker'] %}
@@ -522,13 +509,7 @@ Person record
 																	<tr class="row">
 																		<td class="column title">Expected date of
 																			delivery</td>
-																		<td class="column">
-																			{% if data['treatmentStartM'] %}
-																				{{ data['treatmentStartM']}}
-																			{% else %}
-																				15/05/2023
-																			{% endif %}
-																		</td>
+																		<td class="column">15/05/2023</td>
 																	</tr>
 																	<tr class="row">
 																		<td class="column title">Leave the UK
