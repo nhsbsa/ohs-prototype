@@ -653,7 +653,7 @@ router.get(/check-end-date-new/, function (req,res){
 // S2 Maternity review evidence, review-evidence-maternity-options.html
 router.get(/s2maternityReviewEvidence/, function (req,res) {
   if(req.query.radiosResult === "Approved with evidence") {
-    res.redirect('review-evidence-maternity-email-options');
+    res.redirect('done');
   } else if (req.query.radiosResult === "Evidence requested email") {
     res.redirect('review-evidence-maternity-email-options');
   } else if (req.query.radiosResult === "Evidence requested") {
