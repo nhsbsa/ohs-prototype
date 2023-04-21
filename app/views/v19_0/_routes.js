@@ -49,7 +49,7 @@ router.post('/ehic-emigration', function (req, res) {
 // S2 Maternity review evidence, review-evidence-maternity-options.html
 router.post([/s2maternityReviewEvidenceNew/, /s2maternityReviewEvidenceNewErr/], function (req,res) {
   if(req.body.evidenceResult === "Approved with evidence") {
-    res.redirect('review-evidence-maternity-email-options');
+    res.redirect('done');
   } else if (req.body.evidenceResult === "Approved with evidence and amend dates") {
     res.redirect('check-end-date-new');
   } else if (req.body.evidenceResult === "Evidence requested email") {
