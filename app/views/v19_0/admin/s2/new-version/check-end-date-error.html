@@ -159,78 +159,66 @@
 			</div>
 		</div>
 	</div>
-	<div class="form-group">
-		<div class="grid-row">
-			<div class="column-full">
-				<div class="banner-information-without-action">
-					<p class="banner-message">
-						<span class="name text-capitalize">
-							{% if data['firstName'] %}
-								{{ data['firstName']}} {{ data['lastName']}}
-							{% else %}
-								Michelle Philip
-							{% endif %}
-						</span>
-						<span class="vertical-bar">|</span>
-						<span class="ohs-reference-number">
-							{% if data['ohs'] %}
-								{{ data['ohs']}}
-							{% else %}
-								25000002
-							{% endif %}
-						</span>
-					</p>
-				</div>
-			</div>
 
-            <!-- INSERT HERE -->
+			<div class="grid-row">
+				<div class="column-full">
+					<div class="banner-information-without-action">
+						<p class="banner-message">
+							<span class="name text-capitalize">
+								{% if data['firstName'] %}
+									{{ data['firstName']}} {{ data['lastName']}}
+								{% else %}
+									Michelle Philip
+								{% endif %}
+							</span>
+							<span class="vertical-bar">|</span>
+							<span class="ohs-reference-number">
+								{% if data['ohs'] %}
+									{{ data['ohs']}}
+								{% else %}
+									25000002
+								{% endif %}
+							</span>
+						</p>
+					</div>
+	
+					<div class="heading-group">
+						<h1 class="heading-large">Amend entitlement end date</h1>
+					</div>
 
-			<div id="errorHeader" class="grid-row">
-				<div class="column-two-thirds">
-					<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
-						<h2 class="heading-medium error-summary-heading" id="error-summary-heading">There is a problem</h2>
-						<ul class="error-summary-list">
-							<li class="error-message">
-								<a href="#check-date-yes">Select a 'No' if the entitlement date needs to be amended</a>
-								
-							</li>
-						</ul>
+					<div id="errorHeader" class="grid-row">
+						<div class="column-two-thirds">
+							<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+								<h2 class="heading-medium error-summary-heading" id="error-summary-heading">There is a problem</h2>
+								<ul class="error-summary-list">
+									<li class="error-message">
+										<a href="#check-date-yes">Select 'No' if the entitlement date needs to be amended</a>
+										
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<p>The end date is currently:</p>
+		
+					<div class="nhsuk-inset-text" style="margin-top: 10px; margin-bottom: 0px;">
+						<span class="nhsuk-u-visually-hidden">Information:</span>
+						
+						<p>
+							<span>
+							<strong style="font-weight: bold">End date</strong>
+							</span>
+							<br>
+								28/09/2023
+						</p>
 					</div>
 				</div>
+	
 			</div>
 
-            <h1>Amend maternity treatment end date</h1>
-            <p>You’ve told us about the treatment:</p>
-            <div class="nhsuk-inset-text" style="margin-top: 10px; margin-bottom: 10px;">
-                <span class="nhsuk-u-visually-hidden">Information:</span>
-               
-                    <span>
-                        <strong>Expected date of delivery</strong>
-                    </span>
-                    <br>
-					{% if data['treatmentStartMNe']w %}
-						{{ data['treatmentStartMNew'] }}
-					{% else %}
-						15/05/2023
-					{% endif %}
-                
-                    <span>
-                      <strong>Estimated delivery end date</strong>
-                    </span>
-                    <br>
-                    	{% if data['treatmentStartMNew'] %}
-							{{ convertMaxEndM }}
-						{% else %}
-							28/09/2023
-						{% endif %}
-                
-                </div>
-            </div>
-            <br>
-
-			
 				<div class="heading-group">
-					<h1 class="heading-large">Is this the correct date when the treatment is expected to end?</h1>
+					<h1 class="heading-large">Is this the correct end date?</h1>
 				</div>
 				<form action="check-end-date-error" method="post" class="form">
 					<div class="form-group">

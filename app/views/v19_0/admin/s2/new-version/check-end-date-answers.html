@@ -300,7 +300,7 @@ Person record
 																			{% endif %}</td>
 																	</tr> -->
 																	
-																	<tr class="row">
+																	<!-- <tr class="row">
 																		<td class="column title">Expected date of
 																			delivery</td>
 																		<td class="column">
@@ -314,15 +314,12 @@ Person record
 																		<td class="cya-change">
 																			<a href="treatment-start-maternity-correct-new#treatmentStartMNew">Change<span class="visually-hidden"> the treatment start date</span></a>
 																		</td>
-																	</tr>
+																	</tr> -->
 																	<tr class="row">
-																		<td class="column title">Estimated delivery
-																			end date</td>
+																		<td class="column title">Amended end date</td>
 																		<td class="column">
 																			{% if data['treatmentEndM']  %}
 																				{{ data['treatmentEndM'] }}
-																			{% elseif data['treatmentStartMNew'] %}
-																				{{ convertMaxEndM }}
 																			{% else %}
 																				28/09/2023
 																			{% endif %}								
