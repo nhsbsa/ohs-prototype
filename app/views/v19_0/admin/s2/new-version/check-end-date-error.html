@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-    Is this the correct date when the treatment is expected to end?
+	Amend S2 end date
 {% endblock %}
 
 {% block content %}
@@ -183,7 +183,7 @@
 					</div>
 	
 					<div class="heading-group">
-						<h1 class="heading-large">Amend entitlement end date</h1>
+						<h1 class="heading-large">Amend S2 end date</h1>
 					</div>
 
 					<div id="errorHeader" class="grid-row">
@@ -192,7 +192,7 @@
 								<h2 class="heading-medium error-summary-heading" id="error-summary-heading">There is a problem</h2>
 								<ul class="error-summary-list">
 									<li class="error-message">
-										<a href="#check-date-yes">Select 'No' if the entitlement date needs to be amended</a>
+										<a href="#check-date-yes">Select no if you need to amend the S2 end date</a>
 										
 									</li>
 								</ul>
@@ -200,7 +200,7 @@
 						</div>
 					</div>
 					
-					<p>The end date is currently:</p>
+					<p>The current end date for this S2 is:</p>
 		
 					<div class="nhsuk-inset-text" style="margin-top: 10px; margin-bottom: 0px;">
 						<span class="nhsuk-u-visually-hidden">Information:</span>
@@ -223,7 +223,7 @@
 				<form action="check-end-date-error" method="post" class="form">
 					<div class="form-group">
 						<fieldset id="entitlement" class="form-group-error">
-							<span class="error-message">Select 'No' if the entitlement date needs to be amended</span>
+							<span class="error-message">Select no if you need to amend the S2 end date</span>
 							<div class="govuk-radios">
 								<div class="govuk-radios__item">
 									<input class="govuk-radios__input" id="check-date-yes" name="checkDate" type="radio" value="Yes">
