@@ -1,7 +1,7 @@
 {% extends "layout_bsa.html" %}
 
 {% block page_title %}
-    Is this the correct date when the treatment is expected to end?
+	Amend S2 end date
 {% endblock %}
 
 {% block content %}
@@ -15,7 +15,6 @@
 			line-height: 1.31579;
 		}
 	}
-
 	@media (min-width: 40.0625em) {
 		.govuk-label {
 			font-size: 19px;
@@ -23,7 +22,6 @@
 			line-height: 1.31579;
 		}
 	}
-
 	.govuk-radios__item {
 		font-family: Arial,sans-serif;
 		-webkit-font-smoothing: antialiased;
@@ -151,7 +149,6 @@
 	}
 
 	/* end banner */
-
 </style>
 
 <main id="content" role="main">
@@ -162,80 +159,71 @@
 			</div>
 		</div>
 	</div>
-	
-		
 
-            <!-- INSERT HERE -->
-
-			
-				
-				<form action="check-end-date-new" method="post" class="form">
-
-					<div class="grid-row">
-						<div class="column-full">
-							<div class="banner-information-without-action">
-								<p class="banner-message">
-									<span class="name text-capitalize">
-										{% if data['firstName'] %}
-											{{ data['firstName']}} {{ data['lastName']}}
-										{% else %}
-											Michelle Philip
-										{% endif %}
-									</span>
-									<span class="vertical-bar">|</span>
-									<span class="ohs-reference-number">
-										{% if data['ohs'] %}
-											{{ data['ohs']}}
-										{% else %}
-											25000002
-										{% endif %}
-									</span>
-								</p>
-							</div>
-			
-						<div class="heading-group">
-							<h1 class="heading-large">Amend maternity treatment end date</h1>
-						</div>
-						
-						<p>You’ve told us about the treatment:</p>
-			
-						<div class="nhsuk-inset-text" style="margin-top: 10px; margin-bottom: 0px;">
-							<span class="nhsuk-u-visually-hidden">Information:</span>
-							<p>
-								<strong style="font-weight: bold">Expected date of delivery</strong>
-								
-								<br>
-								<span>
-									{% if data['treatmentStartMNew'] %}
-										{{ data['treatmentStartMNew'] }}
-									{% else %}
-										15/05/2023
-									{% endif %}
-									
-								</span>
-							</p>
-							<p>
-								<span>
-								  <strong style="font-weight: bold">Estimated delivery end date</strong>
-								</span>
-								<br>
-								{% if data['treatmentStartMNew'] %}
-									{{ convertMaxEndM }}
+			<div class="grid-row">
+				<div class="column-full">
+					<div class="banner-information-without-action">
+						<p class="banner-message">
+							<span class="name text-capitalize">
+								{% if data['firstName'] %}
+									{{ data['firstName']}} {{ data['lastName']}}
 								{% else %}
-									28/09/2023
+									Michelle Philip
 								{% endif %}
-							</p>
+							</span>
+							<span class="vertical-bar">|</span>
+							<span class="ohs-reference-number">
+								{% if data['ohs'] %}
+									{{ data['ohs']}}
+								{% else %}
+									25000002
+								{% endif %}
+							</span>
+						</p>
+					</div>
+	
+					<div class="heading-group">
+						<h1 class="heading-large">Amend S2 end date</h1>
+					</div>
+
+					<div id="errorHeader" class="grid-row">
+						<div class="column-two-thirds">
+							<div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+								<h2 class="heading-medium error-summary-heading" id="error-summary-heading">There is a problem</h2>
+								<ul class="error-summary-list">
+									<li class="error-message">
+										<a href="#check-date-yes">Select no if you need to amend the S2 end date</a>
+										
+									</li>
+								</ul>
 							</div>
 						</div>
-			
-						</div>
+					</div>
+					
+					<p>The current end date for this S2 is:</p>
+		
+					<div class="nhsuk-inset-text" style="margin-top: 10px; margin-bottom: 0px;">
+						<span class="nhsuk-u-visually-hidden">Information:</span>
+						
+						<p>
+							<span>
+							<strong style="font-weight: bold">End date</strong>
+							</span>
+							<br>
+								28/09/2023
+						</p>
+					</div>
+				</div>
+	
+			</div>
 
-						<div class="heading-group">
-							<h1 class="heading-large">Is this the correct date when the treatment is expected to end?</h1>
-						</div>
-
+				<div class="heading-group">
+					<h1 class="heading-large">Is this the correct end date?</h1>
+				</div>
+				<form action="check-end-date-error" method="post" class="form">
 					<div class="form-group">
-						<fieldset id="entitlement">
+						<fieldset id="entitlement" class="form-group-error">
+							<span class="error-message">Select no if you need to amend the S2 end date</span>
 							<div class="govuk-radios">
 								<div class="govuk-radios__item">
 									<input class="govuk-radios__input" id="check-date-yes" name="checkDate" type="radio" value="Yes">
@@ -259,7 +247,7 @@
 				</form>
 			
 		</div>
-	
+	</div>
 </main>
 
 <script src="/public/javascripts/jquery-1.11.3.js"></script>

@@ -239,9 +239,9 @@ Person record
 						
 				</div>
 				
-				<h2>Amended entitlement details</h2>
+				<h2>Amended S2 details</h2>
 				
-					<form action="review-evidence-maternity-email-options" method="post" class="form">
+					<form action="done" method="post" class="form">
 						
 						
 											<td colspan="8" style="margin-bottom: 10px;">
@@ -260,69 +260,11 @@ Person record
 																		<td class="column">Maternity care and delivery</td>
 																	</tr>
 
-																	<!-- <tr class="row">
-																		<td class="column title">Request received</td>
-																		<td class="column">
-																			{% if data['dateOfRequest'] %}
-																				{{ data['dateOfRequest']}}
-																			{% else %}
-																				09/12/2022
-																			{% endif %}
-																		</td>
-																	</tr>
 																	<tr class="row">
-																		<td class="column title">Birth country</td>
+																		<td class="column title">Amended S2 end date</td>
 																		<td class="column">
-																			{% if data['locationPicker'] %}
-																				{{ data['locationPicker']}}
-																			{% else %}
-																				Austria
-																			{% endif %}
-																		</td>
-																	</tr>
-																	<tr class="row">
-																		<td class="column title">Nationality</td>
-																		<td class="column">
-																			
-																				<span>UK national</span><br>
-																				<span>Austria</span><br>
-																				<span>Albania</span><br>
-																			
-																		</td>
-																	</tr>
-																	<tr class="row">
-																		<td class="column title">Date leaving UK</td>
-																		<td class="column">
-																			{% if data['leaveDate'] %}
-																				{{ data['leaveDate']}}
-																			{% else %}
-																				01/01/2023
-																			{% endif %}</td>
-																	</tr> -->
-																	
-																	<tr class="row">
-																		<td class="column title">Expected date of
-																			delivery</td>
-																		<td class="column">
-																			{% if data['treatmentStartMNew'] %}
-																				{{ data['treatmentStartMNew'] }}
-																			{% else %}
-																				15/05/2023
-																			{% endif %}
-
-																		</td>
-																		<td class="cya-change">
-																			<a href="treatment-start-maternity-correct-new#treatmentStartMNew">Change<span class="visually-hidden"> the treatment start date</span></a>
-																		</td>
-																	</tr>
-																	<tr class="row">
-																		<td class="column title">Estimated delivery
-																			end date</td>
-																		<td class="column">
-																			{% if data['treatmentEndM']  %}
-																				{{ data['treatmentEndM'] }}
-																			{% elseif data['treatmentStartMNew'] %}
-																				{{ convertMaxEndM }}
+																			{% if data['treatmentEndMNew']  %}
+																				{{ data['treatmentEndMNew'] }}
 																			{% else %}
 																				28/09/2023
 																			{% endif %}								
@@ -343,7 +285,7 @@ Person record
 									
 
                         <div class="form-group">
-                            <input class="button" type="submit" value="Next"/>
+                            <input class="button" type="submit" value="Submit"/>
                             <a class="button button-secondary" href="search">Cancel</a>
                         </div>
 
