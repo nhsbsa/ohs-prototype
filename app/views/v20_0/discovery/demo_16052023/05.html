@@ -1,0 +1,309 @@
+{% extends "layout_ohs2023.html" %}
+{% block page_title %}
+Person record
+{% endblock %}
+{% block content %}
+
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-full">
+            <div id="back">
+                <a class="link-back" href="search" id="back-link">Back</a>
+            </div>
+        </div>
+    </div>
+    <div class="grid-row">
+        <div class="column-full">
+            <div class="heading-group">
+                <h1 class="heading-large">
+                    Claim ID: 8473
+
+                </h1>
+            </div>
+            <div class="tab-container">
+                <a class="tablinks " href="04">
+                    <div>
+                        <p class="heading-small">Summary</p>
+                    </div>
+                </a>
+                <a class="tablinks active" href="05">
+                    <div>
+                        <p class="heading-small">Treatments</p>
+                    </div>
+                </a>
+                <a class="tablinks" href="#">
+                    <div>
+                        <p class="heading-small">Age groups</p>
+                    </div>
+                </a>
+
+                <a class="tablinks" href="#">
+                    <div>
+                        <p class="heading-small">Resubmissions</p>
+                    </div>
+                </a>
+                <a class="tablinks" href="#">
+                    <div>
+                        <p class="heading-small">Notes</p>
+                    </div>
+                </a>
+                <a class="tablinks" href="#">
+                    <div>
+                        <p class="heading-small">Case history</p>
+                    </div>
+                </a>
+                <div class="tab-box">
+                    <form action="date-request" method="post" class="form">
+                        <div id="entitlements" class="tabcontentActive">
+                            <table id="mainTable">
+                                <thead>
+
+                                    <tr>
+                                        <th scope="col">Treatment ID</th>
+                                        <th scope="col">Surname</th>
+                                        <th scope="col">First name</th>
+                                        <th scope="col">Cost (£)</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <!--start of treatment-->
+                                    <tr>
+                                        <td>78463</td>
+                                        <td>
+
+                                            Adams
+
+                                        </td>
+                                        <td>
+                                            Christopher
+                                        </td>
+                                        <td>764.87</td>
+                                        <td>
+
+                                            Accepted
+
+                                        </td>
+
+                                        <td nowrap="">
+                                            <details>
+                                                <summary><span class="summary">More info</span></summary>
+                                            </details>
+                                        </td>
+                                    </tr>
+                                    <!--end of treatment-->
+                                    <!--start of treatment-->
+                                    <tr>
+                                        <td>84958</td>
+                                        <td>
+
+                                            Appleby
+
+                                        </td>
+                                        <td>
+                                            Marie
+                                        </td>
+                                        <td>4673.89</td>
+                                        <td>
+
+                                            Accepted
+
+                                        </td>
+
+                                        <td nowrap="">
+                                            <details>
+                                                <summary><span class="summary">More info</span></summary>
+                                            </details>
+                                        </td>
+                                    </tr>
+                                    <!--end of treatment-->
+                                    <!--start of treatment-->
+                                    <tr>
+                                        <td>34675</td>
+                                        <td>
+
+                                            Arnold
+
+                                        </td>
+                                        <td>
+                                            Lesley
+                                        </td>
+                                        <td>437.55</td>
+                                        <td>
+
+                                            Partially accepted
+
+                                        </td>
+
+                                        <td nowrap="">
+                                            <details>
+                                                <summary><span class="summary">More info</span></summary>
+                                            </details>
+                                        </td>
+                                    </tr>
+                                    <!--end of treatment-->
+                                    <!--start of treatment-->
+                                    <tr>
+                                        <td>94758</td>
+                                        <td>
+
+                                            Bignell
+
+                                        </td>
+                                        <td>
+                                            Alan
+                                        </td>
+                                        <td>34.67</td>
+                                        <td>
+
+                                            Contested
+
+                                        </td>
+
+                                        <td nowrap="">
+                                            <details>
+                                                <summary><span class="summary">More info</span></summary>
+                                            </details>
+                                        </td>
+                                    </tr>
+                                    <!--end of treatment-->
+                                    <!--start of treatment-->
+                                    <tr>
+                                        <td>45638</td>
+                                        <td>
+
+                                            Cohen
+
+                                        </td>
+                                        <td>
+                                            Natasha
+                                        </td>
+                                        <td>5678.44</td>
+                                        <td>
+
+                                            Contested
+
+                                        </td>
+
+                                        <td nowrap="">
+                                            <details>
+                                                <summary><span class="summary">More info</span></summary>
+                                            </details>
+                                        </td>
+                                    </tr>
+                                    <!--end of treatment-->
+                                    <!--start of treatment-->
+                                    <tr>
+                                        <td>65933</td>
+                                        <td>
+
+                                            Cox
+
+                                        </td>
+                                        <td>
+                                            Donna
+                                        </td>
+                                        <td>106.94</td>
+                                        <td>
+
+                                            Contested
+
+                                        </td>
+
+                                        <td nowrap="">
+                                            <details>
+                                                <summary><span class="summary">More info</span></summary>
+                                            </details>
+                                        </td>
+                                    </tr>
+                                    <!--end of treatment-->
+                                    <!--start of treatment-->
+                                    <tr>
+                                        <td>24534</td>
+                                        <td>
+
+                                            Duce
+
+                                        </td>
+                                        <td>
+                                            Alan
+                                        </td>
+                                        <td>784.62</td>
+                                        <td>
+
+                                            Contested
+
+                                        </td>
+
+                                        <td nowrap="">
+                                            <details>
+                                                <summary><span class="summary">More info</span></summary>
+                                            </details>
+                                        </td>
+                                    </tr>
+                                    <!--end of treatment-->
+                                    <!--start of treatment-->
+                                    <tr>
+                                        <td>57839</td>
+                                        <td>
+
+                                            Forsberg
+
+                                        </td>
+                                        <td>
+                                            Ingrid
+                                        </td>
+                                        <td>943.66</td>
+                                        <td>
+
+                                            Accepted
+
+                                        </td>
+
+                                        <td nowrap="">
+                                            <details>
+                                                <summary><span class="summary">More info</span></summary>
+                                            </details>
+                                        </td>
+                                    </tr>
+                                    <!--end of treatment-->
+                                </tbody>
+                            </table>
+
+                            <br>
+
+
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</main>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+
+        tabcontent = document.getElementsByClassName("tabcontentActive");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].className = "tabcontent";
+        }
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        document.getElementById(tabName).className = "tabcontentActive";
+        evt.currentTarget.className += " active";
+    }
+</script>
+{% endblock %}

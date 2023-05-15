@@ -1,0 +1,468 @@
+{% extends "layout_ohs2023.html" %}
+{% block page_title %}
+Person record
+{% endblock %}
+{% block content %}
+
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-full">
+            <div id="back">
+                <a class="link-back" href="search" id="back-link">Back</a>
+            </div>
+        </div>
+    </div>
+    <div class="grid-row">
+        <div class="column-full">
+            <div class="heading-group">
+                <h1 class="heading-large">
+                    Claim ID: 78547
+
+                </h1>
+            </div>
+            <div class="tab-container">
+                <a class="tablinks active" onclick="openTab(event, 'personal')" href="#">
+                    <div>
+                        <p class="heading-small">Summary</p>
+                    </div>
+                </a>
+                <a class="tablinks " onclick="openTab(event, 'entitlements')" href="#">
+                    <div>
+                        <p class="heading-small">Treatments</p>
+                    </div>
+                </a>
+                <a class="tablinks" onclick="openTab(event, 'treatments')" href="#">
+                    <div>
+                        <p class="heading-small">Age groups</p>
+                    </div>
+                </a>
+
+                <a class="tablinks" onclick="openTab(event, 'casehist')" href="#">
+                    <div>
+                        <p class="heading-small">Resubmissions</p>
+                    </div>
+                </a>
+                <a class="tablinks" onclick="openTab(event, 'casenotes')" href="#">
+                    <div>
+                        <p class="heading-small">Notes</p>
+                    </div>
+                </a>
+                <a class="tablinks" onclick="openTab(event, 'documents')" href="#">
+                    <div>
+                        <p class="heading-small">Case history</p>
+                    </div>
+                </a>
+                <div class="tab-box">
+                    <form action="date-request" method="post" class="form">
+                        <div id="personal" class="tabcontent">
+                            <div class="grid-row">
+                                <div class="column-two-thirds">
+                                    <br>
+                                    <dl class="govuk-check-your-answers cya-questions-long">
+                                        <div>
+                                            <dt class="cya-question">Full name</dt>
+                                            <dd class="cya-answer">
+
+                                                Michelle Philip
+
+
+                                            </dd>
+                                            <dd class="cya-change"><a class="cancel" href="">Change</a>
+                                            </dd>
+                                        </div>
+                                        <br>
+                                        <div>
+                                            <dt class="cya-question">Date of birth</dt>
+                                            <dd class="cya-answer">
+
+                                                15/03/1984
+
+
+                                            </dd>
+                                            <dd class="cya-change"><a class="cancel" href="">Change</a>
+                                            </dd>
+                                        </div>
+                                        <br>
+                                        <div>
+                                            <dt class="cya-question">National Insurance number</dt>
+                                            <dd class="cya-answer">
+
+                                                SR123456A
+
+
+                                            </dd>
+                                            <dd class="cya-change">
+                                            </dd>
+                                        </div>
+                                        <br>
+                                        <div>
+                                            <dt class="cya-question">Residential address</dt>
+                                            <dd class="cya-answer">
+                                                Address line 1
+
+                                            </dd>
+                                            <dd class="cya-change">
+                                                <p class="navigation">
+                                                    <a class="cancel" href="contact-address">Change</a>
+                                                </p>
+                                            </dd>
+                                        </div>
+                                        <br>
+                                        <div>
+                                            <dt class="cya-question">Correspondence address</dt>
+                                            <dd class="cya-answer">
+                                                Address line 1
+                                            </dd>
+                                            <dd class="cya-change">
+                                                <p class="navigation">
+                                                    <a class="cancel" href="corr-contact-address">Change</a>
+                                                </p>
+                                            </dd>
+                                        </div>
+
+                                        <br>
+                                        <div>
+                                            <dt class="cya-question">Email address</dt>
+                                            <dd class="cya-answer">
+                                                michelle@gmail.com
+                                            </dd>
+                                            <dd class="cya-change"><a class="cancel" href="contact-details">Change</a>
+                                            </dd>
+                                        </div>
+                                        <br>
+                                        <div>
+                                            <dt class="cya-question">Telephone number</dt>
+                                            <dd class="cya-answer">
+                                                01772 898989
+                                            </dd>
+                                            <dd class="cya-change"><a class="cancel" href="contact-details">Change</a>
+                                            </dd>
+                                        </div>
+                                    </dl>
+
+                                    <div class="form-group" style="margin-top:30px">
+                                        <a class="button button-secondary" href="search">Exit record</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div id="entitlements" class="tabcontentActive">
+                            <table id="mainTable">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">FA ref</th>
+                                        <th scope="col">Year</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Article</th>
+                                        <th scope="col">Country</th>
+                                        <th scope="col">Region</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>SP47383473</td>
+                                        <td>
+
+                                            2023
+
+                                        </td>
+                                        <td>
+                                            Main
+                                        </td>
+                                        <td>62 (Actual cost)</td>
+                                        <td>
+
+                                            Spain
+
+                                        </td>
+                                        <td>-</td>
+                                        <td><span class="status-tag-medium font-xsmall"
+                                                style="padding-left:25px; padding-right:25px">Open</span>
+                                        </td>
+
+                                        <td nowrap="">
+                                            <details onclick="myFunction2()">
+                                                <summary><span class="summary">More info</span></summary>
+                                            </details>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div id="myDIV2" style="display:none;">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="8">
+                                                <div class="panel panel-border-wide s1infoExpanded">
+                                                    <div class="main-container form-group">
+                                                        <div class="major-container">
+                                                            <!-- <h1 class="heading-large">Additional claim details
+                                                            </h1> -->
+                                                            <table id="entitlementDetails" class="check-table">
+
+                                                                <h3 style="font-weight:700; font-size:28px;">Treatment
+                                                                    details</h3>
+                                                                <caption class="visually-hidden">A table displaying the
+                                                                    treatment details</caption>
+
+<thead>
+<tr style="height:0;">
+    <th style="width:90%;"></th>
+    <th style="width:10%;"></th>
+
+</tr>
+
+</thead>
+
+
+
+                                                                <tbody>
+                                                                    <tr class="row">
+                                                                        <td class="column title">Accepted</td>
+                                                                        <td class="column">5</td>
+                                                                    </tr>
+
+                                                                    <tr class="row">
+                                                                        <td class="column title">Withdrawn</td>
+                                                                        <td class="column">
+                                                                            0
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="row">
+                                                                        <td class="column title">Partially accepted</td>
+                                                                        <td class="column">
+                                                                            1
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="row">
+                                                                        <td class="column title">Contested </td>
+                                                                        <td class="column">
+                                                                            17
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="row">
+                                                                        <td class="column title">Total number of
+                                                                            treatments</td>
+                                                                        <td class="column" style="font-weight:700;">
+                                                                            23
+                                                                        </td>
+                                                                    </tr>
+
+
+                                                                </tbody>
+
+                                                                <table id="entitlementDetails" class="check-table">
+
+                                                                    <h3
+                                                                        style="font-weight:700; font-size:28px; margin-top:48px;">
+                                                                        Calendar month details</h3>
+                                                                    <caption class="visually-hidden">A table displaying
+                                                                        the
+                                                                        calendar month details</caption>
+
+                                                                        <thead>
+                                                                            <tr style="height:0;">
+                                                                                <th style="width:90%;"></th>
+                                                                                <th style="width:10%;"></th>
+                                                                            
+                                                                            </tr>
+                                                                            
+                                                                            </thead>
+                                                                    <tbody>
+                                                                        <tr class="row">
+                                                                            <td class="column title">Accepted</td>
+                                                                            <td class="column">60</td>
+                                                                        </tr>
+
+                                                                        <tr class="row">
+                                                                            <td class="column title">Withdrawn</td>
+                                                                            <td class="column">
+                                                                                0
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="row">
+                                                                            <td class="column title">Partially accepted
+                                                                            </td>
+                                                                            <td class="column">
+                                                                                11
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="row">
+                                                                            <td class="column title">Partially withdrawn
+                                                                            </td>
+                                                                            <td class="column">
+                                                                                0
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="row">
+                                                                            <td class="column title">Partially contested
+                                                                            </td>
+                                                                            <td class="column">
+                                                                                1
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="row">
+                                                                            <td class="column title">Contested</td>
+                                                                            <td class="column">
+                                                                                204
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="row">
+                                                                            <td class="column title">Total calendar
+                                                                                months</td>
+                                                                            <td style="font-weight:700;">
+                                                                                276
+                                                                            </td>
+                                                                        </tr>
+
+
+                                                                    </tbody>
+
+
+
+                                                                </table>
+
+                                                        </div>
+                                                        <!-- <div class="minor-container">
+															<div><a class="link button button-secondary entitlements"
+																	href="">Add document</a></div>
+															<div><a class="link button button-secondary entitlements"
+																	href="review-evidence-maternity">Review evidence</a></div>
+														</div> -->
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <br>
+                            <div class="form-group">
+
+                                <!-- <input class="button" type="submit" href="date-request"
+									value="Create a new entitlement" /> -->
+                                <a class="button button-secondary" href="search">Exit record</a>
+                            </div>
+
+
+
+                        </div>
+                    </form>
+
+                    <form action="abc-2" method="get" class="form">
+                        <!-- modal starts here  -->
+                        <div class="dialog" id="dialog-4" aria-hidden="true">
+                            <div class="dialog-holder" aria-labelledby="dialog-title-4"
+                                aria-describedby="dialog-content-4" role="alertdialog">
+                                <div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
+                                    <header class="page-header">
+                                        <h2 class="page-header--lede heading-medium" style="margin-top: -1em;">Add note
+                                        </h2>
+                                    </header>
+                                    <div class="grid-row">
+                                        <div class="column-third">
+                                            <div class="form-group" style="margin-bottom:10px;">
+                                                <label class="form-label" for="select-box">Source</label>
+                                                <select class="form-control" id="select-box">
+                                                    <option>Existing customer on PRC/EHIC/Medben</option>
+
+                                                    <option>Main</option>
+                                                    <option>Dependant</option>
+                                                    <option>Third-party</option>
+                                                    <option>Other country</option>
+                                                    <option>Government organisation</option>
+                                                    <option>Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="column-third">
+                                            <div class="form-group" style="margin-bottom:10px;">
+                                                <label class="form-label" for="select-box">Channel</label>
+                                                <select class="form-control" id="select-box">
+                                                    <option>Phone</option>
+
+                                                    <option>Staff initiated</option>
+                                                    <option>Email</option>
+                                                    <option>Letter</option>
+
+                                                    <option>Other</option>
+                                                    <option>Complaints team</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="column-third">
+                                            <div class="form-group">
+                                                <label class="form-label" for="select-box">Reason</label>
+                                                <select class="form-control" id="select-box">
+
+                                                    <option>Unable to complete a customer request</option>
+                                                    <option>Amend incorrect information</option>
+                                                    <option>Add new information to the customer record</option>
+                                                    <option>Customer has requested information</option>
+                                                    <option>Customer needs to complete an action</option>
+                                                    <option>Letter generated</option>
+                                                    <option>Email sent</option>
+                                                    <option>Other</option>
+                                                    <option>Referred to Case Man</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="grid-row">
+                                            <div class="column-full" style="margin:0 15px 0 15px;">
+                                                <div class="form-group">
+                                                    <label class="form-label" for="textarea-a">
+                                                        Note
+                                                    </label>
+                                                    <textarea class="form-control" id="textarea-a" cols="30" rows="10"
+                                                        style="width:94%"></textarea>
+                                                </div>
+                                                <div class="dialog-actions" style="display: inline;">
+                                                    <input id="submit-btn" class="button buttonSubmit" type="submit"
+                                                        name="updateEntitlement" value="Submit"
+                                                        style="font-size: 19px;" />
+                                                    <a class="dialog-cancel" href="#" style="font-size: 1em;">Cancel</a>
+                                                </div>
+                                                <button class="dialog-close" aria-label="close" type="button">
+                                                    <span class="icon icon-close">x</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- modal ends here  -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</main>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+
+        tabcontent = document.getElementsByClassName("tabcontentActive");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].className = "tabcontent";
+        }
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        document.getElementById(tabName).className = "tabcontentActive";
+        evt.currentTarget.className += " active";
+    }
+</script>
+{% endblock %}

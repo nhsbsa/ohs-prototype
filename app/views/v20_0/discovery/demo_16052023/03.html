@@ -1,0 +1,201 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+	MS Claims Prototype
+{% endblock %}
+
+{% block content %}
+<style>
+	.button-secondary {
+		background-color: #dee0e2;
+		color: black;
+		box-shadow: 0 2px 0 #b5babe;
+		font-size: 1em;
+		outline-offset: -1px;
+		outline: 1px solid transparent;
+		border-radius: 0;
+	}
+	.form-control-3-4 {
+		width: 32.7%;
+	}
+</style>
+
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-full">
+			<div id="back">
+				<a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+			</div>
+		</div>
+	</div>
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<div class="heading-group">
+				<h1 class="heading-large">FA Claims Search</h1>
+			</div>
+		</div>
+		<form action="search-noresults2" method="post" class="form">
+			<div class="column-full">
+				<div class="form-group">
+						<label>
+							<span class="form-label" for="ohs">Claim ID</span>
+							<span class="form-hint">For example, 8493</span>
+						</label>
+					<input class="form-control" id="ohs" name="ohs" type="text" autocomplete="off" />
+				</div>
+				<div class="form-group">
+					<p class="form-block">or</p>
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="first-name">FA reference
+						<span class="form-hint">For example, CY8794389</span>
+					</label>
+					<input class="form-control" id="first-name" name="firstName" type="text" autocomplete="off" />
+				</div>
+
+                <div id="search-results">
+                    </div>
+
+
+				<div class="form-group">
+					<label class="form-label" for="last-name">Year<span class="form-hint">For example, 2023</span></label>
+					<input class="form-control" id="last-name" name="lastName" type="text" autocomplete="off" />
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="date-of-birth">Country</label>
+					<span class="form-hint">
+						For example, France
+					</span>
+					<input class="form-control" id="date-of-birth" name="dateOfBirth" type="text" autocomplete="off" value="Spain" />
+				</div>
+
+				<div class="form-group">
+					<input class="button" type="submit" href="03" value="Search"/>
+				</div>
+
+
+
+
+                <h3 style="font-size:24px; font-weight:700; margin-bottom:14px;">112 record(s) found</h3>
+
+                <table id="entitlementsTable" class="claimsTable">
+                    <caption id="caption" role="alert" aria-live="polite" style="display: none;">Search results not sorted</caption>
+                    <thead>
+                        <tr>
+                            <th role="columnheader" aria-sort="none" scope="col" width="14%" class="header">
+                                <a href="#2" id="Full name|asc" title="Sort 2 ascending">Claim ID</a>
+                            </th>
+                            <th role="columnheader" aria-sort="none" scope="col" width="14%" class="header">
+                                <a href="#3" id="Date of birth|asc" title="Sort 3 ascending">Year</a>
+                            </th>
+                            <th role="columnheader" aria-sort="none" scope="col" width="14%" class="header">
+                                <a href="#4" id="Address|asc" title="Sort 4 ascending">Country</a>
+                            </th>
+                            <th role="columnheader" aria-sort="none" scope="col" width="14%" class="header">
+                                <a href="#4" id="Address|asc" title="Sort 4 ascending">Article type</a>
+                            </th>
+                            <th role="columnheader" aria-sort="none" scope="col" width="14%" class="header">
+                                <a href="#4" id="Address|asc" title="Sort 4 ascending">Cost (£)</a>
+                            </th>
+                            <th role="columnheader" aria-sort="none" scope="col" width="14%" class="header">
+                                <a href="#4" id="Address|asc" title="Sort 4 ascending">Status</a>
+                            </th>
+                            <th role="columnheader" aria-sort="none" scope="col" width="15%" class="header">
+                                <a href="#5" id="Action|asc" title="Sort 5 ascending">Action</a>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td >8473</td>
+                            <td >2022</td>
+                            <td >Spain</td>
+                            <td>Article 62</td>
+                            <td>394.95</td>
+                            <td>Open</td>
+                            <td class="">
+                                <a id="recordLink0" class="link button button-secondary-bsa select-record-link" style="background-color: #00458C;" data-toggle="dialog" data-target="select-record" href="04" tabindex="0">
+                                    Select record
+                                </a>
+                                <input type="hidden" class="selectedPersonIdClass" name="selectedPersonId" value="25038177">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >8125</td>
+                            <td >2022</td>
+                            <td >Spain</td>
+                            <td>Article 63 to 65-S1</td>
+                            <td>6538.38</td>
+                            <td>Open</td>
+                            <td class="">
+                                <a id="recordLink0" class="link button button-secondary-bsa select-record-link" style="background-color: #00458C;" data-toggle="dialog" data-target="select-record" href="#" tabindex="0">
+                                    Select record
+                                </a>
+                                <input type="hidden" class="selectedPersonIdClass" name="selectedPersonId" value="25038177">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >5477</td>
+                            <td >2021</td>
+                            <td >Spain</td>
+                            <td>Article 62</td>
+                            <td>8493.74</td>
+                            <td>Closed</td>
+                            <td class="">
+                                <a id="recordLink0" class="link button button-secondary-bsa select-record-link" style="background-color: #00458C;" data-toggle="dialog" data-target="select-record" href="#" tabindex="0">
+                                    Select record
+                                </a>
+                                <input type="hidden" class="selectedPersonIdClass" name="selectedPersonId" value="25038177">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >4765</td>
+                            <td >2020</td>
+                            <td >Spain</td>
+                            <td>Article 62</td>
+                            <td>7894.43</td>
+                            <td>Closed</td>
+                            <td class="">
+                                <a id="recordLink0" class="link button button-secondary-bsa select-record-link" style="background-color: #00458C;" data-toggle="dialog" data-target="select-record" href="#" tabindex="0">
+                                    Select record
+                                </a>
+                                <input type="hidden" class="selectedPersonIdClass" name="selectedPersonId" value="25038177">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >3876</td>
+                            <td >2019</td>
+                            <td >Spain</td>
+                            <td>Article 62</td>
+                            <td>3375.65</td>
+                            <td>Closed</td>
+                            <td class="">
+                                <a id="recordLink0" class="link button button-secondary-bsa select-record-link" style="background-color: #00458C;" data-toggle="dialog" data-target="select-record" href="#" tabindex="0">
+                                    Select record
+                                </a>
+                                <input type="hidden" class="selectedPersonIdClass" name="selectedPersonId" value="25038177">
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <a style="float:right; text-align: right;" href="">Next<br />(page 2 of 30)</a>
+                <br />
+                <br />
+                <a id="recordLink0" class="link button button-secondary-bsa select-record-link" style="background-color: #00458C;" data-toggle="dialog" data-target="select-record" href="#" tabindex="0">
+                    Create new claim
+                </a>
+            </div>
+	
+
+           
+		</form>
+
+
+		
+	</div>
+</main>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+
+{% endblock %}

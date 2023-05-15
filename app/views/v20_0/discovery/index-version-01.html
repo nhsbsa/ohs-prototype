@@ -1,0 +1,114 @@
+{% extends "layout_ohs2023.html" %}
+{% block page_title %}
+Prototype
+{% endblock %}
+{% block content %}
+
+<style>
+    * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 35%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: left;
+  background-color: #f1f1f1;
+  min-height: 200px;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+</style>
+
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-full">
+            <div id="back">
+                <a class="link-back" href="search" id="back-link">Back</a>
+            </div>
+        </div>
+    </div>
+    <div class="grid-row">
+        <div class="column-full">
+            <div class="heading-group">
+                <h1 class="heading-large" style="font-size:48px; width:66%;">
+                    Overseas Healthcare Services
+
+                </h1>
+            </div>
+
+            <div class="text">
+                <p>Use this service to manage:</p>
+                    
+
+         
+                
+            </div>
+
+            <div class="row">
+                <div class="column">
+                  <div class="card"><a style="color:#005eb8; font-size:24px; font-weight:600;" href="">Entitlements</a><br /><br />Provide entitlements for people moving to any European Economic Area (EEA) country or Switzerland</div>
+                </div>
+                <div class="column">
+                  <div class="card"><a style="color:#005eb8; font-size:24px; font-weight:600;" href="">Claims</a><br /><br />Accept, decline and contest claims made by member states</div>
+                </div>
+                
+              </div>
+
+
+
+        </div>
+    </div>
+    </div>
+</main>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+
+        tabcontent = document.getElementsByClassName("tabcontentActive");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].className = "tabcontent";
+        }
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        document.getElementById(tabName).className = "tabcontentActive";
+        evt.currentTarget.className += " active";
+    }
+</script>
+{% endblock %}
