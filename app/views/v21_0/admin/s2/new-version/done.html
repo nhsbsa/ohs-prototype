@@ -1,0 +1,69 @@
+{% extends "layout_bsa.html" %}
+ 
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner">
+      <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service 
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+      </p> 
+    </div>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <div class="done-panel">
+          <h1 class="heading-xlarge"><span id="done-tick"></span>S2 issued for
+            {% if data['firstName'] %}
+              {{ data['firstName']}} {{ data['lastName']}}
+            {% else %}
+              Michelle Philip
+            {% endif %}
+          </h1>
+          <h2 class="heading-large"><span class="heading-secondary" style="color:white;">OHS Reference number</span> 
+            {% if data['ohs'] %}
+							{{ data['ohs']}}
+						{% else %}
+							25000002
+						{% endif %}
+          </h2>
+        </div>
+
+        <p>This application has been successful and an S2 certificate has been issued for
+          {% if data['firstName'] %}
+              {{ data['firstName']}} {{ data['lastName']}}.
+            {% else %}
+              Michelle Philip.
+            {% endif %}</p>
+
+        <h2 class="heading-medium">What happens next</h2>
+        <p>We'll send the customer's S2 certificate in the post to the address they gave in their application. They'll receive it shortly.</p>
+
+
+        <p>
+        
+        <a href="person-case-maternity-evidence-approved-new">View updated details</a>
+  
+        </p>
+
+        <br>
+        <div class="form-group">
+          <a class="button" href="../../../../v17_0/admin/s2/new-record/search">Do another search</a>
+        </div>
+
+        <!-- <h3 class="heading-small">Before you go</h3>
+        <p>Help us to improve the service by <a href="#">answering some questions</a> about it.</p> -->
+
+      </div>
+    </div>
+
+  </main>
+
+{% endblock %}

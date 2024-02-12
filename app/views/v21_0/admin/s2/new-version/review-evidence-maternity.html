@@ -1,0 +1,103 @@
+{% extends "layout_bsa.html" %}
+{% block page_title %}
+Review checks
+{% endblock %}
+{% block content %}
+
+<style>
+   span.status-tag-low {
+      background-color: #85994b;
+      color: #ffffff;
+      vertical-align: baseline;
+      padding: 2px 18px 1px;
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-block;
+      position: relative;
+      top: -0.05em;
+   }
+
+   span.status-tag-medium {
+      background-color: #F47738;
+      color: #ffffff;
+      vertical-align: baseline;
+      padding: 2px 9px 1px;
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-block;
+      position: relative;
+      top: -0.05em;
+   }
+
+   span.status-tag-high {
+      background-color: #B10E1E;
+      color: #ffffff;
+      vertical-align: baseline;
+      padding: 2px 16px 1px;
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-block;
+      position: relative;
+      top: -0.05em;
+   }
+</style>
+
+<main id="content" role="main">
+   <div class="grid-row">
+      <div class="column-two-thirds">
+         <a href="#" class="link-back">Back</a>
+         <h1 class="heading-large">
+            Review checks
+         </h1>
+         <br>
+         <dl class="govuk-check-your-answers cya-questions-short">
+            <div>
+               <dt class="cya-question" style="width: 40%">UK residency</dt>
+               <dd class="cya-answer" style="color: #007f3b; font-weight: bold">PASS</dd>
+            </div>
+            <div>
+               <dt class="cya-question">EU Settled Status</dt>
+               <dd class="cya-answer" style="color: #007f3b; font-weight: bold"></dd>
+            </div>
+
+         </dl>
+         <br>
+         <form action="contact-address" id="check-person-details-form" method="get" class="form">
+
+            <h2 class="heading-medium">Personal details</h2>
+
+            <dl class="govuk-check-your-answers cya-questions-short">
+               <div>
+                  <dt class="cya-question">OHS Reference Number</dt>
+                  <dd class="cya-answer">25000002</dd>
+               </div>
+               <div>
+                  <dt class="cya-question">Full name</dt>
+                  <dd class="cya-answer">Michelle Philip</dd>
+               </div>
+               <div>
+                  <dt class="cya-question">Date of birth</dt>
+                  <dd class="cya-answer">
+                     16/03/1984
+                  </dd>
+               </div>
+               <div>
+                  <dt class="cya-question">Address</dt>
+                  <dd class="cya-answer">
+                     73 Roman Rd<br>
+                     Leeds<br>
+                     LS2 5ZN<br>
+                     United Kingdom
+                  </dd>
+               </div>
+            </dl>
+<br />
+            <div class="form-group">
+               <a class="button" href="review-evidence-maternity-options">Continue</a>
+               <a class="button button-secondary" href="person-case-maternity-awaiting-review">Cancel</a>
+            </div>
+         </form>
+      </div>
+   </div>
+</main>
+{% endblock %}

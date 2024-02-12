@@ -1,0 +1,256 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Review evidence
+{% endblock %}
+
+{% block content %}
+
+<style>
+   /* radio buttons (not-inline) */
+   @media (min-width: 40.0625em) {
+      .govuk-radios__item {
+         font-size: 19px;
+         font-size: 1.1875rem;
+         line-height: 1.31579;
+      }
+   }
+
+   @media (min-width: 40.0625em) {
+      .govuk-label {
+         font-size: 19px;
+         font-size: 1.1875rem;
+         line-height: 1.31579;
+      }
+   }
+
+   .govuk-radios__item {
+      font-family: Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-weight: 400;
+      font-size: 1rem;
+      font-size: 16px;
+      line-height: 1.25;
+      display: block;
+      position: relative;
+      min-height: 40px;
+      margin-bottom: 10px;
+      padding: 0 0 0 40px;
+      clear: left;
+   }
+
+   .govuk-radios__input {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      margin: 0;
+      opacity: 0;
+   }
+
+   .govuk-radios__label {
+      display: inline-block;
+      margin-bottom: 0;
+      padding: 8px 15px 5px;
+      cursor: pointer;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+   }
+
+   .govuk-label {
+      font-family: Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-weight: 400;
+      font-size: 1rem;
+      font-size: 16px;
+      line-height: 1.25;
+      color: #0b0c0c;
+      display: block;
+      margin-bottom: 5px;
+   }
+
+   .govuk-radios__input+.govuk-radios__label::before {
+      content: "";
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      background: transparent;
+   }
+
+   .govuk-radios__input:checked+.govuk-radios__label::after {
+      opacity: 1;
+   }
+
+   .govuk-radios__input+.govuk-radios__label::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 0;
+      height: 0;
+      border: 10px solid currentColor;
+      border-radius: 50%;
+      opacity: 0;
+      background: currentColor;
+   }
+
+   /* end radio buttons */
+
+   /* banner */
+   .banner-information-without-action {
+      color: #005ea5;
+   }
+
+   .banner-message {
+      font-family: Arial, sans-serif;
+      font-weight: 400;
+      text-transform: none;
+      font-size: 36px;
+      line-height: 1.2;
+      padding: 20px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      border-width: 5px;
+      border-style: solid;
+      font-weight: bold;
+      text-align: center;
+   }
+
+   .vertical-bar {
+      margin: 0px 10px;
+   }
+
+   /* end banner */
+
+   .form-control.email {
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+   }
+</style>
+<script>
+   console.log(formData);
+</script>
+<main id="content" role="main">
+   <div class="grid-row">
+      <div class="column-full">
+         <div id="back">
+            <a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+         </div>
+      </div>
+   </div>
+   <div class="form-group">
+      <div class="grid-row">
+         <div class="column-two-thirds">
+            <div class="heading-group">
+               <h1 class="heading-large">Request additional evidence</h1>
+            </div>
+            <form action="review-evidence-maternity-review-email" id="check-person-details-form" method="post" class="form">
+
+               {# Loop through all the checkboxes from the last page form #}
+               {% for key, value in formData %}
+
+               {# If any of their values are true/ticked #}
+               {% if value == 'true' %}
+
+               {# If their key (ID added to input on previous page form) matches add in the relevant textarea #}
+
+               {% if key == 'duedate' %}
+               <h2 class="heading-medium">Proof of your estimated date of delivery</h2>
+               <div class="form-group">
+                  <label class="form-label" for="duedate">
+                  </label>
+                  <textarea class="form-control email" id="duedate" name="duedate" cols="10" rows="5">We need a copy of your Maternity Certificate (MAT B1) to confirm the date you expect to give birth. This should be provided by your midwife or doctor.</textarea>
+               </div>
+               {% endif %}
+
+               {% if key == 'benefits' %}
+               <h2 class="heading-medium">Proof of your maternity pay or benefits</h2>
+               <div class="form-group">
+                  <label class="form-label" for="benefits">
+                  </label>
+                  <textarea class="form-control email" id="benefits" name="benefits" cols="10" rows="10">We need evidence of your Statutory Maternity Pay (SMP) or Maternity Allowance continuing after leaving the UK.
+This could be either:
+• a letter from your employer confirming the date your SMP ends
+• a letter from your employer confirming the date your employment ends if you are not claiming SMP
+• a letter from the Department for Work and Pensions (DWP) confirming the date your Maternity Allowance ends</textarea> 
+               </div>
+               {% endif %}
+
+               {% if key == 'reside' %}
+               <h2 class="heading-medium">Proof of right to reside in the UK</h2>
+               <div class="form-group">
+                  <label class="form-label" for="reside">
+                  </label>
+
+                  {# Name & ID attribute needed to post data #}
+                  <textarea class="form-control email" id="reside" name="reside" cols="10" rows="10">We need evidence to confirm you have the right to reside in the UK.
+This could be either:
+• evidence to confirm you have EU settled or pre-settled status. You may be able to get your right to reside share code from GOV.UK’s proof of immigration status page
+• your UK or Irish passport
+• your UK birth certificate
+• a certificate of naturalisation
+• both sides of your biometric residence permit (BRP)
+• an Accession State Worker Registration Scheme certificate</textarea>
+
+               </div>
+               {% endif %}
+
+               {% if key == 'address' %}
+               <h2 class="heading-medium">Proof of residency in the UK</h2>
+               <div class="form-group">
+                  <label class="form-label" for="address">
+                  </label>
+                  <textarea class="form-control email" id="address" name="address" cols="10"
+                     rows="10">We need to see 2 documents in your name as proof of your residency in the UK. The address on the documents must match the address on your application.
+These documents can be any 2 of:
+• one or more different utility service bills, for example a gas, electric, landline telephone, or satellite television bill dated within the last 3 months
+• a Local Authority council tax bill dated for the current financial year
+• a housing association, council tenancy letter or rent agreement which is valid currently
+• a benefit award notice dated within the last 3 months
+• a letter from HMRC dated within the last 3 months
+• a bank statement that shows all transactions dated within the last 3 months
+• a building society or credit union statement or passbook dated within the last 3 months
+• an electoral register entry dated for the current financial year
+• a letter from hospital or GP on headed paper dated within the last 3 months
+• a mortgage statement from a recognised lender dated within the last 3 months
+• an HMRC self-assessment letter or tax demand dated for the current financial year
+• a solicitor's letter dated within the last 3 months that shows a recent house purchase or land registry including the address
+If you cannot provide 2 of the documents listed, you'll need to tell us why and send us all alternative evidence that you have available. This will need to show your full name and the address you have used for your application.
+Any documents you have sent us along with your explanation will be considered. If we're unable to accept the alternative documents, we'll contact you to let you know what you should do next.</textarea>
+               </div>
+               {% endif %}
+
+               {% if key == 'additional' %}
+               <h2 class="heading-medium">Additional information (free text)</h2>
+               <div class="form-group">
+                  <label class="form-label" for="additional">
+                  </label>
+                  <textarea class="form-control email" id="additional" name="additional" cols="10" rows="10"></textarea>
+               </div>
+               {% endif %}
+
+               {% endif %}
+               {% endfor %}
+
+               <div class="form-group">
+                  <input type="submit" value="Preview email" class="button">
+                  <a class="button button-secondary" href="person-case-maternity-awaiting-review">Cancel</a>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</main>
+{% endblock %}

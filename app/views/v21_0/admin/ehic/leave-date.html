@@ -1,0 +1,132 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+	When will the treatment end?
+{% endblock %}
+
+{% block content %}
+<style>
+
+	/* banner */
+	.banner-information-without-action {
+		color: #005ea5;
+	}
+	.banner-message {
+		font-family: Arial, sans-serif;
+		font-weight: 400;
+		text-transform: none;
+		font-size: 36px;
+		line-height: 1.2;
+		padding: 20px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		border-width: 5px;
+		border-style: solid;
+		font-weight: bold;
+		text-align: center;
+	}
+	.vertical-bar {
+		margin: 0px 10px;
+	}
+	/* end banner */
+</style>
+
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-full">
+			<div id="back">
+				<a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="grid-row">
+			<div class="column-full">
+				<div class="banner-information-without-action">
+					<p class="banner-message">
+						<span class="name text-capitalize">
+							{% if data['firstName'] %}
+								{{ data['firstName']}} {{ data['lastName']}}
+							{% else %}
+								Michael Philip
+							{% endif %}
+						</span>
+						<span class="vertical-bar">|</span>
+						<span class="ohs-reference-number">
+							{% if data['ohs'] %}
+								{{ data['ohs']}}
+							{% else %}
+								25000002
+							{% endif %}
+						</span>
+					</p>
+				</div>
+			</div>
+			<div class="column-two-thirds">
+
+
+            <form action="done" method="post" class="form">
+            
+                    <div class="form-group">
+                        <label class=" heading-large" for="leaveDate">What date do you plan to start living in another country?</label>
+                        <span class="form-hint">
+                            For example 01/01/2000 
+                        </span>
+                        <!-- <input class="form-control" id="leaveDate" name="leaveDate" type="text" autocomplete="off" value="{% if data['emigrationNew'] %}{% if data['emigrationNew'] === 'Yes' %}{% if data['leaveDate'] %}{{ data['leaveDate']}}{% else %}01-01-2026{% endif %}{% endif %}{% else %}{% if data['leaveDate'] %}{{ data['leaveDate']}}{% else %}01-01-2026{% endif %}{% endif %}" /> -->
+                    
+
+
+						{% if data['emigrationNew'] === 'Yes' %}
+			
+			
+							{% if data['leaveDate'] %}
+							<input class="form-control" id="leaveDate" name="leaveDate" type="text" autocomplete="off" value="{{ data['leaveDate']}}" />
+							{% else %}
+							<input class="form-control" id="leaveDate" name="leaveDate" type="text" autocomplete="off" value="" />
+							{% endif %}
+
+                   
+						{% elif not data['emigration'] %}
+						
+							{% if data['leaveDate'] %}
+							<input class="form-control" id="leaveDate" name="leaveDate" type="text" autocomplete="off" value="{{ data['leaveDate']}}" />
+							{% else %}
+							<input class="form-control" id="leaveDate" name="leaveDate" type="text" autocomplete="off" value="01-01-2026" />
+							{% endif %}
+	
+						{% elif data['emigration'] === 'Yes' %}
+		
+			
+							{% if data['leaveDate'] %}
+							<input class="form-control" id="leaveDate" name="leaveDate" type="text" autocomplete="off" value="{{ data['leaveDate']}}" />
+							{% else %}
+							<input class="form-control" id="leaveDate" name="leaveDate" type="text" autocomplete="off" value="01-01-2026" />
+							{% endif %}
+
+							{% else %}
+							<p>end</p>
+
+						{% endif %}
+
+
+
+
+					</div>
+
+
+
+
+					<div class="form-group">
+						<input class="button" type="submit" value="Submit">
+						<a class="button button-secondary" href="person-entitlements">Cancel</a>
+					</div>   
+                
+            </form>
+			
+        </div>
+    </div>
+</main>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+
+{% endblock %}

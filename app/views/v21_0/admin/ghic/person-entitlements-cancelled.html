@@ -1,0 +1,565 @@
+{% extends "layout_bsa.html" %}
+{% block page_title %}
+Person record
+{% endblock %}
+{% block content %}
+<style>
+    .tab-box {
+        position: relative;
+        background-color: white;
+        width: 100%;
+        margin-top: 64px;
+        border-top: 1px solid #6F777B;
+        z-index: 1;
+        padding-top: 20px;
+    }
+
+    .tab-container {
+        position: relative;
+        float: left;
+        min-width: 100%;
+        overflow: hidden;
+        margin-top: 18px;
+    }
+
+    .tablinks.active {
+        position: relative;
+        float: left;
+        line-height: 34px;
+        top: 0px;
+        left: 0px;
+        margin-left: 5px;
+        height: 64px;
+        background-color: white;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-align: center;
+        border-top: 1px solid #6F777B;
+        border-left: 1px solid #6F777B;
+        border-right: 1px solid #6F777B;
+        z-index: 4;
+        color: black;
+        text-decoration: none;
+        font-size: 19px;
+        line-height: 1.31579;
+        font-weight: 700;
+    }
+
+    .tablinks {
+        position: relative;
+        float: left;
+        line-height: 34px;
+        top: 0px;
+        left: 2px;
+        margin-left: 5px;
+        height: 58px;
+        background-color: white;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-align: center;
+        z-index: 1;
+        background-color: #DEE0E2;
+        font-size: 19px;
+        line-height: 1.31579;
+        font-weight: 700;
+    }
+
+    .tabcontentActive {
+        display: block;
+    }
+
+    .tabcontent {
+        display: none;
+        padding-top: 20px;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+    }
+
+    table th,
+    table td {
+        font-family: Arial, sans-serif;
+        font-weight: 400;
+        text-transform: none;
+        font-size: 19px;
+        line-height: 1.25;
+        padding: 0.63158em 1.05263em 0.47368em 0;
+        text-align: left;
+        color: #0b0c0c;
+        border-bottom: 1px solid #bfc1c3;
+        vertical-align: top;
+    }
+
+    table td.title {
+        font-weight: 700;
+    }
+
+    table th {
+        font-weight: 700;
+    }
+
+    tr {
+        height: 60px;
+    }
+
+    .heading-small {
+        font-size: 19px;
+        line-height: 1.31579;
+        font-weight: 700;
+    }
+
+    .visually-hidden {
+        display: none;
+    }
+
+    .major-container {
+        width: 70%;
+        margin: 0 5% 0 0;
+        float: left;
+    }
+
+    .button.button-secondary.entitlements {
+        width: 22.5%;
+        text-align: center;
+        margin: 5px 15px 0 0;
+    }
+
+    span.status-tag-low {
+        background-color: #85994b;
+        color: #ffffff;
+        vertical-align: baseline;
+        padding: 2px 18px 1px;
+        font-weight: 700;
+        font-size: 14px;
+        display: inline-block;
+        position: relative;
+        top: -0.05em;
+    }
+
+    span.status-tag-medium {
+        background-color: #F47738;
+        color: #ffffff;
+        vertical-align: baseline;
+        padding: 2px 9px 1px;
+        font-weight: 700;
+        font-size: 14px;
+        display: inline-block;
+        position: relative;
+        top: -0.05em;
+    }
+
+    span.status-tag-high {
+        background-color: #B10E1E;
+        color: #ffffff;
+        vertical-align: baseline;
+        padding: 2px 16px 1px;
+        font-weight: 700;
+        font-size: 14px;
+        display: inline-block;
+        position: relative;
+        top: -0.05em;
+    }
+
+    span.status-tag-requested {
+        background-color: #70777b;
+        color: #ffffff;
+        vertical-align: baseline;
+        padding: 2px 9px 1px;
+        font-weight: 700;
+        font-size: 14px;
+        display: inline-block;
+        position: relative;
+        top: -0.05em;
+    }
+
+    /* #myDIV, #myDIV2, #myDIV3, #myDIV4 {
+		background: #F8F8F8;
+	} */
+
+    details summary:before {
+        content: none;
+    }
+
+    .change {
+        text-align: right;
+        vertical-align: top;
+    }
+</style>
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-full">
+            <div id="back">
+                <a class="link-back" href="search" id="back-link">Back</a>
+            </div>
+        </div>
+    </div>
+    <div class="grid-row">
+        <div class="column-full">
+            <div class="heading-group">
+                <h1 class="heading-large">
+                    {% if data['firstName'] %}
+                    {{ data['firstName']}} {{ data['lastName']}}
+                    {% else %}
+                    Michael Philip
+                    {% endif %}
+                    <span class="heading-secondary">OHS Reference Number -
+                        {% if data['firstName'] %}
+                        {{ data['firstName']}} {{ data['lastName']}}
+                        {% else %}
+                        25000002
+                        {% endif %}
+                    </span>
+                </h1>
+            </div>
+            <div class="tab-container">
+                <a class="tablinks" href="#">
+                    <div>
+                        <p class="heading-small">Personal details</p>
+                    </div>
+                </a>
+                <a class="tablinks active" onclick="openTab(event, 'health')" href="#">
+                    <div>
+                        <p class="heading-small">Entitlements</p>
+                    </div>
+                </a>
+                <a class="tablinks" href="#">
+                    <div>
+                        <p class="heading-small">Case history</p>
+                    </div>
+                </a>
+                <a class="tablinks" href="#">
+                    <div>
+                        <p class="heading-small">Case notes</p>
+                    </div>
+                </a>
+                <a class="tablinks" href="#">
+                    <div>
+                        <p class="heading-small">Documents</p>
+                    </div>
+                </a>
+                <div class="tab-box">
+                    <form action="date-request" method="post" class="form">
+
+                
+
+                        <div id="health" class="tabcontentActive">
+                            <table id="mainTable">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Entitlement type</th>
+                                        <th scope="col">Start date</th>
+                                        <th scope="col">End date</th>
+                                        <th scope="col">Main/Dependant</th>
+                                        <th scope="col">Country</th>
+                                        <th scope="col">Status</th>
+                                        <td scope="col"></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>GHIC</td>
+                                        <td>
+                                            06-02-2024
+                                        </td>
+                                        <td>
+                                            {% if data['emigrationNew'] %}
+                                                {% if data['emigrationNew'] === 'Yes' %}
+                                                    {% if data['leaveDate'] %}
+                                                        {{ data['leaveDate']}}
+                                                    {% else %}
+                                                        01-01-2029
+                                                    {% endif %}
+                                                {% else %}
+                                                    06-02-2028
+                                                {% endif %}
+
+
+                                            {% elif data['emigration'] %}
+                                                {% if data['emigration'] === 'Yes' %}
+                                                    {% if data['leaveDate'] %}
+                                                        {{ data['leaveDate']}}
+                                                    {% else %}
+                                                        01-01-2029
+                                                    {% endif %}
+                                                {% else %}
+                                                    06-02-2028
+                                                {% endif %}
+                                            
+                                            {% else %}
+                                                {% if data['leaveDate'] %}
+                                                    {{ data['leaveDate']}}
+                                                {% else %}
+                                                    01-01-2029
+                                                {% endif %}
+                                        {% endif %}
+                                        </td>
+                                        <td>Main</td>
+                                        <td>
+
+                                        </td>
+                                        <td><span class="status-tag-high font-xsmall"
+                                                style="padding-left:10px; padding-right:10px">Cancelled</span>
+                                        </td>
+                                        <td nowrap="">
+                                            <details onclick="myFunction2()">
+                                                <summary><span class="summary">More info</span></summary>
+                                            </details>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div id="myDIV2" style="display:none;">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="8">
+                                                <div class="panel panel-border-wide s1infoExpanded">
+                                                    <div class="main-container form-group">
+                                                        <div class="major-container">
+
+                                                            <table id="entitlementDetails" class="check-table">
+                                                                <h1 class="heading-large">Additional entitlement details
+                                                                </h1>
+                                                                <caption class="visually-hidden">A table displaying the
+                                                                    entitlement details</caption>
+                                                                <tbody>
+                                                                    <tr class="row">
+                                                                        <td class="column title" style="width:45%">
+                                                                            Reference number</td>
+                                                                        <td class="column">74859374</td>
+                                                                        <td></td>
+                                                                    </tr>
+
+                                                                    <tr class="row">
+                                                                        <td class="column title">GHIC number</td>
+                                                                        <td class="column">
+                                                                            -
+                                                                        </td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr class="row">
+                                                                        <td class="column title">NHS number</td>
+                                                                        <td class="column">
+                                                                            -
+                                                                        </td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr class="row">
+                                                                        <td class="column title">Nationality</td>
+                                                                        <td class="column">
+                                                                            UK citizen
+                                                                        </td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr class="row">
+                                                                        <td class="column title">Do you have healthcare
+                                                                            cover from another country besides the UK,
+                                                                            such as having an S1, E121, E106 or E109
+                                                                        </td>
+                                                                        <td class="column">
+                                                                            No
+                                                                        </td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr class="row">
+                                                                        <td class="column title">Do you plan to
+                                                                            permanently move to another country in the
+                                                                            next 5 years</td>
+                                                                        <td class="column">
+                                                                            {% if data['emigrationNew'] %}
+                                                                                {{ data['emigrationNew']}}
+                                                                             {% else %}
+                                                                                {% if data['emigration'] %}
+                                                                                    {{ data['emigration']}}
+                                                                                {% else %}
+                                                                                    Yes 
+                                                                                {% endif %}
+                                                                            {% endif %}
+                                                                            
+                                                                        
+                                                                        </td>
+                                                                        <td class="column change"><a
+                                                                                href="plan-to-emigrate">
+                                                                                Change
+                                                                            </a></td>
+                                                                    </tr>
+                                                                    <tr class="row">
+                                                                        <td class="column title">What date do you plan
+                                                                            to start living in another country</td>
+                                                                        <td class="column">
+
+                                                                            {% if data['emigrationNew'] %}
+                                                                                {% if data['emigrationNew'] === 'Yes' %}
+                                                                                    {% if data['leaveDate'] %}
+                                                                                        {{ data['leaveDate']}}
+                                                                                    {% else %}
+                                                                                        01-01-2026
+                                                                                    {% endif %}
+                                                                                {% elif data['emigrationNew'] === 'No' %}
+                                                                                    -
+                                                                                {% endif %}
+
+                                                                                {% else %}
+
+                                                                                {% if data['emigration'] %}
+
+                                                                                {% if data['emigration'] === 'Yes' %}
+                                                                                    {% if data['leaveDate'] %}
+                                                                                        {{ data['leaveDate']}}
+                                                                                    {% else %}
+                                                                                        01-01-2026
+                                                                                    {% endif %}
+                                                                                
+                                                                                {% elif data['emigration'] === 'No' %}
+                                                                                    -
+                                                                                {% endif %}
+
+                                                                            {% else %}
+                                                                            {% if data['leaveDate'] %}
+                                                                            {{ data['leaveDate']}}
+                                                                        {% else %}
+                                                                            01-01-2026
+                                                                        {% endif %}
+                                                                            {% endif %}
+
+
+
+                                                                            {% endif %}
+
+
+                                                                        </td>
+                                                                        <td class="column change">
+
+                                                                            {% if data['emigrationNew'] %}
+                                                                                {% if data['emigrationNew'] === 'Yes' %}
+                                                                                <a href="leave-date">
+                                                                                    Change
+                                                                                </a>
+                                                                                {% endif %}
+
+                                                                            {% elif data['emigration'] %}
+                                                                                {% if data['emigration'] === 'Yes' %}
+                                                                                    <a href="leave-date">
+                                                                                        Change
+                                                                                    </a>
+                                                                            {% endif %}
+
+                                                                            {% else %}
+
+                                                                            <a href="leave-date">
+                                                                                Change
+                                                                            </a>
+                                                                               
+                                                                               
+
+
+                                                                            {% endif %}
+
+
+
+
+
+                                                                    
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="row">
+                                                                        <td class="column title">Source</td>
+                                                                        <td class="column">
+                                                                            Customer
+                                                                        </td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr class="row">
+                                                                        <td class="column title">Entitlement approved
+                                                                        </td>
+                                                                        <td class="column">
+                                                                            -
+                                                                        </td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr class="row">
+                                                                        <td class="column title">Card dispatched</td>
+                                                                        <td class="column">
+                                                                            -
+                                                                        </td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr class="row">
+                                                                        <td class="column title">Request received</td>
+                                                                        <td class="column">
+                                                                            06-02-2023
+                                                                        </td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr class="row">
+                                                                        <td class="column title">Evidence submission
+                                                                            date</td>
+                                                                        <td class="column">
+                                                                            07-02-2023
+                                                                        </td>
+                                                                        <td></td>
+                                                                    </tr>
+
+                                                                </tbody>
+
+                                                            </table>
+
+                                                        </div>
+                                                        <div class="minor-container">
+
+                                                            <div><a class="link button button-secondary entitlements"
+                                                                    href="">Add dependant</a></div>
+                                                            <div><a class="link button button-secondary entitlements"
+                                                                    href="">Add document</a></div>
+                                                            <div><a class="link button button-secondary entitlements"
+                                                                    href="">Review evidence</a></div>
+                                                                  
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <br>
+                            <div class="form-group">
+
+                                <input class="button" type="submit" href="#" value="Create a new entitlement" />
+                                <a class="button button-secondary" href="#">Exit record</a>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</main>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+
+        tabcontent = document.getElementsByClassName("tabcontentActive");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].className = "tabcontent";
+        }
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        document.getElementById(tabName).className = "tabcontentActive";
+        evt.currentTarget.className += " active";
+    }
+</script>
+{% endblock %}
