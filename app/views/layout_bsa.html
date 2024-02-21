@@ -9,11 +9,17 @@
 {% endblock %}
    
 {% block footer_support_links %}
-  {% if useAutoStoreData %}
-   
-  {% endif %}
+{% if useAutoStoreData %}
+<ul>
+  <li>
+    <a href="/prototype-admin/clear-data">Clear data</a>
+  </li>
+</ul>
+{% endif %}
 {% endblock %}
     
 {% block body_end %}
   {% include "includes/scripts.html" %}
+  {{ data | log }}
+
 {% endblock %}

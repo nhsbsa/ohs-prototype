@@ -21,8 +21,29 @@
                <div class="form-group">
                     <h2 class="heading-medium second">What happens next</h2>
                      
-                         <p>The customer will get an email telling them their entitlement has been cancelled.</på>
+             
+                
+               {% if data['radiosCancellation'] == "manual-card" %}
+                    <p>You need to recreate the entitlement for this customer.</p>
+
+               {% elif data['radiosCancellation'] == "manual-issued" %}
+                    <p>You need to recreate the entitlement for this customer.</p>
+
+               {% elif data['radiosCancellation'] == "manual-died" %}
+                    <p>Use our templates to email a confirmation to the person who contacted us about the applicant’s death.</p>
+     
+               {% elif data['radiosCancellation'] == "auto-cancelled" %}
+               <p>Use our templates to email a confirmation to the person who contacted us about the applicant’s death.</p>
+
+               {% elif data['radiosCancellation'] == "auto-dependant" %}
+                    <p>Use our templates to email a confirmation to the customer.</p>
+             
+               {% else  %}
+                 <p>Card issued with wrong end date</p>
+               {% endif %}      
                    
+    
+
                </div> 
                <div class="form-group">
                     <a href="person-entitlements-cancelled" class="link">See updated details</a>

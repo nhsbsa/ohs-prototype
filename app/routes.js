@@ -24,6 +24,7 @@ router.use('/v16_0', require('./views/v16_0/_routes'));
 router.use('/v17_0', require('./views/v17_0/_routes'));
 router.use('/improvements', require('./views/improvements/_routes'));
 router.use('/v19_0', require('./views/v19_0/_routes'));
+router.use('/v21_0', require('./views/v21_0/_routes'));
 
 
 // ccs no-search-results uk-pension //
@@ -1342,5 +1343,9 @@ router.get(/ihs-evd/, function (req,res) {
     res.redirect('ihs-evidence');
   }
 });
+
+
+
+
 
 module.exports = router

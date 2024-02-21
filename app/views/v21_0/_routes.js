@@ -132,4 +132,26 @@ router.get(/person-case-maternity-awaiting-review-new/, function (req, res) {
 })
 
 
+
+// EHIC/GHIC review evidence, review-evidence-options.html (Version 2)
+router.get(/v3ReviewEvidence/, function (req,res) {
+  if(req.query.radiosCancellation === "manual-card") {
+    return res.redirect('ghic-cancelled-confirmation');
+  } 
+  // else if (req.query.radiosResult === "Approved but no evidence provided") {
+  //   res.redirect('done-ehic-approved');
+  // } 
+  else if (req.query.radiosCancellation === "manual-issued") {
+     res.redirect('ghic-cancelled-confirmation');
+  } else if (req.query.radiosCancellation === "manual-died") {
+     res.redirect('ghic-cancelled-confirmation');
+  } else if (req.query.radiosCancellation === "auto-cancelled") {
+     res.redirect('ghic-cancelled-confirmation');
+  } else if (req.query.radiosCancellation === "auto-dependant") {
+     res.redirect('ghic-cancelled-confirmation');
+  } else {
+    res.redirect('review-evidence-maternity-options-warning');
+  }
+})
+
 module.exports = router
