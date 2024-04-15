@@ -1,0 +1,61 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+     GHIC has been rejected
+{% endblock %}
+
+{% block content %}
+<style>
+     .heading-large .heading-secondary {
+          color: white;
+     }
+</style>
+
+<main id="content" role="main">
+     <div class="grid-row">
+          <div class="column-two-thirds">
+               <div class="done-panel" style="background-color: #70777b;">
+                    <h1 class="heading-xlarge"></span>S1 entitlement has been cancelled for Michael Philip</h1>
+                    <h2 class="heading-large"><span class="heading-secondary">OHS Reference number</span> 25000002</h2>
+               </div>
+               <div class="form-group">
+                    <p>You have successfully cancelled this S1 entitlement.</p>
+                    <h2 class="heading-medium second">What happens next</h2>
+                     
+             
+                
+               {% if data['radiosS1Cancellations'] == "manual-card" or data['radiosCancellation'] == "manual-issued" %}
+             <p>You need to:</p>
+               <ul class="list list-bullet">
+                    <li> recreate the entitlement for this customer </li>
+                    <li> email the customer to let them know what has happened</li>
+                </ul>
+             
+
+       
+               {% elif data['radiosS1Cancellations'] == "manual-died" %}
+                    <p>You need to email a confirmation to the person who contacted us about the applicant's death.</p>
+                    <h2 class="heading-medium second">Dependants</h2>
+                    <p>If this customer had any dependants, you also need to cancel the dependants' entitlements.</p>
+             
+             {% elif data['radiosS1Cancellations'] == "auto-cancelled" or data['radiosCancellation'] == "auto-dependant" %}
+                          <p>You need to email a confirmation to the customer.</p>
+
+  
+               {% else  %}
+                 <p>You need to email a confirmation to the customer.</p>
+               {% endif %}      
+                   
+    
+
+               </div> 
+               <div class="form-group">
+                    <a href="person-entitlements-cancelled" class="link">See updated details</a>
+               </div>
+               <div class="form-group">
+                    <a href="#" class="button">Start another search</a>
+               </div>
+          </div>
+     </div>
+</main>
+{% endblock %}

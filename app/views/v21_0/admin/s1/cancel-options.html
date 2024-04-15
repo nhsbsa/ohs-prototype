@@ -1,0 +1,243 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+	Review evidence
+{% endblock %}
+
+{% block content %}
+
+<style>
+	/* radio buttons (not-inline) */
+	@media (min-width: 40.0625em) {
+		.govuk-radios__item {
+			font-size: 19px;
+			font-size: 1.1875rem;
+			line-height: 1.31579;
+		}
+	}
+	@media (min-width: 40.0625em) {
+		.govuk-label {
+			font-size: 19px;
+			font-size: 1.1875rem;
+			line-height: 1.31579;
+		}
+	}
+	.govuk-radios__item {
+		font-family: Arial,sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		font-weight: 400;
+		font-size: 1rem;
+		font-size: 16px;
+		line-height: 1.25;
+		display: block;
+		position: relative;
+		min-height: 40px;
+		margin-bottom: 10px;
+		padding: 0 0 0 40px;
+		clear: left;
+	}
+	.govuk-radios__input {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+		margin: 0;
+		opacity: 0;
+	}
+	.govuk-radios__label {
+		display: inline-block;
+		margin-bottom: 0;
+		padding: 8px 15px 5px;
+		cursor: pointer;
+		-ms-touch-action: manipulation;
+		touch-action: manipulation;
+	}
+	.govuk-label {
+		font-family: Arial,sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		font-weight: 400;
+		font-size: 1rem;
+		font-size: 16px;
+		line-height: 1.25;
+		color: #0b0c0c;
+		display: block;
+		margin-bottom: 5px;
+	}
+	.govuk-radios__input+.govuk-radios__label::before {
+		content: "";
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 40px;
+		height: 40px;
+		border: 2px solid currentColor;
+		border-radius: 50%;
+		background: transparent;
+	}
+	.govuk-radios__input:checked+.govuk-radios__label::after {
+		opacity: 1;
+	}
+	.govuk-radios__input+.govuk-radios__label::after {
+		content: "";
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		width: 0;
+		height: 0;
+		border: 10px solid currentColor;
+		border-radius: 50%;
+		opacity: 0;
+		background: currentColor;
+	}
+	/* end radio buttons */
+
+	/* banner */
+	.banner-information-without-action {
+		color: #005ea5;
+	}
+	.banner-message {
+		font-family: Arial, sans-serif;
+		font-weight: 400;
+		text-transform: none;
+		font-size: 36px;
+		line-height: 1.2;
+		padding: 20px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		border-width: 5px;
+		border-style: solid;
+		font-weight: bold;
+		text-align: center;
+	}
+	.vertical-bar {
+		margin: 0px 10px;
+	}
+	/* end banner */
+
+	.govuk-hint.govuk-radios__hint {
+		display: block;
+	     padding-right: 15px; 
+	     padding-left: 15px;
+	}
+	.cya-question, .cya-answer {
+		border: none;
+	}
+	.govuk-check-your-answers {
+		padding: .8em 0;
+	}
+</style>
+
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-full">
+			<div id="back">
+				<a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="grid-row">
+			<div class="column-full">
+				<div class="banner-information-without-action">
+					<p class="banner-message">
+						<span class="name text-capitalize">Michael Philip</span>
+						<span class="vertical-bar">|</span>
+						<span class="ohs-reference-number">25000002</span>
+					</p>
+				</div>
+			</div>
+
+
+			<div class="column-two-thirds">
+				<div class="heading-group">
+					<h1 class="heading-large">S1 cancellation reason</h1>
+				</div>
+				<!-- <dl class="govuk-check-your-answers ">
+					<div>
+					   <dt class="cya-question" style="width: 40%">Entitlement type</dt>
+					   <dd class="cya-answer">GHIC</dd>
+					</div> -->
+					
+					<!-- <div>
+					   <dt class="cya-question">EU Settled Status</dt>
+					   <dd class="cya-answer" style="color: #D4351F; font-weight: bold">FAIL</dd>
+					</div> -->
+					<!-- <div>
+					   <dt class="cya-question">Reason</dt>
+					   <dd class="cya-answer">
+						  Multiple matches
+					   </dd>
+					</div> -->
+				 </dl>
+				<p>Select the reason for cancelling this S1 entitlement.</p>
+				<form class="form" action="s1CancelOptions" method="get">
+					<div class="form-group">
+						<fieldset id="entitlement">
+							<div class="govuk-radios">
+
+								<div class="govuk-radios__item">
+									<input class="govuk-radios__input" id="where-do-you-live-2" name="radiosS1Cancellations" type="radio" value="manual-card">
+									<label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+										S1 issued incorrectly - evidence needed
+									</label>
+								</div>
+	
+								<div class="govuk-radios__item">
+									<input class="govuk-radios__input" id="where-do-you-live-3" name="radiosS1Cancellations" type="radio" value="manual-died">
+									<label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+										Main applicant has died
+									</label>
+						
+								</div>
+
+								<div class="govuk-radios__item">
+									<input class="govuk-radios__input" id="where-do-you-live-4" name="radiosS1Cancellations" type="radio" value="manual-issued">
+									<label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+										Main applicant moved back to the UK or to another country
+									</label>
+								</div>
+
+							
+						
+							
+								<!-- <div class="govuk-radios__item">
+									<input class="govuk-radios__input" id="where-do-you-live-5" name="radiosResult" type="radio" value="Not approved">
+									<label class="govuk-label govuk-radios__label" for="where-do-you-live-5">
+										System glitch, dependant pending on rejected application
+
+									</label>
+								</div> -->
+					
+								<div class="govuk-radios__item">
+									<input class="govuk-radios__input" id="where-do-you-live-6" name="radiosS1Cancellations" type="radio" value="auto-cancelled">
+									<label class="govuk-label govuk-radios__label" for="where-do-you-live-6">
+										S1 cancelled by other country
+									</label>
+								</div>
+
+								<div class="govuk-radios__item">
+									<input class="govuk-radios__input" id="where-do-you-live-6" name="radiosS1Cancellations" type="radio" value="auto-dependant">
+									<label class="govuk-label govuk-radios__label" for="where-do-you-live-6">
+										Dependant applying for own S1
+									</label>
+								</div>
+							</div>
+						</fieldset>
+					</div>
+					<div class="form-group">
+						<input class="button" type="submit" value="Submit">
+						<a class="button button-secondary" href="person-entitlements.html">Cancel</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock %}

@@ -149,9 +149,25 @@ router.get(/v3ReviewEvidence/, function (req,res) {
      res.redirect('ghic-cancelled-confirmation');
   } else if (req.query.radiosCancellation === "auto-dependant") {
      res.redirect('ghic-cancelled-confirmation');
-  } else {
-    res.redirect('review-evidence-maternity-options-warning');
-  }
+  } 
+})
+// EHIC/GHIC review evidence, review-evidence-options.html (Version 2)
+router.get(/s1CancelOptions/, function (req,res) {
+  if(req.query.radiosS1Cancellations === "manual-card") {
+    return res.redirect('cancelation-date');
+  } 
+  // else if (req.query.radiosResult === "Approved but no evidence provided") {
+  //   res.redirect('done-ehic-approved');
+  // } 
+  else if (req.query.radiosS1Cancellations === "manual-issued") {
+     res.redirect('cancelation-date');
+  } else if (req.query.radiosS1Cancellations === "manual-died") {
+     res.redirect('cancelation-date');
+  } else if (req.query.radiosS1Cancellations === "auto-cancelled") {
+     res.redirect('cancelation-date');
+  } else if (req.query.radiosS1Cancellations === "auto-dependant") {
+     res.redirect('cancelation-date');
+  } 
 })
 
 module.exports = router
