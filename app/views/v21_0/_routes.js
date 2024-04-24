@@ -169,5 +169,19 @@ router.get(/s1CancelOptions/, function (req,res) {
      res.redirect('cancelation-date');
   } 
 })
+// EHIC/GHIC review evidence, review-evidence-options.html (Version 2)
+router.get(/s1CancelReporting/, function (req,res) {
+  if(req.query.radiosS1Reporting === "member") {
+    return res.redirect('cancel-options');
+  } 
+  // else if (req.query.radiosResult === "Approved but no evidence provided") {
+  //   res.redirect('done-ehic-approved');
+  // } 
+  else if (req.query.radiosS1Reporting === "uk") {
+     res.redirect('cancel-options');
+  } else if (req.query.radiosS1Reporting === "applicant") {
+     res.redirect('cancel-options'); 
+  } 
+})
 
 module.exports = router
