@@ -182,9 +182,6 @@ router.get(/s1CancelReporting/, function (req,res) {
   } else if (req.query.radiosS1Reporting === "applicant") {
      res.redirect('cancel-options'); 
   } 
-   else if (req.query.radiosS1Reporting === "ohs") {
-     res.redirect('cancel-options'); 
-  } 
 })
 
 module.exports = router
