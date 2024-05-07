@@ -20,41 +20,6 @@
                </div>
                <div class="form-group">
                     <p>You have successfully cancelled this S1 entitlement.</p>
-                    {% if data['radiosS1Reporting'] == "applicant"  %}
-                    <h2 class="heading-medium second">What happens next</h2>
-
-                    {% endif %} 
-                     
-             
-
-                
-               {% if data['radiosS1Cancellations'] == "manual-card" or data['radiosCancellation'] == "manual-issued" %}
-             <p>You need to:</p>
-               <ul class="list list-bullet">
-                    <li> recreate the entitlement for this customer </li>
-                    <li> email the customer to let them know what has happened</li>
-                </ul>
-             
-
-       
-               {% elif data['radiosS1Cancellations'] == "manual-died" %}
-                    {% if data['radiosS1Reporting'] == "applicant"  %}
-                         <p>You need to email a confirmation to the person who contacted us about the applicant's death.</p>
-                    {% endif %}  
-                    <h2 class="heading-medium second">Dependants</h2>
-                    <p>If this customer had any dependants, you also need to cancel the dependants' entitlements.</p>
-             
-               {% elif data['radiosS1Cancellations'] == "auto-cancelled" or data['radiosCancellation'] == "auto-dependant" %}
-
-                    {% if data['radiosS1Reporting'] == "applicant"  %}
-                    <p>You need to email a confirmation to the customer.</p>
-
-                    {% endif %} 
-           
-               {% endif %}      
-                   
-
-
                </div> 
                <div class="form-group">
                     <a href="person-entitlements-cancelled" class="link">See updated details</a>
