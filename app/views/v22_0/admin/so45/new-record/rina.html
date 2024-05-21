@@ -1,0 +1,178 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+What is the RINA International case ID number?
+
+{% endblock %}
+
+{% block content %}
+<style>
+
+	/* banner */
+	.banner-information-without-action {
+		color: #005ea5;
+	}
+	.banner-message {
+		font-family: Arial, sans-serif;
+		font-weight: 400;
+		text-transform: none;
+		font-size: 36px;
+		line-height: 1.2;
+		padding: 20px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		border-width: 5px;
+		border-style: solid;
+		font-weight: bold;
+		text-align: center;
+	}
+	.vertical-bar {
+		margin: 0px 10px;
+	}
+		/* checkbox */
+		.govuk-checkboxes__item {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		font-weight: 400;
+		font-size: 19px;
+		line-height: 1.25;
+		display: block;
+		position: relative;
+		min-height: 40px;
+		margin-bottom: 10px;
+		padding-left: 40px;
+		clear: left;
+	}
+	.govuk-checkboxes__input {
+		cursor: pointer;
+		position: absolute;
+		z-index: 1;
+		top: -2px;
+		left: -2px;
+		width: 44px;
+		height: 44px;
+		margin: 0;
+		opacity: 0;
+	}
+	.govuk-checkboxes__label {
+		display: inline-block;
+		margin-bottom: 0;
+		padding: 8px 15px 5px;
+		cursor: pointer;
+		-ms-touch-action: manipulation;
+		touch-action: manipulation;
+	}
+	.govuk-label {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		font-weight: 400;
+		font-size: 19px;
+		line-height: 1.25;
+		color: #0b0c0c;
+		display: block;
+		margin-bottom: 5px;
+	}
+	.govuk-checkboxes__label::before {
+		content: "";
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 40px;
+		height: 40px;
+		border: 2px solid currentColor;
+		background: transparent;
+	}
+	.govuk-checkboxes__input:checked+.govuk-checkboxes__label::after {
+		opacity: 1;
+	}
+	.govuk-checkboxes__label::after {
+		content: "";
+		position: absolute;
+		top: 11px;
+		left: 9px;
+		width: 18px;
+		height: 7px;
+		-webkit-transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+		border: solid;
+		border-width: 0 0 5px 5px;
+		border-top-color: transparent;
+		opacity: 0;
+		background: transparent;
+	}
+	/* end checkbox */
+	/* end banner */
+</style>
+
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-full">
+			<div id="back">
+				<a class="link-back" href="javascript:history.back()" id="back-link">Back</a>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="grid-row">
+			<div class="column-full">
+				<div class="banner-information-without-action">
+					<p class="banner-message">
+						<span class="name text-capitalize">
+							{% if data['firstName'] %}
+								{{ data['firstName']}} {{ data['lastName']}}
+							{% else %}
+								Michelle Philip
+							{% endif %}
+						</span>
+						<span class="vertical-bar">|</span>
+						<span class="ohs-reference-number">
+							{% if data['ohs'] %}
+								{{ data['ohs']}}
+							{% else %}
+								25000002
+							{% endif %}
+						</span>
+					</p>
+				</div>
+			</div>
+			<div class="column-two-thirds">
+				<div class="heading-group">
+					<h1 class="heading-large">What is the RINA International case ID number?</h1>
+				</div>
+
+            <form action="treatment-start-planned" method="post" class="form">
+               
+                    <div class="form-group">
+                        <span class="form-hint">
+                            For example: 3c26ohsdb7-4cYH-45c9-891b-68637b
+                        </span>
+                        <input class="form-control" id="nino" name="rina" type="text" autocomplete="off" value="{{ data ['nino']}}" />
+                    </div>
+
+					<div class="form-group">
+						<div class="govuk-checkboxes">
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="ohs-1" name="contactNotProvided" type="checkbox" value="not provided">
+								<label class="govuk-label govuk-checkboxes__label" for="ohs-1">
+									Please confirm that the RINA international case id has been verified
+								</label>
+							</div>
+						</div>
+					</div>
+                <div class="form-group">
+                    <input class="button" type="submit" value="Next">
+                    <a class="button button-secondary" href="person-case">Cancel</a>
+                </div>
+            </form>
+
+            
+        </div>
+    </div>
+</main>
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+
+{% endblock %}

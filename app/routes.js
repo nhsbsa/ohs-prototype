@@ -21,10 +21,11 @@ router.get('/', function (req, res) {
 router.use('/v14_0', require('./views/v14_0/_routes'));
 router.use('/v15_0', require('./views/v15_0/_routes'));
 router.use('/v16_0', require('./views/v16_0/_routes'));
-router.use('/v17_0', require('./views/v17_0/_routes'));
+// router.use('/v17_0', require('./views/v17_0/_routes'));
 router.use('/improvements', require('./views/improvements/_routes'));
 router.use('/v19_0', require('./views/v19_0/_routes'));
 router.use('/v21_0', require('./views/v21_0/_routes'));
+router.use('/v22_0', require('./views/v22_0/_routes'));
 
 
 // ccs no-search-results uk-pension //

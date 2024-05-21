@@ -126,20 +126,7 @@
 	     padding-right: 15px; 
 	     padding-left: 15px;
 	}
-	.cya-question, .cya-answer {
-		border: none;
-	}
-	.govuk-check-your-answers {
-		padding: .8em 0;
-	}
-	.nhsuk-radios__conditional {
-    margin-bottom: 16px;
-    border-left: 4px solid #4c6272;
-    margin-left: 18px;
-    padding-left: 30px;
-
-}
-
+	
 </style>
 
 <main id="content" role="main">
@@ -152,7 +139,7 @@
 	</div>
 	<div class="form-group">
 		<div class="grid-row">
-			<div class="column-full">
+			<!-- <div class="column-full">
 				<div class="banner-information-without-action">
 					<p class="banner-message">
 						<span class="name text-capitalize">Michael Philip</span>
@@ -160,112 +147,61 @@
 						<span class="ohs-reference-number">25000002</span>
 					</p>
 				</div>
-			</div>
+			</div> -->
+
+            <div id="warning-banner" class="banner-information-without-action">
+                <p class="banner-message">
+                    
+                        <span>Are you sure you do not want to send out an automated email requesting evidence</span>
+                    
+                </p>
+            </div>
 
 
 			<div class="column-two-thirds">
 				<div class="heading-group">
-					<h1 class="heading-large">S1 cancellation reason</h1>
+					<h1 class="heading-large">Review evidence</h1>
 				</div>
-				<!-- <dl class="govuk-check-your-answers ">
-					<div>
-					   <dt class="cya-question" style="width: 40%">Entitlement type</dt>
-					   <dd class="cya-answer">GHIC</dd>
-					</div> -->
-					
-					<!-- <div>
-					   <dt class="cya-question">EU Settled Status</dt>
-					   <dd class="cya-answer" style="color: #D4351F; font-weight: bold">FAIL</dd>
-					</div> -->
-					<!-- <div>
-					   <dt class="cya-question">Reason</dt>
-					   <dd class="cya-answer">
-						  Multiple matches
-					   </dd>
-					</div> -->
-				 </dl>
-				<p>Select the reason for cancelling this S1 entitlement.</p>
-				<form class="form" action="s1CancelOptions" method="get">
+				<p>What is your decision?</p>
+				<form class="form" action="s2manualemail" method="get"> 
 					<div class="form-group">
 						<fieldset id="entitlement">
 							<div class="govuk-radios">
-
-							
-	
 								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="where-do-you-live-1" name="radiosS1Cancellations" type="radio" value="manual-died">
-									<label class="govuk-label govuk-radios__label" for="where-do-you-live-1">
-										Customer has died
-									</label>
-						
-								</div>
-
-								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="where-do-you-live-2" name="radiosS1Cancellations" type="radio" value="manual-issued">
+									<input class="govuk-radios__input" id="where-do-you-live-2" name="radiosResult" type="radio" value="Approved with evidence">
 									<label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-										Customer moved back to the UK
+										Approved with required evidence
 									</label>
 								</div>
-
+								
 								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="where-do-you-live-2" name="radiosS1Cancellations" type="radio" value="manual-issued">
-									<label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-										Customer moved to another countryn
-									</label>
-								</div>
-							
-
-								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="where-do-you-live-3" name="radiosS1Cancellations" type="radio" value="auto-dependant">
-									<label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
-										Dependant applying for own S1
-									</label>
-								</div>
-								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="where-do-you-live-4" name="radiosS1Cancellations" type="radio" value="auto-dependant">
+									<input class="govuk-radios__input" id="where-do-you-live-4" name="radiosResult" type="radio" value="Evidence requested email">
 									<label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
-										Cancelling dependant’s S1 after main applicant died
+										Further evidence required - select an automated email template you can edit then send
 									</label>
 								</div>
 								<div class="govuk-radios__item">
-									<input class="govuk-radios__input" id="where-do-you-live-5" name="radiosS1Cancellations" type="radio" value="auto-dependant">
-									<label class="govuk-label govuk-radios__label" for="where-do-you-live-5">
-										Other
+									<input class="govuk-radios__input" id="where-do-you-live-3" name="radiosResult" type="radio" value="Evidence requested" checked="checked">
+									<label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+										Further evidence required - send a manual email 
 									</label>
 								</div>
-								<div class="form-group hiddenfield nhsuk-radios__conditional" style="display: none;">
-									<label class="form-label" for="lineone" style="font-size: 16px;">Enter other reason</label>
-									<input class="form-control" id="cancellationreason" name="cancellationreason" type="text" autocomplete="off"  >
+								<div class="govuk-radios__item">
+									<input class="govuk-radios__input" id="where-do-you-live-5" name="radiosResult" type="radio" value="Not approved">
+									<label class="govuk-label govuk-radios__label" for="where-do-you-live-5">
+										Not approved
+									</label>
 								</div>
 							</div>
-							
 						</fieldset>
 					</div>
 					<div class="form-group">
-						<input class="button" type="submit" value="Submit">
-						<a class="button button-secondary" href="person-entitlements.html">Cancel</a>
+						<input class="button" type="submit" value="Next">
+						<a class="button button-secondary" href="person-case-maternity-awaiting-review">Cancel</a>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
 </main>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var radios = document.querySelectorAll('input[name="radiosS1Cancellations"]');
-        var hiddenField = document.querySelector('.hiddenfield');
-
-        radios.forEach(function(radio) {
-            radio.addEventListener("change", function() {
-                if (radio.id !== 'where-do-you-live-5' || !radio.checked) {
-                    hiddenField.style.display = "none";
-                } else {
-                    hiddenField.style.display = "block";
-                }
-            });
-        });
-    });
-</script>
-
-
 {% endblock %}
